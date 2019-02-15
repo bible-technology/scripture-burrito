@@ -182,6 +182,10 @@ The components of this canon, which should match the canon type chosen above. eg
 <li>
 <b>/DBLMetadata/relationships/relation</b> (0 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The DBL id of the related entry<ul>
+<li>regex: [a-f0-9]{16}</li></ul>
+</li>
 <li><b>@revision</b> (Exactly 1 integer)<br/>
 The revision of the related entry<ul>
 <li>min: 1</li></ul>
@@ -215,6 +219,10 @@ The publication in the related text entry on which to base the braille<ul>
 <li>
 <b>/DBLMetadata/agencies/rightsHolder</b> (1 or more)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this rights holder<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name in English of this rights holder<ul>
 <li>regex: \S.*\S</li></ul>
@@ -236,6 +244,10 @@ The URL of this rights holder<ul>
 <li>
 <b>/DBLMetadata/agencies/contributor</b> (1 or more)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this contributor<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name of this contributor<ul>
 <li>regex: \S.*\S</li></ul>
@@ -255,6 +267,10 @@ Contributes to publication?</li>
 <li>
 <b>/DBLMetadata/agencies/rightsAdmin</b> (0 or 1)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this rights administrator (24 chars of hex)<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name of this rights administrator<ul>
 <li>regex: \S.*\S</li></ul>
@@ -513,6 +529,10 @@ The ROD of the language<ul>
 <li>
 <b>/DBLMetadata/countries/country</b> (1 or more)<br/>
 <ul>
+<li><b>iso</b> (Exactly 1 string key)<br/>
+The country's 2-character country code<ul>
+<li>regex: [A-Z][A-Z]</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The country's name in English<ul>
 <li>regex: \S.*\S</li></ul>
@@ -692,6 +712,10 @@ A heading starting within this number of lines of the bottom of page will be car
 <li>
 <b>/DBLMetadata/names/name</b> (0 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The id of this name<ul>
+<li>regex: [A-Za-z][\-A-Za-z0-9_]+</li></ul>
+</li>
 <li><b>short</b> (Exactly 1 string)<br/>
 The short label for this name, which is required and will be used as a default for the other labels if necessary<ul>
 <li>regex: \S.(.{0,253}\S)?</li></ul>
@@ -714,6 +738,10 @@ The long label for this name<ul>
 <li>
 <b>/DBLMetadata/publications/publication</b> (1 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The id of the publication<ul>
+<li>regex: [A-Za-z][A-Za-z0-9_\-]{0,31}</li></ul>
+</li>
 <li><b>name</b> (0 or 1 string)<br/>
 The publication's name, in English<ul>
 <li>regex: \S.*\S</li></ul>
@@ -761,6 +789,10 @@ The publication's scope<ul>
 <li>
 <b>/DBLMetadata/publications/publication/countries/country</b> (1 or more)<br/>
 <ul>
+<li><b>iso</b> (Exactly 1 string key)<br/>
+The country's 2-character country code<ul>
+<li>regex: [A-Z][A-Z]</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The country's name in English<ul>
 <li>regex: \S.*\S</li></ul>

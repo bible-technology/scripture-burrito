@@ -182,6 +182,10 @@ The components of this canon, which should match the canon type chosen above. eg
 <li>
 <b>/DBLMetadata/relationships/relation</b> (0 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The DBL id of the related entry<ul>
+<li>regex: [a-f0-9]{16}</li></ul>
+</li>
 <li><b>@revision</b> (Exactly 1 integer)<br/>
 The revision of the related entry<ul>
 <li>min: 1</li></ul>
@@ -211,6 +215,10 @@ The role of the related entry with respect to this entry<ul>
 <li>
 <b>/DBLMetadata/agencies/rightsHolder</b> (1 or more)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this rights holder<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name in English of this rights holder<ul>
 <li>regex: \S.*\S</li></ul>
@@ -232,6 +240,10 @@ The URL of this rights holder<ul>
 <li>
 <b>/DBLMetadata/agencies/contributor</b> (1 or more)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this contributor<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name of this contributor<ul>
 <li>regex: \S.*\S</li></ul>
@@ -251,6 +263,10 @@ Contributes to publication?</li>
 <li>
 <b>/DBLMetadata/agencies/rightsAdmin</b> (0 or 1)<br/>
 <ul>
+<li><b>uid</b> (Exactly 1 string key)<br/>
+The id of this rights administrator (24 chars of hex)<ul>
+<li>regex: [a-f0-9]{24}</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The name of this rights administrator<ul>
 <li>regex: \S.*\S</li></ul>
@@ -509,6 +525,10 @@ The ROD of the language<ul>
 <li>
 <b>/DBLMetadata/countries/country</b> (1 or more)<br/>
 <ul>
+<li><b>iso</b> (Exactly 1 string key)<br/>
+The country's 2-character country code<ul>
+<li>regex: [A-Z][A-Z]</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The country's name in English<ul>
 <li>regex: \S.*\S</li></ul>
@@ -597,6 +617,10 @@ The sampling rate of the audio stream of the video in the entry<ul>
 <li>
 <b>/DBLMetadata/names/name</b> (0 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The id of this name<ul>
+<li>regex: [A-Za-z][\-A-Za-z0-9_]+</li></ul>
+</li>
 <li><b>short</b> (Exactly 1 string)<br/>
 The short label for this name, which is required and will be used as a default for the other labels if necessary<ul>
 <li>regex: \S.(.{0,253}\S)?</li></ul>
@@ -619,6 +643,10 @@ The long label for this name<ul>
 <li>
 <b>/DBLMetadata/publications/publication</b> (1 or more)<br/>
 <ul>
+<li><b>@id</b> (Exactly 1 string key)<br/>
+The id of the publication<ul>
+<li>regex: [A-Za-z][A-Za-z0-9_\-]{0,31}</li></ul>
+</li>
 <li><b>name</b> (0 or 1 string)<br/>
 The publication's name, in English<ul>
 <li>regex: \S.*\S</li></ul>
@@ -666,6 +694,10 @@ The publication's scope<ul>
 <li>
 <b>/DBLMetadata/publications/publication/countries/country</b> (1 or more)<br/>
 <ul>
+<li><b>iso</b> (Exactly 1 string key)<br/>
+The country's 2-character country code<ul>
+<li>regex: [A-Z][A-Z]</li></ul>
+</li>
 <li><b>name</b> (Exactly 1 string)<br/>
 The country's name in English<ul>
 <li>regex: \S.*\S</li></ul>
@@ -815,6 +847,118 @@ Comments on the latest revision of this entry<ul>
 <li>
 <b>/DBLMetadata/progress/book</b> (1 or more)<br/>
 <ul>
+<li><b>@code</b> (Exactly 1 string key)<br/>
+The three-character code of the book<ul>
+<li>Enum:<ul>
+<li>GEN</li>
+<li>EXO</li>
+<li>LEV</li>
+<li>NUM</li>
+<li>DEU</li>
+<li>JOS</li>
+<li>JDG</li>
+<li>RUT</li>
+<li>1SA</li>
+<li>2SA</li>
+<li>1KI</li>
+<li>2KI</li>
+<li>1CH</li>
+<li>2CH</li>
+<li>EZR</li>
+<li>NEH</li>
+<li>EST</li>
+<li>JOB</li>
+<li>PSA</li>
+<li>PRO</li>
+<li>ECC</li>
+<li>SNG</li>
+<li>ISA</li>
+<li>JER</li>
+<li>LAM</li>
+<li>EZK</li>
+<li>DAN</li>
+<li>HOS</li>
+<li>JOL</li>
+<li>AMO</li>
+<li>OBA</li>
+<li>JON</li>
+<li>MIC</li>
+<li>NAM</li>
+<li>HAB</li>
+<li>ZEP</li>
+<li>HAG</li>
+<li>ZEC</li>
+<li>MAL</li>
+<li>MAT</li>
+<li>MRK</li>
+<li>LUK</li>
+<li>JHN</li>
+<li>ACT</li>
+<li>ROM</li>
+<li>1CO</li>
+<li>2CO</li>
+<li>GAL</li>
+<li>EPH</li>
+<li>PHP</li>
+<li>COL</li>
+<li>1TH</li>
+<li>2TH</li>
+<li>1TI</li>
+<li>2TI</li>
+<li>TIT</li>
+<li>PHM</li>
+<li>HEB</li>
+<li>JAS</li>
+<li>1PE</li>
+<li>2PE</li>
+<li>1JN</li>
+<li>2JN</li>
+<li>3JN</li>
+<li>JUD</li>
+<li>REV</li>
+<li>TOB</li>
+<li>JDT</li>
+<li>ESG</li>
+<li>WIS</li>
+<li>SIR</li>
+<li>BAR</li>
+<li>LJE</li>
+<li>S3Y</li>
+<li>SUS</li>
+<li>BEL</li>
+<li>1MA</li>
+<li>2MA</li>
+<li>3MA</li>
+<li>4MA</li>
+<li>1ES</li>
+<li>2ES</li>
+<li>MAN</li>
+<li>PS2</li>
+<li>ODA</li>
+<li>PSS</li>
+<li>JSA</li>
+<li>JDB</li>
+<li>TBS</li>
+<li>SST</li>
+<li>DNT</li>
+<li>BLT</li>
+<li>EZA</li>
+<li>5EZ</li>
+<li>6EZ</li>
+<li>DAG</li>
+<li>PS3</li>
+<li>2BA</li>
+<li>LBA</li>
+<li>JUB</li>
+<li>ENO</li>
+<li>1MQ</li>
+<li>2MQ</li>
+<li>3MQ</li>
+<li>REP</li>
+<li>4BA</li>
+<li>LAO</li></ul>
+</li></ul>
+</li>
 <li><b>@stage</b> (Exactly 1 integer)<br/>
 The old-style Paratext progress stage (1-6)<ul>
 <li>min: 1</li>
