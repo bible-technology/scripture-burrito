@@ -5,8 +5,15 @@ A data interchange format for Bible-centric content. Supports licenses, multimed
 This proposal has been prepared by the ETEN Project Portability Working Group which was
 formed after meetings in Philadelphia in July 2018. The group has since met several times
 virtually, culminating in two days of face meetings in Orlando on January 17-18, 2019. The
-meeting was attended by Han Chung, Jesse Griffin, Mark Howe, Joel Mathew, Tim Steenwyk,
-Benjamin Varghese and Andi Wu.
+meeting was attended by
+
+* Han Chung
+* Jesse Griffin
+* Mark Howe
+* Joel Mathew
+* Tim Steenwyk
+* Benjamin Varghese
+* Andi Wu
 
 ## Scope
 The original focus of the group was specific to translation project portability between translation
