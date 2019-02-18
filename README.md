@@ -46,7 +46,7 @@ The proposal describes a recipe for assembling a burrito by organizing ingredien
 hierarchical structure. That structure could be represented as nested directories on a filesystem, or
 as a ZIP file, or in any other system-dependent way.
 
-##Metadata
+## Metadata
 The proposed format is based on the forthcoming DBL Metadata 2.3, which already offers many of
 the desired features. SB Metadata 0.1 has an XML and a JSON expression . Content servers may
 store SB metadata in either format and should allow metadata input and output for any burrito in
