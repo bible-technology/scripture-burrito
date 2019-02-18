@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -u
+set -e
+
+echo "*** Make Sphinx project as LaTeX ***"
+make latex
+
+echo
+echo "*** Convert LaTeX to PDF ***"
+
+cd build/latex
+pdflatex DBLMetadata23.tex
+pdflatex DBLMetadata23.tex # Second time to fix cross references
+
+echo
+echo "*** Copy PDF to doc/ ***"
+cp DBLMetadata23.pdf ../../DBLMetadata23.pdf
+
+echo
+echo "*** Clean up build files ***"
+cd ../..
+rm -fr build
+
+echo
+echo "*** DONE! ***"
