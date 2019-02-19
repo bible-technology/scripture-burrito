@@ -90,11 +90,41 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ========================
 
-Multiple \*Local elements as part of multiple language support.
+-------------------------
+Multiple \*Local elements
+-------------------------
+
+   * nameLocal
+
+   * descriptionLocal
+
+   * abbreviationLocal
+
+-------
+basedOn
+-------
+
+This would uniquely identify the snapshot on which the entry is based, which might be from a different ecosystem. This information is potentially
+useful for forensics. It also provides a mechanism for 3-way diffing of documents when the two deltas are from different ecosystems.
+
+.. code-block:: xml
+
+   <basedOn type="dbl">
+      <id>482ddd53705278cc</id>
+      <revision>1</revision>
+   </basedOn>
 
 ========================================
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ========================================
+
+----------------------
+Evaluate uses of scope
+----------------------
+
+Scope does not have enough options to describle all projects. In addition, it is unclear whether the scope describes the books actually present (impossible
+with an enum for incremental publishing) or the intended final scope of the project (which is a somewhat existential concept). Something like the canonicalContent
+section in publications, for a whole entry, would provide scope information in a more flexible and transparent way.
 
 ********
 systemId
@@ -191,9 +221,49 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ========================
 
+------------
+Add DBL type
+------------
+
+This is required to make the document structure orthogonal.
+
+-----------------------------
+Add other known organizations
+-----------------------------
+
+* Unfolding Word
+
+-----------------
+Support x-* types
+-----------------
+
+The systemId type mechanism was created when DBL needed to work with a small number of large ecosystems.
+Future ecosystems may be small – maybe a national denomination or even one church. It may not always make sense to add such organizations
+to the schema and, when it does, this will take some time. Some  architectures involve local servers (on a VPN, an intranet or even localhost),
+and testing sometimes requires server changes. Supporting types matching
+
+.. code-block
+
+   x-[a-z]{1,}
+
+provides a way to introduce new or private ecosystems without rewriting schema:
+
+.. code-block:: xml
+
+   <idServer prefix="mvah">https://markspersonaltranslationproject.fr</idServer>
+   ...
+   <systemId type="x-mvah">
+      <id>idInMyPersonalFormat</id>
+      <myDetail>something-that-interests-me</myDetail>
+   </systemId>
+
+The type of all x-* systemIds should correspond to an idServer declaration.
+
 ========================================
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ========================================
+
+None.
 
 *********
 canonSpec
@@ -202,6 +272,9 @@ canonSpec
 ===================
 IN DBL METADATA 2.2
 ===================
+
+This feature was added as a more flexible and transparent alternative to the scope and tradition values, and as a first step towards hierarchical publication structures.
+It is based on analysis of the Canons.xml used by Paratext. It is currently not used by Paratext, but is central to Nathanael's workflow.
 
 **/DBLMetadata/identification/canonSpec** (0 or 1)
 
@@ -329,6 +402,20 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ========================
 
+-------------------------
+Remove the .*2 components
+-------------------------
+
+These variants of three components correspond to longstanding inconsistencies in the Canons.xml file, caused by inconsistent
+use of DAN/DAG and EST/ESG in canons of different scope for the same tradition (eg the OT part of the Armenian Bible canon does
+not match the Armenian OT canon). Also, there is no JER in the Greek Orthodox canon.
+
 ========================================
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ========================================
+
+-----------------
+Develop canonSpec
+-----------------
+
+One day, canonSpecs should be able to use custom components, which begs the question of where and how those components would be defined.
