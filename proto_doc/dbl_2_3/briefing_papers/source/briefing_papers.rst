@@ -13,6 +13,8 @@ Welcome to DBL Metadata 2.3's documentation!
    01_xml
    02_ids
    03_root_element
+   04_identification
+   15_progress
 
 
 
