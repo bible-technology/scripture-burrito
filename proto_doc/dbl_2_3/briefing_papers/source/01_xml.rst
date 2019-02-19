@@ -7,7 +7,7 @@ XML STYLE
 *********
 
 =================
-HUMAN READABILITY
+Human Readability
 =================
 
 XML, like SGML, was designed to be readable and editable by non-technical users. It is
@@ -19,7 +19,7 @@ XML values readability over conciseness (within reason). Tag names tend to use u
 Perhaps because of Java's domination of the XML world, composed names tend to be camelCase.
 
 ======================
-ATTRIBUTES VS ELEMENTS
+Attributes vs Elements
 ======================
 
 Choices need to be made between
@@ -61,7 +61,7 @@ There are some fairly solid rules to follow, such as
 There are also lots of strong opinions and habits that make for lively arguments at XML conferences.
 
 ==============
-DOCUMENT ORDER
+Document Order
 ==============
 
 This is a basic XML concept, respected by all W3C XML technologies, which requires XML processors to respect the order
