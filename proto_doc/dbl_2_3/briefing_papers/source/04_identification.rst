@@ -232,6 +232,7 @@ Add other known organizations
 -----------------------------
 
 * Unfolding Word
+* Vachan Online
 
 -----------------
 Support x-* types
@@ -302,7 +303,7 @@ It is based on analysis of the Canons.xml used by Paratext. It is currently not 
 
    * **component** (1 or more string)
 
-      * The components of this canon, which should match the canon type chosen above. eg, if the canon type is "0T, NT", there should be one OT and one NT component here.
+      * The components of this canon, which should match the canon type chosen above. eg, if the canon type is "OT, NT", there should be one OT and one NT component here.
 
          * Enum:
 
