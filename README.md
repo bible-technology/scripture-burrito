@@ -2,7 +2,7 @@
 
 A data interchange format for Bible-centric content. Supports licenses, multimedia project data...
   
-See https://burrito.bible/ (or https://scripture-burrito.readthedocs.io/) for the documentation, this repo is the source files.
+See https://docs.burrito.bible/ (or https://scripture-burrito.readthedocs.io/) for the documentation, this repo is the source files.
 
 If you want to suggest a change, please fork this repo and create a PR, or create an Issue.
 A data interchange format for Bible-centric content. Supports licenses, multimedia project data...
