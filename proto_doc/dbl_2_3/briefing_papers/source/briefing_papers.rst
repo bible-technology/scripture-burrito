@@ -14,4 +14,8 @@ Welcome to DBL Metadata 2.3's documentation!
    02_ids
    03_root_element
    04_identification
+   04b_relationships
+   05_agencies
+   13_copyright
+   14_promotion
    15_progress

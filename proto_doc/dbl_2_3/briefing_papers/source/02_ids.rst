@@ -80,7 +80,7 @@ where
 
 * "id" matches
 
-.. code-block
+.. code-block:: none
 
     [0-9A-Za-z]([0-9A-Za-z_-]{0,30}[0-9A-Za-z])?
 
