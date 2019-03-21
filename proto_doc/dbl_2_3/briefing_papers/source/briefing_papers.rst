@@ -16,6 +16,9 @@ Welcome to DBL Metadata 2.3's documentation!
    04_identification
    04b_relationships
    05_agencies
+   08_languages
+   09_countries
+   10_names
    13_copyright
    14_promotion
    15_progress
