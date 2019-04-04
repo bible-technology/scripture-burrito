@@ -12,7 +12,9 @@ IN DBL METADATA 2.2
 
         * The id of this name
 
-        * regex: [A-Za-z][\-A-Za-z0-9_]+
+        * ::
+        
+            regex: [A-Za-z][-A-Za-z0-9_]+
 
     * **short** (Exactly 1 string)
 
