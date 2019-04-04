@@ -21,6 +21,7 @@ Welcome to DBL Metadata 2.3's documentation!
    10_names
    11_manifest
    12_publications
+   12b_source
    13_copyright
    14_promotion
    15_progress
