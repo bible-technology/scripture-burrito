@@ -16,6 +16,13 @@ Welcome to DBL Metadata 2.3's documentation!
    04_identification
    04b_relationships
    05_agencies
+   06_type
+   07_format
+   07a_text_format
+   07b_audio_format
+   07c_video_format
+   07d_print_format
+   07e_braille_format
    08_languages
    09_countries
    10_names
