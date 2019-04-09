@@ -35,3 +35,5 @@ This would provide the USFM and USX version.
 ****************************************
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ****************************************
+
+None.
