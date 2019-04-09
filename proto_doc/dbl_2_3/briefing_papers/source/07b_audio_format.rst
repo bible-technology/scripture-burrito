@@ -56,6 +56,24 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ************************
 
+===========
+Conventions
+===========
+
+* whole-chapter
+
+* book-dirs
+
+=====
+Roles
+=====
+
+* book-introduction
+
+* audio-timing
+
 ****************************************
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ****************************************
+
+None.

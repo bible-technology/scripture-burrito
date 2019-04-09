@@ -97,13 +97,9 @@ IN DBL METADATA 2.2
 
         * Set to display the chapter number before the word for "chapter"
 
-
-
     * **versedParagraphs** (Exactly 1 boolean)
 
         * Set to display each verse as a new paragraph
-
-
 
     * **verseSeparator** (Exactly 1 string)
 
@@ -114,8 +110,6 @@ IN DBL METADATA 2.2
     * **includeIntros** (Exactly 1 boolean)
 
         * Set to display book introductions
-
-
 
     * **/DBLMetadata/format/content/characterStyles** (0 or 1)
 
@@ -137,7 +131,6 @@ IN DBL METADATA 2.2
 
             * regex: ([<braille>])*
 
-
     * **/DBLMetadata/format/content/footnotes** (0 or 1)
 
         * **callerSymbol** (Exactly 1 string)
@@ -145,7 +138,6 @@ IN DBL METADATA 2.2
         * Character(s) to use to show a footnote
 
             * regex: ([<braille>])*
-
 
     * **/DBLMetadata/format/content/crossReferences** (0 or 1)
 
@@ -179,8 +171,6 @@ IN DBL METADATA 2.2
 
         * Set to leave last line of verso pages blank
 
-
-
     * **carryLines** (Exactly 1 integer)
 
         * A heading starting within this number of lines of the bottom of page will be carried over to next page
@@ -192,6 +182,30 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ************************
 
+============================
+liblouis => brailleConvertor
+============================
+
+LibLouis is **almost** ubiquitous for braille transcription in 2019, but other options do exist.
+
+.. code-block:: xml
+
+<brailleConvertor>liblouis-3.7.1</brailleConvertor>
+
+=========================
+table/source => table/src
+=========================
+
+This is just for consistency.
+
+===============================
+Enforce exactly one publication
+===============================
+
+Braille entries are always an expression and it is hard to imagine a multiple-publication scenario.
+
 ****************************************
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ****************************************
+
+None.

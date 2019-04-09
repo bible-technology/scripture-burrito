@@ -111,6 +111,57 @@ IN DBL METADATA 2.2
 PROPOSED CHANGES FOR 2.3
 ************************
 
+========================
+Add print-oriented roles
+========================
+
+* printBody
+
+* printCover
+
+* printThumbnail
+
+===========================
+Metadata for thumbnail JPEG
+===========================
+
+* width
+
+* height
+
+* colorModel
+
+================================================
+fonts element should be optional and never empty
+================================================
+
+This is a schema error, ie it should be
+
+.. ::
+
+    element fonts { printFormatFontElement+ }?
+
+not
+
+.. ::
+
+    element fonts { printFormatFontElement* }
+
+============================================
+Support Biblica's Tagged Text Toolbox format
+============================================
+
+This variant of print content is essentially InDesign XML. We'd need a convention for this,
+and we might need to rework the metadata fields too.
+
+===============================
+Enforce exactly one publication
+===============================
+
+Print entries are always an expression and it is hard to imagine a multiple-publication scenario.
+
 ****************************************
 ISSUES TO CONSIDER FOR SCRIPTURE BURRITO
 ****************************************
+
+None.
