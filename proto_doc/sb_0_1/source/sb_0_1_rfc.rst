@@ -15,6 +15,7 @@ Welcome to the Scripture Burrito 0.1 RFC!
    04_identification
    04b_relationships
    05_agencies
+   05b_license
    06_type
    07_format
    07a_text_format
