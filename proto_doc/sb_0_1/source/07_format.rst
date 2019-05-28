@@ -19,7 +19,7 @@ visibility.
 
 .. code-block:: xml
 
-    <convention type="structure" version="1.0">usx_dirs</convention>
+    <convention type="structure" version="1.0">usx-dirs</convention>
 
 Zero or more convention elements would be allowed for each entry. In the absence
 of a convention, the entry may or not comply, ie *caveat emptor*.
@@ -28,11 +28,11 @@ of a convention, the entry may or not comply, ie *caveat emptor*.
 
 * **structure** ie the "directory" structure, eg "usx-dirs"
 
-* **content-format** ie the standard to which specific resources comply, eg "usx3"
+* **content-format** ie the standard to which specific resources comply, eg "tagged-text" for print
 
 * **content** ie the actual content of resources, eg, "usx-refs"
 
-**@version** is required since more complex conventions are likely to evolve.
+**@version** is required since conventions are likely to evolve.
 
 The enum of conventions will need to be defined in consultation with stakeholders. x-.* should be
 supported for emerging conventions.

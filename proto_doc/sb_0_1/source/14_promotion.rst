@@ -2,19 +2,6 @@
 PROMOTION
 #########
 
-*******************
-IN DBL METADATA 2.2
-*******************
-
-**/DBLMetadata/promotion** (Exactly 1)
-
-   * **/DBLMetadata/promotion/promoVersionInfo** (0 or 1)
-
-      * **./*** (0 or 1 xml)
-
-         * Promotional material in DBL's subset of XHTML (must be valid XML, ie tags must match.)
-
-            * schema: dbl/2_2/dbl-xhtml
 
 ************************
 PROPOSED CHANGES FOR 0.1
@@ -38,7 +25,6 @@ coherent structure that also allows plain text promotional material would be
     * **statementContent[@type='plain']** (0 or 1 string)
 
         * Promotional material in plain text
-
 
 **************************
 ISSUES TO CONSIDER FOR 0.2

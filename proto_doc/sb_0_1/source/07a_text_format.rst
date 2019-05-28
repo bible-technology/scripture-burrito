@@ -2,15 +2,6 @@
 TEXT FORMAT
 ###########
 
-*******************
-IN DBL METADATA 2.2
-*******************
-
-* **versedParagraphs** (Exactly 1 boolean)
-
-   * Should the USX be rendered one paragraph per verse?
-
-
 ************************
 PROPOSED CHANGES FOR 0.1
 ************************
@@ -19,13 +10,17 @@ PROPOSED CHANGES FOR 0.1
 Remove versedParagraphs
 =======================
 
-This can be replaced with a convention, which accurately describes the semantics of this field.
+This can be replaced with a convention:
+
+.. code-block:: xml
+
+    <convention type="structure" version="1.0">versed-paras</convention>
 
 ======
 Syntax
 ======
 
-This would provide the USFM and USX version.
+This provides the USFM and USX version.
 
 .. code-block:: xml
 
