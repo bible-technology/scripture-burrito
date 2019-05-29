@@ -10,7 +10,7 @@ If copyright is in effect (the work is not in the public domain) and there is no
 
 Finally, copyright holders can apply very liberal licenses to their work that allows a wide range of rights to the licensee [1]_. In these cases the licensing is implied and doesn't require any formal agreement between the copyright holder and the licensee. The most widely known of these types of licenses are the ones defined by Creative Commons [2]_. 
 
-Licenses in the current ecosystem are generally bilateral, between the copyright holder and an licensee, with named parties, expiry terms, and so on. These types of licenses should not be included in the metadata of a burrito as 
+Licenses in the current ecosystem are generally bilateral, between the copyright holder and a licensee, with named parties, expiry terms, and so on. These types of licenses should not be included in the metadata of a burrito as 
 they are not universal information about the burrito, apply to one audience only, and may contain proprietary information.
 
 Given the above information, the proposal is to allow for license declarations in metadata, but exclude bilateral agreements from the metadata. License declarations in metadata should only be used for licenses that do not require a formal acceptance by the licensee. Multiple licenses can be declared. License declarations may include external links in the form of an **href** attribute. 
