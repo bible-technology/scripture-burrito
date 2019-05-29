@@ -51,7 +51,7 @@ Examples:
 ISSUES TO CONSIDER FOR 0.2
 **************************
 
-None
+How to describe a work that is acquired under a bi-lateral license agreement (i.e. traditional DBL licenses).
 
 .. [1] See https://en.wikipedia.org/wiki/Open_content
 .. [2] See https://creativecommons.org/choose/
