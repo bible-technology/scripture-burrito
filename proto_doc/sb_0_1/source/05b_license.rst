@@ -32,7 +32,8 @@ Examples:
     // default (empty) licenses element. Only copyright holders have rights on this work.
     <licenses/>
 
-    // licenses with a single license element, pointing to a CC license. In this case license text would be redundant (and optional).
+    // licenses with a single license element, pointing to a CC license. In this case 
+    // license text would be redundant (and optional).
     <licenses>
       <license href="https://creativecommons.org/licenses/by/4.0/"/>
     </licenses>
