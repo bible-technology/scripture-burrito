@@ -31,4 +31,5 @@ Welcome to the Scripture Burrito 0.1 RFC!
    12b_source
    13_copyright
    14_promotion
+   14b_archive_status
    15_progress
