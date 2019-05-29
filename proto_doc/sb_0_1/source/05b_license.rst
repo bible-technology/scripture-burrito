@@ -2,7 +2,7 @@
 LICENSE
 #######
 
-This is a new, optional section describing any license under which the burrito has been distributed.
+This is a new section describing any license under which the burrito has been distributed.
 
 There is generally a lot of confusion between copyright and licensing, as these concepts are interrelated. Copyright is a statement of ownership, stating that the work cannot be reproduced without explicit permission of the copyright holder. To add to the confusion, the copyright statement can waive the restriction, allowing anyone to modify and redistibute the work. Any material can also be in the public domain, in which case the work is not owned by anyone and can be used in any way. Most (all?) jurisdictions have copyright expiry, but this varies. 
 
