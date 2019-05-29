@@ -19,25 +19,25 @@ Given the above information, the proposal is to allow for license declarations i
 PROPOSED CHANGES FOR 0.1
 ************************
 
-Intoduce a top-level **licenses** element with zero-or-more **license** elements
+Introduce a top-level **licenses** element with zero-or-more **license** elements
 
-* **licenses** to be mandatory, but possibly empty
-* **license** to contain plain-text license information, optionally with an **href** attribute that gives a stable link to a license definition.
+* **licenses** to be mandatory, but possibly empty. Absence of **license** sub-elements means that there is no license and non-copyright holders have no rights to use, modify, or redistribute the work.
+* **license** to contain optional plain-text license information, with an **href** attribute that gives a stable link to a license definition.
 
 
 Examples:
 
 .. code-block:: xml
 
-    // default (empty) licenses element
+    // default (empty) licenses element. Only copyright holders have rights on this work.
     <licenses/>
 
-    // licenses with a single license element, pointing to a CC license
+    // licenses with a single license element, pointing to a CC license. In this case license text would be redundant (and optional).
     <licenses>
       <license href="https://creativecommons.org/licenses/by/4.0/"/>
     </licenses>
 
-    // licenses with a single license element, pointing to a CC license and including the license text
+    // licenses with a single license element, pointing to a CC license and including the license text.
     <licenses>
       <license href="https://creativecommons.org/licenses/by/4.0/">
         Creative Commons Attribution 4.0 International Public License
