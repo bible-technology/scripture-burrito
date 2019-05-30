@@ -19,17 +19,19 @@ Given the above information, the proposal is to allow for license declarations i
 PROPOSED CHANGES FOR 0.1
 ************************
 
-Introduce a top-level **licenses** element with zero-or-more **license** elements
+Introduce a top-level **licenses** element with zero-or-more **license** elements *or* a single **publicDomain** element
 
 * **licenses** to be mandatory, but possibly empty. Absence of **license** sub-elements means that there is no license and non-copyright holders have no rights to use, modify, or redistribute the work.
-* **license** to contain optional plain-text license information, with an **href** attribute that gives a stable link to a license definition.
+* a single **publicDomain** sentinel element can be present as the only child element of the **licenses** element if a work is in the public domain. 
+* **license** elements to contain a mandatory **@href** attribute that gives a stable link to a license definition. Links can be to external or internal resources [3]_.
 
 
 Examples:
 
 .. code-block:: xml
 
-    <!-- default (empty) licenses element. Only copyright holders have rights on this work. -->
+    <!-- default (empty) licenses element. Only copyright 
+    holders have rights on this work. -->
     <licenses/>
 
     <!-- Public Domain. -->
@@ -37,18 +39,16 @@ Examples:
       <publicDomain/>
     </licenses>
 
-    <!-- licenses with a single license element, pointing to a CC license. In this case -->
-    <!-- license text would be redundant (and optional). -->
+    <!-- licenses with a single license element, pointing to a CC 
+    license on the greater internet. -->
     <licenses>
       <license href="https://creativecommons.org/licenses/by/4.0/"/>
     </licenses>
 
-    <!-- licenses with a single license element, pointing to a CC license and including the license text. -->
+    <!-- licenses with a single license element, pointing to a 
+    license included in the current bundle. -->
     <licenses>
-      <license href="https://creativecommons.org/licenses/by/4.0/">
-        Creative Commons Attribution 4.0 International Public License
-        ...
-      </license>
+      <license href="file:///license.txt"/>
     </licenses>
 
 
@@ -56,7 +56,8 @@ Examples:
 ISSUES TO CONSIDER FOR 0.2
 **************************
 
-How to describe a work that is acquired under a bi-lateral license agreement (i.e. traditional DBL licenses).
+Some agreement on permitted format for the license@href attribute.
 
 .. [1] See https://en.wikipedia.org/wiki/Open_content
 .. [2] See https://creativecommons.org/choose/
+.. [3] For reference: https://tools.ietf.org/html/rfc8089
