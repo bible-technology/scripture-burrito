@@ -39,12 +39,12 @@ appear as separate entries within the manifest:
 
 .. code-block:: xml
 
-    <content src="MAT.usx" name="book-mat" role="MAT">
+    <content src="MAT.usx" name="book-mat">
         <metaContent src="timing/MAT.xml"/>
     </content>
-    <content src="MRK.usx" name="book-mrk" role="MRK">
-        <metaContent src="timing/MRK_1-6.xml" role="MRK 1-6"/>
-        <metaContent src="timing/MRK_7-16.xml" role="MRK 7-16"/>
+    <content src="MRK.usx" name="book-mrk">
+        <metaContent src="timing/MRK_1-6.xml"/>
+        <metaContent src="timing/MRK_7-16.xml"/>
     </content>
 
 =====================================
