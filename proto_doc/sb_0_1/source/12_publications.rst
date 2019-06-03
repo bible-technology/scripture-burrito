@@ -6,10 +6,6 @@ PUBLICATIONS
 PROPOSED CHANGES FOR 0.1
 ************************
 
-==========
-Drop scope
-==========
-
 =========================
 Multiple Language Support
 =========================
@@ -19,6 +15,20 @@ See the identification section.
 ==========
 Drop scope
 ==========
+
+====================================================================
+Replace existing scope enum with canonicalContent-like list of books
+====================================================================
+
+See the identification section.
+
+=========
+Drop role
+=========
+
+The current role attribute attempts to cover both the scope of Scripture it contains and the type of file. The latter information is more naturally
+expressed as a mimetype in the ingredients section. Also, the scriptural or para-scriptural scope of any ingredient is generally the same regardless of
+any publication.
 
 ===========
 metaContent

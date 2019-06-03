@@ -43,13 +43,14 @@ useful for forensics. It also provides a mechanism for 3-way diffing of document
       <revision>1</revision>
    </basedOn>
 
------------------------------------
-Replace scope with canonicalContent
------------------------------------
+--------------------------------------------------------------------
+Replace existing scope enum with canonicalContent-like list of books
+--------------------------------------------------------------------
 
 Scope does not have enough options to describe all projects. In addition, it is unclear whether the scope describes the books actually present (impossible
 with an enum for incremental publishing) or the intended final scope of the project (which is a somewhat existential concept). Including a global
-canonicalContent section, as currently exists in publications, for a whole entry, provides scope information in a more flexible and transparent way.
+section, like canonicalContent that currently exists in publications, for a whole entry, provides scope information in a more flexible and transparent way.
+(The term "canonicalContent" is not helpful for non-scripture Burritos which may still have scope, eg the books to which a commentary applies.)
 
 ==========================
 ISSUES TO CONSIDER FOR 0.2
