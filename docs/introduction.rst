@@ -1,3 +1,6 @@
 ############
 INTRODUCTION
 ############
+
+.. toctree::
+   history
