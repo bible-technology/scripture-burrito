@@ -14,8 +14,6 @@ PROPOSED CHANGES FOR 0.1
 
 * @revision should be expanded to allow Mercurial and Git commit ids as well as DBL-style positive integers.
 
-* Zero or one id/revision may be placed in the root element, with the others in systemId
-
 **************************
 ISSUES TO CONSIDER FOR 0.2
 **************************
