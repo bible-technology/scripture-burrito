@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to the Scripture Burrito 0.1 RFC!
-============================================
+=========================================
 
 .. toctree::
    :maxdepth: 4
