@@ -1,3 +1,3 @@
 #########
-USE CASES
+Use Cases
 #########

@@ -1,3 +1,3 @@
 ##########
-APPENDICES
+Appendices
 ##########

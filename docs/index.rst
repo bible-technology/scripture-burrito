@@ -6,7 +6,7 @@
 Scripture Burrito Documentation
 ===============================
 
-This site contains the official documentation for the evolving Scripture Burrito specification.
+This is the official documentation for the evolving Scripture Burrito specification.
 
 .. toctree::
    :maxdepth: 4

@@ -1,5 +1,5 @@
 ############
-INTRODUCTION
+Introduction
 ############
 
 .. toctree::

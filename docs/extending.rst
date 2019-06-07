@@ -1,3 +1,3 @@
 ###########################
-EXTENDING SCRIPTURE BURRITO
+Extending Scripture Burrito
 ###########################
