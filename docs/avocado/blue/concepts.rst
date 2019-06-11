@@ -14,4 +14,4 @@ entity, such as a Scripture text project or a sign language dictionary. A flavor
 Flavors are typically quite broadly defined. Additional constraints may be added using **conventions**. For example, an audio convention may specify that 
 audio files represent whole chapters of Scripture, or that they are arranged according to a specific hierarchy. Burrito creators should respect any
 convention they include in the metadata. Burrito consumers may use conventions to decide how or whether to process a burrito. The semantics of no specified
-conventions is __caveat emptor__, ie nothing should be assumed about the content of the burrito beyond what is specified for the burrito flavor.
+conventions is *caveat emptor*, ie nothing should be assumed about the content of the burrito beyond what is specified for the burrito flavor.
