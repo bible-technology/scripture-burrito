@@ -3,8 +3,8 @@
 
 .. image:: ../../../logo/burrito_logo.png
 
-Scripture Burrito, Avocado Milestone (Blue)
-===========================================
+Avocado Milestone (Blue)
+========================
 
 .. toctree::
    :maxdepth: 4
