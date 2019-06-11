@@ -11,9 +11,4 @@ This is the official documentation for the evolving Scripture Burrito specificat
 .. toctree::
    :maxdepth: 4
 
-   introduction
-   generic_metadata
-   flavors
-   json
-   extending
-   appendices
+   avocado/blue/index
