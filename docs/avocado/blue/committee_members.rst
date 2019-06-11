@@ -21,6 +21,7 @@ The committee has continued to meet on a regular basis. Its members in June 2019
 * Jesse Griffin
 * Mark Howe
 * Joel Mathew
+* Jonathan Robie
 * Tim Steenwyk
 * Randall Tan
 * Benjamin Varghese
