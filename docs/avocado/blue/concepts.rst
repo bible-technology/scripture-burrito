@@ -2,7 +2,7 @@
 Concepts
 ########
 
-A **Burrito** is a collection of content plus metadata. That collection may be made available in various formats, such as a zip file, an Amazon S3 bucket
+A **burrito** is a collection of content plus metadata. That collection may be made available in various formats, such as a zip file, an Amazon S3 bucket
 or a series of API calls. The term "burrito" describes the content, not the distribution mechanism.
 
 Burritos contain **ingredients**. An ingredient is a file-like resource with a mimetype and, optionally, a canonical scope. Burritos typically contain several
