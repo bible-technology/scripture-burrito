@@ -29,18 +29,21 @@ The syntax is
 
 .. code-block: none
 
-   (<prefix>::)?<id>
+   <prefix>::<id>
 
 where
 
-* "prefix" is a NCName (an XML name-like thing with no colon)
+* "prefix" matches
+
+.. code-block:: none
+
+   [a-z]([0-9a-z_\-]*[0-9a-z])?
+
 
 * "id" matches
 
 .. code-block:: none
 
    [0-9A-Za-z]([0-9A-Za-z_-]{0,30}[0-9A-Za-z])?
-
-ie a string starting and ending with an alphanumeric character and containing alphanumeric characters, hyphens and underscores.
 
 IDs in this format can be tested for prefixedness (?!) by searching for "::", which seems unlikely to occur in any existing id schemes.

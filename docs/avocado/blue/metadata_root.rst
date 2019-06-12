@@ -16,6 +16,6 @@ The revision attribute is required and must match
 
 .. code-block:: none
 
-    [0-9A-Za-z]([0-9A-Za-z_-]{0,30}[0-9A-Za-z])?
+    [0-9A-Za-z]([0-9A-Za-z_-]{0,62}[0-9A-Za-z])?
 
 ie a string starting and ending with an alphanumeric character and containing alphanumeric characters, hyphens and underscores.
