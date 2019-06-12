@@ -1,0 +1,13 @@
+start = root_element
+
+root_element = element burritoMetadata {
+    attribute id  {text},
+    attribute revision {text},
+    id_server_element+
+}
+
+id_server_element = element idServer {
+    attribute prefix {text},
+    attribute local {xsd:boolean}?,
+    text
+}

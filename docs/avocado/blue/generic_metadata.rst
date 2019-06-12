@@ -6,6 +6,7 @@ Generic Metadata
    metadata_design
    metadata_ids
    metadata_root
+   metadata_idservers
    metadata_identification
    metadata_relationships
    metadata_agencies
