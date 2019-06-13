@@ -4,9 +4,9 @@ The Root Element
 
 .. code:: xml
 
-   <burritoMetadata id="dbl::0123456789abcdef" revision="23">...</burritoMetadata>
-   <burritoMetadata id="0123456789abcdef" revision="23">...</burritoMetadata>
-   <burritoMetadata id="ptx::52effb3a-8d28-11e9-8160-1bffe1337865" revision="6253499c-8d28-11e9-ad73-8735b9c61064">...</burritoMetadata>
+   <burritoMetadata id="dbl::0123456789abcdef" revision="23" version="0.1">...</burritoMetadata>
+   <burritoMetadata id="0123456789abcdef" revision="23" version="0.1">...</burritoMetadata>
+   <burritoMetadata id="ptx::52effb3a-8d28-11e9-8160-1bffe1337865" revision="6253499c-8d28-11e9-ad73-8735b9c61064" version="0.1">...</burritoMetadata>
 
 The document is in the null namespace. The root element is "burritoMetadata".
 
@@ -18,4 +18,4 @@ The revision attribute is required and must match
 
     [0-9A-Za-z]([0-9A-Za-z_-]{0,62}[0-9A-Za-z])?
 
-ie a string starting and ending with an alphanumeric character and containing alphanumeric characters, hyphens and underscores.
+The version attribute is required and must be 0.1.

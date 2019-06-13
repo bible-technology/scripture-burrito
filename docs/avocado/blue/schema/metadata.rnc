@@ -7,13 +7,15 @@ root_element = element burritoMetadata {
 }
 
 id_server_element = element idServer {
-    attribute prefix { xsd:anyURI },
+    attribute prefix {id_prefix_string},
     attribute local { xsd:boolean }?,
-    text
+    xsd:anyURI
 }
 
+id_prefix_string = xsd:string {pattern = "(x-)?[a-z]{2,}"}
+
 id_string = xsd:string {
-    pattern = "[a-z]([0-9a-z_\-]*[0-9a-z])?::[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
+    pattern = "(x-)?[a-z]{2,}::[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
 }
 
 revision_string = xsd:string {

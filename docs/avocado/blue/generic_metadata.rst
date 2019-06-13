@@ -7,11 +7,11 @@ Generic Metadata
    metadata_ids
    metadata_root
    metadata_idservers
+   metadata_type
    metadata_identification
    metadata_relationships
    metadata_agencies
    metadata_licenses
-   metadata_type
    metadata_languages
    metadata_countries
    metadata_names
