@@ -5,7 +5,10 @@ root_element = element burritoMetadata {
     attribute revision { revision_string },
     attribute version { xsd:string { pattern = "0.1(\..+)?" } },
     id_server_element+,
-    type_element
+    type_element,
+    (
+        identification_element
+    )
 }
 
 id_server_element = element idServer {
@@ -38,6 +41,135 @@ scripture_text_details_element = element details {
     element projectType { scripture_text_project_type_enum } &
     conventions_element?
 }
+
+identification_element = element identification {
+    element name {
+        name_like_content
+    }+ &
+    element description {
+        name_like_content
+    }* &
+    element abbreviation {
+        attribute lang {bcp47_string},
+        abbreviation_string
+    }* &
+    element dateCompleted {
+        loose_date
+    }? &
+    system_id*
+}
+
+system_id = known_system_id | x_system_id
+
+known_system_id = (gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id)
+
+gbc_system_id =
+  element systemId {
+    attribute type { "gbc" },
+    gbc_elements
+  }
+
+gbc_elements =
+  element id {
+    gbc_id_string
+  }
+
+ptreg_system_id =
+  element systemId {
+    attribute type { "ptreg" },
+    ptreg_elements
+ }
+
+tms_system_id =
+  element systemId {
+    attribute type { "tms" },
+    tms_elements
+  }
+
+tms_elements =
+  element id {
+    tms_id_string
+  }
+
+pt_system_id =
+  element systemId {
+    attribute type { "paratext" },
+    pt_elements
+  }
+
+pt_elements =
+  element name { trimmed_text } &
+  element fullName { trimmed_text } &
+  element csetId { trimmed_text }? &
+  element id { pt_id_string } &
+  (
+    element baseId { pt_id_string } &
+    element baseName { trimmed_text }
+  )?
+
+ptreg_elements =
+  element id { ptreg_id_string }
+
+reap_system_id =
+  element systemId {
+    attribute type { "reap" },
+    reap_elements
+  }
+
+reap_elements =
+  element id { reap_id_string }
+
+biblica_system_id =
+  element systemId {
+    attribute type { "biblica" },
+    biblica_elements
+  }
+
+biblica_elements =
+  element id { biblica_id_string }
+
+dbp_system_id =
+  element systemId {
+    attribute type { "dbp" },
+    dbp_elements
+  }
+
+dbp_elements =
+  element id { dbp_id_string }
+  
+x_system_id =
+  element systemId {
+    attribute type { x_thingey },
+    anything
+  }
+
+loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
+
+name_like_content = (
+    attribute lang {bcp47_string},
+    trimmed_text
+)
+
+# Strings and Enums
+
+biblica_id_string = xsd:string { pattern = "[0-9]{0,5}" }
+
+gbc_id_string = xsd:string { pattern = "[0-9a-f]{24}" }
+
+tms_id_string = xsd:string { pattern = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" }
+
+pt_id_string = xsd:string { pattern = "[0-9a-f]{40}" }
+
+ptreg_id_string = xsd:string { pattern = "[0-9a-zA-Z]{17}" }
+
+reap_id_string = xsd:anyURI
+
+dbp_id_string = xsd:string { pattern = "[A-Z0-9]{10}" }
+
+x_system_id_string = x_thingey
+
+bcp47_string = xsd:string { pattern = "[A-Za-z]{2,3}([\-_][A-Za-z0-9]+){0,4}" }
+trimmed_text = xsd:string { pattern = "\S(.+\S)?" }
 
 scripture_text_project_type_enum = (
     "standard" |
@@ -100,3 +232,5 @@ x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
 
 confidentiality_enum = "unrestricted" | "restricted" | "confidential"
+
+abbreviation_string = xsd:string { pattern = "\w+" }

@@ -24,5 +24,21 @@
             </conventions>
         </details>
     </type>
+    <identification>
+        <name lang="en">Scripture Burrito Demo Text Bible</name>
+        <name lang="fr">Crêpe mexicaine biblique surdimensionnée (démonstration)</name>
+        <description lang="en">A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce</description>
+        <abbreviation lang="fr">CMBS</abbreviation>
+        <dateCompleted>2015-05-01</dateCompleted>
+        <systemId type="gbc">
+            <id>55df02965117ad3f2201309b</id>
+        </systemId>
+        <systemId type="paratext">
+            <id>2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd</id>
+            <csetId>af680cd2580c1856d3765bee669fdaadd38afd1b</csetId>
+            <name>SUA</name>
+            <fullName>Susu Arabic</fullName>
+        </systemId>
+    </identification>
     <!-- ... -->
 </burritoMetadata>
