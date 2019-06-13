@@ -6,7 +6,7 @@
         <flavorType>scripture</flavorType>
         <hasCharacters>false</hasCharacters>
         <hasSource>true</hasSource>
-        <isPublishable>true</isPublishable>
+        <isPublishable>false</isPublishable>
         <confidentiality>
             <metadata>unrestricted</metadata>
             <publications>restricted</publications>
