@@ -74,4 +74,4 @@ Zero or more elements are allowed. The type element must be one of
 
 or an "unknown" type beginning with "x-".
 
-The content of the systemId depends on the type attribute: see the schema for more details.
+The content of the systemId element depends on the type attribute: see the schema for more details.
