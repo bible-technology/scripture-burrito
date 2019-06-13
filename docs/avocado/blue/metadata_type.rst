@@ -27,69 +27,69 @@ Each document must contain exactly one type element, immediately after the idSer
         </details>
     </type>
 
-    flavor
-    ======
+flavor
+======
 
-    Required, either one of
+Required, either one of
 
-    * scriptureText
+* scriptureText
 
-    * scriptureAudio
+* scriptureAudio
 
-    * scriptureSignLanguageVideo
+* scriptureSignLanguageVideo
 
-    * scripturePrint
+* scripturePrint
 
-    * scriptureBraille
+* scriptureBraille
 
-    or x-something.
+or x-something.
 
-    flavorType
-    ==========
+flavorType
+==========
 
-    Required, one of
+Required, one of
 
-    * scripture
+* scripture
 
-    * gloss
+* gloss
 
-    * paraScriptural
+* paraScriptural
 
-    hasCharacters
-    =============
+hasCharacters
+=============
 
-    Required boolean that specifies whether the flavor is text-based.
+Required boolean that specifies whether the flavor is text-based.
 
-    hasSource
-    =========
+hasSource
+=========
 
-    Required boolean that is set if source files are present, eg SFM files for Scripture text or WAV files for Scripture audio.
+Required boolean that is set if source files are present, eg SFM files for Scripture text or WAV files for Scripture audio.
 
-    isPublishable
-    =============
+isPublishable
+=============
 
-    Required boolean that is set if the burrito is considered to be "finished" enough to be published in some way.
+Required boolean that is set if the burrito is considered to be "finished" enough to be published in some way.
 
-    confidentiality
-    ===============
+confidentiality
+===============
 
-    This contains
+This contains
 
-    * metadata (required)
+* metadata (required)
 
-    * source (optional)
+* source (optional)
 
-    * publications (optional)
+* publications (optional)
 
-    each of which contains one of
+each of which contains one of
 
-    * unrestricted
+* unrestricted
 
-    * restricted
+* restricted
 
-    * confidential
+* confidential
 
-    details
-    =======
+details
+=======
 
-    The content of this element is flavor-specific.
+The content of this element is flavor-specific.
