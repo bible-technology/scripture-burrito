@@ -1,6 +1,6 @@
-###############################
-Example Scripture Text Document
-###############################
+#######################
+Scripture Text Document
+#######################
 
 .. literalinclude:: examples/scripture_text.xml
     :language: xml
