@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<burritoMetadata id="dbl::0123456789abcdef" revision="23" version="0.1">
+    <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
+    <idServer prefix="ptx">https://registry.paratext.org</idServer>
+    <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
+    <idServer prefix="myServer" local="true">http://localhost::8080</idServer>
+    <type>
+        <flavor>scriptureText</flavor>
+        <flavorType>scripture</flavorType>
+        <hasCharacters>true</hasCharacters>
+        <hasSource>true</hasSource>
+        <isPublishable>true</isPublishable>
+        <confidentiality>
+            <metadata>unrestricted</metadata>
+            <publications>restricted</publications>
+            <source>confidential</source>
+        </confidentiality>
+        <details>
+            <projectType>standard</projectType>
+            <conventions>
+                <convention version="1.0">usxDirs</convention>
+                <convention version="1.0">usxRefs</convention>
+                <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
+            </conventions>
+        </details>
+    </type>
+    <!-- ... -->
+</burritoMetadata>

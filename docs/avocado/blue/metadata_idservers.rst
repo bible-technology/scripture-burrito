@@ -10,7 +10,7 @@ Each document must contain at least one idServer element as the first child(ren)
         <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
         <idServer prefix="ptx">https://registry.paratext.org</idServer>
         <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
-        <idServer prefix="myServer" local="true">http://localhost::8080</idServer>
+        <idServer prefix="my_server" local="true">http://localhost::8080</idServer>
         <!-- ... -->
     </burritoMetadata>
 

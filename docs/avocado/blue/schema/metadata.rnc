@@ -3,7 +3,9 @@ start = root_element
 root_element = element burritoMetadata {
     attribute id  { id_string },
     attribute revision { revision_string },
-    id_server_element+
+    attribute version { xsd:string { pattern = "0.1(\..+)?" } },
+    id_server_element+,
+    type_element
 }
 
 id_server_element = element idServer {
@@ -12,12 +14,89 @@ id_server_element = element idServer {
     xsd:anyURI
 }
 
-id_prefix_string = xsd:string {pattern = "(x-)?[a-z]{2,}"}
+type_element = scripture_type_element
+
+scripture_type_element = scripture_text_type_element | scripture_x_type_element
+
+scripture_text_type_element = element type {
+    element flavor { "scriptureText" } &
+    element flavorType { "scripture" } &
+    element hasCharacters { "true" } &
+    element hasSource { xsd:boolean } &
+    element isPublishable { xsd:boolean } &
+    confidentiality_element &
+    scripture_text_details_element?
+}
+
+confidentiality_element = element confidentiality {
+    element metadata { confidentiality_enum } &
+    element source { confidentiality_enum } &
+    element publications { confidentiality_enum }
+}
+
+scripture_text_details_element = element details {
+    element projectType { scripture_text_project_type_enum } &
+    conventions_element?
+}
+
+scripture_text_project_type_enum = (
+    "standard" |
+    "daughter" |
+    "studyBible" |
+    "studyBibleAdditions" |
+    "backTranslation" |
+    "auxiliary" |
+    "transliterationManual"|
+    "transliterationWithEncoder"
+)
+
+x_scripture_text_project_string = x_thingey
+
+conventions_element = element conventions { convention_element+ }
+
+convention_element = element convention {
+    attribute version { version_string },
+    ( convention_enum | x_convention_string )
+}
+
+scripture_x_type_element = element type {
+    element flavor { x_thingey } &
+    element flavorType { "scripture" } &
+    element hasCharacters { xsd:boolean } &
+    element hasSource { xsd:boolean } &
+    element isPublishable { xsd:boolean } &
+    confidentiality_element &
+    x_details_element?
+}
+
+x_details_element = element details {
+    anything*
+}
+
+anything = element * { attribute * {text}* & anything* & text}
+
+id_prefix_string = xsd:string {pattern = "(x-)?[a-z][A-Za-z0-9]+"}
 
 id_string = xsd:string {
-    pattern = "(x-)?[a-z]{2,}::[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
+    pattern = "(x-)?[a-z][A-Za-z0-9]+::[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
 }
 
 revision_string = xsd:string {
     pattern = "[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
 }
+
+flavor_enum = "scriptureText"
+
+x_flavor_string = x_thingey
+
+flavor_type_enum = "scripture" | "gloss" | "paraScriptural"
+
+version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
+
+convention_enum = "usxRefs" | "usxDirs"
+
+x_convention_string = x_thingey
+
+x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
+
+confidentiality_enum = "unrestricted" | "restricted" | "confidential"

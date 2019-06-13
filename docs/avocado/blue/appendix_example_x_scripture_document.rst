@@ -1,6 +1,6 @@
 #########################
-Example Metadata Document
+X-Type Scripture Document
 #########################
 
-.. literalinclude:: examples/example1.xml
+.. literalinclude:: examples/scripture_x.xml
     :language: xml

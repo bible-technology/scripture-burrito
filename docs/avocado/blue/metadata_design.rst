@@ -3,12 +3,27 @@ Overall Design
 ##############
 
 The design of the DBL Metadata schema has evolved as several curators have made changes to meet new needs.
-Scripture Burrito metadata follows the design philosophy of DBL Metadata v2.2.
+Scripture Burrito metadata largely follows the design philosophy of DBL Metadata v2.2.
+
+Flavor-Specific Details in Two Known Locations
+==============================================
+
+Most of the schema applies to all flavors of burrito. Flags and enums in the type section toggle various sets of functionality in a generic way.
+The two locations that vary according to the flavor are
+
+* metadata/type/details
+
+* metadataBurrito/format
 
 No Namespaces
 =============
 
 All Scripture Burrito metadata is in the null namespace, to simplify the processing model (given that not every Burrito user will be an XML power user.)
+
+camelCase
+=========
+
+So not hyphenated-names or underscored_names.
 
 Most Content in Text, not Attributes
 ====================================
