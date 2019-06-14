@@ -1,14 +1,13 @@
 start = root_element
 
+# ROOT ELEMENT
+
 root_element = element burritoMetadata {
     attribute id  { id_string },
     attribute revision { revision_string },
     attribute version { xsd:string { pattern = "0.1(\..+)?" } },
     id_server_element+,
-    type_element,
-    (
-        identification_element
-    )
+    ( scripture_elements | gloss_elements | parascriptural_elements | peripheral_elements )
 }
 
 id_server_element = element idServer {
@@ -17,9 +16,39 @@ id_server_element = element idServer {
     xsd:anyURI
 }
 
-type_element = scripture_type_element
+# FLAVORS
+
+scripture_elements = 
+    (
+        scripture_type_element,
+        identification_element
+    )
+
+gloss_elements = 
+    (
+        gloss_type_element,
+        identification_element
+    )
+
+parascriptural_elements = 
+    (
+        parascriptural_type_element,
+        identification_element
+    )
+    
+peripheral_elements = 
+    (
+        peripheral_type_element,
+        identification_element
+    )
 
 scripture_type_element = scripture_text_type_element | scripture_x_type_element
+
+gloss_type_element = element type { empty }
+
+parascriptural_type_element = parascriptural_word_alignment_type_element
+
+peripheral_type_element = element type { empty }
 
 scripture_text_type_element = element type {
     element flavor { "scriptureText" } &
@@ -39,6 +68,15 @@ scripture_x_type_element = element type {
     x_details_element?
 }
 
+parascriptural_word_alignment_type_element = element type {
+    element flavor { "parascripturalWordAlignment" } &
+    element flavorType { "parascriptural" } &
+    element hasCharacters { "false" } &
+    parascriptural_type_elements &
+    common_type_elements &
+    parascriptural_word_alignment_details_element?
+}
+
 common_type_elements = (
     element hasSource { xsd:boolean } &
     element isPublishable { xsd:boolean } &
@@ -49,6 +87,12 @@ common_type_elements = (
 scripture_type_elements = (
     canon_spec_element
 )
+
+parascriptural_type_elements = empty
+
+parascriptural_word_alignment_details_element = element details { empty }
+
+############################################
 
 canon_spec_element =
     element canonSpec {
@@ -64,53 +108,6 @@ x_canon_component = element component {
     attribute name { x_thingey },
     element book {canonical_book_enum}+
 }
-
-canon_types = "DC" | "NT" | "OT, DC, NT" | "OT, NT, DC" | "OT, NT" | "OT+, NT" | "OT" | "OT+"
-
-canon_component_enum =
-    "armenianApostolicDC" |
-    "armenianApostolicOT" |
-    "armenianClassicalOT" |
-    "armenianNT" |
-    "catholicAndAnglicanDC" |
-    "catholicLxxDC" |
-    "catholicLxxOT" |
-    "catholicLxxSeparatedDC" |
-    "catholicPlusLutheranDC" |
-    "catholicVulgateDC" |
-    "catholicVulgateOT" |
-    "catholicVulgateSeparatedDC" |
-    "czechKralickaDC" |
-    "danishLutheranDC" |
-    "ethiopianOrthodoxDC" |
-    "ethiopianOrthodoxNT" |
-    "ethiopianOrthodoxOT" |
-    "ethiopianProtestantNT" |
-    "ethiopianProtestantOT" |
-    "georgianOrthodoxDC" |
-    "georgianOrthodoxOT" |
-    "georgianSynodalDC" |
-    "germanLutheranDC" |
-    "greekOrthodoxDC" |
-    "greekOrthodoxOT" |
-    "kjvDC" |
-    "kjvNonDC" |
-    "lutheranNT" |
-    "romanianOrthodoxDC" |
-    "romanianOrthodoxOT" |
-    "russianNT" |
-    "russianOrthodoxDC" |
-    "russianOrthodoxOT" |
-    "russianProtestantOT" |
-    "russianSynodalDC" |
-    "syriacNT" |
-    "syriacOT" |
-    "tanakhOT" |
-    "turkishInterconfessionalDC" |
-    "vulgateCatholicBible" |
-    "westernInterconfessionalDC" |
-    "westernNT" |
-    "westernOT"
 
 confidentiality_element = element confidentiality {
     element metadata { confidentiality_enum } &
@@ -146,7 +143,7 @@ identification_element = element identification {
 
 system_id = known_system_id | x_system_id
 
-known_system_id = (gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id)
+known_system_id = ( gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id | agmt_system_id )
 
 gbc_system_id =
   element systemId {
@@ -221,6 +218,15 @@ dbp_system_id =
 
 dbp_elements =
   element id { dbp_id_string }
+
+agmt_system_id =
+  element systemId {
+    attribute type { "agmt" },
+    agmt_elements
+  }
+
+agmt_elements =
+  element id { agmt_id_string }
   
 x_system_id =
   element systemId {
@@ -228,14 +234,27 @@ x_system_id =
     anything
   }
 
-loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
-
 name_like_content = (
     attribute lang {bcp47_string},
     trimmed_text
 )
 
-# Strings and Enums
+conventions_element = element conventions { convention_element+ }
+
+convention_element = element convention {
+    attribute version { version_string },
+    ( convention_enum | x_convention_string )
+}
+
+x_details_element = element details {
+    anything*
+}
+
+anything = element * { attribute * {text}* & anything* & text}
+
+# STRINGS AND ENUMS
+
+loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
 
 biblica_id_string = xsd:string { pattern = "[0-9]{0,5}" }
 
@@ -251,9 +270,12 @@ reap_id_string = xsd:anyURI
 
 dbp_id_string = xsd:string { pattern = "[A-Z0-9]{10}" }
 
+agmt_id_string = xsd:string
+
 x_system_id_string = x_thingey
 
 bcp47_string = xsd:string { pattern = "[A-Za-z]{2,3}([\-_][A-Za-z0-9]+){0,4}" }
+
 trimmed_text = xsd:string { pattern = "\S(.+\S)?" }
 
 scripture_text_project_type_enum = (
@@ -268,19 +290,6 @@ scripture_text_project_type_enum = (
 )
 
 x_scripture_text_project_string = x_thingey
-
-conventions_element = element conventions { convention_element+ }
-
-convention_element = element convention {
-    attribute version { version_string },
-    ( convention_enum | x_convention_string )
-}
-
-x_details_element = element details {
-    anything*
-}
-
-anything = element * { attribute * {text}* & anything* & text}
 
 id_prefix_string = xsd:string {pattern = "(x-)?[a-z][A-Za-z0-9]+"}
 
@@ -429,3 +438,50 @@ dc_book_enum = (
   "4BA" | # 4 Baruch
   "LAO"   # Laodiceans
 )
+
+canon_types = "DC" | "NT" | "OT, DC, NT" | "OT, NT, DC" | "OT, NT" | "OT+, NT" | "OT" | "OT+"
+
+canon_component_enum =
+    "armenianApostolicDC" |
+    "armenianApostolicOT" |
+    "armenianClassicalOT" |
+    "armenianNT" |
+    "catholicAndAnglicanDC" |
+    "catholicLxxDC" |
+    "catholicLxxOT" |
+    "catholicLxxSeparatedDC" |
+    "catholicPlusLutheranDC" |
+    "catholicVulgateDC" |
+    "catholicVulgateOT" |
+    "catholicVulgateSeparatedDC" |
+    "czechKralickaDC" |
+    "danishLutheranDC" |
+    "ethiopianOrthodoxDC" |
+    "ethiopianOrthodoxNT" |
+    "ethiopianOrthodoxOT" |
+    "ethiopianProtestantNT" |
+    "ethiopianProtestantOT" |
+    "georgianOrthodoxDC" |
+    "georgianOrthodoxOT" |
+    "georgianSynodalDC" |
+    "germanLutheranDC" |
+    "greekOrthodoxDC" |
+    "greekOrthodoxOT" |
+    "kjvDC" |
+    "kjvNonDC" |
+    "lutheranNT" |
+    "romanianOrthodoxDC" |
+    "romanianOrthodoxOT" |
+    "russianNT" |
+    "russianOrthodoxDC" |
+    "russianOrthodoxOT" |
+    "russianProtestantOT" |
+    "russianSynodalDC" |
+    "syriacNT" |
+    "syriacOT" |
+    "tanakhOT" |
+    "turkishInterconfessionalDC" |
+    "vulgateCatholicBible" |
+    "westernInterconfessionalDC" |
+    "westernNT" |
+    "westernOT"

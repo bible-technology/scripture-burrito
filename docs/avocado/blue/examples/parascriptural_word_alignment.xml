@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<burritoMetadata id="agmt::irvmal-4-wh" revision="1" version="0.1">
+    <idServer prefix="agmt" >http://registry.autographamt.com</idServer>
+    <type>
+        <flavor>parascripturalWordAlignment</flavor>
+        <flavorType>parascriptural</flavorType>
+        <hasCharacters>false</hasCharacters>
+        <hasSource>false</hasSource>
+        <isPublishable>true</isPublishable>
+        <confidentiality>
+            <metadata>unrestricted</metadata>
+            <publications>unrestricted</publications>
+            <source>private</source>
+        </confidentiality>
+        <scope>
+            <bookScope>MAT</bookScope>
+            <bookScope>MRK</bookScope>
+            <bookScope>LUK</bookScope>
+            <bookScope>JHN</bookScope>
+            <bookScope>ACT</bookScope>
+            <bookScope>1CO</bookScope>
+            <bookScope>2CO</bookScope>
+            <bookScope>GAL</bookScope>
+            <bookScope>EPH</bookScope>
+            <bookScope>PHP</bookScope>
+            <bookScope>COL</bookScope>
+            <bookScope>1TH</bookScope>
+            <bookScope>2TH</bookScope>
+            <bookScope>1TI</bookScope>
+            <bookScope>2TI</bookScope>
+            <bookScope>TIT</bookScope>
+            <bookScope>PHM</bookScope>
+            <bookScope>HEB</bookScope>
+            <bookScope>JAS</bookScope>
+            <bookScope>1PE</bookScope>
+            <bookScope>2PE</bookScope>
+            <bookScope>1JN</bookScope>
+            <bookScope>2JN</bookScope>
+            <bookScope>3JN</bookScope>
+            <bookScope>JUD</bookScope>
+            <bookScope>REV</bookScope>
+        </scope>
+        <details><!--
+            <autoAlignerVer>0.8</autoAlignerVer>
+            <stemmer>
+                <name>AgMT Malayalam Stemmer</name>
+                <version>1.2</version>
+                <affixes>true</affixes>
+            </stemmer>
+            <stopWords>true</stopWords>
+            <manualAligment>
+                <userId>anil.john</userId>
+                <refs>
+                    <lid>
+                        <start>25535</start>
+                        <end>26415</end>
+                    </lid>
+                    <lid>29321</lid>
+                </refs>
+            </manualAligment> -->
+        </details>
+    </type>
+    <identification>
+        <name lang="en">Malayalam WH Greek Interlinear</name>
+        <description lang="en">Alignment of Malyalam IRV v.4 with Wescort-Hort Greek Text</description>
+        <!-- testing systemId - not needed because information is in root element -->
+        <systemId type="agmt">
+            <id>irvmal-4-wh</id>
+        </systemId>
+    </identification>
+    <!-- ... -->
+</burritoMetadata>

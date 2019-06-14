@@ -24,7 +24,7 @@ The Identification Section
 name
 ====
 
-Zero or more elements are allowed, containing
+One or more elements are required, containing
 
 * a *lang* attribute (bcp 47)
 

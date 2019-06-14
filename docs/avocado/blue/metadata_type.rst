@@ -54,9 +54,9 @@ Required, either one of
 
 * scriptureBraille
 
-* textStoryGloss
+* glossedTextStory
 
-* wordAlignment
+* parascripturalWordAlignment
 
 or x-something.
 
@@ -69,7 +69,7 @@ Required, one of
 
 * gloss (a retelling of Scripture that abbreviates, augments and/or reorganized the content, but in a way that can still be mapped to scripture)
 
-* paraScriptural (non-scriptural content that maps onto scripture via a versification scheme)
+* parascriptural (non-scriptural content that maps onto scripture via a versification scheme)
 
 * peripheral (non-scriptural content that may be useful within the Bible ecosystem, but which does not map onto scripture via a versification scheme)
 

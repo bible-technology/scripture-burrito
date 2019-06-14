@@ -21,5 +21,4 @@ the local attribute signifies that the ids are for internal use only, eg within 
 The exact definition of "internal" and "export" is left to the consenting adults exchanging burritos, but local prefixes should
 never be assumed to be portable and never expected to survive a journey through a different ecosystem.
 
-The enclosed text is a URI. In the schema this means "pretty much any string", but using URLs that resolve to a server endpoint would
- help with discoverability.
+The enclosed text is a URI. In the schema this means "pretty much any string", but using URLs that resolve to a server endpoint would help with discoverability.
