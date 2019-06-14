@@ -10,10 +10,22 @@
         <hasCharacters>true</hasCharacters>
         <hasSource>true</hasSource>
         <isPublishable>true</isPublishable>
+        <scope>
+            <bookScope>GEN</bookScope><!-- Use the shortest possible description, ie not "GEN 1-50" or "GEN 1:1-31;GEN 2:..." -->
+            <bookScope>EXO 1-12</bookScope>
+            <bookScope>LEV 2:3-3:7</bookScope>
+            <bookScope>MAT 1:3,5,7-11</bookScope>
+        </scope>
+        <canonSpec type="OT, NT">
+            <component name="westernOT"/> <!-- All books in component do not need to be present -->
+            <component name="x-matthewOnlyMillenialists"><!-- Do not do this for translations in progress - that's what scope is for! -->
+                <book>MAT</book>
+            </component>
+        </canonSpec>
         <confidentiality>
             <metadata>unrestricted</metadata>
             <publications>restricted</publications>
-            <source>confidential</source>
+            <source>private</source>
         </confidentiality>
         <details>
             <projectType>standard</projectType>

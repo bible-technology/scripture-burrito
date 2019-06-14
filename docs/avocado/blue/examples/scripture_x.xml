@@ -7,10 +7,16 @@
         <hasCharacters>false</hasCharacters>
         <hasSource>true</hasSource>
         <isPublishable>false</isPublishable>
+        <scope>
+            <bookScope>JHN 3:16</bookScope>
+        </scope>
+        <canonSpec type="NT">
+            <component name="westernNT"/>
+        </canonSpec>
         <confidentiality>
             <metadata>unrestricted</metadata>
             <publications>restricted</publications>
-            <source>confidential</source>
+            <source>private</source>
         </confidentiality>
         <details>
             <colorModel>stephaniesFeltTips</colorModel>
