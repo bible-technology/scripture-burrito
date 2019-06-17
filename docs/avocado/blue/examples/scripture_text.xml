@@ -57,5 +57,25 @@
         <relation flavor="glossedTextStory" relationType="expression" id="x-atl::gl47" revision="1.2.3"/>
         <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="agmt::irvmal-4-wh" revision="1"/>
     </relationships>
+    <agencies>
+        <contributor>
+            <id>dbl::23</id>
+            <isRightsHolder>true</isRightsHolder>
+            <name lang="en">Burritos R Us Inc</name>
+            <abbr lang="en">BRU</abbr>
+            <url>https://burritos-r-us.org</url>
+            <contributes>
+                <content>true</content>
+                <finance>true</finance>
+                <management>true</management>
+                <publication>true</publication>
+                <qa>true</qa>
+            </contributes>
+        </contributor>
+        <administrator>
+            <id>dbl::29</id>
+            <name lang="en">We Manage Burritos</name>
+        </administrator>
+    </agencies>
     <!-- ... -->
 </burritoMetadata>
