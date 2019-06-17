@@ -72,5 +72,21 @@
     <relationships>
         <relation relationType="target" flavor="scriptureText" id="dbl::0123456789abcdef" revision="23"/>
     </relationships>
+    <agencies>
+        <contributor>
+            <id>agmt::23</id>
+            <isRightsHolder>true</isRightsHolder>
+            <name lang="en">An AGMT Org</name>
+            <abbr lang="en">AAO</abbr>
+            <url>https://something.something</url>
+            <contributes>
+                <content>true</content>
+                <finance>true</finance>
+                <management>true</management>
+                <publication>true</publication>
+                <qa>true</qa>
+            </contributes>
+        </contributor>
+    </agencies>
     <!-- ... -->
 </burritoMetadata>

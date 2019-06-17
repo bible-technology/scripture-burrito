@@ -32,5 +32,15 @@
     <relationships>
         <relation relationType="peripheral" flavor="x-colorByNumbers" id="paintstore::color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
+    <agencies>
+        <contributor>
+            <id>paintstore::1</id>
+            <isRightsHolder>true</isRightsHolder>
+            <name lang="en">Stephanie</name>
+            <contributes>
+                <content>true</content>
+            </contributes>
+        </contributor>
+    </agencies>
     <!-- ... -->
 </burritoMetadata>
