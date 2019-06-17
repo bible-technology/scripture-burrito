@@ -29,5 +29,8 @@
         <name lang="en">My First Fingerpainted Bible</name>
         <description lang="en">Someone said we needed digital Bibles and I thought... oh, never mind</description>
     </identification>
+    <relationships>
+        <relation relationType="peripheral" flavor="x-colorByNumbers" id="paintstore::color_my_bible_beautiful" revision="first_draft"/>
+    </relationships>
     <!-- ... -->
 </burritoMetadata>

@@ -21,25 +21,37 @@ id_server_element = element idServer {
 scripture_elements = 
     (
         scripture_type_element,
-        identification_element
+        (
+            identification_element &
+            relationships_element?
+        )
     )
 
 gloss_elements = 
     (
         gloss_type_element,
-        identification_element
+        (
+            identification_element &
+            relationships_element?
+        )
     )
 
 parascriptural_elements = 
     (
         parascriptural_type_element,
-        identification_element
+        (
+            identification_element &
+            relationships_element?
+        )
     )
     
 peripheral_elements = 
     (
         peripheral_type_element,
-        identification_element
+        (
+            identification_element &
+            relationships_element?
+        )
     )
 
 scripture_type_element = scripture_text_type_element | scripture_x_type_element
@@ -250,6 +262,54 @@ x_details_element = element details {
     anything*
 }
 
+relationships_element =
+  element relationships {
+    relation_element+
+  }
+
+relation_element = source_relation_element | target_relation_element | expression_relation_element | parascriptural_relation_element | peripheral_relation_element
+
+source_relation_element =
+  element relation {
+    attribute relationType { "source" },
+    attribute flavor { "scriptureText" | "scriptureAudio" | x_thingey},
+    attribute id { id_string },
+    attribute revision { revision_string },
+    attribute publicationId {publication_id}?
+  }
+
+target_relation_element =
+  element relation {
+    attribute relationType { "target" },
+    attribute flavor { "scriptureText" | "scriptureAudio" | "scripturePrint" | "scriptureSignLanguageVideo" | "scriptureBraille" | "glossedTextStory" | x_thingey},
+    attribute id { id_string },
+    attribute revision { revision_string }
+  }
+
+expression_relation_element =
+  element relation {
+    attribute relationType { "expression" },
+    attribute flavor { "scriptureAudio" | "scripturePrint" | "scriptureSignLanguageVideo" | "scriptureBraille" | "glossedTextStory" | x_thingey},
+    attribute id { id_string },
+    attribute revision { revision_string }
+  }
+
+parascriptural_relation_element =
+  element relation {
+    attribute relationType { "parascriptural" },
+    attribute flavor { "parascripturalWordAlignment" | x_thingey },
+    attribute id { id_string },
+    attribute revision { revision_string }
+  }
+
+peripheral_relation_element =
+  element relation {
+    attribute relationType { "peripheral" },
+    attribute flavor { x_thingey },
+    attribute id { id_string },
+    attribute revision { revision_string }
+  }
+
 anything = element * { attribute * {text}* & anything* & text}
 
 # STRINGS AND ENUMS
@@ -298,8 +358,10 @@ id_string = xsd:string {
 }
 
 revision_string = xsd:string {
-    pattern = "[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
+    pattern = "[0-9A-Za-z]([0-9A-Za-z_.\-]{0,62}[0-9A-Za-z])?"
 }
+
+publication_id = xsd:string { pattern = "[A-Za-z][A-Za-z0-9_\-]{0,31}" }
 
 flavor_enum = "scriptureText"
 

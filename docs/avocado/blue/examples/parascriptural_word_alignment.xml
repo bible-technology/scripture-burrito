@@ -69,5 +69,8 @@
             <id>irvmal-4-wh</id>
         </systemId>
     </identification>
+    <relationships>
+        <relation relationType="target" flavor="scriptureText" id="dbl::0123456789abcdef" revision="23"/>
+    </relationships>
     <!-- ... -->
 </burritoMetadata>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <burritoMetadata id="dbl::0123456789abcdef" revision="23" version="0.1">
     <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
-    <idServer prefix="ptx">https://registry.paratext.org</idServer>
+    <idServer prefix="agmt" >http://registry.autographamt.com</idServer>
     <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
     <idServer prefix="myServer" local="true">http://localhost::8080</idServer>
     <type>
@@ -52,5 +52,10 @@
             <fullName>Susu Arabic</fullName>
         </systemId>
     </identification>
+    <relationships>
+        <relation flavor="scripturePrint" relationType="expression" id="dbl::fedcba9876543210" revision="2"/>
+        <relation flavor="glossedTextStory" relationType="expression" id="x-atl::gl47" revision="1.2.3"/>
+        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="agmt::irvmal-4-wh" revision="1"/>
+    </relationships>
     <!-- ... -->
 </burritoMetadata>
