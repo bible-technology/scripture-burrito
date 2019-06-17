@@ -4,6 +4,8 @@ The Agencies Section
 
 The required agencies element contains at least one contributor element and one optional administrator element.
 
+.. code-block:: xml
+
     <agencies>
         <contributor>
             <id>dbl::23</id>
