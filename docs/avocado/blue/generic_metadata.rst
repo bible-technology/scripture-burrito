@@ -20,4 +20,4 @@ Generic Metadata
    metadata_publications
    metadata_copyright
    metadata_promotion
-   metadata_archive_status
+   metadata_snapshot

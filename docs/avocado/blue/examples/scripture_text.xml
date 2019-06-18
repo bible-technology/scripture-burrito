@@ -117,5 +117,22 @@
         <statement lang="fr" format="html" type="short"><p>© Burritos R Us 2019.</p></statement>
         <statement lang="en" format="plain" type="full">© Burritos R Us 2019. All rights reserved.</statement>
     </copyright>
+    <promotion>
+        <statement format="plain" lang="fr">L'équipe de Burritos R Us vous remercie d'avoir téléchargé notre burrito !</statement>
+        <statement format="html" lang="fr">
+            <p>L'équipe de <a href="https://burritos-r-us.org/about">Burritos R Us</a> vous remercie d'avoir téléchargé notre burrito !</p>
+        </statement>
+    </promotion>
+    <snapshot>
+        <creation>
+            <software>Burrito Factory 0.1</software>
+            <user id="dbl::1234">Jane Doe</user>
+        </creation>
+        <uploading>
+            <software>Burrito Truck 0.1</software>
+            <user id="dbl::5678"/>
+        </uploading>
+        <comments>Experimenting with i18n</comments>
+    </snapshot>
     <!-- ... -->
 </burritoMetadata>

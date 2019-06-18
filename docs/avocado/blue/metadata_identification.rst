@@ -48,6 +48,11 @@ Zero or more element are allowed, containing
 
 * text consisting of one or more word characters
 
+dateStarted
+===========
+
+Optional element containing a timestamp (in one of a variety of XSD formats)
+
 dateCompleted
 =============
 

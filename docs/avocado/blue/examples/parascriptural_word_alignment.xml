@@ -88,5 +88,12 @@
             </contributes>
         </contributor>
     </agencies>
+    <snapshot>
+        <creation>
+            <software>Autographa 0.34</software>
+            <user>Joel Mathew</user>
+        </creation>
+        <comments>Fix alignment for MAT 8</comments>
+    </snapshot>
     <!-- ... -->
 </burritoMetadata>

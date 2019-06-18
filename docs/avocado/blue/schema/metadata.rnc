@@ -29,7 +29,9 @@ scripture_elements =
             languages_element &
             countries_element? &
             names_element &
-            copyright_element?
+            copyright_element? &
+            promotion_element? &
+            snapshot_element
         )
     )
 
@@ -44,7 +46,9 @@ gloss_elements =
             languages_element &
             countries_element? &
             names_element &
-            copyright_element?
+            copyright_element? &
+            promotion_element? &
+            snapshot_element
         )
     )
 
@@ -59,7 +63,9 @@ parascriptural_elements =
             languages_element? &
             countries_element? &
             names_element? &
-            copyright_element?
+            copyright_element? &
+            promotion_element? &
+            snapshot_element
         )
     )
     
@@ -74,7 +80,9 @@ peripheral_elements =
             languages_element? &
             countries_element? &
             names_element? &
-            copyright_element?
+            copyright_element? &
+            promotion_element? &
+            snapshot_element
         )
     )
 
@@ -172,6 +180,9 @@ identification_element = element identification {
     element abbreviation {
         abbreviation_like_content
     }* &
+    element dateStarted {
+        loose_date
+    }? &
     element dateCompleted {
         loose_date
     }? &
@@ -454,6 +465,46 @@ html_copyright_statement_element = element statement {
     attribute lang { bcp47_string },
     simplified_html+
 }
+
+# PROMOTION
+
+promotion_element =
+  element promotion { promotion_statement_element+ }
+
+promotion_statement_element = plain_promotion_statement_element | html_promotion_statement_element
+
+plain_promotion_statement_element = element statement {
+    attribute format { "plain" },
+    attribute lang { bcp47_string },
+    trimmed_text
+}
+
+html_promotion_statement_element = element statement {
+    attribute format { "html" },
+    attribute lang { bcp47_string },
+    simplified_html+
+}
+
+# SNAPSHOT
+
+snapshot_element =
+  element snapshot {
+      element creation {
+            element software { trimmed_text }? &
+            element user {
+                attribute id { id_string }?,
+                trimmed_text?
+            }?
+        }? &
+      element uploading {
+            element software { trimmed_text }? &
+            element user {
+                attribute id { id_string }?,
+                trimmed_text?
+            }?
+        }? &
+        element comments { trimmed_text }
+  }
 
 # HTML
 

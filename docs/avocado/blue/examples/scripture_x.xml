@@ -27,7 +27,7 @@
     </type>
     <identification>
         <name lang="en">My First Fingerpainted Bible</name>
-        <description lang="en">Someone said we needed digital Bibles and I thought... oh, never mind</description>
+        <description lang="en">Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind</description>
     </identification>
     <relationships>
         <relation relationType="peripheral" flavor="x-colorByNumbers" id="paintstore::color_my_bible_beautiful" revision="first_draft"/>
@@ -53,5 +53,11 @@
             <short lang="en">John</short>
         </name>
     </names>
+    <promotion>
+        <statement lang="en" format="plain">Thanx 4 looking at my finger painting!!! You are soooo cool!!! Love Stephanie xx</statement>
+    </promotion>
+    <snapshot>
+        <comments>This is fuuuuuuuun!</comments>
+    </snapshot>
     <!-- ... -->
 </burritoMetadata>
