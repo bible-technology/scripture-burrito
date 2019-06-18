@@ -45,7 +45,7 @@ gloss_elements =
             license_element? &
             languages_element &
             countries_element? &
-            names_element &
+            names_element? &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -90,7 +90,9 @@ peripheral_elements =
 
 scripture_type_element = scripture_text_type_element | scripture_x_type_element
 
-gloss_type_element = element type { empty }
+gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
+
+gloss_x_type_element = element type { empty }
 
 parascriptural_type_element = parascriptural_word_alignment_type_element
 
@@ -114,6 +116,15 @@ scripture_x_type_element = element type {
     x_details_element?
 }
 
+glossed_text_story_type_element = element type {
+    element flavor { "glossedTextStory" } &
+    element flavorType { "gloss" } &
+    element hasCharacters { "true" } &
+    gloss_type_elements &
+    common_type_elements &
+    glossed_text_story_details_element?
+}
+
 parascriptural_word_alignment_type_element = element type {
     element flavor { "parascripturalWordAlignment" } &
     element flavorType { "parascriptural" } &
@@ -133,6 +144,12 @@ common_type_elements = (
 scripture_type_elements = (
     canon_spec_element
 )
+
+gloss_type_elements = (
+    canon_spec_element?
+)
+
+glossed_text_story_details_element = element details { empty }
 
 parascriptural_type_elements = empty
 
@@ -191,7 +208,7 @@ identification_element = element identification {
 
 system_id = known_system_id | x_system_id
 
-known_system_id = ( gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id | agmt_system_id )
+known_system_id = ( gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id | agmt_system_id | uw_system_id )
 
 gbc_system_id =
   element systemId {
@@ -275,7 +292,16 @@ agmt_system_id =
 
 agmt_elements =
   element id { agmt_id_string }
-  
+
+uw_system_id =
+  element systemId {
+    attribute type { "uw" },
+    uw_elements
+  }
+
+uw_elements =
+  element id { uw_id_string }
+
 x_system_id =
   element systemId {
     attribute type { x_thingey },
@@ -588,6 +614,8 @@ reap_id_string = xsd:anyURI
 dbp_id_string = xsd:string { pattern = "[A-Z0-9]{10}" }
 
 agmt_id_string = xsd:string
+
+uw_id_string = xsd:string
 
 x_system_id_string = x_thingey
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<burritoMetadata id="uw::0123456789abcdef" revision="1" version="0.1">
+    <idServer prefix="uw">https://www.unfoldingword.org</idServer>
+    <type>
+        <flavor>glossedTextStory</flavor>
+        <flavorType>gloss</flavorType>
+        <hasCharacters>true</hasCharacters>
+        <hasSource>true</hasSource>
+        <isPublishable>true</isPublishable>
+        <scope>
+            <bookScope>GEN</bookScope>
+        </scope>
+        <confidentiality>
+            <metadata>unrestricted</metadata>
+            <publications>restricted</publications>
+            <source>private</source>
+        </confidentiality>
+        <details/>
+    </type>
+    <identification>
+        <name lang="en">English Name</name>
+        <name lang="fr">French Name</name>
+        <description lang="en">English Description</description>
+        <description lang="fr">French Description</description>
+        <abbreviation lang="fr">OBSFR</abbreviation>
+    </identification>
+    <agencies>
+        <contributor>
+            <id>uw::1</id>
+            <isRightsHolder>true</isRightsHolder>
+            <name lang="en">Unfolding Word</name>
+            <abbr lang="en">uW</abbr>
+            <url>https://www.unfoldingword.org</url>
+            <contributes>
+                <content>true</content>
+                <finance>true</finance>
+                <management>true</management>
+                <publication>true</publication>
+                <qa>true</qa>
+            </contributes>
+        </contributor>
+    </agencies>
+    <license>
+        <url>https://www.unfoldingword.org/license</url>
+    </license>
+    <languages>
+        <language>
+            <bcp47>fr</bcp47>
+            <name lang="fr">français</name>
+            <name lang="en">French</name>
+            <scriptDirection>LTR</scriptDirection>
+        </language>
+    </languages>
+    <countries>
+        <country>
+            <iso>FR</iso>
+            <name lang="fr">France</name>
+            <name lang="en">France</name>
+        </country>
+    </countries>
+    <copyright>
+        <statement lang="en" format="plain" type="full">© ???</statement>
+    </copyright>
+    <snapshot>
+        <comments>First Burrito</comments>
+    </snapshot>
+</burritoMetadata>
