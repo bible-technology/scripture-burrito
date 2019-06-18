@@ -17,16 +17,6 @@ several of these ecosystems may provide IDs within a single metadata document.
 ID Syntax
 =========
 
-This is surprisingly challenging since
-
-* we need to allow for a wide range of ids from diverse systems
-
-* we need to be able to distinguish prefixes from the start of an unqualified idServer
-
-* it is considered a bad id to use XML namespace-like notation for things that are not XML namespaces (ie no single colons)
-
-The syntax is
-
 .. code-block:: none
 
    <prefix>::<id>
