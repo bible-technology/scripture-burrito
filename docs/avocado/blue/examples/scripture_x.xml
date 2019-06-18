@@ -32,16 +32,6 @@
     <relationships>
         <relation relationType="peripheral" flavor="x-colorByNumbers" id="paintstore::color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
-    <agencies>
-        <contributor>
-            <id>paintstore::1</id>
-            <isRightsHolder>true</isRightsHolder>
-            <name lang="en">Stephanie</name>
-            <contributes>
-                <content>true</content>
-            </contributes>
-        </contributor>
-    </agencies>
     <license>
         <publicDomain/>
     </license>
@@ -52,5 +42,11 @@
             <scriptDirection>LTR</scriptDirection>
         </language>
     </languages>
+    <countries>
+        <country>
+            <iso>US</iso>
+            <name lang="en">United States of America</name>
+        </country>
+    </countries>
     <!-- ... -->
 </burritoMetadata>

@@ -2,7 +2,7 @@
 The Agencies Section
 ####################
 
-The required agencies element contains at least one contributor element and one optional administrator element.
+The optional agencies element contains at least one contributor element and, optionally, one administrator element.
 
 .. code-block:: xml
 

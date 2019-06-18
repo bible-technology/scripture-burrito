@@ -89,5 +89,18 @@
             <scriptDirection>LTR</scriptDirection>
         </language>
     </languages>
+    <countries>
+        <country>
+            <iso>FR</iso>
+            <name lang="fr">France</name>
+            <name lang="en">France</name>
+            <name lang="de">Frankreich</name>
+        </country>
+        <country>
+            <iso>BE</iso>
+            <name lang="fr">Belgique</name>
+            <name lang="nl">België</name>
+        </country>
+    </countries>
     <!-- ... -->
 </burritoMetadata>

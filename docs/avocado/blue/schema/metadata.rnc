@@ -24,9 +24,10 @@ scripture_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element &
+            agencies_element? &
             license_element? &
-            languages_element
+            languages_element &
+            countries_element?
         )
     )
 
@@ -36,9 +37,10 @@ gloss_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element &
+            agencies_element? &
             license_element? &
-            languages_element
+            languages_element &
+            countries_element?
         )
     )
 
@@ -48,9 +50,10 @@ parascriptural_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element &
+            agencies_element? &
             license_element? &
-            languages_element?
+            languages_element? &
+            countries_element?
         )
     )
     
@@ -60,9 +63,10 @@ peripheral_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element &
+            agencies_element? &
             license_element? &
-            languages_element?
+            languages_element? &
+            countries_element?
         )
     )
 
@@ -389,6 +393,17 @@ language_element =
     element rod { rod_string }?
 }
 
+# COUNTRIES
+
+countries_element = element countries { country_element+ }
+
+country_element = element country {
+  element iso { country_iso_string } &
+    element name {
+        name_like_content
+    }+
+}
+
 # STRINGS AND ENUMS
 
 loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
@@ -631,3 +646,5 @@ language_script_direction_enum = (
   "LTR" | # Left to Right
   "RTL"   # RTL (Right to Left)
 )
+
+country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
