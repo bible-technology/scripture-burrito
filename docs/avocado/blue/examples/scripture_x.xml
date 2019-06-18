@@ -45,5 +45,12 @@
     <license>
         <publicDomain/>
     </license>
+    <languages>
+        <language>
+            <bcp47>en</bcp47>
+            <name lang="en">English</name>
+            <scriptDirection>LTR</scriptDirection>
+        </language>
+    </languages>
     <!-- ... -->
 </burritoMetadata>

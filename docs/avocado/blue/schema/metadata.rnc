@@ -25,7 +25,8 @@ scripture_elements =
             identification_element &
             relationships_element? &
             agencies_element &
-            license_element?
+            license_element? &
+            languages_element
         )
     )
 
@@ -36,7 +37,8 @@ gloss_elements =
             identification_element &
             relationships_element? &
             agencies_element &
-            license_element?
+            license_element? &
+            languages_element
         )
     )
 
@@ -47,7 +49,8 @@ parascriptural_elements =
             identification_element &
             relationships_element? &
             agencies_element &
-            license_element?
+            license_element? &
+            languages_element?
         )
     )
     
@@ -58,7 +61,8 @@ peripheral_elements =
             identification_element &
             relationships_element? &
             agencies_element &
-            license_element?
+            license_element? &
+            languages_element?
         )
     )
 
@@ -371,6 +375,20 @@ license_element = element license {
     element url { xsd:anyURI }
 }
 
+# LANGUAGES
+
+languages_element = element languages { language_element+ }
+
+language_element =
+  element language {
+    element bcp47 { bcp47_string } &
+    element name {
+        name_like_content
+    }+ &
+    element scriptDirection { language_script_direction_enum } &
+    element rod { rod_string }?
+}
+
 # STRINGS AND ENUMS
 
 loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
@@ -606,3 +624,10 @@ canon_component_enum =
     "westernInterconfessionalDC" |
     "westernNT" |
     "westernOT"
+    
+rod_string = xsd:string { pattern = "[0-9]{5}" }
+
+language_script_direction_enum = (
+  "LTR" | # Left to Right
+  "RTL"   # RTL (Right to Left)
+)

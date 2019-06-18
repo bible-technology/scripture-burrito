@@ -80,5 +80,14 @@
     <license>
         <url>https://burritos-r-us.org/licenses/3247</url>
     </license>
+    <languages>
+        <language>
+            <bcp47>fr</bcp47>
+            <name lang="fr">français</name>
+            <name lang="en">French</name>
+            <name lang="de">Französisch</name>
+            <scriptDirection>LTR</scriptDirection>
+        </language>
+    </languages>
     <!-- ... -->
 </burritoMetadata>
