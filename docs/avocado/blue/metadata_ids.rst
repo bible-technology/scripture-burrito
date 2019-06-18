@@ -27,7 +27,7 @@ This is surprisingly challenging since
 
 The syntax is
 
-.. code-block: none
+.. code-block:: none
 
    <prefix>::<id>
 
