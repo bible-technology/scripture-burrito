@@ -28,7 +28,8 @@ scripture_elements =
             license_element? &
             languages_element &
             countries_element? &
-            names_element
+            names_element &
+            copyright_element?
         )
     )
 
@@ -42,7 +43,8 @@ gloss_elements =
             license_element? &
             languages_element &
             countries_element? &
-            names_element
+            names_element &
+            copyright_element?
         )
     )
 
@@ -56,7 +58,8 @@ parascriptural_elements =
             license_element? &
             languages_element? &
             countries_element? &
-            names_element?
+            names_element? &
+            copyright_element?
         )
     )
     
@@ -70,7 +73,8 @@ peripheral_elements =
             license_element? &
             languages_element? &
             countries_element? &
-            names_element?
+            names_element? &
+            copyright_element?
         )
     )
 
@@ -429,6 +433,90 @@ names_name =
         abbreviation_string
     }*
 }
+
+# COPYRIGHT
+
+copyright_element =
+  element copyright { copyright_statement_element+ }
+
+copyright_statement_element = plain_copyright_statement_element | html_copyright_statement_element
+
+plain_copyright_statement_element = element statement {
+    attribute format { "plain" },
+    attribute type { "full" | "short" },
+    attribute lang { bcp47_string },
+    trimmed_text
+}
+
+html_copyright_statement_element = element statement {
+    attribute format { "html" },
+    attribute type { "full" | "short" },
+    attribute lang { bcp47_string },
+    simplified_html+
+}
+
+# HTML
+
+simplified_html = sh_block_element+
+
+sh_block_element = (
+    sh_p |
+    sh_h1 |
+    sh_h2 |
+    sh_h3 |
+    sh_ul |
+    sh_ol |
+    sh_blockquote
+)
+
+sh_p = element p { mixed { sh_char_markup* } }
+
+sh_h1 = element h1 { mixed { sh_char_markup* } }
+
+sh_h2 = element h2 { mixed { sh_char_markup* } }
+
+sh_h3 = element h3 { mixed { sh_char_markup* } }
+
+sh_ol = element ol { sh_li+ }
+
+sh_ul = element ul { sh_li+ }
+
+sh_li = element li { mixed { sh_char_markup* & sh_block_element* } }
+
+sh_blockquote = element blockquote { sh_block_element+ }
+
+sh_char_markup = (
+  sh_a |
+  sh_img |
+  sh_br |
+  sh_strong |
+  sh_b |
+  sh_em |
+  sh_i
+)
+
+sh_a =
+  element a {
+    attribute href { xsd:anyURI },
+    mixed { sh_char_markup*  }
+  }
+
+sh_img =
+  element img {
+    attribute src { xsd:anyURI },
+    attribute alt { trimmed_text }
+  }
+
+sh_br = element br { empty }
+
+sh_strong = element strong { mixed { sh_char_markup* } }
+
+sh_b = element b { mixed { sh_char_markup* } }
+
+sh_em = element em { mixed { sh_char_markup* } }
+
+sh_i = element i { mixed { sh_char_markup* } }
+
 
 # STRINGS AND ENUMS
 
