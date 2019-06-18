@@ -24,7 +24,8 @@ scripture_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element
+            agencies_element &
+            license_element?
         )
     )
 
@@ -34,7 +35,8 @@ gloss_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element
+            agencies_element &
+            license_element?
         )
     )
 
@@ -44,7 +46,8 @@ parascriptural_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element
+            agencies_element &
+            license_element?
         )
     )
     
@@ -54,7 +57,8 @@ peripheral_elements =
         (
             identification_element &
             relationships_element? &
-            agencies_element
+            agencies_element &
+            license_element?
         )
     )
 
@@ -359,6 +363,13 @@ rights_admin_element =
     element abbr { abbreviation_like_content }* &
     element url { xsd:anyURI }?
   }
+  
+# LICENSE
+
+license_element = element license {
+    element publicDomain { empty } |
+    element url { xsd:anyURI }
+}
 
 # STRINGS AND ENUMS
 

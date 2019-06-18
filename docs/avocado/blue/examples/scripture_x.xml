@@ -42,5 +42,8 @@
             </contributes>
         </contributor>
     </agencies>
+    <license>
+        <publicDomain/>
+    </license>
     <!-- ... -->
 </burritoMetadata>
