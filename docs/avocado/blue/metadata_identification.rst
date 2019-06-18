@@ -63,6 +63,8 @@ systemId
 
 Zero or more elements are allowed. The type element must be one of
 
+* agmt (Autographa MT)
+
 * biblica (Biblica)
 
 * dbp (Faith Comes By Hearing's Digital Bible Platform)
@@ -76,6 +78,8 @@ Zero or more elements are allowed. The type element must be one of
 * reap (SIL)
 
 * tms (UBS)
+
+* uw (Unfolding Word)
 
 or an "unknown" type beginning with "x-".
 
