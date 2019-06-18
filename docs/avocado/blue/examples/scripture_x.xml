@@ -48,5 +48,10 @@
             <name lang="en">United States of America</name>
         </country>
     </countries>
+    <names>
+        <name id="john">
+            <short lang="en">John</short>
+        </name>
+    </names>
     <!-- ... -->
 </burritoMetadata>

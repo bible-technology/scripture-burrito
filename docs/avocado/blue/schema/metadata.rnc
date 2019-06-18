@@ -27,7 +27,8 @@ scripture_elements =
             agencies_element? &
             license_element? &
             languages_element &
-            countries_element?
+            countries_element? &
+            names_element
         )
     )
 
@@ -40,7 +41,8 @@ gloss_elements =
             agencies_element? &
             license_element? &
             languages_element &
-            countries_element?
+            countries_element? &
+            names_element
         )
     )
 
@@ -53,7 +55,8 @@ parascriptural_elements =
             agencies_element? &
             license_element? &
             languages_element? &
-            countries_element?
+            countries_element? &
+            names_element?
         )
     )
     
@@ -66,7 +69,8 @@ peripheral_elements =
             agencies_element? &
             license_element? &
             languages_element? &
-            countries_element?
+            countries_element? &
+            names_element?
         )
     )
 
@@ -402,6 +406,28 @@ country_element = element country {
     element name {
         name_like_content
     }+
+}
+
+# NAMES
+
+names_element =
+  element names { names_name* }
+
+names_name =
+  element name {
+    attribute id { xsd:NCName } &
+    element long {
+        attribute lang { bcp47_string },
+        trimmed_text
+    }* &
+    element short {
+        attribute lang { bcp47_string },
+        trimmed_text
+    }+ &
+    element abbr {
+        attribute lang { bcp47_string },
+        abbreviation_string
+    }*
 }
 
 # STRINGS AND ENUMS

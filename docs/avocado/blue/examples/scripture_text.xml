@@ -102,5 +102,13 @@
             <name lang="nl">België</name>
         </country>
     </countries>
+    <names>
+        <name id="book-MAT">
+            <short lang="en">MATTHEW</short>
+            <short lang="fr">MATTHIEU</short>
+            <abbr lang="fr">MT</abbr>
+            <long lang="fr">EVANGILE SELON MATTHIEU</long>
+        </name>
+    </names>
     <!-- ... -->
 </burritoMetadata>
