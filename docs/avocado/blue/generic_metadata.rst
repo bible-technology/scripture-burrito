@@ -16,7 +16,6 @@ Generic Metadata
    metadata_countries
    metadata_names
    metadata_ingredients
-   metadata_source
    metadata_publications
    metadata_copyright
    metadata_promotion

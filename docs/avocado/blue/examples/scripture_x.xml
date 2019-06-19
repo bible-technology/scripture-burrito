@@ -53,6 +53,14 @@
             <short lang="en">John</short>
         </name>
     </names>
+    <ingredients>
+        <ingredient>
+            <path>myPainting.png</path>
+            <size>1234</size>
+            <mimeType>image/png</mimeType>
+            <checksum>01234567012345670123456701234567</checksum>
+        </ingredient>
+    </ingredients>
     <promotion>
         <statement lang="en" format="plain">Thanx 4 looking at my finger painting!!! You are soooo cool!!! Love Stephanie xx</statement>
     </promotion>

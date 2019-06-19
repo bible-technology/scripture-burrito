@@ -88,6 +88,8 @@
             </contributes>
         </contributor>
     </agencies>
+    <ingredients>
+    </ingredients>
     <snapshot>
         <creation>
             <software>Autographa 0.34</software>

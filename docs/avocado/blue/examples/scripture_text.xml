@@ -103,13 +103,133 @@
         </country>
     </countries>
     <names>
-        <name id="book-MAT">
-            <short lang="en">MATTHEW</short>
-            <short lang="fr">MATTHIEU</short>
-            <abbr lang="fr">MT</abbr>
-            <long lang="fr">EVANGILE SELON MATTHIEU</long>
+        <name id="book-gen">
+            <abbr lang="fr">Gn</abbr>
+            <short lang="fr">Genèse</short>
+            <long lang="fr">La Genèse</long>
+        </name>
+        <name id="book-exo">
+            <abbr lang="fr">Ex</abbr>
+            <short lang="fr">Exode</short>
+            <long lang="fr">L’Exode</long>
+        </name>
+        <name id="book-lev">
+            <abbr lang="fr">Lv</abbr>
+            <short lang="fr">Lévitique</short>
+            <long lang="fr">Le Lévitique</long>
+        </name>
+        <name id="book-mat">
+            <short lang="en">Matthew</short>
+            <short lang="fr">Matthieu</short>
+            <abbr lang="fr">Mt</abbr>
+            <long lang="fr">Evangile selon Matthieu</long>
         </name>
     </names>
+    <ingredients>
+        <ingredient isSource="true">
+            <path>source/usfm/OTINT.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intot</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/GEN.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>GEN</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/EXO.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>EXO 1-12</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/LEV.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>LEV 2:3-3:7</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/INTNT.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intnt</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/INTMAT.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intMAT</scopeOrRole>
+        </ingredient>
+        <ingredient isSource="true">
+            <path>source/usfm/MAT.sfm</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-sfm</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>MAT 1:3,5,7-11</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/OTINT.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intot</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/GEN.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>GEN</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/EXO.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>EXO 1-12</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/LEV.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>LEV 2:3-3:7</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/INTNT.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intnt</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/INTMAT.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>intMAT</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>release/text/USX_1/MAT.usx</path>
+            <size>1234</size>
+            <mimeType>text/x-burrito-usx</mimeType>
+            <checksum>0123456789abcdef0123456789abcdef</checksum>
+            <scopeOrRole>MAT 1:3,5,7-11</scopeOrRole>
+        </ingredient>
+        <ingredient>
+            <path>unknownAdditive.foo</path>
+            <size>99</size>
+            <mimeType>application/octet-stream</mimeType>
+        </ingredient>
+    </ingredients>
     <copyright>
         <statement lang="fr" format="plain" type="full">© Burritos R Us 2019. Tous droits réservés.</statement>
         <statement lang="fr" format="html" type="full"><p><b>© Burritos R Us 2019.</b></p><p><i>Tous droits réservés.</i></p></statement>

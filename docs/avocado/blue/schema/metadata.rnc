@@ -29,6 +29,7 @@ scripture_elements =
             languages_element &
             countries_element? &
             names_element &
+            ingredients_element &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -46,6 +47,7 @@ gloss_elements =
             languages_element &
             countries_element? &
             names_element? &
+            ingredients_element &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -63,6 +65,7 @@ parascriptural_elements =
             languages_element? &
             countries_element? &
             names_element? &
+            ingredients_element &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -80,6 +83,7 @@ peripheral_elements =
             languages_element? &
             countries_element? &
             names_element? &
+            ingredients_element &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -178,7 +182,7 @@ confidentiality_element = element confidentiality {
 
 scope_element = element scope { scope_book+ }
 
-scope_book = element bookScope { pt_reference_string }
+scope_book = element bookScope { canonical_reference_string }
 
 scripture_text_details_element = element details {
     element projectType { scripture_text_project_type_enum } &
@@ -471,6 +475,23 @@ names_name =
     }*
 }
 
+# INGREDIENTS
+
+ingredients_element = element ingredients { ingredient_element+ }
+
+ingredient_element =  element ingredient {
+    attribute isSource {xsd:boolean}? &
+    element path { path_string } &
+    element size { xsd:nonNegativeInteger } &
+    element mimeType { mime_type_string } &
+    element checksum { checksum }? &
+    element scopeOrRole { canonical_reference_string | peripheral_enum }?
+}
+
+# SOURCE
+
+# PUBLICATIONS
+
 # COPYRIGHT
 
 copyright_element =
@@ -666,7 +687,31 @@ confidentiality_enum = "unrestricted" | "restricted" | "private"
 
 abbreviation_string = xsd:string { pattern = "\w+" }
 
-pt_reference_string = xsd:string { pattern = "((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)(;(((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)))*" }
+canonical_reference_string = xsd:string { pattern = "((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)(;(((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)))*" }
+
+peripheral_enum =
+    "abbreviations" |
+    "alphacontents" |
+    "chron" |
+    "cnc" |
+    "contents" |
+    "cover" |
+    "foreword" |
+    "glo" |
+    "halftitle" |
+    "imprimatur" |
+    xsd:string { pattern = "int(bible|dc|epistles|gospels|hist|nt|ot|pent|poetry|prophecy)" } |
+    xsd:string { pattern = "int(GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)" } |
+    "lxxquotes" |
+    "maps" |
+    "measures" |
+    "ndx" |
+    "preface" |
+    "promo" |
+    "pubdata" |
+    "spine" |
+    "tdx" |
+    "title"
 
 canonical_book_enum = (ot_book_enum | nt_book_enum | dc_book_enum)
 
@@ -841,3 +886,9 @@ language_script_direction_enum = (
 )
 
 country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
+
+checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
+
+mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
+
+path_string = xsd:string { pattern = "\c+(/\c+)*\.\c+" }
