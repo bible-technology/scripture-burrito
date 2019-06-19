@@ -42,11 +42,16 @@ The ingredients element is required for all burritos, and must contain at least 
         </ingredient>
     </ingredients>
 
+isSource
+========
+
+This optional flag labels the ingredient as being a source file. (This has implications for visibility and for use in publications.)
+
 path
 ====
 
 The relative location of the ingredient within the burrito. Characters that may be used in XML names may be included in each step of the
-path, which uses the "/" character to separate steps. The path ends with .<suffix>.
+path, which uses the "/" character to separate steps. The path ends with ".<suffix>".
 
 size
 ====

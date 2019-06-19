@@ -124,6 +124,15 @@
             <abbr lang="fr">Mt</abbr>
             <long lang="fr">Evangile selon Matthieu</long>
         </name>
+        <name id="frontmatter">
+            <short lang="fr">Avant de lire Matthieu ...</short>
+        </name>
+        <name id="intnt">
+            <short lang="fr">A propos du Nouveau Testament</short>
+        </name>
+        <name id="intmat">
+            <short lang="fr">A propos de Matthieu</short>
+        </name>
     </names>
     <ingredients>
         <ingredient isSource="true">
@@ -230,6 +239,17 @@
             <mimeType>application/octet-stream</mimeType>
         </ingredient>
     </ingredients>
+    <publications>
+        <publication id="matthew-only" default="true">
+            <structure>
+                <division nameId="frontmatter">
+                    <content src="release/text/USX_1/INTNT.usx" nameId="intnt"/>
+                    <content src="release/text/USX_1/INTMAT.usx" nameId="intmat"/>
+                </division>
+                <content src="release/text/USX_1/MAT.usx" nameId="book-mat"/>
+            </structure>
+        </publication>
+    </publications>
     <copyright>
         <statement lang="fr" format="plain" type="full">© Burritos R Us 2019. Tous droits réservés.</statement>
         <statement lang="fr" format="html" type="full"><p><b>© Burritos R Us 2019.</b></p><p><i>Tous droits réservés.</i></p></statement>

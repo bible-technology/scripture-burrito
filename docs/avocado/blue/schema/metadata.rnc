@@ -30,6 +30,7 @@ scripture_elements =
             countries_element? &
             names_element &
             ingredients_element &
+            publications_element? &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -48,6 +49,7 @@ gloss_elements =
             countries_element? &
             names_element? &
             ingredients_element &
+            publications_element? &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -66,6 +68,7 @@ parascriptural_elements =
             countries_element? &
             names_element? &
             ingredients_element &
+            publications_element? &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -84,6 +87,7 @@ peripheral_elements =
             countries_element? &
             names_element? &
             ingredients_element &
+            publications_element? &
             copyright_element? &
             promotion_element? &
             snapshot_element
@@ -488,9 +492,43 @@ ingredient_element =  element ingredient {
     element scopeOrRole { canonical_reference_string | peripheral_enum }?
 }
 
-# SOURCE
-
 # PUBLICATIONS
+
+publications_element =
+  element publications { publication_element+ }
+
+publication_element =
+  element publication {
+    attribute id { publication_id } &
+    attribute default { xsd:boolean }? &
+    element name {
+        name_like_content
+    }* &
+    element description {
+        name_like_content
+    }* &
+    element abbreviation {
+        abbreviation_like_content
+    }* &
+    countries_element? &
+    scope_element? &
+    canon_spec_element? &
+    element structure { publication_divisions_or_content }
+}
+
+publication_divisions_or_content = ( publication_structure_division | publication_structure_content )+
+
+publication_structure_division =
+  element division {
+    attribute nameId { xsd:NCName },
+    publication_divisions_or_content
+  }
+
+publication_structure_content =
+  element content {
+    attribute nameId { xsd:NCName }? &
+    attribute src { path_string }
+  }
 
 # COPYRIGHT
 
