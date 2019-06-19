@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="dcs::0123456789abcdef" revision="1" version="0.1">
+<burritoMetadata id="urn:dcs::unfoldingword/en_obs" revision="94263a75308f91567c3c77ba862d53cbf6c80378" version="5">
     <idServer prefix="dcs">https://git.door43.org</idServer>
     <type>
         <flavor>glossedTextStory</flavor>
@@ -24,7 +24,7 @@
     </identification>
     <agencies>
         <contributor>
-            <id>dcs::613</id>
+            <id>urn:dcs::unfoldingword</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">unfoldingWord</name>
             <abbr lang="en">uW</abbr>
@@ -58,6 +58,6 @@
         <statement lang="en" format="plain" type="full">Copyright © 2019 by unfoldingWord</statement>
     </copyright>
     <snapshot>
-        <comments>Version 4</comments>
+        <comments>Version 5</comments>
     </snapshot>
 </burritoMetadata>
