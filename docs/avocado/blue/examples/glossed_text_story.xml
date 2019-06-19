@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="uw::0123456789abcdef" revision="1" version="0.1">
-    <idServer prefix="uw">https://www.unfoldingword.org</idServer>
+<burritoMetadata id="dcs::0123456789abcdef" revision="1" version="0.1">
+    <idServer prefix="dcs">https://git.door43.org</idServer>
     <type>
         <flavor>glossedTextStory</flavor>
         <flavorType>gloss</flavorType>
@@ -18,17 +18,15 @@
         <details/>
     </type>
     <identification>
-        <name lang="en">English Name</name>
-        <name lang="fr">French Name</name>
-        <description lang="en">English Description</description>
-        <description lang="fr">French Description</description>
-        <abbreviation lang="fr">OBSFR</abbreviation>
+        <name lang="en">unfoldingWord® Open Bible Stories</name>
+        <description lang="en">unrestricted visual Bible stories</description>
+        <abbreviation lang="en">en_obs</abbreviation>
     </identification>
     <agencies>
         <contributor>
-            <id>uw::1</id>
+            <id>dcs::613</id>
             <isRightsHolder>true</isRightsHolder>
-            <name lang="en">Unfolding Word</name>
+            <name lang="en">unfoldingWord</name>
             <abbr lang="en">uW</abbr>
             <url>https://www.unfoldingword.org</url>
             <contributes>
@@ -41,27 +39,25 @@
         </contributor>
     </agencies>
     <license>
-        <url>https://www.unfoldingword.org/license</url>
+        <url>https://creativecommons.org/licenses/by-sa/4.0/</url>
     </license>
     <languages>
         <language>
-            <bcp47>fr</bcp47>
-            <name lang="fr">français</name>
-            <name lang="en">French</name>
+            <bcp47>en</bcp47>
+            <name lang="en">English</name>
             <scriptDirection>LTR</scriptDirection>
         </language>
     </languages>
     <countries>
         <country>
-            <iso>FR</iso>
-            <name lang="fr">France</name>
-            <name lang="en">France</name>
+            <iso>US</iso>
+            <name lang="en">United States of America</name>
         </country>
     </countries>
     <copyright>
-        <statement lang="en" format="plain" type="full">© ???</statement>
+        <statement lang="en" format="plain" type="full">Copyright © 2019 by unfoldingWord</statement>
     </copyright>
     <snapshot>
-        <comments>First Burrito</comments>
+        <comments>Version 4</comments>
     </snapshot>
 </burritoMetadata>
