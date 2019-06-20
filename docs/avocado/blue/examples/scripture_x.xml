@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="paintstore::0123456789abcdef" revision="1" version="0.1">
-    <idServer prefix="paintstore" local="true">http://localhost::8080</idServer>
+<burritoMetadata id="urn:sburrito:x-paintstore:0123456789abcdef" revision="1" version="0.1">
+    <idServer prefix="x-paintstore" local="true">http://localhost:8080</idServer>
     <type>
         <flavor>x-scriptureFingerPainting</flavor>
         <flavorType>scripture</flavorType>
@@ -30,7 +30,7 @@
         <description lang="en">Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind</description>
     </identification>
     <relationships>
-        <relation relationType="peripheral" flavor="x-colorByNumbers" id="paintstore::color_my_bible_beautiful" revision="first_draft"/>
+        <relation relationType="peripheral" flavor="x-colorByNumbers" id="urn:sburrito:x-paintstore:color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
     <license>
         <publicDomain/>

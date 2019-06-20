@@ -695,10 +695,10 @@ scripture_text_project_type_enum = (
 
 x_scripture_text_project_string = x_thingey
 
-id_prefix_string = xsd:string {pattern = "(x-)?[a-z][A-Za-z0-9]+"}
+id_prefix_string = xsd:string {pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}"}
 
 id_string = xsd:string {
-    pattern = "(x-)?[a-z][A-Za-z0-9]+::[0-9A-Za-z]([0-9A-Za-z_\-]{0,62}[0-9A-Za-z])?"
+    pattern = "urn:sburrito:[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)+"
 }
 
 revision_string = xsd:string {

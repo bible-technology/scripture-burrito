@@ -8,7 +8,7 @@ The optional agencies element contains at least one contributor element and, opt
 
     <agencies>
         <contributor>
-            <id>dbl::23</id>
+            <id>urn:sburrito:dbl:23</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">Burritos R Us Inc</name>
             <abbr lang="en">BRU</abbr>
@@ -22,7 +22,7 @@ The optional agencies element contains at least one contributor element and, opt
             </contributes>
         </contributor>
         <administrator>
-            <id>dbl::29</id>
+            <id>urn:sburrito:dbl:29</id>
             <name lang="en">We Manage Burritos</name>
         </administrator>
     </agencies>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="dbl::0123456789abcdef" revision="23" version="0.1">
+<burritoMetadata id="urn:sburrito:dbl:0123456789abcdef" revision="23" version="0.1">
     <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
     <idServer prefix="agmt" >http://registry.autographamt.com</idServer>
     <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
-    <idServer prefix="myServer" local="true">http://localhost::8080</idServer>
+    <idServer prefix="myServer" local="true">http://localhost:8080</idServer>
     <type>
         <flavor>scriptureText</flavor>
         <flavorType>scripture</flavorType>
@@ -53,13 +53,13 @@
         </systemId>
     </identification>
     <relationships>
-        <relation flavor="scripturePrint" relationType="expression" id="dbl::fedcba9876543210" revision="2"/>
-        <relation flavor="glossedTextStory" relationType="expression" id="x-atl::gl47" revision="1.2.3"/>
-        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="agmt::irvmal-4-wh" revision="1"/>
+        <relation flavor="scripturePrint" relationType="expression" id="urn:sburrito:dbl:fedcba9876543210" revision="2"/>
+        <relation flavor="glossedTextStory" relationType="expression" id="urn:sburrito:x-atl:gl47" revision="1.2.3"/>
+        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="urn:sburrito:agmt:irvmal-4-wh" revision="1"/>
     </relationships>
     <agencies>
         <contributor>
-            <id>dbl::23</id>
+            <id>urn:sburrito:dbl:23</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">Burritos R Us Inc</name>
             <abbr lang="en">BRU</abbr>
@@ -73,7 +73,7 @@
             </contributes>
         </contributor>
         <administrator>
-            <id>dbl::29</id>
+            <id>urn:sburrito:dbl:29</id>
             <name lang="en">We Manage Burritos</name>
         </administrator>
     </agencies>
@@ -241,6 +241,7 @@
     </ingredients>
     <publications>
         <publication id="matthew-only" default="true">
+            <name lang="fr">Matthew Only!</name>
             <structure>
                 <division nameId="frontmatter">
                     <content src="release/text/USX_1/INTNT.usx" nameId="intnt"/>
@@ -266,11 +267,11 @@
     <snapshot>
         <creation>
             <software>Burrito Factory 0.1</software>
-            <user id="dbl::1234">Jane Doe</user>
+            <user id="urn:sburrito:dbl:1234">Jane Doe</user>
         </creation>
         <uploading>
             <software>Burrito Truck 0.1</software>
-            <user id="dbl::5678"/>
+            <user id="urn:sburrito:dbl:5678"/>
         </uploading>
         <comments>Experimenting with i18n</comments>
     </snapshot>

@@ -19,12 +19,6 @@ several of these ecosystems may provide IDs within a single metadata document.
 ID Syntax
 =========
 
-This is surprisingly challenging since
-
-* we need to allow for a wide range of ids from diverse systems
-
-* we need to be able to distinguish prefixes from the start of an unqualified idServer
-
 The syntax follows the Universal Resource Name scheme as documented in RFC2141_
 
 .. _RFC2141: https://tools.ietf.org/html/rfc2141
@@ -34,7 +28,7 @@ The syntax is
 
 .. code-block:: none
 
-   urn:<namespace ID>:<namespace-specific string>
+   urn:sburrito:<namespace ID>:<namespace-specific string>
 
 where
 
