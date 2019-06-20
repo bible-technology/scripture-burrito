@@ -2,7 +2,7 @@
 The Promotion Section
 #####################
 
-A copyright element may appear in any burrito. When present, the copyright element must include at least one statement element.
+A promotion element may appear in any burrito. When present, the promotion element must include at least one statement element.
 
 .. code-block:: xml
 
