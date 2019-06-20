@@ -43,6 +43,6 @@ where
 
 .. code-block:: none
 
-   [0-9A-Za-z\(\)\,\-\.\+\*:=@;$_!']
+   ([0-9A-Za-z\\,\-.+*=@;$_!'])+(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)*
 
 IDs in this format can be tested for prefixedness (?!) by searching for ``urn:([a-zA-Z0-9\-]+):.*``.
