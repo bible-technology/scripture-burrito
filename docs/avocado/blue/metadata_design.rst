@@ -22,15 +22,13 @@ The flavorType element specifies one of four basic document types:
 required, optional, or illegal. This mechanism means that a document processor can make assumptions about the "shape" of the document without necessarily
 having any information about the precise flavor it is processing. This is useful for cataloguing and for handling x- extensions.
 
-Flavor-Specific Details in Two Known Locations
-==============================================
+Flavor-Specific Details in One Known Location
+=============================================
 
 Most of the schema applies to all flavors of burrito. Flags and enums in the type section toggle various sets of functionality in a generic way.
-The two locations that vary according to the flavor are
+The two location the shape of which varies according to the flavor is
 
-* metadata/type/details
-
-* metadataBurrito/format
+* metadata/type/flavorDetails
 
 No Namespaces
 =============

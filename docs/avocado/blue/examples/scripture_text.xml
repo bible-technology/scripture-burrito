@@ -7,9 +7,6 @@
     <type>
         <flavor>scriptureText</flavor>
         <flavorType>scripture</flavorType>
-        <hasCharacters>true</hasCharacters>
-        <hasSource>true</hasSource>
-        <isPublishable>true</isPublishable>
         <scope>
             <bookScope>GEN</bookScope><!-- Use the shortest possible description, ie not "GEN 1-50" or "GEN 1:1-31;GEN 2:..." -->
             <bookScope>EXO 1-12</bookScope>
@@ -27,14 +24,14 @@
             <publications>restricted</publications>
             <source>private</source>
         </confidentiality>
-        <details>
+        <flavorDetails>
             <projectType>standard</projectType>
             <conventions>
                 <convention version="1.0">usxDirs</convention>
                 <convention version="1.0">usxRefs</convention>
                 <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
             </conventions>
-        </details>
+        </flavorDetails>
     </type>
     <identification>
         <name lang="en">Scripture Burrito Demo Text Bible</name>

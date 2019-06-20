@@ -4,9 +4,6 @@
     <type>
         <flavor>glossedTextStory</flavor>
         <flavorType>gloss</flavorType>
-        <hasCharacters>true</hasCharacters>
-        <hasSource>true</hasSource>
-        <isPublishable>true</isPublishable>
         <scope>
             <bookScope>GEN</bookScope>
         </scope>
@@ -15,7 +12,7 @@
             <publications>restricted</publications>
             <source>private</source>
         </confidentiality>
-        <details/>
+        <flavorDetails/>
     </type>
     <identification>
         <name lang="en">unfoldingWord® Open Bible Stories</name>

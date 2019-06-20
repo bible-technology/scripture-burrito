@@ -5,8 +5,6 @@
         <flavor>parascripturalWordAlignment</flavor>
         <flavorType>parascriptural</flavorType>
         <hasCharacters>false</hasCharacters>
-        <hasSource>false</hasSource>
-        <isPublishable>true</isPublishable>
         <confidentiality>
             <metadata>unrestricted</metadata>
             <publications>unrestricted</publications>
@@ -41,7 +39,7 @@
             <bookScope>JUD</bookScope>
             <bookScope>REV</bookScope>
         </scope>
-        <details><!--
+        <flavorDetails><!--
             <autoAlignerVer>0.8</autoAlignerVer>
             <stemmer>
                 <name>AgMT Malayalam Stemmer</name>
@@ -59,7 +57,7 @@
                     <lid>29321</lid>
                 </refs>
             </manualAligment> -->
-        </details>
+        </flavorDetails>
     </type>
     <identification>
         <name lang="en">Malayalam WH Greek Interlinear</name>
