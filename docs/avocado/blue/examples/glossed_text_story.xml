@@ -21,7 +21,7 @@
     </identification>
     <agencies>
         <contributor>
-            <id>urn:sb:dcs:unfoldingword</id>
+            <id>urn:sburrito:dcs:unfoldingword</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">unfoldingWord</name>
             <abbr lang="en">uW</abbr>
