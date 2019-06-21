@@ -100,8 +100,6 @@ scripture_type_element = scripture_text_type_element | scripture_x_type_element
 
 gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
 
-gloss_x_type_element = element type { empty }
-
 parascriptural_type_element = parascriptural_word_alignment_type_element
 
 peripheral_type_element = element type { empty }
@@ -128,6 +126,14 @@ glossed_text_story_type_element = element type {
     gloss_type_elements &
     common_type_elements &
     glossed_text_story_details_element?
+}
+
+gloss_x_type_element = element type {
+    element flavor { x_thingey } &
+    element flavorType { "gloss" } &
+    gloss_type_elements &
+    common_type_elements &
+    x_details_element?
 }
 
 parascriptural_word_alignment_type_element = element type {
