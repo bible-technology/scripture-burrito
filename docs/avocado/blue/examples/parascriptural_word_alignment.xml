@@ -4,7 +4,6 @@
     <type>
         <flavor>parascripturalWordAlignment</flavor>
         <flavorType>parascriptural</flavorType>
-        <hasCharacters>false</hasCharacters>
         <confidentiality>
             <metadata>unrestricted</metadata>
             <publications>unrestricted</publications>
