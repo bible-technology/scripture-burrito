@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="urn:sburrito:dcs:0123456789abcdef" revision="1" version="0.1">
+<burritoMetadata id="urn:sburrito:dcs:unfoldingword:en_obs" revision="94263a75308f91567c3c77ba862d53cbf6c80378" version="0.1">
     <idServer prefix="dcs">https://git.door43.org</idServer>
     <type>
         <flavor>glossedTextStory</flavor>
@@ -21,7 +21,7 @@
     </identification>
     <agencies>
         <contributor>
-            <id>urn:sburrito:dcs:613</id>
+            <id>urn:sburrito:dcs:unfoldingword</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">unfoldingWord</name>
             <abbr lang="en">uW</abbr>
