@@ -2,8 +2,8 @@
 Committee Members
 #################
 
-The Scripture Burrito specification has been prepared by the ETEN Project Portability Working Group which was
-formed after meetings in Philadelphia in July 2018. The group has since met several times
+The Scripture Burrito specification was started by the ETEN Project Portability Working Group which was
+formed after meetings in Philadelphia in July 2018 at American Bible Society. The group has since met several times
 virtually, culminating in two days of face meetings in Orlando on January 17-18, 2019. That
 meeting was attended by
 
@@ -15,7 +15,8 @@ meeting was attended by
 * Benjamin Varghese
 * Andi Wu
 
-The committee has continued to meet on a regular basis. Its members in June 2019 are
+At the above meeting the Scripture Burrito name was adopted.
+The committee meets regularly and is now comprised of the following individuals:
 
 * Dan De Blois
 * Jesse Griffin
