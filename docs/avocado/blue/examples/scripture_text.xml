@@ -74,9 +74,11 @@
             <name lang="en">We Manage Burritos</name>
         </administrator>
     </agencies>
-    <license>
-        <url>https://burritos-r-us.org/licenses/3247</url>
-    </license>
+    <licenses>
+        <license>
+            <url>https://burritos-r-us.org/licenses/3247</url>
+        </license>
+    </licenses>
     <languages>
         <language>
             <bcp47>fr</bcp47>

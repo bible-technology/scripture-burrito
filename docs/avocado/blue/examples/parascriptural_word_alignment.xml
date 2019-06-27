@@ -85,6 +85,11 @@
             </contributes>
         </contributor>
     </agencies>
+    <licenses>
+        <license>
+            <publicDomain/>
+        </license>
+    </licenses>
     <ingredients>
     </ingredients>
     <snapshot>

@@ -35,9 +35,11 @@
             </contributes>
         </contributor>
     </agencies>
-    <license>
-        <url>https://creativecommons.org/licenses/by-sa/4.0/</url>
-    </license>
+    <licenses>
+        <license>
+            <ingredient>license.md</ingredient>
+        </license>
+    </licenses>
     <languages>
         <language>
             <bcp47>en</bcp47>

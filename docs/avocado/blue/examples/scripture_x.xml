@@ -29,9 +29,11 @@
     <relationships>
         <relation relationType="peripheral" flavor="x-colorByNumbers" id="urn:sburrito:x-paintstore:color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
-    <license>
-        <publicDomain/>
-    </license>
+    <licenses>
+        <license>
+            <publicDomain/>
+        </license>
+    </licenses>
     <languages>
         <language>
             <bcp47>en</bcp47>

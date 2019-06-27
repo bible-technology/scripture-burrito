@@ -25,7 +25,7 @@ scripture_elements =
             identification_element &
             relationships_element? &
             agencies_element? &
-            license_element? &
+            licenses_element &
             languages_element &
             countries_element? &
             names_element &
@@ -44,7 +44,7 @@ gloss_elements =
             identification_element &
             relationships_element? &
             agencies_element? &
-            license_element? &
+            licenses_element &
             languages_element &
             countries_element? &
             names_element? &
@@ -63,7 +63,7 @@ parascriptural_elements =
             identification_element &
             relationships_element? &
             agencies_element? &
-            license_element? &
+            licenses_element &
             languages_element? &
             countries_element? &
             names_element? &
@@ -82,7 +82,7 @@ peripheral_elements =
             identification_element &
             relationships_element? &
             agencies_element? &
-            license_element? &
+            licenses_element &
             languages_element? &
             countries_element? &
             names_element? &
@@ -425,11 +425,17 @@ rights_admin_element =
     element url { xsd:anyURI }?
   }
   
-# LICENSE
+# LICENSES
+
+licenses_element = element licenses {
+    license_element+
+}
 
 license_element = element license {
     element publicDomain { empty } |
-    element url { xsd:anyURI }
+    element allRightsReserved { empty } |
+    element url { xsd:anyURI } |
+    element ingredient { path_string }
 }
 
 # LANGUAGES
@@ -590,6 +596,7 @@ snapshot_element =
         }? &
         element comments { trimmed_text }
   }
+
 
 # HTML
 
@@ -929,4 +936,4 @@ checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
 
-path_string = xsd:string { pattern = "\c+(/\c+)*\.\c+" }
+path_string = xsd:string { pattern = "\c+(/\c+)*" }
