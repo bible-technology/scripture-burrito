@@ -63,7 +63,7 @@ systemId
 
 Zero or more elements are allowed. The type element must be one of
 
-* agmt (Autographa MT)
+* ag (Autographa)
 
 * biblica (Biblica)
 
@@ -80,6 +80,8 @@ Zero or more elements are allowed. The type element must be one of
 * tms (UBS)
 
 * uw (Unfolding Word)
+
+* bcs (Bridge Connectivity Solutions)
 
 or an "unknown" type beginning with "x-".
 
