@@ -79,7 +79,7 @@ Zero or more elements are allowed. The type element must be one of
 
 * tms (UBS)
 
-* uw (Unfolding Word)
+* dcs (Door43 Content Service)
 
 * bcs (Bridge Connectivity Solutions)
 
