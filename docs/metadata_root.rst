@@ -15,6 +15,6 @@ The revision attribute is required and must match
 
 .. code-block:: none
 
-    [0-9A-Za-z]([0-9A-Za-z_-]{0,62}[0-9A-Za-z])?
+    [0-9A-Za-z]([0-9A-Za-z_.:\-]{0,62}[0-9A-Za-z])?
 
 The version attribute is required and must be 0.1.
