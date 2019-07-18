@@ -5,7 +5,7 @@ start = root_element
 root_element = element burritoMetadata {
     attribute id  { id_string },
     attribute revision { revision_string },
-    attribute version { xsd:string { pattern = "0.1(\..+)?" } },
+    attribute schemaVersion { xsd:string { pattern = "0.1(\..+)?" } },
     id_server_element+,
     ( scripture_elements | gloss_elements | parascriptural_elements | peripheral_elements )
 }
