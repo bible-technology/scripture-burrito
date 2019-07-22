@@ -709,7 +709,7 @@ id_string = xsd:string {
 }
 
 revision_string = xsd:string {
-    pattern = "[0-9A-Za-z]([0-9A-Za-z_.\-]{0,62}[0-9A-Za-z])?"
+    pattern = "[0-9A-Za-z]([0-9A-Za-z_.:\-]{0,62}[0-9A-Za-z])?"
 }
 
 publication_id = xsd:string { pattern = "[A-Za-z][A-Za-z0-9_\-]{0,31}" }
