@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="urn:sburrito:x-paintstore:0123456789abcdef" revision="1" version="0.1">
+<burritoMetadata id="urn:sburrito:x-paintstore:0123456789abcdef" revision="1" schemaVersion="0.1">
     <idServer prefix="x-paintstore" local="true">http://localhost:8080</idServer>
     <type>
         <flavor>x-scriptureFingerPainting</flavor>

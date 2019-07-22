@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="urn:sburrito:dcs:unfoldingword:en_obs" revision="94263a75308f91567c3c77ba862d53cbf6c80378" version="0.1">
+<burritoMetadata id="urn:sburrito:dcs:unfoldingword:en_obs" revision="94263a75308f91567c3c77ba862d53cbf6c80378" schemaVersion="0.1">
     <idServer prefix="dcs">https://git.door43.org</idServer>
     <type>
         <flavor>glossedTextStory</flavor>
