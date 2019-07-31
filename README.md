@@ -1,3 +1,4 @@
+[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
 # Scripture Burrito Documentation
 
 A data interchange format for Bible-centric content. Supports licenses, multimedia project data...
