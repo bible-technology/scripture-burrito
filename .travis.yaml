@@ -1,0 +1,7 @@
+language: python
+# command to install dependencies
+install:
+  - pip install rnc2rng
+# command to run tests
+script:
+  - ./cibuild.sh

@@ -91,7 +91,7 @@ Install the sphinx engine
 
     sudo apt-get install python-sphinx
 
-Then run the build script.
+Then run the build script from the docs/ directory.
 
 > NOTE: this top level makefile is just a shorcut to building the html.
 
@@ -102,3 +102,9 @@ Then run the build script.
 The docs are written in [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html), processed by [Sphinx](http://www.sphinx-doc.org/en/master/index.html), and hosted online by [Read the Docs](https://readthedocs.org/).
 
 See the [reStructuredText Primer](http://www.sphinx-doc.org/en/master/rest.html) and the [Docutils reStructuredText Directives](http://docutils.sourceforge.net/docs/ref/rst/directives.html) documentation to learn how to use the syntax.
+
+## Validation
+
+There is a build script intended for a continuous integration system to run which validates the XML examples provided. You can run this locally but you first need to install the [rnc2rng](https://github.com/djc/rnc2rng) python package. You can do this by running `pip install rnc2rng`.
+
+Once dependencies are satisfied, you can `./cibuild.sh` and each file in the docs/examples/directory will be run through `xmllint` and checked against the schema.
