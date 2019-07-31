@@ -1,4 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/Copenhagen-Alliance/scripture-burrito.svg?branch=master)](https://travis-ci.org/Copenhagen-Alliance/scripture-burrito)
 # Scripture Burrito Documentation
 
 A data interchange format for Bible-centric content. Supports licenses, multimedia project data...
@@ -107,4 +108,4 @@ See the [reStructuredText Primer](http://www.sphinx-doc.org/en/master/rest.html)
 
 There is a build script intended for a continuous integration system to run which validates the XML examples provided. You can run this locally but you first need to install the [rnc2rng](https://github.com/djc/rnc2rng) python package. You can do this by running `pip install rnc2rng`.
 
-Once dependencies are satisfied, you can `./cibuild.sh` and each file in the docs/examples/directory will be run through `xmllint` and checked against the schema.
+Once dependencies are satisfied, you can run `./cibuild.sh` and each file in the docs/examples/directory will be run through `xmllint` and checked against the schema.
