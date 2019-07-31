@@ -1,4 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/Copenhagen-Alliance/scripture-burrito?branch=master)](https://travis-ci.org/Copenhagen-Alliance/scripture-burrito)
 # Scripture Burrito Documentation
 
 A data interchange format for Bible-centric content. Supports licenses, multimedia project data...
