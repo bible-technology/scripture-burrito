@@ -1,5 +1,8 @@
 language: python
-# command to install dependencies
+# install dependencies
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libxml2-utils
 install:
   - pip install rnc2rng
 # command to run tests
