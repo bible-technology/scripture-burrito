@@ -1,3 +1,5 @@
+.. _metadata_type:
+
 ################
 The Type Section
 ################
