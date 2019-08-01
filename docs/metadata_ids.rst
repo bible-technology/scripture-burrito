@@ -1,3 +1,5 @@
+.. _metadata_ids:
+
 ###
 IDs
 ###
@@ -15,6 +17,8 @@ IDs are needed for
 
 Each ID identifies the user or organization within a server ecosystem. There are many possible ecosystems and
 several of these ecosystems may provide IDs within a single metadata document.
+
+.. _metadata_ids-id-syntax:
 
 ID Syntax
 =========
