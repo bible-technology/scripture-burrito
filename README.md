@@ -106,6 +106,14 @@ See the [reStructuredText Primer](http://www.sphinx-doc.org/en/master/rest.html)
 
 ## Validation
 
-There is a build script intended for a continuous integration system to run which validates the XML examples provided. You can run this locally but you first need to install the [rnc2rng](https://github.com/djc/rnc2rng) python package. You can do this by running `pip install rnc2rng`.
+There is a build script intended for a continuous integration system to run which validates the XML examples provided.
 
-Once dependencies are satisfied, you can run `./cibuild.sh` and each file in the docs/examples/directory will be run through `xmllint` and checked against the schema.
+### Dependencies
+
+You can run this locally but you first need to install the [rnc2rng](https://github.com/djc/rnc2rng) python package and ensure that you have `xmllint` available on your system. You can install `rnc2rng` by running `pip install rnc2rng`, this should work for Python 2 or 3 on any system with `pip` available.
+
+To install `xmllint` on an Ubuntu based system, try `sudo apt-get install -y libxml2-utils`. This utility may be available on Mac OSX out of the box or as a part of Xcode Command Line Tools.
+
+### Running
+
+Once dependencies are satisfied, you can run `./cibuild.sh` and each file in the docs/examples/directory will be run through `xmllint` and checked against the schema. The script will output errors found and exit non-zero after the *first invalid file*. Hence, after fixing the first file with errors there may be subsequent files that are found to be invalid as well.
