@@ -6,7 +6,7 @@ Each document must contain at least one idServer element as the first child(ren)
 
 .. code-block:: xml
 
-    <burritoMetadata id="urn:sburrito:dbl:0123456789abcdef" revision="23">
+    <burritoMetadata id="sburrito:dbl:0123456789abcdef" revision="23">
         <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
         <idServer prefix="ptx">https://registry.paratext.org</idServer>
         <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>

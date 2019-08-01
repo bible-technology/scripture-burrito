@@ -23,30 +23,25 @@ several of these ecosystems may provide IDs within a single metadata document.
 ID Syntax
 =========
 
-The syntax follows the Universal Resource Name scheme as documented in RFC2141_
-
-.. _RFC2141: https://tools.ietf.org/html/rfc2141
-.. _RFC1737: https://tools.ietf.org/html/rfc1737
-
-The syntax is
+The syntax is:
 
 .. code-block:: none
 
-   urn:sburrito:<namespace ID>:<namespace-specific string>
+   sburrito:<namespace ID>:<namespace-specific string>
 
 where
 
-* "namespace ID" is case-insensitive and matches
+* "namespace ID" is case-insensitive and matches:
 
 .. code-block:: none
 
    [0-9a-zA-Z][0-9a-zA-Z\-]{1,31}
 
 
-* "namespace-specific string" is case-sensitive and matches (as defined in RFC2141_ §2.2, with rationale in RFC1737_)
+* "namespace-specific string" is case-sensitive and matches:
 
 .. code-block:: none
 
    ([0-9A-Za-z\\,\-.+*=@;$_!'])+(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)*
 
-IDs in this format can be tested for prefixedness (?!) by searching for ``urn:([a-zA-Z0-9\-]+):.*``.
+IDs in this format can be tested for prefixedness (?!) by searching for ``sburrito:([a-zA-Z0-9\-]+):.*``.

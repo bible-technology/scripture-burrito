@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="urn:sburrito:dbl:0123456789abcdef" revision="23" schemaVersion="0.1">
+<burritoMetadata id="sburrito:dbl:0123456789abcdef" revision="23" schemaVersion="0.1">
     <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
     <idServer prefix="agmt" >http://registry.autographamt.com</idServer>
     <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
@@ -50,13 +50,13 @@
         </systemId>
     </identification>
     <relationships>
-        <relation flavor="scripturePrint" relationType="expression" id="urn:sburrito:dbl:fedcba9876543210" revision="2"/>
-        <relation flavor="glossedTextStory" relationType="expression" id="urn:sburrito:x-atl:gl47" revision="1.2.3"/>
-        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="urn:sburrito:agmt:irvmal-4-wh" revision="1"/>
+        <relation flavor="scripturePrint" relationType="expression" id="sburrito:dbl:fedcba9876543210" revision="2"/>
+        <relation flavor="glossedTextStory" relationType="expression" id="sburrito:x-atl:gl47" revision="1.2.3"/>
+        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="sburrito:agmt:irvmal-4-wh" revision="1"/>
     </relationships>
     <agencies>
         <contributor>
-            <id>urn:sburrito:dbl:23</id>
+            <id>sburrito:dbl:23</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">Burritos R Us Inc</name>
             <abbr lang="en">BRU</abbr>
@@ -70,7 +70,7 @@
             </contributes>
         </contributor>
         <administrator>
-            <id>urn:sburrito:dbl:29</id>
+            <id>sburrito:dbl:29</id>
             <name lang="en">We Manage Burritos</name>
         </administrator>
     </agencies>
@@ -266,11 +266,11 @@
     <snapshot>
         <creation>
             <software>Burrito Factory 0.1</software>
-            <user id="urn:sburrito:dbl:1234">Jane Doe</user>
+            <user id="sburrito:dbl:1234">Jane Doe</user>
         </creation>
         <uploading>
             <software>Burrito Truck 0.1</software>
-            <user id="urn:sburrito:dbl:5678"/>
+            <user id="sburrito:dbl:5678"/>
         </uploading>
         <comments>Experimenting with i18n</comments>
     </snapshot>
