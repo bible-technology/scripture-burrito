@@ -12,8 +12,8 @@ Example root elements:
 
 .. code-block:: xml
 
-   <burritoMetadata id="urn:sburrito:dbl:0123456789abcdef" revision="23" schemaVersion="0.1">...</burritoMetadata>
-   <burritoMetadata id="urn:sburrito:ptx:52effb3a-8d28-11e9-8160-1bffe1337865" revision="6253499c-8d28-11e9-ad73-8735b9c61064" schemaVersion="0.1">...</burritoMetadata>
+   <burritoMetadata id="sburrito:dbl:0123456789abcdef" revision="23" schemaVersion="0.1">...</burritoMetadata>
+   <burritoMetadata id="sburrito:ptx:52effb3a-8d28-11e9-8160-1bffe1337865" revision="6253499c-8d28-11e9-ad73-8735b9c61064" schemaVersion="0.1">...</burritoMetadata>
 
 The document is in the null namespace. The root element is "burritoMetadata".
 

@@ -705,7 +705,7 @@ x_scripture_text_project_string = x_thingey
 id_prefix_string = xsd:string {pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}"}
 
 id_string = xsd:string {
-    pattern = "urn:sburrito:[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)+"
+    pattern = "sburrito:[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)+"
 }
 
 revision_string = xsd:string {

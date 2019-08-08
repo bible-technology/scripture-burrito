@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="urn:sburrito:x-paintstore:0123456789abcdef" revision="1" schemaVersion="0.1">
+<burritoMetadata id="sburrito:x-paintstore:0123456789abcdef" revision="1" schemaVersion="0.1">
     <idServer prefix="x-paintstore" local="true">http://localhost:8080</idServer>
     <type>
         <flavor>x-scriptureFingerPainting</flavor>
@@ -27,7 +27,7 @@
         <description lang="en">Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind</description>
     </identification>
     <relationships>
-        <relation relationType="peripheral" flavor="x-colorByNumbers" id="urn:sburrito:x-paintstore:color_my_bible_beautiful" revision="first_draft"/>
+        <relation relationType="peripheral" flavor="x-colorByNumbers" id="sburrito:x-paintstore:color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
     <licenses>
         <license>
