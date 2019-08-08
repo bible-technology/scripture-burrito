@@ -18,9 +18,14 @@ The flavorType element specifies one of four basic document types:
 
 * peripheral.
 
-(See the type section for more details.) The flavorType plus other flags and enums in the type section make various parts of the generic metadata
+The flavorType plus other flags and enums in the :ref:`metadata_type` make various parts of the generic metadata
 required, optional, or illegal. This mechanism means that a document processor can make assumptions about the "shape" of the document without necessarily
 having any information about the precise flavor it is processing. This is useful for cataloguing and for handling x- extensions.
+
+Here is a visual overview of the design:
+
+.. image:: https://user-images.githubusercontent.com/107731/62296968-3a43ba80-b43e-11e9-8a6b-f1d8982edb2a.jpeg
+
 
 Flavor-Specific Details in One Known Location
 =============================================
