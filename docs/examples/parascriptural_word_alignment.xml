@@ -4,8 +4,6 @@
   <type>
     <flavor>parascripturalWordAlignment</flavor>
     <flavorType>parascriptural</flavorType>
-    <hasCharacters>true</hasCharacters>
-    <hasSource>false</hasSource>
     <confidentiality>
       <metadata>unrestricted</metadata>
       <publications>unrestricted</publications>
@@ -40,22 +38,15 @@
       <bookScope>JUD</bookScope>
       <bookScope>REV</bookScope>
     </scope>
-    <canonSpec type="NT">
-      <component name="westernNT"/>
-    </canonSpec>
-    <confidentiality>
-      <metadata>unrestricted</metadata>
-      <publications>restricted</publications>
-    </confidentiality>
-    <details>
-      <autoAlignerVer>0.8</autoAlignerVer>
+    <flavorDetails>
+      <autoAlignerVersion>0.8</autoAlignerVersion>
       <stemmer>
         <name>bcs-hindi</name>
         <version>1.2</version>
         <affixes>true</affixes>
       </stemmer>
       <stopWords>true</stopWords>
-      <manualAligment>
+      <manualAlignment>
         <userId>anil.john</userId>
         <refs>
           <lid>
@@ -64,25 +55,24 @@
           </lid>
           <lid>29321</lid>
         </refs>
-      </manualAligment>
-    </details>
+      </manualAlignment>
+    </flavorDetails>
   </type>
   <identification>
     <name lang="en">Hindi IRV - UGNT Interlinear</name>
     <description lang="en">Word level alignment of Hindi IRV v.4 with UGNT Text</description>
     <!-- testing systemId - not needed because information is in root element -->
     <systemId type="bcs">
-      <name>hin-irv-ugnt-alignment</name>
       <id>55df02965117ad3f2201309b</id>
     </systemId>
   </identification>
   <relationships>
-    <relation relationType="source" flavor="scriptureText" id="urn:bible:dbl:987654321fedcba" revision="12" publicationId="Hindi-IRV-v4"/>
-    <relation relationType="target" flavor="scriptureText" id="urn:bible:dbl:0123456789abcdef" revision="23"/>
+    <relation relationType="source" flavor="scriptureText" id="sburrito:dbl:987654321fedcba" revision="12" publicationId="Hindi-IRV-v4"/>
+    <relation relationType="target" flavor="scriptureText" id="sburrito:dbl:0123456789abcdef" revision="23"/>
   </relationships>
   <agencies>
     <contributor>
-      <id>urn:bible:bcs:7874</id>
+      <id>sburrito:bible:bcs:7874</id>
       <isRightsHolder>true</isRightsHolder>
       <name lang="en">Bridge Connectivity Solutions</name>
       <abbr lang="en">BCS</abbr>

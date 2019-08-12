@@ -161,7 +161,21 @@ glossed_text_story_details_element = element flavorDetails { empty }
 
 parascriptural_type_elements = empty
 
-parascriptural_word_alignment_details_element = element flavorDetails { empty }
+parascriptural_word_alignment_details_element = element flavorDetails {
+    element autoAlignerVersion { trimmed_text } &
+    element stemmer {
+        element name { trimmed_text } &
+        element version { trimmed_text } &
+        element affixes { xsd:boolean }
+    } &
+    element stopWords { xsd:boolean } &
+    element manualAlignment {
+        element userId { trimmed_text } &
+        element refs {
+            element lid { empty }
+        }
+    }    
+}
 
 canon_spec_element =
     element canonSpec {
@@ -216,7 +230,7 @@ identification_element = element identification {
 
 system_id = known_system_id | x_system_id
 
-known_system_id = ( gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id | agmt_system_id | uw_system_id )
+known_system_id = ( gbc_system_id | reap_system_id | biblica_system_id | tms_system_id | ptreg_system_id | dbp_system_id | pt_system_id | agmt_system_id | uw_system_id | bcs_system_id )
 
 gbc_system_id =
   element systemId {
@@ -309,6 +323,16 @@ uw_system_id =
 
 uw_elements =
   element id { uw_id_string }
+
+bcs_system_id =
+  element systemId {
+    attribute type { "bcs" },
+    bcs_elements
+  }
+
+bcs_elements =
+  element id { bcs_id_string }
+
 
 x_system_id =
   element systemId {
@@ -682,6 +706,8 @@ dbp_id_string = xsd:string { pattern = "[A-Z0-9]{10}" }
 agmt_id_string = xsd:string
 
 uw_id_string = xsd:string
+
+bcs_id_string = xsd:string
 
 x_system_id_string = x_thingey
 
