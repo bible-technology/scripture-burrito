@@ -10,3 +10,8 @@ sample.xpr
 
 # XML validate artifacts
 docs/schema/metadata.rng
+
+# Emacs files
+*~
+\#*\#
+.\#*
