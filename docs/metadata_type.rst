@@ -41,6 +41,8 @@ Each document must contain exactly one type element, immediately after the idSer
         </details>
     </type>
 
+.. _metadata_type-flavor:
+
 flavor
 ======
 
@@ -61,6 +63,8 @@ Required, either one of
 * parascripturalWordAlignment
 
 or x-something.
+
+.. _metadata_type-flavortype:
 
 flavorType
 ==========
