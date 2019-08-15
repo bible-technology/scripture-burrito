@@ -62,9 +62,7 @@
     <name lang="en">Hindi IRV - UGNT Interlinear</name>
     <description lang="en">Word level alignment of Hindi IRV v.4 with UGNT Text</description>
     <!-- testing systemId - not needed because information is in root element -->
-    <systemId type="bcs">
-      <id>55df02965117ad3f2201309b</id>
-    </systemId>
+    <systemId type="bcs">55df02965117ad3f2201309b</systemId>
   </identification>
   <relationships>
     <relation relationType="source" flavor="scriptureText" id="sburrito:dbl:987654321fedcba" revision="12" publicationId="Hindi-IRV-v4"/>
