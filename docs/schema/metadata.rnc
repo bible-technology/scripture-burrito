@@ -1,858 +1,827 @@
 start = root_element
-
 # ROOT ELEMENT
-
-root_element = element burritoMetadata {
-    attribute id  { id_string },
-    attribute revision { revision_string },
-    attribute schemaVersion { xsd:string { pattern = "0.1(\..+)?" } },
-    id_server_element+,
-    ( scripture_elements | gloss_elements | parascriptural_elements | peripheral_elements )
-}
-
-id_server_element = element idServer {
-    attribute prefix {id_prefix_string},
-    attribute local { xsd:boolean }?,
-    xsd:anyURI
-}
-
+root_element =
+    element burritoMetadata {
+        attribute schemaVersion {
+            xsd:string { pattern = "0.1(\..+)?" }
+        },
+        id_server_element+,
+        (scripture_elements | gloss_elements | parascriptural_elements | peripheral_elements)
+    }
+id_server_element =
+    element idServer {
+        attribute prefix { id_prefix_string },
+        attribute local { xsd:boolean }?,
+        xsd:anyURI { minLength = "1" }
+    }
 # FLAVORS
-
-scripture_elements = 
-    (
-        scripture_type_element,
-        (
-            identification_element &
-            relationships_element? &
-            agencies_element? &
-            licenses_element &
-            languages_element &
-            countries_element? &
-            names_element &
-            ingredients_element &
-            publications_element? &
-            copyright_element? &
-            promotion_element? &
-            snapshot_element
-        )
-    )
-
-gloss_elements = 
-    (
-        gloss_type_element,
-        (
-            identification_element &
-            relationships_element? &
-            agencies_element? &
-            licenses_element &
-            languages_element &
-            countries_element? &
-            names_element? &
-            ingredients_element &
-            publications_element? &
-            copyright_element? &
-            promotion_element? &
-            snapshot_element
-        )
-    )
-
-parascriptural_elements = 
-    (
-        parascriptural_type_element,
-        (
-            identification_element &
-            relationships_element? &
-            agencies_element? &
-            licenses_element &
-            languages_element? &
-            countries_element? &
-            names_element? &
-            ingredients_element &
-            publications_element? &
-            copyright_element? &
-            promotion_element? &
-            snapshot_element
-        )
-    )
-    
-peripheral_elements = 
-    (
-        peripheral_type_element,
-        (
-            identification_element &
-            relationships_element? &
-            agencies_element? &
-            licenses_element &
-            languages_element? &
-            countries_element? &
-            names_element? &
-            ingredients_element &
-            publications_element? &
-            copyright_element? &
-            promotion_element? &
-            snapshot_element
-        )
-    )
-
+scripture_elements =
+    scripture_type_element
+    & identification_element
+    & relationships_element?
+    & agencies_element?
+    & licenses_element
+    & languages_element
+    & countries_element?
+    & names_element
+    & ingredients_element
+    & publications_element?
+    & copyright_element?
+    & promotion_element?
+    & snapshot_element
+gloss_elements =
+    gloss_type_element
+    & identification_element
+    & relationships_element?
+    & agencies_element?
+    & licenses_element
+    & languages_element
+    & countries_element?
+    & names_element?
+    & ingredients_element
+    & publications_element?
+    & copyright_element?
+    & promotion_element?
+    & snapshot_element
+parascriptural_elements =
+    parascriptural_type_element
+    & identification_element
+    & relationships_element?
+    & agencies_element?
+    & licenses_element
+    & languages_element?
+    & countries_element?
+    & names_element?
+    & ingredients_element
+    & publications_element?
+    & copyright_element?
+    & promotion_element?
+    & snapshot_element
+peripheral_elements =
+    peripheral_type_element
+    & identification_element
+    & relationships_element?
+    & agencies_element?
+    & licenses_element
+    & languages_element?
+    & countries_element?
+    & names_element?
+    & ingredients_element
+    & publications_element?
+    & copyright_element?
+    & promotion_element?
+    & snapshot_element
 # TYPE
-
 scripture_type_element = scripture_text_type_element | scripture_x_type_element
-
 gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
-
 parascriptural_type_element = parascriptural_word_alignment_type_element
-
-peripheral_type_element = element type { empty }
-
-scripture_text_type_element = element type {
-    element flavor { "scriptureText" } &
-    element flavorType { "scripture" } &
-    scripture_type_elements &
-    common_type_elements &
-    scripture_text_details_element?
-}
-
-scripture_x_type_element = element type {
-    element flavor { x_thingey } &
-    element flavorType { "scripture" } &
-    scripture_type_elements &
-    common_type_elements &
-    x_details_element?
-}
-
-glossed_text_story_type_element = element type {
-    element flavor { "glossedTextStory" } &
-    element flavorType { "gloss" } &
-    gloss_type_elements &
-    common_type_elements &
-    glossed_text_story_details_element?
-}
-
-gloss_x_type_element = element type {
-    element flavor { x_thingey } &
-    element flavorType { "gloss" } &
-    gloss_type_elements &
-    common_type_elements &
-    x_details_element?
-}
-
-parascriptural_word_alignment_type_element = element type {
-    element flavor { "parascripturalWordAlignment" } &
-    element flavorType { "parascriptural" } &
-    parascriptural_type_elements &
-    common_type_elements &
-    parascriptural_word_alignment_details_element?
-}
-
-common_type_elements = (
-    scope_element &
-    confidentiality_element
-)
-
-scripture_type_elements = (
-    canon_spec_element
-)
-
-gloss_type_elements = (
-    canon_spec_element?
-)
-
+peripheral_type_element = peripheral_versification_type_element | peripheral_x_type_element
+scripture_text_type_element =
+    element type {
+        element flavor { "scriptureText" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_text_details_element?
+    }
+scripture_x_type_element =
+    element type {
+        element flavor { x_thingey }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & x_details_element?
+    }
+glossed_text_story_type_element =
+    element type {
+        element flavor { "glossedTextStory" }
+        & element flavorType { "gloss" }
+        & gloss_type_elements
+        & common_type_elements
+        & glossed_text_story_details_element?
+    }
+gloss_x_type_element =
+    element type {
+        element flavor { x_thingey }
+        & element flavorType { "gloss" }
+        & gloss_type_elements
+        & common_type_elements
+        & x_details_element?
+    }
+parascriptural_word_alignment_type_element =
+    element type {
+        element flavor { "parascripturalWordAlignment" }
+        & element flavorType { "parascriptural" }
+        & parascriptural_type_elements
+        & common_type_elements
+        & parascriptural_word_alignment_details_element?
+    }
+peripheral_versification_type_element =
+    element type {
+        element flavor { "peripheralVersification" }
+        & element flavorType { "peripheral" }
+        & peripheral_type_elements
+        & common_type_elements
+        & peripheral_versification_details_element?
+    }
+peripheral_x_type_element =
+    element type {
+        element flavor { x_thingey }
+        & element flavorType { "peripheral" }
+        & peripheral_type_elements
+        & common_type_elements
+        & x_details_element?
+    }
+common_type_elements = scope_element & confidentiality_element
+scripture_type_elements = canon_spec_element
+gloss_type_elements = canon_spec_element?
 glossed_text_story_details_element = element flavorDetails { empty }
-
 parascriptural_type_elements = empty
-
-parascriptural_word_alignment_details_element = element flavorDetails {
-    element autoAlignerVersion { trimmed_text } &
-    element stemmer {
-        element name { trimmed_text } &
-        element version { trimmed_text } &
-        element affixes { xsd:boolean }
-    } &
-    element stopWords { xsd:boolean } &
-    element manualAlignment {
-        element userId { trimmed_text } &
-        element refs {
-            element lid { empty }
-        }
-    }    
-}
-
+parascriptural_word_alignment_details_element =
+    element flavorDetails {
+        element autoAlignerVersion { trimmed_text }
+        & element stemmer {
+              element name { trimmed_text }
+              & element version { trimmed_text }
+              & element affixes { xsd:boolean }
+          }
+        & element stopWords { xsd:boolean }
+        & element manualAlignment {
+              element userId { trimmed_text }
+              & element refs {
+                    element lid { empty }
+                }
+          }
+    }
+peripheral_type_elements = empty
+peripheral_versification_details_element = element flavorDetails { empty }
 canon_spec_element =
     element canonSpec {
         attribute type { canon_types },
         canon_component_element+
     }
-
 canon_component_element = known_canon_component | x_canon_component
-
-known_canon_component = element component { attribute name { canon_component_enum } }
-
-x_canon_component = element component {
-    attribute name { x_thingey },
-    element book {canonical_book_enum}+
-}
-
-confidentiality_element = element confidentiality {
-    element metadata { confidentiality_enum } &
-    element source { confidentiality_enum } &
-    element publications { confidentiality_enum }
-}
-
+known_canon_component =
+    element component {
+        attribute name { canon_component_enum }
+    }
+x_canon_component =
+    element component {
+        attribute name { x_thingey },
+        element book { canonical_book_enum }+
+    }
+confidentiality_element =
+    element confidentiality {
+        element metadata { confidentiality_enum }
+        & element source { confidentiality_enum }
+        & element publications { confidentiality_enum }
+    }
 scope_element = element scope { scope_book+ }
-
 scope_book = element bookScope { canonical_reference_string }
-
-scripture_text_details_element = element flavorDetails {
-    element projectType { scripture_text_project_type_enum } &
-    conventions_element?
-}
-
+scripture_text_details_element =
+    element flavorDetails {
+        element projectType { scripture_text_project_type_enum }
+        & conventions_element?
+    }
 # IDENTIFICATION
-
-identification_element = element identification {
-    element name {
-        name_like_content
-    }+ &
-    element description {
-        name_like_content
-    }* &
-    element abbreviation {
-        abbreviation_like_content
-    }* &
-    element dateStarted {
-        loose_date
-    }? &
-    element dateCompleted {
-        loose_date
-    }? &
-    system_id*
-}
-
-system_id = element systemId {
-    attribute type { id_prefix_string },
-    xsd:anyURI
-  }
-
-name_like_content = (
+identification_element =
+    element identification {
+        element name { name_like_content }+
+        & element description { name_like_content }*
+        & element abbreviation { abbreviation_like_content }*
+        & element dateStarted { loose_date }?
+        & element dateCompleted { loose_date }?
+        & system_id+
+    }
+system_id =
+    element systemId {
+        attribute revision { revision_string }?,
+        id_string
+    }
+name_like_content =
     attribute lang { bcp47_string },
     trimmed_text
-)
-
-abbreviation_like_content = (
+abbreviation_like_content =
     attribute lang { bcp47_string },
     abbreviation_string
-)
-
 conventions_element = element conventions { convention_element+ }
-
-convention_element = element convention {
-    attribute version { version_string },
-    ( convention_enum | x_convention_string )
-}
-
-x_details_element = element flavorDetails {
-    anything*
-}
-
-# RELATIONSHIPS
-
-relationships_element =
-  element relationships {
-    relation_element+
-  }
-
-relation_element = source_relation_element | target_relation_element | expression_relation_element | parascriptural_relation_element | peripheral_relation_element
-
-source_relation_element =
-  element relation {
-    attribute relationType { "source" },
-    attribute flavor { "scriptureText" | "scriptureAudio" | x_thingey},
-    attribute id { id_string },
-    attribute revision { revision_string },
-    attribute publicationId {publication_id}?
-  }
-
-target_relation_element =
-  element relation {
-    attribute relationType { "target" },
-    attribute flavor { "scriptureText" | "scriptureAudio" | "scripturePrint" | "scriptureSignLanguageVideo" | "scriptureBraille" | "glossedTextStory" | x_thingey},
-    attribute id { id_string },
-    attribute revision { revision_string }
-  }
-
-expression_relation_element =
-  element relation {
-    attribute relationType { "expression" },
-    attribute flavor { "scriptureAudio" | "scripturePrint" | "scriptureSignLanguageVideo" | "scriptureBraille" | "glossedTextStory" | x_thingey},
-    attribute id { id_string },
-    attribute revision { revision_string }
-  }
-
-parascriptural_relation_element =
-  element relation {
-    attribute relationType { "parascriptural" },
-    attribute flavor { "parascripturalWordAlignment" | x_thingey },
-    attribute id { id_string },
-    attribute revision { revision_string }
-  }
-
-peripheral_relation_element =
-  element relation {
-    attribute relationType { "peripheral" },
-    attribute flavor { x_thingey },
-    attribute id { id_string },
-    attribute revision { revision_string }
-  }
-
-anything = element * { attribute * {text}* & anything* & text}
-
-# AGENCIES
-
-agencies_element =
-  element agencies {
-    agency_element+ &
-    rights_admin_element?
-  }
-
-agency_element =
-  element contributor {
-    element isRightsHolder { xsd:boolean } &
-    element id { id_string } &
-    element name { name_like_content }+ &
-    element abbr { abbreviation_like_content }* &
-    element url { xsd:anyURI }? &
-    element contributes {
-        element content { xsd:boolean } &
-        (
-            element publication { xsd:boolean } |
-            element management { xsd:boolean }? |
-            element finance { xsd:boolean }? |
-            element qa { xsd:boolean }
-        )*
+convention_element =
+    element convention {
+        attribute version { version_string },
+        (convention_enum | x_convention_string)
     }
-}
-
+x_details_element = element flavorDetails { anything* }
+# RELATIONSHIPS
+relationships_element = element relationships { relation_element+ }
+relation_element =
+    source_relation_element
+    | target_relation_element
+    | expression_relation_element
+    | parascriptural_relation_element
+    | peripheral_relation_element
+source_relation_element =
+    element relation {
+        attribute relationType { "source" },
+        attribute flavor { "scriptureText" | "scriptureAudio" | x_thingey },
+        attribute id { id_string },
+        attribute revision { revision_string },
+        attribute publicationId { publication_id }?
+    }
+target_relation_element =
+    element relation {
+        attribute relationType { "target" },
+        attribute flavor {
+            "scriptureText"
+            | "scriptureAudio"
+            | "scripturePrint"
+            | "scriptureSignLanguageVideo"
+            | "scriptureBraille"
+            | "glossedTextStory"
+            | x_thingey
+        },
+        attribute id { id_string },
+        attribute revision { revision_string }?
+    }
+expression_relation_element =
+    element relation {
+        attribute relationType { "expression" },
+        attribute flavor {
+            "scriptureAudio"
+            | "scripturePrint"
+            | "scriptureSignLanguageVideo"
+            | "scriptureBraille"
+            | "glossedTextStory"
+            | x_thingey
+        },
+        attribute id { id_string },
+        attribute revision { revision_string }?
+    }
+parascriptural_relation_element =
+    element relation {
+        attribute relationType { "parascriptural" },
+        attribute flavor { "parascripturalWordAlignment" | x_thingey },
+        attribute id { id_string },
+        attribute revision { revision_string }?
+    }
+peripheral_relation_element =
+    element relation {
+        attribute relationType { "peripheral" },
+        attribute flavor { x_thingey },
+        attribute id { id_string },
+        attribute revision { revision_string }?
+    }
+anything =
+    element * {
+        attribute * { text }*
+        & anything*
+        & text
+    }
+# AGENCIES
+agencies_element = element agencies { agency_element+ & rights_admin_element? }
+agency_element =
+    element contributor {
+        element isRightsHolder { xsd:boolean }
+        & element id { id_string }
+        & element name { name_like_content }+
+        & element abbr { abbreviation_like_content }*
+        & element url {
+              xsd:anyURI { minLength = "1" }
+          }?
+        & element contributes {
+              element content { xsd:boolean }
+              & (element publication { xsd:boolean }
+                 | element management { xsd:boolean }?
+                 | element finance { xsd:boolean }?
+                 | element qa { xsd:boolean })*
+          }
+    }
 rights_admin_element =
-  element administrator {
-    element id { id_string } &
-    element name {
-        name_like_content
-    }+ &
-    element abbr { abbreviation_like_content }* &
-    element url { xsd:anyURI }?
-  }
-  
+    element administrator {
+        element id { id_string }
+        & element name { name_like_content }+
+        & element abbr { abbreviation_like_content }*
+        & element url {
+              xsd:anyURI { minLength = "1" }
+          }?
+    }
 # LICENSES
-
-licenses_element = element licenses {
-    license_element+
-}
-
-license_element = element license {
-    element publicDomain { empty } |
-    element allRightsReserved { empty } |
-    element url { xsd:anyURI } |
-    element ingredient { path_string }
-}
-
+licenses_element = element licenses { license_element+ }
+license_element =
+    element license {
+        element allRightsReserved { empty }
+        | element url {
+              xsd:anyURI { minLength = "1" }
+          }
+        | element ingredient { path_string }
+    }
+    | element publicDomain { empty }
 # LANGUAGES
-
 languages_element = element languages { language_element+ }
-
 language_element =
-  element language {
-    element bcp47 { bcp47_string } &
-    element name {
-        name_like_content
-    }+ &
-    element scriptDirection { language_script_direction_enum } &
-    element rod { rod_string }?
-}
-
+    element language {
+        element bcp47 { bcp47_string }
+        & element name { name_like_content }+
+        & element scriptDirection { language_script_direction_enum }
+        & element rod { rod_string }?
+    }
 # COUNTRIES
-
 countries_element = element countries { country_element+ }
-
-country_element = element country {
-  element iso { country_iso_string } &
-    element name {
-        name_like_content
-    }+
-}
-
+country_element =
+    element country {
+        element iso { country_iso_string }
+        & element name { name_like_content }+
+    }
 # NAMES
-
-names_element =
-  element names { names_name* }
-
+names_element = element names { names_name* }
 names_name =
-  element name {
-    attribute id { xsd:NCName } &
-    element long {
-        attribute lang { bcp47_string },
-        trimmed_text
-    }* &
-    element short {
-        attribute lang { bcp47_string },
-        trimmed_text
-    }+ &
-    element abbr {
-        attribute lang { bcp47_string },
-        abbreviation_string
-    }*
-}
-
-# INGREDIENTS
-
-ingredients_element = element ingredients { ingredient_element+ }
-
-ingredient_element =  element ingredient {
-    attribute isSource {xsd:boolean}? &
-    element path { path_string } &
-    element size { xsd:nonNegativeInteger } &
-    element mimeType { mime_type_string } &
-    element checksum { checksum }? &
-    element scopeOrRole { canonical_reference_string | peripheral_enum }?
-}
-
-# PUBLICATIONS
-
-publications_element =
-  element publications { publication_element+ }
-
-publication_element =
-  element publication {
-    attribute id { publication_id } &
-    attribute default { xsd:boolean }? &
     element name {
-        name_like_content
-    }* &
-    element description {
-        name_like_content
-    }* &
-    element abbreviation {
-        abbreviation_like_content
-    }* &
-    countries_element? &
-    scope_element? &
-    canon_spec_element? &
-    element structure { publication_divisions_or_content }
-}
-
-publication_divisions_or_content = ( publication_structure_division | publication_structure_content )+
-
+        attribute id { xsd:NCName }
+        & element long {
+              attribute lang { bcp47_string },
+              trimmed_text
+          }*
+        & element short {
+              attribute lang { bcp47_string },
+              trimmed_text
+          }+
+        & element abbr {
+              attribute lang { bcp47_string },
+              abbreviation_string
+          }*
+    }
+# INGREDIENTS
+ingredients_element = element ingredients { ingredient_element+ }
+ingredient_element =
+    element ingredient {
+        attribute isSource { xsd:boolean }?
+        & element path { path_string }
+        & element size { xsd:nonNegativeInteger }
+        & element mimeType { mime_type_string }
+        & element checksum { checksum }?
+        & element scopeOrRole { canonical_reference_string | peripheral_enum }?
+    }
+# PUBLICATIONS
+publications_element = element publications { publication_element+ }
+publication_element =
+    element publication {
+        attribute id { publication_id }
+        & attribute default { xsd:boolean }?
+        & element name { name_like_content }*
+        & element description { name_like_content }*
+        & element abbreviation { abbreviation_like_content }*
+        & countries_element?
+        & scope_element?
+        & canon_spec_element?
+        & element structure { publication_divisions_or_content }
+    }
+publication_divisions_or_content = (publication_structure_division | publication_structure_content)+
 publication_structure_division =
-  element division {
-    attribute nameId { xsd:NCName },
-    publication_divisions_or_content
-  }
-
+    element division {
+        attribute nameId { xsd:NCName },
+        publication_divisions_or_content
+    }
 publication_structure_content =
-  element content {
-    attribute nameId { xsd:NCName }? &
-    attribute src { path_string }
-  }
-
+    element content {
+        attribute nameId { xsd:NCName }?
+        & attribute src { path_string }
+    }
 # COPYRIGHT
-
-copyright_element =
-  element copyright { copyright_statement_element+ }
-
+copyright_element = element copyright { copyright_statement_element+ }
 copyright_statement_element = plain_copyright_statement_element | html_copyright_statement_element
-
-plain_copyright_statement_element = element statement {
-    attribute format { "plain" },
-    attribute type { "full" | "short" },
-    attribute lang { bcp47_string },
-    trimmed_text
-}
-
-html_copyright_statement_element = element statement {
-    attribute format { "html" },
-    attribute type { "full" | "short" },
-    attribute lang { bcp47_string },
-    simplified_html+
-}
-
+plain_copyright_statement_element =
+    element statement {
+        attribute format { "plain" },
+        attribute type { "full" | "short" },
+        attribute lang { bcp47_string },
+        trimmed_text
+    }
+html_copyright_statement_element =
+    element statement {
+        attribute format { "html" },
+        attribute type { "full" | "short" },
+        attribute lang { bcp47_string },
+        simplified_html+
+    }
 # PROMOTION
-
-promotion_element =
-  element promotion { promotion_statement_element+ }
-
+promotion_element = element promotion { promotion_statement_element+ }
 promotion_statement_element = plain_promotion_statement_element | html_promotion_statement_element
-
-plain_promotion_statement_element = element statement {
-    attribute format { "plain" },
-    attribute lang { bcp47_string },
-    trimmed_text
-}
-
-html_promotion_statement_element = element statement {
-    attribute format { "html" },
-    attribute lang { bcp47_string },
-    simplified_html+
-}
-
+plain_promotion_statement_element =
+    element statement {
+        attribute format { "plain" },
+        attribute lang { bcp47_string },
+        trimmed_text
+    }
+html_promotion_statement_element =
+    element statement {
+        attribute format { "html" },
+        attribute lang { bcp47_string },
+        simplified_html+
+    }
 # SNAPSHOT
-
 snapshot_element =
-  element snapshot {
-      element creation {
-            element software { trimmed_text }? &
-            element user {
-                attribute id { id_string }?,
-                trimmed_text?
-            }?
-        }? &
-      element uploading {
-            element software { trimmed_text }? &
-            element user {
-                attribute id { id_string }?,
-                trimmed_text?
-            }?
-        }? &
-        element comments { trimmed_text }
-  }
-
-
+    element snapshot {
+        element creation {
+            element software { trimmed_text }?
+            & element user {
+                  attribute id { id_string }?,
+                  trimmed_text?
+              }?
+        }?
+        & element uploading {
+              element software { trimmed_text }?
+              & element user {
+                    attribute id { id_string }?,
+                    trimmed_text?
+                }?
+          }?
+        & element comments { trimmed_text }
+    }
 # HTML
-
 simplified_html = sh_block_element+
-
-sh_block_element = (
-    sh_p |
-    sh_h1 |
-    sh_h2 |
-    sh_h3 |
-    sh_ul |
-    sh_ol |
-    sh_blockquote
-)
-
-sh_p = element p { mixed { sh_char_markup* } }
-
-sh_h1 = element h1 { mixed { sh_char_markup* } }
-
-sh_h2 = element h2 { mixed { sh_char_markup* } }
-
-sh_h3 = element h3 { mixed { sh_char_markup* } }
-
+sh_block_element = sh_p | sh_h1 | sh_h2 | sh_h3 | sh_ul | sh_ol | sh_blockquote
+sh_p =
+    element p {
+        mixed { sh_char_markup* }
+    }
+sh_h1 =
+    element h1 {
+        mixed { sh_char_markup* }
+    }
+sh_h2 =
+    element h2 {
+        mixed { sh_char_markup* }
+    }
+sh_h3 =
+    element h3 {
+        mixed { sh_char_markup* }
+    }
 sh_ol = element ol { sh_li+ }
-
 sh_ul = element ul { sh_li+ }
-
-sh_li = element li { mixed { sh_char_markup* & sh_block_element* } }
-
+sh_li =
+    element li {
+        mixed { sh_char_markup* & sh_block_element* }
+    }
 sh_blockquote = element blockquote { sh_block_element+ }
-
-sh_char_markup = (
-  sh_a |
-  sh_img |
-  sh_br |
-  sh_strong |
-  sh_b |
-  sh_em |
-  sh_i
-)
-
+sh_char_markup = sh_a | sh_img | sh_br | sh_strong | sh_b | sh_em | sh_i
 sh_a =
-  element a {
-    attribute href { xsd:anyURI },
-    mixed { sh_char_markup*  }
-  }
-
+    element a {
+        attribute href {
+            xsd:anyURI { minLength = "1" }
+        },
+        mixed { sh_char_markup* }
+    }
 sh_img =
-  element img {
-    attribute src { xsd:anyURI },
-    attribute alt { trimmed_text }
-  }
-
+    element img {
+        attribute src {
+            xsd:anyURI { minLength = "1" }
+        },
+        attribute alt { trimmed_text }
+    }
 sh_br = element br { empty }
-
-sh_strong = element strong { mixed { sh_char_markup* } }
-
-sh_b = element b { mixed { sh_char_markup* } }
-
-sh_em = element em { mixed { sh_char_markup* } }
-
-sh_i = element i { mixed { sh_char_markup* } }
-
-
+sh_strong =
+    element strong {
+        mixed { sh_char_markup* }
+    }
+sh_b =
+    element b {
+        mixed { sh_char_markup* }
+    }
+sh_em =
+    element em {
+        mixed { sh_char_markup* }
+    }
+sh_i =
+    element i {
+        mixed { sh_char_markup* }
+    }
 # STRINGS AND ENUMS
-
 loose_date = xsd:date | xsd:gYear | xsd:gYearMonth | xsd:dateTime
-
-biblica_id_string = xsd:string { pattern = "[0-9]{0,5}" }
-
-gbc_id_string = xsd:string { pattern = "[0-9a-f]{24}" }
-
-tms_id_string = xsd:string { pattern = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" }
-
-pt_id_string = xsd:string { pattern = "[0-9a-f]{40}" }
-
-ptreg_id_string = xsd:string { pattern = "[0-9a-zA-Z]{17}" }
-
-reap_id_string = xsd:anyURI
-
-dbp_id_string = xsd:string { pattern = "[A-Z0-9]{10}" }
-
-agmt_id_string = xsd:string
-
-uw_id_string = xsd:string
-
-bcs_id_string = xsd:string
-
-x_system_id_string = x_thingey
-
 bcp47_string = xsd:string { pattern = "[A-Za-z]{2,3}([\-_][A-Za-z0-9]+){0,4}" }
-
 trimmed_text = xsd:string { pattern = "\S(.+\S)?" }
-
-scripture_text_project_type_enum = (
-    "standard" |
-    "daughter" |
-    "studyBible" |
-    "studyBibleAdditions" |
-    "backTranslation" |
-    "auxiliary" |
-    "transliterationManual"|
-    "transliterationWithEncoder"
-)
-
+scripture_text_project_type_enum =
+    "standard"
+    | "daughter"
+    | "studyBible"
+    | "studyBibleAdditions"
+    | "backTranslation"
+    | "auxiliary"
+    | "transliterationManual"
+    | "transliterationWithEncoder"
 x_scripture_text_project_string = x_thingey
-
-id_prefix_string = xsd:string {pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}"}
-
-id_string = xsd:string {
-    pattern = "sburrito:[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)+"
-}
-
-revision_string = xsd:string {
-    pattern = "[0-9A-Za-z]([0-9A-Za-z_.:\-]{0,62}[0-9A-Za-z])?"
-}
-
+id_prefix_string = xsd:string { pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}" }
+id_string = xsd:string { minLength = "1" pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}::\S+" }
+revision_string = xsd:string { pattern = "[0-9A-Za-z]([0-9A-Za-z_.:\-]{0,62}[0-9A-Za-z])?" }
 publication_id = xsd:string { pattern = "[A-Za-z][A-Za-z0-9_\-]{0,31}" }
-
 flavor_enum = "scriptureText"
-
 x_flavor_string = x_thingey
-
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
-
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
-
 convention_enum = "usxRefs" | "usxDirs"
-
 x_convention_string = x_thingey
-
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
-
 confidentiality_enum = "unrestricted" | "restricted" | "private"
-
 abbreviation_string = xsd:string { pattern = "\w+" }
-
-canonical_reference_string = xsd:string { pattern = "((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)(;(((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)))*" }
-
+canonical_reference_string =
+    xsd:string {
+        pattern =
+            "((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)(;(((GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)(( [1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|( [1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))?)))*"
+    }
 peripheral_enum =
-    "abbreviations" |
-    "alphacontents" |
-    "chron" |
-    "cnc" |
-    "contents" |
-    "cover" |
-    "foreword" |
-    "glo" |
-    "halftitle" |
-    "imprimatur" |
-    xsd:string { pattern = "int(bible|dc|epistles|gospels|hist|nt|ot|pent|poetry|prophecy)" } |
-    xsd:string { pattern = "int(GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)" } |
-    "lxxquotes" |
-    "maps" |
-    "measures" |
-    "ndx" |
-    "preface" |
-    "promo" |
-    "pubdata" |
-    "spine" |
-    "tdx" |
-    "title"
-
-canonical_book_enum = (ot_book_enum | nt_book_enum | dc_book_enum)
-
-ot_book_enum = (
-  "GEN" | # Genesis
-  "EXO" | # Exodus
-  "LEV" | # Leviticus
-  "NUM" | # Numbers
-  "DEU" | # Deuteronomy
-  "JOS" | # Joshua
-  "JDG" | # Judges
-  "RUT" | # Ruth
-  "1SA" | # 1 Samuel
-  "2SA" | # 2 Samuel
-  "1KI" | # 1 Kings
-  "2KI" | # 2 Kings
-  "1CH" | # 1 Chronicles
-  "2CH" | # 2 Chronicles
-  "EZR" | # Ezra
-  "NEH" | # Nehemiah
-  "EST" | # Esther (Hebrew)
-  "JOB" | # Job
-  "PSA" | # Psalms
-  "PRO" | # Proverbs
-  "ECC" | # Ecclesiastes
-  "SNG" | # Song of Songs
-  "ISA" | # Isaiah
-  "JER" | # Jeremiah
-  "LAM" | # Lamentations
-  "EZK" | # Ezekiel
-  "DAN" | # Daniel (Hebrew)
-  "HOS" | # Hosea
-  "JOL" | # Joel
-  "AMO" | # Amos
-  "OBA" | # Obadiah
-  "JON" | # Jonah
-  "MIC" | # Micah
-  "NAM" | # Nahum
-  "HAB" | # Habakkuk
-  "ZEP" | # Zephaniah
-  "HAG" | # Haggai
-  "ZEC" | # Zechariah
-  "MAL"   # Malachi
-)
-
-nt_book_enum = (
-  "MAT" | # Matthew
-  "MRK" | # Mark
-  "LUK" | # Luke
-  "JHN" | # John
-  "ACT" | # Acts
-  "ROM" | # Romans
-  "1CO" | # 1 Corinthians
-  "2CO" | # 2 Corinthians
-  "GAL" | # Galatians
-  "EPH" | # Ephesians
-  "PHP" | # Philippians
-  "COL" | # Colossians
-  "1TH" | # 1 Thessalonians
-  "2TH" | # 2 Thessalonians
-  "1TI" | # 1 Timothy
-  "2TI" | # 2 Timothy
-  "TIT" | # Titus
-  "PHM" | # Philemon
-  "HEB" | # Hebrews
-  "JAS" | # James
-  "1PE" | # 1 Peter
-  "2PE" | # 2 Peter
-  "1JN" | # 1 John
-  "2JN" | # 2 John
-  "3JN" | # 3 John
-  "JUD" | # Jude
-  "REV"   # Revelation
-)
-
-dc_book_enum = (
-  "TOB" | # Tobit
-  "JDT" | # Judith
-  "ESG" | # Esther Greek
-  "WIS" | # Wisdom of Solomon
-  "SIR" | # Sirach (Ecclesiasticus)
-  "BAR" | # Baruch
-  "LJE" | # Letter of Jeremiah
-  "S3Y" | # Song of 3 Young Men
-  "SUS" | # Susanna
-  "BEL" | # Bel and the Dragon
-  "1MA" | # 1 Maccabees
-  "2MA" | # 2 Maccabees
-  "3MA" | # 3 Maccabees
-  "4MA" | # 4 Maccabees
-  "1ES" | # 1 Esdras (Greek)
-  "2ES" | # 2 Esdras (Latin)
-  "MAN" | # Prayer of Manasseh
-  "PS2" | # Psalm 151
-  "ODA" | # Odes
-  "PSS" | # Psalms of Solomon
-  "JSA" | # actual variant text for JOS, now in LXA text
-  "JDB" | # actual variant text for JDG, now in LXA text
-  "TBS" | # actual variant text for TOB, now in LXA text
-  "SST" | # actual variant text for SUS, now in LXA text
-  "DNT" | # actual variant text for DAN, now in LXA text
-  "BLT" | # actual variant text for BEL, now in LXA text
-  "EZA" | # Apocalypse of Ezra
-  "5EZ" | # 5 Ezra
-  "6EZ" | # 6 Ezra
-  "DAG" | # Daniel Greek
-  "PS3" | # Psalms 152-155
-  "2BA" | # 2 Baruch (Apocalypse)
-  "LBA" | # Letter of Baruch
-  "JUB" | # Jubilees
-  "ENO" | # Enoch
-  "1MQ" | # 1 Meqabyan
-  "2MQ" | # 2 Meqabyan
-  "3MQ" | # 3 Meqabyan
-  "REP" | # Reproof
-  "4BA" | # 4 Baruch
-  "LAO"   # Laodiceans
-)
-
+    "abbreviations"
+    | "alphacontents"
+    | "chron"
+    | "cnc"
+    | "contents"
+    | "cover"
+    | "foreword"
+    | "glo"
+    | "halftitle"
+    | "imprimatur"
+    | xsd:string { pattern = "int(bible|dc|epistles|gospels|hist|nt|ot|pent|poetry|prophecy)" }
+    | xsd:string {
+          pattern =
+              "int(GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)"
+      }
+    | "lxxquotes"
+    | "maps"
+    | "measures"
+    | "ndx"
+    | "preface"
+    | "promo"
+    | "pubdata"
+    | "spine"
+    | "tdx"
+    | "title"
+canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
+ot_book_enum =
+    "GEN"
+    | # Genesis
+      "EXO"
+    | # Exodus
+      "LEV"
+    | # Leviticus
+      "NUM"
+    | # Numbers
+      "DEU"
+    | # Deuteronomy
+      "JOS"
+    | # Joshua
+      "JDG"
+    | # Judges
+      "RUT"
+    | # Ruth
+      "1SA"
+    | # 1 Samuel
+      "2SA"
+    | # 2 Samuel
+      "1KI"
+    | # 1 Kings
+      "2KI"
+    | # 2 Kings
+      "1CH"
+    | # 1 Chronicles
+      "2CH"
+    | # 2 Chronicles
+      "EZR"
+    | # Ezra
+      "NEH"
+    | # Nehemiah
+      "EST"
+    | # Esther (Hebrew)
+      "JOB"
+    | # Job
+      "PSA"
+    | # Psalms
+      "PRO"
+    | # Proverbs
+      "ECC"
+    | # Ecclesiastes
+      "SNG"
+    | # Song of Songs
+      "ISA"
+    | # Isaiah
+      "JER"
+    | # Jeremiah
+      "LAM"
+    | # Lamentations
+      "EZK"
+    | # Ezekiel
+      "DAN"
+    | # Daniel (Hebrew)
+      "HOS"
+    | # Hosea
+      "JOL"
+    | # Joel
+      "AMO"
+    | # Amos
+      "OBA"
+    | # Obadiah
+      "JON"
+    | # Jonah
+      "MIC"
+    | # Micah
+      "NAM"
+    | # Nahum
+      "HAB"
+    | # Habakkuk
+      "ZEP"
+    | # Zephaniah
+      "HAG"
+    | # Haggai
+      "ZEC"
+    | # Zechariah
+      "MAL"
+# Malachi
+nt_book_enum =
+    "MAT"
+    | # Matthew
+      "MRK"
+    | # Mark
+      "LUK"
+    | # Luke
+      "JHN"
+    | # John
+      "ACT"
+    | # Acts
+      "ROM"
+    | # Romans
+      "1CO"
+    | # 1 Corinthians
+      "2CO"
+    | # 2 Corinthians
+      "GAL"
+    | # Galatians
+      "EPH"
+    | # Ephesians
+      "PHP"
+    | # Philippians
+      "COL"
+    | # Colossians
+      "1TH"
+    | # 1 Thessalonians
+      "2TH"
+    | # 2 Thessalonians
+      "1TI"
+    | # 1 Timothy
+      "2TI"
+    | # 2 Timothy
+      "TIT"
+    | # Titus
+      "PHM"
+    | # Philemon
+      "HEB"
+    | # Hebrews
+      "JAS"
+    | # James
+      "1PE"
+    | # 1 Peter
+      "2PE"
+    | # 2 Peter
+      "1JN"
+    | # 1 John
+      "2JN"
+    | # 2 John
+      "3JN"
+    | # 3 John
+      "JUD"
+    | # Jude
+      "REV"
+# Revelation
+dc_book_enum =
+    "TOB"
+    | # Tobit
+      "JDT"
+    | # Judith
+      "ESG"
+    | # Esther Greek
+      "WIS"
+    | # Wisdom of Solomon
+      "SIR"
+    | # Sirach (Ecclesiasticus)
+      "BAR"
+    | # Baruch
+      "LJE"
+    | # Letter of Jeremiah
+      "S3Y"
+    | # Song of 3 Young Men
+      "SUS"
+    | # Susanna
+      "BEL"
+    | # Bel and the Dragon
+      "1MA"
+    | # 1 Maccabees
+      "2MA"
+    | # 2 Maccabees
+      "3MA"
+    | # 3 Maccabees
+      "4MA"
+    | # 4 Maccabees
+      "1ES"
+    | # 1 Esdras (Greek)
+      "2ES"
+    | # 2 Esdras (Latin)
+      "MAN"
+    | # Prayer of Manasseh
+      "PS2"
+    | # Psalm 151
+      "ODA"
+    | # Odes
+      "PSS"
+    | # Psalms of Solomon
+      "JSA"
+    | # actual variant text for JOS, now in LXA text
+      "JDB"
+    | # actual variant text for JDG, now in LXA text
+      "TBS"
+    | # actual variant text for TOB, now in LXA text
+      "SST"
+    | # actual variant text for SUS, now in LXA text
+      "DNT"
+    | # actual variant text for DAN, now in LXA text
+      "BLT"
+    | # actual variant text for BEL, now in LXA text
+      "EZA"
+    | # Apocalypse of Ezra
+      "5EZ"
+    | # 5 Ezra
+      "6EZ"
+    | # 6 Ezra
+      "DAG"
+    | # Daniel Greek
+      "PS3"
+    | # Psalms 152-155
+      "2BA"
+    | # 2 Baruch (Apocalypse)
+      "LBA"
+    | # Letter of Baruch
+      "JUB"
+    | # Jubilees
+      "ENO"
+    | # Enoch
+      "1MQ"
+    | # 1 Meqabyan
+      "2MQ"
+    | # 2 Meqabyan
+      "3MQ"
+    | # 3 Meqabyan
+      "REP"
+    | # Reproof
+      "4BA"
+    | # 4 Baruch
+      "LAO"
+# Laodiceans
 canon_types = "DC" | "NT" | "OT, DC, NT" | "OT, NT, DC" | "OT, NT" | "OT+, NT" | "OT" | "OT+"
-
 canon_component_enum =
-    "armenianApostolicDC" |
-    "armenianApostolicOT" |
-    "armenianClassicalOT" |
-    "armenianNT" |
-    "catholicAndAnglicanDC" |
-    "catholicLxxDC" |
-    "catholicLxxOT" |
-    "catholicLxxSeparatedDC" |
-    "catholicPlusLutheranDC" |
-    "catholicVulgateDC" |
-    "catholicVulgateOT" |
-    "catholicVulgateSeparatedDC" |
-    "czechKralickaDC" |
-    "danishLutheranDC" |
-    "ethiopianOrthodoxDC" |
-    "ethiopianOrthodoxNT" |
-    "ethiopianOrthodoxOT" |
-    "ethiopianProtestantNT" |
-    "ethiopianProtestantOT" |
-    "georgianOrthodoxDC" |
-    "georgianOrthodoxOT" |
-    "georgianSynodalDC" |
-    "germanLutheranDC" |
-    "greekOrthodoxDC" |
-    "greekOrthodoxOT" |
-    "kjvDC" |
-    "kjvNonDC" |
-    "lutheranNT" |
-    "romanianOrthodoxDC" |
-    "romanianOrthodoxOT" |
-    "russianNT" |
-    "russianOrthodoxDC" |
-    "russianOrthodoxOT" |
-    "russianProtestantOT" |
-    "russianSynodalDC" |
-    "syriacNT" |
-    "syriacOT" |
-    "tanakhOT" |
-    "turkishInterconfessionalDC" |
-    "vulgateCatholicBible" |
-    "westernInterconfessionalDC" |
-    "westernNT" |
-    "westernOT"
-    
+    "armenianApostolicDC"
+    | "armenianApostolicOT"
+    | "armenianClassicalOT"
+    | "armenianNT"
+    | "catholicAndAnglicanDC"
+    | "catholicLxxDC"
+    | "catholicLxxOT"
+    | "catholicLxxSeparatedDC"
+    | "catholicPlusLutheranDC"
+    | "catholicVulgateDC"
+    | "catholicVulgateOT"
+    | "catholicVulgateSeparatedDC"
+    | "czechKralickaDC"
+    | "danishLutheranDC"
+    | "ethiopianOrthodoxDC"
+    | "ethiopianOrthodoxNT"
+    | "ethiopianOrthodoxOT"
+    | "ethiopianProtestantNT"
+    | "ethiopianProtestantOT"
+    | "georgianOrthodoxDC"
+    | "georgianOrthodoxOT"
+    | "georgianSynodalDC"
+    | "germanLutheranDC"
+    | "greekOrthodoxDC"
+    | "greekOrthodoxOT"
+    | "kjvDC"
+    | "kjvNonDC"
+    | "lutheranNT"
+    | "romanianOrthodoxDC"
+    | "romanianOrthodoxOT"
+    | "russianNT"
+    | "russianOrthodoxDC"
+    | "russianOrthodoxOT"
+    | "russianProtestantOT"
+    | "russianSynodalDC"
+    | "syriacNT"
+    | "syriacOT"
+    | "tanakhOT"
+    | "turkishInterconfessionalDC"
+    | "vulgateCatholicBible"
+    | "westernInterconfessionalDC"
+    | "westernNT"
+    | "westernOT"
 rod_string = xsd:string { pattern = "[0-9]{5}" }
-
-language_script_direction_enum = (
-  "LTR" | # Left to Right
-  "RTL"   # RTL (Right to Left)
-)
-
+language_script_direction_enum =
+    "LTR"
+    | # Left to Right
+      "RTL"
+# RTL (Right to Left)
 country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
-
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
-
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
-
 path_string = xsd:string { pattern = "\c+(/\c+)*" }

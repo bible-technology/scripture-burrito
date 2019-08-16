@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="sburrito:bcs:hin.irv-ugnt" revision="1" schemaVersion="0.1">
+<burritoMetadata schemaVersion="0.1">
   <idServer prefix="bcs">http://registry.bridgeconn.com</idServer>
+  <identification>
+    <systemId revision="1">bcs::hin.irv-ugnt</systemId>
+    <name lang="en">Hindi IRV - UGNT Interlinear</name>
+    <description lang="en">Word level alignment of Hindi IRV v.4 with UGNT Text</description>
+  </identification>
+  <relationships>
+    <relation relationType="source" flavor="scriptureText" id="dbl::987654321fedcba" revision="12" publicationId="Hindi-IRV-v4"/>
+    <relation relationType="target" flavor="scriptureText" id="dbl::0123456789abcdef" revision="23"/>
+  </relationships>
+  <agencies>
+    <contributor>
+      <id>bcs::7874</id>
+      <isRightsHolder>true</isRightsHolder>
+      <name lang="en">Bridge Connectivity Solutions</name>
+      <abbr lang="en">BCS</abbr>
+      <url>https://bridgeconn.com</url>
+      <contributes>
+        <content>true</content>
+        <finance>false</finance>
+        <management>true</management>
+        <publication>true</publication>
+        <qa>true</qa>
+      </contributes>
+    </contributor>
+  </agencies>
   <type>
     <flavor>parascripturalWordAlignment</flavor>
     <flavorType>parascriptural</flavorType>
@@ -58,36 +83,8 @@
       </manualAlignment>
     </flavorDetails>
   </type>
-  <identification>
-    <name lang="en">Hindi IRV - UGNT Interlinear</name>
-    <description lang="en">Word level alignment of Hindi IRV v.4 with UGNT Text</description>
-    <!-- testing systemId - not needed because information is in root element -->
-    <systemId type="bcs">55df02965117ad3f2201309b</systemId>
-  </identification>
-  <relationships>
-    <relation relationType="source" flavor="scriptureText" id="sburrito:dbl:987654321fedcba" revision="12" publicationId="Hindi-IRV-v4"/>
-    <relation relationType="target" flavor="scriptureText" id="sburrito:dbl:0123456789abcdef" revision="23"/>
-  </relationships>
-  <agencies>
-    <contributor>
-      <id>sburrito:bible:bcs:7874</id>
-      <isRightsHolder>true</isRightsHolder>
-      <name lang="en">Bridge Connectivity Solutions</name>
-      <abbr lang="en">BCS</abbr>
-      <url>https://bridgeconn.com</url>
-      <contributes>
-        <content>true</content>
-        <finance>false</finance>
-        <management>true</management>
-        <publication>true</publication>
-        <qa>true</qa>
-      </contributes>
-    </contributor>
-  </agencies>
   <licenses>
-    <license>
-      <publicDomain/>
-    </license>
+    <publicDomain/>
   </licenses>
   <languages>
     <language>

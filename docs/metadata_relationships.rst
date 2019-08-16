@@ -7,9 +7,9 @@ The relationships section is optional. If present, it must contain one or more r
 .. code-block:: xml
 
     <relationships>
-        <relation flavor="scripturePrint" relationType="expression" id="sburrito:dbl:fedcba9876543210" revision="2"/>
-        <relation flavor="glossedTextStory" relationType="expression" id="sburrito:x-atl:gl47" revision="1.2.3"/>
-        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="sburrito:agmt:irvmal-4-wh" revision="1"/>
+        <relation flavor="scripturePrint" relationType="expression" id="dbl::fedcba9876543210" revision="2"/>
+        <relation flavor="glossedTextStory" relationType="expression" id="x-atl::gl47" revision="1.2.3"/>
+        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="agmt::irvmal-4-wh" revision="1"/>
     </relationships>
 
 relationType
@@ -35,7 +35,7 @@ The flavor of the related burrito
 id, revision
 ============
 
-The id and revision of the related burrito
+The id and, optionally, the revision of the related burrito
 
 publicationId
 =============

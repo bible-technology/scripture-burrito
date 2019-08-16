@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="sburrito:dcs:unfoldingword:en_obs" revision="94263a75308f91567c3c77ba862d53cbf6c80378" schemaVersion="0.1">
+<burritoMetadata schemaVersion="0.1">
     <idServer prefix="dcs">https://git.door43.org</idServer>
-    <type>
-        <flavor>glossedTextStory</flavor>
-        <flavorType>gloss</flavorType>
-        <scope>
-            <bookScope>GEN</bookScope>
-        </scope>
-        <confidentiality>
-            <metadata>unrestricted</metadata>
-            <publications>restricted</publications>
-            <source>private</source>
-        </confidentiality>
-        <flavorDetails/>
-    </type>
     <identification>
+        <systemId revision="94263a75308f91567c3c77ba862d53cbf6c80378">dcs::unfoldingword:en_obs</systemId>
         <name lang="en">unfoldingWord® Open Bible Stories</name>
         <description lang="en">unrestricted visual Bible stories</description>
         <abbreviation lang="en">ENOBS</abbreviation>
     </identification>
     <agencies>
         <contributor>
-            <id>sburrito:dcs:unfoldingword</id>
+            <id>dcs::unfoldingword</id>
             <isRightsHolder>true</isRightsHolder>
             <name lang="en">unfoldingWord</name>
             <abbr lang="en">uW</abbr>
@@ -35,6 +23,19 @@
             </contributes>
         </contributor>
     </agencies>
+    <type>
+        <flavor>glossedTextStory</flavor>
+        <flavorType>gloss</flavorType>
+        <scope>
+            <bookScope>GEN</bookScope>
+        </scope>
+        <confidentiality>
+            <metadata>unrestricted</metadata>
+            <publications>restricted</publications>
+            <source>private</source>
+        </confidentiality>
+        <flavorDetails/>
+    </type>
     <licenses>
         <license>
             <ingredient>license.md</ingredient>
