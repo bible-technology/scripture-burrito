@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <burritoMetadata schemaVersion="0.1">
-    <idServer prefix="x-paintstore" local="true">http://localhost:8080</idServer>
+    <idServer prefix="paint-store" local="true">http://localhost:8080</idServer>
     <identification>
-        <systemId revision="1">x-paintstore::0123456789abcdef</systemId>
+        <systemId revision="1">paint-store::0123456789abcdef</systemId>
         <name lang="en">My First Fingerpainted Bible</name>
         <description lang="en">Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind</description>
     </identification>
     <relationships>
-        <relation relationType="peripheral" flavor="x-colorByNumbers" id="x-paintstore::color_my_bible_beautiful" revision="first_draft"/>
+        <relation relationType="peripheral" flavor="x-colorByNumbers" id="paint-store::color_my_bible_beautiful" revision="first_draft"/>
     </relationships>
     <type>
         <flavor>x-scriptureFingerPainting</flavor>
