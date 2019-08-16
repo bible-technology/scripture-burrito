@@ -286,11 +286,13 @@ rights_admin_element =
 licenses_element = element licenses { license_element+ }
 license_element =
     element license {
-        element publicDomain { empty }
-        | element allRightsReserved { empty }
+    (
+        element allRightsReserved { empty }
         | element url { xsd:anyURI  { minLength="1" } }
         | element ingredient { path_string }
+        )
     }
+    | element publicDomain { empty }
 # LANGUAGES
 languages_element = element languages { language_element+ }
 language_element =
