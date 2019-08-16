@@ -27,21 +27,16 @@ The syntax is:
 
 .. code-block:: none
 
-   sburrito:<namespace ID>:<namespace-specific string>
+   <idServer prefix>::<idServer-specific string>
 
 where
 
-* "namespace ID" is case-insensitive and matches:
+* "idServer prefix" is case-insensitive, is declared in an idServer element within the document and matches
 
 .. code-block:: none
 
    [0-9a-zA-Z][0-9a-zA-Z\-]{1,31}
 
+* "idServer-specific string" is case-sensitive and contains one or more non-space character
 
-* "namespace-specific string" is case-sensitive and matches:
-
-.. code-block:: none
-
-   ([0-9A-Za-z\\,\-.+*=@;$_!'])+(:([0-9A-Za-z\\,\-.+*=@;$_!'])+)*
-
-IDs in this format can be tested for prefixedness (?!) by searching for ``sburrito:([a-zA-Z0-9\-]+):.*``.
+IDs in this format can be tested for prefixedness (?!) by searching for ``([a-zA-Z0-9\-]+)::.+``.

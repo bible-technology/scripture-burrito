@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata id="sburrito:dbl:0123456789abcdef" revision="23" schemaVersion="0.1">
+<burritoMetadata schemaVersion="0.1">
     <idServer prefix="dbl">https://thedigitalbiblelibrary.org</idServer>
     <idServer prefix="agmt" >http://registry.autographamt.com</idServer>
     <idServer prefix="x-atl">http://atlantisbibleconsortium.net</idServer>
     <idServer prefix="myServer" local="true">http://localhost:8080</idServer>
+    <identification>
+        <systemId revision="23">dbl::0123456789abcdef</systemId>
+        <systemId>gbc::55df02965117ad3f2201309b</systemId>
+        <systemId>paratext::2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd</systemId>
+        <name lang="en">Scripture Burrito Demo Text Bible</name>
+        <name lang="fr">Crêpe mexicaine biblique surdimensionnée (démonstration)</name>
+        <description lang="en">A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce</description>
+        <abbreviation lang="fr">CMBS</abbreviation>
+        <dateCompleted>2015-05-01</dateCompleted>
+    </identification>
+    <relationships>
+        <relation flavor="scripturePrint" relationType="expression" id="dbl::fedcba9876543210" revision="2"/>
+        <relation flavor="glossedTextStory" relationType="expression" id="x-atl::gl47" revision="1.2.3"/>
+        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="agmt::irvmal-4-wh" revision="1"/>
+    </relationships>
+    <agencies>
+        <contributor>
+            <id>dbl::23</id>
+            <isRightsHolder>true</isRightsHolder>
+            <name lang="en">Burritos R Us Inc</name>
+            <abbr lang="en">BRU</abbr>
+            <url>https://burritos-r-us.org</url>
+            <contributes>
+                <content>true</content>
+                <finance>true</finance>
+                <management>true</management>
+                <publication>true</publication>
+                <qa>true</qa>
+            </contributes>
+        </contributor>
+        <administrator>
+            <id>dbl::29</id>
+            <name lang="en">We Manage Burritos</name>
+        </administrator>
+    </agencies>
     <type>
         <flavor>scriptureText</flavor>
         <flavorType>scripture</flavorType>
@@ -33,40 +68,6 @@
             </conventions>
         </flavorDetails>
     </type>
-    <identification>
-        <name lang="en">Scripture Burrito Demo Text Bible</name>
-        <name lang="fr">Crêpe mexicaine biblique surdimensionnée (démonstration)</name>
-        <description lang="en">A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce</description>
-        <abbreviation lang="fr">CMBS</abbreviation>
-        <dateCompleted>2015-05-01</dateCompleted>
-        <systemId type="gbc">55df02965117ad3f2201309b</systemId>
-        <systemId type="paratext">SUA</systemId>
-    </identification>
-    <relationships>
-        <relation flavor="scripturePrint" relationType="expression" id="sburrito:dbl:fedcba9876543210" revision="2"/>
-        <relation flavor="glossedTextStory" relationType="expression" id="sburrito:x-atl:gl47" revision="1.2.3"/>
-        <relation relationType="parascriptural" flavor="parascripturalWordAlignment" id="sburrito:agmt:irvmal-4-wh" revision="1"/>
-    </relationships>
-    <agencies>
-        <contributor>
-            <id>sburrito:dbl:23</id>
-            <isRightsHolder>true</isRightsHolder>
-            <name lang="en">Burritos R Us Inc</name>
-            <abbr lang="en">BRU</abbr>
-            <url>https://burritos-r-us.org</url>
-            <contributes>
-                <content>true</content>
-                <finance>true</finance>
-                <management>true</management>
-                <publication>true</publication>
-                <qa>true</qa>
-            </contributes>
-        </contributor>
-        <administrator>
-            <id>sburrito:dbl:29</id>
-            <name lang="en">We Manage Burritos</name>
-        </administrator>
-    </agencies>
     <licenses>
         <license>
             <url>https://burritos-r-us.org/licenses/3247</url>
@@ -259,11 +260,11 @@
     <snapshot>
         <creation>
             <software>Burrito Factory 0.1</software>
-            <user id="sburrito:dbl:1234">Jane Doe</user>
+            <user id="dbl::1234">Jane Doe</user>
         </creation>
         <uploading>
             <software>Burrito Truck 0.1</software>
-            <user id="sburrito:dbl:5678"/>
+            <user id="dbl::5678"/>
         </uploading>
         <comments>Experimenting with i18n</comments>
     </snapshot>
