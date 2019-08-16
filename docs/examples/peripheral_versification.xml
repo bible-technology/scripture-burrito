@@ -6,7 +6,44 @@
         <name lang="eng">"Original" Versification</name>
         <description lang="eng">The versification scheme known as org in Paratext</description>
     </identification>
-    <type/>
+    <type>
+        <flavor>peripheralVersification</flavor>
+        <flavorType>peripheral</flavorType>
+        <confidentiality>
+            <source>unrestricted</source>
+            <metadata>unrestricted</metadata>
+            <publications>unrestricted</publications>
+        </confidentiality>
+        <scope>
+            <bookScope>MAT</bookScope>
+            <bookScope>MRK</bookScope>
+            <bookScope>LUK</bookScope>
+            <bookScope>JHN</bookScope>
+            <bookScope>ACT</bookScope>
+            <bookScope>ROM</bookScope>
+            <bookScope>1CO</bookScope>
+            <bookScope>2CO</bookScope>
+            <bookScope>GAL</bookScope>
+            <bookScope>EPH</bookScope>
+            <bookScope>PHP</bookScope>
+            <bookScope>COL</bookScope>
+            <bookScope>1TH</bookScope>
+            <bookScope>2TH</bookScope>
+            <bookScope>1TI</bookScope>
+            <bookScope>2TI</bookScope>
+            <bookScope>TIT</bookScope>
+            <bookScope>PHM</bookScope>
+            <bookScope>HEB</bookScope>
+            <bookScope>JAS</bookScope>
+            <bookScope>1PE</bookScope>
+            <bookScope>2PE</bookScope>
+            <bookScope>1JN</bookScope>
+            <bookScope>2JN</bookScope>
+            <bookScope>3JN</bookScope>
+            <bookScope>JUD</bookScope>
+            <bookScope>REV</bookScope>
+        </scope>
+    </type>
     <ingredients>
         <ingredient>
             <path>org_vrs.json</path>

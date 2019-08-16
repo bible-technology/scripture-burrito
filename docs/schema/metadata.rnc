@@ -12,7 +12,7 @@ id_server_element =
     element idServer {
         attribute prefix { id_prefix_string },
         attribute local { xsd:boolean }?,
-        xsd:anyURI  { minLength="1" }
+        xsd:anyURI { minLength = "1" }
     }
 # FLAVORS
 scripture_elements =
@@ -75,7 +75,7 @@ peripheral_elements =
 scripture_type_element = scripture_text_type_element | scripture_x_type_element
 gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
 parascriptural_type_element = parascriptural_word_alignment_type_element
-peripheral_type_element = element type { empty }
+peripheral_type_element = peripheral_versification_type_element | peripheral_x_type_element
 scripture_text_type_element =
     element type {
         element flavor { "scriptureText" }
@@ -116,6 +116,22 @@ parascriptural_word_alignment_type_element =
         & common_type_elements
         & parascriptural_word_alignment_details_element?
     }
+peripheral_versification_type_element =
+    element type {
+        element flavor { "peripheralVersification" }
+        & element flavorType { "peripheral" }
+        & peripheral_type_elements
+        & common_type_elements
+        & peripheral_versification_details_element?
+    }
+peripheral_x_type_element =
+    element type {
+        element flavor { x_thingey }
+        & element flavorType { "peripheral" }
+        & peripheral_type_elements
+        & common_type_elements
+        & x_details_element?
+    }
 common_type_elements = scope_element & confidentiality_element
 scripture_type_elements = canon_spec_element
 gloss_type_elements = canon_spec_element?
@@ -137,6 +153,8 @@ parascriptural_word_alignment_details_element =
                 }
           }
     }
+peripheral_type_elements = empty
+peripheral_versification_details_element = element flavorDetails { empty }
 canon_spec_element =
     element canonSpec {
         attribute type { canon_types },
@@ -266,7 +284,9 @@ agency_element =
         & element id { id_string }
         & element name { name_like_content }+
         & element abbr { abbreviation_like_content }*
-        & element url { xsd:anyURI  { minLength="1" } }?
+        & element url {
+              xsd:anyURI { minLength = "1" }
+          }?
         & element contributes {
               element content { xsd:boolean }
               & (element publication { xsd:boolean }
@@ -280,17 +300,19 @@ rights_admin_element =
         element id { id_string }
         & element name { name_like_content }+
         & element abbr { abbreviation_like_content }*
-        & element url { xsd:anyURI  { minLength="1" } }?
+        & element url {
+              xsd:anyURI { minLength = "1" }
+          }?
     }
 # LICENSES
 licenses_element = element licenses { license_element+ }
 license_element =
     element license {
-    (
         element allRightsReserved { empty }
-        | element url { xsd:anyURI  { minLength="1" } }
+        | element url {
+              xsd:anyURI { minLength = "1" }
+          }
         | element ingredient { path_string }
-        )
     }
     | element publicDomain { empty }
 # LANGUAGES
@@ -443,12 +465,16 @@ sh_blockquote = element blockquote { sh_block_element+ }
 sh_char_markup = sh_a | sh_img | sh_br | sh_strong | sh_b | sh_em | sh_i
 sh_a =
     element a {
-        attribute href { xsd:anyURI  { minLength="1" } },
+        attribute href {
+            xsd:anyURI { minLength = "1" }
+        },
         mixed { sh_char_markup* }
     }
 sh_img =
     element img {
-        attribute src { xsd:anyURI  { minLength="1" } },
+        attribute src {
+            xsd:anyURI { minLength = "1" }
+        },
         attribute alt { trimmed_text }
     }
 sh_br = element br { empty }
@@ -483,7 +509,7 @@ scripture_text_project_type_enum =
     | "transliterationWithEncoder"
 x_scripture_text_project_string = x_thingey
 id_prefix_string = xsd:string { pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}" }
-id_string = xsd:string { minLength="1" pattern="[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}::\S+"}
+id_string = xsd:string { minLength = "1" pattern = "[0-9a-zA-Z][0-9a-zA-Z\-]{1,31}::\S+" }
 revision_string = xsd:string { pattern = "[0-9A-Za-z]([0-9A-Za-z_.:\-]{0,62}[0-9A-Za-z])?" }
 publication_id = xsd:string { pattern = "[A-Za-z][A-Za-z0-9_\-]{0,31}" }
 flavor_enum = "scriptureText"
@@ -528,225 +554,222 @@ peripheral_enum =
     | "title"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
-    ("GEN"
-     | # Genesis
-       "EXO"
-     | # Exodus
-       "LEV"
-     | # Leviticus
-       "NUM"
-     | # Numbers
-       "DEU"
-     | # Deuteronomy
-       "JOS"
-     | # Joshua
-       "JDG"
-     | # Judges
-       "RUT"
-     | # Ruth
-       "1SA"
-     | # 1 Samuel
-       "2SA"
-     | # 2 Samuel
-       "1KI"
-     | # 1 Kings
-       "2KI"
-     | # 2 Kings
-       "1CH"
-     | # 1 Chronicles
-       "2CH"
-     | # 2 Chronicles
-       "EZR"
-     | # Ezra
-       "NEH"
-     | # Nehemiah
-       "EST"
-     | # Esther (Hebrew)
-       "JOB"
-     | # Job
-       "PSA"
-     | # Psalms
-       "PRO"
-     | # Proverbs
-       "ECC"
-     | # Ecclesiastes
-       "SNG"
-     | # Song of Songs
-       "ISA"
-     | # Isaiah
-       "JER"
-     | # Jeremiah
-       "LAM"
-     | # Lamentations
-       "EZK"
-     | # Ezekiel
-       "DAN"
-     | # Daniel (Hebrew)
-       "HOS"
-     | # Hosea
-       "JOL"
-     | # Joel
-       "AMO"
-     | # Amos
-       "OBA"
-     | # Obadiah
-       "JON"
-     | # Jonah
-       "MIC"
-     | # Micah
-       "NAM"
-     | # Nahum
-       "HAB"
-     | # Habakkuk
-       "ZEP"
-     | # Zephaniah
-       "HAG"
-     | # Haggai
-       "ZEC"
-     | # Zechariah
-       "MAL")
-    # Malachi
-    
+    "GEN"
+    | # Genesis
+      "EXO"
+    | # Exodus
+      "LEV"
+    | # Leviticus
+      "NUM"
+    | # Numbers
+      "DEU"
+    | # Deuteronomy
+      "JOS"
+    | # Joshua
+      "JDG"
+    | # Judges
+      "RUT"
+    | # Ruth
+      "1SA"
+    | # 1 Samuel
+      "2SA"
+    | # 2 Samuel
+      "1KI"
+    | # 1 Kings
+      "2KI"
+    | # 2 Kings
+      "1CH"
+    | # 1 Chronicles
+      "2CH"
+    | # 2 Chronicles
+      "EZR"
+    | # Ezra
+      "NEH"
+    | # Nehemiah
+      "EST"
+    | # Esther (Hebrew)
+      "JOB"
+    | # Job
+      "PSA"
+    | # Psalms
+      "PRO"
+    | # Proverbs
+      "ECC"
+    | # Ecclesiastes
+      "SNG"
+    | # Song of Songs
+      "ISA"
+    | # Isaiah
+      "JER"
+    | # Jeremiah
+      "LAM"
+    | # Lamentations
+      "EZK"
+    | # Ezekiel
+      "DAN"
+    | # Daniel (Hebrew)
+      "HOS"
+    | # Hosea
+      "JOL"
+    | # Joel
+      "AMO"
+    | # Amos
+      "OBA"
+    | # Obadiah
+      "JON"
+    | # Jonah
+      "MIC"
+    | # Micah
+      "NAM"
+    | # Nahum
+      "HAB"
+    | # Habakkuk
+      "ZEP"
+    | # Zephaniah
+      "HAG"
+    | # Haggai
+      "ZEC"
+    | # Zechariah
+      "MAL"
+# Malachi
 nt_book_enum =
-    ("MAT"
-     | # Matthew
-       "MRK"
-     | # Mark
-       "LUK"
-     | # Luke
-       "JHN"
-     | # John
-       "ACT"
-     | # Acts
-       "ROM"
-     | # Romans
-       "1CO"
-     | # 1 Corinthians
-       "2CO"
-     | # 2 Corinthians
-       "GAL"
-     | # Galatians
-       "EPH"
-     | # Ephesians
-       "PHP"
-     | # Philippians
-       "COL"
-     | # Colossians
-       "1TH"
-     | # 1 Thessalonians
-       "2TH"
-     | # 2 Thessalonians
-       "1TI"
-     | # 1 Timothy
-       "2TI"
-     | # 2 Timothy
-       "TIT"
-     | # Titus
-       "PHM"
-     | # Philemon
-       "HEB"
-     | # Hebrews
-       "JAS"
-     | # James
-       "1PE"
-     | # 1 Peter
-       "2PE"
-     | # 2 Peter
-       "1JN"
-     | # 1 John
-       "2JN"
-     | # 2 John
-       "3JN"
-     | # 3 John
-       "JUD"
-     | # Jude
-       "REV")
-    # Revelation
-    
+    "MAT"
+    | # Matthew
+      "MRK"
+    | # Mark
+      "LUK"
+    | # Luke
+      "JHN"
+    | # John
+      "ACT"
+    | # Acts
+      "ROM"
+    | # Romans
+      "1CO"
+    | # 1 Corinthians
+      "2CO"
+    | # 2 Corinthians
+      "GAL"
+    | # Galatians
+      "EPH"
+    | # Ephesians
+      "PHP"
+    | # Philippians
+      "COL"
+    | # Colossians
+      "1TH"
+    | # 1 Thessalonians
+      "2TH"
+    | # 2 Thessalonians
+      "1TI"
+    | # 1 Timothy
+      "2TI"
+    | # 2 Timothy
+      "TIT"
+    | # Titus
+      "PHM"
+    | # Philemon
+      "HEB"
+    | # Hebrews
+      "JAS"
+    | # James
+      "1PE"
+    | # 1 Peter
+      "2PE"
+    | # 2 Peter
+      "1JN"
+    | # 1 John
+      "2JN"
+    | # 2 John
+      "3JN"
+    | # 3 John
+      "JUD"
+    | # Jude
+      "REV"
+# Revelation
 dc_book_enum =
-    ("TOB"
-     | # Tobit
-       "JDT"
-     | # Judith
-       "ESG"
-     | # Esther Greek
-       "WIS"
-     | # Wisdom of Solomon
-       "SIR"
-     | # Sirach (Ecclesiasticus)
-       "BAR"
-     | # Baruch
-       "LJE"
-     | # Letter of Jeremiah
-       "S3Y"
-     | # Song of 3 Young Men
-       "SUS"
-     | # Susanna
-       "BEL"
-     | # Bel and the Dragon
-       "1MA"
-     | # 1 Maccabees
-       "2MA"
-     | # 2 Maccabees
-       "3MA"
-     | # 3 Maccabees
-       "4MA"
-     | # 4 Maccabees
-       "1ES"
-     | # 1 Esdras (Greek)
-       "2ES"
-     | # 2 Esdras (Latin)
-       "MAN"
-     | # Prayer of Manasseh
-       "PS2"
-     | # Psalm 151
-       "ODA"
-     | # Odes
-       "PSS"
-     | # Psalms of Solomon
-       "JSA"
-     | # actual variant text for JOS, now in LXA text
-       "JDB"
-     | # actual variant text for JDG, now in LXA text
-       "TBS"
-     | # actual variant text for TOB, now in LXA text
-       "SST"
-     | # actual variant text for SUS, now in LXA text
-       "DNT"
-     | # actual variant text for DAN, now in LXA text
-       "BLT"
-     | # actual variant text for BEL, now in LXA text
-       "EZA"
-     | # Apocalypse of Ezra
-       "5EZ"
-     | # 5 Ezra
-       "6EZ"
-     | # 6 Ezra
-       "DAG"
-     | # Daniel Greek
-       "PS3"
-     | # Psalms 152-155
-       "2BA"
-     | # 2 Baruch (Apocalypse)
-       "LBA"
-     | # Letter of Baruch
-       "JUB"
-     | # Jubilees
-       "ENO"
-     | # Enoch
-       "1MQ"
-     | # 1 Meqabyan
-       "2MQ"
-     | # 2 Meqabyan
-       "3MQ"
-     | # 3 Meqabyan
-       "REP"
-     | # Reproof
-       "4BA"
-     | # 4 Baruch
-       "LAO")
-    # Laodiceans
-    
+    "TOB"
+    | # Tobit
+      "JDT"
+    | # Judith
+      "ESG"
+    | # Esther Greek
+      "WIS"
+    | # Wisdom of Solomon
+      "SIR"
+    | # Sirach (Ecclesiasticus)
+      "BAR"
+    | # Baruch
+      "LJE"
+    | # Letter of Jeremiah
+      "S3Y"
+    | # Song of 3 Young Men
+      "SUS"
+    | # Susanna
+      "BEL"
+    | # Bel and the Dragon
+      "1MA"
+    | # 1 Maccabees
+      "2MA"
+    | # 2 Maccabees
+      "3MA"
+    | # 3 Maccabees
+      "4MA"
+    | # 4 Maccabees
+      "1ES"
+    | # 1 Esdras (Greek)
+      "2ES"
+    | # 2 Esdras (Latin)
+      "MAN"
+    | # Prayer of Manasseh
+      "PS2"
+    | # Psalm 151
+      "ODA"
+    | # Odes
+      "PSS"
+    | # Psalms of Solomon
+      "JSA"
+    | # actual variant text for JOS, now in LXA text
+      "JDB"
+    | # actual variant text for JDG, now in LXA text
+      "TBS"
+    | # actual variant text for TOB, now in LXA text
+      "SST"
+    | # actual variant text for SUS, now in LXA text
+      "DNT"
+    | # actual variant text for DAN, now in LXA text
+      "BLT"
+    | # actual variant text for BEL, now in LXA text
+      "EZA"
+    | # Apocalypse of Ezra
+      "5EZ"
+    | # 5 Ezra
+      "6EZ"
+    | # 6 Ezra
+      "DAG"
+    | # Daniel Greek
+      "PS3"
+    | # Psalms 152-155
+      "2BA"
+    | # 2 Baruch (Apocalypse)
+      "LBA"
+    | # Letter of Baruch
+      "JUB"
+    | # Jubilees
+      "ENO"
+    | # Enoch
+      "1MQ"
+    | # 1 Meqabyan
+      "2MQ"
+    | # 2 Meqabyan
+      "3MQ"
+    | # 3 Meqabyan
+      "REP"
+    | # Reproof
+      "4BA"
+    | # 4 Baruch
+      "LAO"
+# Laodiceans
 canon_types = "DC" | "NT" | "OT, DC, NT" | "OT, NT, DC" | "OT, NT" | "OT+, NT" | "OT" | "OT+"
 canon_component_enum =
     "armenianApostolicDC"
@@ -794,11 +817,10 @@ canon_component_enum =
     | "westernOT"
 rod_string = xsd:string { pattern = "[0-9]{5}" }
 language_script_direction_enum =
-    ("LTR"
-     | # Left to Right
-       "RTL")
-    # RTL (Right to Left)
-    
+    "LTR"
+    | # Left to Right
+      "RTL"
+# RTL (Right to Left)
 country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
