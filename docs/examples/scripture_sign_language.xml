@@ -1,2 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata/>
+<burritoMetadata schemaVersion="0.1">
+   <idServer prefix="dbl">http://thedigitalbiblelibrary.org</idServer>
+   <identification xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <systemId revision="48">dbl::3d4e4af52ce24fff</systemId>
+      <name lang="eng">Thai Sign-Language Fragment</name>
+      <name lang="zzz">พระคริสตธรรมคัมภีร์ฉบับภาษามือไทย</name>
+      <description lang="eng">Thai Sign Language Bible</description>
+      <abbreviation lang="eng">TSLF</abbreviation>
+      <dateCompleted>2017-04-07T15:05:47</dateCompleted>
+   </identification>
+   <agencies xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <contributor>
+         <id>dbl::d41b7b7e1c41d27efc13f05f</id>
+         <name lang="eng">DBLUnit Test Organization</name>
+         <url>http://thedigitalbiblelibrary.org/#</url>
+         <isRightsHolder>true</isRightsHolder>
+         <contributes>
+            <content>true</content>
+            <publication>true</publication>
+            <management>true</management>
+            <qa>true</qa>
+         </contributes>
+      </contributor>
+   </agencies>
+   <languages>
+      <language>
+         <bcp47>tsq</bcp47>
+         <name lang="eng">Thai Sign Language</name>
+         <scriptDirection>LTR</scriptDirection>
+      </language>
+   </languages>
+   <countries xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <country>
+         <iso>TH</iso>
+         <name lang="eng">Thailand</name>
+      </country>
+  </countries>
+   <type xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <flavor>x-scriptureSignLanguageVideo</flavor>
+      <flavorType>scripture</flavorType>
+      <confidentiality>
+         <metadata>unrestricted</metadata>
+         <source>private</source>
+         <publications>restricted</publications>
+      </confidentiality>
+      <canonSpec type="OT, NT">
+         <component name="westernOT"/>
+         <component name="westernNT"/>
+      </canonSpec>
+      <scope>
+         <bookScope>MRK</bookScope>
+      </scope>
+      <flavorDetails>
+         <format>
+            <container>MP4</container>
+            <videoStream>
+               <codec>H264</codec>
+               <bitRate>64000000</bitRate>
+               <frameRate>30</frameRate>
+               <screenResolution>1920x1080</screenResolution>
+            </videoStream>
+            <audioStream>
+               <compression>MP3</compression>
+               <trackConfiguration>2/0 (Stereo)</trackConfiguration>
+               <bitRate>128000</bitRate>
+               <bitDepth>16</bitDepth>
+               <samplingRate>44100</samplingRate>
+            </audioStream>
+            <subtitleStream/>
+         </format>
+      </flavorDetails>
+   </type>
+   <ingredients>
+      <ingredient>
+         <path>MK_1_frag.mpg</path>
+         <size>40130560</size>
+         <checksum>1498ac8c2d56e88542b6b6936f7e41fd</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>MRK 1:1-8</scopeOrRole>
+      </ingredient>
+   </ingredients>
+   <names xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <name id="section-mrk_1_1-8">
+         <short lang="zzz">การประกาศของยอห์นผู้ให้บัพติศมา</short>
+      </name>
+  </names>
+   <publications xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <publication id="p1">
+         <name lang="eng">Mark</name>
+         <name lang="zzz">มาระโก</name>
+         <description lang="eng">Thai Sign Language Bible - Mark</description>
+         <description lang="zzz">พระคริสตธรรมคัมภีร์ฉบับภาษามือไทย - มาระโก</description>
+         <scope>
+            <bookScope>MRK</bookScope>
+         </scope>
+         <structure>
+            <content src="MK_1_frag.mp4"/>
+         </structure>
+      </publication>
+  </publications>
+   <snapshot>
+      <creation>
+         <user>DBL bundleMaker</user>
+      </creation>
+      <uploading>
+         <user>Mark Howe</user>
+      </uploading>
+      <comments>Testing video upload</comments>
+   </snapshot>
+   <copyright xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <statement lang="zzz" format="html" type="full">
+        <p>
+            <a href="http://www.thaibible.or.th/">Thailand Bible Society</a>
+        </p>
+      </statement>
+   </copyright>
+   <promotion xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+      <statement lang="zzz" format="html">
+         <p>Thai Sign Language Bible.</p>
+      </statement>
+   </promotion>
+   <licenses>
+      <allRightsReserved/>
+   </licenses>
+</burritoMetadata>

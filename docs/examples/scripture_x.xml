@@ -31,9 +31,7 @@
         </flavorDetails>
     </type>
     <licenses>
-        <license>
-            <publicDomain/>
-        </license>
+        <publicDomain/>
     </licenses>
     <languages>
         <language>

@@ -1,2 +1,469 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<burritoMetadata/>
+<burritoMetadata schemaVersion="0.1">
+  <idServer prefix="dbl">http://thedigitalbiblelibrary.org</idServer>
+  <identification>
+    <systemId revision="1">dbl::148b60ff19c94edf</systemId>
+    <name lang="eng">Melo Test NT</name>
+    <abbreviation lang="eng">MTNT</abbreviation>
+    <description lang="eng">Meloi New Testament</description>
+    <dateStarted>2019-01-10T15:41:53.720498</dateStarted>
+    <dateCompleted>2019-01-21T15:41:53.720498</dateCompleted>
+  </identification>
+  <agencies>
+    <contributor>
+      <isRightsHolder>true</isRightsHolder>
+      <id>dbl::d41b7b7e1c41d27efc13f05f</id>
+      <name lang="eng">DBL Unit Test Organization</name>
+      <abbr lang="eng">DBLUnitTest</abbr>
+      <url>http://www.thedigitalbiblelibrary.org</url>
+      <contributes>
+        <content>true</content>
+        <finance>true</finance>
+        <management>true</management>
+        <qa>true</qa>
+        <publication>true</publication>
+      </contributes>
+    </contributor>
+  </agencies>
+  <languages>
+    <language>
+      <bcp47>mfx</bcp47>
+      <name lang="eng">Melo</name>
+      <name lang="mfx">Melo</name>
+      <scriptDirection>LTR</scriptDirection>
+    </language>
+  </languages>
+  <countries>
+    <country>
+      <iso>ET</iso>
+      <name lang="eng">Ethiopia</name>
+    </country>
+  </countries>
+  <type>
+    <flavor>x-scriptureAudio</flavor>
+    <flavorType>scripture</flavorType>
+    <canonSpec type="NT">
+      <component name="westernNT"/>
+    </canonSpec>
+    <confidentiality>
+      <metadata>unrestricted</metadata>
+      <source>private</source>
+      <publications>restricted</publications>
+    </confidentiality>
+    <scope>
+      <bookScope>MAT</bookScope>
+    </scope>
+    <flavorDetails>
+      <hasCharacters>false</hasCharacters>
+      <isTranslation>false</isTranslation>
+      <isExpression>true</isExpression>
+      <dramatization>Non-Dramatized</dramatization>
+    </flavorDetails>
+  </type>
+  <licenses>
+    <allRightsReserved/>
+  </licenses>
+  <ingredients>
+    <ingredient>
+      <path>source/audio/MAT/MAT_001.wav</path>
+      <size>33712416</size>
+      <checksum>2efb602f38968c43e1ab821cbc2a6d63</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_002.wav</path>
+      <size>40054190</size>
+      <checksum>e234ca51172a4122204af25da785e272</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_003.wav</path>
+      <size>28140212</size>
+      <checksum>252c225fed877b4bcbc00ce061e87ab1</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_004.wav</path>
+      <size>42031278</size>
+      <checksum>94e6525785b083da0def30a82112a621</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_005.wav</path>
+      <size>71982960</size>
+      <checksum>1052bb13d9aee4cf4e7b4428d3238693</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_006.wav</path>
+      <size>52767386</size>
+      <checksum>a26fa4492290879961597eb486c53726</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_007.wav</path>
+      <size>40104436</size>
+      <checksum>1eb50c704439c8fb41523216b91ee603</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_008.wav</path>
+      <size>58915830</size>
+      <checksum>8d1329e87675792b25fa2922c8d0a447</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_009.wav</path>
+      <size>67401278</size>
+      <checksum>e71132f3b1d0d554182120dca4a17364</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_010.wav</path>
+      <size>66411092</size>
+      <checksum>1493ce1c5c2e6149a76bed35d64aa67e</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_011.wav</path>
+      <size>53540122</size>
+      <checksum>fbf43453f7ad6e5c6c2530e9dfa75f5a</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_012.wav</path>
+      <size>92004464</size>
+      <checksum>e392a653750a619e9e1e5e65c0863e3c</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_013.wav</path>
+      <size>95841494</size>
+      <checksum>d9343c5d7eeb67611d29ea3b68910504</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_014.wav</path>
+      <size>49687276</size>
+      <checksum>bd4a5dd0d189e4d8c9aa74aade963b93</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_015.wav</path>
+      <size>58629992</size>
+      <checksum>315a5e18e6b84d96d02b75194587712d</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_016.wav</path>
+      <size>50666922</size>
+      <checksum>65ac8a0d236be2a43c1aa5c8b4fd1860</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_017.wav</path>
+      <size>46301832</size>
+      <checksum>e123e36a0f84790bfdac106a3b0a4b27</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_018.wav</path>
+      <size>57751132</size>
+      <checksum>9eea3e59afdddfbd006a1c9de9109b9a</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_019.wav</path>
+      <size>48148384</size>
+      <checksum>60cf36890c2ef586a94609c270c501b8</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_020.wav</path>
+      <size>52866124</size>
+      <checksum>eefeff6a12b0c088a05442502bc110e1</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_021.wav</path>
+      <size>80826768</size>
+      <checksum>223cf6cf30e2c6c2fe74c2317af5b788</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_022.wav</path>
+      <size>60059314</size>
+      <checksum>0c171c83c1bb2652be47ee60e0a2056d</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_023.wav</path>
+      <size>67983408</size>
+      <checksum>f3f2ad4b70a8e37c0ae03979a5795c1c</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_024.wav</path>
+      <size>69704252</size>
+      <checksum>9dd715d881e279e32937cef4ae6ec39a</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_025.wav</path>
+      <size>67388830</size>
+      <checksum>f152160833fa75b20fb47b9713296314</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_026.wav</path>
+      <size>109983908</size>
+      <checksum>988e0a07bcfa5b683874fe40bc88a11c</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_027.wav</path>
+      <size>96429864</size>
+      <checksum>63945bc9a3e5e2cd5ed7a196a0f2943d</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>source/audio/MAT/MAT_028.wav</path>
+      <size>28805002</size>
+      <checksum>db04bdb36f415e9d0f8ead911c2fc06e</checksum>
+      <mimeType>audio/wav</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_001.mp3</path>
+      <size>6866258</size>
+      <checksum>fc922dd7b1b8f31963301923b4b210eb</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_002.mp3</path>
+      <size>6790503</size>
+      <checksum>e2423ce586c739f2218dfac2ebc791b3</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_003.mp3</path>
+      <size>4642715</size>
+      <checksum>6956c56efb4083ab450758ef3e56fd7b</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_004.mp3</path>
+      <size>6249246</size>
+      <checksum>9cf1b1dec3b46780e9d09c93b30a4578</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_005.mp3</path>
+      <size>12404217</size>
+      <checksum>a4fe42383f9311d40509fbd84dd3b425</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_006.mp3</path>
+      <size>8443009</size>
+      <checksum>6c65f74b2df3ffba5d3113a966598353</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_007.mp3</path>
+      <size>6650487</size>
+      <checksum>512ea80aa3636c61015eca02f4011562</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_008.mp3</path>
+      <size>9034421</size>
+      <checksum>a6f055d27affe187bdbf8f34589f455a</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_009.mp3</path>
+      <size>9971172</size>
+      <checksum>bc89ede74e3dbfa2b3512c0887944c27</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_010.mp3</path>
+      <size>10267401</size>
+      <checksum>afbfa73c6f6ed6050f98a05688ad4160</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_011.mp3</path>
+      <size>7855776</size>
+      <checksum>59a9d73855055e1cd1ff7d057049acf5</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_012.mp3</path>
+      <size>12641409</size>
+      <checksum>431aa6c24dff4e65894fe74914f71d9e</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_013.mp3</path>
+      <size>13523303</size>
+      <checksum>f45217aa81b80d48dd8dd87111c84669</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_014.mp3</path>
+      <size>7710536</size>
+      <checksum>864fea9bcadd25a5b3faf7aef4564f0e</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_015.mp3</path>
+      <size>8977474</size>
+      <checksum>a667742f02d101cd98cd4f422448da01</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_016.mp3</path>
+      <size>7455581</size>
+      <checksum>e759affcb167a950450c0742f2e346b5</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_017.mp3</path>
+      <size>7034487</size>
+      <checksum>fcd69283c51f46cdde46257f9594216a</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_018.mp3</path>
+      <size>8431515</size>
+      <checksum>14af0b8b1abb559adf4efabc6c7afbf2</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_019.mp3</path>
+      <size>7677621</size>
+      <checksum>52655d0ccc6775b5ca008a7cb97a4698</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_020.mp3</path>
+      <size>7924217</size>
+      <checksum>599b48523fbc4d2a4d7a9f3b51e011ca</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_021.mp3</path>
+      <size>11804446</size>
+      <checksum>30b28f74c386f3f2f9ce2ddaaf73fde3</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_022.mp3</path>
+      <size>9487385</size>
+      <checksum>03049bd96562892cef8a831722f8bd26</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_023.mp3</path>
+      <size>9848397</size>
+      <checksum>a461bdc34018b69d7c778d3115424b04</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_024.mp3</path>
+      <size>10959123</size>
+      <checksum>7653d56307352c996d3656073e7cbe51</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_025.mp3</path>
+      <size>10173883</size>
+      <checksum>64a93b91b3db3a781d3b6ec4882d05f4</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_026.mp3</path>
+      <size>16734797</size>
+      <checksum>0984b2ef216dc7c1c9d6af2ba7148d21</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_027.mp3</path>
+      <size>14443858</size>
+      <checksum>f2af159ae8672e190064b537e8275326</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+    <ingredient>
+      <path>release/audio/MAT/MAT_028.mp3</path>
+      <size>5067466</size>
+      <checksum>575ffb699864cda4b6d3465e485e21f2</checksum>
+      <mimeType>audio/mpeg</mimeType>
+    </ingredient>
+  </ingredients>
+  <names>
+    <name id="book-mat">
+      <short lang="eng">Mat</short>
+    </name>
+  </names>
+  <publications>
+    <publication id="pt1">
+      <scope>
+        <bookScope>MAT</bookScope>
+      </scope>
+      <name lang="eng">The Melo New Testament source files</name>
+      <canonSpec type="NT">
+        <component name="westernNT"/>
+      </canonSpec>
+      <structure>
+        <division nameId="book-mat">
+          <content src="release/audio/MAT/MAT_001.mp3"/>
+          <content src="release/audio/MAT/MAT_002.mp3"/>
+          <content src="release/audio/MAT/MAT_003.mp3"/>
+          <content src="release/audio/MAT/MAT_004.mp3"/>
+          <content src="release/audio/MAT/MAT_005.mp3"/>
+          <content src="release/audio/MAT/MAT_006.mp3"/>
+          <content src="release/audio/MAT/MAT_007.mp3"/>
+          <content src="release/audio/MAT/MAT_008.mp3"/>
+          <content src="release/audio/MAT/MAT_009.mp3"/>
+          <content src="release/audio/MAT/MAT_010.mp3"/>
+          <content src="release/audio/MAT/MAT_011.mp3"/>
+          <content src="release/audio/MAT/MAT_012.mp3"/>
+          <content src="release/audio/MAT/MAT_013.mp3"/>
+          <content src="release/audio/MAT/MAT_014.mp3"/>
+          <content src="release/audio/MAT/MAT_015.mp3"/>
+          <content src="release/audio/MAT/MAT_016.mp3"/>
+          <content src="release/audio/MAT/MAT_017.mp3"/>
+          <content src="release/audio/MAT/MAT_018.mp3"/>
+          <content src="release/audio/MAT/MAT_019.mp3"/>
+          <content src="release/audio/MAT/MAT_020.mp3"/>
+          <content src="release/audio/MAT/MAT_021.mp3"/>
+          <content src="release/audio/MAT/MAT_022.mp3"/>
+          <content src="release/audio/MAT/MAT_023.mp3"/>
+          <content src="release/audio/MAT/MAT_024.mp3"/>
+          <content src="release/audio/MAT/MAT_025.mp3"/>
+          <content src="release/audio/MAT/MAT_026.mp3"/>
+          <content src="release/audio/MAT/MAT_027.mp3"/>
+          <content src="release/audio/MAT/MAT_028.mp3"/>
+        </division>
+      </structure>
+    </publication>
+  </publications>
+  <snapshot>
+    <creation>
+      <software>nathanael/0.22.1</software>
+      <user>archive-publish@dbl-dot-local.local</user>
+    </creation>
+    <uploading>
+      <software>nathanael/0.22.1</software>
+      <user>archive-publish@dbl-dot-local.local</user>
+    </uploading>
+    <comments>Elbert Boot test</comments>
+  </snapshot>
+  <copyright>
+    <statement lang="eng" format="html" type="short"><p>© DBL 2019</p></statement>
+  </copyright>
+  <promotion>
+    <statement format="plain" lang="eng">Thank-you for using our audio files!</statement>
+  </promotion>
+</burritoMetadata>
