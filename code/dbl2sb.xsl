@@ -79,6 +79,12 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="relationships">
+        <xsl:if test="relation">
+            <xsl:apply-templates select="*"/>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="relationships/relation">
         <xsl:copy>
             <xsl:attribute name="id"><xsl:value-of select="d2s:addDblPrefix(@id)"/></xsl:attribute>
@@ -181,6 +187,15 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="publication">
+        <xsl:copy>
+            <xsl:copy-of select="@id"/>
+            <xsl:apply-templates
+                select="name | nameLocal | description | descriptionLocal | abbreviation | abbreviationLocal | canonicalContent | structure"/>
+            <!-- TODO canonSpec -->
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="publication/canonicalContent">
         <xsl:element name="scope">
             <xsl:for-each select="book">
@@ -191,40 +206,58 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="copyright">
+    <xsl:template match="publication//division|content">
         <xsl:copy>
-            <xsl:for-each select="fullStatement|shortStatement">
-                <xsl:element name="statement">
-                    <xsl:attribute name="lang"><xsl:text>zzz</xsl:text></xsl:attribute>
-                    <xsl:attribute name="format">
-                        <xsl:value-of select="d2s:format(statementContent/@type)"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="type">
-                        <xsl:choose>
-                            <xsl:when test="local-name() = 'fullStatement'">
-                                <xsl:text>full</xsl:text>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:text>short</xsl:text>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:attribute>
-                    <xsl:copy-of select="statementContent/node()"/>
-                </xsl:element>
-            </xsl:for-each>
+            <xsl:copy-of select="@*[local-name() != 'role'][local-name() != 'name']"/>
+            <xsl:if test="@name">
+                <xsl:attribute name="nameId"><xsl:value-of select="@name"/></xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates select="*"/>
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="copyright">
+        <xsl:if test="*">
+            <xsl:copy>
+                <xsl:for-each select="fullStatement | shortStatement">
+                    <xsl:element name="statement">
+                        <xsl:attribute name="lang">
+                            <xsl:text>zzz</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="format">
+                            <xsl:value-of select="d2s:format(statementContent/@type)"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="type">
+                            <xsl:choose>
+                                <xsl:when test="local-name() = 'fullStatement'">
+                                    <xsl:text>full</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>short</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:attribute>
+                        <xsl:copy-of select="statementContent/node()"/>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="promotion">
-        <xsl:copy>
+        <xsl:if test="*">
+            <xsl:copy>
                 <xsl:element name="statement">
-                    <xsl:attribute name="lang"><xsl:text>zzz</xsl:text></xsl:attribute>
+                    <xsl:attribute name="lang">
+                        <xsl:text>zzz</xsl:text>
+                    </xsl:attribute>
                     <xsl:attribute name="format">
                         <xsl:value-of select="d2s:format(promoVersionInfo/@contentType)"/>
                     </xsl:attribute>
                     <xsl:copy-of select="promoVersionInfo/node()"/>
-                </xsl:element>  
-        </xsl:copy>
+                </xsl:element>
+            </xsl:copy>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="language">
@@ -236,7 +269,14 @@
                     <xsl:value-of select="name/text()"/>
                 </xsl:element>
                 <xsl:element name="scriptDirection">
+                    <xsl:choose>
+                        <xsl:when test="scriptDirection">
                     <xsl:value-of select="scriptDirection/text()"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>LTR</xsl:text>
+                        </xsl:otherwise>
+                        </xsl:choose>
                 </xsl:element>
             </xsl:element>
         </xsl:element>
