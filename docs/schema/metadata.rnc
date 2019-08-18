@@ -72,7 +72,7 @@ peripheral_elements =
     & promotion_element?
     & snapshot_element
 # TYPE
-scripture_type_element = scripture_text_type_element | scripture_x_type_element
+scripture_type_element = scripture_text_type_element | scripture_audio_type_element | scripture_sign_language_type_element | scripture_print_type_element | scripture_braille_type_element | scripture_x_type_element
 gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
 parascriptural_type_element = parascriptural_word_alignment_type_element
 peripheral_type_element = peripheral_versification_type_element | peripheral_x_type_element
@@ -83,6 +83,38 @@ scripture_text_type_element =
         & scripture_type_elements
         & common_type_elements
         & scripture_text_details_element?
+    }
+scripture_audio_type_element =
+    element type {
+        element flavor { "scriptureAudio" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_audio_details_element?
+    }
+scripture_sign_language_type_element =
+    element type {
+        element flavor { "scriptureSignLanguageVideo" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_sign_language_details_element?
+    }
+scripture_print_type_element =
+    element type {
+        element flavor { "scripturePrint" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_print_details_element?
+    }
+scripture_braille_type_element =
+    element type {
+        element flavor { "scriptureBraille" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_braille_details_element?
     }
 scripture_x_type_element =
     element type {
@@ -184,6 +216,42 @@ scripture_text_details_element =
         & element usfmVersion{ xsd:string { pattern="\d+\.\d+(\..+)?" } }
         & text_convention_element*
     }
+scripture_audio_details_element =
+    element flavorDetails {
+        element source { scripture_audio_format_elements }?
+        & element production { scripture_audio_format_elements }?
+        & audio_convention_element*
+    }
+scripture_audio_format_elements = (
+    element compression { audioCompressionEnum } &
+    element trackConfiguration { audioTrackEnum } &
+    element bitRate { xsd:integer }? &
+    element bitDepth { xsd:integer }? &
+    element samplingRate { xsd:integer }?
+)
+audioCompressionEnum = (
+  "MP3"  |
+  "WAV"
+)
+
+audioTrackEnum = (
+    "1/0 (Mono)"   |
+    "Dual mono"    |
+    "2/0 (Stereo)" |
+    "5.1 Surround"
+)
+scripture_print_details_element =
+    element flavorDetails {
+        print_convention_element*
+    }
+scripture_sign_language_details_element =
+    element flavorDetails {
+        sign_language_convention_element*
+    }
+scripture_braille_details_element =
+    element flavorDetails {
+        braille_convention_element*
+    }
 # IDENTIFICATION
 identification_element =
     element identification {
@@ -209,6 +277,26 @@ text_convention_element =
     element convention {
         attribute version { version_string },
         (text_convention_enum | x_convention_string)
+    }
+audio_convention_element =
+    element convention {
+        attribute version { version_string },
+        (audio_convention_enum | x_convention_string)
+    }
+print_convention_element =
+    element convention {
+        attribute version { version_string },
+        (print_convention_enum | x_convention_string)
+    }
+sign_language_convention_element =
+    element convention {
+        attribute version { version_string },
+        (sign_language_convention_enum | x_convention_string)
+    }
+braille_convention_element =
+    element convention {
+        attribute version { version_string },
+        (braille_convention_enum | x_convention_string)
     }
 x_details_element = element flavorDetails { anything* }
 # RELATIONSHIPS
@@ -520,6 +608,10 @@ x_flavor_string = x_thingey
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
 text_convention_enum = "usxRefs" | "usxDirs"
+audio_convention_enum = "wholeChapters" | "bookDirs"
+print_convention_enum = empty
+sign_language_convention_enum = empty
+braille_convention_enum = empty
 x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
 confidentiality_enum = "unrestricted" | "restricted" | "private"
