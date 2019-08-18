@@ -181,7 +181,8 @@ scope_book = element bookScope { canonical_reference_string }
 scripture_text_details_element =
     element flavorDetails {
         element projectType { scripture_text_project_type_enum }
-        & conventions_element?
+        & element usfmVersion{ xsd:string { pattern="\d+\.\d+(\..+)?" } }
+        & text_convention_element*
     }
 # IDENTIFICATION
 identification_element =
@@ -204,11 +205,10 @@ name_like_content =
 abbreviation_like_content =
     attribute lang { bcp47_string },
     abbreviation_string
-conventions_element = element conventions { convention_element+ }
-convention_element =
+text_convention_element =
     element convention {
         attribute version { version_string },
-        (convention_enum | x_convention_string)
+        (text_convention_enum | x_convention_string)
     }
 x_details_element = element flavorDetails { anything* }
 # RELATIONSHIPS
@@ -519,7 +519,7 @@ flavor_enum = "scriptureText"
 x_flavor_string = x_thingey
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
-convention_enum = "usxRefs" | "usxDirs"
+text_convention_enum = "usxRefs" | "usxDirs"
 x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
 confidentiality_enum = "unrestricted" | "restricted" | "private"

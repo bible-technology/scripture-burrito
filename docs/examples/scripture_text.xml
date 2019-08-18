@@ -61,11 +61,10 @@
         </confidentiality>
         <flavorDetails>
             <projectType>standard</projectType>
-            <conventions>
-                <convention version="1.0">usxDirs</convention>
-                <convention version="1.0">usxRefs</convention>
-                <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
-            </conventions>
+            <usfmVersion>3.1.rc49</usfmVersion>
+            <convention version="0.1">usxDirs</convention>
+            <convention version="0.1">usxRefs</convention>
+            <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
         </flavorDetails>
     </type>
     <licenses>
