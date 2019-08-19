@@ -242,6 +242,7 @@ scripture_audio_format_elements =
     & element bitRate { xsd:integer }?
     & element bitDepth { xsd:integer }?
     & element samplingRate { xsd:integer }?
+    & element timingDir { path_string }?
 audioCompressionEnum = "MP3" | "WAV"
 audioTrackEnum = "1/0 (Mono)" | "Dual mono" | "2/0 (Stereo)" | "5.1 Surround"
 audioTypeDramatizationEnum = "Dramatized" | "Non-Dramatized" | "Single-Voice"
@@ -278,7 +279,40 @@ printFormatFontElement =
         trimmed_text
     }
 scripture_sign_language_details_element =
-    element flavorDetails { sign_language_convention_element* }
+    element flavorDetails {
+        element translationType { translationTypeEnum }?
+        & element audience { translationLevelEnum }?
+        & element container {"MP4"} &
+      videoFormatVideoStream &
+      videoFormatAudioStream? &
+      videoFormatSubtitleStream? &
+      element timingDir { path_string }? &
+      element contentByChapter { xsd:boolean }?
+      & sign_language_convention_element*
+    }
+videoFormatVideoStream =
+  element videoStream {
+      element codec { xsd:string } &
+      element bitRate { xsd:positiveInteger } &
+      element frameRate { xsd:decimal } &
+      element screenResolution { screenResolution }
+  }
+
+screenResolution = xsd:string { pattern = "[1-9][0-9]{0,3}x[1-9][0-9]{0,3}" }
+videoFormatAudioStream =
+  element audioStream { audioSubelements }
+audioSubelements =
+element compression { audioCompressionEnum }? &
+    element trackConfiguration { audioTrackEnum }? &
+    element bitRate { xsd:integer }? &
+    element bitDepth { xsd:integer }? &
+    element samplingRate { xsd:integer }? &
+    element timingDir { path_string }? &
+    element contentByChapter { xsd:boolean }?
+
+
+videoFormatSubtitleStream = element subtitleStream { empty }
+
 scripture_braille_details_element = element flavorDetails { braille_convention_element* }
 # IDENTIFICATION
 identification_element =
@@ -675,8 +709,9 @@ peripheral_enum =
     | "spine"
     | "tdx"
     | "title"
-burrito_role_enum = burrito_print_role_enum
+burrito_role_enum = burrito_print_role_enum | burrito_sign_language_enum
 burrito_print_role_enum = "printBody" | "printCover" | "printThumbnail" | "printFlowable"
+burrito_sign_language_enum = "timing"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
     "GEN"
