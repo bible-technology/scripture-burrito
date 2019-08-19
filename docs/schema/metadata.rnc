@@ -72,7 +72,13 @@ peripheral_elements =
     & promotion_element?
     & snapshot_element
 # TYPE
-scripture_type_element = scripture_text_type_element | scripture_x_type_element
+scripture_type_element =
+    scripture_text_type_element
+    | scripture_audio_type_element
+    | scripture_sign_language_type_element
+    | scripture_print_type_element
+    | scripture_braille_type_element
+    | scripture_x_type_element
 gloss_type_element = glossed_text_story_type_element | gloss_x_type_element
 parascriptural_type_element = parascriptural_word_alignment_type_element
 peripheral_type_element = peripheral_versification_type_element | peripheral_x_type_element
@@ -83,6 +89,38 @@ scripture_text_type_element =
         & scripture_type_elements
         & common_type_elements
         & scripture_text_details_element?
+    }
+scripture_audio_type_element =
+    element type {
+        element flavor { "scriptureAudio" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_audio_details_element?
+    }
+scripture_sign_language_type_element =
+    element type {
+        element flavor { "scriptureSignLanguageVideo" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_sign_language_details_element?
+    }
+scripture_print_type_element =
+    element type {
+        element flavor { "scripturePrint" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_print_details_element?
+    }
+scripture_braille_type_element =
+    element type {
+        element flavor { "scriptureBraille" }
+        & element flavorType { "scripture" }
+        & scripture_type_elements
+        & common_type_elements
+        & scripture_braille_details_element?
     }
 scripture_x_type_element =
     element type {
@@ -181,8 +219,67 @@ scope_book = element bookScope { canonical_reference_string }
 scripture_text_details_element =
     element flavorDetails {
         element projectType { scripture_text_project_type_enum }
-        & conventions_element?
+        & element translationType { translationTypeEnum }
+        & element audience { translationLevelEnum }
+        & element usfmVersion {
+              xsd:string { pattern = "\d+\.\d+(\..+)?" }
+          }
+        & text_convention_element*
     }
+translationTypeEnum = "First" | "New" | "Revision" | "Study / Help Material"
+translationLevelEnum =
+    "Basic" | "Common" | "Common - Literary" | "Literary" | "Liturgical" | "Children"
+scripture_audio_details_element =
+    element flavorDetails {
+        element dramatization { audioTypeDramatizationEnum }
+        & element source { scripture_audio_format_elements }?
+        & element production { scripture_audio_format_elements }?
+        & audio_convention_element*
+    }
+scripture_audio_format_elements =
+    element compression { audioCompressionEnum }
+    & element trackConfiguration { audioTrackEnum }
+    & element bitRate { xsd:integer }?
+    & element bitDepth { xsd:integer }?
+    & element samplingRate { xsd:integer }?
+audioCompressionEnum = "MP3" | "WAV"
+audioTrackEnum = "1/0 (Mono)" | "Dual mono" | "2/0 (Stereo)" | "5.1 Surround"
+audioTypeDramatizationEnum = "Dramatized" | "Non-Dramatized" | "Single-Voice"
+scripture_print_details_element =
+    element flavorDetails { (pdf_print_elements | ttt_print_elements) & print_convention_element* }
+pdf_print_elements =
+    element contentType { "pdf" }
+    & element pod { xsd:boolean }
+    & element pageCount { xsd:positiveInteger }
+    & element width { measurementString }
+    & element height { measurementString }
+    & element scale { percentageString }
+    & element orientation { printOrientationEnum }
+    & element color { printColorEnum }
+    & element fonts { printFormatFontElement+ }?
+    & element edgeSpace {
+          element top { smallMeasurementString }
+          & element bottom { smallMeasurementString }
+          & element inside { smallMeasurementString }
+          & element outside { smallMeasurementString }
+      }
+    & element thumbnail {
+          element width { xsd:positiveInteger }
+          & element height { xsd:positiveInteger }
+          & element color { printColorEnum }
+      }?
+ttt_print_elements =
+    element contentType { "inDesignTaggedText" }
+    & element pod { "false" }
+    & element fonts { printFormatFontElement+ }?
+printFormatFontElement =
+    element font {
+        attribute type { printFontEnum },
+        trimmed_text
+    }
+scripture_sign_language_details_element =
+    element flavorDetails { sign_language_convention_element* }
+scripture_braille_details_element = element flavorDetails { braille_convention_element* }
 # IDENTIFICATION
 identification_element =
     element identification {
@@ -204,11 +301,30 @@ name_like_content =
 abbreviation_like_content =
     attribute lang { bcp47_string },
     abbreviation_string
-conventions_element = element conventions { convention_element+ }
-convention_element =
+text_convention_element =
     element convention {
         attribute version { version_string },
-        (convention_enum | x_convention_string)
+        (text_convention_enum | x_convention_string)
+    }
+audio_convention_element =
+    element convention {
+        attribute version { version_string },
+        (audio_convention_enum | x_convention_string)
+    }
+print_convention_element =
+    element convention {
+        attribute version { version_string },
+        (print_convention_enum | x_convention_string)
+    }
+sign_language_convention_element =
+    element convention {
+        attribute version { version_string },
+        (sign_language_convention_enum | x_convention_string)
+    }
+braille_convention_element =
+    element convention {
+        attribute version { version_string },
+        (braille_convention_enum | x_convention_string)
     }
 x_details_element = element flavorDetails { anything* }
 # RELATIONSHIPS
@@ -305,16 +421,19 @@ rights_admin_element =
           }?
     }
 # LICENSES
-licenses_element = element licenses { license_element+ }
+licenses_element =
+    element licenses {
+        license_element+
+        | element allRightsReserved { empty }
+        | element publicDomain { empty }
+    }
 license_element =
     element license {
-        element allRightsReserved { empty }
-        | element url {
-              xsd:anyURI { minLength = "1" }
-          }
+        element url {
+            xsd:anyURI { minLength = "1" }
+        }
         | element ingredient { path_string }
     }
-    | element publicDomain { empty }
 # LANGUAGES
 languages_element = element languages { language_element+ }
 language_element =
@@ -358,7 +477,7 @@ ingredient_element =
         & element size { xsd:nonNegativeInteger }
         & element mimeType { mime_type_string }
         & element checksum { checksum }?
-        & element scopeOrRole { canonical_reference_string | peripheral_enum }?
+        & element scopeOrRole { canonical_reference_string | peripheral_enum | burrito_role_enum }?
     }
 # PUBLICATIONS
 publications_element = element publications { publication_element+ }
@@ -516,7 +635,11 @@ flavor_enum = "scriptureText"
 x_flavor_string = x_thingey
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
-convention_enum = "usxRefs" | "usxDirs"
+text_convention_enum = "usxRefs" | "usxDirs" | "typesetAsVersedParagraphs"
+audio_convention_enum = "wholeChapters" | "bookDirs"
+print_convention_enum = empty
+sign_language_convention_enum = empty
+braille_convention_enum = empty
 x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
 confidentiality_enum = "unrestricted" | "restricted" | "private"
@@ -552,6 +675,8 @@ peripheral_enum =
     | "spine"
     | "tdx"
     | "title"
+burrito_role_enum = burrito_print_role_enum
+burrito_print_role_enum = "printBody" | "printCover" | "printThumbnail" | "printFlowable"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
     "GEN"
@@ -825,3 +950,9 @@ country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
 path_string = xsd:string { pattern = "\c+(/\c+)*" }
+measurementString = xsd:string { pattern = "[1-9][0-9]{1,4}mm" }
+smallMeasurementString = xsd:string { pattern = "[1-9][0-9]{0,2}mm" }
+percentageString = xsd:string { pattern = "[1-9][0-9]{1,3}%" }
+printOrientationEnum = "portrait" | "landscape"
+printColorEnum = "CMYK" | "RGB"
+printFontEnum = "OpenType" | "Other" | "Bitmap" | "TrueType" | "Type1"
