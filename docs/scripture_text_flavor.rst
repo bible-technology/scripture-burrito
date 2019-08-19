@@ -96,6 +96,38 @@ This is one of
 
 * transliterationWithEncoder
 
+---------------
+translationType
+---------------
+
+This is one of
+
+* First
+
+* New
+
+* Revision
+
+* Study / Help Material
+
+--------
+audience
+--------
+
+This is one of
+
+* Basic
+
+* Common
+
+* Common - Literary
+
+* Literary
+
+* Liturgical
+
+* Children
+
 -----------
 usfmVersion
 -----------
@@ -123,3 +155,9 @@ usxRefs
 Paratext provides references within USX in a language-independent, machine-friendly format, via parsing based on many settings within Paratext. This feature has proved extremely useful for producing ePubs, web pages and for other applications where references are treated as hyperlinks.
 
 When present, this convention confirms that machine-readable references has been provided in the USX. When absent, machine-readable references may or may not be present.
+
+-------------------------
+typesetAsVersedParagraphs
+-------------------------
+
+This convention informs consumers of the burrito, in a production context, that the content should be formatted with each verse or verse range as a separate paragraph, regardless of the position of paragraph breaks in the USX. The absence of this convention implies that consumers should respect the USX paragraph breaks.

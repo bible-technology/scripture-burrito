@@ -20,6 +20,18 @@ DBL stores one mp3 file per chapter. An option to store "source" wav files has r
 Metadata Flavor Details
 =======================
 
+-------------
+dramatization
+-------------
+
+This is one of
+
+* Dramatized
+
+* Non-Dramatized
+
+* Single-Voice
+
 -----------------
 Source properties
 -----------------

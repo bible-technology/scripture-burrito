@@ -61,9 +61,12 @@
         </confidentiality>
         <flavorDetails>
             <projectType>standard</projectType>
+            <audience>Common</audience>
+            <translationType>New</translationType>
             <usfmVersion>3.1.rc49</usfmVersion>
             <convention version="0.1">usxDirs</convention>
             <convention version="0.1">usxRefs</convention>
+            <convention version="0.1">typesetAsVersedParagraphs</convention>
             <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
         </flavorDetails>
     </type>
