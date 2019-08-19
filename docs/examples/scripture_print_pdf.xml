@@ -10,7 +10,7 @@
       <dateCompleted>1992-10-01</dateCompleted>
    </identification>
    <type>
-      <flavor>x-scripturePrint</flavor>
+      <flavor>scripturePrint</flavor>
       <flavorType>scripture</flavorType>
       <confidentiality>
          <metadata>unrestricted</metadata>
@@ -29,27 +29,31 @@
          <bookScope>MRK</bookScope>
       </scope>
       <flavorDetails>
-         <format>
-            <pod>true</pod>
-            <width>140mm</width>
-            <height>210mm</height>
-            <scale>100%</scale>
-            <orientation>portrait</orientation>
-            <color>CMYK</color>
-            <pageCount>193</pageCount>
-            <edgeSpace>
-               <top>5mm</top>
-               <bottom>9mm</bottom>
-               <inside>13mm</inside>
-               <outside>9mm</outside>
-            </edgeSpace>
-            <fonts>
-               <font type="OpenType">Times New Roman Regular</font>
-               <font type="OpenType">Times New Roman BoldBold</font>
-               <font type="OpenType">Times New Roman ItalicItalic</font>
-               <font type="OpenType">Segoe UI Symbol Regular</font>
-            </fonts>
-         </format>
+         <contentType>pdf</contentType>
+         <pod>true</pod>
+         <width>140mm</width>
+         <height>210mm</height>
+         <scale>100%</scale>
+         <orientation>portrait</orientation>
+         <color>CMYK</color>
+         <pageCount>193</pageCount>
+         <edgeSpace>
+            <top>5mm</top>
+            <bottom>9mm</bottom>
+            <inside>13mm</inside>
+            <outside>9mm</outside>
+         </edgeSpace>
+         <thumbnail>
+            <width>240</width>
+            <height>360</height>
+            <color>RGB</color>
+         </thumbnail>
+         <fonts>
+            <font type="OpenType">Times New Roman Regular</font>
+            <font type="OpenType">Times New Roman BoldBold</font>
+            <font type="OpenType">Times New Roman ItalicItalic</font>
+            <font type="OpenType">Segoe UI Symbol Regular</font>
+         </fonts>
       </flavorDetails>
    </type>
    <relationships>
@@ -93,18 +97,21 @@
          <size>21742731</size>
          <checksum>ea6cf3aaab5e87d4844a839f55712a2b</checksum>
          <mimeType>application/pdf</mimeType>
+         <scopeOrRole>printBody</scopeOrRole>
       </ingredient>
       <ingredient>
          <path>release/Cover.pdf</path>
          <size>69152</size>
          <checksum>1f4f62edc964bb34d5aab1a3e8490862</checksum>
          <mimeType>application/pdf</mimeType>
+         <scopeOrRole>printCover</scopeOrRole>
       </ingredient>
       <ingredient>
-         <path>source/zzzPADBL_2018POD_Source.zip</path>
-         <size>12859191</size>
-         <checksum>301fdbc3e4fac0b1d54652428f0425e9</checksum>
-         <mimeType>application/zip</mimeType>
+         <path>release/Thumbnail.jpeg</path>
+         <size>35287</size>
+         <checksum>4d5aab1a3e84908621f4f62edc964bb3</checksum>
+         <mimeType>image/jpeg</mimeType>
+         <scopeOrRole>printThumbnail</scopeOrRole>
       </ingredient>
    </ingredients>
    <publications>
@@ -118,7 +125,8 @@
             <bookScope>MRK</bookScope>
          </scope>
         <structure>
-            <content src="release/Inside.pdf"/>
+           <content src="release/Thumbnail.jpeg"/>
+           <content src="release/Inside.pdf"/>
             <content src="release/Cover.pdf"/>
         </structure>
       </publication>

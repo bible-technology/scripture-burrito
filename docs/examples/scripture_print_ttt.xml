@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<burritoMetadata schemaVersion="0.1">
+   <idServer prefix="dbl">http://thedigitalbiblelibrary.org</idServer>
+   <identification>
+      <systemId revision="2">dbl::ad9db258845aead5</systemId>
+      <name lang="eng">DBL Test Version with DC</name>
+      <name lang="zzz">DBL Test Version with DC Local</name>
+      <description lang="eng">English: DBL Test Version with DC Local New Testament</description>
+      <abbreviation lang="eng">DBLTD</abbreviation>
+      <dateCompleted>1992-10-01</dateCompleted>
+   </identification>
+   <type>
+      <flavor>scripturePrint</flavor>
+      <flavorType>scripture</flavorType>
+      <confidentiality>
+         <metadata>unrestricted</metadata>
+         <source>private</source>
+         <publications>restricted</publications>
+      </confidentiality>
+      <canonSpec type="OT, NT">
+         <component name="westernOT"/>
+         <component name="westernNT"/>
+      </canonSpec>
+      <scope>
+         <bookScope>ACT</bookScope>
+         <bookScope>JHN</bookScope>
+         <bookScope>LUK</bookScope>
+         <bookScope>MAT</bookScope>
+         <bookScope>MRK</bookScope>
+      </scope>
+      <flavorDetails>
+         <contentType>inDesignTaggedText</contentType>
+         <pod>false</pod>
+         <fonts>
+            <font type="OpenType">Times New Roman Regular</font>
+            <font type="OpenType">Times New Roman BoldBold</font>
+            <font type="OpenType">Times New Roman ItalicItalic</font>
+            <font type="OpenType">Segoe UI Symbol Regular</font>
+         </fonts>
+      </flavorDetails>
+   </type>
+   <relationships>
+      <relation id="dbl::2880c78491b2f8ce"
+                revision="89"
+                flavor="scriptureText"
+                relationType="source"/>
+    </relationships>
+   <agencies>
+      <contributor>
+         <id>dbl::54650cfa5117ad690fb05fb6</id>
+         <name lang="eng">Organization for DBL Testing</name>
+         <name lang="zzz">Organization for DBL Testing</name>
+         <url>http://thedigitalbiblelibrary.org</url>
+         <isRightsHolder>true</isRightsHolder>
+         <contributes>
+            <content>true</content>
+            <publication>true</publication>
+            <management>true</management>
+            <qa>true</qa>
+         </contributes>
+      </contributor>
+   </agencies>
+   <languages>
+      <language>
+         <bcp47>eng</bcp47>
+         <name lang="eng">English</name>
+         <scriptDirection>LTR</scriptDirection>
+      </language>
+   </languages>
+   <countries>
+      <country>
+        <iso>US</iso>
+        <name lang="eng">United States</name>
+      </country>
+    </countries>
+   <names/>
+   <ingredients>
+      <ingredient>
+         <path>release/flow.indd</path>
+         <size>21742731</size>
+         <checksum>ea6cf3aaab5e87d4844a839f55712a2b</checksum>
+         <mimeType>application/x-indesign</mimeType>
+         <scopeOrRole>printFlowable</scopeOrRole>
+      </ingredient>
+   </ingredients>
+   <publications>
+      <publication id="p0">
+        <name lang="eng">Print bundle</name>
+        <scope>
+            <bookScope>ACT</bookScope>
+            <bookScope>JHN</bookScope>
+            <bookScope>LUK</bookScope>
+            <bookScope>MAT</bookScope>
+            <bookScope>MRK</bookScope>
+         </scope>
+        <structure>
+            <content src="release/flow.indd"/>
+        </structure>
+      </publication>
+    </publications>
+   <copyright>
+      <statement lang="zzz" format="html" type="full">
+          <p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>
+        </statement>
+   </copyright>
+   <promotion>
+      <statement lang="zzz" format="html">
+        <p>Good News Translation with Deuterocanonicals/Apocrypha. Scripture taken from the Good News Translation (r) (Today's English Version, Second Edition). Copyright (c) 1992 American Bible Society. Used by permission.</p>
+        <p>This is a Digital Bible Library demonstration bundle. It should NOT BE USED for any publication purposes</p>
+      </statement>
+   </promotion>
+   <snapshot>
+      <creation>
+         <user>Publishing Assistant/6.1.0.0</user>
+      </creation>
+      <uploading>
+         <user>Bev Cope</user>
+      </uploading>
+      <comments>update to test dates</comments>
+   </snapshot>
+   <licenses>
+      <allRightsReserved/>
+   </licenses>
+</burritoMetadata>

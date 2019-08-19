@@ -245,7 +245,38 @@ scripture_audio_format_elements =
 audioCompressionEnum = "MP3" | "WAV"
 audioTrackEnum = "1/0 (Mono)" | "Dual mono" | "2/0 (Stereo)" | "5.1 Surround"
 audioTypeDramatizationEnum = "Dramatized" | "Non-Dramatized" | "Single-Voice"
-scripture_print_details_element = element flavorDetails { print_convention_element* }
+scripture_print_details_element =
+    element flavorDetails { (pdf_print_elements | ttt_print_elements) & print_convention_element* }
+pdf_print_elements =
+    element contentType { "pdf" }
+    & element pod { xsd:boolean }
+    & element pageCount { xsd:positiveInteger }
+    & element width { measurementString }
+    & element height { measurementString }
+    & element scale { percentageString }
+    & element orientation { printOrientationEnum }
+    & element color { printColorEnum }
+    & element fonts { printFormatFontElement+ }?
+    & element edgeSpace {
+          element top { smallMeasurementString }
+          & element bottom { smallMeasurementString }
+          & element inside { smallMeasurementString }
+          & element outside { smallMeasurementString }
+      }
+    & element thumbnail {
+          element width { xsd:positiveInteger }
+          & element height { xsd:positiveInteger }
+          & element color { printColorEnum }
+      }?
+ttt_print_elements =
+    element contentType { "inDesignTaggedText" }
+    & element pod { "false" }
+    & element fonts { printFormatFontElement+ }?
+printFormatFontElement =
+    element font {
+        attribute type { printFontEnum },
+        trimmed_text
+    }
 scripture_sign_language_details_element =
     element flavorDetails { sign_language_convention_element* }
 scripture_braille_details_element = element flavorDetails { braille_convention_element* }
@@ -446,7 +477,7 @@ ingredient_element =
         & element size { xsd:nonNegativeInteger }
         & element mimeType { mime_type_string }
         & element checksum { checksum }?
-        & element scopeOrRole { canonical_reference_string | peripheral_enum }?
+        & element scopeOrRole { canonical_reference_string | peripheral_enum | burrito_role_enum }?
     }
 # PUBLICATIONS
 publications_element = element publications { publication_element+ }
@@ -644,6 +675,8 @@ peripheral_enum =
     | "spine"
     | "tdx"
     | "title"
+burrito_role_enum = burrito_print_role_enum
+burrito_print_role_enum = "printBody" | "printCover" | "printThumbnail" | "printFlowable"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
     "GEN"
@@ -917,3 +950,9 @@ country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
 path_string = xsd:string { pattern = "\c+(/\c+)*" }
+measurementString = xsd:string { pattern = "[1-9][0-9]{1,4}mm" }
+smallMeasurementString = xsd:string { pattern = "[1-9][0-9]{0,2}mm" }
+percentageString = xsd:string { pattern = "[1-9][0-9]{1,3}%" }
+printOrientationEnum = "portrait" | "landscape"
+printColorEnum = "CMYK" | "RGB"
+printFontEnum = "OpenType" | "Other" | "Bitmap" | "TrueType" | "Type1"
