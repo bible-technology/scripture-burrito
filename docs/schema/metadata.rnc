@@ -185,9 +185,12 @@ parascriptural_word_alignment_details_element =
           }
         & element stopWords { xsd:boolean }
         & element manualAlignment {
-              element userId { trimmed_text }
-              & element refs {
-                    element lid { empty }
+              element user { trimmed_text }
+              & element references {
+                    element lineId {
+                        element start { xsd:nonNegativeInteger }
+                        & element end { xsd:nonNegativeInteger }?
+                    }+
                 }
           }
     }

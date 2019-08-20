@@ -72,14 +72,15 @@
       </stemmer>
       <stopWords>true</stopWords>
       <manualAlignment>
-        <userId>anil.john</userId>
-        <refs>
-          <lid>
+        <user>anil.john</user>
+        <references>
+          <lineId>
             <start>25535</start>
             <end>26415</end>
-          </lid>
-          <lid>29321</lid>
-        </refs>
+          </lineId>
+          <lineId>
+            <start>29321</start></lineId>
+        </references>
       </manualAlignment>
     </flavorDetails>
   </type>
