@@ -7,10 +7,10 @@
 set -xe
 
 # Ensure previous rng file is deleted
-rm -f docs/schema/metadata.rng
+#rm -f docs/schema/metadata.rng
 
 # Build rng file from rnc master
-rnc2rng docs/schema/metadata.rnc >docs/schema/metadata.rng
+#rnc2rng docs/schema/metadata.rnc >docs/schema/metadata.rng
 
 # Run xmllint on each example file
 for x in `ls docs/examples/*.xml`; do
