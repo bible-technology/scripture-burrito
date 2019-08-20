@@ -6,6 +6,8 @@
 # Instructs bash to output all commands run and exit on any error
 set -xe
 
+xmllint --version
+
 # Ensure previous rng file is deleted
 #rm -f docs/schema/metadata.rng
 
