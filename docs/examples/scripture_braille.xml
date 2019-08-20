@@ -71,7 +71,9 @@
          <content>
             <chapterNumberStyle>upper</chapterNumberStyle>
             <chapterHeadingsNumberFirst>false</chapterHeadingsNumberFirst>
-            <versedParagraphs/>
+            <versedParagraphs>
+               <book>PSA</book>
+            </versedParagraphs>
             <verseSeparator>⠀⠀</verseSeparator>
             <includeIntros>false</includeIntros>
          </content>
