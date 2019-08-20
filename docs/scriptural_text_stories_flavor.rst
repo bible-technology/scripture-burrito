@@ -4,12 +4,28 @@
 Scriptural Text Stories
 #######################
 
-Overview
---------
+======
+Status
+======
 
-Scriptural Text Stories are an expression of the :ref:`gloss_flavors` type. In particular, this flavor retells stories from the Bible in a way that can be linked to the passages of scripture that they come from.
+[Where did this come from? Who developed it? How widely used is it? What problem does it solve?]
 
-Example
--------
+This flavor retells stories from the Bible in a way that can be linked to the passages of scripture that they come from.
 
-For an example, see the :ref:`appendix_example_glossed_text_story_document` metadata document.
+=======
+Content
+=======
+
+* 50 markdown (.md) files, 01 through 50, each of which contains a gloss of scriptural content, with simple formatting and links to images.
+
+=======================
+Metadata Flavor Details
+=======================
+
+* a storyVersion element containing the version of story represented by the burrito content.
+
+===========
+Conventions
+===========
+
+None

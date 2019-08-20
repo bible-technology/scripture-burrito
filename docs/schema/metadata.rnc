@@ -173,7 +173,7 @@ peripheral_x_type_element =
 common_type_elements = scope_element & confidentiality_element
 scripture_type_elements = canon_spec_element
 gloss_type_elements = canon_spec_element?
-glossed_text_story_details_element = element flavorDetails { empty }
+glossed_text_story_details_element = element flavorDetails { element storyVersion { version_string } }
 parascriptural_type_elements = empty
 parascriptural_word_alignment_details_element =
     element flavorDetails {
