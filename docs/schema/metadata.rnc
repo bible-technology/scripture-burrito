@@ -306,7 +306,69 @@ audioSubelements =
     & element samplingRate { xsd:integer }?
     & element contentByChapter { xsd:boolean }?
 videoFormatSubtitleStream = element subtitleStream { empty }
-scripture_braille_details_element = element flavorDetails { braille_convention_element* }
+scripture_braille_details_element = element flavorDetails {
+    element isContracted { xsd:boolean } &
+    brailleConvertorElement &
+    brailleHyphenationDictionaryElement? &
+    brailleNumberSignElement &
+    brailleContinuousPoetryElement? &
+    brailleContentElement &
+    braillePageElement &
+    braille_convention_element*
+}
+brailleConvertorElement = element brailleConvertor {
+    element version { xsd:string } &
+    element table {
+        element src { xsd:string },
+        element name { xsd:string }
+    }
+}
+
+brailleHyphenationDictionaryElement = element hyphenationDictionary {
+    attribute src { xsd:string },
+    element name { xsd:string }
+}
+
+brailleNumberSignElement = element numberSign {
+    element character { brailleString } &
+    element useInMargin { xsd:boolean }
+}
+
+brailleContinuousPoetryElement = element continuousPoetry {
+    element startIndicator { brailleString }? &
+    element lineIndicator { brailleString }? &
+    element lineIndicatorSpaced { "never" | "always" | "sometimes" } &
+    element endIndicator { brailleString } ?
+}
+
+brailleContentElement = element content {
+    element chapterNumberStyle {"lower" | "upper" } &
+    element chapterHeadingsNumberFirst { xsd:boolean } &
+    element versedParagraphs { brailleVersedBook+ }? &
+    element verseSeparator { brailleString } &
+    element includeIntros { xsd:boolean } &
+    element footnotes {
+        element callerSymbol{ brailleString }
+    }? &
+    element crossReferences {
+        element callerSymbol{ brailleString }
+    }? &
+    element characterStyles {
+        element emphasizedWord { brailleString }? &
+        element emphasizedPassageStart { brailleString }? &
+        element emphasizedPassageEnd { brailleString }?
+    }?
+}
+
+brailleVersedBook =   element book { canonical_book_enum | "ALL" }
+
+braillePageElement = element page {
+    element charsPerLine { xsd:positiveInteger } &
+    element linesPerPage { xsd:positiveInteger } &
+    element defaultMarginWidth { xsd:positiveInteger } &
+    element versoLastLineBlank { xsd:boolean } &
+    element carryLines { xsd:positiveInteger }
+}
 # IDENTIFICATION
 identification_element =
     element identification {
@@ -481,7 +543,7 @@ country_element =
 names_element = element names { names_name* }
 names_name =
     element name {
-        attribute id { xsd:NCName }
+        attribute id { xsd:string { pattern="[\c\+]+" } }
         & element long {
               attribute lang { bcp47_string },
               trimmed_text
@@ -523,12 +585,12 @@ publication_element =
 publication_divisions_or_content = (publication_structure_division | publication_structure_content)+
 publication_structure_division =
     element division {
-        attribute nameId { xsd:NCName },
+        attribute nameId { xsd:string { pattern="[\c\+]+" } },
         publication_divisions_or_content
     }
 publication_structure_content =
     element content {
-        attribute nameId { xsd:NCName }?
+        attribute nameId { xsd:string { pattern="[\c\+]+" } }?
         & attribute src { path_string }
     }
 # COPYRIGHT
@@ -980,10 +1042,11 @@ language_script_direction_enum =
 country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
-path_string = xsd:string { pattern = "\c+(/\c+)*" }
+path_string = xsd:string { pattern = "[\c\+]+(/[\c\+]+)*" }
 measurementString = xsd:string { pattern = "[1-9][0-9]{1,4}mm" }
 smallMeasurementString = xsd:string { pattern = "[1-9][0-9]{0,2}mm" }
 percentageString = xsd:string { pattern = "[1-9][0-9]{1,3}%" }
 printOrientationEnum = "portrait" | "landscape"
 printColorEnum = "CMYK" | "RGB"
 printFontEnum = "OpenType" | "Other" | "Bitmap" | "TrueType" | "Type1"
+brailleString = xsd:string { pattern = "([⠀-⣿])*" }
