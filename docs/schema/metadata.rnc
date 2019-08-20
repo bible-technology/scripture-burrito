@@ -306,69 +306,70 @@ audioSubelements =
     & element samplingRate { xsd:integer }?
     & element contentByChapter { xsd:boolean }?
 videoFormatSubtitleStream = element subtitleStream { empty }
-scripture_braille_details_element = element flavorDetails {
-    element isContracted { xsd:boolean } &
-    brailleConvertorElement &
-    brailleHyphenationDictionaryElement? &
-    brailleNumberSignElement &
-    brailleContinuousPoetryElement? &
-    brailleContentElement &
-    braillePageElement &
-    braille_convention_element*
-}
-brailleConvertorElement = element brailleConvertor {
-    element version { xsd:string } &
-    element table {
-        element src { xsd:string },
+scripture_braille_details_element =
+    element flavorDetails {
+        element isContracted { xsd:boolean }
+        & brailleConvertorElement
+        & brailleHyphenationDictionaryElement?
+        & brailleNumberSignElement
+        & brailleContinuousPoetryElement?
+        & brailleContentElement
+        & braillePageElement
+        & braille_convention_element*
+    }
+brailleConvertorElement =
+    element brailleConvertor {
+        element version { xsd:string }
+        & element table {
+              element src { xsd:string },
+              element name { xsd:string }
+          }
+    }
+brailleHyphenationDictionaryElement =
+    element hyphenationDictionary {
+        attribute src { xsd:string },
         element name { xsd:string }
     }
-}
-
-brailleHyphenationDictionaryElement = element hyphenationDictionary {
-    attribute src { xsd:string },
-    element name { xsd:string }
-}
-
-brailleNumberSignElement = element numberSign {
-    element character { brailleString } &
-    element useInMargin { xsd:boolean }
-}
-
-brailleContinuousPoetryElement = element continuousPoetry {
-    element startIndicator { brailleString }? &
-    element lineIndicator { brailleString }? &
-    element lineIndicatorSpaced { "never" | "always" | "sometimes" } &
-    element endIndicator { brailleString } ?
-}
-
-brailleContentElement = element content {
-    element chapterNumberStyle {"lower" | "upper" } &
-    element chapterHeadingsNumberFirst { xsd:boolean } &
-    element versedParagraphs { brailleVersedBook+ }? &
-    element verseSeparator { brailleString } &
-    element includeIntros { xsd:boolean } &
-    element footnotes {
-        element callerSymbol{ brailleString }
-    }? &
-    element crossReferences {
-        element callerSymbol{ brailleString }
-    }? &
-    element characterStyles {
-        element emphasizedWord { brailleString }? &
-        element emphasizedPassageStart { brailleString }? &
-        element emphasizedPassageEnd { brailleString }?
-    }?
-}
-
-brailleVersedBook =   element book { canonical_book_enum | "ALL" }
-
-braillePageElement = element page {
-    element charsPerLine { xsd:positiveInteger } &
-    element linesPerPage { xsd:positiveInteger } &
-    element defaultMarginWidth { xsd:positiveInteger } &
-    element versoLastLineBlank { xsd:boolean } &
-    element carryLines { xsd:positiveInteger }
-}
+brailleNumberSignElement =
+    element numberSign {
+        element character { brailleString }
+        & element useInMargin { xsd:boolean }
+    }
+brailleContinuousPoetryElement =
+    element continuousPoetry {
+        element startIndicator { brailleString }?
+        & element lineIndicator { brailleString }?
+        & element lineIndicatorSpaced { "never" | "always" | "sometimes" }
+        & element endIndicator { brailleString }?
+    }
+brailleContentElement =
+    element content {
+        element chapterNumberStyle { "lower" | "upper" }
+        & element chapterHeadingsNumberFirst { xsd:boolean }
+        & element versedParagraphs { brailleVersedBook+ }?
+        & element verseSeparator { brailleString }
+        & element includeIntros { xsd:boolean }
+        & element footnotes {
+              element callerSymbol { brailleString }
+          }?
+        & element crossReferences {
+              element callerSymbol { brailleString }
+          }?
+        & element characterStyles {
+              element emphasizedWord { brailleString }?
+              & element emphasizedPassageStart { brailleString }?
+              & element emphasizedPassageEnd { brailleString }?
+          }?
+    }
+brailleVersedBook = element book { canonical_book_enum | "ALL" }
+braillePageElement =
+    element page {
+        element charsPerLine { xsd:positiveInteger }
+        & element linesPerPage { xsd:positiveInteger }
+        & element defaultMarginWidth { xsd:positiveInteger }
+        & element versoLastLineBlank { xsd:boolean }
+        & element carryLines { xsd:positiveInteger }
+    }
 # IDENTIFICATION
 identification_element =
     element identification {
@@ -543,7 +544,9 @@ country_element =
 names_element = element names { names_name* }
 names_name =
     element name {
-        attribute id { xsd:string { pattern="[\c\+]+" } }
+        attribute id {
+            xsd:string { pattern = "[\c\+]+" }
+        }
         & element long {
               attribute lang { bcp47_string },
               trimmed_text
@@ -585,12 +588,16 @@ publication_element =
 publication_divisions_or_content = (publication_structure_division | publication_structure_content)+
 publication_structure_division =
     element division {
-        attribute nameId { xsd:string { pattern="[\c\+]+" } },
+        attribute nameId {
+            xsd:string { pattern = "[\c\+]+" }
+        },
         publication_divisions_or_content
     }
 publication_structure_content =
     element content {
-        attribute nameId { xsd:string { pattern="[\c\+]+" } }?
+        attribute nameId {
+            xsd:string { pattern = "[\c\+]+" }
+        }?
         & attribute src { path_string }
     }
 # COPYRIGHT
