@@ -3,16 +3,17 @@
 # This requires that the Python rnc2rng package be installed
 # pip3 install rnc2rng
 
+# Display version of xmllint for debuggin
+xmllint --version
+
 # Instructs bash to output all commands run and exit on any error
 set -xe
 
-xmllint --version
-
 # Ensure previous rng file is deleted
-#rm -f docs/schema/metadata.rng
+rm -f docs/schema/metadata.rng
 
 # Build rng file from rnc master
-#rnc2rng docs/schema/metadata.rnc >docs/schema/metadata.rng
+rnc2rng docs/schema/metadata.rnc >docs/schema/metadata.rng
 
 # Run xmllint on each example file
 for x in `ls docs/examples/*.xml`; do
