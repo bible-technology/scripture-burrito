@@ -4,13 +4,46 @@
 Parascriptural Word Alignment
 #############################
 
-Overview
-________
+======
+Status
+======
 
-Parascriptural Word Alignment is an expression of the :ref:`parascriptural_flavors` type. It specifies the alignment or linkage of words across two or more different scritpture texts.
+[What problem does this flavor solve. Where did it come from? Which organizations contributed to it?]
 
+=======
+Content
+=======
 
-Example
-_______
+[High level description of the format of the resource JSON]
 
-For an example, see :ref:`appendix_example_parascriptural_word_alignment_document`.
+=======================
+Metadata Flavor Details
+=======================
+
+[Brief description of what each field is for]
+
+------------------
+autoAlignerVersion
+------------------
+
+-------
+stemmer
+-------
+
+---------------
+manualAlignment
+---------------
+
+....
+user
+....
+
+..........
+references
+..........
+
+===========
+Conventions
+===========
+
+None

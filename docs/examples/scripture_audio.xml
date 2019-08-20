@@ -63,8 +63,9 @@
             <compression>MP3</compression>
             <trackConfiguration>2/0 (Stereo)</trackConfiguration>
             <bitRate>64</bitRate>
+            <timingDir>timing</timingDir>
          </production>
-         <convention version="0.1">wholeChapters</convention>
+         <convention version="0.1">contentResourcesByChapter</convention>
          <convention version="0.1">bookDirs</convention>
       </flavorDetails>
    </type>
@@ -460,6 +461,13 @@
          <checksum>575ffb699864cda4b6d3465e485e21f2</checksum>
          <mimeType>audio/mpeg</mimeType>
          <scopeOrRole>MAT 28</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>timing/MAT.xml</path>
+         <size>67466</size>
+         <checksum>cda4b6d3465e485e21f2575ffb699864</checksum>
+         <mimeType>text/xml</mimeType>
+         <scopeOrRole>timing</scopeOrRole>
       </ingredient>
    </ingredients>
    <names>

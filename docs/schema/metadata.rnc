@@ -173,7 +173,7 @@ peripheral_x_type_element =
 common_type_elements = scope_element & confidentiality_element
 scripture_type_elements = canon_spec_element
 gloss_type_elements = canon_spec_element?
-glossed_text_story_details_element = element flavorDetails { empty }
+glossed_text_story_details_element = element flavorDetails { element storyVersion { version_string } }
 parascriptural_type_elements = empty
 parascriptural_word_alignment_details_element =
     element flavorDetails {
@@ -185,9 +185,12 @@ parascriptural_word_alignment_details_element =
           }
         & element stopWords { xsd:boolean }
         & element manualAlignment {
-              element userId { trimmed_text }
-              & element refs {
-                    element lid { empty }
+              element user { trimmed_text }
+              & element references {
+                    element lineId {
+                        element start { xsd:nonNegativeInteger }
+                        & element end { xsd:nonNegativeInteger }?
+                    }+
                 }
           }
     }
@@ -242,6 +245,7 @@ scripture_audio_format_elements =
     & element bitRate { xsd:integer }?
     & element bitDepth { xsd:integer }?
     & element samplingRate { xsd:integer }?
+    & element timingDir { path_string }?
 audioCompressionEnum = "MP3" | "WAV"
 audioTrackEnum = "1/0 (Mono)" | "Dual mono" | "2/0 (Stereo)" | "5.1 Surround"
 audioTypeDramatizationEnum = "Dramatized" | "Non-Dramatized" | "Single-Voice"
@@ -278,8 +282,97 @@ printFormatFontElement =
         trimmed_text
     }
 scripture_sign_language_details_element =
-    element flavorDetails { sign_language_convention_element* }
-scripture_braille_details_element = element flavorDetails { braille_convention_element* }
+    element flavorDetails {
+        element translationType { translationTypeEnum }?
+        & element audience { translationLevelEnum }?
+        & element timingDir { path_string }?
+        & element container { "MP4" }
+        & videoFormatVideoStream
+        & videoFormatAudioStream?
+        & videoFormatSubtitleStream?
+        & sign_language_convention_element*
+    }
+videoFormatVideoStream =
+    element videoStream {
+        element codec { xsd:string }
+        & element bitRate { xsd:positiveInteger }
+        & element frameRate { xsd:decimal }
+        & element screenResolution { screenResolution }
+    }
+screenResolution = xsd:string { pattern = "[1-9][0-9]{0,3}x[1-9][0-9]{0,3}" }
+videoFormatAudioStream = element audioStream { audioSubelements }
+audioSubelements =
+    element compression { audioCompressionEnum }
+    & element trackConfiguration { audioTrackEnum }
+    & element bitRate { xsd:integer }?
+    & element bitDepth { xsd:integer }?
+    & element samplingRate { xsd:integer }?
+    & element contentByChapter { xsd:boolean }?
+videoFormatSubtitleStream = element subtitleStream { empty }
+scripture_braille_details_element =
+    element flavorDetails {
+        element isContracted { xsd:boolean }
+        & brailleConvertorElement
+        & brailleHyphenationDictionaryElement?
+        & brailleNumberSignElement
+        & brailleContinuousPoetryElement?
+        & brailleContentElement
+        & braillePageElement
+        & braille_convention_element*
+    }
+brailleConvertorElement =
+    element brailleConvertor {
+        element version { xsd:string }
+        & element table {
+              element src { xsd:string },
+              element name { xsd:string }
+          }
+    }
+brailleHyphenationDictionaryElement =
+    element hyphenationDictionary {
+        attribute src { xsd:string },
+        element name { xsd:string }
+    }
+brailleNumberSignElement =
+    element numberSign {
+        element character { brailleString }
+        & element useInMargin { xsd:boolean }
+    }
+brailleContinuousPoetryElement =
+    element continuousPoetry {
+        element startIndicator { brailleString }?
+        & element lineIndicator { brailleString }?
+        & element lineIndicatorSpaced { "never" | "always" | "sometimes" }
+        & element endIndicator { brailleString }?
+    }
+brailleContentElement =
+    element content {
+        element chapterNumberStyle { "lower" | "upper" }
+        & element chapterHeadingsNumberFirst { xsd:boolean }
+        & element versedParagraphs { brailleVersedBook+ }?
+        & element verseSeparator { brailleString }
+        & element includeIntros { xsd:boolean }
+        & element footnotes {
+              element callerSymbol { brailleString }
+          }?
+        & element crossReferences {
+              element callerSymbol { brailleString }
+          }?
+        & element characterStyles {
+              element emphasizedWord { brailleString }?
+              & element emphasizedPassageStart { brailleString }?
+              & element emphasizedPassageEnd { brailleString }?
+          }?
+    }
+brailleVersedBook = element book { canonical_book_enum | "ALL" }
+braillePageElement =
+    element page {
+        element charsPerLine { xsd:positiveInteger }
+        & element linesPerPage { xsd:positiveInteger }
+        & element defaultMarginWidth { xsd:positiveInteger }
+        & element versoLastLineBlank { xsd:boolean }
+        & element carryLines { xsd:positiveInteger }
+    }
 # IDENTIFICATION
 identification_element =
     element identification {
@@ -454,7 +547,9 @@ country_element =
 names_element = element names { names_name* }
 names_name =
     element name {
-        attribute id { xsd:NCName }
+        attribute id {
+            xsd:string { pattern = "[\c\+]+" }
+        }
         & element long {
               attribute lang { bcp47_string },
               trimmed_text
@@ -496,12 +591,16 @@ publication_element =
 publication_divisions_or_content = (publication_structure_division | publication_structure_content)+
 publication_structure_division =
     element division {
-        attribute nameId { xsd:NCName },
+        attribute nameId {
+            xsd:string { pattern = "[\c\+]+" }
+        },
         publication_divisions_or_content
     }
 publication_structure_content =
     element content {
-        attribute nameId { xsd:NCName }?
+        attribute nameId {
+            xsd:string { pattern = "[\c\+]+" }
+        }?
         & attribute src { path_string }
     }
 # COPYRIGHT
@@ -636,9 +735,9 @@ x_flavor_string = x_thingey
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
 text_convention_enum = "usxRefs" | "usxDirs" | "typesetAsVersedParagraphs"
-audio_convention_enum = "wholeChapters" | "bookDirs"
-print_convention_enum = empty
-sign_language_convention_enum = empty
+audio_convention_enum = "contentResourcesByChapter" | "bookDirs"
+print_convention_enum = "contentResourcesByChapter"
+sign_language_convention_enum = "contentResourcesByChapter" | "bookDirs" | "rolesInUris"
 braille_convention_enum = empty
 x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
@@ -675,8 +774,12 @@ peripheral_enum =
     | "spine"
     | "tdx"
     | "title"
-burrito_role_enum = burrito_print_role_enum
+burrito_role_enum = burrito_print_role_enum | burrito_timeline_enum | burrito_sign_language_enum
 burrito_print_role_enum = "printBody" | "printCover" | "printThumbnail" | "printFlowable"
+burrito_timeline_enum = "timing"
+burrito_sign_language_enum =
+    xsd:string { pattern = "(sign|concept|place)(--\S(.*\S)?)?" }
+    | "credits"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
     "GEN"
@@ -949,10 +1052,11 @@ language_script_direction_enum =
 country_iso_string = xsd:string { pattern = "[A-Z][A-Z]" }
 checksum = xsd:string { pattern = "[a-f0-9]{32}(\-\d+)?" }
 mime_type_string = xsd:string { pattern = "[\-a-z0-9]+/[\-a-z0-9+]+" }
-path_string = xsd:string { pattern = "\c+(/\c+)*" }
+path_string = xsd:string { pattern = "[\c\+]+(/[\c\+]+)*" }
 measurementString = xsd:string { pattern = "[1-9][0-9]{1,4}mm" }
 smallMeasurementString = xsd:string { pattern = "[1-9][0-9]{0,2}mm" }
 percentageString = xsd:string { pattern = "[1-9][0-9]{1,3}%" }
 printOrientationEnum = "portrait" | "landscape"
 printColorEnum = "CMYK" | "RGB"
 printFontEnum = "OpenType" | "Other" | "Bitmap" | "TrueType" | "Type1"
+brailleString = xsd:string { pattern = "([⠀-⣿])*" }

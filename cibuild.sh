@@ -3,6 +3,9 @@
 # This requires that the Python rnc2rng package be installed
 # pip3 install rnc2rng
 
+# Display version of xmllint for debuggin
+xmllint --version
+
 # Instructs bash to output all commands run and exit on any error
 set -xe
 

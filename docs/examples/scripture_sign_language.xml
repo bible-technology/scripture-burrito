@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <burritoMetadata schemaVersion="0.1">
    <idServer prefix="dbl">http://thedigitalbiblelibrary.org</idServer>
-   <identification xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <identification>
       <systemId revision="48">dbl::3d4e4af52ce24fff</systemId>
       <name lang="eng">Thai Sign-Language Fragment</name>
       <name lang="zzz">พระคริสตธรรมคัมภีร์ฉบับภาษามือไทย</name>
@@ -9,7 +9,7 @@
       <abbreviation lang="eng">TSLF</abbreviation>
       <dateCompleted>2017-04-07T15:05:47</dateCompleted>
    </identification>
-   <agencies xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <agencies>
       <contributor>
          <id>dbl::d41b7b7e1c41d27efc13f05f</id>
          <name lang="eng">DBLUnit Test Organization</name>
@@ -30,14 +30,14 @@
          <scriptDirection>LTR</scriptDirection>
       </language>
    </languages>
-   <countries xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <countries>
       <country>
          <iso>TH</iso>
          <name lang="eng">Thailand</name>
       </country>
   </countries>
-   <type xmlns:dbl="https://www.thedigitalbiblelibrary.org">
-      <flavor>x-scriptureSignLanguageVideo</flavor>
+   <type>
+      <flavor>scriptureSignLanguageVideo</flavor>
       <flavorType>scripture</flavorType>
       <confidentiality>
          <metadata>unrestricted</metadata>
@@ -52,23 +52,24 @@
          <bookScope>MRK</bookScope>
       </scope>
       <flavorDetails>
-         <format>
-            <container>MP4</container>
-            <videoStream>
-               <codec>H264</codec>
-               <bitRate>64000000</bitRate>
-               <frameRate>30</frameRate>
-               <screenResolution>1920x1080</screenResolution>
-            </videoStream>
-            <audioStream>
-               <compression>MP3</compression>
-               <trackConfiguration>2/0 (Stereo)</trackConfiguration>
-               <bitRate>128000</bitRate>
-               <bitDepth>16</bitDepth>
-               <samplingRate>44100</samplingRate>
-            </audioStream>
-            <subtitleStream/>
-         </format>
+         <translationType>New</translationType>
+         <audience>Common</audience>
+         <container>MP4</container>
+         <videoStream>
+            <codec>H264</codec>
+            <bitRate>64000000</bitRate>
+            <frameRate>30</frameRate>
+            <screenResolution>1920x1080</screenResolution>
+         </videoStream>
+         <audioStream>
+            <compression>MP3</compression>
+            <trackConfiguration>2/0 (Stereo)</trackConfiguration>
+            <bitRate>128000</bitRate>
+            <bitDepth>16</bitDepth>
+            <samplingRate>44100</samplingRate>
+         </audioStream>
+         <subtitleStream/>
+         <convention version="0.1">contentResourcesByChapter</convention>
       </flavorDetails>
    </type>
    <ingredients>
@@ -79,13 +80,34 @@
          <mimeType>video/mpeg</mimeType>
          <scopeOrRole>MRK 1:1-8</scopeOrRole>
       </ingredient>
+      <ingredient>
+         <path>jesus.mpg</path>
+         <size>30560</size>
+         <checksum>ac8c2d56e88542b6b6936f7e41fd1498</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>sign--jesus</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>kingdom_of_god.mpg</path>
+         <size>13056</size>
+         <checksum>8c2d56e88542b6b6936f7e41fd1498ac</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>concept--kingdom_of_god</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>bethlehem.mpg</path>
+         <size>401305</size>
+         <checksum>8ac8c2d56e88542b6b6936f7e41fd149</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>place--bethlehem</scopeOrRole>
+      </ingredient>
    </ingredients>
-   <names xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <names>
       <name id="section-mrk_1_1-8">
          <short lang="zzz">การประกาศของยอห์นผู้ให้บัพติศมา</short>
       </name>
   </names>
-   <publications xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <publications>
       <publication id="p1">
          <name lang="eng">Mark</name>
          <name lang="zzz">มาระโก</name>
@@ -108,14 +130,14 @@
       </uploading>
       <comments>Testing video upload</comments>
    </snapshot>
-   <copyright xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <copyright>
       <statement lang="zzz" format="html" type="full">
         <p>
             <a href="http://www.thaibible.or.th/">Thailand Bible Society</a>
         </p>
       </statement>
    </copyright>
-   <promotion xmlns:dbl="https://www.thedigitalbiblelibrary.org">
+   <promotion>
       <statement lang="zzz" format="html">
          <p>Thai Sign Language Bible.</p>
       </statement>

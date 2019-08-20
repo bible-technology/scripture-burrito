@@ -34,7 +34,9 @@
             <publications>restricted</publications>
             <source>private</source>
         </confidentiality>
-        <flavorDetails/>
+        <flavorDetails>
+            <storyVersion>4.0.0</storyVersion>
+        </flavorDetails>
     </type>
     <licenses>
         <license>
@@ -80,288 +82,336 @@
             <size>4643</size>
             <checksum>fc6101f665da97002862cafed784de95</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 6-8</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/04.md</path>
             <size>3111</size>
             <checksum>17ccaa819af588bd1830168c4dc73008</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 11-15</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/05.md</path>
             <size>3190</size>
             <checksum>aa93ae1514903e4762c41a4799bded1e</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 16-22</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/06.md</path>
             <size>1930</size>
             <checksum>a472c547a96f8969c268eb47062cd221</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 24:1-25:26</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/07.md</path>
             <size>2773</size>
             <checksum>4b8f9a9bb0db9cd3e1f9ac314e5f2fec</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 25:27-35:29</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/08.md</path>
             <size>4021</size>
             <checksum>31890f93882d9bb33a38e54b8a052cd4</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 37-50</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/09.md</path>
             <size>4075</size>
             <checksum>ef11865205f3dac31d6ebd74859df859</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 1-4</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/10.md</path>
             <size>3127</size>
             <checksum>6351fc1873ff37adb5a64d28aaed7b3f</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 5-10</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/11.md</path>
             <size>2176</size>
             <checksum>0aa0b5d47463a09275946dcb69c6418b</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 11:1-12:32</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/12.md</path>
             <size>4033</size>
             <checksum>8f068bb39642226608ad71c0880ee1fd</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 12:33-15:21</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/13.md</path>
             <size>5005</size>
             <checksum>866e301050f63db4c03f0102f9e2a99e</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 19-34</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/14.md</path>
             <size>5562</size>
             <checksum>69a1342da0c221a0ed115ec074db4079</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>EXO 16-17;NUM 10-14;NUM 20;NUM 27;DEU 34</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/15.md</path>
             <size>4513</size>
             <checksum>ca3baee2d1bfa63d908e2e760b10a638</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>JOS 1-24</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/16.md</path>
             <size>6786</size>
             <checksum>4428acfae6759887aa9c09fd7f6018f8</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>JDG 1-3;JDG 6-8;1SA 1-10</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/17.md</path>
             <size>5657</size>
             <checksum>20a38a37f8728021824f41cb2dad8a08</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>1SA 10;1SA 15-19;1SA 24;1SA 31;2SA 5;2SA 7;2SA 11-12</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/18.md</path>
             <size>3878</size>
             <checksum>c9662bbcdbbfbc6837d183827a4e6b62</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>1KI 1-6;1KI 11-12</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/19.md</path>
             <size>6625</size>
             <checksum>84235401870e3d6535d2ff2645ffa7f6</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>1KI 16-18;2KI 5;JER 38</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/20.md</path>
             <size>4428</size>
             <checksum>f0e84e54d7f12667082642dd8a960f21</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>2KI 17;2KI 24-25;2CH 36;EZR 1-10;NEH 1-13</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/21.md</path>
             <size>5781</size>
             <checksum>8605b00d4108d814fee5b8bcfe72ea9a</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 3:15;GEN 12:1-3;DEU 18:15;2SA 7;JER 31;ISA 59:16;DAN 7;MAL 4:5;ISA 7:14;MIC 5:2;ISA 9:1-7;ISA 35:3-5;ISA 61;ISA 53;PSA 22:18;PSA 35:19;PSA 69:4;PSA 41:9;ZEC 11:12-13;ISA 50:6;PSA 16:10-11</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/22.md</path>
             <size>2690</size>
             <checksum>0b1e7247f77b72208bfda33be83683a8</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>LUK 1</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/23.md</path>
             <size>3468</size>
             <checksum>571077fc664ffb076428755896e544a7</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 1;LUK 2</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/24.md</path>
             <size>2620</size>
             <checksum>1b45c927f704eabe9f135cdfbcdc48cd</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 3;MRK 1:9-11;LUK 3:1-23</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/25.md</path>
             <size>1951</size>
             <checksum>5f5f9c220805cae0b0abf1d8a63f9b66</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 4:1-11;MRK 1:12-13;LUK 4:1-13</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/26.md</path>
             <size>3495</size>
             <checksum>55f5e9b9bcc73f11696925b87b5c4cf7</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 4:12-25;MRK 1:14-15,35-39;MRK 3:13-21;LUK 4:14-30,38-44</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/27.md</path>
             <size>3028</size>
             <checksum>eb55700953c0d59b1dc8b3cefb5bf887</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>LUK 10:25-37</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/28.md</path>
             <size>2655</size>
             <checksum>fac5f8e09a83be6bb3ac094cccfa0e88</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 19:16-30;MRK 10:17-31;LUK 18:18-30</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/29.md</path>
             <size>2384</size>
             <checksum>c5b79dd268d4b1ef89adb0dfea8c39f8</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 18:21-35</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/30.md</path>
             <size>2502</size>
             <checksum>a7a5cfb0f51374b5a11868a46de54670</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 14:13-21;MRK 6:31-44;LUK 9:10-17;JHN 6:5-15</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/31.md</path>
             <size>2313</size>
             <checksum>1bb93b0b3e253a5526e7d182588383f3</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 14:22-33;MRK 6:45-52;JHN 6:16-21</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/32.md</path>
             <size>4293</size>
             <checksum>07190449c5cf01ed0871a84d4752f90c</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 8:28-34;MAT 9:20-22;MRK 5:1-20;MRK 5:24-34;LUK 8:26-39;LUK 8:42-48</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/33.md</path>
             <size>2766</size>
             <checksum>a326a9334f697a282d02880d0f6e2eb9</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 13:1-8,18-23;MRK 4:1-8,13-20;LUK 8:4-15</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/34.md</path>
             <size>2875</size>
             <checksum>4b220de9bb40ca55bcc93e271266c293</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 13:31-33,44-46;MRK 4:30-32;LUK 13:18-21;LUK 18:9-14</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/35.md</path>
             <size>3638</size>
             <checksum>5e41ff2898098b9ff1cec9ecfc30f29d</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>LUK 15:11-32</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/36.md</path>
             <size>1933</size>
             <checksum>d981f3aa3b4ae51a3250240ce908c653</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 17:1-9;MRK 9:2-8;LUK 9:28-36</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/37.md</path>
             <size>3382</size>
             <checksum>0b997eb1b60f2216a12e93a4f117c13b</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>JHN 11:1-46</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/38.md</path>
             <size>4992</size>
             <checksum>1db355a0f75a4e35a786f18f5dede91a</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 26:14-56;MRK 14:10-50;LUK 22:1-53;JHN 12:6;JHN 18:1-11</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/39.md</path>
             <size>3864</size>
             <checksum>e96748e2901af86a2ff9ae0ff01474c2</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 26:57-27:26;MRK 14:53-15:15;LUK 22:54-23:25;JHN 18:12-19:16</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/40.md</path>
             <size>2952</size>
             <checksum>6ffa1e657edbd93b250c578e94706ce2</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 27:27-61;MRK 15:16-47;LUK 23:26-56;JHN 19:17-42</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/41.md</path>
             <size>2515</size>
             <checksum>10962702e8421cc15acebdb1bbdf6a39</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 27:62-28:15;MRK 16:1-11;LUK 24:1-12;JHN 20:1-18</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/42.md</path>
             <size>4350</size>
             <checksum>ff6d7bf182430ec23e4fae1eb1962704</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 28:16-20;MRK 16:12-20;LUK 24:13-53;JHN 20:19-23;ACT 1:1-11</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/43.md</path>
             <size>3904</size>
             <checksum>fd1dfc9f92944f8a5f407f6fa772a243</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ACT 2</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/44.md</path>
             <size>2890</size>
             <checksum>834e091cc7a8fb88e35e503c211be1ff</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ACT 3:1-4:22</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/45.md</path>
             <size>4598</size>
             <checksum>affbd3eb32ac61aff553e66ba38e81cb</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ACT 6:8-8:5;ACT 8:26-40</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/46.md</path>
             <size>4026</size>
             <checksum>4fb1899be870bdd3921a65c183db698a</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ACT 8:3;ACT 9:1-31;ACT 11:19-26;ACT 13:1-3</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/47.md</path>
             <size>4244</size>
             <checksum>9c6dac4664f8016851a065f8cb8729d5</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ACT 16:11-40</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/48.md</path>
             <size>4926</size>
             <checksum>de7945b281df514778aa0a6ff67a1b08</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>GEN 1-3;GEN 6;GEN 14;GEN 22;EXO 12;EXO 20;2SA 7;HEB 3:1-6;HEB 4:14-5:10;HEB 7:1-8:13;HEB 9:11-10:18;REV 21</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/49.md</path>
             <size>5677</size>
             <checksum>5b754c297de6eeb82372d40f4cc9c16f</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>ROM 3:21-26;ROM 5:1-11;JHN 3:16;MRK 16:16;COL 1:13-14;2CO 5:17-21;1JN 1:5-10</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/50.md</path>
             <size>5942</size>
             <checksum>277af7764af1bfc89302f21d5ff40e98</checksum>
             <mimeType>text/markdown</mimeType>
+            <scopeOrRole>MAT 24:14;MAT 28:18;JHN 15:20;JHN 16:33;REV 2:10;MAT 13:24-30;MAT 13,36-42;1TH 4:13-5:11;JAS 1:12;MAT 22:13;REV 20:10;REV 21:1-22:21</scopeOrRole>
         </ingredient>
         <ingredient>
             <path>content/back/intro.md</path>

@@ -8,12 +8,9 @@
       <abbreviation lang="eng">DBLUTG</abbreviation>
    </identification>
    <relationships>
-      <relation id="dbl::2881c78491b2f8cf"
-                revision="19"
-                flavor="scriptureText"
-                relationType="source"
-                publicationId="p1"/>
-  </relationships>
+      <relation id="dbl::2881c78491b2f8cf" revision="19" flavor="scriptureText"
+         relationType="source" publicationId="p1"/>
+   </relationships>
    <agencies>
       <contributor>
          <id>dbl::d41b7b7e1c41d27efc13f05f</id>
@@ -40,9 +37,9 @@
          <iso>US</iso>
          <name lang="eng">United States</name>
       </country>
-  </countries>
+   </countries>
    <type>
-      <flavor>x-scriptureBraille</flavor>
+      <flavor>scriptureBraille</flavor>
       <flavorType>scripture</flavorType>
       <confidentiality>
          <metadata>unrestricted</metadata>
@@ -60,34 +57,34 @@
          <bookScope>JHN</bookScope>
       </scope>
       <flavorDetails>
-         <format>
-            <liblouis>
-               <table>
-                  <source>en-ueb-g2.ctb</source>
-                  <name>Unified English Braille Grade 2</name>
-               </table>
-               <version>3.7.0</version>
-            </liblouis>
-            <numberSign>
-               <character>⠼</character>
-               <useInMargin>false</useInMargin>
-            </numberSign>
-            <content>
-               <chapterNumberStyle>upper</chapterNumberStyle>
-               <chapterHeadingsNumberFirst>false</chapterHeadingsNumberFirst>
-               <versedParagraphs>false</versedParagraphs>
-               <verseSeparator>⠀⠀</verseSeparator>
-               <includeIntros>false</includeIntros>
-            </content>
-            <page>
-               <charsPerLine>36</charsPerLine>
-               <linesPerPage>28</linesPerPage>
-               <defaultMarginWidth>3</defaultMarginWidth>
-               <versoLastLineBlank>false</versoLastLineBlank>
-               <carryLines>1</carryLines>
-            </page>
-            <isContracted>true</isContracted>
-         </format>
+         <brailleConvertor>
+            <table>
+               <src>en-ueb-g2.ctb</src>
+               <name>Unified English Braille Grade 2</name>
+            </table>
+            <version>3.7.0</version>
+         </brailleConvertor>
+         <numberSign>
+            <character>⠼</character>
+            <useInMargin>false</useInMargin>
+         </numberSign>
+         <content>
+            <chapterNumberStyle>upper</chapterNumberStyle>
+            <chapterHeadingsNumberFirst>false</chapterHeadingsNumberFirst>
+            <versedParagraphs>
+               <book>PSA</book>
+            </versedParagraphs>
+            <verseSeparator>⠀⠀</verseSeparator>
+            <includeIntros>false</includeIntros>
+         </content>
+         <page>
+            <charsPerLine>36</charsPerLine>
+            <linesPerPage>28</linesPerPage>
+            <defaultMarginWidth>3</defaultMarginWidth>
+            <versoLastLineBlank>false</versoLastLineBlank>
+            <carryLines>1</carryLines>
+         </page>
+         <isContracted>true</isContracted>
       </flavorDetails>
    </type>
    <ingredients>
@@ -96,18 +93,21 @@
          <size>450689</size>
          <checksum>8e8844dd0a6f08c6d8582a30d9595f12</checksum>
          <mimeType>text/xml</mimeType>
+         <scopeOrRole>MAT</scopeOrRole>
       </ingredient>
       <ingredient>
          <path>release/PEF/MAT_1-2+MRK_1-2+LUK_1-2+JHN_1-2.pef</path>
          <size>450689</size>
          <checksum>8e8844dd0a6f08c6d8582a30d9595f12</checksum>
          <mimeType>text/xml</mimeType>
+         <scopeOrRole>MAT 1-2;MRK 1-2;LUK 1-2;JHN 1-2</scopeOrRole>
       </ingredient>
       <ingredient>
          <path>source/BBM/MAT.bbm</path>
          <size>746858</size>
          <checksum>a32c3df697b195263b691a942e324562</checksum>
          <mimeType>text/xml</mimeType>
+         <scopeOrRole>MAT</scopeOrRole>
       </ingredient>
    </ingredients>
    <names>
@@ -164,33 +164,30 @@
       <name id="i18n-cross_refs_title">
          <short lang="zzz">Cross References</short>
       </name>
-  </names>
+   </names>
    <publications>
       <publication id="a1">
-         <scope>
-            <bookScope>MRK</bookScope>
-            <bookScope>MAT</bookScope>
-            <bookScope>LUK</bookScope>
-            <bookScope>JHN</bookScope>
-         </scope>
          <name lang="eng">dbl unit test gospels braille</name>
          <name lang="zzz">dbl unit test gospels braille</name>
          <abbreviation lang="eng">dblutgb</abbreviation>
          <abbreviation lang="zzz">dblutgb</abbreviation>
          <description lang="eng">dbl unit test gospels braille</description>
          <description lang="zzz">dbl unit test gospels braille</description>
-         <scope>New Testament</scope>
+         <scope>
+            <bookScope>MAT</bookScope>
+            <bookScope>MAT 1-2;MRK 1-2;LUK 1-2;JHN 1-2</bookScope>
+         </scope>
          <canonSpec type="NT">
-            <component>westernNT</component>
+            <component name="westernNT"/>
          </canonSpec>
          <structure>
-            <content src="release/PEF/MAT.pef" role="MAT" name="section-mat"/>
+            <content src="release/PEF/MAT.pef"/>
             <content src="release/PEF/MAT_1-2+MRK_1-2+LUK_1-2+JHN_1-2.pef"
-                     role="MAT 1-2;MRK 1-2;LUK 1-2;JHN 1-2"
-                     name="section-mat_1-2+mrk_1-2+luk_1-2+jhn_1-2"/>
+               nameId="section-mat_1-2+mrk_1-2+luk_1-2+jhn_1-2"
+            />
          </structure>
       </publication>
-  </publications>
+   </publications>
    <snapshot>
       <creation>
          <user>nathanael/0.16.1</user>
@@ -202,13 +199,17 @@
    </snapshot>
    <copyright>
       <statement lang="zzz" format="html" type="full">
-        <p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>
+         <p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible
+            Society. All rights reserved.</p>
       </statement>
    </copyright>
    <promotion>
       <statement lang="zzz" format="html">
-         <p>Good News Translation with Deuterocanonicals/Apocrypha. Scripture taken from the Good News Translation (r) (Today's English Version, Second Edition). Copyright (c) 1992 American Bible Society. Used by permission.</p>
-         <p>This is a Digital Bible Library demonstration bundle. It should NOT BE USED for any publication purposes</p>
+         <p>Good News Translation with Deuterocanonicals/Apocrypha. Scripture taken from the Good
+            News Translation (r) (Today's English Version, Second Edition). Copyright (c) 1992
+            American Bible Society. Used by permission.</p>
+         <p>This is a Digital Bible Library demonstration bundle. It should NOT BE USED for any
+            publication purposes</p>
       </statement>
    </promotion>
    <licenses>
