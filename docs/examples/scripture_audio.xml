@@ -65,7 +65,7 @@
             <bitRate>64</bitRate>
             <timingDir>timing</timingDir>
          </production>
-         <convention version="0.1">wholeChapters</convention>
+         <convention version="0.1">contentResourcesByChapter</convention>
          <convention version="0.1">bookDirs</convention>
       </flavorDetails>
    </type>

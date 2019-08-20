@@ -20,6 +20,38 @@ DBL stores one mp3 file per chapter. An option to store "source" wav files has r
 Metadata Flavor Details
 =======================
 
+---------------
+translationType
+---------------
+
+This is one of
+
+* First
+
+* New
+
+* Revision
+
+* Study / Help Material
+
+--------
+audience
+--------
+
+This is one of
+
+* Basic
+
+* Common
+
+* Common - Literary
+
+* Literary
+
+* Liturgical
+
+* Children
+
 -------------
 dramatization
 -------------
@@ -31,6 +63,12 @@ This is one of
 * Non-Dramatized
 
 * Single-Voice
+
+---------
+timingDir
+---------
+
+This optional element provides a path to the "directory" containing timing files.
 
 -----------------
 Source properties
@@ -68,4 +106,4 @@ If present, this confirms that all audio files correspond to exactly one chapter
 bookDirs
 --------
 
-The de facto DBL structure of audio entries, since the original Paratext audio uploader, organizes files within one "directory" per book, where each directory contains one "file" per chapter, with names derived from Paratext book names. When present, this convention confirms that the historical DBL structure has been respected. When absent, this structure may or may not be partially or fully respected. (The structure is not strictly required because the metadata provides locations and roles of resources explicitly, but some tool chains have relied on the well-known directory structure.)
+The de facto DBL structure of audio entries was defined by the original Paratext audio uploader. There is one "directory" per book, where each directory contains one "file" per chapter, with names derived from Paratext book names. When present, this convention confirms that the historical DBL structure has been respected. When absent, this structure may or may not be partially or fully respected. (The structure is not strictly required because the metadata provides locations and roles of resources explicitly, but some tool chains have relied on the well-known directory structure.)

@@ -69,6 +69,7 @@
             <samplingRate>44100</samplingRate>
          </audioStream>
          <subtitleStream/>
+         <convention version="0.1">contentResourcesByChapter</convention>
       </flavorDetails>
    </type>
    <ingredients>
@@ -78,6 +79,27 @@
          <checksum>1498ac8c2d56e88542b6b6936f7e41fd</checksum>
          <mimeType>video/mpeg</mimeType>
          <scopeOrRole>MRK 1:1-8</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>jesus.mpg</path>
+         <size>30560</size>
+         <checksum>ac8c2d56e88542b6b6936f7e41fd1498</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>sign--jesus</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>kingdom_of_god.mpg</path>
+         <size>13056</size>
+         <checksum>8c2d56e88542b6b6936f7e41fd1498ac</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>concept--kingdom_of_god</scopeOrRole>
+      </ingredient>
+      <ingredient>
+         <path>bethlehem.mpg</path>
+         <size>401305</size>
+         <checksum>8ac8c2d56e88542b6b6936f7e41fd149</checksum>
+         <mimeType>video/mpeg</mimeType>
+         <scopeOrRole>place--bethlehem</scopeOrRole>
       </ingredient>
    </ingredients>
    <names>

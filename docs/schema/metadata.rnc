@@ -282,37 +282,30 @@ scripture_sign_language_details_element =
     element flavorDetails {
         element translationType { translationTypeEnum }?
         & element audience { translationLevelEnum }?
-        & element container {"MP4"} &
-      videoFormatVideoStream &
-      videoFormatAudioStream? &
-      videoFormatSubtitleStream? &
-      element timingDir { path_string }? &
-      element contentByChapter { xsd:boolean }?
-      & sign_language_convention_element*
+        & element timingDir { path_string }?
+        & element container { "MP4" }
+        & videoFormatVideoStream
+        & videoFormatAudioStream?
+        & videoFormatSubtitleStream?
+        & sign_language_convention_element*
     }
 videoFormatVideoStream =
-  element videoStream {
-      element codec { xsd:string } &
-      element bitRate { xsd:positiveInteger } &
-      element frameRate { xsd:decimal } &
-      element screenResolution { screenResolution }
-  }
-
+    element videoStream {
+        element codec { xsd:string }
+        & element bitRate { xsd:positiveInteger }
+        & element frameRate { xsd:decimal }
+        & element screenResolution { screenResolution }
+    }
 screenResolution = xsd:string { pattern = "[1-9][0-9]{0,3}x[1-9][0-9]{0,3}" }
-videoFormatAudioStream =
-  element audioStream { audioSubelements }
+videoFormatAudioStream = element audioStream { audioSubelements }
 audioSubelements =
-element compression { audioCompressionEnum }? &
-    element trackConfiguration { audioTrackEnum }? &
-    element bitRate { xsd:integer }? &
-    element bitDepth { xsd:integer }? &
-    element samplingRate { xsd:integer }? &
-    element timingDir { path_string }? &
-    element contentByChapter { xsd:boolean }?
-
-
+    element compression { audioCompressionEnum }
+    & element trackConfiguration { audioTrackEnum }
+    & element bitRate { xsd:integer }?
+    & element bitDepth { xsd:integer }?
+    & element samplingRate { xsd:integer }?
+    & element contentByChapter { xsd:boolean }?
 videoFormatSubtitleStream = element subtitleStream { empty }
-
 scripture_braille_details_element = element flavorDetails { braille_convention_element* }
 # IDENTIFICATION
 identification_element =
@@ -670,9 +663,9 @@ x_flavor_string = x_thingey
 flavor_type_enum = "scripture" | "gloss" | "paraScriptural" | "peripheral"
 version_string = xsd:string { pattern = "\d+.\d+(\..+)?" }
 text_convention_enum = "usxRefs" | "usxDirs" | "typesetAsVersedParagraphs"
-audio_convention_enum = "wholeChapters" | "bookDirs"
-print_convention_enum = empty
-sign_language_convention_enum = empty
+audio_convention_enum = "contentResourcesByChapter" | "bookDirs"
+print_convention_enum = "contentResourcesByChapter"
+sign_language_convention_enum = "contentResourcesByChapter" | "bookDirs" | "rolesInUris"
 braille_convention_enum = empty
 x_convention_string = x_thingey
 x_thingey = xsd:string { pattern = "x-[a-z][A-za-z0-9]+" }
@@ -709,9 +702,12 @@ peripheral_enum =
     | "spine"
     | "tdx"
     | "title"
-burrito_role_enum = burrito_print_role_enum | burrito_sign_language_enum
+burrito_role_enum = burrito_print_role_enum | burrito_timeline_enum | burrito_sign_language_enum
 burrito_print_role_enum = "printBody" | "printCover" | "printThumbnail" | "printFlowable"
-burrito_sign_language_enum = "timing"
+burrito_timeline_enum = "timing"
+burrito_sign_language_enum =
+    xsd:string { pattern = "(sign|concept|place)(--\S(.*\S)?)?" }
+    | "credits"
 canonical_book_enum = ot_book_enum | nt_book_enum | dc_book_enum
 ot_book_enum =
     "GEN"

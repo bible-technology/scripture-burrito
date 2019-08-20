@@ -54,6 +54,7 @@
             <font type="OpenType">Times New Roman ItalicItalic</font>
             <font type="OpenType">Segoe UI Symbol Regular</font>
          </fonts>
+         <convention  version="0.1">contentResourcesByChapter</convention>
       </flavorDetails>
    </type>
    <relationships>
