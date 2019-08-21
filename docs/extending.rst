@@ -6,7 +6,7 @@ Extending Scripture Burrito
 Identify a Need
 ===============
 
-_"Every good work of software starts by scratching a developer's personal itch."_ Eric Raymond
+*"Every good work of software starts by scratching a developer's personal itch."* Eric Raymond
 
 The first scripture flavors of burrito are based on standards used by the Digital Bible Library. These standards were developed - sometimes in haste! - to meet specific needs. In the case of text, there was a need to make translation projects from Paratext available to a wider publishing community, with digital publishing as a major concern. In the case of audio, there was a desire to be able to "mash up" text and related audio within one application or website, all via the same licensing and distribution model.
 
@@ -70,7 +70,8 @@ Fork an X-Flavor
 
 The easiest way to assemble valid Scripture Burrito is to start with the example closest to your use case. Assuming the flavorType is correct, almost all the metadata should "just work". The acception is
 
-.. code:: text
+.. code-block:: text
+
    /burritoMetadata/type/flavorDetails
 
 which is where flavor-specific information is stored. For experimenting with this part of the XML while keeping everything else valid, set the flavor to something beginning with "x-". The schema will then allow most well-formed XML within flavorDetails.
