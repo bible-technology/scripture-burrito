@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "0.1",
+  "idServer": {
+    "dbl": "http://thedigitalbiblelibrary.org"
+  },
+  "identification": {
+    "name": {
+      "eng": "Thai Sign-Language Fragment",
+      "zzz": "\u0e1e\u0e23\u0e30\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e18\u0e23\u0e23\u0e21\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e09\u0e1a\u0e31\u0e1a\u0e20\u0e32\u0e29\u0e32\u0e21\u0e37\u0e2d\u0e44\u0e17\u0e22"
+    },
+    "abbreviation": {
+      "eng": "TSLF"
+    },
+    "description": {
+      "eng": "Thai Sign Language Bible"
+    },
+    "dateCompleted": "2017-04-07T15:05:47",
+    "systemId": {
+      "dbl": {
+        "id": "dbl::3d4e4af52ce24fff",
+        "revision": "48"
+      }
+    }
+  },
+  "agencies": [
+    {
+      "name": {
+        "eng": "DBLUnit Test Organization"
+      },
+      "isRightsHolder": "true",
+      "id": "dbl::d41b7b7e1c41d27efc13f05f",
+      "url": "http://thedigitalbiblelibrary.org/#",
+      "contributes_content": true,
+      "contributes_publication": true,
+      "contributes_management": true,
+      "contributes_qa": true
+    }
+  ],
+  "languages": [
+    {
+      "name": {
+        "eng": "Thai Sign Language"
+      },
+      "bcp47": "tsq",
+      "scriptDirection": "LTR"
+    }
+  ],
+  "countries": [
+    {
+      "name": {
+        "eng": "Thailand"
+      },
+      "iso": "TH"
+    }
+  ],
+  "type": {
+    "flavor": "scriptureSignLanguageVideo",
+    "flavorType": "scripture",
+    "scope": [
+      "MRK"
+    ],
+    "confidentiality": {
+      "metadata": "unrestricted",
+      "source": "private",
+      "publications": "restricted"
+    },
+    "canonSpec": {
+      "type": "OT, NT",
+      "components": [
+        {
+          "name": "westernOT"
+        },
+        {
+          "name": "westernNT"
+        }
+      ]
+    },
+    "flavorDetails": {
+      "translationType": "New",
+      "audience": "Common",
+      "container": "MP4",
+      "videoStream": {
+        "codec": "H264",
+        "screenResolution": "1920x1080",
+        "bitRate": 64000000,
+        "frameRate": 30.0
+      },
+      "audioStream": {
+        "compression": "MP3",
+        "trackConfiguration": "2/0 (Stereo)",
+        "bitRate": 128000,
+        "bitDepth": 16,
+        "samplingRate": 44100
+      },
+      "subtitleStream": {}
+    }
+  },
+  "names": {
+    "section-mrk_1_1-8": {
+      "short": {
+        "zzz": "\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e30\u0e01\u0e32\u0e28\u0e02\u0e2d\u0e07\u0e22\u0e2d\u0e2b\u0e4c\u0e19\u0e1c\u0e39\u0e49\u0e43\u0e2b\u0e49\u0e1a\u0e31\u0e1e\u0e15\u0e34\u0e28\u0e21\u0e32"
+      }
+    }
+  },
+  "ingredients": {
+    "MK_1_frag.mpg": {
+      "checksum": "1498ac8c2d56e88542b6b6936f7e41fd",
+      "mimeType": "video/mpeg",
+      "scopeOrRole": "MRK 1:1-8",
+      "size": 40130560
+    },
+    "jesus.mpg": {
+      "checksum": "ac8c2d56e88542b6b6936f7e41fd1498",
+      "mimeType": "video/mpeg",
+      "scopeOrRole": "sign--jesus",
+      "size": 30560
+    },
+    "kingdom_of_god.mpg": {
+      "checksum": "8c2d56e88542b6b6936f7e41fd1498ac",
+      "mimeType": "video/mpeg",
+      "scopeOrRole": "concept--kingdom_of_god",
+      "size": 13056
+    },
+    "bethlehem.mpg": {
+      "checksum": "8ac8c2d56e88542b6b6936f7e41fd149",
+      "mimeType": "video/mpeg",
+      "scopeOrRole": "place--bethlehem",
+      "size": 401305
+    }
+  },
+  "licenses": [
+    {
+      "allRightsReserved": null
+    }
+  ],
+  "publications": {
+    "p1": {
+      "name": {
+        "eng": "Mark",
+        "zzz": "\u0e21\u0e32\u0e23\u0e30\u0e42\u0e01"
+      },
+      "description": {
+        "eng": "Thai Sign Language Bible - Mark",
+        "zzz": "\u0e1e\u0e23\u0e30\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e18\u0e23\u0e23\u0e21\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e09\u0e1a\u0e31\u0e1a\u0e20\u0e32\u0e29\u0e32\u0e21\u0e37\u0e2d\u0e44\u0e17\u0e22 - \u0e21\u0e32\u0e23\u0e30\u0e42\u0e01"
+      },
+      "scope": [
+        "MRK"
+      ],
+      "structure": [
+        {
+          "src": "MK_1_frag.mp4"
+        }
+      ]
+    }
+  },
+  "copyright": [
+    {
+      "type": "full",
+      "format": "html",
+      "lang": "zzz",
+      "content": "\n <p>\n <a href=\"http://www.thaibible.or.th/\">Thailand Bible Society</a>\n </p>\n \n "
+    }
+  ],
+  "promotion": [
+    {
+      "format": "html",
+      "lang": "zzz",
+      "content": "\n <p>Thai Sign Language Bible.</p>\n \n "
+    }
+  ],
+  "snapshot": {
+    "creation": {
+      "user_name": "DBL bundleMaker"
+    },
+    "uploading": {
+      "user_name": "Mark Howe"
+    },
+    "comments": "Testing video upload"
+  }
+}

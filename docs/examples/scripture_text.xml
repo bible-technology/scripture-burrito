@@ -237,6 +237,12 @@
     <publications>
         <publication id="matthew-only" default="true">
             <name lang="fr">Matthew Only!</name>
+            <countries>
+                <country>
+                    <iso>GB</iso>
+                    <name lang="en">English</name>
+                </country>
+            </countries>
             <structure>
                 <division nameId="frontmatter">
                     <content src="release/text/USX_1/INTNT.usx" nameId="intnt"/>

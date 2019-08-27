@@ -1,0 +1,586 @@
+{
+  "schemaVersion": "0.1",
+  "idServer": {
+    "dbl": "http://thedigitalbiblelibrary.org"
+  },
+  "identification": {
+    "name": {
+      "eng": "Melo Test NT"
+    },
+    "abbreviation": {
+      "eng": "MTNT"
+    },
+    "description": {
+      "eng": "Meloi New Testament"
+    },
+    "systemId": {
+      "dbl": {
+        "id": "dbl::148b60ff19c94edf",
+        "revision": "1"
+      }
+    }
+  },
+  "agencies": [
+    {
+      "name": {
+        "eng": "DBL Unit Test Organization",
+        "zzz": "DBL Unit Test Organization"
+      },
+      "isRightsHolder": "true",
+      "id": "dbl::d41b7b7e1c41d27efc13f05f",
+      "url": "http://www.thedigitalbiblelibrary.org",
+      "contributes_content": true,
+      "contributes_publication": true,
+      "contributes_management": true,
+      "contributes_finance": true,
+      "contributes_qa": true
+    }
+  ],
+  "languages": [
+    {
+      "name": {
+        "eng": "Melo"
+      },
+      "bcp47": "mfx",
+      "scriptDirection": "LTR"
+    }
+  ],
+  "countries": [
+    {
+      "name": {
+        "eng": "Ethiopia",
+        "zzz": "Ethiopia"
+      },
+      "iso": "ET"
+    }
+  ],
+  "type": {
+    "flavor": "scriptureAudio",
+    "flavorType": "scripture",
+    "scope": [
+      "MAT"
+    ],
+    "confidentiality": {
+      "metadata": "unrestricted",
+      "source": "private",
+      "publications": "restricted"
+    },
+    "canonSpec": {
+      "type": "OT, NT",
+      "components": [
+        {
+          "name": "westernOT"
+        },
+        {
+          "name": "westernNT"
+        }
+      ]
+    },
+    "flavorDetails": {
+      "dramatization": "Single-Voice",
+      "source": {
+        "compression": "WAV",
+        "trackConfiguration": "2/0 (Stereo)",
+        "bitRate": 64
+      },
+      "production": {
+        "compression": "MP3",
+        "trackConfiguration": "2/0 (Stereo)",
+        "timingDir": "timing",
+        "bitRate": 64
+      }
+    }
+  },
+  "names": {
+    "book-mat": {
+      "short": {
+        "zzz": "Mat"
+      }
+    }
+  },
+  "ingredients": {
+    "source/audio/MAT/MAT_001.wav": {
+      "checksum": "2efb602f38968c43e1ab821cbc2a6d63",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 1",
+      "size": 33712416,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_002.wav": {
+      "checksum": "e234ca51172a4122204af25da785e272",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 2",
+      "size": 40054190,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_003.wav": {
+      "checksum": "252c225fed877b4bcbc00ce061e87ab1",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 3",
+      "size": 28140212,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_004.wav": {
+      "checksum": "94e6525785b083da0def30a82112a621",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 4",
+      "size": 42031278,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_005.wav": {
+      "checksum": "1052bb13d9aee4cf4e7b4428d3238693",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 5",
+      "size": 71982960,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_006.wav": {
+      "checksum": "a26fa4492290879961597eb486c53726",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 6",
+      "size": 52767386,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_007.wav": {
+      "checksum": "1eb50c704439c8fb41523216b91ee603",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 7",
+      "size": 40104436,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_008.wav": {
+      "checksum": "8d1329e87675792b25fa2922c8d0a447",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 8",
+      "size": 58915830,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_009.wav": {
+      "checksum": "e71132f3b1d0d554182120dca4a17364",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 9",
+      "size": 67401278,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_010.wav": {
+      "checksum": "1493ce1c5c2e6149a76bed35d64aa67e",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 10",
+      "size": 66411092,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_011.wav": {
+      "checksum": "fbf43453f7ad6e5c6c2530e9dfa75f5a",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 11",
+      "size": 53540122,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_012.wav": {
+      "checksum": "e392a653750a619e9e1e5e65c0863e3c",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 12",
+      "size": 92004464,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_013.wav": {
+      "checksum": "d9343c5d7eeb67611d29ea3b68910504",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 13",
+      "size": 95841494,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_014.wav": {
+      "checksum": "bd4a5dd0d189e4d8c9aa74aade963b93",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 14",
+      "size": 49687276,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_015.wav": {
+      "checksum": "315a5e18e6b84d96d02b75194587712d",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 15",
+      "size": 58629992,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_016.wav": {
+      "checksum": "65ac8a0d236be2a43c1aa5c8b4fd1860",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 16",
+      "size": 50666922,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_017.wav": {
+      "checksum": "e123e36a0f84790bfdac106a3b0a4b27",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 17",
+      "size": 46301832,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_018.wav": {
+      "checksum": "9eea3e59afdddfbd006a1c9de9109b9a",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 18",
+      "size": 57751132,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_019.wav": {
+      "checksum": "60cf36890c2ef586a94609c270c501b8",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 19",
+      "size": 48148384,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_020.wav": {
+      "checksum": "eefeff6a12b0c088a05442502bc110e1",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 20",
+      "size": 52866124,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_021.wav": {
+      "checksum": "223cf6cf30e2c6c2fe74c2317af5b788",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 21",
+      "size": 80826768,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_022.wav": {
+      "checksum": "0c171c83c1bb2652be47ee60e0a2056d",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 22",
+      "size": 60059314,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_023.wav": {
+      "checksum": "f3f2ad4b70a8e37c0ae03979a5795c1c",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 23",
+      "size": 67983408,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_024.wav": {
+      "checksum": "9dd715d881e279e32937cef4ae6ec39a",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 24",
+      "size": 69704252,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_025.wav": {
+      "checksum": "f152160833fa75b20fb47b9713296314",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 25",
+      "size": 67388830,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_026.wav": {
+      "checksum": "988e0a07bcfa5b683874fe40bc88a11c",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 26",
+      "size": 109983908,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_027.wav": {
+      "checksum": "63945bc9a3e5e2cd5ed7a196a0f2943d",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 27",
+      "size": 96429864,
+      "isSource": true
+    },
+    "source/audio/MAT/MAT_028.wav": {
+      "checksum": "db04bdb36f415e9d0f8ead911c2fc06e",
+      "mimeType": "audio/wav",
+      "scopeOrRole": "MAT 28",
+      "size": 28805002,
+      "isSource": true
+    },
+    "release/audio/MAT/MAT_001.mp3": {
+      "checksum": "fc922dd7b1b8f31963301923b4b210eb",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 1",
+      "size": 6866258,
+      "isSource": true
+    },
+    "release/audio/MAT/MAT_002.mp3": {
+      "checksum": "e2423ce586c739f2218dfac2ebc791b3",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 2",
+      "size": 6790503
+    },
+    "release/audio/MAT/MAT_003.mp3": {
+      "checksum": "6956c56efb4083ab450758ef3e56fd7b",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 3",
+      "size": 4642715
+    },
+    "release/audio/MAT/MAT_004.mp3": {
+      "checksum": "9cf1b1dec3b46780e9d09c93b30a4578",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 4",
+      "size": 6249246
+    },
+    "release/audio/MAT/MAT_005.mp3": {
+      "checksum": "a4fe42383f9311d40509fbd84dd3b425",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 5",
+      "size": 12404217
+    },
+    "release/audio/MAT/MAT_006.mp3": {
+      "checksum": "6c65f74b2df3ffba5d3113a966598353",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 6",
+      "size": 8443009
+    },
+    "release/audio/MAT/MAT_007.mp3": {
+      "checksum": "512ea80aa3636c61015eca02f4011562",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 7",
+      "size": 6650487
+    },
+    "release/audio/MAT/MAT_008.mp3": {
+      "checksum": "a6f055d27affe187bdbf8f34589f455a",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 8",
+      "size": 9034421
+    },
+    "release/audio/MAT/MAT_009.mp3": {
+      "checksum": "bc89ede74e3dbfa2b3512c0887944c27",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 9",
+      "size": 9971172
+    },
+    "release/audio/MAT/MAT_010.mp3": {
+      "checksum": "afbfa73c6f6ed6050f98a05688ad4160",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 10",
+      "size": 10267401
+    },
+    "release/audio/MAT/MAT_011.mp3": {
+      "checksum": "59a9d73855055e1cd1ff7d057049acf5",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 11",
+      "size": 7855776
+    },
+    "release/audio/MAT/MAT_012.mp3": {
+      "checksum": "431aa6c24dff4e65894fe74914f71d9e",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 12",
+      "size": 12641409
+    },
+    "release/audio/MAT/MAT_013.mp3": {
+      "checksum": "f45217aa81b80d48dd8dd87111c84669",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 13",
+      "size": 13523303
+    },
+    "release/audio/MAT/MAT_014.mp3": {
+      "checksum": "864fea9bcadd25a5b3faf7aef4564f0e",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 14",
+      "size": 7710536
+    },
+    "release/audio/MAT/MAT_015.mp3": {
+      "checksum": "a667742f02d101cd98cd4f422448da01",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 15",
+      "size": 8977474
+    },
+    "release/audio/MAT/MAT_016.mp3": {
+      "checksum": "e759affcb167a950450c0742f2e346b5",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 16",
+      "size": 7455581
+    },
+    "release/audio/MAT/MAT_017.mp3": {
+      "checksum": "fcd69283c51f46cdde46257f9594216a",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 17",
+      "size": 7034487
+    },
+    "release/audio/MAT/MAT_018.mp3": {
+      "checksum": "14af0b8b1abb559adf4efabc6c7afbf2",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 18",
+      "size": 8431515
+    },
+    "release/audio/MAT/MAT_019.mp3": {
+      "checksum": "52655d0ccc6775b5ca008a7cb97a4698",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 19",
+      "size": 7677621
+    },
+    "release/audio/MAT/MAT_020.mp3": {
+      "checksum": "599b48523fbc4d2a4d7a9f3b51e011ca",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 20",
+      "size": 7924217
+    },
+    "release/audio/MAT/MAT_021.mp3": {
+      "checksum": "30b28f74c386f3f2f9ce2ddaaf73fde3",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 21",
+      "size": 11804446
+    },
+    "release/audio/MAT/MAT_022.mp3": {
+      "checksum": "03049bd96562892cef8a831722f8bd26",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 22",
+      "size": 9487385
+    },
+    "release/audio/MAT/MAT_023.mp3": {
+      "checksum": "a461bdc34018b69d7c778d3115424b04",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 23",
+      "size": 9848397
+    },
+    "release/audio/MAT/MAT_024.mp3": {
+      "checksum": "7653d56307352c996d3656073e7cbe51",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 24",
+      "size": 10959123
+    },
+    "release/audio/MAT/MAT_025.mp3": {
+      "checksum": "64a93b91b3db3a781d3b6ec4882d05f4",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 25",
+      "size": 10173883
+    },
+    "release/audio/MAT/MAT_026.mp3": {
+      "checksum": "0984b2ef216dc7c1c9d6af2ba7148d21",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 26",
+      "size": 16734797
+    },
+    "release/audio/MAT/MAT_027.mp3": {
+      "checksum": "f2af159ae8672e190064b537e8275326",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 27",
+      "size": 14443858
+    },
+    "release/audio/MAT/MAT_028.mp3": {
+      "checksum": "575ffb699864cda4b6d3465e485e21f2",
+      "mimeType": "audio/mpeg",
+      "scopeOrRole": "MAT 28",
+      "size": 5067466
+    },
+    "timing/MAT.xml": {
+      "checksum": "cda4b6d3465e485e21f2575ffb699864",
+      "mimeType": "text/xml",
+      "scopeOrRole": "timing",
+      "size": 67466
+    }
+  },
+  "licenses": [
+    {
+      "allRightsReserved": null
+    }
+  ],
+  "publications": {
+    "pt1": {
+      "name": {
+        "eng": "The Melo New Testament source files"
+      },
+      "structure": [
+        {
+          "nameId": "book-mat",
+          "contains": [
+            {
+              "src": "release/audio/MAT/MAT_001.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_002.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_003.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_004.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_005.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_006.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_007.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_008.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_009.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_010.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_011.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_012.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_013.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_014.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_015.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_016.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_017.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_018.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_019.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_020.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_021.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_022.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_023.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_024.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_025.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_026.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_027.mp3"
+            },
+            {
+              "src": "release/audio/MAT/MAT_028.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "snapshot": {
+    "creation": {
+      "user_name": "nathanael/0.22.1"
+    },
+    "uploading": {
+      "user_name": "archive-publish@dbl-dot-local.local"
+    },
+    "comments": "Elbert Boot test"
+  }
+}

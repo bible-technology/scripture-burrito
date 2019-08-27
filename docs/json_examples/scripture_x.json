@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "0.1",
+  "idServer": {
+    "paint-store": "http://localhost:8080"
+  },
+  "identification": {
+    "name": {
+      "en": "My First Fingerpainted Bible"
+    },
+    "description": {
+      "en": "Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind"
+    },
+    "systemId": {
+      "paint-store": {
+        "id": "paint-store::0123456789abcdef",
+        "revision": "1"
+      }
+    }
+  },
+  "relationships": [
+    {
+      "relationType": "peripheral",
+      "flavor": "x-colorByNumbers",
+      "id": "paint-store::color_my_bible_beautiful",
+      "revision": "first_draft"
+    }
+  ],
+  "languages": [
+    {
+      "name": {
+        "en": "English"
+      },
+      "bcp47": "en",
+      "scriptDirection": "LTR"
+    }
+  ],
+  "countries": [
+    {
+      "name": {
+        "en": "United States of America"
+      },
+      "iso": "US"
+    }
+  ],
+  "type": {
+    "flavor": "x-scriptureFingerPainting",
+    "flavorType": "scripture",
+    "scope": [
+      "JHN 3:16"
+    ],
+    "confidentiality": {
+      "metadata": "unrestricted",
+      "source": "private",
+      "publications": "restricted"
+    },
+    "canonSpec": {
+      "type": "NT",
+      "components": [
+        {
+          "name": "westernNT"
+        }
+      ]
+    },
+    "flavorDetails": {
+      "colorModel": {
+        "text": "stephaniesFeltTips"
+      }
+    }
+  },
+  "names": {
+    "john": {
+      "short": {
+        "en": "John"
+      }
+    }
+  },
+  "ingredients": {
+    "myPainting.png": {
+      "checksum": "01234567012345670123456701234567",
+      "mimeType": "image/png",
+      "size": 1234
+    }
+  },
+  "licenses": [
+    {
+      "publicDomain": null
+    }
+  ],
+  "promotion": [
+    {
+      "format": "plain",
+      "lang": "en",
+      "content": "Thanx 4 looking at my finger painting!!! You are soooo cool!!! Love Stephanie xx"
+    }
+  ],
+  "snapshot": {
+    "comments": "This is fuuuuuuuun!"
+  }
+}
