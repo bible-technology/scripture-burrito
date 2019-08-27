@@ -307,7 +307,6 @@ audioSubelements =
     & element bitRate { xsd:integer }?
     & element bitDepth { xsd:integer }?
     & element samplingRate { xsd:integer }?
-    & element contentByChapter { xsd:boolean }?
 videoFormatSubtitleStream = element subtitleStream { empty }
 scripture_braille_details_element =
     element flavorDetails {

@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "0.1",
+  "idServer": {
+    "dbl": "http://thedigitalbiblelibrary.org"
+  },
+  "identification": {
+    "name": {
+      "eng": "DBL Unit Test Gospels"
+    },
+    "abbreviation": {
+      "eng": "DBLUTG"
+    },
+    "description": {
+      "eng": "English: DBL Unit Test Version with Gospels Only"
+    },
+    "systemId": {
+      "dbl": {
+        "id": "dbl::e400f14d2c1a4ab7",
+        "revision": "1"
+      }
+    }
+  },
+  "relationships": [
+    {
+      "relationType": "source",
+      "flavor": "scriptureText",
+      "id": "dbl::2881c78491b2f8cf",
+      "revision": "19",
+      "publicationId": "p1"
+    }
+  ],
+  "agencies": [
+    {
+      "name": {
+        "eng": "DBL Unit Test Organization"
+      },
+      "isRightsHolder": "true",
+      "id": "dbl::d41b7b7e1c41d27efc13f05f",
+      "url": "http://www.thedigitalbiblelibrary.org/#",
+      "contributes_content": true,
+      "contributes_publication": true,
+      "contributes_management": true,
+      "contributes_qa": true
+    }
+  ],
+  "languages": [
+    {
+      "name": {
+        "eng": "English"
+      },
+      "bcp47": "eng",
+      "scriptDirection": "LTR"
+    }
+  ],
+  "countries": [
+    {
+      "name": {
+        "eng": "United States"
+      },
+      "iso": "US"
+    }
+  ],
+  "type": {
+    "flavor": "scriptureBraille",
+    "flavorType": "scripture",
+    "scope": [
+      "MRK",
+      "MAT",
+      "LUK",
+      "JHN"
+    ],
+    "confidentiality": {
+      "metadata": "unrestricted",
+      "source": "private",
+      "publications": "restricted"
+    },
+    "canonSpec": {
+      "type": "OT, NT",
+      "components": [
+        {
+          "name": "westernOT"
+        },
+        {
+          "name": "westernNT"
+        }
+      ]
+    },
+    "flavorDetails": {
+      "isContracted": true,
+      "brailleConvertor": {
+        "version": "3.7.0",
+        "table": {
+          "src": "en-ueb-g2.ctb",
+          "name": "Unified English Braille Grade 2"
+        }
+      },
+      "numberSign": {
+        "character": "\u283c",
+        "useInMargin": false
+      },
+      "content": {
+        "chapterNumberStyle": "upper",
+        "verseSeparator": "\u2800\u2800",
+        "chapterHeadingsNumberFirst": false,
+        "includeIntros": false
+      },
+      "versedParagraphs": [
+        "PSA"
+      ],
+      "page": {
+        "charsPerLine": 36,
+        "linesPerPage": 28,
+        "defaultMarginWidth": 3,
+        "carryLines": 1,
+        "versoLastLineBlank": false
+      }
+    }
+  },
+  "names": {
+    "section-mat": {
+      "short": {
+        "zzz": "The Gospel of Matthew in Braille"
+      }
+    },
+    "section-mat_1-2+mrk_1-2+luk_1-2+jhn_1-2": {
+      "short": {
+        "zzz": "The First 2 chapters of each of the 4 Gospels in Braille"
+      }
+    },
+    "book-mat": {
+      "abbr": {
+        "zzz": "Mt"
+      },
+      "short": {
+        "zzz": "Matthew"
+      },
+      "long": {
+        "zzz": "The Gospel according to Matthew"
+      }
+    },
+    "book-mrk": {
+      "abbr": {
+        "zzz": "Mk"
+      },
+      "short": {
+        "zzz": "Mark"
+      },
+      "long": {
+        "zzz": "The Gospel according to Mark"
+      }
+    },
+    "book-luk": {
+      "abbr": {
+        "zzz": "Lk"
+      },
+      "short": {
+        "zzz": "Luke"
+      },
+      "long": {
+        "zzz": "The Gospel according to Luke"
+      }
+    },
+    "book-jhn": {
+      "abbr": {
+        "zzz": "Jn"
+      },
+      "short": {
+        "zzz": "John"
+      },
+      "long": {
+        "zzz": "The Gospel according to John"
+      }
+    },
+    "i18n-holy_bible": {
+      "short": {
+        "zzz": "The Holy Bible"
+      }
+    },
+    "i18n-contents": {
+      "short": {
+        "zzz": "Contents"
+      }
+    },
+    "i18n-chapter": {
+      "short": {
+        "zzz": "Chapter"
+      }
+    },
+    "i18n-chapters": {
+      "short": {
+        "zzz": "Chapters"
+      }
+    },
+    "i18n-psalm": {
+      "short": {
+        "zzz": "Psalm"
+      }
+    },
+    "i18n-braille_creator": {
+      "short": {
+        "zzz": "Compass Braille"
+      }
+    },
+    "i18n-braille_producer_statement": {
+      "short": {
+        "zzz": "Produced in Braille by Compass Braille, UK"
+      }
+    },
+    "i18n-footnotes_title": {
+      "short": {
+        "zzz": "Footnotes"
+      }
+    },
+    "i18n-cross_refs_title": {
+      "short": {
+        "zzz": "Cross References"
+      }
+    }
+  },
+  "ingredients": {
+    "release/PEF/MAT.pef": {
+      "checksum": "8e8844dd0a6f08c6d8582a30d9595f12",
+      "mimeType": "text/xml",
+      "scopeOrRole": "MAT",
+      "size": 450689
+    },
+    "release/PEF/MAT_1-2+MRK_1-2+LUK_1-2+JHN_1-2.pef": {
+      "checksum": "8e8844dd0a6f08c6d8582a30d9595f12",
+      "mimeType": "text/xml",
+      "scopeOrRole": "MAT 1-2;MRK 1-2;LUK 1-2;JHN 1-2",
+      "size": 450689
+    },
+    "source/BBM/MAT.bbm": {
+      "checksum": "a32c3df697b195263b691a942e324562",
+      "mimeType": "text/xml",
+      "scopeOrRole": "MAT",
+      "size": 746858
+    }
+  },
+  "licenses": [
+    {
+      "allRightsReserved": null
+    }
+  ],
+  "publications": {
+    "a1": {
+      "name": {
+        "eng": "dbl unit test gospels braille",
+        "zzz": "dbl unit test gospels braille"
+      },
+      "abbreviation": {
+        "eng": "dblutgb",
+        "zzz": "dblutgb"
+      },
+      "description": {
+        "eng": "dbl unit test gospels braille",
+        "zzz": "dbl unit test gospels braille"
+      },
+      "canonSpec": {
+        "type": "NT",
+        "components": [
+          {
+            "name": "westernNT"
+          }
+        ]
+      },
+      "scope": [
+        "MAT",
+        "MAT 1-2;MRK 1-2;LUK 1-2;JHN 1-2"
+      ],
+      "structure": [
+        {
+          "src": "release/PEF/MAT.pef"
+        },
+        {
+          "src": "release/PEF/MAT_1-2+MRK_1-2+LUK_1-2+JHN_1-2.pef",
+          "nameId": "section-mat_1-2+mrk_1-2+luk_1-2+jhn_1-2"
+        }
+      ]
+    }
+  },
+  "copyright": [
+    {
+      "type": "full",
+      "format": "html",
+      "lang": "zzz",
+      "content": "\n <p>Good News Translation (Today&#8217;s English Version, Second Edition) &#169; 1992 American Bible\n Society. All rights reserved.</p>\n \n "
+    }
+  ],
+  "promotion": [
+    {
+      "format": "html",
+      "lang": "zzz",
+      "content": "\n <p>Good News Translation with Deuterocanonicals/Apocrypha. Scripture taken from the Good\n News Translation (r) (Today's English Version, Second Edition). Copyright (c) 1992\n American Bible Society. Used by permission.</p>\n <p>This is a Digital Bible Library demonstration bundle. It should NOT BE USED for any\n publication purposes</p>\n \n "
+    }
+  ],
+  "snapshot": {
+    "creation": {
+      "user_name": "nathanael/0.16.1"
+    },
+    "uploading": {
+      "user_name": "archive-publish@dbl-dot-local.local"
+    },
+    "comments": "test"
+  }
+}
