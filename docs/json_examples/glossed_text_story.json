@@ -374,19 +374,13 @@
       "scopeOrRole": "MAT 24:14;MAT 28:18;JHN 15:20;JHN 16:33;REV 2:10;MAT 13:24-30;MAT 13,36-42;1TH 4:13-5:11;JAS 1:12;MAT 22:13;REV 20:10;REV 21:1-22:21",
       "size": 5942
     },
-    "content/back/intro.md": {
+    "content/back.md": {
       "checksum": "18f7b1630de0d761ce4572a6e158c3ad",
       "mimeType": "text/markdown",
       "scopeOrRole": "pubdata",
       "size": 909
     },
-    "content/front/intro.md": {
-      "checksum": "3d646db2a6940df6d264a2030ed6edae",
-      "mimeType": "text/markdown",
-      "scopeOrRole": "halftitle",
-      "size": 2051
-    },
-    "content/front/title.md": {
+    "content/front.md": {
       "checksum": "2de95f95a36868c91e0eb3c66671e007",
       "mimeType": "text/plain",
       "scopeOrRole": "title",
@@ -395,7 +389,7 @@
   },
   "licenses": [
     {
-      "ingredient": "license.md"
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
     }
   ],
   "copyright": [
