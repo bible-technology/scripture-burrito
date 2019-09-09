@@ -24,27 +24,65 @@ translationCore, the scripture checking tool, uses word alignment data to genera
 Metadata Flavor Details
 =======================
 
-[Brief description of what each field is for]
-
 ------------------
 autoAlignerVersion
 ------------------
+
+This specifies the version of the system used to generate the auto-alignment (if any). The auto-alignment may have been used as a first initial pass which could then be manually corrected.
+
 
 -------
 stemmer
 -------
 
+This property specifies the details of the stemmer system used. The stem of a word is the common part that forms the basis for its other inflected forms. It depends on the morphology of the language in question.
+
+....
+name
+....
+
+The name of the stemmer system used. This maybe the name of an application or can describe if it was a 'one-off script'.
+
+.......
+version
+.......
+
+The version of the stemmer system, if it follows some published release cycles.
+
+.......
+affixes
+.......
+
+If the stemmer also considered affixes during its processing.
+
+
+
+---------
+stopWords
+---------
+
+If the specific language stop words were removed.
+
+
+
 ---------------
 manualAlignment
 ---------------
+
+This section gives details of the set of verses (references) that were manually aligned by an individual. This may be the actual alignment itself or a correction of a previous machine generated (auto) alignment.
 
 ....
 user
 ....
 
+The name of the user who actually did the alignments manually.
+
 ..........
 references
 ..........
+
+Currently this specifies the verse number taken chronologically (with KJV as versification reference) and specifies the verses where the manual alignments were made. It can have 'start'and 'end' properties, though 'end' is optional if only specifying a single verse.
+
 
 ===========
 Conventions
