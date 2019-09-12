@@ -7,7 +7,7 @@ Origins
 =======
 
 The Scripture Burrito specification was started by the ETEN Project Portability Working Group which was
-formed after meetings in Philadelphia in July 2018 at American Bible Society. The group has since met several times
+formed after meetings in Philadelphia in July 2018 at American Bible Society. The group met several times
 virtually, culminating in two days of face meetings in Orlando on January 17-18, 2019. That
 meeting was attended by
 

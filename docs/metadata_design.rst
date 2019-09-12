@@ -31,7 +31,7 @@ Flavor-Specific Details in One Known Location
 =============================================
 
 Most of the schema applies to all flavors of burrito. Flags and enums in the type section toggle various sets of functionality in a generic way.
-The two location the shape of which varies according to the flavor is
+Flavor-specific content is located in
 
 * metadata/type/flavorDetails
 
@@ -54,7 +54,7 @@ to put localized strings into attributes.) Attributes are mainly used as qualifi
 Few Empty Elements, Many Optional Elements
 ==========================================
 
-The children of the root element (identification, format, etc) are required. Many elements below that level are optional but, if they are present, they must
+The children of most root elements (identification, format, etc) are required. Many elements below that level are optional but, if they are present, they must
 contain content. This is to avoid confusion between a value that is unspecified and a value that is specified as an empty string. So
 
 .. code-block:: xml
