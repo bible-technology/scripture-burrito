@@ -11,9 +11,6 @@ Each document must contain exactly one type element, immediately after the idSer
     <type>
         <flavor>scriptureText</flavor>
         <flavorType>scripture</flavorType>
-        <hasCharacters>true</hasCharacters>
-        <hasSource>true</hasSource>
-        <isPublishable>true</isPublishable>
         <scope>
             <bookScope>GEN</bookScope><!-- Use the shortest possible description, ie not "GEN 1-50" or "GEN 1:1-31;GEN 2:..." -->
             <bookScope>EXO 1-12</bookScope>
@@ -21,8 +18,8 @@ Each document must contain exactly one type element, immediately after the idSer
             <bookScope>MAT 1:3,5,7-11</bookScope>
         </scope>
         <canonSpec type="OT, NT">
-            <component name="westernOT"/><!-- All books in component do not need to be present -->
-            <component name="x-matthewOnlyMillenialists"><!-- Do not do this to track progress - that's what scope is for! -->
+            <component name="westernOT"/> <!-- All books in component do not need to be present -->
+            <component name="x-matthewOnlyMillenialists"><!-- Do not do this for translations in progress - that's what scope is for! -->
                 <book>MAT</book>
             </component>
         </canonSpec>
@@ -31,14 +28,9 @@ Each document must contain exactly one type element, immediately after the idSer
             <publications>restricted</publications>
             <source>private</source>
         </confidentiality>
-        <details>
-            <projectType>standard</projectType>
-            <conventions>
-                <convention version="1.0">usxDirs</convention>
-                <convention version="1.0">usxRefs</convention>
-                <convention version="0.1.beta">x-scaryUndefinedWhatnot</convention>
-            </conventions>
-        </details>
+        <flavorDetails>
+            <!-- NOT GENERIC -->
+        </flavorDetails>
     </type>
 
 .. _metadata_type-flavor:
@@ -78,21 +70,6 @@ Required, one of
 * parascriptural (non-scriptural content that maps onto scripture via a versification scheme)
 
 * peripheral (non-scriptural content that may be useful within the Bible ecosystem, but which does not map onto scripture via a versification scheme)
-
-hasCharacters
-=============
-
-Required boolean that specifies whether the flavor is text-based.
-
-hasSource
-=========
-
-Required boolean that is set if source files are present, eg SFM files for Scripture text or WAV files for Scripture audio.
-
-isPublishable
-=============
-
-Required boolean that is set if the burrito is considered to be "finished" enough to be published in some way.
 
 scope
 =====
@@ -136,7 +113,7 @@ each of which contains one of
 
 * private
 
-details
-=======
+flavorDetails
+=============
 
 The content of this element is flavor-specific.

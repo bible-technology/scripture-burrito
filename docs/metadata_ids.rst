@@ -39,4 +39,8 @@ where
 
 * "idServer-specific string" is case-sensitive and contains one or more non-space character
 
-IDs in this format can be tested for prefixedness (?!) by searching for ``([a-zA-Z0-9\-]+)::.+``.
+The full regex for an id is therefore
+
+.. code-block:: none
+
+    [0-9a-zA-Z][0-9a-zA-Z\-]{1,31}::\S+
