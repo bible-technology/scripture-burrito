@@ -11,7 +11,7 @@ This is the official documentation for the evolving Scripture Burrito standard. 
 Status
 ------
 
-This standard is work in progress. Things may well change significantly before v1.0. At this point the proposal includes:
+This standard is work in progress. Things may well change significantly before v1.0.0. At this point the proposal includes:
 
 * An explanation of the history and overall thinking behind the standard, particularly the metadata format
 
@@ -28,7 +28,7 @@ This standard is work in progress. Things may well change significantly before v
 Feedback
 --------
 
-Feedback may be provided via the `Technology.Bible forum <https://technology.bible/c/sb>`_ or via the `Scripture Burrito Github repository <https://github.com/bible-technology/scripture-burrito>`_.
+Feedback may be provided via the `Technology.Bible forum <https://technology.bible/c/sb>`_ or via the `Scripture Burrito Github issues <https://github.com/bible-technology/scripture-burrito/issues>`_.
 
 The :ref:`committee_members` invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
 
