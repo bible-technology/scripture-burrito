@@ -1,17 +1,17 @@
 .. You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Scripture Burrito Documentation (v0.1 Beta)
-===========================================
+Scripture Burrito Documentation
+===============================
 
 .. image:: ../logo/burrito_logo_0_1_beta.png
 
-This is the official documentation for the evolving Scripture Burrito standard. This version is 0.1 Beta.
+This is the official documentation for the evolving Scripture Burrito standard. This version is **0.1.0 Beta**.
 
 Status
 ------
 
-This standard is work in progress. Things may well change significantly before v1.0. At this point the proposal includes
+This standard is work in progress. Things may well change significantly before v1.0. At this point the proposal includes:
 
 * An explanation of the history and overall thinking behind the standard, particularly the metadata format
 
@@ -28,15 +28,9 @@ This standard is work in progress. Things may well change significantly before v
 Feedback
 --------
 
-Feedback may be provided via the technology.bible website
+Feedback may be provided via the `Technology.Bible forum <https://technology.bible/c/sb>`_ or via the `Scripture Burrito Github repository <https://github.com/bible-technology/scripture-burrito>`_.
 
-https://technology.bible/c/sb
-
-or via the Github repository:
-
-https://github.com/bible-technology/scripture-burrito
-
-The committee invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
+The :ref:`committee_members` invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
 
 XML vs JSON for metadata
 ........................
@@ -67,14 +61,14 @@ The committee's current proposal is
 
 * USFM for translations in progress
 
-* USX for validating content, orientated towards publication (incremental or otherwise)
+* USX for valid content, orientated towards publication (incremental or otherwise)
 
 The committee would appreciate proposals for constructive and technically feasible alternatives.
 
-Timescales
-----------
+Deadline
+........
 
-The window for feedback on Scripture Burrito O.1 Beta extends until Friday 25th October 2019. Depending on the level of feedback, the committee hopes to produce v0.1 before the end of 2019. The development roadmap may be seen in the `Github milestones here <https://github.com/bible-technology/scripture-burrito/milestones?direction=asc&sort=due_date&state=open>`_.
+The window for feedback on Scripture Burrito 0.1.0 Beta extends until **Friday 25th October 2019**. Depending on the level of feedback, the committee hopes to produce v0.1.0 before the end of 2019. The development roadmap may be seen in the `Github milestones here <https://github.com/bible-technology/scripture-burrito/milestones?direction=asc&sort=due_date&state=open>`_.
 
 Content
 =======
