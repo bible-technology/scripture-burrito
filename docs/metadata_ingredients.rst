@@ -76,4 +76,4 @@ This optional element contains one of
 
 * a peripheral name, derived from the USFM 3 specification, eg "maps"
 
-* int<bookCode>, eg "intMAT", to denote the introduction to a book
+* int<bookCode>, eg "intMAT", to denote the introduction to a book. The :code:`int` nomenclature comes from the `USFM Peripherals <https://ubsicap.github.io/usfm/usfm3.0/peripherals/index.html>`_ specification.
