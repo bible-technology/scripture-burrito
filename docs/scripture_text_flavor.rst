@@ -8,6 +8,8 @@ Status
 
 The Scripture Text flavor is based on the Digital Bible Library's text entry type, which was in turn based on Paratext's project format. As of August 2019, DBL "text bundles" have been used to represent over 2300 translation projects in over 1500 languages. These bundles are consumed by many publisher-facing tool chains, including YouVersion and Global.Bible.
 
+This flavor is intended for use with any Scripture text, whether they be original language texts or translations.
+
 The vast majority of text entries in DBL were uploaded by Paratext. Each entry includes
 
 * a "release" section which provides one USX file per book plus a few files in other formats
