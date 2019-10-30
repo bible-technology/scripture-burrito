@@ -12,4 +12,4 @@ Use Cases
 
 #. Scripture Burrito is intended to allow **lossless roundtripping of projects between ecosystems**. This depends to some extent on references to ecosystem servers that enable reconnection with different ecosystem-specific contexts.
 
-#. Scripture Burrito supports **Scripture content**, but also **Scriptural content** (eg glosses) and **Scripture-related content** (eg commentaries, translation manuals).
+#. Scripture Burrito supports **Scripture content** (original languages and translations), but also **Scriptural content** (eg glosses) and **Scripture-related content** (eg commentaries, translation manuals).
