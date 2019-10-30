@@ -17,7 +17,7 @@ The Paratext Ecosystem
 
 In parallel with the rise of USFM, the `Paratext <https://pt8.paratext.org/>`_ Scripture translation tool has gradually become the reference software
 for Bible translation. Paratext itself is a desktop application, but it is now part of an ecosystem that includes the `Paratext registry <https://registry.paratext.org/>`_, as well as an archiving server for project, which enables translation teams to collaborate and to track progress. Various
-technologies take advantage of this ecosystem, eg `Publishing Assistant <http://pubassist.paratext.org/>`_ and Glisten.
+technologies take advantage of this ecosystem, eg `Publishing Assistant <http://pubassist.paratext.org/>`_ and Glyssen.
 
 Every Tribe Every Nation and the Digital Bible Library
 ======================================================
