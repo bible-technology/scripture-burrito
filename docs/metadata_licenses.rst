@@ -29,7 +29,7 @@ url
 ===
 
 This element contains a link to the license. (In the case of private licenses the link may not be accessible to all users, but it still acts
-as a stable identifier).
+as a stable identifier). A link to a public license would be something like :code:`<url>https://creativecommons.org/licenses/by-sa/4.0/</url>`.
 
 ingredient
 ==========
