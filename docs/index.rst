@@ -4,7 +4,7 @@
 Scripture Burrito Documentation
 ===============================
 
-.. image:: ../logo/burrito_logo_0_1_beta.png
+.. image:: ../logo/burrito_logo.png
 
 This is the official documentation for the evolving Scripture Burrito standard. This is the latest documentation headed toward **0.2.0 Beta**, expected in January 2020 (see the `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
 
@@ -20,7 +20,7 @@ The :ref:`committee_members` invites comments on all aspects of this documentati
 JSON only for metadata
 ......................
 
-The 0.1.0-beta specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0-beta** is to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata.
+The 0.1.0-beta specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0-beta** is to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. You may discuss this on the `Technology.Bible forum <https://technology.bible/c/sb>`_ or on `Issue #70 <https://github.com/bible-technology/scripture-burrito/issues/70>`_.
 
 
 USFM and USX for Scripture Text
