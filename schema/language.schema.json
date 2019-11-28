@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Language",
+    "type": "object",
+    "description": "Language section.",
+    "properties": {
+        "tag": {"$ref": "common.schema.json#/definitions/languageTag"},
+        "name": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "rod": {"$ref": "common.schema.json#/definitions/rodCode"},
+        "scriptDirection": {
+            "type": "string",
+            "allowedValues": ["ltr", "rtl"]
+        }
+    },
+    "required": ["tag", "name"],
+    "additionalProperties": false
+}
