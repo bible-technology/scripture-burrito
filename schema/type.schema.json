@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/type.schema.json",
     "title": "Type",
     "type": "object",
     "description": "Contains properties describing the formatting of the burrito contents.",

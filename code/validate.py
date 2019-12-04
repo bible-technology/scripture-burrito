@@ -4,9 +4,25 @@ import json
 import jsonschema
 
 
+schema_uri_prefix = 'https://burrito.bible/schema/'
 schema_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'schema')
 schema = json.load(open(os.path.join(schema_dir, 'metadata.schema.json')))
-resolver = jsonschema.RefResolver(referrer=schema, base_uri='file://' + schema_dir.replace('\\', '/') + '/')
+
+
+def http_handler(uri):
+    """Resolves URLs like https://burrito.bible/schema/... to disk"""
+
+    assert uri.startswith(schema_uri_prefix)
+    path = uri[len(schema_uri_prefix):].replace('/', os.sep)
+    path = os.path.join(schema_dir, path)
+    return json.load(open(path, encoding='utf-8'))
+
+
+resolver = jsonschema.RefResolver(
+    handlers={'http': http_handler, 'https': http_handler},
+    referrer=schema,
+    base_uri='file://' + schema_dir.replace('\\', '/') + '/',
+)
 
 
 def validate(input):

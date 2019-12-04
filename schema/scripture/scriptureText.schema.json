@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/scriptureText.schema.json",
     "title": "Flavor Details: Scripture: Text",
     "type": "object",
     "description": "Schema of flavorDetails field for scriptureText flavor",
@@ -40,7 +41,7 @@
                 "type": "string",
                 "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
                 "oneOf": [
-                    {"$ref": "common.schema.json#!/definitions/xToken"},
+                    {"$ref": "../common.schema.json#/definitions/xToken"},
                     {"enum": ["usxRefs", "usxDirs", "typesetAsVersedParagraphs"]}
                 ]
             }

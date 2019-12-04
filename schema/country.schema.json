@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/country.schema.json",
     "title": "Scripture Burrito Country",
     "type": "object",
     "description": "Country targeted by this burrito.",

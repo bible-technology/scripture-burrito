@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/parascriptural/parascripturalWordAlignment.schema.json",
     "title": "Flavor Details: Parascriptural Word Alignment",
     "type": "object",
     "description": "Schema of flavorDetails field for parascripturalWordAlignment flavor",

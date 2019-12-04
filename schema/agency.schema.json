@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/agency.schema.json",
     "title": "Agency",
     "type": "object",
     "description": "Describes a particular agency that is involved with or related to the contents of the burrito.",

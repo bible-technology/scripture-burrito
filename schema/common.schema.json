@@ -1,5 +1,6 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/common.schema.json",
     "title": "Scripture Burrito Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
