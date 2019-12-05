@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/country.schema.json",
+    "title": "Scripture Burrito Country",
+    "type": "object",
+    "description": "Country targeted by this burrito.",
+    "properties": {
+        "code": {"$ref": "common.schema.json#/definitions/countryCode"},
+        "name": {"$ref": "common.schema.json#/definitions/localizedText"}
+    },
+    "required": ["code", "name"],
+    "additionalProperties": false
+}

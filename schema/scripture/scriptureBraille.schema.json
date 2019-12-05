@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/scriptureBraille.schema.json",
+    "title": "Flavor Details: Scripture: Braille",
+    "type": "object",
+    "description": "Schema of flavorDetails field for scriptureBraille flavor",
+    "properties": {
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    {"$ref": "../common.schema.json#/definitions/xToken"}
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

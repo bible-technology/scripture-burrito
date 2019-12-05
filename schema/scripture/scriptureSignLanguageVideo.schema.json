@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/scriptureSignLanguageVideo.schema.json",
+    "title": "Flavor Details: Scripture: Sign Language Video",
+    "type": "object",
+    "description": "Schema of flavorDetails field for scriptureSignLanguageVideo flavor",
+    "properties": {
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    {"$ref": "../common.schema.json#/definitions/xToken"},
+                    {"enum": ["contentResourcesByChapter", "bookDirs", "rolesInUris"]}
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
