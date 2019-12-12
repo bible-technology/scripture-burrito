@@ -19,6 +19,7 @@
             "minLength": 1
         },
         "id": {"$ref": "common.schema.json#/definitions/prefixedId"},
+        "revision": {"$ref": "common.schema.json#/definitions/revisionString"},
         "publicationId": {
             "type": "string",
             "pattern": "^[A-Za-z][A-Za-z0-9_\\-]{0,31}$"

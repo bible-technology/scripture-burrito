@@ -25,9 +25,9 @@
     },
     "identification": {
         "systemId": {
-            "dbl": "0123456789abcdef:23",
-            "gbc": "55df02965117ad3f2201309b",
-            "paratext": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
+            "dbl": {"id": "0123456789abcdef", "revision": "23"},
+            "gbc": {"id": "55df02965117ad3f2201309b"},
+            "paratext": {"id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"}
         },
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
@@ -70,7 +70,8 @@
         {
             "relationType": "expression",
             "flavor": "scripturePrint",
-            "id": "dbl::fedcba9876543210:2"
+            "id": "dbl::fedcba9876543210",
+            "revision": "2"
         },
         {
             "relationType": "expression",
