@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/meta.schema.json",
+    "title": "Scripture Burrito Meta",
+    "type": "object",
+    "description": "Information about the Scripture Burrito metadata file.",
+    "definitions": {
+        "softwareAndUserInfo": {
+            "type": "object",
+            "properties": {
+                "softwareName": {
+                    "type": "string",
+                    "description": "The name of the program used."
+                },
+                "softwareVersion": {
+                    "type": "string",
+                    "description": "The version of the program used."
+                },
+                "userId": {
+                    "$ref": "common.schema.json#/definitions/prefixedId",
+                    "description": "A system-specific user identifier."
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "The user's full name, if known."
+                }
+            },
+            "required": ["softwareName", "softwareVersion"],
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "version": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)*$",
+            "description": "Version of the Scripture Burrito specification this file follows."
+        },
+        "generator": {
+            "$ref": "#/definitions/softwareAndUserInfo",
+            "description": "Information about the program and user who generated this burrito."
+        },
+        "uploader": {
+            "$ref": "#/definitions/softwareAndUserInfo",
+            "description": "Information about the program and user who uploaded this burrito."
+        },
+        "comments": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Arbitrary text strings attached by users with no effect on the interpretation of the Scripture Burrito."
+        }
+    },
+    "required": ["version"],
+    "additionalProperties": false
+}

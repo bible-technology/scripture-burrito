@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/promotion.schema.json",
+    "title": "Promotional Statements",
+    "type": "object",
+    "description": "Contains promotional statements for the burrito.",
+    "properties": {
+        "statementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "statementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"}
+    },
+    "required": [],
+    "additionalProperties": false
+}

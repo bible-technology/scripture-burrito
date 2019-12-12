@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/scripturePrint.schema.json",
+    "title": "Flavor Details: Scripture: Print",
+    "type": "object",
+    "description": "Schema of flavorDetails field for scripturePrint flavor",
+    "definitions": {
+        "measurementString": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{1,4}mm$"
+        },
+        "percentageString": {
+            "type": "string",
+            "pattern": "[1-9][0-9]{1,3}%"
+        },
+        "orientation": {
+            "type": "string",
+            "allowedValues": ["portrait", "landscape"]
+        },
+        "colorSpace": {
+            "type": "string",
+            "allowedValues": ["CMYK", "RGB"]
+        },
+        "fontType": {
+            "type": "string",
+            "allowedValues": ["OpenType", "Other", "Bitmap", "TrueType", "Type1"]
+        }
+    },
+    "properties": {
+        "contentType": {
+            "type": "string",
+            "enum": ["pdf", "inDesignTaggedText"]
+        },
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    {"$ref": "../common.schema.json#/definitions/xToken"},
+                    {"enum": ["contentResourcesByChapter"]}
+                ]
+            }
+        }
+    },
+    "oneOf": [
+        {
+            "properties": {
+                "contentType": {"const": "pdf"},
+                "pod": {"type": "boolean"},
+                "pageCount": {"type": "integer", "minimum": 0},
+                "width": {"$ref": "#/definitions/measurementString"},
+                "height": {"$ref": "#/definitions/measurementString"},
+                "scale": {"$ref": "#/definitions/percentageString"},
+                "orientation": {"$ref": "#/definitions/orientation"}
+            }
+        },
+        {
+            "properties": {
+                "contentType": {"const": "inDesignTaggedText"},
+                "pod": {"const": false}
+            }
+        }
+    ],
+    "$comment": "TODO: unfinished",
+    "required": ["contentType"],
+    "additionalProperties": true
+}

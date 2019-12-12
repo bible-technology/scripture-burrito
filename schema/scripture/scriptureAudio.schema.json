@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/scriptureAudio.schema.json",
+    "title": "Flavor Details: Scripture: Audio",
+    "type": "object",
+    "description": "Schema of flavorDetails field for scriptureAudio flavor",
+    "definitions": {
+        "format": {
+            "type": "object",
+            "properties": {
+                "compression": {
+                    "type": "string",
+                    "enum": ["MP3", "WAV"]
+                },
+                "trackConfiguration": {
+                    "type": "string",
+                    "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
+                },
+                "bitRate": {"type": "integer"},
+                "bitDepth": {"type": "integer"},
+                "samplingRate": {"type": "integer"},
+                "timingDir": {"$ref": "../common.schema.json#/definitions/path"}
+            },
+            "required": ["compression", "trackConfiguration"]
+        }
+    },
+    "properties": {
+        "dramatization": {
+            "type": "string",
+            "enum": ["dramatized", "nonDramatized", "singleVoice"]
+        },
+        "source": {"$ref": "#/definitions/format"},
+        "production": {"$ref": "#/definitions/format"},
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    {"$ref": "../common.schema.json#/definitions/xToken"},
+                    {"enum": ["contentResourcesByChapter", "bookDirs"]}
+                ]
+            }
+        }
+    },
+    "required": ["dramatization"],
+    "additionalProperties": false
+}

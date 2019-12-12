@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/copyright.schema.json",
+    "title": "Copyright and License Information",
+    "type": "object",
+    "description": "Describes the copyright holders and license terms of the burrito.",
+    "properties": {
+        "rightsHolderAgencies": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Indices into the agencies array indicating the rightsholder agencies."
+            }
+        },
+        "rightsAdminAgency": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Index into the agencies array indicating the rights administrator agency."
+        },
+        "licenses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {"$ref": "common.schema.json#/definitions/url"},
+                    "ingredient": {"$ref": "common.schema.json#/definitions/path"}
+                },
+                "oneOf": [
+                    {"required": ["url"]},
+                    {"required": ["ingredient"]}
+                ],
+                "additionalProperties": false
+            },
+            "description": "The licenses, which state under which terms the burrito may be used, can be specified either as URL or as path to an ingredient."
+        },
+        "publicDomain": {
+            "type": "boolean",
+            "description": "If set to true, the contents of this burrito are dedicated to the public domain."
+        },
+        "shortStatementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "shortStatementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"},
+        "fullStatementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "fullStatementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"}
+    },
+    "oneOf": [
+        {
+            "properties": {
+                "publicDomain": {"const": true},
+                "licenses": {"const": []},
+                "rightsHolderAgencies": {"const": []}
+            },
+            "not": {"required": ["rightsAdminAgency"]},
+            "required": ["publicDomain"]
+        },
+        {
+            "properties": {
+                "publicDomain": {"const": false},
+                "rightsHolderAgencies": {"minItems": 1}
+            },
+            "required": ["rightsHolderAgencies"]
+        }
+    ],
+    "additionalProperties": false
+}

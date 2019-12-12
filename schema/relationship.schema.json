@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/relationship.schema.json",
+    "title": "Relationship",
+    "type": "object",
+    "description": "Describes a relationship to a different burrito that can be obtained from an indicated server.",
+    "properties": {
+        "relationType": {
+            "type": "string",
+            "enum": ["source", "target", "expression", "parascriptural", "peripheral"],
+            "minLength": 1
+        },
+        "flavor": {
+            "type": "string",
+            "oneOf": [
+                {"enum": ["scriptureText", "scriptureAudio", "scripturePrint", "scriptureSignLanguageVideo", "scriptureBraille", "glossedTextStory", "parascripturalWordAlignment"]},
+                {"pattern": "^x-[a-z][A-za-z0-9]*$"}
+            ],
+            "minLength": 1
+        },
+        "id": {"$ref": "common.schema.json#/definitions/prefixedId"},
+        "revision": {"$ref": "common.schema.json#/definitions/revisionString"},
+        "publicationId": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_\\-]{0,31}$"
+        }
+    },
+    "required": ["relationType", "flavor", "id"],
+    "additionalProperties": false,
+    "oneOf": [
+        {
+            "properties": {
+                "flavor": {"pattern": "^x-[a-z][A-za-z0-9]*$"}
+            },
+            "$comment": "Custom flavors can be used with any relationType."
+        },
+        {
+            "properties": {
+                "relationType": {"const": "source"},
+                "flavor": {"enum": ["scriptureText", "scriptureAudio"]}
+            }
+        },
+        {
+            "properties": {
+                "relationType": {"const": "target"},
+                "flavor": {}
+            }
+        },
+        {
+            "properties": {
+                "relationType": {"const": "expression"},
+                "flavor": {"not": {"const": "scriptureText"}}
+            }
+        },
+        {
+            "properties": {
+                "relationType": {"const": "parascriptural"},
+                "flavor": {"enum": ["parascripturalWordAlignment"]}
+            }
+        }
+    ]
+}

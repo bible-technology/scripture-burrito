@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/agency.schema.json",
+    "title": "Agency",
+    "type": "object",
+    "description": "Describes a particular agency that is involved with or related to the contents of the burrito.",
+    "properties": {
+        "id": {"$ref": "common.schema.json#/definitions/prefixedId"},
+        "name": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "abbr": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "url": {"$ref": "common.schema.json#/definitions/url"},
+        "contributes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["content", "publication", "management", "finance", "qa"],
+                "uniqueItems": true
+            },
+            "description": "A list of roles indicating in which respects this agency was involved with the production of this burrito."
+        }
+    },
+    "required": ["id", "name"],
+    "additionalProperties": false
+}
