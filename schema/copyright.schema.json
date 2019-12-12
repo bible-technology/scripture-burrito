@@ -11,8 +11,7 @@
                 "type": "integer",
                 "minimum": 0,
                 "description": "Indices into the agencies array indicating the rightsholder agencies."
-            },
-            "minItems": 1
+            }
         },
         "rightsAdminAgency": {
             "type": "integer",
@@ -44,6 +43,23 @@
         "fullStatementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
         "fullStatementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"}
     },
-    "required": ["rightsHolderAgencies"],
+    "oneOf": [
+        {
+            "properties": {
+                "publicDomain": {"const": true},
+                "licenses": {"const": []},
+                "rightsHolderAgencies": {"const": []}
+            },
+            "not": {"required": ["rightsAdminAgency"]},
+            "required": ["publicDomain"]
+        },
+        {
+            "properties": {
+                "publicDomain": {"const": false},
+                "rightsHolderAgencies": {"minItems": 1}
+            },
+            "required": ["rightsHolderAgencies"]
+        }
+    ],
     "additionalProperties": false
 }
