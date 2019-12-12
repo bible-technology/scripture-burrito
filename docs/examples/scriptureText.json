@@ -1,7 +1,6 @@
 {
     "meta": {
         "version": "0.2.0",
-        "minVersion": "0.2.0",
         "generator": {
             "softwareName": "Burrito Factory",
             "softwareVersion": "0.1",
