@@ -5,7 +5,10 @@
     "type": "object",
     "description": "Language section.",
     "properties": {
-        "tag": {"$ref": "common.schema.json#/definitions/languageTag"},
+        "tag": {
+            "$ref": "common.schema.json#/definitions/languageTag",
+             "examples": ["hi", "es-419"]
+            },
         "name": {"$ref": "common.schema.json#/definitions/localizedText"},
         "rod": {"$ref": "common.schema.json#/definitions/rodCode"},
         "scriptDirection": {
