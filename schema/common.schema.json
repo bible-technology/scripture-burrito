@@ -1,6 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/common.schema.json",
+    "$$target": [
+        "common.schema.json#/definitions/languageTag",
+        "common.schema.json#/definitions/localizedText",
+        "common.schema.json#/definitions/rodCode"
+    ],
     "title": "Scripture Burrito Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
@@ -9,7 +14,8 @@
             "format": "uri",
             "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
             "minLength": 1,
-            "description": "A valid Uniform Resource Locator."
+            "description": "A valid **Uniform Resource Locator**.",
+            "examples": ["https://example.com"]
         },
         "xToken": {
             "type": "string",

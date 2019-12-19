@@ -20,3 +20,4 @@ Generic Metadata
    metadata_copyright
    metadata_promotion
    metadata_snapshot
+   metadata_common
