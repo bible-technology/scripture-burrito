@@ -1,11 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/common.schema.json",
-    "$$target": [
-        "common.schema.json#/definitions/languageTag",
-        "common.schema.json#/definitions/localizedText",
-        "common.schema.json#/definitions/rodCode"
-    ],
     "title": "Scripture Burrito Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
@@ -38,6 +33,8 @@
             "description": "Opaque system-specific revision identifier."
         },
         "languageTag": {
+            "$$target": ["common.schema.json#/definitions/languageTag", "#/definitions/languageTag"],
+            "title": "Language Tag",
             "type": "string",
             "pattern": "^[A-Za-z]{2,3}([\\-_][A-Za-z0-9]+){0,4}$",
             "minLength": 2,
@@ -51,6 +48,8 @@
             "description": "The upper-case ISO 3166-2 code for the country."
         },
         "rodCode": {
+            "$$target": "common.schema.json#/definitions/rodCode",
+            "title": "Registry of Dialects",
             "type": "string",
             "pattern": "^[0-9]{5}$",
             "minLength": 5,
@@ -58,11 +57,15 @@
             "description": "A five-digit code from the Registry of Dialects."
         },
         "trimmedText": {
+            "$$target": "#/definitions/trimmedText",
+            "title": "Trimmed Text",
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",
             "description": "A string without surrounding whitespace characters."
         },
         "localizedText": {
+            "$$target": "common.schema.json#/definitions/localizedText",
+            "title": "Localized Text",
             "type": "object",
             "additionalProperties": { "$ref": "#/definitions/trimmedText" },
             "propertyNames": { "$ref": "#/definitions/languageTag" },
