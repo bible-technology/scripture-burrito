@@ -35,7 +35,7 @@ The committee meets regularly and is now comprised of the following individuals:
 * Joel Mathew
 * Jonathan Robie
 * Tim Steenwyk
-* Randall Tan
+* Michael Brinker
 
 =======================================
 Relationship to the Copenhagen Alliance
