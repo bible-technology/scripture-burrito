@@ -1,4 +1,4 @@
-.. _overview:
+.. _introduction-overview:
 
 ########
 Overview
@@ -28,9 +28,33 @@ Features
 
 * identification of people, organizations and content via namespaced ids relating to multiple authenticating servers
 
+Concepts
+========
 
-.. toctree::
-   history
-   use_cases
-   concepts
-   committee
+.. include:: /includes/burrito.txt
+
+.. include:: /includes/ingredients.txt
+
+.. include:: /includes/flavors.txt
+
+.. include:: /includes/flavor_types.txt
+
+Flavors are typically quite broadly defined. Additional constraints may be added using **conventions**. For example, an audio convention may specify that 
+audio files represent whole chapters of Scripture, or that they are arranged according to a specific hierarchy. Burrito creators should respect any
+convention they include in the metadata. Burrito consumers may use conventions to decide how or whether to process a burrito. The semantics of no specified
+conventions is *caveat emptor*, ie nothing should be assumed about the content of the burrito beyond what is specified for the burrito flavor.
+
+Use Cases
+=========
+
+#. Scripture Burrito is designed first and foremost for **data interchange** between ecosystems, although creators and consumers may also choose to use some or all of the format internally.
+
+#. Scripture Burrito is **a Bible-lifespan format**. In other words, it is intended to be used from the start of the translation, through checking and community testing, into publication via multiple toolchains, and then through revision processes.
+
+#. Scripture Burrito supports **non-text formats as first-class content**. In other words, the model is not "text plus multimedia". In some cases text may play a secondary role or even be absent (eg in the case of oral translation or sign-language projects).
+
+#. Scripture Burrito assumes the existence of **ecosystem servers** that provide ids for users, organizations and projects, and stores information to enable that server-hosted context to be discovered.
+
+#. Scripture Burrito is intended to allow **lossless roundtripping of projects between ecosystems**. This depends to some extent on references to ecosystem servers that enable reconnection with different ecosystem-specific contexts.
+
+#. Scripture Burrito supports **Scripture content** (original languages and translations), but also **Scriptural content** (eg glosses) and **Scripture-related content** (eg commentaries, translation manuals).
