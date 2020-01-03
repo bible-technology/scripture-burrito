@@ -57,7 +57,7 @@
             "description": "A five-digit code from the Registry of Dialects."
         },
         "trimmedText": {
-            "$$target": "#/definitions/trimmedText",
+            "$$target": ["common.schema.json#/definitions/trimmedText", "#/definitions/trimmedText"],
             "title": "Trimmed Text",
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",

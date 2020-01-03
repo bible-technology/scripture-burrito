@@ -1,0 +1,1 @@
+A **burrito** is a collection of content plus metadata. That collection may be made available in various formats, such as a zip file, an Amazon S3 bucket or a series of API calls. The term “burrito” describes the content, not the distribution mechanism.

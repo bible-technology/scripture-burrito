@@ -1,0 +1,1 @@
+Burritos contain **ingredients**. An ingredient is a file-like resource with a mimetype and, optionally, a scope or role. Burritos typically contain several types of ingredient.

@@ -15,7 +15,7 @@ Feedback
 
 Feedback may be provided via the `Technology.Bible forum <https://technology.bible/c/sb>`_ or via the `Scripture Burrito Github issues <https://github.com/bible-technology/scripture-burrito/issues>`_.
 
-The :ref:`committee_members` invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
+The :ref:`committee` invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
 
 JSON only for metadata
 ......................
@@ -50,9 +50,8 @@ Content
 .. toctree::
    :maxdepth: 4
 
-   introduction
-   generic_metadata
-   flavors
-   json
-   extending
-   appendices
+   introduction/overview
+   schema_docs/index
+   flavors/flavors
+   flavors/extending
+   examples/examples
