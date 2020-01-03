@@ -49,4 +49,4 @@ None
 Example
 =======
 
-For an example, see the :ref:`appendix_example_glossed_text_story_document` metadata document or :ref:`appendix_json_example_glossed_text_story_document`.
+For an example, see the :ref:`glossed_text_story_document` metadata document.

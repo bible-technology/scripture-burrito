@@ -33,7 +33,7 @@ The specific schema documentation is generated from the schema itself using [sph
 
 One special note, any section that needs to be linked to from another section should have a special `$$target` attribute as well as a `title` attribute for sphinx-jsonschema to work properly.
 
-Also, note that there is a script which automatically takes the schema and creates the `.rst` files for Sphinx to process. This only needs run when a new schema file is added or removed. Changes to existing schema files do not require running this.
+Also, note that there is a script which automatically takes the schema and creates the `.rst` files for Sphinx to process. This should be done anytime changes are made to the schema (and should probably be part of the sphinx builder).
 
     cd docs/docs/schema_docs
     ./gen_schema_docs.sh

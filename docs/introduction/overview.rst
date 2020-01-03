@@ -18,16 +18,15 @@ architectures and the attendant need to uniquely identify users, organizations a
 Features
 ========
 
-* a single container format to span the entire Scripture life cycle, from translation, through
-community testing and checking, to publication
-* support for canonical and quasi-canonical translations in multiple media (initially text,
-audio, video, print on demand and braille)
-* support for a wide range of resources relating to scripture, such as lexicons,
-cross-references, translation manuals, and commentaries
-* mechanisms for linking related content, both at a burrito-to-burrito and
-ingredient-to-ingredient level
-* identification of people, organizations and content via namespaced ids relating to multiple
-authenticating servers
+* a single container format to span the entire Scripture life cycle, from translation, through community testing and checking, to publication
+
+* support for canonical and quasi-canonical translations in multiple media (initially text, audio, video, print on demand and braille)
+
+* support for a wide range of resources relating to scripture, such as lexicons, cross-references, translation manuals, and commentaries
+
+* mechanisms for linking related content, both at a burrito-to-burrito and ingredient-to-ingredient level
+
+* identification of people, organizations and content via namespaced ids relating to multiple authenticating servers
 
 
 .. toctree::

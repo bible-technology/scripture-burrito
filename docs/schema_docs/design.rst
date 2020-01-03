@@ -1,9 +1,13 @@
+.. _schema_docs-design:
+
 ##############
 Overall Design
 ##############
 
 The design of the DBL Metadata schema has evolved as several curators have made changes to meet new needs.
 Scripture Burrito metadata largely follows the design philosophy of DBL Metadata v2.2.
+
+.. _schema_docs-design-flavortype:
 
 Document "Shape" Determined by Type Elements
 ============================================

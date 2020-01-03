@@ -20,19 +20,16 @@ for x in `find ../../schema -type f -name '*.schema.json' | sort | cut -d '/' -f
 
     # Create documentation file based on schema filename
     DOCFILE="${NAME}.rst"
-    #echo $NAME | tr "[:print:]" "#" > $DOCFILE
-    #echo $NAME >> $DOCFILE
-    #echo $NAME | tr "[:print:]" "#" >> $DOCFILE
     echo ".. _schema_docs-$NAME:" > $DOCFILE
     echo >> $DOCFILE
     echo ".. jsonschema:: ../../schema/$x" >> $DOCFILE
 
     # Add sub entries for any specified targets
-    if `grep -q "\$\$target" ../../schema/$x`; then
+    if `grep -q '\$\$target' ../../schema/$x`; then
         echo >> $DOCFILE
-        echo -e "============\nLinked Types\n============" >> $DOCFILE
-        for y in `grep target ../../schema/common.schema.json | cut -f 4 -d '"'`; do
-            echo ".. jsonschema:: ../../schema/$y" >> $DOCFILE
+        echo -e "\n============\nLinked Types\n============\n" >> $DOCFILE
+        for y in `grep '\$\$target' ../../schema/${x} | cut -f 4 -d '"'`; do
+            echo -e ".. jsonschema:: ../../schema/${y}\n" >> $DOCFILE
         done
     fi
 
