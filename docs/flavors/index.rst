@@ -1,3 +1,5 @@
+.. _flavors-index:
+
 #######
 Flavors
 #######
@@ -7,3 +9,4 @@ Flavors
    gloss_flavors
    parascriptural_flavors
    peripheral_flavors
+   extending

@@ -52,6 +52,5 @@ Content
 
    introduction/overview
    schema_docs/index
-   flavors/flavors
-   flavors/extending
-   examples/examples
+   flavors/index
+   examples/index

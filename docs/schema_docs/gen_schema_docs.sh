@@ -2,6 +2,8 @@
 #
 # Recreate base index file
 cat <<EOF >index.rst
+.. _schema_docs-index:
+
 ####################
 Schema Documentation
 ####################

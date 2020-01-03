@@ -8,7 +8,7 @@ Scripture Burrito metadata largely follows the design philosophy of DBL Metadata
 Document "Shape" Determined by Type Elements
 ============================================
 
-The flavorType element specifies one of four basic document types:
+Scripture Burrito flavors are subdivided into four flavorTypes, on the basis of (roughly) how similar to Scripture they are.
 
 * scripture
 
@@ -18,11 +18,11 @@ The flavorType element specifies one of four basic document types:
 
 * peripheral.
 
-The flavorType plus other flags and enums in the :ref:`metadata_type` make various parts of the generic metadata
-required, optional, or illegal. This mechanism means that a document processor can make assumptions about the "shape" of the document without necessarily
-having any information about the precise flavor it is processing. This is useful for cataloguing and for handling x- extensions.
+The diagram below illustrates the logic behind the four flavorTypes - see also the detailed schema documentation. On a technical level, the more Scripture-like flavorTypes require more metadata, and specific ecosystems, applications and tool chains may only accept certain flavorTypes.
 
-Here is a visual overview of the design:
+.. image:: ../images/which_flavortype.png
+
+These flavorTypes are then subclassed into various flavors, as illustrated:
 
 .. image:: https://user-images.githubusercontent.com/107731/62296968-3a43ba80-b43e-11e9-8a6b-f1d8982edb2a.jpeg
 

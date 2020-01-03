@@ -1,3 +1,5 @@
+.. _schema_docs-index:
+
 ####################
 Schema Documentation
 ####################
