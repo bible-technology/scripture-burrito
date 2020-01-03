@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/language.schema.json",
+    "$$target": "language.schema.json",
     "title": "Language",
     "type": "object",
     "description": "Language section.",

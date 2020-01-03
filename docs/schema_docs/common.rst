@@ -2,11 +2,6 @@
 
 .. jsonschema:: ../../schema/common.schema.json
 
-
-============
-Linked Types
-============
-
 .. jsonschema:: ../../schema/common.schema.json#/definitions/url
 
 .. jsonschema:: ../../schema/common.schema.json#/definitions/xToken
@@ -36,4 +31,3 @@ Linked Types
 .. jsonschema:: ../../schema/common.schema.json#/definitions/path
 
 .. jsonschema:: ../../schema/common.schema.json#/definitions/mimeType
-

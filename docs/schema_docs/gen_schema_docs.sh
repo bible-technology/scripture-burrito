@@ -25,11 +25,9 @@ for x in `find ../../schema -type f -name '*.schema.json' | sort | cut -d '/' -f
     echo ".. jsonschema:: ../../schema/$x" >> $DOCFILE
 
     # Add sub entries for any specified targets
-    if `grep -q '\$\$target' ../../schema/$x`; then
-        echo >> $DOCFILE
-        echo -e "\n============\nLinked Types\n============\n" >> $DOCFILE
-        for y in `grep '\$\$target' ../../schema/${x} | cut -f 4 -d '"'`; do
-            echo -e ".. jsonschema:: ../../schema/${y}\n" >> $DOCFILE
+    if `grep -q '      "\$\$target' ../../schema/$x`; then
+        for y in `grep '      "\$\$target' ../../schema/${x} | cut -f 4 -d '"'`; do
+            echo -e "\n.. jsonschema:: ../../schema/${y}" >> $DOCFILE
         done
     fi
 

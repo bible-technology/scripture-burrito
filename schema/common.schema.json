@@ -85,7 +85,7 @@
             "description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
         },
         "simplifiedXHTML": {
-            "$$target": "common.schema.json#/definitions/simplifiedXHTML",
+            "$$target": ["common.schema.json#/definitions/simplifiedXHTML", "#/definitions/simplifiedXHTML"],
             "title": "Simplified XHTML",
             "type": "string",
             "contentMediaType": "text/xml",
