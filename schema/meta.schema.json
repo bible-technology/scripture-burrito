@@ -6,6 +6,8 @@
     "description": "Information about the Scripture Burrito metadata file.",
     "definitions": {
         "softwareAndUserInfo": {
+            "$$target": ["meta.schema.json#/definitions/softwareAndUserInfo", "#/definitions/softwareAndUserInfo"],
+            "title": "Software and User Information",
             "type": "object",
             "properties": {
                 "softwareName": {

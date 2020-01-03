@@ -6,6 +6,8 @@
     "description": "Schema of flavorDetails field for scriptureAudio flavor",
     "definitions": {
         "format": {
+            "$$target": ["scripture/scriptureAudio.schema.json#/definitions/format", "#/definitions/format"],
+            "title": "Media Format",
             "type": "object",
             "properties": {
                 "compression": {

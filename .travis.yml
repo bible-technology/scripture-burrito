@@ -5,4 +5,4 @@ install:
   - pip install jsonschema
 # command to run tests
 script:
-  - python code/validate.py docs/examples/*.json
+  - python code/validate.py docs/examples/artifacts/*.json
