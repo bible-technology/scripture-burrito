@@ -1,0 +1,1 @@
+Flavors are grouped into four **flavor types**, depending (loosely) on how scripture-like they are. This mechanism enables functionality to be defined for groups of flavors. For example, any flavor within the scripture flavorType will contain similar catalog information.
