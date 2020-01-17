@@ -1,0 +1,1 @@
+Burritos exist in a number of **flavors**. A flavor describes a way to represent one class of entity as a burrito. Each flavor corresponds to a high-level entity, such as a Scripture text project or a sign language dictionary. A flavor specification typically includes ingredients with multiple mimetypes.
