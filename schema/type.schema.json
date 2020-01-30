@@ -83,112 +83,112 @@
     "properties": {
         "flavorType": {
             "type": "object",
-	    "properties": {
-		"name": {
-		    "type": "string",
-		    "enum": ["scripture", "gloss", "parascriptural", "peripheral"]
-		},
-		"flavor": {
-		    "type": "object",
-		    "oneOf": [
-			{
-			    "properties": {
-				"name": {
-				    "type": "string",
-				    "pattern": "^x-[a-z][A-za-z0-9]*$"
-				}
-			    }
-			},
-			{
-			    "properties": {
-				"name": {
-				    "type": "string",
-				    "enum": [
-					"TextTranslation",
-					"AudioTranslation",
-					"SignLanguageTranslation",
-					"BrailleScripturePublication",
-					"TextStories",
-					"WordAlignment",
-					"Versification"
-				    ]
-				}
-			    }
-			}
-		    ],
-		    "required": ["name"]
-		},
-		"bookScope": {
-		    "type": "object",
-		    "additionalProperties": {"$ref": "#/definitions/chapterVerseRange"},
-		    "propertyNames": {"$ref": "common.schema.json#/definitions/bookId"},
-		    "description": "The keys indicate which books are targeted by this work, the values indicate specific sub-ranges of the respective book or the empty string if the whole book is targeted. Note that the presence of a book in this field is not a guarantee that this book is present in the burrito itself."
-		},
-		"canonType": {
-		    "type": "array",
-		    "enum": [["DC"], ["NT"], ["OT", "DC", "NT"], ["OT", "NT", "DC"], ["OT", "NT"], ["OT+", "NT"], ["OT"], ["OT+"]],
-		    "minItems": 1,
-		    "maxItems": 3,
-		    "uniqueItems": true
-		},
-		"canonSpec": {
-		    "type": "object",
-		    "properties": {
-			"OT": {
-			    "type": "object",
-			    "properties": {
-				"books": {"items": {"$ref": "#/definitions/bookOT"}}
-			    },
-			    "oneOf": [
-				{"$ref": "#/definitions/canonComponentOT"},
-				{"$ref": "#/definitions/canonComponentCustom"}
-			    ],
-			    "required": ["name"]
-			},
-			"OT+": {
-			    "type": "object",
-			    "properties": {
-				"books": {"items": {"$ref": "#/definitions/bookOTDC"}}
-			    },
-			    "oneOf": [
-				{"$ref": "#/definitions/canonComponentOT+"},
-				{"$ref": "#/definitions/canonComponentCustom"}
-			    ],
-			    "required": ["name"]
-			},
-			"DC": {
-			    "type": "object",
-			    "properties": {
-				"books": {"items": {"$ref": "#/definitions/bookDC"}}
-			    },
-			    "oneOf": [
-				{"$ref": "#/definitions/canonComponentDC"},
-				{"$ref": "#/definitions/canonComponentCustom"}
-			    ],
-			    "required": ["name"]
-			},
-			"NT": {
-			    "type": "object",
-			    "properties": {
-				"books": {"items": {"$ref": "#/definitions/bookNT"}}
-			    },
-			    "oneOf": [
-				{"$ref": "#/definitions/canonComponentNT"},
-				{"$ref": "#/definitions/canonComponentCustom"}
-			    ],
-			    "required": ["name"]
-			}
-		    },
-		    "additionalProperties": false,
-		    "minProperties": 1,
-		    "allOf": [
-			{"not": {"required": ["OT", "OT+"]}},
-			{"not": {"required": ["DC", "OT+"]}}
-		    ],
-		    "$comment": "OT or DC may not be specified if OT+ is present."
-		}
-	    }
-	}
+            "properties": {
+            "name": {
+                "type": "string",
+                "enum": ["scripture", "gloss", "parascriptural", "peripheral"]
+            },
+        "flavor": {
+            "type": "object",
+            "oneOf": [
+            {
+                "properties": {
+                "name": {
+                    "type": "string",
+                    "pattern": "^x-[a-z][A-za-z0-9]*$"
+                }
+                }
+            },
+            {
+                "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                    "TextTranslation",
+                    "AudioTranslation",
+                    "SignLanguageTranslation",
+                    "BrailleScripturePublication",
+                    "TextStories",
+                    "WordAlignment",
+                    "Versification"
+                    ]
+                }
+                }
+            }
+            ],
+            "required": ["name"]
+        },
+        "bookScope": {
+            "type": "object",
+            "additionalProperties": {"$ref": "#/definitions/chapterVerseRange"},
+            "propertyNames": {"$ref": "common.schema.json#/definitions/bookId"},
+            "description": "The keys indicate which books are targeted by this work, the values indicate specific sub-ranges of the respective book or the empty string if the whole book is targeted. Note that the presence of a book in this field is not a guarantee that this book is present in the burrito itself."
+        },
+        "canonType": {
+            "type": "array",
+            "enum": [["DC"], ["NT"], ["OT", "DC", "NT"], ["OT", "NT", "DC"], ["OT", "NT"], ["OT+", "NT"], ["OT"], ["OT+"]],
+            "minItems": 1,
+            "maxItems": 3,
+            "uniqueItems": true
+        },
+        "canonSpec": {
+            "type": "object",
+            "properties": {
+            "OT": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookOT"}}
+                },
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentOT"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "OT+": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookOTDC"}}
+                },
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentOT+"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "DC": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookDC"}}
+                },
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentDC"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "NT": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookNT"}}
+                },
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentNT"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            }
+            },
+            "additionalProperties": false,
+            "minProperties": 1,
+            "allOf": [
+                {"not": {"required": ["OT", "OT+"]}},
+                {"not": {"required": ["DC", "OT+"]}}
+            ],
+            "$comment": "OT or DC may not be specified if OT+ is present."
+        }
+        }
+    }
     },
     "required": ["flavorType"],
     "additionalProperties": false,
