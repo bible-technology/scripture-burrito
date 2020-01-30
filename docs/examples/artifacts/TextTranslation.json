@@ -25,15 +25,15 @@
     "identification": {
         "systemId": {
             "dbl":{
-		"id": "0123456789abcdef",
-		"revision":"23"
-	    },
+        "id": "0123456789abcdef",
+        "revision":"23"
+        },
             "gbc": {
-		"id": "55df02965117ad3f2201309b"
-	    },
+        "id": "55df02965117ad3f2201309b"
+        },
             "paratext": {
-		"id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
-	    }
+        "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
+        }
         },
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
@@ -53,26 +53,26 @@
     },
     "type": {
         "flavorType": {
-	    "name": "scripture",
+        "name": "scripture",
             "bookScope": {
-		"GEN": "",
-		"EXO": "1-12",
-		"LEV": "2-3",
-		"MAT": "1,5,7-11"
+        "GEN": "",
+        "EXO": "1-12",
+        "LEV": "2-3",
+        "MAT": "1,5,7-11"
             },
             "canonType": ["OT", "NT"],
             "canonSpec": {
-		"OT": {"name": "western"},
-		"NT": {"name": "x-matthewOnlyMillenialists", "books": ["MAT"]}
+        "OT": {"name": "western"},
+        "NT": {"name": "x-matthewOnlyMillenialists", "books": ["MAT"]}
             },
             "flavor": {
-		"name": "TextTranslation",
-		"projectType": "standard",
-		"audience": "common",
-		"translationType": "newTranslation",
-		"usfmVersion": "3.1.rc49"
+        "name": "TextTranslation",
+        "projectType": "standard",
+        "audience": "common",
+        "translationType": "newTranslation",
+        "usfmVersion": "3.1.rc49"
             }
-	}
+    }
     },
     "relationships": [
         {
