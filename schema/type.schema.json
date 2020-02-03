@@ -123,13 +123,13 @@
                 "name": {
                     "type": "string",
                     "enum": [
-                    "TextTranslation",
-                    "AudioTranslation",
-                    "SignLanguageTranslation",
-                    "BrailleScripturePublication",
-                    "TextStories",
-                    "WordAlignment",
-                    "Versification"
+                    "textTranslation",
+                    "audioTranslation",
+                    "aignLanguageTranslation",
+                    "brailleScripturePublication",
+                    "textStories",
+                    "wordAlignment",
+                    "versification"
                     ]
                 }
                 }
