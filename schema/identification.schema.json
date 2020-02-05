@@ -44,8 +44,15 @@
             },
             "minItems": 1,
             "description": "Contains identifiers in each system declared by the top-level idServers element."
-        }
+        },
+	"idServer": {
+	    "type": "string"
+	},
+	"variant": {
+	    "type": "string",
+	    "pattern": "^(default|new|update|derived_[A-Za-z][A-Za-z0-9]*)$"
+	}
     },
-    "required": ["name", "systemId"],
+    "required": ["name", "systemId", "idServer"],
     "additionalProperties": false
 }
