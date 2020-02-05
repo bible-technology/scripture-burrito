@@ -25,18 +25,18 @@
     "identification": {
         "systemId": {
             "dbl":{
-        "id": "0123456789abcdef",
-        "revision":"23"
-        },
+                "id": "0123456789abcdef",
+                "revision":"23"
+            },
             "gbc": {
-        "id": "55df02965117ad3f2201309b"
-        },
+                "id": "55df02965117ad3f2201309b"
+            },
             "paratext": {
-        "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
-        }
+                "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
+            }
         },
-	"idServer": "dbl",
-	"variant": "default",
+    "idServer": "dbl",
+    "variant": "default",
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
             "fr": "Crêpe mexicaine biblique surdimensionnée (démonstration)"
