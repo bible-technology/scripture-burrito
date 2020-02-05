@@ -35,6 +35,8 @@
         "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
         }
         },
+	"idServer": "dbl",
+	"variant": "default",
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
             "fr": "Crêpe mexicaine biblique surdimensionnée (démonstration)"
