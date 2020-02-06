@@ -101,16 +101,41 @@
     },
     "properties": {
         "flavorType": {
-            "type": "string",
-            "enum": ["scripture", "gloss", "parascriptural", "peripheral"]
-        },
-        "flavor": {
-            "type": "string",
-            "pattern": "^(x-)?[a-z][A-za-z0-9]*$"
-        },
-        "flavorDetails": {
             "type": "object",
-            "$comment": "Schema varies per flavor; see the oneOf array below."
+            "properties": {
+            "name": {
+                "type": "string",
+                "enum": ["scripture", "gloss", "parascriptural", "peripheral"]
+            },
+        "flavor": {
+            "type": "object",
+            "oneOf": [
+            {
+                "properties": {
+                "name": {
+                    "type": "string",
+                    "pattern": "^x-[a-z][A-za-z0-9]*$"
+                }
+                }
+            },
+            {
+                "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                    "textTranslation",
+                    "audioTranslation",
+                    "aignLanguageTranslation",
+                    "brailleScripturePublication",
+                    "textStories",
+                    "wordAlignment",
+                    "versification"
+                    ]
+                }
+                }
+            }
+            ],
+            "required": ["name"]
         },
         "bookScope": {
             "type": "object",
@@ -128,50 +153,50 @@
         "canonSpec": {
             "type": "object",
             "properties": {
-                "OT": {
-                    "type": "object",
-                    "properties": {
-                        "books": {"items": {"$ref": "#/definitions/bookOT"}}
-                    },
-                    "oneOf": [
-                        {"$ref": "#/definitions/canonComponentOT"},
-                        {"$ref": "#/definitions/canonComponentCustom"}
-                    ],
-                    "required": ["name"]
+            "OT": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookOT"}}
                 },
-                "OT+": {
-                    "type": "object",
-                    "properties": {
-                        "books": {"items": {"$ref": "#/definitions/bookOTDC"}}
-                    },
-                    "oneOf": [
-                        {"$ref": "#/definitions/canonComponentOT+"},
-                        {"$ref": "#/definitions/canonComponentCustom"}
-                    ],
-                    "required": ["name"]
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentOT"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "OT+": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookOTDC"}}
                 },
-                "DC": {
-                    "type": "object",
-                    "properties": {
-                        "books": {"items": {"$ref": "#/definitions/bookDC"}}
-                    },
-                    "oneOf": [
-                        {"$ref": "#/definitions/canonComponentDC"},
-                        {"$ref": "#/definitions/canonComponentCustom"}
-                    ],
-                    "required": ["name"]
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentOT+"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "DC": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookDC"}}
                 },
-                "NT": {
-                    "type": "object",
-                    "properties": {
-                        "books": {"items": {"$ref": "#/definitions/bookNT"}}
-                    },
-                    "oneOf": [
-                        {"$ref": "#/definitions/canonComponentNT"},
-                        {"$ref": "#/definitions/canonComponentCustom"}
-                    ],
-                    "required": ["name"]
-                }
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentDC"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            },
+            "NT": {
+                "type": "object",
+                "properties": {
+                "books": {"items": {"$ref": "#/definitions/bookNT"}}
+                },
+                "oneOf": [
+                    {"$ref": "#/definitions/canonComponentNT"},
+                    {"$ref": "#/definitions/canonComponentCustom"}
+                ],
+                "required": ["name"]
+            }
             },
             "additionalProperties": false,
             "minProperties": 1,
@@ -181,74 +206,11 @@
             ],
             "$comment": "OT or DC may not be specified if OT+ is present."
         }
-    },
-    "required": ["flavor", "flavorType", "flavorDetails"],
-    "additionalProperties": false,
-    "oneOf": [
-        {
-            "properties": {
-                "flavor": {"const": "scriptureText"},
-                "flavorType": {"const": "scripture"},
-                "flavorDetails": {"$ref": "scripture/scriptureText.schema.json"}
-            },
-            "required": ["canonType"]
-        },
-        {
-            "properties": {
-                "flavor": {"const": "scriptureAudio"},
-                "flavorType": {"const": "scripture"},
-                "flavorDetails": {"$ref": "scripture/scriptureAudio.schema.json"}
-            },
-            "required": ["canonType"]
-        },
-        {
-            "properties": {
-                "flavor": {"const": "scriptureSignLanguageVideo"},
-                "flavorType": {"const": "scripture"},
-                "flavorDetails": {"$ref": "scripture/scriptureSignLanguageVideo.schema.json"}
-            },
-            "required": ["canonType"]
-        },
-        {
-            "properties": {
-                "flavor": {"const": "scripturePrint"},
-                "flavorType": {"const": "scripture"},
-                "flavorDetails": {"$ref": "scripture/scripturePrint.schema.json"}
-            },
-            "required": ["canonType"]
-        },
-        {
-            "properties": {
-                "flavor": {"const": "scriptureBraille"},
-                "flavorType": {"const": "scripture"},
-                "flavorDetails": {"$ref": "scripture/scriptureBraille.schema.json"}
-            },
-            "required": ["canonType"]
-        },
-        {
-            "properties": {
-                "flavor": {"const": "glossedTextStory"},
-                "flavorType": {"const": "gloss"},
-                "flavorDetails": {"$ref": "gloss/glossedTextStory.schema.json"}
-            }
-        },
-        {
-            "properties": {
-                "flavor": {"const": "parascriptural/wordAlignment"},
-                "flavorType": {"const": "parascriptural"},
-                "flavorDetails": {"$ref": "parascriptural/parascripturalWordAlignment.schema.json"}
-            },
-            "not": {"required": ["canonType"]}
-        },
-        {
-            "properties": {
-                "flavor": {"const": "peripheral/versification"},
-                "flavorType": {"const": "peripheral"},
-                "flavorDetails": {"$ref": "peripheral/peripheralVersification.schema.json"}
-            },
-            "not": {"required": ["canonType"]}
         }
-    ],
+    }
+    },
+    "required": ["flavorType"],
+    "additionalProperties": false,
     "allOf": [
         {
             "if": {"properties": {"canonType": {"contains": {"const": "OT"}}}},
