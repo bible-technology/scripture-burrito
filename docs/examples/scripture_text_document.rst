@@ -2,5 +2,5 @@
 Scripture Text Document Expressed
 #################################
 
-.. literalinclude:: artifacts/scripture_text.json
+.. literalinclude:: artifacts/textTranslation.json
     :language: json
