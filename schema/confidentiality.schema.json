@@ -7,14 +7,26 @@
     "definitions": {
         "confidentialityEnum": {
             "type": "string",
-            "enum": ["unrestricted", "restricted", "private"]
+            "enum": [
+                "unrestricted",
+                "restricted",
+                "private"
+            ]
         }
     },
     "properties": {
-        "metadata": { "$ref": "#/definitions/confidentialityEnum" },
-        "source": { "$ref": "#/definitions/confidentialityEnum" },
-        "publications": { "$ref": "#/definitions/confidentialityEnum" }
+        "metadata": {
+            "$ref": "#/definitions/confidentialityEnum"
+        },
+        "source": {
+            "$ref": "#/definitions/confidentialityEnum"
+        },
+        "publications": {
+            "$ref": "#/definitions/confidentialityEnum"
+        }
     },
-    "required": ["metadata"],
+    "required": [
+        "metadata"
+    ],
     "additionalProperties": false
 }

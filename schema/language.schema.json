@@ -7,15 +7,28 @@
     "properties": {
         "tag": {
             "$ref": "common.schema.json#/definitions/languageTag",
-             "examples": ["hi", "es-419"]
-            },
-        "name": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "rod": {"$ref": "common.schema.json#/definitions/rodCode"},
+            "examples": [
+                "hi",
+                "es-419"
+            ]
+        },
+        "name": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "rod": {
+            "$ref": "common.schema.json#/definitions/rodCode"
+        },
         "scriptDirection": {
             "type": "string",
-            "allowedValues": ["ltr", "rtl"]
+            "allowedValues": [
+                "ltr",
+                "rtl"
+            ]
         }
     },
-    "required": ["tag", "name"],
+    "required": [
+        "tag",
+        "name"
+    ],
     "additionalProperties": false
 }

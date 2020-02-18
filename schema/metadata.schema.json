@@ -5,64 +5,118 @@
     "type": "object",
     "description": "Scripture Burrito root metadata object.",
     "properties": {
-        "meta": {"$ref": "meta.schema.json"},
+        "meta": {
+            "$ref": "meta.schema.json"
+        },
         "idServers": {
             "type": "object",
-        "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
-        "additionalProperties": {
-        "type": "object",
-        "properties": {
-            "id": {"$ref": "common.schema.json#/definitions/url"},
-            "name": {"$ref": "common.schema.json#/definitions/localizedText"}
+            "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "common.schema.json#/definitions/url"
+                    },
+                    "name": {
+                        "$ref": "common.schema.json#/definitions/localizedText"
+                    }
+                },
+                "propertyNames": {
+                    "$ref": "common.schema.json#/definitions/idServerLabel"
+                },
+                "minItems": 1
+            }
         },
-        "propertyNames": {"$ref": "common.schema.json#/definitions/idServerLabel"},
-        "minItems": 1
-        }
-    },
-        "identification": {"$ref": "identification.schema.json"},
-        "confidentiality": {"$ref": "confidentiality.schema.json"},
-        "type": {"$ref": "type.schema.json"},
+        "identification": {
+            "$ref": "identification.schema.json"
+        },
+        "confidentiality": {
+            "$ref": "confidentiality.schema.json"
+        },
+        "type": {
+            "$ref": "type.schema.json"
+        },
         "relationships": {
             "type": "array",
-            "items": {"$ref": "relationship.schema.json"},
+            "items": {
+                "$ref": "relationship.schema.json"
+            },
             "minItems": 1,
             "description": "Describes a relationship to another burrito that may be obtained from an indicated server."
         },
         "languages": {
             "type": "array",
-            "items": {"$ref": "language.schema.json"},
+            "items": {
+                "$ref": "language.schema.json"
+            },
             "minItems": 1,
             "description": "A list of all the languages of the contents of this burrito."
         },
         "countries": {
             "type": "array",
-            "items": {"$ref": "country.schema.json"},
+            "items": {
+                "$ref": "country.schema.json"
+            },
             "minItems": 1,
             "description": "A list of countries that the content of this burrito relates to."
         },
         "agencies": {
             "type": "array",
-            "items": {"$ref": "agency.schema.json"},
+            "items": {
+                "$ref": "agency.schema.json"
+            },
             "minItems": 1,
             "description": "A list of agencies involved with the contents of the burrito or the work it is derived from."
         },
-        "copyright": {"$ref": "copyright.schema.json"},
-        "promotion": {"$ref": "promotion.schema.json"},
+        "copyright": {
+            "$ref": "copyright.schema.json"
+        },
+        "promotion": {
+            "$ref": "promotion.schema.json"
+        },
         "ingredients": {
             "type": "object",
-            "additionalProperties": {"$ref": "ingredient.schema.json"},
-            "propertyNames": {"$ref": "common.schema.json#/definitions/path"},
+            "additionalProperties": {
+                "$ref": "ingredient.schema.json"
+            },
+            "propertyNames": {
+                "$ref": "common.schema.json#/definitions/path"
+            },
             "minProperties": 1,
             "description": "Describes the various files contained by the burrito, keyed by the canonical forward-slashed pathname of the file."
         },
         "names": {
             "type": "object",
-            "additionalProperties": {"$ref": "name.schema.json"},
+            "additionalProperties": {
+                "$ref": "name.schema.json"
+            },
             "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
         }
     },
-    "required": ["meta", "idServers", "identification"],
+    "required": [
+        "meta",
+        "idServers",
+        "identification"
+    ],
     "additionalProperties": false,
-    "if": {"properties": {"type": {"properties": {"flavorType": {"enum": ["scripture", "gloss"]}}}}},
-    "then": {"required": ["languages", "names"]}
+    "if": {
+        "properties": {
+            "type": {
+                "properties": {
+                    "flavorType": {
+                        "enum": [
+                            "scripture",
+                            "gloss"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "then": {
+        "required": [
+            "languages",
+            "names"
+        ]
+    }
 }
