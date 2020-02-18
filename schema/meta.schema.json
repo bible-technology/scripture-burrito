@@ -23,11 +23,16 @@
                 "userName": {
                     "type": "string",
                     "description": "The user's full name, if known."
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
                 }
             },
             "required": [
                 "softwareName",
-                "softwareVersion"
+                "softwareVersion",
+                "timestamp"
             ],
             "additionalProperties": false
         }
