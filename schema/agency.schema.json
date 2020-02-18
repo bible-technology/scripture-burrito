@@ -17,11 +17,12 @@
         "url": {
             "$ref": "common.schema.json#/definitions/url"
         },
-        "contributes": {
+        "roles": {
             "type": "array",
             "items": {
                 "type": "string",
                 "enum": [
+                    "rightsHolder",
                     "content",
                     "publication",
                     "management",
@@ -30,12 +31,14 @@
                 ],
                 "uniqueItems": true
             },
-            "description": "A list of roles indicating in which respects this agency was involved with the production of this burrito."
+            "description": "A list of roles indicating in which respects this agency was involved with the production of this burrito.",
+            "minItems": 1
         }
     },
     "required": [
         "id",
-        "name"
+        "name",
+        "roles"
     ],
     "additionalProperties": false
 }
