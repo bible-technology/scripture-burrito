@@ -6,8 +6,6 @@
     "description": "Information about the Scripture Burrito metadata file.",
     "definitions": {
         "softwareAndUserInfo": {
-            "$$target": ["meta.schema.json#/definitions/softwareAndUserInfo", "#/definitions/softwareAndUserInfo"],
-            "title": "Software and User Information",
             "type": "object",
             "properties": {
                 "softwareName": {
@@ -27,7 +25,10 @@
                     "description": "The user's full name, if known."
                 }
             },
-            "required": ["softwareName", "softwareVersion"],
+            "required": [
+                "softwareName",
+                "softwareVersion"
+            ],
             "additionalProperties": false
         }
     },
@@ -45,12 +46,21 @@
             "$ref": "#/definitions/softwareAndUserInfo",
             "description": "Information about the program and user who uploaded this burrito."
         },
+        "defaultLanguage": {
+            "$ref": "common.schema.json#/definitions/languageTag",
+            "description": "The BCP47 code of the language that should be displayed, if a default is required, and for which localization is required in all name fields specified for 'catalog' validation."
+        },
         "comments": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+                "type": "string"
+            },
             "description": "Arbitrary text strings attached by users with no effect on the interpretation of the Scripture Burrito."
         }
     },
-    "required": ["version"],
+    "required": [
+        "version",
+        "defaultLanguage"
+    ],
     "additionalProperties": false
 }

@@ -12,21 +12,34 @@
             "userId": "dbl::5678",
             "userName": "Josh Buck"
         },
+        "defaultLanguage": "en",
         "comments": [
             "Experimenting with i18n",
             "Fixed canon before upload. ~Josh"
         ]
     },
     "idServers": {
-        "dbl": "https://thedigitalbiblelibrary.org",
-        "agmt": "http://registry.autographamt.com",
-        "x-atl": "http://atlantisbibleconsortium.net"
+        "dbl": {
+            "id": "https://thedigitalbiblelibrary.org",
+            "name": {
+                "en": "The Digital Bible Library"
+            }
+        },
+        "agmt": {
+            "id": "http://registry.autographamt.com",
+            "name": {
+                "en": "Autographa"
+            }
+        },
+        "x-atl": {
+            "id": "http://atlantisbibleconsortium.net"
+        }
     },
     "identification": {
         "systemId": {
-            "dbl":{
+            "dbl": {
                 "id": "0123456789abcdef",
-                "revision":"23"
+                "revision": "23"
             },
             "gbc": {
                 "id": "55df02965117ad3f2201309b"
@@ -35,16 +48,17 @@
                 "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
             }
         },
-    "idServer": "dbl",
-    "variant": "default",
+        "idServer": "dbl",
+        "variant": "default",
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
-            "fr": "Crêpe mexicaine biblique surdimensionnée (démonstration)"
+            "fr": "Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"
         },
         "description": {
             "en": "A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce"
         },
         "abbreviation": {
+            "en": "DSB",
             "fr": "CMBS"
         }
     },
@@ -55,26 +69,36 @@
     },
     "type": {
         "flavorType": {
-        "name": "scripture",
+            "name": "scripture",
             "bookScope": {
-        "GEN": "",
-        "EXO": "1-12",
-        "LEV": "2-3",
-        "MAT": "1,5,7-11"
+                "GEN": "",
+                "EXO": "1-12",
+                "LEV": "2-3",
+                "MAT": "1,5,7-11"
             },
-            "canonType": ["OT", "NT"],
+            "canonType": [
+                "OT",
+                "NT"
+            ],
             "canonSpec": {
-        "OT": {"name": "western"},
-        "NT": {"name": "x-matthewOnlyMillenialists", "books": ["MAT"]}
+                "OT": {
+                    "name": "western"
+                },
+                "NT": {
+                    "name": "x-matthewOnlyMillenialists",
+                    "books": [
+                        "MAT"
+                    ]
+                }
             },
             "flavor": {
-        "name": "textTranslation",
-        "projectType": "standard",
-        "audience": "common",
-        "translationType": "newTranslation",
-        "usfmVersion": "3.1.rc49"
+                "name": "textTranslation",
+                "projectType": "standard",
+                "audience": "common",
+                "translationType": "newTranslation",
+                "usfmVersion": "3.1.rc49"
             }
-    }
+        }
     },
     "relationships": [
         {
@@ -95,12 +119,11 @@
     ],
     "languages": [
         {
-            "tag": "nl",
+            "tag": "en",
             "name": {
-                "nl": "Nederlands",
-                "en": "Dutch",
-                "de": "Niederländisch",
-                "nb": "nederlandsk"
+                "en": "English",
+                "de": "Englisch",
+                "fr": "anglais"
             }
         }
     ],
@@ -111,7 +134,7 @@
                 "nl": "Nederland",
                 "kl": "Pukkitsormiut",
                 "la": "Batavia",
-                "ru": "Нидерланды"
+                "ru": "\u041d\u0438\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u044b"
             }
         }
     ],
@@ -125,7 +148,13 @@
                 "en": "BRU"
             },
             "url": "https://burritos-r-us.org",
-            "contributes": ["content", "finance", "management", "publication", "qa"]
+            "contributes": [
+                "content",
+                "finance",
+                "management",
+                "publication",
+                "qa"
+            ]
         },
         {
             "id": "dbl::29",
@@ -135,114 +164,147 @@
         }
     ],
     "copyright": {
-        "rightsHolderAgencies": [0, 1],
+        "rightsHolderAgencies": [
+            0,
+            1
+        ],
         "rightsAdminAgency": 1,
         "licenses": [
-            {"url": "https://burritos-r-us.org/licenses/3247"}
+            {
+                "url": "https://burritos-r-us.org/licenses/3247"
+            }
         ],
         "shortStatementPlain": {
-            "fr": "© Burritos R Us 2019."
+            "fr": "\u00a9 Burritos R Us 2019."
         },
         "fullStatementPlain": {
-            "fr": "© Burritos R Us 2019. Tous droits réservés."
+            "fr": "\u00a9 Burritos R Us 2019. Tous droits r\u00e9serv\u00e9s."
         },
         "fullStatementRich": {
-            "fr": "<p><b>© Burritos R Us 2019.</b></p><p><i>Tous droits réservés.</i></p>"
+            "fr": "<p><b>\u00a9 Burritos R Us 2019.</b></p><p><i>Tous droits r\u00e9serv\u00e9s.</i></p>"
         }
     },
     "promotion": {
         "statementRich": {
-           "en": "<h2>Why you should enjoy this burrito</h2><p>This burrito comes straight from the <a href=\"https://burritos-r-us.org/\">Burritos R Us</a> factory and contains the best ingredients:</p><ul><li>Delicious <b>beans</b></li><li>Fresh green <b>lettuce</b></li><li>A <em>generous</em> helping of <b>cheese</b></li></ul><p /><h2>What our customers say</h2><blockquote><p>This burrito is <i>delicious</i>!</p></blockquote>"
+            "en": "<h2>Why you should enjoy this burrito</h2><p>This burrito comes straight from the <a href=\"https://burritos-r-us.org/\">Burritos R Us</a> factory and contains the best ingredients:</p><ul><li>Delicious <b>beans</b></li><li>Fresh green <b>lettuce</b></li><li>A <em>generous</em> helping of <b>cheese</b></li></ul><p /><h2>What our customers say</h2><blockquote><p>This burrito is <i>delicious</i>!</p></blockquote>"
         }
     },
     "ingredients": {
         "source/usfm/OTINT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intot",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/GEN.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "GEN",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/EXO.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "EXO 1-12",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/LEV.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "LEV 2:3-3:7",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/INTNT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intnt",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/INTMAT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intMAT",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/MAT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "MAT 1:3,5,7-11",
             "size": 1234,
             "isSource": true
         },
         "release/text/USX_1/OTINT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intot",
             "size": 1234
         },
         "release/text/USX_1/GEN.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "GEN",
             "size": 1234
         },
         "release/text/USX_1/EXO.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "EXO 1-12",
             "size": 1234
         },
         "release/text/USX_1/LEV.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "LEV 2:3-3:7",
             "size": 1234
         },
         "release/text/USX_1/INTNT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intnt",
             "size": 1234
         },
         "release/text/USX_1/INTMAT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intMAT",
             "size": 1234
         },
         "release/text/USX_1/MAT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "MAT 1:3,5,7-11",
             "size": 1234

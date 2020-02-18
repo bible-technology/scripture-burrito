@@ -1,22 +1,34 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/language.schema.json",
-    "$$target": "language.schema.json",
     "title": "Language",
     "type": "object",
     "description": "Language section.",
     "properties": {
         "tag": {
             "$ref": "common.schema.json#/definitions/languageTag",
-             "examples": ["hi", "es-419"]
-            },
-        "name": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "rod": {"$ref": "common.schema.json#/definitions/rodCode"},
+            "examples": [
+                "hi",
+                "es-419"
+            ]
+        },
+        "name": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "rod": {
+            "$ref": "common.schema.json#/definitions/rodCode"
+        },
         "scriptDirection": {
             "type": "string",
-            "allowedValues": ["ltr", "rtl"]
+            "allowedValues": [
+                "ltr",
+                "rtl"
+            ]
         }
     },
-    "required": ["tag", "name"],
+    "required": [
+        "tag",
+        "name"
+    ],
     "additionalProperties": false
 }
