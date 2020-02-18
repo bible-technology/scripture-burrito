@@ -5,10 +5,18 @@
     "type": "object",
     "description": "Contains localized names for books, etc.",
     "properties": {
-        "short": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "long": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "abbr": {"$ref": "common.schema.json#/definitions/localizedText"}
+        "short": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "long": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "abbr": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        }
     },
-    "required": ["short"],
+    "required": [
+        "short"
+    ],
     "additionalProperties": false
 }

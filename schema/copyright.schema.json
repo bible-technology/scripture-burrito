@@ -23,12 +23,24 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "url": {"$ref": "common.schema.json#/definitions/url"},
-                    "ingredient": {"$ref": "common.schema.json#/definitions/path"}
+                    "url": {
+                        "$ref": "common.schema.json#/definitions/url"
+                    },
+                    "ingredient": {
+                        "$ref": "common.schema.json#/definitions/path"
+                    }
                 },
                 "oneOf": [
-                    {"required": ["url"]},
-                    {"required": ["ingredient"]}
+                    {
+                        "required": [
+                            "url"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "ingredient"
+                        ]
+                    }
                 ],
                 "additionalProperties": false
             },
@@ -38,27 +50,53 @@
             "type": "boolean",
             "description": "If set to true, the contents of this burrito are dedicated to the public domain."
         },
-        "shortStatementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "shortStatementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"},
-        "fullStatementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "fullStatementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"}
+        "shortStatementPlain": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "shortStatementRich": {
+            "$ref": "common.schema.json#/definitions/localizedRichText"
+        },
+        "fullStatementPlain": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "fullStatementRich": {
+            "$ref": "common.schema.json#/definitions/localizedRichText"
+        }
     },
     "oneOf": [
         {
             "properties": {
-                "publicDomain": {"const": true},
-                "licenses": {"const": []},
-                "rightsHolderAgencies": {"const": []}
+                "publicDomain": {
+                    "const": true
+                },
+                "licenses": {
+                    "const": []
+                },
+                "rightsHolderAgencies": {
+                    "const": []
+                }
             },
-            "not": {"required": ["rightsAdminAgency"]},
-            "required": ["publicDomain"]
+            "not": {
+                "required": [
+                    "rightsAdminAgency"
+                ]
+            },
+            "required": [
+                "publicDomain"
+            ]
         },
         {
             "properties": {
-                "publicDomain": {"const": false},
-                "rightsHolderAgencies": {"minItems": 1}
+                "publicDomain": {
+                    "const": false
+                },
+                "rightsHolderAgencies": {
+                    "minItems": 1
+                }
             },
-            "required": ["rightsHolderAgencies"]
+            "required": [
+                "rightsHolderAgencies"
+            ]
         }
     ],
     "additionalProperties": false

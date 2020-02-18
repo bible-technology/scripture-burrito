@@ -29,28 +29,46 @@
         }
     },
     "properties": {
-        "name": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "description": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "abbreviation": {"$ref": "common.schema.json#/definitions/localizedText"},
+        "name": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "description": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "abbreviation": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
         "systemId": {
             "type": "object",
             "additionalProperties": {
                 "type": "object",
                 "properties": {
-                    "id": {"$ref": "common.schema.json#/definitions/bareId"},
-                    "revision": {"$ref": "common.schema.json#/definitions/revisionString"}
+                    "id": {
+                        "$ref": "common.schema.json#/definitions/bareId"
+                    },
+                    "revision": {
+                        "$ref": "common.schema.json#/definitions/revisionString"
+                    }
                 },
-                "required": ["id"]
+                "required": [
+                    "id"
+                ]
             },
             "minItems": 1,
             "description": "Contains identifiers in each system declared by the top-level idServers element."
         },
-    "idServer": {"$ref": "common.schema.json#/definitions/idServerLabel"},
-    "variant": {
-        "type": "string",
-        "pattern": "^(default|new|update|derived_[A-Za-z][A-Za-z0-9]*)$"
-    }
+        "idServer": {
+            "$ref": "common.schema.json#/definitions/idServerLabel"
+        },
+        "variant": {
+            "type": "string",
+            "pattern": "^(default|new|update|derived_[A-Za-z][A-Za-z0-9]*)$"
+        }
     },
-    "required": ["name", "systemId", "idServer"],
+    "required": [
+        "name",
+        "systemId",
+        "idServer"
+    ],
     "additionalProperties": false
 }

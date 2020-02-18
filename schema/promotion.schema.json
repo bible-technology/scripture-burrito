@@ -5,8 +5,12 @@
     "type": "object",
     "description": "Contains promotional statements for the burrito.",
     "properties": {
-        "statementPlain": {"$ref": "common.schema.json#/definitions/localizedText"},
-        "statementRich": {"$ref": "common.schema.json#/definitions/localizedRichText"}
+        "statementPlain": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "statementRich": {
+            "$ref": "common.schema.json#/definitions/localizedRichText"
+        }
     },
     "required": [],
     "additionalProperties": false
