@@ -9,6 +9,10 @@
     "title": "Scripture Burrito Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
+        "timestamp": {
+            "type": "string",
+            "pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
+        },
         "url": {
             "type": "string",
             "format": "uri",

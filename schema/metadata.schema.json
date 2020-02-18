@@ -91,6 +91,19 @@
                 "$ref": "name.schema.json"
             },
             "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
+        },
+        "progress": {
+            "type": "object",
+            "properties": {
+                "dateStarted": {
+                    "$ref": "common.schema.json#/definitions/timestamp"
+                },
+                "dateCompleted": {
+                    "$ref": "common.schema.json#/definitions/timestamp"
+                }
+            },
+            "minProperties": 1,
+            "additionalProperties": false
         }
     },
     "required": [
