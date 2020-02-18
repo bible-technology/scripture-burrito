@@ -375,5 +375,9 @@
                 "fr": "A propos de Matthieu"
             }
         }
+    },
+    "progress": {
+        "dateStarted": "2017-11-30",
+        "dateCompleted": "2017-12-01"
     }
 }
