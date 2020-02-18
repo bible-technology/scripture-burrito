@@ -12,31 +12,44 @@
             "userId": "dbl::5678",
             "userName": "Josh Buck"
         },
+	"defaultLanguage": "en",
         "comments": [
             "Experimenting with i18n",
             "Fixed canon before upload. ~Josh"
         ]
     },
     "idServers": {
-        "dbl": "https://thedigitalbiblelibrary.org",
-        "agmt": "http://registry.autographamt.com",
-        "x-atl": "http://atlantisbibleconsortium.net"
+        "dbl": {
+	    "id": "https://thedigitalbiblelibrary.org",
+	    "name": {
+		"en": "The Digital Bible Library"
+	    }
+	},
+        "agmt": {
+	    "id": "http://registry.autographamt.com",
+	    "name": {
+		"en": "Autographa"
+	    }
+	},
+        "x-atl": {
+	    "id": "http://atlantisbibleconsortium.net"
+	}
     },
     "identification": {
         "systemId": {
             "dbl":{
-                "id": "0123456789abcdef",
-                "revision":"23"
-            },
-            "gbc": {
-                "id": "55df02965117ad3f2201309b"
-            },
-            "paratext": {
-                "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
-            }
+        "id": "0123456789abcdef",
+        "revision":"23"
         },
-    "idServer": "dbl",
-    "variant": "default",
+            "gbc": {
+        "id": "55df02965117ad3f2201309b"
+        },
+            "paratext": {
+        "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
+        }
+        },
+	"idServer": "dbl",
+	"variant": "default",
         "name": {
             "en": "Scripture Burrito Demo Text Bible",
             "fr": "Crêpe mexicaine biblique surdimensionnée (démonstration)"
@@ -45,6 +58,7 @@
             "en": "A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce"
         },
         "abbreviation": {
+	    "en": "DSB",
             "fr": "CMBS"
         }
     },
@@ -95,12 +109,11 @@
     ],
     "languages": [
         {
-            "tag": "nl",
+            "tag": "en",
             "name": {
-                "nl": "Nederlands",
-                "en": "Dutch",
-                "de": "Niederländisch",
-                "nb": "nederlandsk"
+                "en": "English",
+                "de": "Englisch",
+                "fr": "anglais"
             }
         }
     ],
@@ -157,92 +170,120 @@
     },
     "ingredients": {
         "source/usfm/OTINT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intot",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/GEN.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "GEN",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/EXO.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "EXO 1-12",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/LEV.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "LEV 2:3-3:7",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/INTNT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intnt",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/INTMAT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "intMAT",
             "size": 1234,
             "isSource": true
         },
         "source/usfm/MAT.sfm": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-sfm",
             "scopeOrRole": "MAT 1:3,5,7-11",
             "size": 1234,
             "isSource": true
         },
         "release/text/USX_1/OTINT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intot",
             "size": 1234
         },
         "release/text/USX_1/GEN.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "GEN",
             "size": 1234
         },
         "release/text/USX_1/EXO.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "EXO 1-12",
             "size": 1234
         },
         "release/text/USX_1/LEV.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "LEV 2:3-3:7",
             "size": 1234
         },
         "release/text/USX_1/INTNT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intnt",
             "size": 1234
         },
         "release/text/USX_1/INTMAT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "intMAT",
             "size": 1234
         },
         "release/text/USX_1/MAT.usx": {
-            "checksum": "0123456789abcdef0123456789abcdef",
+            "checksum": {
+		"md5": "0123456789abcdef0123456789abcdef"
+	    },
             "mimeType": "text/x-usx+xml",
             "scopeOrRole": "MAT 1:3,5,7-11",
             "size": 1234

@@ -1,12 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/common.schema.json",
-    "title": "Common Definitions",
+    "$$target": [
+        "common.schema.json#/definitions/languageTag",
+        "common.schema.json#/definitions/localizedText",
+        "common.schema.json#/definitions/rodCode"
+    ],
+    "title": "Scripture Burrito Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
         "url": {
-            "$$target": "common.schema.json#/definitions/url",
-            "title": "URL Definition",
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
@@ -15,44 +18,37 @@
             "examples": ["https://example.com"]
         },
         "xToken": {
-            "$$target": "common.schema.json#/definitions/xToken",
-            "title": "xToken",
             "type": "string",
             "pattern": "^x-[a-z][A-za-z0-9]*$",
             "description": "User-defined token, prefixed with x-"
         },
+        "idServerLabel": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9\\-]*[a-z0-9]$",
+            "description": "A Label for an ID server (internal to the document)"
+        },
         "bareId": {
-            "$$target": "common.schema.json#/definitions/bareId",
-            "title": "Bare Identifier",
             "type": "string",
             "pattern": "^\\S+$",
             "description": "Opaque system-specific identifier, without prefix."
         },
         "prefixedId": {
-            "$$target": "common.schema.json#/definitions/prefixedId",
-            "title": "Prefixed Identifer",
             "type": "string",
             "pattern": "^[0-9a-zA-Z][0-9a-zA-Z\\-]{1,31}::\\S+$",
             "description": "Opaque system-specific identifier, prefixed with the name of the system as declared in idServers."
         },
         "revisionString": {
-            "$$target": "common.schema.json#/definitions/revisionString",
-            "title": "Revision",
             "type": "string",
             "pattern": "^[0-9A-Za-z]([0-9A-Za-z_.:\\-]{0,62}[0-9A-Za-z])?$",
             "description": "Opaque system-specific revision identifier."
         },
         "languageTag": {
-            "$$target": ["common.schema.json#/definitions/languageTag", "#/definitions/languageTag"],
-            "title": "Language Tag",
             "type": "string",
             "pattern": "^[A-Za-z]{2,3}([\\-_][A-Za-z0-9]+){0,4}$",
             "minLength": 2,
             "description": "A valid IETF language tag as specified by BCP 47."
         },
         "countryCode": {
-            "$$target": "common.schema.json#/definitions/countryCode",
-            "title": "Country Code",
             "type": "string",
             "pattern": "^[A-Z][A-Z]$",
             "minLength": 2,
@@ -60,8 +56,6 @@
             "description": "The upper-case ISO 3166-2 code for the country."
         },
         "rodCode": {
-            "$$target": "common.schema.json#/definitions/rodCode",
-            "title": "Registry of Dialects Code",
             "type": "string",
             "pattern": "^[0-9]{5}$",
             "minLength": 5,
@@ -69,15 +63,11 @@
             "description": "A five-digit code from the Registry of Dialects."
         },
         "trimmedText": {
-            "$$target": ["common.schema.json#/definitions/trimmedText", "#/definitions/trimmedText"],
-            "title": "Trimmed Text",
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",
             "description": "A string without surrounding whitespace characters."
         },
         "localizedText": {
-            "$$target": "common.schema.json#/definitions/localizedText",
-            "title": "Localized Text",
             "type": "object",
             "additionalProperties": { "$ref": "#/definitions/trimmedText" },
             "propertyNames": { "$ref": "#/definitions/languageTag" },
@@ -85,8 +75,6 @@
             "description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
         },
         "simplifiedXHTML": {
-            "$$target": ["common.schema.json#/definitions/simplifiedXHTML", "#/definitions/simplifiedXHTML"],
-            "title": "Simplified XHTML",
             "type": "string",
             "contentMediaType": "text/xml",
             "minLength": 4,
@@ -103,8 +91,6 @@
             "description": "A rich text string specified in a limited subset of XHTML."
         },
         "localizedRichText": {
-            "$$target": "common.schema.json#/definitions/localizedRichText",
-            "title": "Localized Text",
             "type": "object",
             "additionalProperties": { "$ref": "#/definitions/simplifiedXHTML" },
             "propertyNames": { "$ref": "#/definitions/languageTag" },
@@ -112,8 +98,6 @@
             "description": "A simplified XHTML string specified in one or multiple languages, indexed by IETF language tag."
         },
         "bookId": {
-            "$$target": "common.schema.json#/definitions/bookId",
-            "title": "Book Code",
             "type": "string",
             "pattern": "^[A-Z0-9]{3}$",
             "minLength": 3,
@@ -122,15 +106,11 @@
             "description": "A standard book code consisting of three uppercase alphanumerics."
         },
         "path": {
-            "$$target": "common.schema.json#/definitions/path",
-            "title": "File Path",
             "type": "string",
             "pattern": "^[^\\/:?*\"><|]+(/[^\\/:?*\"><|]+)*$",
             "description": "A file path, delimited by forward slashes."
         },
         "mimeType": {
-            "$$target": "common.schema.json#/definitions/mimeType",
-            "title": "MIME type",
             "type": "string",
             "pattern": "^[\\-a-z0-9]+/[\\-a-z0-9+]+$",
             "description": "An IANA media type (also known as MIME type)"
