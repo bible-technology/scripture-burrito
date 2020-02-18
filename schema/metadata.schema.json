@@ -8,10 +8,17 @@
         "meta": {"$ref": "meta.schema.json"},
         "idServers": {
             "type": "object",
-            "additionalProperties": {"$ref": "common.schema.json#/definitions/url"},
-            "minProperties": 1,
-            "description": "Declares an identity server which may later be referred to using identifier prefixes."
+        "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
+        "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "id": {"$ref": "common.schema.json#/definitions/url"},
+            "name": {"$ref": "common.schema.json#/definitions/localizedText"}
         },
+        "propertyNames": {"$ref": "common.schema.json#/definitions/idServerLabel"},
+        "minItems": 1
+        }
+    },
         "identification": {"$ref": "identification.schema.json"},
         "confidentiality": {"$ref": "confidentiality.schema.json"},
         "type": {"$ref": "type.schema.json"},

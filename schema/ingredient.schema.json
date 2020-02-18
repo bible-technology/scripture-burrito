@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/ingredient.schema.json",
-    "$$target": "ingredient.schema.json",
     "title": "Scripture Burrito Ingredient",
     "type": "object",
     "description": "Describes an individual ingredient, which is a file contained within the burrito.",
@@ -17,8 +16,24 @@
         },
         "mimeType": {"$ref": "common.schema.json#/definitions/mimeType"},
         "checksum": {
+        "type": "object",
+        "properties": {
+        "md5": {
             "type": "string",
-            "pattern": "^[a-f0-9]{32}(\\-\\d+)?$"
+            "pattern": "^[a-f0-9]{32}$"
+        },
+        "sha3-256" : {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        },
+        "sha3-512" : {
+            "type": "string",
+            "pattern": "^[a-f0-9]{128}$"
+        }
+        },
+        "required": ["md5"],
+            "maxProperties": 2,
+        "additionalProperties": false
         },
         "scopeOrRole": {
             "type": "string",
