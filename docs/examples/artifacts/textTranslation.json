@@ -4,13 +4,15 @@
         "generator": {
             "softwareName": "Burrito Factory",
             "softwareVersion": "0.1",
-            "userName": "Jane Doe"
+            "userName": "Jane Doe",
+            "timestamp": "2020-02-18T23:59:59+01:00"
         },
         "uploader": {
             "softwareName": "Burrito Truck",
             "softwareVersion": "0.1",
             "userId": "dbl::5678",
-            "userName": "Josh Buck"
+            "userName": "Josh Buck",
+            "timestamp": "2020-02-19T00:00:01+01:00"
         },
         "defaultLanguage": "en",
         "comments": [
