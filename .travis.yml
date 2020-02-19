@@ -1,8 +1,12 @@
 dist: bionic
 language: python
 # install dependencies
+before_install:
+  - sudo apt-get -y install npm nodejs
 install:
   - pip install jsonschema
+  - npm install ajv
 # command to run tests
 script:
   - python code/validate.py docs/examples/artifacts/*.json
+  - nodejs code/validate.js docs/examples/artifacts/*.json
