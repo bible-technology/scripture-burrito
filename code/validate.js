@@ -7,7 +7,7 @@ const ajv = new Ajv({schemas: schemaIndex.schemas});
 
 
 function validate(fn, data) {
-    const validator = ajv.getSchema(schemaIndex.schemaId);
+    const validator = ajv.getSchema(schemaIndex.schemaIds.metadata);
     if (validator(JSON.parse(data))) {
         console.log(fn + ': No errors.');
     } else {
