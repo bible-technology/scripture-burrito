@@ -9,23 +9,7 @@
             "$ref": "meta.schema.json"
         },
         "idServers": {
-            "type": "object",
-            "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
-            "additionalProperties": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "$ref": "common.schema.json#/definitions/url"
-                    },
-                    "name": {
-                        "$ref": "common.schema.json#/definitions/localizedText"
-                    }
-                },
-                "propertyNames": {
-                    "$ref": "common.schema.json#/definitions/idServerLabel"
-                },
-                "minItems": 1
-            }
+            "$ref": "idservers.schema.json"
         },
         "identification": {
             "$ref": "identification.schema.json"
@@ -37,36 +21,16 @@
             "$ref": "type.schema.json"
         },
         "relationships": {
-            "type": "array",
-            "items": {
-                "$ref": "relationship.schema.json"
-            },
-            "minItems": 1,
-            "description": "Describes a relationship to another burrito that may be obtained from an indicated server."
+            "$ref": "relationships.schema.json"
         },
         "languages": {
-            "type": "array",
-            "items": {
-                "$ref": "language.schema.json"
-            },
-            "minItems": 1,
-            "description": "A list of all the languages of the contents of this burrito."
+            "$ref": "languages.schema.json"
         },
         "countries": {
-            "type": "array",
-            "items": {
-                "$ref": "country.schema.json"
-            },
-            "minItems": 1,
-            "description": "A list of countries that the content of this burrito relates to."
+            "$ref": "countries.schema.json"
         },
         "agencies": {
-            "type": "array",
-            "items": {
-                "$ref": "agency.schema.json"
-            },
-            "minItems": 1,
-            "description": "A list of agencies involved with the contents of the burrito or the work it is derived from."
+            "$ref": "agencies.schema.json"
         },
         "copyright": {
             "$ref": "copyright.schema.json"
@@ -75,35 +39,13 @@
             "$ref": "promotion.schema.json"
         },
         "ingredients": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "ingredient.schema.json"
-            },
-            "propertyNames": {
-                "$ref": "common.schema.json#/definitions/path"
-            },
-            "minProperties": 1,
-            "description": "Describes the various files contained by the burrito, keyed by the canonical forward-slashed pathname of the file."
+            "$ref": "ingredients.schema.json"
         },
         "names": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "name.schema.json"
-            },
-            "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
+            "$ref": "names.schema.json"
         },
         "progress": {
-            "type": "object",
-            "properties": {
-                "dateStarted": {
-                    "$ref": "common.schema.json#/definitions/timestamp"
-                },
-                "dateCompleted": {
-                    "$ref": "common.schema.json#/definitions/timestamp"
-                }
-            },
-            "minProperties": 1,
-            "additionalProperties": false
+            "$ref": "progress.schema.json"
         }
     },
     "required": [
