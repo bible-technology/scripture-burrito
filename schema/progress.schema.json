@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/progress.schema.json",
+    "title": "Scripture Burrito Progress",
+    "type": "object",
+    "properties": {
+        "dateStarted": {
+            "$ref": "common.schema.json#/definitions/timestamp"
+        },
+        "dateCompleted": {
+            "$ref": "common.schema.json#/definitions/timestamp"
+        }
+    },
+    "minProperties": 1,
+    "additionalProperties": false
+}
