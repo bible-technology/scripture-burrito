@@ -1,18 +1,17 @@
 {
     "meta": {
         "version": "0.2.0",
+        "dateCreated": "2019-02-19T01:02:03+01:00",
         "generator": {
             "softwareName": "Burrito Factory",
             "softwareVersion": "0.1",
-            "userName": "Jane Doe",
-            "timestamp": "2020-02-18T23:59:59+01:00"
+            "userName": "Jane Doe"
         },
         "uploader": {
             "softwareName": "Burrito Truck",
             "softwareVersion": "0.1",
             "userId": "dbl::5678",
-            "userName": "Josh Buck",
-            "timestamp": "2020-02-19T00:00:01+01:00"
+            "userName": "Josh Buck"
         },
         "defaultLanguage": "en",
         "comments": [
