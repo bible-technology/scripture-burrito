@@ -6,9 +6,9 @@ Scripture Burrito Documentation
 
 .. image:: ../logo/burrito_logo.png
 
-This is the official documentation for the evolving Scripture Burrito standard. This is the latest documentation headed toward **0.2.0**, expected in January 2020 (see the `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
+This is the official documentation for the evolving Scripture Burrito standard. We are building toward **0.2.0**, see the `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
 
-**Warning: the 0.1.0 schema was XML based, however, we will be pivoting to** `JSON Schema <https://json-schema.org/>`_ **as the only representation of the metadata in 0.2.0.**
+**Warning: the 0.1.0 schema was XML based, however, we are pivoting to** `JSON Schema <https://json-schema.org/>`_ **as the only representation of the metadata in 0.2.0.**
 
 Feedback
 --------
