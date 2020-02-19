@@ -30,6 +30,10 @@ These flavorTypes are then subclassed into various flavors, as illustrated:
 
 .. image:: https://user-images.githubusercontent.com/107731/62296968-3a43ba80-b43e-11e9-8a6b-f1d8982edb2a.jpeg
 
+Metadata Filename
+=================
+
+A Scripture Burrito can exist in multiple data formats. By convention, when the metdata is written to disk it should be in a file with the name of ``metadata.json`` at the **root** level of the Burrito.
 
 Flavor-Specific Details in One Known Location
 =============================================
