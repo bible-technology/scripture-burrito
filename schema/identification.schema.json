@@ -59,10 +59,6 @@
         },
         "idServer": {
             "$ref": "common.schema.json#/definitions/idServerLabel"
-        },
-        "variant": {
-            "type": "string",
-            "pattern": "^(default|new|update|derived_[A-Za-z][A-Za-z0-9]*)$"
         }
     },
     "required": [
