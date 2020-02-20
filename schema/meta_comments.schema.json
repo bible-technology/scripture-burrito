@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/meta_comments.schema.json",
+    "title": "Scripture Burrito Meta Comments",
+    "type": "array",
+    "items": {
+        "type": "string"
+    },
+    "description": "Arbitrary text strings attached by users with no effect on the interpretation of the Scripture Burrito."
+}

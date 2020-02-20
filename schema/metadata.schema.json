@@ -4,74 +4,12 @@
     "title": "Scripture Burrito Metadata",
     "type": "object",
     "description": "Scripture Burrito root metadata object.",
-    "properties": {
-        "meta": {
-            "$ref": "meta.schema.json"
+    "oneOf": [
+        {
+            "$ref": "default_metadata.schema.json"
         },
-        "idServers": {
-            "$ref": "idservers.schema.json"
-        },
-        "identification": {
-            "$ref": "identification.schema.json"
-        },
-        "confidentiality": {
-            "$ref": "confidentiality.schema.json"
-        },
-        "type": {
-            "$ref": "type.schema.json"
-        },
-        "relationships": {
-            "$ref": "relationships.schema.json"
-        },
-        "languages": {
-            "$ref": "languages.schema.json"
-        },
-        "countries": {
-            "$ref": "countries.schema.json"
-        },
-        "agencies": {
-            "$ref": "agencies.schema.json"
-        },
-        "copyright": {
-            "$ref": "copyright.schema.json"
-        },
-        "promotion": {
-            "$ref": "promotion.schema.json"
-        },
-        "ingredients": {
-            "$ref": "ingredients.schema.json"
-        },
-        "names": {
-            "$ref": "names.schema.json"
-        },
-        "progress": {
-            "$ref": "progress.schema.json"
+        {
+            "$ref": "derived_metadata.schema.json"
         }
-    },
-    "required": [
-        "meta",
-        "idServers",
-        "identification"
-    ],
-    "additionalProperties": false,
-    "if": {
-        "properties": {
-            "type": {
-                "properties": {
-                    "flavorType": {
-                        "enum": [
-                            "scripture",
-                            "gloss"
-                        ]
-                    }
-                }
-            }
-        }
-    },
-    "then": {
-        "required": [
-            "languages",
-            "names"
-        ]
-    }
+    ]
 }
