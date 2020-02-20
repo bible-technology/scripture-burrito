@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/recipe_specs.schema.json",
+    "title": "Scripture Burrito Recipe Specs",
+    "type": "object",
+    "description": "Scripture Burrito recipe specs."
+}
