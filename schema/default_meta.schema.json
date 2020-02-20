@@ -7,7 +7,9 @@
     "properties": {
         "variant": {
             "type": "string",
-            "pattern": "^default$",
+            "enum": [
+                "default"
+            ],
             "description": "The type of variant represented in the burrito (which must be 'default')"
         },
         "dateCreated": {
