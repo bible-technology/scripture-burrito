@@ -43,9 +43,15 @@ if __name__ == '__main__':
     if not inputs:
         inputs.append(sys.stdin)
 
+    success = True
+
     for input in inputs:
         try:
             validate(input)
             print("{0}: No errors.".format(input.name))
         except Exception as ex:
             print("{0}: {1}".format(input.name, str(ex)))
+            success = False
+
+    if not success:
+        sys.exit(1)
