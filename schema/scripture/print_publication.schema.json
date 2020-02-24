@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/scripture/scripturePrint.schema.json",
-    "title": "Flavor Details: Scripture: Print",
+    "$id": "https://burrito.bible/schema/scripture/print_publication.schema.json",
+    "title": "Flavor Details: Scripture: Print Publication",
     "type": "object",
-    "description": "Schema of flavorDetails field for scripturePrint flavor",
+    "description": "Schema of flavor field for scripture/printPublication flavor",
     "definitions": {
         "measurementString": {
             "type": "string",
@@ -27,6 +27,10 @@
         }
     },
     "properties": {
+        "name": {
+            "type": "string",
+            "const": "printPublication"
+        },
         "contentType": {
             "type": "string",
             "enum": ["pdf", "inDesignTaggedText"]
@@ -67,6 +71,6 @@
         }
     ],
     "$comment": "TODO: unfinished",
-    "required": ["contentType"],
-    "additionalProperties": true
+    "required": ["name", "contentType"],
+    "additionalProperties": false
 }

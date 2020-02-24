@@ -1,10 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/scripture/scriptureBraille.schema.json",
-    "title": "Flavor Details: Scripture: Braille",
+    "$id": "https://burrito.bible/schema/scripture/braille_scripture_publication.schema.json",
+    "title": "Flavor Details: Scripture: Braille Publication",
     "type": "object",
-    "description": "Schema of flavorDetails field for scriptureBraille flavor",
+    "description": "Schema of flavor field for scripture/brailleScripturePublication flavor",
     "properties": {
+        "name": {
+            "type": "string",
+            "const": "braillePublication"
+        },
         "conventions": {
             "type": "object",
             "additionalProperties": {
