@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/x_flavor.schema.json",
+    "title": "Flavor Details: X-Flavor",
+    "description": "Schema of flavor field for xFlavor",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "pattern": "^x-[a-z][a-zA-Z0-9]*$"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "additionalProperties": true
+}

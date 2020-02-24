@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/book_scope.schema.json",
+    "title": "Scripture Burrito Book Scope",
+    "type": "object",
+    "additionalProperties": {
+        "chapterVerseRange": {
+            "$$target": [
+                "type.schema.json#/definitions/chapterVerseRange",
+                "#/definitions/chapterVerseRange"
+            ],
+            "title": "Chapter and Verse Range",
+            "type": "string",
+            "pattern": "^(|([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))$"
+        }
+    },
+    "propertyNames": {
+        "$ref": "common.schema.json#/definitions/bookId"
+    },
+    "description": "The keys indicate which books are targeted by this work, the values indicate specific sub-ranges of the respective book or the empty string if the whole book is targeted. Note that the presence of a book in this field is not a guarantee that this book is present in the burrito itself."
+}
