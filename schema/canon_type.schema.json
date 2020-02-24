@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/canon_type.schema.json",
+    "title": "Scripture Burrito Canon Type",
+    "type": "array",
+    "enum": [
+        [
+            "DC"
+        ],
+        [
+            "NT"
+        ],
+        [
+            "OT",
+            "DC",
+            "NT"
+        ],
+        [
+            "OT",
+            "NT",
+            "DC"
+        ],
+        [
+            "OT",
+            "NT"
+        ],
+        [
+            "OT+",
+            "NT"
+        ],
+        [
+            "OT"
+        ],
+        [
+            "OT+"
+        ]
+    ],
+    "minItems": 1,
+    "maxItems": 3,
+    "uniqueItems": true
+}

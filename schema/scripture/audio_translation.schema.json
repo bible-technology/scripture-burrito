@@ -1,13 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/scripture/scriptureAudio.schema.json",
-    "title": "Flavor Details: Scripture: Audio",
+    "$id": "https://burrito.bible/schema/scripture/audio_translation.schema.json",
+    "title": "Flavor Details: Audio Translation",
     "type": "object",
-    "description": "Schema of flavorDetails field for scriptureAudio flavor",
+    "description": "Schema of flavor field of scripture/audioTranslation flavor",
     "definitions": {
         "format": {
-            "$$target": ["scripture/scriptureAudio.schema.json#/definitions/format", "#/definitions/format"],
-            "title": "Media Format",
             "type": "object",
             "properties": {
                 "compression": {
