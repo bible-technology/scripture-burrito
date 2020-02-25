@@ -32,6 +32,7 @@ module.exports = {
         require('./metadata.schema.json'),
         require('./name.schema.json'),
         require('./names.schema.json'),
+        require('./numbering_system.schema.json'),
         require('./parascriptural/word_alignment.schema.json'),
 	require('./peripheral/versification.schema.json'),
         require('./progress.schema.json'),
