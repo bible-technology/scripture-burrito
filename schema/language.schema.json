@@ -15,6 +15,9 @@
         "name": {
             "$ref": "common.schema.json#/definitions/localizedText"
         },
+        "numberingSystem": {
+            "$ref": "numbering_system.schema.json"
+        },
         "rod": {
             "$ref": "common.schema.json#/definitions/rodCode"
         },
