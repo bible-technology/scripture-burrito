@@ -4,34 +4,47 @@
     "title": "Scripture Burrito Canon Type",
     "type": "array",
     "items": {
-	"type": "string",
-	"enum": ["ot", "otdc", "dc", "nt"]
+        "type": "string",
+        "enum": [
+            "ot",
+            "otdc",
+            "dc",
+            "nt"
+        ]
     },
     "allOf": [
-	{
-	    "not": {
-		"allOf": [
-		    {
-			"contains": {"const": "ot"}
-		    },
-		    {
-			"contains": {"const": "otdc"}
-		    }
-		]
-	    }
-	},
-	{
-	    "not": {
-		"allOf": [
-		    {
-			"contains": {"const": "dc"}
-		    },
-		    {
-			"contains": {"const": "otdc"}
-		    }
-		]
-	    }
-	}
+        {
+            "not": {
+                "allOf": [
+                    {
+                        "contains": {
+                            "const": "ot"
+                        }
+                    },
+                    {
+                        "contains": {
+                            "const": "otdc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "not": {
+                "allOf": [
+                    {
+                        "contains": {
+                            "const": "dc"
+                        }
+                    },
+                    {
+                        "contains": {
+                            "const": "otdc"
+                        }
+                    }
+                ]
+            }
+        }
     ],
     "minItems": 1,
     "maxItems": 3,
