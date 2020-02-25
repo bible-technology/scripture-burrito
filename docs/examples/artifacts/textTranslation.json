@@ -125,7 +125,8 @@
                 "en": "English",
                 "de": "Englisch",
                 "fr": "anglais"
-            }
+            },
+            "numberingSystem": "latn"
         }
     ],
     "countries": [

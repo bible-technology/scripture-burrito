@@ -19,11 +19,11 @@
         },
         "colorSpace": {
             "type": "string",
-            "allowedValues": ["CMYK", "RGB"]
+            "allowedValues": ["cmyk", "rgb"]
         },
         "fontType": {
             "type": "string",
-            "allowedValues": ["OpenType", "Other", "Bitmap", "TrueType", "Type1"]
+            "allowedValues": ["openType", "bitmap", "trueType", "type1"]
         }
     },
     "properties": {
