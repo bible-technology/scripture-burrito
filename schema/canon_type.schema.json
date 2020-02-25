@@ -3,37 +3,48 @@
     "$id": "https://burrito.bible/schema/canon_type.schema.json",
     "title": "Scripture Burrito Canon Type",
     "type": "array",
-    "enum": [
-        [
-            "DC"
-        ],
-        [
-            "NT"
-        ],
-        [
-            "OT",
-            "DC",
-            "NT"
-        ],
-        [
-            "OT",
-            "NT",
-            "DC"
-        ],
-        [
-            "OT",
-            "NT"
-        ],
-        [
-            "OT+",
-            "NT"
-        ],
-        [
-            "OT"
-        ],
-        [
-            "OT+"
+    "items": {
+        "type": "string",
+        "enum": [
+            "ot",
+            "otdc",
+            "dc",
+            "nt"
         ]
+    },
+    "allOf": [
+        {
+            "not": {
+                "allOf": [
+                    {
+                        "contains": {
+                            "const": "ot"
+                        }
+                    },
+                    {
+                        "contains": {
+                            "const": "otdc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "not": {
+                "allOf": [
+                    {
+                        "contains": {
+                            "const": "dc"
+                        }
+                    },
+                    {
+                        "contains": {
+                            "const": "otdc"
+                        }
+                    }
+                ]
+            }
+        }
     ],
     "minItems": 1,
     "maxItems": 3,

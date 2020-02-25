@@ -78,14 +78,14 @@
                 "MAT": "1,5,7-11"
             },
             "canonType": [
-                "OT",
-                "NT"
+                "ot",
+                "nt"
             ],
             "canonSpec": {
-                "OT": {
+                "ot": {
                     "name": "western"
                 },
-                "NT": {
+                "nt": {
                     "name": "x-matthewOnlyMillenialists",
                     "books": [
                         "MAT"

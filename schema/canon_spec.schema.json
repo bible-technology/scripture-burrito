@@ -27,10 +27,10 @@
                 ]
             }
         },
-        "canonComponentOT+": {
+        "canonComponentOTDC": {
             "$$target": [
-                "type.schema.json#/definitions/canonComponentOT+",
-                "#/definitions/canonComponentOT+"
+                "type.schema.json#/definitions/canonComponentOTDC",
+                "#/definitions/canonComponentOTDC"
             ],
             "title": "Old Testament+ Canon Component",
             "properties": {
@@ -57,7 +57,7 @@
                     "books"
                 ]
             },
-            "$comment": "OT+ is OT with interleaved DC"
+            "$comment": "OTDC is OT with interleaved DC"
         },
         "canonComponentDC": {
             "$$target": [
@@ -307,7 +307,7 @@
         }
     },
     "properties": {
-        "OT": {
+        "ot": {
             "type": "object",
             "properties": {
                 "books": {
@@ -328,7 +328,7 @@
                 "name"
             ]
         },
-        "OT+": {
+        "otdc": {
             "type": "object",
             "properties": {
                 "books": {
@@ -339,7 +339,7 @@
             },
             "oneOf": [
                 {
-                    "$ref": "#/definitions/canonComponentOT+"
+                    "$ref": "#/definitions/canonComponentOTDC"
                 },
                 {
                     "$ref": "#/definitions/canonComponentCustom"
@@ -349,7 +349,7 @@
                 "name"
             ]
         },
-        "DC": {
+        "dc": {
             "type": "object",
             "properties": {
                 "books": {
@@ -370,7 +370,7 @@
                 "name"
             ]
         },
-        "NT": {
+        "nt": {
             "type": "object",
             "properties": {
                 "books": {
@@ -398,19 +398,19 @@
         {
             "not": {
                 "required": [
-                    "OT",
-                    "OT+"
+                    "ot",
+                    "otdc"
                 ]
             }
         },
         {
             "not": {
                 "required": [
-                    "DC",
-                    "OT+"
+                    "dc",
+                    "otdc"
                 ]
             }
         }
     ],
-    "$comment": "OT or DC may not be specified if OT+ is present."
+    "$comment": "ot or dc may not be specified if otdc is present."
 }
