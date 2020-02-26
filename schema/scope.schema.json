@@ -1,21 +1,27 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/book_scope.schema.json",
-    "title": "Scripture Burrito Book Scope",
+    "$id": "https://burrito.bible/schema/scope.schema.json",
+    "title": "Scripture Burrito Scope",
     "type": "object",
+    "description": "Scope specification, used for the whole burrito and for specific ingredients. In both cases it describes the actual content, not future translation goals.",
     "additionalProperties": {
-        "chapterVerseRange": {
-            "$$target": [
-                "type.schema.json#/definitions/chapterVerseRange",
-                "#/definitions/chapterVerseRange"
-            ],
-            "title": "Chapter and Verse Range",
-            "type": "string",
-            "pattern": "^(|([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?((,([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?))*))|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?(,(([1-9][0-9]{0,2}(-[1-9][0-9]{0,2})?)|([1-9][0-9]{0,2}:[1-9][0-9]{0,2}(-[1-9][0-9]{0,2}(:[1-9][0-9]{0,2})?)?)))*))$"
-        }
+	"oneOf": [
+	    {
+		"type": "array",
+		"items": {
+		    "type": "string",
+		    "pattern": "^[1-9][0-9]*$|^[1-9][0-9]*-[1-9][0-9]*$|^[1-9][0-9]*:[1-9][0-9]*(-[1-9][0-9]*)?$|^[1-9][0-9]*:[1-9][0-9]*-[1-9][0-9]*:[1-9][0-9]*$"
+		},
+		"minItems": 1,
+		"unique": true
+	    },
+	    {
+		"type": "array",
+		"maxItems": 0
+	    }
+	]
     },
     "propertyNames": {
         "$ref": "common.schema.json#/definitions/bookId"
-    },
-    "description": "The keys indicate which books are targeted by this work, the values indicate specific sub-ranges of the respective book or the empty string if the whole book is targeted. Note that the presence of a book in this field is not a guarantee that this book is present in the burrito itself."
+    }
 }

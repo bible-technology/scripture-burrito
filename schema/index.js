@@ -5,7 +5,6 @@ module.exports = {
     schemas: [
         require('./agencies.schema.json'),
         require('./agency.schema.json'),
-        require('./book_scope.schema.json'),
         require('./canon_constraints.schema.json'),
         require('./canon_spec.schema.json'),
         require('./canon_type.schema.json'),
@@ -46,6 +45,7 @@ module.exports = {
 	require('./scripture/print_publication.schema.json'),
 	require('./scripture/sign_language_video_translation.schema.json'),
 	require('./scripture/text_translation.schema.json'),
+        require('./scope.schema.json'),
         require('./software_and_user_info.schema.json'),
         require('./type.schema.json'),
 	require('./x_flavor.schema.json')
