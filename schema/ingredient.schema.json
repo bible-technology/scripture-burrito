@@ -101,5 +101,20 @@
         "size",
         "mimeType"
     ],
-    "additionalProperties": false
+    "allOf": [
+        {
+            "if": {
+                "required": [
+                    "scope"
+                ]
+            },
+            "then": {
+                "not": {
+                    "required": [
+                        "role"
+                    ]
+                }
+            }
+        }
+    ]
 }
