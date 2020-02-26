@@ -38,8 +38,8 @@
                                 }
                             ]
                         },
-                        "bookScope": {
-                            "$ref": "book_scope.schema.json"
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
                         },
                         "canonType": {
                             "$ref": "canon_type.schema.json"
@@ -51,7 +51,7 @@
                     "required": [
                         "name",
                         "flavor",
-                        "bookScope",
+                        "currentScope",
                         "canonType",
                         "canonSpec"
                     ],
@@ -79,8 +79,8 @@
                                 }
                             ]
                         },
-                        "bookScope": {
-                            "$ref": "book_scope.schema.json"
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
                         },
                         "canonType": {
                             "$ref": "canon_type.schema.json"
@@ -92,7 +92,7 @@
                     "required": [
                         "name",
                         "flavor",
-                        "bookScope",
+                        "currentScope",
                         "canonType",
                         "canonSpec"
                     ],
@@ -120,8 +120,8 @@
                                 }
                             ]
                         },
-                        "bookScope": {
-                            "$ref": "book_scope.schema.json"
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
                         },
                         "canonType": {
                             "$ref": "canon_type.schema.json"
@@ -158,8 +158,8 @@
                                 }
                             ]
                         },
-                        "bookScope": {
-                            "$ref": "book_scope.schema.json"
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
                         },
                         "canonType": {
                             "$ref": "canon_type.schema.json"
