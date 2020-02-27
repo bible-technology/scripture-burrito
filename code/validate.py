@@ -5,6 +5,10 @@ import json
 import jsonschema
 
 
+if int(jsonschema.__version__.split('.', 1)[0]) < 3:
+    raise RuntimeError("Please update jsonschema to 3.0.0 or later.")
+
+
 schema_uri_prefix = 'https://burrito.bible/schema/'
 schema_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'schema')
 schema = json.load(open(os.path.join(schema_dir, 'metadata.schema.json')))
