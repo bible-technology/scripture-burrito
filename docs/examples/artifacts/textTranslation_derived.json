@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": "0.2.0",
-        "variant": "source",
+        "variant": "derived_foo",
         "dateCreated": "2019-02-19T01:02:03+01:00",
         "generator": {
             "softwareName": "Burrito Factory",
@@ -187,6 +187,11 @@
             1
         ],
         "rightsAdminAgency": 1,
+        "licenses": [
+            {
+                "url": "https://burritos-r-us.org/licenses/3247"
+            }
+        ],
         "shortStatementPlain": {
             "fr": "\u00a9 Burritos R Us 2019."
         },
@@ -415,9 +420,5 @@
                 "fr": "A propos de Matthieu"
             }
         }
-    },
-    "progress": {
-        "dateStarted": "2017-11-30",
-        "dateCompleted": "2017-12-01"
     }
 }
