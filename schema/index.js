@@ -13,8 +13,6 @@ module.exports = {
         require('./copyright.schema.json'),
         require('./countries.schema.json'),
         require('./country.schema.json'),
-        require('./default_meta.schema.json'),
-        require('./default_metadata.schema.json'),
         require('./derived_meta.schema.json'),
         require('./derived_metadata.schema.json'),
         require('./gloss/text_stories.schema.json'),
@@ -47,6 +45,8 @@ module.exports = {
 	require('./scripture/text_translation.schema.json'),
         require('./scope.schema.json'),
         require('./software_and_user_info.schema.json'),
+        require('./source_meta.schema.json'),
+        require('./source_metadata.schema.json'),
         require('./type.schema.json'),
 	require('./x_flavor.schema.json')
     ]
