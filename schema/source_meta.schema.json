@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/default_meta.schema.json",
+    "$id": "https://burrito.bible/schema/source_meta.schema.json",
     "title": "Scripture Burrito Meta (Default)",
     "type": "object",
     "description": "Information about the Scripture Burrito metadata file (default variant).",
     "properties": {
         "variant": {
             "type": "string",
-            "const": "default",
-            "description": "The type of variant represented in the burrito (which must be 'default')"
+            "const": "source",
+            "description": "The type of variant represented in the burrito (which must be 'source' which we pretend is'nt a variant even though it kinda is really)."
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"

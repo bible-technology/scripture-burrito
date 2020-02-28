@@ -6,7 +6,7 @@
     "description": "Scripture Burrito root metadata object.",
     "oneOf": [
         {
-            "$ref": "default_metadata.schema.json"
+            "$ref": "source_metadata.schema.json"
         },
         {
             "$ref": "derived_metadata.schema.json"
