@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/idservers.schema.json",
+    "$id": "https://burrito.bible/schema/id_servers.schema.json",
     "title": "Scripture Burrito idServers",
     "type": "object",
     "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",

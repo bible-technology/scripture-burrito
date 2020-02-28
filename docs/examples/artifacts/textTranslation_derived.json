@@ -141,7 +141,7 @@
             "numberingSystem": "latn"
         }
     ],
-    "countries": [
+    "targetAreas": [
         {
             "code": "NL",
             "name": {

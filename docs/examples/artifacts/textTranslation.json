@@ -141,7 +141,7 @@
             "numberingSystem": "latn"
         }
     ],
-    "targetArea": [
+    "targetAreas": [
         {
             "code": "NL",
             "name": {
@@ -155,7 +155,7 @@
             "code": "061",
             "name": {
                 "en": "Polynesia"
-	    }
+            }
         }
     ],
     "agencies": [
