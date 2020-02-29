@@ -164,6 +164,7 @@
             "url": "https://burritos-r-us.org",
             "roles": [
                 "rightsHolder",
+                "rightsAdmin",
                 "content",
                 "finance",
                 "management",
@@ -182,16 +183,6 @@
         }
     ],
     "copyright": {
-        "rightsHolderAgencies": [
-            0,
-            1
-        ],
-        "rightsAdminAgency": 1,
-        "licenses": [
-            {
-                "url": "https://burritos-r-us.org/licenses/3247"
-            }
-        ],
         "shortStatementPlain": {
             "fr": "\u00a9 Burritos R Us 2019."
         },

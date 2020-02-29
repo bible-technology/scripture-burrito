@@ -22,6 +22,7 @@
             "items": {
                 "type": "string",
                 "enum": [
+                    "rightsAdmin",
                     "rightsHolder",
                     "content",
                     "publication",
