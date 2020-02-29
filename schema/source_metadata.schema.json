@@ -9,7 +9,7 @@
             "$ref": "source_meta.schema.json"
         },
         "idServers": {
-            "$ref": "idservers.schema.json"
+            "$ref": "id_servers.schema.json"
         },
         "identification": {
             "$ref": "identification.schema.json"
@@ -26,8 +26,8 @@
         "languages": {
             "$ref": "languages.schema.json"
         },
-        "countries": {
-            "$ref": "countries.schema.json"
+        "targetAreas": {
+            "$ref": "target_areas.schema.json"
         },
         "agencies": {
             "$ref": "agencies.schema.json"

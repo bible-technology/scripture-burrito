@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/target_area.schema.json",
+    "title": "Scripture Burrito Target Area",
+    "type": "object",
+    "description": "An area that is a primary target audience of this burrito.",
+    "properties": {
+        "code": {
+            "oneOf": [
+                {
+                    "$ref": "common.schema.json#/definitions/countryCode"
+                },
+                {
+                    "$ref": "unm49.schema.json"
+                }
+            ]
+        },
+        "name": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        }
+    },
+    "required": [
+        "code",
+        "name"
+    ],
+    "additionalProperties": false
+}
