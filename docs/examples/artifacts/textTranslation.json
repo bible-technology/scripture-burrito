@@ -141,7 +141,7 @@
             "numberingSystem": "latn"
         }
     ],
-    "countries": [
+    "targetAreas": [
         {
             "code": "NL",
             "name": {
@@ -149,6 +149,12 @@
                 "kl": "Pukkitsormiut",
                 "la": "Batavia",
                 "ru": "\u041d\u0438\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u044b"
+            }
+        },
+        {
+            "code": "061",
+            "name": {
+                "en": "Polynesia"
             }
         }
     ],

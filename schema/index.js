@@ -11,13 +11,11 @@ module.exports = {
         require('./common.schema.json'),
         require('./confidentiality.schema.json'),
         require('./copyright.schema.json'),
-        require('./countries.schema.json'),
-        require('./country.schema.json'),
         require('./derived_meta.schema.json'),
         require('./derived_metadata.schema.json'),
         require('./gloss/text_stories.schema.json'),
         require('./identification.schema.json'),
-        require('./idservers.schema.json'),
+        require('./id_servers.schema.json'),
         require('./ingredient.schema.json'),
         require('./ingredients.schema.json'),
         require('./language.schema.json'),
@@ -47,7 +45,10 @@ module.exports = {
         require('./software_and_user_info.schema.json'),
         require('./source_meta.schema.json'),
         require('./source_metadata.schema.json'),
+        require('./target_areas.schema.json'),
+        require('./target_area.schema.json'),
         require('./type.schema.json'),
+	require('./unm49.schema.json'),
 	require('./x_flavor.schema.json')
     ]
 };
