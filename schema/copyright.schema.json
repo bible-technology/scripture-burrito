@@ -5,19 +5,6 @@
     "type": "object",
     "description": "Describes the copyright holders and license terms of the burrito.",
     "properties": {
-        "rightsHolderAgencies": {
-            "type": "array",
-            "items": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Indices into the agencies array indicating the rightsholder agencies."
-            }
-        },
-        "rightsAdminAgency": {
-            "type": "integer",
-            "minimum": 0,
-            "description": "Index into the agencies array indicating the rights administrator agency."
-        },
         "licenses": {
             "type": "array",
             "items": {
@@ -63,41 +50,5 @@
             "$ref": "common.schema.json#/definitions/localizedRichText"
         }
     },
-    "oneOf": [
-        {
-            "properties": {
-                "publicDomain": {
-                    "const": true
-                },
-                "licenses": {
-                    "const": []
-                },
-                "rightsHolderAgencies": {
-                    "const": []
-                }
-            },
-            "not": {
-                "required": [
-                    "rightsAdminAgency"
-                ]
-            },
-            "required": [
-                "publicDomain"
-            ]
-        },
-        {
-            "properties": {
-                "publicDomain": {
-                    "const": false
-                },
-                "rightsHolderAgencies": {
-                    "minItems": 1
-                }
-            },
-            "required": [
-                "rightsHolderAgencies"
-            ]
-        }
-    ],
     "additionalProperties": false
 }

@@ -8,7 +8,7 @@
         "variant": {
             "type": "string",
             "const": "source",
-            "description": "The type of variant represented in the burrito (which must be 'source' which we pretend is'nt a variant even though it kinda is really)."
+            "description": "The type of variant represented in the burrito (which must be source which we pretend is not a variant even though it kinda is really)."
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"
