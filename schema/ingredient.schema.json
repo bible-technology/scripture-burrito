@@ -5,10 +5,6 @@
     "type": "object",
     "description": "Describes an individual ingredient, which is a file contained within the burrito.",
     "properties": {
-        "isSource": {
-            "type": "boolean",
-            "description": "This optional flag labels the ingredient as being a source file. (This has implications for visibility and for use in publications.)"
-        },
         "size": {
             "type": "integer",
             "minimum": 0,
@@ -101,6 +97,7 @@
         "size",
         "mimeType"
     ],
+    "additionalProperties": false,
     "allOf": [
         {
             "if": {

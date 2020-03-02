@@ -16,7 +16,7 @@
         "url": {
             "type": "string",
             "format": "uri",
-            "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
+            "pattern": "^((https|ftp)://)?[^\\s/$.?#].[^\\s]*$",
             "minLength": 1,
             "description": "A valid **Uniform Resource Locator**.",
             "examples": [

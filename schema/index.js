@@ -33,6 +33,8 @@ module.exports = {
         require('./progress.schema.json'),
         require('./promotion.schema.json'),
 	require('./recipe.schema.json'),
+	require('./recipe_section.schema.json'),
+	require('./recipe_element.schema.json'),
 	require('./recipe_specs.schema.json'),
         require('./relationships.schema.json'),
         require('./relationship.schema.json'),
