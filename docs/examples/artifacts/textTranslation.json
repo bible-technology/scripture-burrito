@@ -245,8 +245,7 @@
             },
             "mimeType": "text/x-sfm",
             "role": "intnt",
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/INTMAT.sfm": {
             "checksum": {
