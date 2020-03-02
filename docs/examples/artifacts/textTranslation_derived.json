@@ -52,11 +52,11 @@
         },
         "idServer": "dbl",
         "name": {
-            "en": "Scripture Burrito Demo Text Bible",
-            "fr": "Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"
+            "en": "Excerpts from a Scripture Burrito Demo Text Bible",
+            "fr": "Des morceaux d'une Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"
         },
         "description": {
-            "en": "A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce"
+            "en": "Extracts of A Demonstration Scripture Burrito containing Text, like Paratext Might One Day Produce"
         },
         "abbreviation": {
             "en": "DSB",
@@ -194,85 +194,6 @@
         }
     },
     "ingredients": {
-        "source/usfm/OTINT.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "role": "intot",
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/GEN.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "scope": {
-                "GEN": []
-            },
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/EXO.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "scope": {
-                "EXO": [
-                    "1-12"
-                ]
-            },
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/LEV.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "scope": {
-                "LEV": [
-                    "2:3-3:7"
-                ]
-            },
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/INTNT.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "role": "intnt",
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/INTMAT.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "role": "intMAT",
-            "size": 1234,
-            "isSource": true
-        },
-        "source/usfm/MAT.sfm": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-sfm",
-            "scope": {
-                "MAT": [
-                    "1:3",
-                    "1:5",
-                    "1:7-11"
-                ]
-            },
-            "size": 1234,
-            "isSource": true
-        },
         "release/text/USX_1/OTINT.usx": {
             "checksum": {
                 "md5": "0123456789abcdef0123456789abcdef"
@@ -396,9 +317,9 @@
                 "fr": "Evangile selon Matthieu"
             }
         },
-        "frontmatter": {
+        "intot": {
             "short": {
-                "fr": "Avant de lire Matthieu ..."
+                "fr": "A propos de l'Ancien Testament"
             }
         },
         "intnt": {
@@ -411,5 +332,59 @@
                 "fr": "A propos de Matthieu"
             }
         }
+    },
+    "recipe": {
+	"spec": {
+	    "path": "/recipe_specs/bitsOfBurrito.recipe_spec.json"
+	},
+	"content": [
+	    {
+		"type": "section",
+		"nameId": "ot",
+		"content": [
+		    {
+			"type": "element",
+			"nameId": "intot",
+			"ingredient": "release/text/USX_1/OTINT.usx"
+		    },
+		    {
+			"type": "element",
+			"nameId": "book-gen",
+			"ingredient": "release/text/USX_1/GEN.usx"
+		    },
+		    {
+			"type": "element",
+			"nameId": "book-exo",
+			"ingredient": "release/text/USX_1/EXO.usx"
+		    },
+		    {
+			"type": "element",
+			"nameId": "book-lev",
+			"ingredient": "release/text/USX_1/LEV.usx"
+		    }
+		]
+	    },
+	    {
+		"type": "section",
+		"nameId": "nt",
+		"content": [
+		    {
+			"type": "element",
+			"nameId": "intnt",
+			"ingredient": "release/text/USX_1/NTINT.usx"
+		    },
+		    {
+			"type": "element",
+			"nameId": "intmat",
+			"ingredient": "release/text/USX_1/INTMAT.usx"
+		    },
+		    {
+			"type": "element",
+			"nameId": "book-mat",
+			"ingredient": "release/text/USX_1/MAT.usx"
+		    }
+		]
+	    }
+	}
     }
 }
