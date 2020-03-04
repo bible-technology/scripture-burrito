@@ -346,6 +346,25 @@
             }
         }
     },
+    "recipeSpecs": [
+        {
+            "path": "recipe_specs/bitsOfBurrito.recipe_spec.json",
+            "name": {
+                "en": "Bits of Burrito"
+            },
+            "description": {
+                "en": "We dice our burritos finely"
+            },
+            "metadata": {
+                "identification": {
+                    "name": {
+                        "en": "Finely-Diced Demo Burrito",
+                        "fr": "De petits morceaux de cr\u00eape mexicaine biblique surdimensionn\u00e9e"
+                    }
+                }
+            }
+        }
+    ],
     "progress": {
         "dateStarted": "2017-11-30",
         "dateCompleted": "2017-12-01"
