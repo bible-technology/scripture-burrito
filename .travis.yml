@@ -9,4 +9,4 @@ install:
 # command to run tests
 script:
   - python code/validate.py docs/examples/artifacts/*.json
-  - nodejs code/validate.js docs/examples/artifacts/*.json
+  - nodejs code/validate.js metadata docs/examples/artifacts/*.json
