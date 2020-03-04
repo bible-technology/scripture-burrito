@@ -6,8 +6,8 @@ const Ajv = require('ajv');
 const ajv = new Ajv({schemas: schemaIndex.schemas});
 
 
-function validate(fn, data) {
-    const validator = ajv.getSchema(schemaIndex.schemaIds.metadata);
+function validate(schemaName, fn, data) {
+    const validator = ajv.getSchema(schemaIndex.schemaIds[schemaName]);
     if (validator(JSON.parse(data))) {
         console.log(fn + ': No errors.');
         return true;
@@ -18,15 +18,15 @@ function validate(fn, data) {
 }
 
 let success = true;
-if (process.argv.length > 2) {
-    for (const arg of process.argv.slice(2)) {
-        if (!validate(arg, fs.readFileSync(arg, "utf-8"))) {
+if (process.argv.length > 3) {
+    for (const arg of process.argv.slice(3)) {
+        if (!validate(process.argv[2], arg, fs.readFileSync(arg, "utf-8"))) {
             success = false;
         }
     }
 } else {
     const data = fs.readFileSync(0, "utf-8");
-    success = validate("<stdin>", data);
+    success = validate(process.argv[2], "<stdin>", data);
 }
 if (!success) {
     process.exit(1);
