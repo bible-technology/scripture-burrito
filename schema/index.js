@@ -1,6 +1,7 @@
 module.exports = {
     schemaIds: {
-	"metadata": "https://burrito.bible/schema/metadata.schema.json"
+	"metadata": "https://burrito.bible/schema/metadata.schema.json",
+	"recipeSpec": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json"
     },
     schemas: [
         require('./agencies.schema.json'),
@@ -17,6 +18,7 @@ module.exports = {
         require('./identification.schema.json'),
         require('./id_servers.schema.json'),
         require('./ingredient.schema.json'),
+        require('./ingredients/recipe_spec.schema.json'),
         require('./ingredients.schema.json'),
         require('./language.schema.json'),
         require('./languages.schema.json'),
