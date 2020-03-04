@@ -10,3 +10,4 @@ install:
 script:
   - python code/validate.py docs/examples/artifacts/*.json
   - nodejs code/validate.js metadata docs/examples/artifacts/*.json
+  - nodejs code/validate.js referenceFormat docs/examples/artifacts/ingredients/reference_format.json
