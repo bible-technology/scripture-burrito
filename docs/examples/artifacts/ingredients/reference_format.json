@@ -1,0 +1,23 @@
+{
+    "noSpaceBetweenBookAndChapter": false,
+    "chapterVerseSeparator": ".",
+    "rangeIndicator": "-",
+    "sequenceIndicator": ",",
+    "chapterRangeSeparator": "–",
+    "chapterNumberSeparator": "; ",
+    "bookSequenceSeparator": "; ",
+    "referenceExtraMaterial": [
+	"Voir",
+	"Voir aussi",
+	"Comparer",
+	"comparer",
+	"voir",
+	"voir aussi",
+	"ou",
+	"et la note",
+	"note"
+    ],
+    "referenceFinalPunctuation": "&gt;.!?:],;",
+    "bookSourceForMarkerXt": null,
+    "bookSourceForMarkerR": null
+}
