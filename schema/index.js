@@ -1,6 +1,7 @@
 module.exports = {
     schemaIds: {
-	"metadata": "https://burrito.bible/schema/metadata.schema.json"
+	"metadata": "https://burrito.bible/schema/metadata.schema.json",
+	"referenceFormat": "https://burrito.bible/schema/reference_format.schema.json"
     },
     schemas: [
         require('./agencies.schema.json'),
@@ -34,6 +35,7 @@ module.exports = {
         require('./promotion.schema.json'),
 	require('./recipe.schema.json'),
 	require('./recipe_specs.schema.json'),
+	require('./reference_format.schema.json'),
         require('./relationships.schema.json'),
         require('./relationship.schema.json'),
 	require('./scripture/audio_translation.schema.json'),

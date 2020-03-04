@@ -3,21 +3,21 @@
     "chapterVerseSeparator": ".",
     "rangeIndicator": "-",
     "sequenceIndicator": ",",
-    "chapterRangeSeparator": "–",
+    "chapterRangeSeparator": "\u2013",
     "chapterNumberSeparator": "; ",
     "bookSequenceSeparator": "; ",
     "referenceExtraMaterial": [
-	"Voir",
-	"Voir aussi",
-	"Comparer",
-	"comparer",
-	"voir",
-	"voir aussi",
-	"ou",
-	"et la note",
-	"note"
+        "Voir",
+        "Voir aussi",
+        "Comparer",
+        "comparer",
+        "voir",
+        "voir aussi",
+        "ou",
+        "et la note",
+        "note"
     ],
-    "referenceFinalPunctuation": "&gt;.!?:],;",
+    "referenceFinalPunctuation": ">.!?:],;",
     "bookSourceForMarkerXt": null,
     "bookSourceForMarkerR": null
 }
