@@ -54,7 +54,8 @@
         "identification",
         "confidentiality",
         "copyright",
-        "type"
+        "type",
+        "recipe"
     ],
     "additionalProperties": false,
     "if": {

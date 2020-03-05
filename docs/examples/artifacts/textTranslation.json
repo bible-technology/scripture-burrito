@@ -203,8 +203,7 @@
             },
             "mimeType": "text/x-sfm",
             "role": "intot",
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/GEN.sfm": {
             "checksum": {
@@ -214,8 +213,7 @@
             "scope": {
                 "GEN": []
             },
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/EXO.sfm": {
             "checksum": {
@@ -227,8 +225,7 @@
                     "1-12"
                 ]
             },
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/LEV.sfm": {
             "checksum": {
@@ -240,8 +237,7 @@
                     "2:3-3:7"
                 ]
             },
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/INTNT.sfm": {
             "checksum": {
@@ -249,8 +245,7 @@
             },
             "mimeType": "text/x-sfm",
             "role": "intnt",
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/INTMAT.sfm": {
             "checksum": {
@@ -258,87 +253,13 @@
             },
             "mimeType": "text/x-sfm",
             "role": "intMAT",
-            "size": 1234,
-            "isSource": true
+            "size": 1234
         },
         "source/usfm/MAT.sfm": {
             "checksum": {
                 "md5": "0123456789abcdef0123456789abcdef"
             },
             "mimeType": "text/x-sfm",
-            "scope": {
-                "MAT": [
-                    "1:3",
-                    "1:5",
-                    "1:7-11"
-                ]
-            },
-            "size": 1234,
-            "isSource": true
-        },
-        "release/text/USX_1/OTINT.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "role": "intot",
-            "size": 1234
-        },
-        "release/text/USX_1/GEN.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "scope": {
-                "GEN": []
-            },
-            "size": 1234
-        },
-        "release/text/USX_1/EXO.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "scope": {
-                "EXO": [
-                    "1-12"
-                ]
-            },
-            "size": 1234
-        },
-        "release/text/USX_1/LEV.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "scope": {
-                "LEV": [
-                    "2:3-3:7"
-                ]
-            },
-            "size": 1234
-        },
-        "release/text/USX_1/INTNT.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "role": "intnt",
-            "size": 1234
-        },
-        "release/text/USX_1/INTMAT.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
-            "role": "intMAT",
-            "size": 1234
-        },
-        "release/text/USX_1/MAT.usx": {
-            "checksum": {
-                "md5": "0123456789abcdef0123456789abcdef"
-            },
-            "mimeType": "text/x-usx+xml",
             "scope": {
                 "MAT": [
                     "1:3",
@@ -399,9 +320,19 @@
                 "fr": "Evangile selon Matthieu"
             }
         },
-        "frontmatter": {
+        "ot": {
             "short": {
-                "fr": "Avant de lire Matthieu ..."
+                "fr": "L'Ancien Testament"
+            }
+        },
+        "intot": {
+            "short": {
+                "fr": "A propos de l'Ancien Testament"
+            }
+        },
+        "nt": {
+            "short": {
+                "fr": "Le Nouveau Testament"
             }
         },
         "intnt": {
@@ -411,10 +342,29 @@
         },
         "intmat": {
             "short": {
-                "fr": "A propos de Matthieu"
+                "fr": "A propos de l'Evangile selon Matthieu"
             }
         }
     },
+    "recipeSpecs": [
+        {
+            "path": "recipe_specs/bitsOfBurrito.recipe_spec.json",
+            "name": {
+                "en": "Bits of Burrito"
+            },
+            "description": {
+                "en": "We dice our burritos finely"
+            },
+            "metadata": {
+                "identification": {
+                    "name": {
+                        "en": "Finely-Diced Demo Burrito",
+                        "fr": "De petits morceaux de cr\u00eape mexicaine biblique surdimensionn\u00e9e"
+                    }
+                }
+            }
+        }
+    ],
     "progress": {
         "dateStarted": "2017-11-30",
         "dateCompleted": "2017-12-01"
