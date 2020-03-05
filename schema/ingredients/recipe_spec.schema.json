@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json",
+    "title": "Scripture Burrito Recipe Spec Ingredient",
+    "type": "object",
+    "description": "Scripture Burrito recipe spec ingredient",
+    "properties": {
+        "name": {
+            "$ref": "../common.schema.json#/definitions/localizedText"
+        },
+        "description": {
+            "$ref": "../common.schema.json#/definitions/localizedText"
+        },
+	"metadata": {
+	    "type": "object"
+	},
+	"transforms": {
+	    "type": "object"
+	}
+    }
+}
