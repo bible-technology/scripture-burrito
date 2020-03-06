@@ -67,10 +67,31 @@
 	    "stepType": "forItems",
 	    "itemVariable": {
 		"name": "foo",
-		"dataType": "boolean",
-		"value": false
+		"dataType": "boolean"
 	    },
-	    "array": [1, 2, 3],
+	    "array": [true, false, true],
+	    "sequence": [
+		{
+		    "stepType": "message",
+		    "text": "Sequence for Item {['var', 'foo']}"
+		}
+	    ]
+	},
+	{
+	    "stepType": "forKeyValues",
+	    "keyVariable": {
+		"name": "foo",
+		"dataType": "string"
+	    },
+	    "valueVariable": {
+		"name": "foo",
+		"dataType": "boolean"
+	    },
+	    "object": {
+		"fee": false,
+		"fi": false,
+		"foe": true
+	    },
 	    "sequence": [
 		{
 		    "stepType": "message",

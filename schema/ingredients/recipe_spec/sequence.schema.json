@@ -17,6 +17,9 @@
 	    },
 	    {
 		"$ref": "./for_items.schema.json"
+	    },
+	    {
+		"$ref": "./for_key_values.schema.json"
 	    }
 	]
     },
