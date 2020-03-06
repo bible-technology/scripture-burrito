@@ -8,6 +8,9 @@
 	"variables": {
 	    "$ref": "variables_definition.schema.json"
 	},
+	"stepType": {
+	    "const": "ifThenElse"
+	},
 	"if": {
 	    "$ref": "boolean_expression.schema.json"
 	},
@@ -19,7 +22,9 @@
 	}
     },
     "required": [
+	"stepType",
 	"if",
 	"then"
-    ]
+    ],
+    "additionalProperties": false
 }

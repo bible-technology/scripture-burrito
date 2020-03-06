@@ -11,6 +11,12 @@
 	    },
 	    {
 		"$ref": "./if_then_else.schema.json"
+	    },
+	    {
+		"$ref": "./case.schema.json"
+	    },
+	    {
+		"$ref": "./for_items.schema.json"
 	    }
 	]
     },

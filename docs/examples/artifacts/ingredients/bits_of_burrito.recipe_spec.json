@@ -15,17 +15,66 @@
     },
     "sequence": [
 	{
-	    "if": [true],
+	    "stepType": "message",
+	    "text": "A debugging message"
+	},
+	{
+	    "stepType": "ifThenElse",
+	    "if": true,
 	    "then": [
 		{
 		    "stepType": "message",
-		    "message": "Hello, World!"
+		    "text": "Then Sequence"
 		}
 	    ],
 	    "else": [
 		{
 		    "stepType": "message",
-		    "message": "Hello, World!"
+		    "text": "Optional Else Sequence"
+		}
+	    ]
+	},
+	{
+	    "stepType": "case",
+	    "clauses": [
+		{
+		    "when": false,
+		    "sequence": [
+			{
+			    "stepType": "message",
+			    "text": "First Case Clause Sequence"
+			}
+		    ]
+		},
+		{
+		    "when": false,
+		    "sequence": [
+			{
+			    "stepType": "message",
+			    "text": "Second Case Clause Sequence"
+			}
+		    ]
+		}
+	    ],
+	    "otherwise": [
+		{
+		    "stepType": "message",
+		    "text": "Optional Otherwise Sequence"
+		}
+	    ]
+	},
+	{
+	    "stepType": "forItems",
+	    "itemVariable": {
+		"name": "foo",
+		"dataType": "boolean",
+		"value": false
+	    },
+	    "array": [1, 2, 3],
+	    "sequence": [
+		{
+		    "stepType": "message",
+		    "text": "Sequence for Item {['var', 'foo']}"
 		}
 	    ]
 	}

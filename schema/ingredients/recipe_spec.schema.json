@@ -24,5 +24,6 @@
     "required": [
 	"name",
 	"sequence"
-    ]
+    ],
+    "additionalProperties": false
 }

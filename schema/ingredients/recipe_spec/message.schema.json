@@ -19,6 +19,7 @@
     },
     "required": [
 	"stepType",
-	"message"
-    ]
+	"text"
+    ],
+    "additionalProperties": false
 }
