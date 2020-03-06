@@ -5,33 +5,41 @@
     "type": "object",
     "description": "Variable definition for Scripture Burrito recipe spec ingredient",
     "properties": {
-	"name": {
-	    "type": "string",
-	    "minLength":  1
-	},
-	"dataType": {
-	    "oneOf": [
-		{
-		    "type": "string",
-		    "enum": ["boolean", "string", "integer", "float"]
-		},
-		{
-		    "type": "array",
-		    "items": [
-			{
-			    "type": "string",
-			    "enum": ["array", "object"]
-			},
-			{
-			    "type": "string"
-			}
-		    ]
-		}
-	    ]
-	},
-	"value": {
-	    "$ref": "expression.schema.json"
-	}
+        "name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "dataType": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "boolean",
+                        "string",
+                        "integer",
+                        "float"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "array",
+                                "object"
+                            ]
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        "value": {
+            "$ref": "expression.schema.json"
+        }
     },
     "additionalProperties": false
 }

@@ -5,23 +5,26 @@
     "type": "array",
     "description": "Sequence for Scripture Burrito recipe spec ingredient",
     "items": {
-	"oneOf": [
-	    {
-		"$ref": "./message.schema.json"
-	    },
-	    {
-		"$ref": "./if_then_else.schema.json"
-	    },
-	    {
-		"$ref": "./case.schema.json"
-	    },
-	    {
-		"$ref": "./for_items.schema.json"
-	    },
-	    {
-		"$ref": "./for_key_values.schema.json"
-	    }
-	]
+        "oneOf": [
+            {
+                "$ref": "./message.schema.json"
+            },
+            {
+                "$ref": "./callback.schema.json"
+            },
+            {
+                "$ref": "./if_then_else.schema.json"
+            },
+            {
+                "$ref": "./case.schema.json"
+            },
+            {
+                "$ref": "./for_items.schema.json"
+            },
+            {
+                "$ref": "./for_key_values.schema.json"
+            }
+        ]
     },
     "minItems": 1
 }

@@ -14,90 +14,99 @@
         }
     },
     "sequence": [
-	{
-	    "stepType": "message",
-	    "text": "A debugging message"
-	},
-	{
-	    "stepType": "ifThenElse",
-	    "if": true,
-	    "then": [
-		{
-		    "stepType": "message",
-		    "text": "Then Sequence"
-		}
-	    ],
-	    "else": [
-		{
-		    "stepType": "message",
-		    "text": "Optional Else Sequence"
-		}
-	    ]
-	},
-	{
-	    "stepType": "case",
-	    "clauses": [
-		{
-		    "when": false,
-		    "sequence": [
-			{
-			    "stepType": "message",
-			    "text": "First Case Clause Sequence"
-			}
-		    ]
-		},
-		{
-		    "when": false,
-		    "sequence": [
-			{
-			    "stepType": "message",
-			    "text": "Second Case Clause Sequence"
-			}
-		    ]
-		}
-	    ],
-	    "otherwise": [
-		{
-		    "stepType": "message",
-		    "text": "Optional Otherwise Sequence"
-		}
-	    ]
-	},
-	{
-	    "stepType": "forItems",
-	    "itemVariable": {
-		"name": "foo",
-		"dataType": "boolean"
-	    },
-	    "array": [true, false, true],
-	    "sequence": [
-		{
-		    "stepType": "message",
-		    "text": "Sequence for Item {['var', 'foo']}"
-		}
-	    ]
-	},
-	{
-	    "stepType": "forKeyValues",
-	    "keyVariable": {
-		"name": "foo",
-		"dataType": "string"
-	    },
-	    "valueVariable": {
-		"name": "foo",
-		"dataType": "boolean"
-	    },
-	    "object": {
-		"fee": false,
-		"fi": false,
-		"foe": true
-	    },
-	    "sequence": [
-		{
-		    "stepType": "message",
-		    "text": "Sequence for Item {['var', 'foo']}"
-		}
-	    ]
-	}
+        {
+            "stepType": "message",
+            "text": "A debugging message"
+        },
+        {
+            "stepType": "ifThenElse",
+            "if": true,
+            "then": [
+                {
+                    "stepType": "message",
+                    "text": "Then Sequence"
+                }
+            ],
+            "else": [
+                {
+                    "stepType": "message",
+                    "text": "Optional Else Sequence"
+                }
+            ]
+        },
+        {
+            "stepType": "case",
+            "clauses": [
+                {
+                    "when": false,
+                    "sequence": [
+                        {
+                            "stepType": "message",
+                            "text": "First Case Clause Sequence"
+                        }
+                    ]
+                },
+                {
+                    "when": false,
+                    "sequence": [
+                        {
+                            "stepType": "message",
+                            "text": "Second Case Clause Sequence"
+                        }
+                    ]
+                }
+            ],
+            "otherwise": [
+                {
+                    "stepType": "message",
+                    "text": "Optional Otherwise Sequence"
+                }
+            ]
+        },
+        {
+            "stepType": "forItems",
+            "itemVariable": {
+                "name": "foo",
+                "dataType": "boolean"
+            },
+            "array": [
+                true,
+                false,
+                true
+            ],
+            "sequence": [
+                {
+                    "stepType": "message",
+                    "text": "Sequence for Item {['var', 'foo']}"
+                }
+            ]
+        },
+        {
+            "stepType": "forKeyValues",
+            "keyVariable": {
+                "name": "foo",
+                "dataType": "string"
+            },
+            "valueVariable": {
+                "name": "foo",
+                "dataType": "boolean"
+            },
+            "object": {
+                "fee": false,
+                "fi": false,
+                "foe": true
+            },
+            "sequence": [
+                {
+                    "stepType": "message",
+                    "text": "Sequence for Item {['var', 'foo']}"
+                }
+            ]
+        },
+        {
+            "stepType": "callback",
+            "primitive": "funkyCallbackFunction",
+            "arguments": []
+        }
     ]
 }

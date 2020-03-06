@@ -5,7 +5,7 @@
     "type": "array",
     "description": "Variable definitions for Scripture Burrito recipe spec ingredient",
     "items": {
-	"$ref": "./variable_definition.schema.json"
+        "$ref": "./variable_definition.schema.json"
     },
     "minItems": 1
 }

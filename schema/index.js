@@ -22,6 +22,7 @@ module.exports = {
         require('./ingredients/recipe_spec.schema.json'),
 	require('./ingredients/recipe_spec/array_expression.schema.json'),
 	require('./ingredients/recipe_spec/boolean_expression.schema.json'),
+	require('./ingredients/recipe_spec/callback.schema.json'),
 	require('./ingredients/recipe_spec/case.schema.json'),
 	require('./ingredients/recipe_spec/expression.schema.json'),
 	require('./ingredients/recipe_spec/for_key_values.schema.json'),

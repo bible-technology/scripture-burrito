@@ -5,26 +5,26 @@
     "type": "object",
     "description": "If/then/else Scripture Burrito recipe spec ingredient",
     "properties": {
-	"variables": {
-	    "$ref": "variables_definition.schema.json"
-	},
-	"stepType": {
-	    "const": "ifThenElse"
-	},
-	"if": {
-	    "$ref": "boolean_expression.schema.json"
-	},
-	"then": {
-	    "$ref": "sequence.schema.json"
-	},
-	"else": {
-	    "$ref": "sequence.schema.json"
-	}
+        "variables": {
+            "$ref": "variables_definition.schema.json"
+        },
+        "stepType": {
+            "const": "ifThenElse"
+        },
+        "if": {
+            "$ref": "boolean_expression.schema.json"
+        },
+        "then": {
+            "$ref": "sequence.schema.json"
+        },
+        "else": {
+            "$ref": "sequence.schema.json"
+        }
     },
     "required": [
-	"stepType",
-	"if",
-	"then"
+        "stepType",
+        "if",
+        "then"
     ],
     "additionalProperties": false
 }

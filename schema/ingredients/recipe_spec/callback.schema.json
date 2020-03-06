@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients/recipe_spec/callback.schema.json",
+    "title": "Callback for Scripture Burrito Recipe Spec Ingredient",
+    "type": "object",
+    "description": "Callback for Scripture Burrito recipe spec ingredient",
+    "properties": {
+        "stepType": {
+            "const": "callback"
+        },
+        "primitive": {
+            "type": "string"
+        },
+        "arguments": {
+            "type": "array",
+            "items": {
+                "$ref": "./expression.schema.json"
+            }
+        }
+    },
+    "required": [
+        "stepType",
+        "primitive"
+    ],
+    "additionalProperties": false
+}

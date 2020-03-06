@@ -5,37 +5,37 @@
     "type": "object",
     "description": "Case Scripture Burrito recipe spec ingredient",
     "properties": {
-	"stepType": {
-	    "const": "case"
-	},
-	"variables": {
-	    "$ref": "variables_definition.schema.json"
-	},
-	"clauses": {
-	    "type": "array",
-	    "items": {
-		"type": "object",
-		"properties": {
-		    "when": {
-			"$ref": "boolean_expression.schema.json"
-		    },
-		    "sequence": {
-			"$ref": "sequence.schema.json"
-		    }
-		},
-		"required": [
-		    "when",
-		    "sequence"
-		]
-	    }
-	},
-	"otherwise": {
-	    "$ref": "sequence.schema.json"
-	}
+        "stepType": {
+            "const": "case"
+        },
+        "variables": {
+            "$ref": "variables_definition.schema.json"
+        },
+        "clauses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "when": {
+                        "$ref": "boolean_expression.schema.json"
+                    },
+                    "sequence": {
+                        "$ref": "sequence.schema.json"
+                    }
+                },
+                "required": [
+                    "when",
+                    "sequence"
+                ]
+            }
+        },
+        "otherwise": {
+            "$ref": "sequence.schema.json"
+        }
     },
     "required": [
-	"stepType",
-	"clauses"
+        "stepType",
+        "clauses"
     ],
     "additionalProperties": false
 }

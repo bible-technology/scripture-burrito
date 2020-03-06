@@ -5,21 +5,21 @@
     "type": "object",
     "description": "Message for Scripture Burrito recipe spec ingredient",
     "properties": {
-	"stepType": {
-	    "const": "message"
-	},
-	"text": {
-	    "type": "string"
-	},
-	"level": {
-	    "type": "integer",
-	    "minValue": 0,
-	    "maxValue": 5
-	}
+        "stepType": {
+            "const": "message"
+        },
+        "text": {
+            "type": "string"
+        },
+        "level": {
+            "type": "integer",
+            "minValue": 0,
+            "maxValue": 5
+        }
     },
     "required": [
-	"stepType",
-	"text"
+        "stepType",
+        "text"
     ],
     "additionalProperties": false
 }

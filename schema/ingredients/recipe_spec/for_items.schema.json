@@ -5,27 +5,27 @@
     "type": "object",
     "description": "forItems for Scripture Burrito recipe spec ingredient",
     "properties": {
-	"variables": {
-	    "$ref": "variables_definition.schema.json"
-	},
-	"stepType": {
-	    "const": "forItems"
-	},
-	"itemVariable": {
-	    "$ref": "variable_definition.schema.json"
-	},
-	"array": {
-	    "$ref": "array_expression.schema.json"
-	},
-	"sequence": {
-	    "$ref": "sequence.schema.json"
-	}
+        "variables": {
+            "$ref": "variables_definition.schema.json"
+        },
+        "stepType": {
+            "const": "forItems"
+        },
+        "itemVariable": {
+            "$ref": "variable_definition.schema.json"
+        },
+        "array": {
+            "$ref": "array_expression.schema.json"
+        },
+        "sequence": {
+            "$ref": "sequence.schema.json"
+        }
     },
     "required": [
-	"stepType",
-	"itemVariable",
-	"array",
-	"sequence"
+        "stepType",
+        "itemVariable",
+        "array",
+        "sequence"
     ],
     "additionalProperties": false
 }
