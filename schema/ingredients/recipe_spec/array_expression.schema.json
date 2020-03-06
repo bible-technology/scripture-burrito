@@ -3,5 +3,18 @@
     "$id": "https://burrito.bible/schema/ingredients/recipe_spec/array_expression.schema.json",
     "title": "Array Expression for Scripture Burrito Recipe Spec Ingredient",
     "description": "Array Expression for Scripture Burrito recipe spec ingredient",
-    "type": "array"
+    "oneOf": [
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "lit"
+		},
+		{
+		    "type": "array"
+		}
+	    ]
+	}
+    ]
 }

@@ -5,11 +5,19 @@
     "description": "Boolean Expression for Scripture Burrito recipe spec ingredient",
     "oneOf": [
         {
-            "type": "boolean"
-        },
-        {
             "type": "array",
-            "minItems": 1
-        }
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "lit"
+		},
+		{
+		    "type": "boolean"
+		}		
+	    ]
+        },
+	{
+	    "$ref": "./boolean_operator.schema.json"
+	}
     ]
 }

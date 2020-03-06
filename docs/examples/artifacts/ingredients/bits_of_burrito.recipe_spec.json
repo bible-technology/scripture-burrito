@@ -13,6 +13,23 @@
             }
         }
     },
+    "variables": [
+	{
+            "name": "aNumber",
+            "dataType": "number",
+	    "value": ["lit", 2]
+        },
+	{
+	    "name": "anArray",
+	    "dataType": ["array", "string"],
+	    "value": ["lit", [["lit", "x"], ["lit", "y"], ["lit", "z"]]]
+	},
+	{
+	    "name": "anObject",
+	    "dataType": ["object", "string"],
+	    "value": ["lit", {"foo": "baa"}]
+	}
+    ],
     "sequence": [
         {
             "stepType": "message",
@@ -20,7 +37,7 @@
         },
         {
             "stepType": "ifThenElse",
-            "if": true,
+            "if": ["not", ["not", ["lit", true]]],
             "then": [
                 {
                     "stepType": "message",
@@ -38,7 +55,7 @@
             "stepType": "case",
             "clauses": [
                 {
-                    "when": false,
+                    "when": ["sum", [["lit", 2], ["lit", 4], ["sum", [["lit", 5], ["lit", 7]]]]],
                     "sequence": [
                         {
                             "stepType": "message",
@@ -47,7 +64,7 @@
                     ]
                 },
                 {
-                    "when": false,
+                    "when": ["not", ["lit", false]],
                     "sequence": [
                         {
                             "stepType": "message",
@@ -67,12 +84,14 @@
             "stepType": "forItems",
             "itemVariable": {
                 "name": "foo",
-                "dataType": "boolean"
-            },
+                "dataType": "number"
+	    },
             "array": [
-                true,
-                false,
-                true
+		"lit", [
+                    ["lit", 1],
+                    ["lit", 3],
+                    ["lit", 5]
+		]
             ],
             "sequence": [
                 {
@@ -91,11 +110,14 @@
                 "name": "foo",
                 "dataType": "boolean"
             },
-            "object": {
-                "fee": false,
-                "fi": false,
-                "foe": true
-            },
+            "object": [
+		"lit",
+		{
+                    "fee": false,
+                    "fi": false,
+                    "foe": true
+		}
+	    ],
             "sequence": [
                 {
                     "stepType": "message",

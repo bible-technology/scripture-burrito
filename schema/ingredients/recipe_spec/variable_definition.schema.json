@@ -16,8 +16,7 @@
                     "enum": [
                         "boolean",
                         "string",
-                        "integer",
-                        "float"
+                        "number"
                     ]
                 },
                 {
@@ -31,7 +30,12 @@
                             ]
                         },
                         {
-                            "type": "string"
+                            "type": "string",
+			    "enum": [
+				"boolean",
+				"string",
+				"number"
+			    ]
                         }
                     ]
                 }

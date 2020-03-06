@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients/recipe_spec/number_expression.schema.json",
+    "title": "Number Expression for Scripture Burrito Recipe Spec Ingredient",
+    "description": "Number Expression for Scripture Burrito recipe spec ingredient",
+    "oneOf": [
+        {
+            "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "lit"
+		},
+		{
+		    "type": "number"
+		}		
+	    ]
+        },
+	{
+	    "$ref": "number_operator.schema.json"
+	}
+    ]
+}

@@ -6,6 +6,18 @@
     "oneOf": [
         {
             "$ref": "./boolean_expression.schema.json"
+        },
+        {
+            "$ref": "./number_expression.schema.json"
+        },
+        {
+            "$ref": "./string_expression.schema.json"
+        },
+        {
+            "$ref": "./array_expression.schema.json"
+        },
+        {
+            "$ref": "./object_expression.schema.json"
         }
     ]
 }
