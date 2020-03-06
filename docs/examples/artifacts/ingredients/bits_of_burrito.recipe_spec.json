@@ -13,9 +13,21 @@
             }
         }
     },
-    "transforms": {
-	"something": "scary",
-	"goes": "in",
-	"this": "space"
-    }
+    "sequence": [
+	{
+	    "if": [true],
+	    "then": [
+		{
+		    "stepType": "message",
+		    "message": "Hello, World!"
+		}
+	    ],
+	    "else": [
+		{
+		    "stepType": "message",
+		    "message": "Hello, World!"
+		}
+	    ]
+	}
+    ]
 }
