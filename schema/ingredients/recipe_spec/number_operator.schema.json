@@ -9,7 +9,12 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "const": "sum"
+		    "enum": [
+			"sum",
+			"mul",
+			"max",
+			"min"
+			]
 		},
 		{
 		    "type": "array",
@@ -29,15 +34,44 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "const": "mul"
+		    "enum":  [
+			"sub",
+			"div",
+			"idiv",
+			"mod",
+			"pow"
+		    ]
 		},
 		{
-		    "type": "array",
-		    "items": {
-			"$ref": "./number_expression.schema.json"
-		    },
-		    "minItems": 1,
-		    "additionalItems": false
+		    "$ref": "./number_expression.schema.json"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "length"
+		},
+		{
+		    "oneof": [
+			{
+			    "$ref": "./string_expression.schema.json"
+			},
+			{
+			    "$ref": "./array_expression.schema.json"
+			},
+			{
+			    "$ref": "./object_expression.schema.json"
+			}
+		    ]
 		}
 	    ],
 	    "minItems": 2,
@@ -49,35 +83,10 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "const": "max"
+		    "const": "toNumber"
 		},
 		{
-		    "type": "array",
-		    "items": {
-			"$ref": "./number_expression.schema.json"
-		    },
-		    "minItems": 1,
-		    "additionalItems": false
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
-	    "additionalItems": false
-	},
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "min"
-		},
-		{
-		    "type": "array",
-		    "items": {
-			"$ref": "./number_expression.schema.json"
-		    },
-		    "minItems": 1,
-		    "additionalItems": false
+		    "$ref": "./string_expression.schema.json"
 		}
 	    ],
 	    "minItems": 2,

@@ -17,7 +17,7 @@
                 "type": "object",
                 "properties": {
                     "when": {
-                        "$ref": "expression.schema.json"
+                        "$ref": "boolean_expression.schema.json"
                     },
                     "sequence": {
                         "$ref": "sequence.schema.json"

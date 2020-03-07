@@ -42,7 +42,10 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "const": "and"
+		    "enum": [
+			"and",
+			"or"
+		    ]
 		},
 		{
 		    "type": "array",
@@ -62,19 +65,113 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "const": "or"
+		    "enum": [
+			"eq",
+			"ne",
+			"lt",
+			"gt",
+			"ge",
+			"le"
+			]
 		},
 		{
-		    "type": "array",
-		    "items": {
-			"$ref": "./boolean_expression.schema.json"
-		    },
-		    "minItems": 1,
-		    "additionalItems": false
+		    "$ref": "./number_expression.schema.json"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
 		}
 	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "enum": [
+			"eq",
+			"ne",
+			"lt",
+			"gt",
+			"ge",
+			"le"
+			]
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "in"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		},
+		{
+		    "oneof": [
+			{
+			    "$ref": "./string_expression.schema.json"
+			},
+			{
+			    "$ref": "./array_expression.schema.json"
+			},
+			{
+			    "$ref": "./object_expression.schema.json"
+			}
+		    ]
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "in"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
+		},
+		{
+		    "$ref": "./array_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "reMatches"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
 	    "additionalItems": false
 	}
     ]
