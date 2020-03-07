@@ -37,6 +37,29 @@
         },
         {
             "stepType": "ifThenElse",
+	    "variables": [
+		{
+		    "name": "aNumber",
+		    "dataType": "boolean",
+		    "value": [
+			"xor",
+			[
+			    "or",
+			    [
+				["lit", false],
+				["lit", true]
+			    ]
+			],
+			[
+			    "and",
+			    [
+				["lit", false],
+				["lit", true]
+			    ]
+			]
+		    ]
+		}
+	    ],
             "if": ["not", ["not", ["lit", true]]],
             "then": [
                 {
@@ -53,10 +76,41 @@
         },
         {
             "stepType": "case",
+	    "variables": [
+		{
+		    "name": "aNumber",
+		    "dataType": "number",
+		    "value": [
+			"sum",
+			[
+			    ["lit", 2],
+			    ["lit", 4],
+			    [
+				"mul",
+				[
+				    ["lit", 5],
+				    [
+					"max",
+					[
+					    ["lit", 7],
+					    ["min",
+					     [
+						 ["lit", 1],
+						 ["lit", 0.4]
+					     ]
+					    ]
+					]
+				    ]
+				]
+			    ]
+			]
+		    ]
+		}
+	    ],
             "clauses": [
                 {
-                    "when": ["sum", [["lit", 2], ["lit", 4], ["sum", [["lit", 5], ["lit", 7]]]]],
-                    "sequence": [
+                    "when": ["lit", true],
+		    "sequence": [
                         {
                             "stepType": "message",
                             "text": "First Case Clause Sequence"

@@ -9,15 +9,80 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "constant": "sum"
+		    "const": "sum"
 		},
 		{
 		    "type": "array",
 		    "items": {
 			"$ref": "./number_expression.schema.json"
-		    }
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
 		}
-	    ]
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "mul"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./number_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "max"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./number_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "min"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./number_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
 	}
     ]
 }

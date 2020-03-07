@@ -9,12 +9,73 @@
 	    "items": [
 		{
 		    "type": "string",
-		    "constant": "not"
+		    "const": "not"
 		},
 		{
 		    "$ref": "./boolean_expression.schema.json"
 		}
-	    ]
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "xor"
+		},
+		{
+		    "$ref": "./boolean_expression.schema.json"
+		},
+		{
+		    "$ref": "./boolean_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "and"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./boolean_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "or"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./boolean_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
 	}
     ]
 }
