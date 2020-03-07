@@ -35,6 +35,7 @@ module.exports = {
 	require('./ingredients/recipe_spec/object_expression.schema.json'),
 	require('./ingredients/recipe_spec/sequence.schema.json'),
 	require('./ingredients/recipe_spec/string_expression.schema.json'),
+	require('./ingredients/recipe_spec/string_operator.schema.json'),
 	require('./ingredients/recipe_spec/variable_definition.schema.json'),
 	require('./ingredients/recipe_spec/variables_definition.schema.json'),
         require('./language.schema.json'),

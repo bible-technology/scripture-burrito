@@ -18,6 +18,9 @@
 	    "minItems": 2,
 	    "maxItems": 2,
 	    "additionalItems": false
-        }
+        },
+	{
+	    "$ref": "./string_operator.schema.json"
+	}
     ]
 }

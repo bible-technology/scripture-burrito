@@ -20,6 +20,11 @@
 	    "value": ["length", ["lit", [2, 4, 6]]]
         },
 	{
+            "name": "aString",
+            "dataType": "string",
+	    "value": ["substring", ["toString", ["lit", 9456.32]], ["lit", 2], ["lit", 4]]
+        },
+	{
 	    "name": "anArray",
 	    "dataType": ["array", "string"],
 	    "value": ["lit", ["x", "y", "z"]]
