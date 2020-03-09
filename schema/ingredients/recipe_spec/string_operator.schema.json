@@ -24,6 +24,24 @@
 	    "items": [
 		{
 		    "type": "string",
+		    "const": "char"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
 		    "const": "substring"
 		},
 		{
@@ -38,6 +56,26 @@
 	    ],
 	    "minItems": 3,
 	    "maxItems": 4,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "concat"
+		},
+		{
+		    "type": "array",
+		    "items": {
+			"$ref": "./string_expression.schema.json"
+		    },
+		    "minItems": 1,
+		    "additionalItems": false
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
 	    "additionalItems": false
 	}
     ]

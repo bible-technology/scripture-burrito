@@ -61,17 +61,21 @@
 		    "const": "length"
 		},
 		{
-		    "oneof": [
-			{
-			    "$ref": "./string_expression.schema.json"
-			},
-			{
-			    "$ref": "./array_expression.schema.json"
-			},
-			{
-			    "$ref": "./object_expression.schema.json"
-			}
-		    ]
+		    "type": "array",
+		    "items": {
+			"oneof": [
+			    {
+				"$ref": "./string_expression.schema.json"
+			    },
+			    {
+				"$ref": "./array_expression.schema.json"
+			    },
+			    {
+				"$ref": "./object_expression.schema.json"
+			    }
+			]
+		    },
+		    "additionalItems": false
 		}
 	    ],
 	    "minItems": 2,
@@ -87,6 +91,21 @@
 		},
 		{
 		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "abs"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
 		}
 	    ],
 	    "minItems": 2,
