@@ -4,21 +4,6 @@
     "title": "Expression for Scripture Burrito Recipe Spec Ingredient",
     "description": "Expression for Scripture Burrito recipe spec ingredient",
     "oneOf": [
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "var"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
-	    "additionalItems": false
-	},
         {
             "$ref": "./boolean_expression.schema.json"
         },
