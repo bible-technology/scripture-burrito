@@ -227,7 +227,7 @@
             "sequence": [
                 {
                     "stepType": "message",
-                    "text": "Sequence for Item {['var', 'foo']}"
+                    "text": "Sequence for Item {['getq', 'foo']}"
                 }
             ]
         },
@@ -257,9 +257,48 @@
             ]
         },
         {
-            "stepType": "callback",
-            "primitive": "funkyCallbackFunction",
-            "arguments": []
+            "stepType": "statements",
+            "statements": [
+		[
+		    "setq",
+		    "mySection",
+		    [
+			"newRecipeSection",
+			["lit", "/"],
+			["lit", "nt"]
+		    ]
+		],
+		[
+		    "setq",
+		    "mySectionElements",
+		    ["lit", "mat"],
+		    [
+			"newRecipeElements",
+			["getq", "mySection"],
+			["lit", "mat"]
+		    ]
+		],
+		[
+		    "newRecipeElement",
+		    ["getq", "mySectionElements"],
+		    ["lit", "/release/MAT.mp3"]
+		],
+		[
+		    "newRecipeElement",
+		    ["getq", "mySectionElements"],
+		    ["lit", "/release/MAT.timing.json"]
+		],
+		[
+		    "message",
+		    ["lit", "Now delete object key just because"],
+		    ["lit", 4]
+		],
+		[
+		    "delq",
+		    "mySectionElements",
+		    ["lit", "mat"]
+		]
+	    ]
         }
     ]
 }

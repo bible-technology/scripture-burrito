@@ -36,6 +36,9 @@
         },
         {
             "$ref": "./json_expression.schema.json"
+        },
+        {
+            "$ref": "./statement_expression.schema.json"
         }
     ]
 }

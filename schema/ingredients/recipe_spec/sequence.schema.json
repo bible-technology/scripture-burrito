@@ -13,7 +13,7 @@
                 "$ref": "./variables_in_sequence.schema.json"
             },
             {
-                "$ref": "./callback.schema.json"
+                "$ref": "./statements.schema.json"
             },
             {
                 "$ref": "./if_then_else.schema.json"
