@@ -22,7 +22,7 @@
 	{
             "name": "aNumber",
             "dataType": "number",
-	    "value": ["length", ["lit", [2, 4, 6]]]
+	    "value": ["jsonNumber", ["json", [2, 4, 6]], [["lit", 0]]]
         },
 	{
             "name": "aString",
@@ -37,12 +37,12 @@
 	{
 	    "name": "anObject",
 	    "dataType": ["object", "string"],
-	    "value": ["lit", {"foo": "baa"}]
+	    "value": ["jsonObject", ["json", {"x": {"foo": "baa"}}], [["lit", "x"]]]
 	},
 	{
 	    "name": "someJson",
 	    "dataType": "json",
-	    "value": ["json", {"a": [1, true, "false"], "b": null}]
+	    "value": ["jsonSubdocument", ["json", {"a": [1, true, "false"], "b": null}], [["lit", "a"], ["lit", 0]]]
 	}
     ],
     "assembleContent": [
@@ -115,13 +115,12 @@
 				    [
 					"max",
 					[
-					    ["toNumber", ["lit", "149"]],
+					    ["toNumber", ["jsonString", ["json", [1, 8, "149"]], [["lit", 2]]]],
 					    ["min",
 					     [
-						 ["length", ["keys", ["get", "anObject"]]],
-						 ["length", ["values", ["get", "anObject"]]],
-						 ["length", ["reCapture", ["lit", "([abc])"], ["lit", "bananarama"]]],
-						 ["length", ["concat", [["lit", [1, 2, 3]], ["lit", [4, 5, 6]], ["lit", [7, 8, 9]]]]]
+						 ["length", ["keys", ["get", ["lit", "anObject"]]]],
+						 ["length", ["values", ["get", ["lit", "anObject"]]]],
+						 ["length", ["reCapture", ["lit", "([abc])"], ["lit", "bananarama"]]]
 					     ]
 					    ]
 					]
@@ -145,7 +144,7 @@
 			    "idiv",
 			    [
 				"pow",
-				["lit", 23],
+				["length", ["jsonString", ["json", [["foobaa"]]], [["lit", 0]]]],
 				["lit", 3]
 			    ],
 			    [

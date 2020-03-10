@@ -121,7 +121,7 @@
 		    "$ref": "./string_expression.schema.json"
 		},
 		{
-		    "oneof": [
+		    "oneOf": [
 			{
 			    "$ref": "./string_expression.schema.json"
 			},

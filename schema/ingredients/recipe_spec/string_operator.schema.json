@@ -77,6 +77,24 @@
 	    "minItems": 2,
 	    "maxItems": 2,
 	    "additionalItems": false
-	}
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "jsonString"
+		},
+		{
+		    "$ref": "./json_expression.schema.json"
+		},
+		{
+		    "$ref": "./json_indices.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	}	
     ]
 }

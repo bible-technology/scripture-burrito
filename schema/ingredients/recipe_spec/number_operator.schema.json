@@ -61,21 +61,17 @@
 		    "const": "length"
 		},
 		{
-		    "type": "array",
-		    "items": {
-			"oneof": [
-			    {
-				"$ref": "./string_expression.schema.json"
-			    },
-			    {
-				"$ref": "./array_expression.schema.json"
-			    },
-			    {
-				"$ref": "./object_expression.schema.json"
-			    }
-			]
-		    },
-		    "additionalItems": false
+		    "oneOf": [
+			{
+			    "$ref": "./string_expression.schema.json"
+			},
+			{
+			    "$ref": "./array_expression.schema.json"
+			},
+			{
+			    "$ref": "./object_expression.schema.json"
+			}
+		    ]
 		}
 	    ],
 	    "minItems": 2,
@@ -110,6 +106,24 @@
 	    ],
 	    "minItems": 2,
 	    "maxItems": 2,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "jsonNumber"
+		},
+		{
+		    "$ref": "./json_expression.schema.json"
+		},
+		{
+		    "$ref": "./json_indices.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
 	    "additionalItems": false
 	}
     ]
