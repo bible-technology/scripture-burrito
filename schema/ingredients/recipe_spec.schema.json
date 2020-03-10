@@ -17,9 +17,6 @@
         "variables": {
             "$ref": "recipe_spec/variables_definition.schema.json"
         },
-        "setup": {
-            "$ref": "recipe_spec/sequence.schema.json"
-        },
         "processContent": {
             "$ref": "recipe_spec/sequence.schema.json"
         },

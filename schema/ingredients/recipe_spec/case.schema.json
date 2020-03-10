@@ -8,9 +8,6 @@
         "stepType": {
             "const": "case"
         },
-        "variables": {
-            "$ref": "variables_definition.schema.json"
-        },
         "clauses": {
             "type": "array",
             "items": {

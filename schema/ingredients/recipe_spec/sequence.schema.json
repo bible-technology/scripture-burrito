@@ -10,6 +10,9 @@
                 "$ref": "./message.schema.json"
             },
             {
+                "$ref": "./variables_in_sequence.schema.json"
+            },
+            {
                 "$ref": "./callback.schema.json"
             },
             {

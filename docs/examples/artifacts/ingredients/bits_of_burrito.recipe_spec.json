@@ -15,6 +15,11 @@
     },
     "variables": [
 	{
+            "name": "aFlag",
+            "dataType": "boolean",
+	    "value": ["lit", true]
+        },
+	{
             "name": "aNumber",
             "dataType": "number",
 	    "value": ["length", ["lit", [2, 4, 6]]]
@@ -22,7 +27,7 @@
 	{
             "name": "aString",
             "dataType": "string",
-	    "value": ["substring", ["toString", ["lit", 9456.32]], ["lit", 2], ["lit", 4]]
+	    "value": ["substring", ["toString", ["lit", 9456.32]], ["length", ["lit", [2, 4, 6]]], ["lit", 4]]
         },
 	{
 	    "name": "anArray",
@@ -33,15 +38,22 @@
 	    "name": "anObject",
 	    "dataType": ["object", "string"],
 	    "value": ["lit", {"foo": "baa"}]
+	},
+	{
+	    "name": "someJson",
+	    "dataType": "json",
+	    "value": ["json", {"a": [1, true, "false"], "b": null}]
 	}
     ],
-    "sequence": [
-        {
+    "assembleContent": [
+            {
             "stepType": "message",
-            "text": "A debugging message"
-        },
-        {
-            "stepType": "ifThenElse",
+            "text": "A debugging message - Assemble Content Here"
+        }
+    ],
+    "assembleRecipe": [
+	{
+	    "stepType": "variables",
 	    "variables": [
 		{
 		    "name": "aNumber",
@@ -52,7 +64,7 @@
 			    "or",
 			    [
 				["lit", false],
-				["lit", true]
+				["get", ["lit", "aFlag"]]
 			    ]
 			],
 			[
@@ -60,28 +72,33 @@
 			    [
 				["lit", false],
 				["lit", true],
-				["reMatches", ["lit", "^[abc]+$"], ["lit", "abababc"]]
+				["reMatches", ["lit", "^[abc]+$"], ["concat", [["lit", "aba"], ["char", ["lit", "babc"], ["lit", 2]]]]]
 			    ]
 			]
 		    ]
 		}
 	    ],
-            "if": ["not", ["eq", ["lit", 5], ["lit", 5.0]]],
-            "then": [
-                {
-                    "stepType": "message",
-                    "text": "Then Sequence"
-                }
-            ],
-            "else": [
-                {
-                    "stepType": "message",
-                    "text": "Optional Else Sequence"
-                }
-            ]
-        },
-        {
-            "stepType": "case",
+	    "sequence": [
+		{
+		    "stepType": "ifThenElse",
+		    "if": ["not", ["eq", ["abs", ["lit", 5]], ["lit", 5.0]]],
+		    "then": [
+			{
+			    "stepType": "message",
+			    "text": "Then Sequence"
+			}
+		    ],
+		    "else": [
+			{
+			    "stepType": "message",
+			    "text": "Optional Else Sequence"
+			}
+		    ]
+		}
+	    ]
+	},
+	{
+	    "stepType": "variables",
 	    "variables": [
 		{
 		    "name": "aNumber",
@@ -138,55 +155,60 @@
 		    ]
 		}
 	    ],
-            "clauses": [
-                {
-                    "when": [
-			"and",
-			[
-			    [
-				"gt",
-				["lit", "ball"],
-				["lit", "cat"]
-			    ],
-			    [
-				"in",
-				["lit", "p"],
-				["lit", "apple"]
-			    ],
-			    [
-				"not",
+	    "sequence": [
+		{
+		    "stepType": "case",
+		    "clauses": [
+			{
+			    "when": [
+				"and",
 				[
-				    "in",
-				    ["lit", 3],
-				    ["lit", [1, 4, 9]]
+				    [
+					"gt",
+					["lit", "ball"],
+					["lit", "cat"]
+				    ],
+				    [
+					"in",
+					["lit", "p"],
+					["lit", "apple"]
+				    ],
+				    [
+					"not",
+					[
+					    "in",
+					    ["lit", 3],
+					    ["lit", [1, 4, 9]]
+					]
+				    ]
 				]
+			    ],
+			    "sequence": [
+				{
+				    "stepType": "message",
+				    "text": "First Case Clause Sequence"
+				}
 			    ]
-			]
+			},
+			{
+			    "when": ["not", ["lit", false]],
+			    "sequence": [
+				{
+				    "stepType": "message",
+				    "text": "Second Case Clause Sequence"
+				}
+			    ]
+			}
 		    ],
-		    "sequence": [
-                        {
-                            "stepType": "message",
-                            "text": "First Case Clause Sequence"
-                        }
-                    ]
-                },
-                {
-                    "when": ["not", ["lit", false]],
-                    "sequence": [
-                        {
-                            "stepType": "message",
-                            "text": "Second Case Clause Sequence"
-                        }
-                    ]
-                }
-            ],
-            "otherwise": [
-                {
-                    "stepType": "message",
-                    "text": "Optional Otherwise Sequence"
-                }
-            ]
-        },
+		    "otherwise": [
+			{
+			    "stepType": "message",
+			    "text": "Optional Otherwise Sequence"
+			}
+		    ]
+		}
+	    ]
+	},
         {
             "stepType": "forItems",
             "itemVariable": {

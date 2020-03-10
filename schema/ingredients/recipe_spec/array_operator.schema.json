@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients/recipe_spec/array_operator.schema.json",
+    "title": "Array Operator for Scripture Burrito Recipe Spec Ingredient",
+    "description": "Array Operator for Scripture Burrito recipe spec ingredient",
+    "oneOf": [
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "readIngredient"
+		},
+		{
+		    "type": "string",
+		    "const": "array"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
+	}
+    ]
+}

@@ -16,7 +16,8 @@
                     "enum": [
                         "boolean",
                         "string",
-                        "number"
+                        "number",
+			"json"
                     ]
                 },
                 {

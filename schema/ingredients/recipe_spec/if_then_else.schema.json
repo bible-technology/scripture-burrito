@@ -5,9 +5,6 @@
     "type": "object",
     "description": "If/then/else Scripture Burrito recipe spec ingredient",
     "properties": {
-        "variables": {
-            "$ref": "variables_definition.schema.json"
-        },
         "stepType": {
             "const": "ifThenElse"
         },

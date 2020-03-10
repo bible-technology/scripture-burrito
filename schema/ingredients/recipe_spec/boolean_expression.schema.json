@@ -21,6 +21,9 @@
         },
 	{
 	    "$ref": "./boolean_operator.schema.json"
+	},
+	{
+	    "$ref": "./variable_accessor.schema.json"
 	}
     ]
 }

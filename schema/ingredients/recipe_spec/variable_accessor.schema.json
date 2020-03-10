@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variable_accessor.schema.json",
+    "title": "Variable Accessor for Scripture Burrito Recipe Ingredient",
+    "description": "Variable Accessor for Scripture Burrito recipe spec ingredient",
+    "type": "array",
+    "items": [
+	{
+	    "type": "string",
+	    "const": "get"
+	},
+	{
+	    "$ref": "./string_expression.schema.json"
+	}
+    ],
+    "minItems": 2,
+    "maxItems": 2,
+    "additionalItems": false
+}
