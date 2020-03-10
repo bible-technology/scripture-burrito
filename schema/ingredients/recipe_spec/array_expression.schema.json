@@ -23,7 +23,7 @@
 	    "$ref": "./variable_accessor.schema.json"
 	},
 	{
-	    "$ref": "./object_operator.schema.json"
+	    "$ref": "./array_operator.schema.json"
 	}
     ]
 }

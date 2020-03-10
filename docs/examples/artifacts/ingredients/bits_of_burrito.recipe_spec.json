@@ -27,12 +27,12 @@
 	{
             "name": "aString",
             "dataType": "string",
-	    "value": ["substring", ["toString", ["lit", 9456.32]], ["length", ["lit", [2, 4, 6]]], ["lit", 4]]
+	    "value": ["substring", ["toString", ["lit", 9456.32]], ["length", ["reverse", ["lit", [2, 4, 6]]]], ["lit", 4]]
         },
 	{
 	    "name": "anArray",
 	    "dataType": ["array", "string"],
-	    "value": ["lit", ["x", "y", "z"]]
+	    "value": ["reFilter", ["sorted", ["lit", ["x", "y", "z"]], ["lit", "descending"]], ["lit", "[xyz]"]]
 	},
 	{
 	    "name": "anObject",
@@ -118,8 +118,10 @@
 					    ["toNumber", ["lit", "149"]],
 					    ["min",
 					     [
-						 ["lit", 1],
-						 ["lit", 0.4]
+						 ["length", ["keys", ["get", "anObject"]]],
+						 ["length", ["values", ["get", "anObject"]]],
+						 ["length", ["reCapture", ["lit", "([abc])"], ["lit", "bananarama"]]],
+						 ["length", ["concat", [["lit", [1, 2, 3]], ["lit", [4, 5, 6]], ["lit", [7, 8, 9]]]]]
 					     ]
 					    ]
 					]
