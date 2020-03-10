@@ -4,16 +4,57 @@
     "title": "Variable Accessor for Scripture Burrito Recipe Ingredient",
     "description": "Variable Accessor for Scripture Burrito recipe spec ingredient",
     "type": "array",
-    "items": [
+    "oneOf": [
 	{
-	    "type": "string",
-	    "const": "get"
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "get"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 2,
+	    "maxItems": 2,
+	    "additionalItems": false
 	},
 	{
-	    "$ref": "./string_expression.schema.json"
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "get"
+		},
+		{
+		    "$ref": "./array_expression.schema.json"
+		},
+		{
+		    "$ref": "./number_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "get"
+		},
+		{
+		    "$ref": "./object_expression.schema.json"
+		},
+		{
+		    "$ref": "./string_expression.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
 	}
-    ],
-    "minItems": 2,
-    "maxItems": 2,
-    "additionalItems": false
+    ]
 }
