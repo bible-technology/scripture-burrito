@@ -64,7 +64,8 @@
 			    "or",
 			    [
 				["jsonBoolean", ["json", {"b": [3, {"d": true}]}], [["lit", "b"], ["lit", 1], ["lit", "d"]]],
-				["get", ["lit", "aFlag"]]
+				["get", ["lit", "aFlag"]],
+				["getq", "aFlag"]
 			    ]
 			],
 			[
@@ -119,7 +120,7 @@
 					    ["min",
 					     [
 						 ["length", ["keys", ["get", ["lit", "anObject"]]]],
-						 ["length", ["values", ["get", ["lit", "anObject"]]]],
+						 ["length", ["values", ["getq", "anObject"]]],
 						 ["length", ["reCapture", ["lit", "([abc])"], ["lit", "bananarama"]]]
 					     ]
 					    ]
@@ -137,8 +138,8 @@
 			"sub",
 			[
 			    "div",
-			    ["get", ["lit", [4, 8, 12.49]], ["lit", 1]],
-			    ["get", ["lit", {"a": 3}], ["lit", "a"]]
+			    ["getq", "arrayVar", ["lit", 1]],
+			    ["get", ["lit", [3, 6, 9, 12]], ["lit", 3]]
 			],
 			[
 			    "idiv",
@@ -149,8 +150,8 @@
 			    ],
 			    [
 				"mod",
-				["lit", 14],
-				["lit", 4]
+				["getq", "objectVar", ["lit", "aKey"]],
+				["get", ["lit", {"a": 3}], ["lit", "a"]]
 			    ]
 			]
 		    ]
