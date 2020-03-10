@@ -63,7 +63,7 @@
 			[
 			    "or",
 			    [
-				["lit", false],
+				["jsonBoolean", ["json", {"b": [3, {"d": true}]}], [["lit", "b"], ["lit", 1], ["lit", "d"]]],
 				["get", ["lit", "aFlag"]]
 			    ]
 			],

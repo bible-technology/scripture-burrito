@@ -173,6 +173,24 @@
 	    "minItems": 3,
 	    "maxItems": 3,
 	    "additionalItems": false
+	},
+	{
+	    "type": "array",
+	    "items": [
+		{
+		    "type": "string",
+		    "const": "jsonBoolean"
+		},
+		{
+		    "$ref": "./json_expression.schema.json"
+		},
+		{
+		    "$ref": "./json_indices.schema.json"
+		}
+	    ],
+	    "minItems": 3,
+	    "maxItems": 3,
+	    "additionalItems": false
 	}
     ]
 }

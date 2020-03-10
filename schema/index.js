@@ -31,6 +31,7 @@ module.exports = {
 	require('./ingredients/recipe_spec/for_items.schema.json'),
 	require('./ingredients/recipe_spec/if_then_else.schema.json'),
 	require('./ingredients/recipe_spec/json_expression.schema.json'),
+	require('./ingredients/recipe_spec/json_indices.schema.json'),
 	require('./ingredients/recipe_spec/json_operator.schema.json'),
 	require('./ingredients/recipe_spec/message.schema.json'),
 	require('./ingredients/recipe_spec/number_expression.schema.json'),
