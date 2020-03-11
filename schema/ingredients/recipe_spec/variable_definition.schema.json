@@ -17,7 +17,7 @@
                         "boolean",
                         "string",
                         "number",
-			"json"
+                        "json"
                     ]
                 },
                 {
@@ -32,11 +32,11 @@
                         },
                         {
                             "type": "string",
-			    "enum": [
-				"boolean",
-				"string",
-				"number"
-			    ]
+                            "enum": [
+                                "boolean",
+                                "string",
+                                "number"
+                            ]
                         }
                     ]
                 }

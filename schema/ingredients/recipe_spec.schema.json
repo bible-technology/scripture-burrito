@@ -29,7 +29,7 @@
     },
     "required": [
         "name",
-	"assembleContent",
+        "assembleContent",
         "assembleRecipe"
     ],
     "additionalProperties": false

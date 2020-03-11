@@ -9,16 +9,16 @@
             "const": "variables"
         },
         "variables": {
-	    "$ref": "./variables_definition.schema.json"
-	},
-	"sequence": {
+            "$ref": "./variables_definition.schema.json"
+        },
+        "sequence": {
             "$ref": "./sequence.schema.json"
         }
     },
     "required": [
         "stepType",
         "variables",
-	"sequence"
+        "sequence"
     ],
     "additionalProperties": false
 }

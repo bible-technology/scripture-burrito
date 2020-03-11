@@ -8,18 +8,18 @@
         "stepType": {
             "const": "statements"
         },
-	"statements": {
-	    "type": "array",
-	    "items": {
-		"oneOf": [
-		    {
-			"$ref": "./statement.schema.json"
-		    }
-		]
-	    },
-	    "minItems": 1,
-	    "additionalItems": false
-	}
+        "statements": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "./statement.schema.json"
+                    }
+                ]
+            },
+            "minItems": 1,
+            "additionalItems": false
+        }
     },
     "additionalProperties": false
 }

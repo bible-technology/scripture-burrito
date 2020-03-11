@@ -5,45 +5,45 @@
     "type": "array",
     "description": "Statement Expression for Scripture Burrito recipe spec ingredient",
     "oneOf": [
-	{
-	    "items": [
-		{
-		    "type": "string",
-		    "enum": [
-			"newRecipeSection",
-			"newRecipeElements"
-		    ]
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 3,
-	    "additionalItems": false
-	},
-	{
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "newRecipeElement"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		}
-	    ],
-	    "minItems": 3,
-	    "maxItems": 4,
-	    "additionalItems": false
-	}
+        {
+            "items": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "newRecipeSection",
+                        "newRecipeElements"
+                    ]
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                }
+            ],
+            "minItems": 2,
+            "maxItems": 3,
+            "additionalItems": false
+        },
+        {
+            "items": [
+                {
+                    "type": "string",
+                    "const": "newRecipeElement"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                }
+            ],
+            "minItems": 3,
+            "maxItems": 4,
+            "additionalItems": false
+        }
     ]
 }

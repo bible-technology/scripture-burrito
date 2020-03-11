@@ -4,97 +4,97 @@
     "title": "String Operator for Scripture Burrito Recipe Spec Ingredient",
     "description": "String Operator for Scripture Burrito recipe spec ingredient",
     "oneOf": [
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "toString"
-		},
-		{
-		    "$ref": "./number_expression.schema.json"
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
-	    "additionalItems": false
-	},
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "char"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		},
-		{
-		    "$ref": "./number_expression.schema.json"
-		}
-	    ],
-	    "minItems": 3,
-	    "maxItems": 3,
-	    "additionalItems": false
-	},
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "substring"
-		},
-		{
-		    "$ref": "./string_expression.schema.json"
-		},
-		{
-		    "$ref": "./number_expression.schema.json"
-		},
-		{
-		    "$ref": "./number_expression.schema.json"
-		}
-	    ],
-	    "minItems": 3,
-	    "maxItems": 4,
-	    "additionalItems": false
-	},
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "concat"
-		},
-		{
-		    "type": "array",
-		    "items": {
-			"$ref": "./string_expression.schema.json"
-		    },
-		    "minItems": 1,
-		    "additionalItems": false
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
-	    "additionalItems": false
-	},
-	{
-	    "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "jsonString"
-		},
-		{
-		    "$ref": "./json_expression.schema.json"
-		},
-		{
-		    "$ref": "./json_indices.schema.json"
-		}
-	    ],
-	    "minItems": 3,
-	    "maxItems": 3,
-	    "additionalItems": false
-	}	
+        {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "const": "toString"
+                },
+                {
+                    "$ref": "./number_expression.schema.json"
+                }
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false
+        },
+        {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "const": "char"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                },
+                {
+                    "$ref": "./number_expression.schema.json"
+                }
+            ],
+            "minItems": 3,
+            "maxItems": 3,
+            "additionalItems": false
+        },
+        {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "const": "substring"
+                },
+                {
+                    "$ref": "./string_expression.schema.json"
+                },
+                {
+                    "$ref": "./number_expression.schema.json"
+                },
+                {
+                    "$ref": "./number_expression.schema.json"
+                }
+            ],
+            "minItems": 3,
+            "maxItems": 4,
+            "additionalItems": false
+        },
+        {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "const": "concat"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "./string_expression.schema.json"
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                }
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false
+        },
+        {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "const": "jsonString"
+                },
+                {
+                    "$ref": "./json_expression.schema.json"
+                },
+                {
+                    "$ref": "./json_indices.schema.json"
+                }
+            ],
+            "minItems": 3,
+            "maxItems": 3,
+            "additionalItems": false
+        }
     ]
 }

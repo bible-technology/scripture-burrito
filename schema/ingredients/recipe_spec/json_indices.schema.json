@@ -4,16 +4,15 @@
     "title": "JSON Indices for Scripture Burrito Recipe Spec Ingredient",
     "type": "array",
     "description": "JSON Indices for Scripture Burrito recipe spec ingredient",
-    "items":
-    {
-	"oneOf": [
-	    {
-		"$ref": "./number_expression.schema.json"
-	    },
-	    {
-		"$ref": "./string_expression.schema.json"
-	    }
-	]
+    "items": {
+        "oneOf": [
+            {
+                "$ref": "./number_expression.schema.json"
+            },
+            {
+                "$ref": "./string_expression.schema.json"
+            }
+        ]
     },
     "additionalItems": false
 }

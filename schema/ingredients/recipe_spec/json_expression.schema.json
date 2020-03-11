@@ -6,31 +6,31 @@
     "oneOf": [
         {
             "type": "array",
-	    "items": [
-		{
-		    "type": "string",
-		    "const": "json"
-		},
-		{
-		    "oneOf": [
-			{
-			    "type": "array"
-			},
-			{
-			    "type": "object"
-			}
-		    ]
-		}
-	    ],
-	    "minItems": 2,
-	    "maxItems": 2,
-	    "additionalItems": false
+            "items": [
+                {
+                    "type": "string",
+                    "const": "json"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "type": "array"
+                        },
+                        {
+                            "type": "object"
+                        }
+                    ]
+                }
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false
         },
-	{
-	    "$ref": "./json_operator.schema.json"
-	},
-	{
-	    "$ref": "./variable_accessor.schema.json"
-	}
+        {
+            "$ref": "./json_operator.schema.json"
+        },
+        {
+            "$ref": "./variable_accessor.schema.json"
+        }
     ]
 }
