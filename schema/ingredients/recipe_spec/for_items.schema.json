@@ -1,31 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/ingredients/recipe_spec/for_items.schema.json",
-    "title": "forItems for Scripture Burrito Recipe Spec Ingredient",
-    "type": "object",
-    "description": "forItems for Scripture Burrito recipe spec ingredient",
-    "properties": {
-        "variables": {
-            "$ref": "variables_definition.schema.json"
-        },
-        "stepType": {
-            "const": "forItems"
-        },
-        "itemVariable": {
-            "$ref": "variable_definition.schema.json"
-        },
-        "array": {
-            "$ref": "array_expression.schema.json"
-        },
-        "sequence": {
-            "$ref": "sequence.schema.json"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/for_items.schema.json",
+  "title": "forItems for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "forItems for Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "variables": {
+      "$ref": "variables_definition.schema.json"
     },
-    "required": [
-        "stepType",
-        "itemVariable",
-        "array",
-        "sequence"
-    ],
-    "additionalProperties": false
+    "stepType": {
+      "const": "forItems"
+    },
+    "itemVariable": {
+      "$ref": "variable_definition.schema.json"
+    },
+    "array": {
+      "$ref": "array_expression.schema.json"
+    },
+    "sequence": {
+      "$ref": "sequence.schema.json"
+    }
+  },
+  "required": ["stepType", "itemVariable", "array", "sequence"],
+  "additionalProperties": false
 }

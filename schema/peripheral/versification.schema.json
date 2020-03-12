@@ -1,13 +1,13 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/peripheral/versification.schema.json",
-    "title": "Flavor Details: Peripheral Versification",
-    "type": "object",
-    "description": "Schema of flavor field for versification flavor",
-    "properties": {
-	"name": {
-	    "const": "versification"
-	}
-    },
-    "additionalProperties": true
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/peripheral/versification.schema.json",
+  "title": "Flavor Details: Peripheral Versification",
+  "type": "object",
+  "description": "Schema of flavor field for versification flavor",
+  "properties": {
+    "name": {
+      "const": "versification"
+    }
+  },
+  "additionalProperties": true
 }

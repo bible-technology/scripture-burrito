@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+set -u
+for f in `ls "$1"` ; do if [ -f "$1"/$f ]; then if [[ $f == *.json ]]; then ./prettier.bsh "$1"/$f ;fi; fi; done

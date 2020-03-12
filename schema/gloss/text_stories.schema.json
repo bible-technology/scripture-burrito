@@ -1,13 +1,13 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/gloss/text_stories.schema.json",
-    "title": "Flavor Details: Glossed Text Stories",
-    "type": "object",
-    "description": "Schema of flavor field for text_stories flavor",
-    "properties": {
-	"name": {
-	    "const": "textStories"
-	}
-    },
-    "additionalProperties": true
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/gloss/text_stories.schema.json",
+  "title": "Flavor Details: Glossed Text Stories",
+  "type": "object",
+  "description": "Schema of flavor field for text_stories flavor",
+  "properties": {
+    "name": {
+      "const": "textStories"
+    }
+  },
+  "additionalProperties": true
 }

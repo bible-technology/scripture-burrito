@@ -1,41 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/source_meta.schema.json",
-    "title": "Scripture Burrito Meta (Default)",
-    "type": "object",
-    "description": "Information about the Scripture Burrito metadata file (default variant).",
-    "properties": {
-        "variant": {
-            "type": "string",
-            "const": "source",
-            "description": "The type of variant represented in the burrito (which must be source which we pretend is not a variant even though it kinda is really)."
-        },
-        "dateCreated": {
-            "$ref": "meta_date_created.schema.json"
-        },
-        "version": {
-            "$ref": "meta_version.schema.json"
-        },
-        "generator": {
-            "$ref": "software_and_user_info.schema.json",
-            "description": "Information about the program and user who generated this burrito."
-        },
-        "uploader": {
-            "$ref": "software_and_user_info.schema.json",
-            "description": "Information about the program and user who uploaded this burrito."
-        },
-        "defaultLanguage": {
-            "$ref": "meta_default_language.schema.json"
-        },
-        "comments": {
-            "$ref": "meta_comments.schema.json"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/source_meta.schema.json",
+  "title": "Scripture Burrito Meta (Default)",
+  "type": "object",
+  "description": "Information about the Scripture Burrito metadata file (default variant).",
+  "properties": {
+    "variant": {
+      "type": "string",
+      "const": "source",
+      "description": "The type of variant represented in the burrito (which must be source which we pretend is not a variant even though it kinda is really)."
     },
-    "required": [
-        "version",
-        "variant",
-        "dateCreated",
-        "defaultLanguage"
-    ],
-    "additionalProperties": false
+    "dateCreated": {
+      "$ref": "meta_date_created.schema.json"
+    },
+    "version": {
+      "$ref": "meta_version.schema.json"
+    },
+    "generator": {
+      "$ref": "software_and_user_info.schema.json",
+      "description": "Information about the program and user who generated this burrito."
+    },
+    "uploader": {
+      "$ref": "software_and_user_info.schema.json",
+      "description": "Information about the program and user who uploaded this burrito."
+    },
+    "defaultLanguage": {
+      "$ref": "meta_default_language.schema.json"
+    },
+    "comments": {
+      "$ref": "meta_comments.schema.json"
+    }
+  },
+  "required": ["version", "variant", "dateCreated", "defaultLanguage"],
+  "additionalProperties": false
 }
