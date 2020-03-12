@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "Identity Variant"
+  },
+  "description": {
+    "en": "This is an identity transform in the XSLT sense, ie it gives you back what you started with, except for license etc. This is how we would 'publish' a 'source' project."
+  },
+  "metadata": {
+    "license": {}
+  },
+  "variables": [
+    {
+      "name": "metadata",
+      "dataType": "json",
+      "value": ["readIngredient", ["lit", "json"], ["lit", "source"], ["lit", "metadata.json"]]
+    },
+    {
+      "name": "ingredientsJson",
+      "dataType": "json",
+      "value": ["jsonSubdocument", ["getq", "metadata"], [["lit", "ingredients"]]]
+    }
+  ],
+  "assembleContent": [
+    {
+      "stepType": "forItems",
+      "itemVariable": {
+        "name": "ingredientName",
+        "dataType": "string"
+      },
+      "array": ["keys", ["getq", "ingredientsJson"]],
+      "sequence": [
+        {
+          "stepType": "statements",
+          "statements": [
+            [
+              "copyIngredient",
+              ["lit", "source"],
+              ["getq", "ingredientName"],
+              ["lit", "derived"],
+              ["getq", "ingredientName"]
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "assembleRecipe": [
+    {
+      "stepType": "statements",
+      "statements": [
+        ["setq", "mySection", ["newRecipeSection", ["lit", "/"], ["lit", "nt"]]],
+        ["setq", "mySectionElements", ["lit", "mat"], ["newRecipeElements", ["getq", "mySection"], ["lit", "mat"]]],
+        ["newRecipeElement", ["getq", "mySectionElements"], ["lit", "/release/MAT.mp3"]],
+        ["newRecipeElement", ["getq", "mySectionElements"], ["lit", "/release/MAT.timing.json"]],
+        ["message", ["lit", "Now delete object key just because"], ["lit", 4]],
+        ["delq", "mySectionElements", ["lit", "mat"]]
+      ]
+    }
+  ]
+}
