@@ -1,7 +1,8 @@
 module.exports = {
     schemaIds: {
-	"metadata": "https://burrito.bible/schema/metadata.schema.json",
-	"recipeSpec": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json"
+    "metadata": "https://burrito.bible/schema/metadata.schema.json",
+    "recipeSpec": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json",
+    "versification": "https://burrito.bible/schema/ingredients/versification.schema.json"
     },
     schemas: [
         require('./agencies.schema.json'),
@@ -19,6 +20,7 @@ module.exports = {
         require('./id_servers.schema.json'),
         require('./ingredient.schema.json'),
         require('./ingredients/recipe_spec.schema.json'),
+        require('./ingredients/versification.schema.json'),
         require('./ingredients.schema.json'),
         require('./language.schema.json'),
         require('./languages.schema.json'),
@@ -31,20 +33,20 @@ module.exports = {
         require('./names.schema.json'),
         require('./numbering_system.schema.json'),
         require('./parascriptural/word_alignment.schema.json'),
-	require('./peripheral/versification.schema.json'),
+        require('./peripheral/versification.schema.json'),
         require('./progress.schema.json'),
         require('./promotion.schema.json'),
-	require('./recipe.schema.json'),
-	require('./recipe_section.schema.json'),
-	require('./recipe_element.schema.json'),
-	require('./recipe_specs.schema.json'),
+        require('./recipe.schema.json'),
+        require('./recipe_section.schema.json'),
+        require('./recipe_element.schema.json'),
+        require('./recipe_specs.schema.json'),
         require('./relationships.schema.json'),
         require('./relationship.schema.json'),
-	require('./scripture/audio_translation.schema.json'),
-	require('./scripture/braille_scripture_publication.schema.json'),
-	require('./scripture/print_publication.schema.json'),
-	require('./scripture/sign_language_video_translation.schema.json'),
-	require('./scripture/text_translation.schema.json'),
+        require('./scripture/audio_translation.schema.json'),
+        require('./scripture/braille_scripture_publication.schema.json'),
+        require('./scripture/print_publication.schema.json'),
+        require('./scripture/sign_language_video_translation.schema.json'),
+        require('./scripture/text_translation.schema.json'),
         require('./scope.schema.json'),
         require('./software_and_user_info.schema.json'),
         require('./source_meta.schema.json'),
@@ -52,7 +54,7 @@ module.exports = {
         require('./target_areas.schema.json'),
         require('./target_area.schema.json'),
         require('./type.schema.json'),
-	require('./unm49.schema.json'),
-	require('./x_flavor.schema.json')
+        require('./unm49.schema.json'),
+        require('./x_flavor.schema.json')
     ]
 };
