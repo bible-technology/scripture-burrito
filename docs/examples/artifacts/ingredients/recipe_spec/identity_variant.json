@@ -129,22 +129,20 @@
 	        }
               ],
               "sequence": [
-	        {
-                  "stepType": "ifThenElse",
-	          "if": [
-                    "and",
+                {
+                  "stepType": "statements",
+                  "statements": [
                     [
-                      ["in", ["getq", "bookIngredientPath"], ["getq", "ingredientNames"]],
-                      ["in", ["getq", "bookId"], ["getq", "otBooks"]]
+                      "if",
+                      [
+                        "and",
+                        [
+                          ["in", ["getq", "bookIngredientPath"], ["getq", "ingredientNames"]],
+                          ["in", ["getq", "bookId"], ["getq", "otBooks"]]
+                        ]
+                      ],
+		      ["newRecipeElement", ["getq", "otSection"], ["getq", "bookIngredientPath"]]
                     ]
-                  ],
-                  "then": [
-                    {
-                      "stepType": "statements",
-                      "statements": [
-		        ["newRecipeElement", ["getq", "otSection"], ["getq", "bookIngredientPath"]]
-                      ]
-                    }
 	          ]
                 }
               ]
