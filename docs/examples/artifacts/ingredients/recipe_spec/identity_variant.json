@@ -41,63 +41,48 @@
   ],
   "assembleContent": [
     {
-      "stepType": "message",
-      "text": "Iterate over ingredients in source metadata, copy them, unchanged, to derived. (We could also copy to and from processing to mess with ingredients en route.) Since we have a primitive that knows about ingredients, we don't need to worry about the structure of ingredient objects."
-    },
-    {
-      "stepType": "forItems",
-      "itemVariable": {
-        "name": "ingredientName",
-        "dataType": "string"
-      },
-      "array": ["getq", "ingredientNames"],
-      "sequence": [
-        {
-          "stepType": "statements",
-          "statements": [
-            [
-              "copyIngredient",
-              ["lit", "source"],
-              ["getq", "ingredientName"],
-              ["lit", "derived"],
-              ["getq", "ingredientName"]
-            ]
+      "stepType": "statements",
+      "statements": [
+        [
+          "message",
+          ["lit", "Iterate over ingredients in source metadata, copy them, unchanged, to derived. (We could also copy to and from processing to mess with ingredients en route.) Since we have a primitive that knows about ingredients, we don't need to worry about the structure of ingredient objects."]
+        ],
+        [
+          "forItems",
+          ["string", "ingredientName"],
+          ["getq", "ingredientNames"],
+          [
+            "copyIngredient",
+            ["lit", "source"],
+            ["getq", "ingredientName"],
+            ["lit", "derived"],
+            ["getq", "ingredientName"]
           ]
-        }
-      ]
-    },
-    {
-      "stepType": "message",
-      "text": "Iterate over names in source, copy them, unchanged, to derived. (We can also filter the names to be copied, change individual names and create new ones.)"
-    },
-    {
-      "stepType": "forItems",
-      "itemVariable": {
-        "name": "nameId",
-        "dataType": "string"
-      },
-      "array": ["keys", ["getq", "namesJson"]],
-      "sequence": [
-        {
-	  "stepType": "statements",
-	  "statements": [
-	    [
-	      "copyName",
-	      ["getq", "nameId"]
-	    ]
+        ],
+        [
+          "message",
+          ["lit", "Iterate over names in source, copy them, unchanged, to derived. (We can also filter the names to be copied, change individual names and create new ones.)"]
+        ],
+        [
+          "forItems",
+          ["string", "nameId"],
+          ["keys", ["getq", "namesJson"]],
+	  [
+	    "copyName",
+	    ["getq", "nameId"]
 	  ]
-	}
+	]
       ]
     }
   ],
   "assembleRecipe": [
     {
-      "stepType": "message",
-      "text": "I'm not sure that recipes make any sense in an identity derived variant which is basically 'here's everything in this project folder', ie we could leave this section empty, but here's how to build a recipe if wanted to. Some standard arrays and objects of, eg, book names, would help here. I've only built out the OT part of the recipe for now. We could do NT by copy and paste, or by iterating over sections, but I think we should discuss a less verbose syntax first."
-    },
-    {
       "stepType": "statements",
       "statements": [
+        [
+          "message",
+          ["lit", "I'm not sure that recipes make any sense in an identity derived variant which is basically 'here's everything in this project folder', ie we could leave this section empty, but here's how to build a recipe if wanted to. Some standard arrays and objects of, eg, book names, would help here. I've only built out the OT part of the recipe for now. We could do NT by copy and paste, or by iterating over sections, but I think we should discuss a less verbose syntax first."]
+        ],
         [
           "variable",
           "otBooks",
@@ -121,39 +106,40 @@
           "ntSection",
           "string",
           ["newRecipeSection", ["lit", "/"], ["lit", "nt"]]
-	]
-      ]
-    },
-    {
-      "stepType": "forItems",
-      "itemVariable": {
-        "name": "bookId",
-        "dataType": "string"
-      },
-      "array": ["getq", "otBooks"],
-      "sequence": [
-        {
-          "stepType": "statements",
-          "statements": [
+	],
+        [
+          "forItems",
+          ["string", "bookId"],
+          ["getq", "otBooks"],
+          [
+            "sequence",
             [
-              "variable",
-              "bookIngredientPath",
-              "string",
-              ["concat", [["lit", "book_sources/"], ["getq", "bookId"], ["lit", ".sfm"]]]
-            ],
-            [
-              "if",
               [
-                "and",
-                [
-                  ["in", ["getq", "bookIngredientPath"], ["getq", "ingredientNames"]],
-                  ["in", ["getq", "bookId"], ["getq", "otBooks"]]
-                ]
+                "variable",
+                "bookIngredientPath",
+                "string",
+                ["concat", [["lit", "book_sources/"], ["getq", "bookId"], ["lit", ".sfm"]]]
               ],
-	      ["newRecipeElement", ["getq", "otSection"], ["getq", "bookIngredientPath"]]
+              [
+                "if",
+                [
+                  "and",
+                  [
+                    ["in", ["getq", "bookIngredientPath"], ["getq", "ingredientNames"]],
+                    ["in", ["getq", "bookId"], ["getq", "otBooks"]]
+                  ]
+                ],
+                [
+                  "sequence",
+                  [
+                    ["SKIP", "newRecipeElement", ["lit", "frob"], ["lit", "frob2"]],
+                    ["setq", "foo", ["newRecipeElement", ["lit", "frob"], ["lit", "frob2"]]]
+                  ]
+                ]
+              ]
             ]
           ]
-	}
+	]
       ]
     }
   ]

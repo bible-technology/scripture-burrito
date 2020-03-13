@@ -37,20 +37,25 @@
       "items": [
         {
           "type": "string",
-          "const": "if"
+          "const": "sequence"
         },
-        {
-          "$ref": "./boolean_expression.schema.json"
-        },
-        {
-          "$ref": "./statement.schema.json"
-        },
-        {
-          "$ref": "./statement.schema.json"
+        {"type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "./statement.schema.json"
+              },
+              {
+                "$ref": "./statement_expression.schema.json"
+              }
+            ]
+          },
+          "minItems": 1,
+          "additionalItems": false
         }
       ],
-      "minItems": 3,
-      "maxItems": 4,
+      "minItems": 2,
+      "maxItems": 2,
       "additionalItems": false
     },
     {
@@ -94,6 +99,85 @@
       "minItems": 4,
       "maxItems": 4,
       "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "if"
+        },
+        {
+          "$ref": "./boolean_expression.schema.json"
+        },
+        {
+          "oneOf": [        
+            {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "const": "foo"
+              }
+            },
+            {
+              "$ref": "./statement.schema.json"
+            },
+            {
+              "$ref": "./statement_expression.schema.json"
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "$ref": "./statement.schema.json"
+            },
+            {
+              "$ref": "./statement_expression.schema.json"
+            }
+          ]
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "forItems"
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": ["boolean", "string", "number", "json"]
+            },
+            {
+              "type": "string"
+            } 
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "additionalItems": false
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "oneOf": [
+            {
+              "$ref": "./statement.schema.json"
+            },
+            {
+              "$ref": "./statement_expression.schema.json"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
