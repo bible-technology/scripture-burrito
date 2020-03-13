@@ -39,17 +39,11 @@
           "type": "string",
           "const": "sequence"
         },
-        {"type": "array",
+        {
+          "type": "array",
           "items": {
-            "oneOf": [
-              {
-                "$ref": "./statement.schema.json"
-              },
-              {
-                "$ref": "./statement_expression.schema.json"
-              }
-            ]
-          },
+            "$ref": "./statement.schema.json"
+            },
           "minItems": 1,
           "additionalItems": false
         }
@@ -111,31 +105,10 @@
           "$ref": "./boolean_expression.schema.json"
         },
         {
-          "oneOf": [        
-            {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "const": "foo"
-              }
-            },
-            {
-              "$ref": "./statement.schema.json"
-            },
-            {
-              "$ref": "./statement_expression.schema.json"
-            }
-          ]
+          "$ref": "./statement.schema.json"
         },
         {
-          "oneOf": [
-            {
-              "$ref": "./statement.schema.json"
-            },
-            {
-              "$ref": "./statement_expression.schema.json"
-            }
-          ]
+          "$ref": "./statement.schema.json"
         }
       ],
       "minItems": 3,
@@ -168,14 +141,7 @@
           "$ref": "./array_expression.schema.json"
         },
         {
-          "oneOf": [
-            {
-              "$ref": "./statement.schema.json"
-            },
-            {
-              "$ref": "./statement_expression.schema.json"
-            }
-          ]
+          "$ref": "./statement.schema.json"
         }
       ]
     }

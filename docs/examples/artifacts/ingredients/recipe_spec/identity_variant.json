@@ -132,7 +132,7 @@
                 [
                   "sequence",
                   [
-                    ["SKIP", "newRecipeElement", ["lit", "frob"], ["lit", "frob2"]],
+                    ["newRecipeElement", ["lit", "frob"], ["lit", "frob2"]],
                     ["setq", "foo", ["newRecipeElement", ["lit", "frob"], ["lit", "frob2"]]]
                   ]
                 ]
