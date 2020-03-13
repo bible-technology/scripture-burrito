@@ -10,4 +10,4 @@ install:
 script:
   - python code/validate.py docs/examples/artifacts/*.json
   - nodejs code/validate.js metadata docs/examples/artifacts/*.json
-  - nodejs code/validate.js recipeSpec docs/examples/artifacts/ingredients/bits_of_burrito.recipe_spec.json
+  - nodejs code/validate.js recipeSpec docs/examples/artifacts/ingredients/recipe/*.json
