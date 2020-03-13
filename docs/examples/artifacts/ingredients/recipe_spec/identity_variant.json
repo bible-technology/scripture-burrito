@@ -125,7 +125,7 @@
                 {
                   "name": "bookIngredientPath",
                   "dataType": "string",
-                  "value": ["concat", [["lit", "book_sources/"], ["lit", ".sfm"]]]
+                  "value": ["concat", [["lit", "book_sources/"], ["getq", "bookId"], ["lit", ".sfm"]]]
 	        }
               ],
               "sequence": [
