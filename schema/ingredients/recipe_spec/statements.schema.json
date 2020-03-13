@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/statements.schema.json",
+  "title": "Statements for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "Statements for Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "stepType": {
+      "const": "statements"
+    },
+    "statements": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "./statement.schema.json"
+          }
+        ]
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

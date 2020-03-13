@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variable_accessor.schema.json",
+  "title": "Variable Accessor for Scripture Burrito Recipe Ingredient",
+  "description": "Variable Accessor for Scripture Burrito recipe spec ingredient",
+  "type": "array",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "get"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "get"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "get"
+        },
+        {
+          "$ref": "./object_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "getq"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "getq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "getq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    }
+  ]
+}

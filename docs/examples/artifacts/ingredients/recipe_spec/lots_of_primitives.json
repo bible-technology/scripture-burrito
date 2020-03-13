@@ -1,0 +1,354 @@
+{
+  "name": {
+    "en": "Bits of Burrito"
+  },
+  "description": {
+    "en": "We dice our burritos finely"
+  },
+  "metadata": {
+    "identification": {
+      "name": {
+        "en": "Some Finely-Diced Demo Burrito",
+        "fr": "De petits morceaux d'une cr\u00eape mexicaine biblique surdimensionn\u00e9e anonyme"
+      }
+    }
+  },
+  "variables": [
+    {
+      "name": "aFlag",
+      "dataType": "boolean",
+      "value": ["lit", true]
+    },
+    {
+      "name": "aNumber",
+      "dataType": "number",
+      "value": ["jsonNumber", ["json", [2, 4, 6]], [["lit", 0]]]
+    },
+    {
+      "name": "aString",
+      "dataType": "string",
+      "value": ["substring", ["toString", ["lit", 9456.32]], ["length", ["reverse", ["lit", [2, 4, 6]]]], ["lit", 4]]
+    },
+    {
+      "name": "anArray",
+      "dataType": ["array", "string"],
+      "value": ["reFilter", ["sorted", ["lit", ["x", "y", "z"]], ["lit", "descending"]], ["lit", "[xyz]"]]
+    },
+    {
+      "name": "anObject",
+      "dataType": ["object", "string"],
+      "value": [
+        "jsonObject",
+        [
+          "json",
+          {
+            "x": {
+              "foo": "baa"
+            }
+          }
+        ],
+        [["lit", "x"]]
+      ]
+    },
+    {
+      "name": "someJson",
+      "dataType": "json",
+      "value": [
+        "jsonSubdocument",
+        [
+          "json",
+          {
+            "a": [1, true, "false"],
+            "b": null
+          }
+        ],
+        [
+          ["lit", "a"],
+          ["lit", 0]
+        ]
+      ]
+    },
+    {
+      "name": "someMoreJson",
+      "dataType": "json",
+      "value": ["readIngredient", ["lit", "json"], ["lit", "source"], ["lit", "/peripherals/versification.json"]]
+    }
+  ],
+  "assembleContent": [
+    {
+      "stepType": "message",
+      "text": "A debugging message - Assemble Content Here"
+    },
+    {
+      "stepType": "statements",
+      "statements": [
+        [
+          "writeIngredient",
+          ["getq", "jsonVariable"],
+          ["lit", "processing"],
+          ["lit", "/peripherals/versification.json"]
+        ],
+        [
+          "copyIngredient",
+          ["lit", "source"],
+          ["lit", "/peripherals/versification.json"],
+          ["lit", "derived"],
+          ["lit", "/peripherals/source_versification.json"]
+        ],
+        [
+          "processIngredient",
+          ["lit", "/peripherals/versification.json"],
+          ["lit", "versificationJsonToVrs"],
+          ["lit", 0.3],
+          ["lit", "/peripherals/source_versification.json"],
+          [
+            "json",
+            {
+              "addMissingPTBooks": true
+            }
+          ]
+        ],
+        ["copyName", ["lit", "book-mat"]],
+        ["setq", "shortMAT", ["readName", ["lit", "book-mat"], ["lit", "short"]]],
+        [
+          "writeName",
+          ["lit", "book-mat"],
+          ["lit", "short"],
+          [
+            "lit",
+            {
+              "en": "Matthew",
+              "fr": "Mathieu"
+            }
+          ]
+        ]
+      ]
+    }
+  ],
+  "assembleRecipe": [
+    {
+      "stepType": "variables",
+      "variables": [
+        {
+          "name": "aNumber",
+          "dataType": "boolean",
+          "value": [
+            "xor",
+            [
+              "or",
+              [
+                [
+                  "jsonBoolean",
+                  [
+                    "json",
+                    {
+                      "b": [
+                        3,
+                        {
+                          "d": true
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    ["lit", "b"],
+                    ["lit", 1],
+                    ["lit", "d"]
+                  ]
+                ],
+                ["get", ["lit", "aFlag"]],
+                ["getq", "aFlag"]
+              ]
+            ],
+            [
+              "and",
+              [
+                ["lit", false],
+                ["lit", true],
+                [
+                  "reMatches",
+                  ["lit", "^[abc]+$"],
+                  [
+                    "concat",
+                    [
+                      ["lit", "aba"],
+                      ["char", ["lit", "babc"], ["lit", 2]]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      ],
+      "sequence": [
+        {
+          "stepType": "ifThenElse",
+          "if": ["not", ["eq", ["abs", ["lit", 5]], ["lit", 5.0]]],
+          "then": [
+            {
+              "stepType": "message",
+              "text": "Then Sequence"
+            }
+          ],
+          "else": [
+            {
+              "stepType": "message",
+              "text": "Optional Else Sequence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepType": "variables",
+      "variables": [
+        {
+          "name": "aNumber",
+          "dataType": "number",
+          "value": [
+            "sum",
+            [
+              ["lit", 2],
+              ["lit", 4],
+              [
+                "mul",
+                [
+                  ["lit", 5],
+                  [
+                    "max",
+                    [
+                      ["toNumber", ["jsonString", ["json", [1, 8, "149"]], [["lit", 2]]]],
+                      [
+                        "min",
+                        [
+                          ["length", ["keys", ["get", ["lit", "anObject"]]]],
+                          ["length", ["values", ["getq", "anObject"]]],
+                          ["length", ["reCapture", ["lit", "([abc])"], ["lit", "bananarama"]]]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "anotherNumber",
+          "dataType": "number",
+          "value": [
+            "sub",
+            ["div", ["getq", "arrayVar", ["lit", 1]], ["get", ["lit", [3, 6, 9, 12]], ["lit", 3]]],
+            [
+              "idiv",
+              ["pow", ["length", ["jsonString", ["json", [["foobaa"]]], [["lit", 0]]]], ["lit", 3]],
+              [
+                "mod",
+                ["getq", "objectVar", ["lit", "aKey"]],
+                [
+                  "get",
+                  [
+                    "lit",
+                    {
+                      "a": 3
+                    }
+                  ],
+                  ["lit", "a"]
+                ]
+              ]
+            ]
+          ]
+        }
+      ],
+      "sequence": [
+        {
+          "stepType": "case",
+          "clauses": [
+            {
+              "when": [
+                "and",
+                [
+                  ["gt", ["lit", "ball"], ["lit", "cat"]],
+                  ["in", ["lit", "p"], ["lit", "apple"]],
+                  ["not", ["in", ["lit", 3], ["lit", [1, 4, 9]]]]
+                ]
+              ],
+              "sequence": [
+                {
+                  "stepType": "message",
+                  "text": "First Case Clause Sequence"
+                }
+              ]
+            },
+            {
+              "when": ["not", ["lit", false]],
+              "sequence": [
+                {
+                  "stepType": "message",
+                  "text": "Second Case Clause Sequence"
+                }
+              ]
+            }
+          ],
+          "otherwise": [
+            {
+              "stepType": "message",
+              "text": "Optional Otherwise Sequence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepType": "forItems",
+      "itemVariable": {
+        "name": "foo",
+        "dataType": "number"
+      },
+      "array": ["lit", [1, 3, 5]],
+      "sequence": [
+        {
+          "stepType": "message",
+          "text": "Sequence for Item {['getq', 'foo']}"
+        }
+      ]
+    },
+    {
+      "stepType": "forKeyValues",
+      "keyVariable": {
+        "name": "foo",
+        "dataType": "string"
+      },
+      "valueVariable": {
+        "name": "foo",
+        "dataType": "boolean"
+      },
+      "object": [
+        "lit",
+        {
+          "fee": false,
+          "fi": false,
+          "foe": true
+        }
+      ],
+      "sequence": [
+        {
+          "stepType": "message",
+          "text": "Sequence for Item {['var', 'foo']}"
+        }
+      ]
+    },
+    {
+      "stepType": "statements",
+      "statements": [
+        ["setq", "mySection", ["newRecipeSection", ["lit", "/"], ["lit", "nt"]]],
+        ["setq", "mySectionElements", ["lit", "mat"], ["newRecipeElements", ["getq", "mySection"], ["lit", "mat"]]],
+        ["newRecipeElement", ["getq", "mySectionElements"], ["lit", "/release/MAT.mp3"]],
+        ["newRecipeElement", ["getq", "mySectionElements"], ["lit", "/release/MAT.timing.json"]],
+        ["message", ["lit", "Now delete object key just because"], ["lit", 4]],
+        ["delq", "mySectionElements", ["lit", "mat"]]
+      ]
+    }
+  ]
+}

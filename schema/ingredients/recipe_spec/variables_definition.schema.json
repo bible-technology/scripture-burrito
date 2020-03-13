@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variables_definition.schema.json",
+  "title": "Variable definitions for Scripture Burrito Recipe Spec Ingredient",
+  "type": "array",
+  "description": "Variable definitions for Scripture Burrito recipe spec ingredient",
+  "items": {
+    "$ref": "./variable_definition.schema.json"
+  },
+  "minItems": 1
+}

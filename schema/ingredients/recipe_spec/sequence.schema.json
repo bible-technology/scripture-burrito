@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/sequence.schema.json",
+  "title": "Sequence for Scripture Burrito Recipe Spec Ingredient",
+  "type": "array",
+  "description": "Sequence for Scripture Burrito recipe spec ingredient",
+  "items": {
+    "oneOf": [
+      {
+        "$ref": "./message.schema.json"
+      },
+      {
+        "$ref": "./variables_in_sequence.schema.json"
+      },
+      {
+        "$ref": "./statements.schema.json"
+      },
+      {
+        "$ref": "./if_then_else.schema.json"
+      },
+      {
+        "$ref": "./case.schema.json"
+      },
+      {
+        "$ref": "./for_items.schema.json"
+      },
+      {
+        "$ref": "./for_key_values.schema.json"
+      }
+    ]
+  },
+  "minItems": 1
+}

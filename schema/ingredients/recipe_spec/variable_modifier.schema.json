@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variable_modifier.schema.json",
+  "title": "Variable Modifier for Scripture Burrito Recipe Ingredient",
+  "description": "Variable Modifier for Scripture Burrito recipe spec ingredient",
+  "type": "array",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "set"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "set"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "set"
+        },
+        {
+          "$ref": "./object_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "setq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "setq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "setq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "del"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "delq"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    }
+  ]
+}

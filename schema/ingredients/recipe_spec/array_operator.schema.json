@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/array_operator.schema.json",
+  "title": "Array Operator for Scripture Burrito Recipe Spec Ingredient",
+  "description": "Array Operator for Scripture Burrito recipe spec ingredient",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "readIngredient"
+        },
+        {
+          "type": "string",
+          "const": "array"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "reverse"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "sorted"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "reFilter"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "reCapture"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": ["keys", "values"]
+        },
+        {
+          "$ref": "./object_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "concat"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "./array_expression.schema.json"
+          },
+          "additionalItems": false
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "jsonArray"
+        },
+        {
+          "$ref": "./json_expression.schema.json"
+        },
+        {
+          "$ref": "./json_indices.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/boolean_operator.schema.json",
+  "title": "Boolean Operator for Scripture Burrito Recipe Spec Ingredient",
+  "description": "Boolean Operator for Scripture Burrito recipe spec ingredient",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "not"
+        },
+        {
+          "$ref": "./boolean_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "xor"
+        },
+        {
+          "$ref": "./boolean_expression.schema.json"
+        },
+        {
+          "$ref": "./boolean_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": ["and", "or"]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "./boolean_expression.schema.json"
+          },
+          "minItems": 1,
+          "additionalItems": false
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": ["eq", "ne", "lt", "gt", "ge", "le"]
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": ["eq", "ne", "lt", "gt", "ge", "le"]
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "in"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "oneOf": [
+            {
+              "$ref": "./string_expression.schema.json"
+            },
+            {
+              "$ref": "./array_expression.schema.json"
+            },
+            {
+              "$ref": "./object_expression.schema.json"
+            }
+          ]
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "in"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "reMatches"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "jsonBoolean"
+        },
+        {
+          "$ref": "./json_expression.schema.json"
+        },
+        {
+          "$ref": "./json_indices.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    }
+  ]
+}

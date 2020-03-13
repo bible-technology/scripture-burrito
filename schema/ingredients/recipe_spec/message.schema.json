@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/message.schema.json",
+  "title": "Message for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "Message for Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "stepType": {
+      "const": "message"
+    },
+    "text": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer",
+      "minValue": 0,
+      "maxValue": 5
+    }
+  },
+  "required": ["stepType", "text"],
+  "additionalProperties": false
+}

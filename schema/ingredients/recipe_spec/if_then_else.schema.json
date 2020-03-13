@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/if_then_else.schema.json",
+  "title": "If/then/else for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "If/then/else Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "stepType": {
+      "const": "ifThenElse"
+    },
+    "if": {
+      "$ref": "boolean_expression.schema.json"
+    },
+    "then": {
+      "$ref": "sequence.schema.json"
+    },
+    "else": {
+      "$ref": "sequence.schema.json"
+    }
+  },
+  "required": ["stepType", "if", "then"],
+  "additionalProperties": false
+}

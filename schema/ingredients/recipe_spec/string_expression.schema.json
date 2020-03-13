@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/string_expression.schema.json",
+  "title": "String Expression for Scripture Burrito Recipe Spec Ingredient",
+  "description": "String Expression for Scripture Burrito recipe spec ingredient",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "lit"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "$ref": "./string_operator.schema.json"
+    },
+    {
+      "$ref": "./variable_accessor.schema.json"
+    }
+  ]
+}

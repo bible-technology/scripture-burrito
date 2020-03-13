@@ -1,37 +1,28 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/language.schema.json",
-    "title": "Language",
-    "type": "object",
-    "description": "Language section.",
-    "properties": {
-        "tag": {
-            "$ref": "common.schema.json#/definitions/languageTag",
-            "examples": [
-                "hi",
-                "es-419"
-            ]
-        },
-        "name": {
-            "$ref": "common.schema.json#/definitions/localizedText"
-        },
-        "numberingSystem": {
-            "$ref": "numbering_system.schema.json"
-        },
-        "rod": {
-            "$ref": "common.schema.json#/definitions/rodCode"
-        },
-        "scriptDirection": {
-            "type": "string",
-            "allowedValues": [
-                "ltr",
-                "rtl"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/language.schema.json",
+  "title": "Language",
+  "type": "object",
+  "description": "Language section.",
+  "properties": {
+    "tag": {
+      "$ref": "common.schema.json#/definitions/languageTag",
+      "examples": ["hi", "es-419"]
     },
-    "required": [
-        "tag",
-        "name"
-    ],
-    "additionalProperties": false
+    "name": {
+      "$ref": "common.schema.json#/definitions/localizedText"
+    },
+    "numberingSystem": {
+      "$ref": "numbering_system.schema.json"
+    },
+    "rod": {
+      "$ref": "common.schema.json#/definitions/rodCode"
+    },
+    "scriptDirection": {
+      "type": "string",
+      "allowedValues": ["ltr", "rtl"]
+    }
+  },
+  "required": ["tag", "name"],
+  "additionalProperties": false
 }

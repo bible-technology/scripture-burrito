@@ -1,21 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json",
-    "title": "Scripture Burrito Recipe Spec Ingredient",
-    "type": "object",
-    "description": "Scripture Burrito recipe spec ingredient",
-    "properties": {
-        "name": {
-            "$ref": "../common.schema.json#/definitions/localizedText"
-        },
-        "description": {
-            "$ref": "../common.schema.json#/definitions/localizedText"
-        },
-	"metadata": {
-	    "type": "object"
-	},
-	"transforms": {
-	    "type": "object"
-	}
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec.schema.json",
+  "title": "Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "name": {
+      "$ref": "../common.schema.json#/definitions/localizedText"
+    },
+    "description": {
+      "$ref": "../common.schema.json#/definitions/localizedText"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "variables": {
+      "$ref": "recipe_spec/variables_definition.schema.json"
+    },
+    "processContent": {
+      "$ref": "recipe_spec/sequence.schema.json"
+    },
+    "assembleContent": {
+      "$ref": "recipe_spec/sequence.schema.json"
+    },
+    "assembleRecipe": {
+      "$ref": "recipe_spec/sequence.schema.json"
     }
+  },
+  "required": ["name", "assembleContent", "assembleRecipe"],
+  "additionalProperties": false
 }

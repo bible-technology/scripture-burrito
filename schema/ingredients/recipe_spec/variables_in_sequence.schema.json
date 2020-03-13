@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variables_in_sequence.schema.json",
+  "title": "Variables in Sequence for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "Variables in Sequence for Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "stepType": {
+      "const": "variables"
+    },
+    "variables": {
+      "$ref": "./variables_definition.schema.json"
+    },
+    "sequence": {
+      "$ref": "./sequence.schema.json"
+    }
+  },
+  "required": ["stepType", "variables", "sequence"],
+  "additionalProperties": false
+}

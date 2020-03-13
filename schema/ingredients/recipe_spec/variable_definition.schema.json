@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/variable_definition.schema.json",
+  "title": "Variable definition for Scripture Burrito Recipe Spec Ingredient",
+  "type": "object",
+  "description": "Variable definition for Scripture Burrito recipe spec ingredient",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataType": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": ["boolean", "string", "number", "json"]
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": ["array", "object"]
+            },
+            {
+              "type": "string",
+              "enum": ["boolean", "string", "number"]
+            }
+          ]
+        }
+      ]
+    },
+    "value": {
+      "$ref": "expression.schema.json"
+    }
+  },
+  "additionalProperties": false
+}
