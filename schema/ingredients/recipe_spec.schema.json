@@ -15,16 +15,16 @@
       "type": "object"
     },
     "setup": {
-      "$ref": "recipe_spec/sequence.schema.json"
+      "$ref": "recipe_spec/statements.schema.json"
     },
     "processContent": {
-      "$ref": "recipe_spec/sequence.schema.json"
+      "$ref": "recipe_spec/statements.schema.json"
     },
     "assembleContent": {
-      "$ref": "recipe_spec/sequence.schema.json"
+      "$ref": "recipe_spec/statements.schema.json"
     },
     "assembleRecipe": {
-      "$ref": "recipe_spec/sequence.schema.json"
+      "$ref": "recipe_spec/statements.schema.json"
     }
   },
   "required": ["name", "assembleContent", "assembleRecipe"],
