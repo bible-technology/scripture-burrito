@@ -27,6 +27,6 @@
       "$ref": "recipe_spec/statements.schema.json"
     }
   },
-  "required": ["name", "assembleContent", "assembleRecipe"],
+  "required": ["name", "assembleContent"],
   "additionalProperties": false
 }
