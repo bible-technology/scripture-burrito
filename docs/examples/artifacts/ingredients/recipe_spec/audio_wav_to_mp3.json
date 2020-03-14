@@ -3,25 +3,124 @@
     "en": "Audio derived variant with WAV to MP3 conversion"
   },
   "description": {
-    "en": "This is an example of producing a 'publication' that includes some ingredient processing."
+    "en": "This is an example of producing a 'publication' that includes some ingredient processing. Keying this off the file suffix is not the most elegant option."
   },
   "metadata": {
     "license": {}
   },
   "setup": [
+    [
+      "variable",
+      ["json", "metadata"],
+      ["readIngredient", ["lit", "json"], ["lit", "source"], ["lit", "metadata.json"]]
+    ],
+    [
+      "variable",
+      [["array", "string"], "allIngredients"],
+      [
+        "jsonSubdocument",
+        ["getq", "metadata"],
+        [["lit", "ingredients"]]
+      ]
+    ],
+    [
+      "variable",
+      [["array", "string"], "wavIngredients"],
+      [
+        "reFilter",
+        [
+          "keys",
+          ["getq", "ingredients"]
+        ],
+        ["lit", "\\.[Ww][Aa][Vv]$"]
+      ]
+    ],
+    [
+      "variable",
+      [["array", "string"], "mp3Ingredients"],
+      ["lit", []]
+    ]
   ],
   "processContent": [
+    [
+      "forItems",
+      ["string", "wavIngredient"],
+      ["getq", "wavIngredients"],
+      [
+        "sequence",
+        [
+          [
+            "variable",
+            ["string", "mp3Ingredient"],
+            [
+              "reSub",
+              ["lit", "\\.[Ww][Aa][Vv]$"],
+              ["lit", "mp3"],
+              ["getq", "wavIngredient"]
+            ]
+          ],
+          ["lPush", ["getq", "mp3Ingredient"], ["getq", "mp3Ingredients"]],
+          [
+            "copyIngredient",
+            ["lit", "source"],
+            ["getq", "wavIngredient"],
+            ["lit", "processing"],
+            ["getq", "wavIngredient"]
+          ],
+          [                  
+            "processIngredient",
+            ["getq", "wavIngredient"],
+            ["lit", "convertAV"],
+            ["lit", 0.1],
+            ["getq", "mp3Ingredient"],
+            [
+              "json",
+              {
+                "fromFormat": "wav",
+                "toFormat": "mp3",
+                "bitrate": "44k"
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
   ],
   "assembleContent": [
     [
-      "copyIngredients",
-      ["lit", "*"]
+      "forItems",
+      ["string", "ingredientName"],
+      ["getq", "allIngredients"],
+      [
+        "if",
+        ["not", ["in", ["getq", "ingredientName"], ["getq", "wavIngredients"]]],
+        [
+          "copyIngredient",
+          ["lit", "source"],
+          ["getq", "ingredientName"],
+          ["lit", "derived"],
+          ["getq", "ingredientName"]
+        ]
+      ]
     ],
+    [
+      "forItems",
+      ["string", "ingredientName"],
+      ["getq", "mp3Ingredients"],
+      [
+        "copyIngredient",
+        ["lit", "processing"],
+        ["getq", "ingredientName"],
+        ["lit", "derived"],
+        ["getq", "ingredientName"]
+      ]
+    ],        
     [
       "copyNames",
       ["lit", "*"]
     ]
   ],
   "assembleRecipe": [
+    ["SKIP"]
   ]
 }

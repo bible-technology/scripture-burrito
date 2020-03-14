@@ -38,6 +38,7 @@ module.exports = {
 	require('./ingredients/recipe_spec/number_operator.schema.json'),
 	require('./ingredients/recipe_spec/object_expression.schema.json'),
 	require('./ingredients/recipe_spec/object_operator.schema.json'),
+	require('./ingredients/recipe_spec/scalar_expression.schema.json'),
 	require('./ingredients/recipe_spec/sequence.schema.json'),
 	require('./ingredients/recipe_spec/statement.schema.json'),
 	require('./ingredients/recipe_spec/statement_expression.schema.json'),

@@ -152,6 +152,24 @@
           "$ref": "./statement.schema.json"
         }
       ]
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "lPush"
+        },
+        {
+          "$ref": "./scalar_expression.schema.json"
+        },
+        {
+          "$ref": "./variable_accessor.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
     }
   ]
 }
