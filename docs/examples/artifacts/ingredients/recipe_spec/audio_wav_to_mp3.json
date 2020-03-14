@@ -1,0 +1,27 @@
+{
+  "name": {
+    "en": "Audio derived variant with WAV to MP3 conversion"
+  },
+  "description": {
+    "en": "This is an example of producing a 'publication' that includes some ingredient processing."
+  },
+  "metadata": {
+    "license": {}
+  },
+  "setup": [
+  ],
+  "processContent": [
+  ],
+  "assembleContent": [
+    [
+      "copyIngredients",
+      ["lit", "*"]
+    ],
+    [
+      "copyNames",
+      ["lit", "*"]
+    ]
+  ],
+  "assembleRecipe": [
+  ]
+}

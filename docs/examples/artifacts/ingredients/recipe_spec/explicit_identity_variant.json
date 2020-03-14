@@ -11,26 +11,22 @@
   "setup": [
     [
       "variable",
-      "metadata",
-      "json",
+      ["json", "metadata"],
       ["readIngredient", ["lit", "json"], ["lit", "source"], ["lit", "metadata.json"]]
     ],
     [
       "variable",
-      "ingredientsJson",
-      "json",
+      ["json", "ingredientsJson"],
       ["jsonSubdocument", ["getq", "metadata"], [["lit", "ingredients"]]]
     ],
     [
       "variable",
-      "ingredientIds",
-      ["array", "string"],
+      [["array", "string"], "ingredientIds"],
       ["keys", ["getq", "ingredientsJson"]]
     ],
     [
       "variable",
-      "namesJson",
-      "json",
+      ["json", "namesJson"],
       ["jsonSubdocument", ["getq", "metadata"], [["lit", "names"]]]
     ]
   ],
@@ -68,30 +64,26 @@
   "assembleRecipe": [
     [
       "message",
-      ["lit", "I'm not sure that recipes make any sense in an identity derived variant which is basically 'here's everything in this project folder', ie we could leave this section empty, but here's how to build a recipe if wanted to. Some standard arrays and objects of, eg, book names, would help here. I've only built out the OT part of the recipe for now. We could do NT by copy and paste, or by iterating over sections, but I think we should discuss a less verbose syntax first."]
+      ["lit", "I'm not sure that recipes make any sense in an identity derived variant which is basically 'here's everything in this project folder', ie we could leave this section empty, but here's how to build a recipe if wanted to. Some standard arrays and objects of, eg, book names, would help here. I've only built out the OT part of the recipe for now. We could do NT by copy and paste, or by iterating over sections."]
     ],
     [
       "variable",
-      "otBooks",
-      ["array", "string"],
+      [["array", "string"], "otBooks"],
       ["lit", ["GEN", "EXO", "LEV"]]
     ],
     [
       "variable",
-      "ntBooks",
-      ["array", "string"],
+      [["array", "string"], "ntBooks"],
       ["lit", ["MAT", "MRK", "LUK"]]
     ],
     [
       "variable",
-      "otSection",
-      "string",
+      ["string", "otSection"],
       ["newRecipeSection", ["lit", "/"], ["lit", "ot"]]
     ],
     [
       "variable",
-      "ntSection",
-      "string",
+      ["string", "ntSection"],
       ["newRecipeSection", ["lit", "/"], ["lit", "nt"]]
     ],
     [
@@ -103,8 +95,7 @@
         [
           [
             "variable",
-            "bookIngredientPath",
-            "string",
+            ["string", "bookIngredientPath"],
             ["concat", [["lit", "book_sources/"], ["getq", "bookId"], ["lit", ".sfm"]]]
           ],
           [

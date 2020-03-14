@@ -60,38 +60,46 @@
           "const": "variable"
         },
         {
-          "type": "string"
-        },
-        {
-          "oneOf": [
+          "type": "array",
+          "items": [
             {
-              "type": "string",
-              "enum": ["boolean", "string", "number", "json"]
-            },
-            {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string",
-                  "enum": ["array", "object"]
-                },
+              "oneOf": [
                 {
                   "type": "string",
                   "enum": ["boolean", "string", "number", "json"]
+                },
+                {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "enum": ["array", "object"]
+                    },
+                    {
+                      "type": "string",
+                      "enum": ["boolean", "string", "number", "json"]
+                    }
+                  ],
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "additionalItems": false
                 }
-              ],
-              "minItems": 2,
-              "maxItems": 2,
-              "additionalItems": false
+              ]
+            },
+            {
+              "type": "string"
             }
-          ]
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "additionalItems": false
         },
         {
           "$ref": "./expression.schema.json"
         }
       ],
-      "minItems": 4,
-      "maxItems": 4,
+      "minItems": 3,
+      "maxItems": 3,
       "additionalItems": false
     },
     {
