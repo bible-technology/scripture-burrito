@@ -28,11 +28,7 @@
     [
       "variable",
       [["array", "string"], "allIngredients"],
-      [
-        "jsonSubdocument",
-        ["getq", "metadata"],
-        [["lit", "ingredients"]]
-      ]
+      ["jsonSubdocument", ["getq", "metadata"], [["lit", "ingredients"]]]
     ],
     [
       "comment",
@@ -42,30 +38,13 @@
     [
       "variable",
       [["array", "string"], "wavIngredients"],
-      [
-        "reFilter",
-        [
-          "keys",
-          ["getq", "ingredients"]
-        ],
-        ["lit", "\\.[Ww][Aa][Vv]$"]
-      ]
+      ["reFilter", ["keys", ["getq", "ingredients"]], ["lit", "\\.[Ww][Aa][Vv]$"]]
     ],
-    [
-      "comment",
-      "Variables are dynamically scoped and must be declared and defined before they are used."
-    ],
-    [
-      "variable",
-      [["array", "string"], "mp3Ingredients"],
-      ["lit", []]
-    ]
+    ["comment", "Variables are dynamically scoped and must be declared and defined before they are used."],
+    ["variable", [["array", "string"], "mp3Ingredients"], ["lit", []]]
   ],
   "processContent": [
-    [
-      "comment",
-      "We could also have used forKeyItems here and saved ourselves some work above."
-    ],
+    ["comment", "We could also have used forKeyItems here and saved ourselves some work above."],
     [
       "forItems",
       ["string", "wavIngredient"],
@@ -76,17 +55,9 @@
           [
             "variable",
             ["string", "mp3Ingredient"],
-            [
-              "reSub",
-              ["lit", "\\.[Ww][Aa][Vv]$"],
-              ["lit", "mp3"],
-              ["getq", "wavIngredient"]
-            ]
+            ["reSub", ["lit", "\\.[Ww][Aa][Vv]$"], ["lit", "mp3"], ["getq", "wavIngredient"]]
           ],
-          [
-            "comment",
-            "Build an array of processed ingredients as we go."
-          ],
+          ["comment", "Build an array of processed ingredients as we go."],
           ["lPush", ["getq", "mp3Ingredient"], ["getq", "mp3Ingredients"]],
           [
             "comment",
@@ -108,7 +79,7 @@
             "Generic processing primitive that takes for/to paths, name and version of convertor",
             "and arbitrary arguments for the processor."
           ],
-          [                  
+          [
             "processIngredient",
             ["getq", "wavIngredient"],
             ["lit", "convertAV"],
@@ -128,23 +99,13 @@
             "In this case we copy the scope, unchanged, from the wav to the mp3. In other cases the role",
             "and/or scope may need to be modified."
           ],
-          [
-            "copyRole",
-            ["lit", "source"],
-            ["getq", "wavIngredient"],
-            ["lit", "processing"],
-            ["getq", "mp3Ingredient"]
-          ]
+          ["copyRole", ["lit", "source"], ["getq", "wavIngredient"], ["lit", "processing"], ["getq", "mp3Ingredient"]]
         ]
       ]
     ]
   ],
   "assembleContent": [
-    [
-      "comment",
-      "Use the array we built earlier.",
-      "Copy anything that isn't a WAV file"
-    ],
+    ["comment", "Use the array we built earlier.", "Copy anything that isn't a WAV file"],
     [
       "forItems",
       ["string", "ingredientName"],
@@ -161,10 +122,7 @@
         ]
       ]
     ],
-    [
-      "comment",
-      "Copy our shiny new mp3 ingredients"
-    ],
+    ["comment", "Copy our shiny new mp3 ingredients"],
     [
       "forItems",
       ["string", "ingredientName"],
@@ -177,14 +135,8 @@
         ["getq", "ingredientName"]
       ]
     ],
-    [
-      "comment",
-      "Assuming that booknames etc are unchanged"
-    ],
-    [
-      "copyNames",
-      ["lit", "*"]
-    ]
+    ["comment", "Assuming that booknames etc are unchanged"],
+    ["copyNames", ["lit", "*"]]
   ],
   "assembleRecipe": [
     [
@@ -193,10 +145,7 @@
       "one ingredient per chapter. This should eventually be keyed off the canonSpec but,",
       "for now, we'll use the unordered currentScope keys."
     ],
-    [
-      "comment",
-      "This is what not building things via variables looks like..."
-    ],
+    ["comment", "This is what not building things via variables looks like..."],
     [
       "forItems",
       ["string", "bookId"],
@@ -250,11 +199,7 @@
           ],
           ["lit", "ascending"]
         ],
-        [
-          "newRecipeElement",
-          ["getq", "sectionHandle"],
-          ["getq", "bookIngredient"]
-        ]
+        ["newRecipeElement", ["getq", "sectionHandle"], ["getq", "bookIngredient"]]
       ]
     ]
   ]

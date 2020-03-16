@@ -9,13 +9,7 @@
     "license": {}
   },
   "assembleContent": [
-    [
-      "copyIngredients",
-      ["lit", "*"]
-    ],
-    [
-      "copyNames",
-      ["lit", "*"]
-    ]
+    ["copyIngredients", ["lit", "*"]],
+    ["copyNames", ["lit", "*"]]
   ]
 }

@@ -43,7 +43,7 @@
           "type": "array",
           "items": {
             "$ref": "./statement.schema.json"
-            },
+          },
           "minItems": 1,
           "additionalItems": false
         }
@@ -139,7 +139,7 @@
             },
             {
               "type": "string"
-            } 
+            }
           ],
           "minItems": 2,
           "maxItems": 2,
@@ -158,10 +158,7 @@
       "items": [
         {
           "type": "string",
-          "enum": [
-            "lPush",
-            "rPush"
-            ]
+          "enum": ["lPush", "rPush"]
         },
         {
           "$ref": "./scalar_expression.schema.json"

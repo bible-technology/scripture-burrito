@@ -48,10 +48,7 @@
       "items": [
         {
           "type": "string",
-          "enum": [
-            "lPop",
-            "rPop"
-            ]
+          "enum": ["lPop", "rPop"]
         },
         {
           "$ref": "./scalar_expression.schema.json"
