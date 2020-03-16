@@ -152,7 +152,7 @@
       [
         "keys",
         [
-          "castJsonAsObject",
+          "jsonObject",
           [
             "jsonSubdocument",
             ["getq", "metadata"],
@@ -162,7 +162,8 @@
               ["lit", "scripture"],
               ["lit", "currentScope"]
             ]
-          ]
+          ],
+          []
         ]
       ],
       [
