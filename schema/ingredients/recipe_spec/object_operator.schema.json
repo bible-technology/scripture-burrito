@@ -37,8 +37,8 @@
           "$ref": "./string_expression.schema.json"
         }
       ],
-      "minItems": 2,
-      "maxItems": 2,
+      "minItems": 3,
+      "maxItems": 3,
       "additionalItems": false
     },
     {
@@ -57,6 +57,21 @@
       ],
       "minItems": 3,
       "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "castJsonAsObject"
+        },
+        {
+          "$ref": "./json_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
       "additionalItems": false
     }
   ]

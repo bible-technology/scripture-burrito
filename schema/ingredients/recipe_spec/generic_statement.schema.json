@@ -27,7 +27,7 @@
       "items": [
         {
           "type": "string",
-          "const": "SKIP"
+          "const": "comment"
         }
       ],
       "minItems": 1
@@ -158,7 +158,10 @@
       "items": [
         {
           "type": "string",
-          "const": "lPush"
+          "enum": [
+            "lPush",
+            "rPush"
+            ]
         },
         {
           "$ref": "./scalar_expression.schema.json"

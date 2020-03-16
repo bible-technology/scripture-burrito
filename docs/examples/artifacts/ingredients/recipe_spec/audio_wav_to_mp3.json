@@ -3,16 +3,27 @@
     "en": "Audio derived variant with WAV to MP3 conversion"
   },
   "description": {
-    "en": "This is an example of producing a 'publication' that includes some ingredient processing. Keying this off the file suffix is not the most elegant option."
+    "en": "This is an example of producing a 'publication' that includes some ingredient processing."
   },
   "metadata": {
     "license": {}
   },
   "setup": [
     [
+      "comment",
+      "Metadata is treated as an ingredient like any other. (Making it an environment",
+      "pseudovariable is another option."
+    ],
+    [
       "variable",
       ["json", "metadata"],
       ["readIngredient", ["lit", "json"], ["lit", "source"], ["lit", "metadata.json"]]
+    ],
+    [
+      "comment",
+      "I've worked through the metadata one variable at a time. There's no reason why this can't",
+      "be done in arbitrarily complex expressions. Any non-orthogonal data structure (ie different",
+      "types mixed at the same level) is represented as JSON"
     ],
     [
       "variable",
@@ -22,6 +33,11 @@
         ["getq", "metadata"],
         [["lit", "ingredients"]]
       ]
+    ],
+    [
+      "comment",
+      "Here we filter a list. I would hope to add a lot of higher level functions to do this in a more",
+      "generic way, but I think that would be easier to work out once we have a processor."
     ],
     [
       "variable",
@@ -36,12 +52,20 @@
       ]
     ],
     [
+      "comment",
+      "Variables are dynamically scoped and must be declared and defined before they are used."
+    ],
+    [
       "variable",
       [["array", "string"], "mp3Ingredients"],
       ["lit", []]
     ]
   ],
   "processContent": [
+    [
+      "comment",
+      "We could also have used forKeyItems here and saved ourselves some work above."
+    ],
     [
       "forItems",
       ["string", "wavIngredient"],
@@ -59,13 +83,30 @@
               ["getq", "wavIngredient"]
             ]
           ],
+          [
+            "comment",
+            "Build an array of processed ingredients as we go."
+          ],
           ["lPush", ["getq", "mp3Ingredient"], ["getq", "mp3Ingredients"]],
+          [
+            "comment",
+            "Copy ingredients to processing before, err processing.",
+            "This means we don't need to add an implicit copy to the processing primitive.",
+            "It may also be useful if, eg, source has slower read than processing.",
+            "This operation copies metadata for the ingredient, including scope/role, as",
+            "well as the ingredient content."
+          ],
           [
             "copyIngredient",
             ["lit", "source"],
             ["getq", "wavIngredient"],
             ["lit", "processing"],
             ["getq", "wavIngredient"]
+          ],
+          [
+            "comment",
+            "Generic processing primitive that takes for/to paths, name and version of convertor",
+            "and arbitrary arguments for the processor."
           ],
           [                  
             "processIngredient",
@@ -81,12 +122,29 @@
                 "bitrate": "44k"
               }
             ]
+          ],
+          [
+            "comment",
+            "In this case we copy the scope, unchanged, from the wav to the mp3. In other cases the role",
+            "and/or scope may need to be modified."
+          ],
+          [
+            "copyRole",
+            ["lit", "source"],
+            ["getq", "wavIngredient"],
+            ["lit", "processing"],
+            ["getq", "mp3Ingredient"]
           ]
         ]
       ]
     ]
   ],
   "assembleContent": [
+    [
+      "comment",
+      "Use the array we built earlier.",
+      "Copy anything that isn't a WAV file"
+    ],
     [
       "forItems",
       ["string", "ingredientName"],
@@ -104,6 +162,10 @@
       ]
     ],
     [
+      "comment",
+      "Copy our shiny new mp3 ingredients"
+    ],
+    [
       "forItems",
       ["string", "ingredientName"],
       ["getq", "mp3Ingredients"],
@@ -114,13 +176,86 @@
         ["lit", "derived"],
         ["getq", "ingredientName"]
       ]
-    ],        
+    ],
+    [
+      "comment",
+      "Assuming that booknames etc are unchanged"
+    ],
     [
       "copyNames",
       ["lit", "*"]
     ]
   ],
   "assembleRecipe": [
-    ["SKIP"]
+    [
+      "comment",
+      "To replicate what DBL currently does, we want one 'directory' per book and",
+      "one ingredient per chapter. This should eventually be keyed off the canonSpec but,",
+      "for now, we'll use the unordered currentScope keys."
+    ],
+    [
+      "comment",
+      "This is what not building things via variables looks like..."
+    ],
+    [
+      "forItems",
+      ["string", "bookId"],
+      [
+        "keys",
+        [
+          "castJsonAsObject",
+          [
+            "jsonSubdocument",
+            ["getq", "metadata"],
+            [
+              ["lit", "type"],
+              ["lit", "flavorType"],
+              ["lit", "scripture"],
+              ["lit", "currentScope"]
+            ]
+          ]
+        ]
+      ],
+      [
+        "variable",
+        ["string", "sectionHandle"],
+        [
+          "newRecipeSection",
+          ["lit", "/"],
+          [
+            "concat",
+            [
+              ["lit", "book-"],
+              ["getq", "bookId"]
+            ]
+          ]
+        ]
+      ],
+      [
+        "forItems",
+        ["string", "bookIngredient"],
+        [
+          "sorted",
+          [
+            "reFilter",
+            ["getq", "mp3Ingredients"],
+            [
+              "concat",
+              [
+                ["lit", "/"],
+                ["getq", "bookId"],
+                ["lit", "/"]
+              ]
+            ]
+          ],
+          ["lit", "ascending"]
+        ],
+        [
+          "newRecipeElement",
+          ["getq", "sectionHandle"],
+          ["getq", "bookIngredient"]
+        ]
+      ]
+    ]
   ]
 }

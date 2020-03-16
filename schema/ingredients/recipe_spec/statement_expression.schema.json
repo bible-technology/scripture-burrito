@@ -42,6 +42,27 @@
       "minItems": 3,
       "maxItems": 4,
       "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": [
+            "lPop",
+            "rPop"
+            ]
+        },
+        {
+          "$ref": "./scalar_expression.schema.json"
+        },
+        {
+          "$ref": "./variable_accessor.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
     }
   ]
 }

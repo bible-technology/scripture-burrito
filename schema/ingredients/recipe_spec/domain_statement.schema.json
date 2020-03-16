@@ -147,6 +147,30 @@
       "minItems": 6,
       "maxItems": 6,
       "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "copyRole"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./object_expression.schema.json"
+        }
+      ],
+      "minItems": 5,
+      "maxItems": 5,
+      "additionalItems": false
     }
   ]
 }
