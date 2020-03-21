@@ -24,7 +24,10 @@
             "required": ["compression", "trackConfiguration"]
         }
     },
-    "properties": {
+  "properties": {
+    "name": {
+      "const": "audioTranslation"
+    },
         "dramatization": {
             "type": "string",
             "enum": ["dramatized", "nonDramatized", "singleVoice"]

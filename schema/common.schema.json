@@ -14,9 +14,8 @@
             "pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
         },
         "url": {
-            "type": "string",
-            "format": "uri",
-            "pattern": "^((https|ftp)://)?[^\\s/$.?#].[^\\s]*$",
+          "type": "string",
+            "pattern": "^((http(s)?|ftp)://)[^\\s$]+$",
             "minLength": 1,
             "description": "A valid **Uniform Resource Locator**.",
             "examples": [
@@ -91,7 +90,7 @@
             "allOf": [
                 {
                     "$comment": "Check top-level block elements. This is imperfect and is liable to skip over tags if a <li> or nested <blockquote> is present, but fully validating XML using RegEx is impossible, and this suffices for the common case of simple formatted text.",
-                    "pattern": "^(<(p|h1|h2|h3)\\s*/>|<p\\s*>([^<]|<[^p])*</p\\s*>|<h1\\s*>([^<]|<[^h])*</h1\\s*>|<h2\\s*>([^<]|<[^h])*</h2\\s*>|<h3\\s*>([^<]|<[^h])*</h3\\s*>|<ol\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ol\\s*>|<ul\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ul\\s*>|<blockquote\\s*>(<(p|h1|h2|h3)\\s*/>|<(p|h[123])\\s*>([^<]|<[^ph])*</(p|h[123])\\s*>|<ol\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ol\\s*>|<ul\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ul\\s*>|<blockquote\\s*>.+</blockquote\\s*>)+</blockquote\\s*>)+$"
+                    "pattern": "^((<(p|h1|h2|h3)\\s*/>|<p\\s*>([^<]|<[^p])*</p\\s*>|<h1\\s*>([^<]|<[^h])*</h1\\s*>|<h2\\s*>([^<]|<[^h])*</h2\\s*>|<h3\\s*>([^<]|<[^h])*</h3\\s*>|<ol\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ol\\s*>|<ul\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ul\\s*>|<blockquote\\s*>(<(p|h1|h2|h3)\\s*/>|<(p|h[123])\\s*>([^<]|<[^ph])*</(p|h[123])\\s*>|<ol\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ol\\s*>|<ul\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ul\\s*>|<blockquote\\s*>.+</blockquote\\s*>)+</blockquote\\s*>)\\s*)+$"
                 },
                 {
                     "$comment": "Ensure that no invalid tags are present, check inline markup in <p> and <h#> (noting that <li> may contain pretty much anything), and prevent improper nesting of <li> tags.",
