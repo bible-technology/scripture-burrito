@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/generic_statement.schema.json",
+  "title": "Generic Statement for Scripture Burrito Recipe Spec Ingredient",
+  "description": "Generic Statement for Scripture Burrito recipe spec ingredient",
+  "oneOf": [
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "message"
+        },
+        {
+          "$ref": "./string_expression.schema.json"
+        },
+        {
+          "$ref": "./number_expression.schema.json"
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "comment"
+        }
+      ],
+      "minItems": 1
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "sequence"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "./statement.schema.json"
+          },
+          "minItems": 1,
+          "additionalItems": false
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "variable"
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "enum": ["boolean", "string", "number", "json"]
+                },
+                {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "enum": ["array", "object"]
+                    },
+                    {
+                      "type": "string",
+                      "enum": ["boolean", "string", "number", "json"]
+                    }
+                  ],
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "additionalItems": false
+                }
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "additionalItems": false
+        },
+        {
+          "$ref": "./expression.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "if"
+        },
+        {
+          "$ref": "./boolean_expression.schema.json"
+        },
+        {
+          "$ref": "./statement.schema.json"
+        },
+        {
+          "$ref": "./statement.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 4,
+      "additionalItems": false
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "const": "forItems"
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": ["boolean", "string", "number", "json"]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "additionalItems": false
+        },
+        {
+          "$ref": "./array_expression.schema.json"
+        },
+        {
+          "$ref": "./statement.schema.json"
+        }
+      ]
+    },
+    {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "enum": ["lPush", "rPush"]
+        },
+        {
+          "$ref": "./scalar_expression.schema.json"
+        },
+        {
+          "$ref": "./variable_accessor.schema.json"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "additionalItems": false
+    }
+  ]
+}

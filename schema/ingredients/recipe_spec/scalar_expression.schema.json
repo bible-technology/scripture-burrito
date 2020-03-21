@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/ingredients/recipe_spec/scalar_expression.schema.json",
+  "title": "Scalar Expression for Scripture Burrito Recipe Spec Ingredient",
+  "description": "Scalar Expression for Scripture Burrito recipe spec ingredient",
+  "oneOf": [
+    {
+      "$ref": "./variable_accessor.schema.json"
+    },
+    {
+      "$ref": "./boolean_operator.schema.json"
+    },
+    {
+      "$ref": "./number_operator.schema.json"
+    },
+    {
+      "$ref": "./string_operator.schema.json"
+    },
+    {
+      "$ref": "./json_operator.schema.json"
+    },
+    {
+      "$ref": "./statement_expression.schema.json"
+    }
+  ]
+}

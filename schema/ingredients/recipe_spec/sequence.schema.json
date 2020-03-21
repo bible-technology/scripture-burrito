@@ -10,13 +10,7 @@
         "$ref": "./message.schema.json"
       },
       {
-        "$ref": "./variables_in_sequence.schema.json"
-      },
-      {
         "$ref": "./statements.schema.json"
-      },
-      {
-        "$ref": "./if_then_else.schema.json"
       },
       {
         "$ref": "./case.schema.json"
