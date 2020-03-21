@@ -1,0 +1,3400 @@
+{
+  "meta": {
+    "version": "0.2.0",
+    "variant": "source",
+    "generator": {
+      "softwareName": "DBLImport",
+      "softwareVersion": "0.0.0",
+      "userName": "Elbert Boot"
+    },
+    "defaultLanguage": "en",
+    "dateCreated": "2019-12-09T15:57:04.662712+00:00",
+    "comments": [
+      "First submit"
+    ]
+  },
+  "idServers": {
+    "dbl": {
+      "id": "https://thedigitalbiblelibrary.org",
+      "name": {
+        "en": "The Digital Bible Library"
+      }
+    }
+  },
+  "identification": {
+    "systemId": {
+      "dbl": {
+        "id": "b35e70bce95d4261",
+        "revision": "1"
+      }
+    },
+    "idServer": "dbl",
+    "name": {
+      "en": "Indian Revised Version(IRV) Hindi - 2019",
+      "hin": "आई आर वी हिंदी"
+    },
+    "description": {
+      "en": "Hindi Bible Version 2019",
+      "hin": "आई आर वी हिंदी"
+    },
+    "abbreviation": {
+      "en": "IRVHin"
+    }
+  },
+  "languages": [
+    {
+      "tag": "hin",
+      "name": {
+        "en": "Hindi",
+        "hin": "हिन्दी"
+      }
+    }
+  ],
+  "type": {
+    "flavorType": {
+      "name": "scripture",
+      "flavor": {
+        "name": "audioTranslation",
+        "dramatization": "singleVoice"
+      },
+      "canonType": [
+        "ot",
+        "nt"
+      ],
+      "canonSpec": {
+        "ot": {
+          "name": "western"
+        },
+        "nt": {
+          "name": "western"
+        }
+      },
+      "currentScope": {
+        "MAT": [],
+        "MRK": [],
+        "LUK": [],
+        "JHN": [],
+        "ACT": [],
+        "ROM": [],
+        "1CO": [],
+        "2CO": [],
+        "GAL": [],
+        "EPH": [],
+        "PHP": [],
+        "COL": [],
+        "1TH": [],
+        "2TH": [],
+        "1TI": [],
+        "2TI": [],
+        "TIT": [],
+        "PHM": [],
+        "HEB": [],
+        "JAS": [],
+        "1PE": [],
+        "2PE": [],
+        "1JN": [],
+        "2JN": [],
+        "3JN": [],
+        "JUD": [],
+        "REV": []
+      }
+    }
+  },
+  "confidentiality": {
+    "metadata": "unrestricted",
+    "source": "private",
+    "publications": "restricted"
+  },
+  "agencies": [
+    {
+      "id": "dbl::ca4e509c2990fb97eaa0b7c9",
+      "roles": [
+        "rightsHolder",
+        "content",
+        "publication",
+        "management",
+        "finance",
+        "qa"
+      ],
+      "url": "https://bridgeconn.com/",
+      "name": {
+        "en": "Bridge Connectivity Solutions Pvt. Ltd."
+      },
+      "abbr": {
+        "en": "BCS"
+      }
+    }
+  ],
+  "targetAreas": [
+    {
+      "code": "IN",
+      "name": {
+        "en": "India"
+      }
+    }
+  ],
+  "names": {
+    "book-mat": {
+      "short": {
+        "en": "Mat"
+      }
+    },
+    "book-mrk": {
+      "short": {
+        "en": "Mrk"
+      }
+    },
+    "book-luk": {
+      "short": {
+        "en": "Luk"
+      }
+    },
+    "book-jhn": {
+      "short": {
+        "en": "Jhn"
+      }
+    },
+    "book-act": {
+      "short": {
+        "en": "Act"
+      }
+    },
+    "book-rom": {
+      "short": {
+        "en": "Rom"
+      }
+    },
+    "book-1co": {
+      "short": {
+        "en": "1Co"
+      }
+    },
+    "book-2co": {
+      "short": {
+        "en": "2Co"
+      }
+    },
+    "book-gal": {
+      "short": {
+        "en": "Gal"
+      }
+    },
+    "book-eph": {
+      "short": {
+        "en": "Eph"
+      }
+    },
+    "book-php": {
+      "short": {
+        "en": "Php"
+      }
+    },
+    "book-col": {
+      "short": {
+        "en": "Col"
+      }
+    },
+    "book-1th": {
+      "short": {
+        "en": "1Th"
+      }
+    },
+    "book-2th": {
+      "short": {
+        "en": "2Th"
+      }
+    },
+    "book-1ti": {
+      "short": {
+        "en": "1Ti"
+      }
+    },
+    "book-2ti": {
+      "short": {
+        "en": "2Ti"
+      }
+    },
+    "book-tit": {
+      "short": {
+        "en": "Tit"
+      }
+    },
+    "book-phm": {
+      "short": {
+        "en": "Phm"
+      }
+    },
+    "book-heb": {
+      "short": {
+        "en": "Heb"
+      }
+    },
+    "book-jas": {
+      "short": {
+        "en": "Jas"
+      }
+    },
+    "book-1pe": {
+      "short": {
+        "en": "1Pe"
+      }
+    },
+    "book-2pe": {
+      "short": {
+        "en": "2Pe"
+      }
+    },
+    "book-1jn": {
+      "short": {
+        "en": "1Jn"
+      }
+    },
+    "book-2jn": {
+      "short": {
+        "en": "2Jn"
+      }
+    },
+    "book-3jn": {
+      "short": {
+        "en": "3Jn"
+      }
+    },
+    "book-jud": {
+      "short": {
+        "en": "Jud"
+      }
+    },
+    "book-rev": {
+      "short": {
+        "en": "Rev"
+      }
+    }
+  },
+  "ingredients": {
+    "release/audio/1CO/1CO_001.mp3": {
+      "checksum": {
+        "md5": "c5e34a08a3ca82992c180306fc535680"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4941952,
+      "scope": {
+        "1CO": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_002.mp3": {
+      "checksum": {
+        "md5": "aec60620b502a35e99dac4b4ef5e0ee6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2571904,
+      "scope": {
+        "1CO": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_003.mp3": {
+      "checksum": {
+        "md5": "92824ca0cbbb9ecceca985cdb6886d79"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3172480,
+      "scope": {
+        "1CO": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_004.mp3": {
+      "checksum": {
+        "md5": "f31381f4228c4533a8de71bfea130258"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3467392,
+      "scope": {
+        "1CO": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_005.mp3": {
+      "checksum": {
+        "md5": "7b34f1b4999512ed2ba4806d8416e18b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2265856,
+      "scope": {
+        "1CO": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_006.mp3": {
+      "checksum": {
+        "md5": "85f852e5cffdd883047ce2f2e7ed8381"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3074176,
+      "scope": {
+        "1CO": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_007.mp3": {
+      "checksum": {
+        "md5": "a639b1ec9cb09f1e24cb03379921aad6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6722560,
+      "scope": {
+        "1CO": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_008.mp3": {
+      "checksum": {
+        "md5": "8edbb1d4191a9a50f6ad8ad87857dda0"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2353408,
+      "scope": {
+        "1CO": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_009.mp3": {
+      "checksum": {
+        "md5": "07dc986a31fdf3b17bddd78e4181bd01"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4395904,
+      "scope": {
+        "1CO": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_010.mp3": {
+      "checksum": {
+        "md5": "e67c1a15b8534557fe0bdbecd74f2f9d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4603648,
+      "scope": {
+        "1CO": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_011.mp3": {
+      "checksum": {
+        "md5": "4013adac4cdfc91c43ba186f651f0aae"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4647040,
+      "scope": {
+        "1CO": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_012.mp3": {
+      "checksum": {
+        "md5": "c3b202282539f9cdc010562b49a9e65f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4483456,
+      "scope": {
+        "1CO": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_013.mp3": {
+      "checksum": {
+        "md5": "5d18f0a94f199e7cffe7c4bc240ac6ae"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2058496,
+      "scope": {
+        "1CO": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_014.mp3": {
+      "checksum": {
+        "md5": "75f68855300b9c645002a1ef6bbd8da6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6340096,
+      "scope": {
+        "1CO": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_015.mp3": {
+      "checksum": {
+        "md5": "a6385ce3e05ee4e7890d9ef14ebd5b36"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8513920,
+      "scope": {
+        "1CO": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/1CO/1CO_016.mp3": {
+      "checksum": {
+        "md5": "42853ac41a19481c41ee165b42ad01af"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2987008,
+      "scope": {
+        "1CO": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/1JN/1JN_001.mp3": {
+      "checksum": {
+        "md5": "40f37fcc6ccfd376ca225000ba41ca85"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 1676032,
+      "scope": {
+        "1JN": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/1JN/1JN_002.mp3": {
+      "checksum": {
+        "md5": "155df303ca2c389b327115cf2e02b4f8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4909312,
+      "scope": {
+        "1JN": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/1JN/1JN_003.mp3": {
+      "checksum": {
+        "md5": "970c5acfbf7c22fb4f61f72a25eb6a37"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3926272,
+      "scope": {
+        "1JN": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/1JN/1JN_004.mp3": {
+      "checksum": {
+        "md5": "5f51459784403577e3a5c05a419fbe61"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3762304,
+      "scope": {
+        "1JN": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/1JN/1JN_005.mp3": {
+      "checksum": {
+        "md5": "c6ee38ca69a9c9238cc735b28f20b3d6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3609472,
+      "scope": {
+        "1JN": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/1PE/1PE_001.mp3": {
+      "checksum": {
+        "md5": "2b143f9c2ed973f6c891f12cd39ca3c4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4275712,
+      "scope": {
+        "1PE": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/1PE/1PE_002.mp3": {
+      "checksum": {
+        "md5": "8d018d652c8dc40b1951bd9c28346533"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4243072,
+      "scope": {
+        "1PE": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/1PE/1PE_003.mp3": {
+      "checksum": {
+        "md5": "b5b425be0246066fa1afa608bda0deb6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4166656,
+      "scope": {
+        "1PE": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/1PE/1PE_004.mp3": {
+      "checksum": {
+        "md5": "9e542508251b936ec2e5e091d5bcf8c6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3205504,
+      "scope": {
+        "1PE": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/1PE/1PE_005.mp3": {
+      "checksum": {
+        "md5": "d2db75d37abebf318e2890aab6558cba"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2200576,
+      "scope": {
+        "1PE": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/1TH/1TH_001.mp3": {
+      "checksum": {
+        "md5": "9c5916e0f01adca5649d31edcd53c205"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 1851136,
+      "scope": {
+        "1TH": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/1TH/1TH_002.mp3": {
+      "checksum": {
+        "md5": "dd6f4284c0443644bb59270515f57860"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4057216,
+      "scope": {
+        "1TH": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/1TH/1TH_003.mp3": {
+      "checksum": {
+        "md5": "3ef0780a726609ac3375491e190f5e50"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2484352,
+      "scope": {
+        "1TH": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/1TH/1TH_004.mp3": {
+      "checksum": {
+        "md5": "b453a4e63cb2edbdaa96eccaf9200a3f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3216256,
+      "scope": {
+        "1TH": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/1TH/1TH_005.mp3": {
+      "checksum": {
+        "md5": "e425fcb097f4c2bf7561ae9adf9ed82b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3194368,
+      "scope": {
+        "1TH": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_001.mp3": {
+      "checksum": {
+        "md5": "d862a4bf837c2de7628b86d88c794b20"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3559936,
+      "scope": {
+        "1TI": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_002.mp3": {
+      "checksum": {
+        "md5": "83bce65666c3f7c5aef5bfab8d67b7be"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2144896,
+      "scope": {
+        "1TI": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_003.mp3": {
+      "checksum": {
+        "md5": "f809058af2b90006f2c2f02c28288edc"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2477824,
+      "scope": {
+        "1TI": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_004.mp3": {
+      "checksum": {
+        "md5": "9fd575f13b669006224f01f143f7a546"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2679808,
+      "scope": {
+        "1TI": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_005.mp3": {
+      "checksum": {
+        "md5": "6839e4e69b2d4797521377d25b525960"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3702400,
+      "scope": {
+        "1TI": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/1TI/1TI_006.mp3": {
+      "checksum": {
+        "md5": "b230febf8ac6716a13be0d01a1f2af06"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3607168,
+      "scope": {
+        "1TI": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_001.mp3": {
+      "checksum": {
+        "md5": "ed130464cdfd8716a229cd0d8a0ef944"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4439680,
+      "scope": {
+        "2CO": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_002.mp3": {
+      "checksum": {
+        "md5": "903f9848af050bd677e3ba36d19971db"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2735872,
+      "scope": {
+        "2CO": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_003.mp3": {
+      "checksum": {
+        "md5": "1445d10462c58703273c348be010ebfb"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2735872,
+      "scope": {
+        "2CO": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_004.mp3": {
+      "checksum": {
+        "md5": "23625b4fbcbbfd7aa85eb43029a279a1"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3139840,
+      "scope": {
+        "2CO": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_005.mp3": {
+      "checksum": {
+        "md5": "98e41e5756c1e2d4203800c0d0ef82e7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3434752,
+      "scope": {
+        "2CO": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_006.mp3": {
+      "checksum": {
+        "md5": "402b744bf09b55a2c8b8860e989f465f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2910592,
+      "scope": {
+        "2CO": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_007.mp3": {
+      "checksum": {
+        "md5": "d9f7fbc1ea1edac2e2c4dec00c6d4704"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3467392,
+      "scope": {
+        "2CO": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_008.mp3": {
+      "checksum": {
+        "md5": "be560ccec9a8efebfc3a799a64673973"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4035328,
+      "scope": {
+        "2CO": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_009.mp3": {
+      "checksum": {
+        "md5": "c07ab85e6a93f015845b1c547802f2f3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2779264,
+      "scope": {
+        "2CO": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_010.mp3": {
+      "checksum": {
+        "md5": "3ecbac65689fed9bd59833e221478c70"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3139840,
+      "scope": {
+        "2CO": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_011.mp3": {
+      "checksum": {
+        "md5": "7f3368d94a4e0fe0f1c5e563301b1b2d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4985728,
+      "scope": {
+        "2CO": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_012.mp3": {
+      "checksum": {
+        "md5": "8d638b3dab3682e6ea0c82fd6c0e769d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4166656,
+      "scope": {
+        "2CO": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/2CO/2CO_013.mp3": {
+      "checksum": {
+        "md5": "e916b938ff3943be7539bcb8bde009ca"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2211328,
+      "scope": {
+        "2CO": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/2JN/2JN_001.mp3": {
+      "checksum": {
+        "md5": "3d2b338bdeeb690c5bf846c950e43947"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2178688,
+      "scope": {
+        "2JN": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/2PE/2PE_001.mp3": {
+      "checksum": {
+        "md5": "2400132f9fcb895e281423b7934ab682"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3729664,
+      "scope": {
+        "2PE": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/2PE/2PE_002.mp3": {
+      "checksum": {
+        "md5": "d7aecccd8f04e3d7a8de48f7c509f068"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3991936,
+      "scope": {
+        "2PE": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/2PE/2PE_003.mp3": {
+      "checksum": {
+        "md5": "c2803e7b8b1552bce34890f8d118d407"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3347200,
+      "scope": {
+        "2PE": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/2TH/2TH_001.mp3": {
+      "checksum": {
+        "md5": "317574a647872ddb58f1b41829383c0c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2309632,
+      "scope": {
+        "2TH": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/2TH/2TH_002.mp3": {
+      "checksum": {
+        "md5": "5b7b1b488ad9f4b3c66b7ee20d828edc"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2987008,
+      "scope": {
+        "2TH": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/2TH/2TH_003.mp3": {
+      "checksum": {
+        "md5": "8a26e8538caa7bf69b309c33bd737c26"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2659072,
+      "scope": {
+        "2TH": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/2TI/2TI_001.mp3": {
+      "checksum": {
+        "md5": "8c2c6762b9e94630ac55a9801a3b711e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3084160,
+      "scope": {
+        "2TI": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/2TI/2TI_002.mp3": {
+      "checksum": {
+        "md5": "ec42b62a2d466f3060f74c9ed839a694"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3975808,
+      "scope": {
+        "2TI": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/2TI/2TI_003.mp3": {
+      "checksum": {
+        "md5": "194641327bb99bdfe141e4602bd3320f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2739328,
+      "scope": {
+        "2TI": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/2TI/2TI_004.mp3": {
+      "checksum": {
+        "md5": "ae5feeea29181f3442a9fe030b36825f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3274240,
+      "scope": {
+        "2TI": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/3JN/3JN_001.mp3": {
+      "checksum": {
+        "md5": "79e1f65f2431582e9f802f6a3a234b2f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2331520,
+      "scope": {
+        "3JN": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_001.mp3": {
+      "checksum": {
+        "md5": "c378c778f40b68454c6371ce66e7cc6d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4155520,
+      "scope": {
+        "ACT": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_002.mp3": {
+      "checksum": {
+        "md5": "e4481394bf47119065e78c9a6b8be608"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6864640,
+      "scope": {
+        "ACT": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_003.mp3": {
+      "checksum": {
+        "md5": "8488738a741afb7eb8b32227a06dda02"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4461568,
+      "scope": {
+        "ACT": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_004.mp3": {
+      "checksum": {
+        "md5": "5a86ca41c39644945c98e5f3db02bfa2"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5848576,
+      "scope": {
+        "ACT": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_005.mp3": {
+      "checksum": {
+        "md5": "add95967b62197bc9ee5e491f8eda272"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6973696,
+      "scope": {
+        "ACT": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_006.mp3": {
+      "checksum": {
+        "md5": "50b20058746e4a88a5fc68d16da5247f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2615680,
+      "scope": {
+        "ACT": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_007.mp3": {
+      "checksum": {
+        "md5": "22dbf10bc431e82258627fe50df13e77"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 10130176,
+      "scope": {
+        "ACT": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_008.mp3": {
+      "checksum": {
+        "md5": "f1eb1f90523ae4d447f6c8a77e13c0cd"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6241792,
+      "scope": {
+        "ACT": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_009.mp3": {
+      "checksum": {
+        "md5": "64968cbb75b14b2e59d51c66e008a77b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6744448,
+      "scope": {
+        "ACT": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_010.mp3": {
+      "checksum": {
+        "md5": "4c2cc246c8e46a9c6bb6fe6dfe59b888"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7290496,
+      "scope": {
+        "ACT": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_011.mp3": {
+      "checksum": {
+        "md5": "7063e4815f14ad62a5db0535335bc734"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4395904,
+      "scope": {
+        "ACT": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_012.mp3": {
+      "checksum": {
+        "md5": "12ce720e5562525ba93e3a2a3a4cca9b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4275712,
+      "scope": {
+        "ACT": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_013.mp3": {
+      "checksum": {
+        "md5": "967888d01b3932a270026129f37597d0"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8415616,
+      "scope": {
+        "ACT": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_014.mp3": {
+      "checksum": {
+        "md5": "08e4996d2d1dc3ad7136432969b123c1"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4450432,
+      "scope": {
+        "ACT": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_015.mp3": {
+      "checksum": {
+        "md5": "6b8a2e059a9d5428fb502960f512dce7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6635008,
+      "scope": {
+        "ACT": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_016.mp3": {
+      "checksum": {
+        "md5": "42c5af6b02b057641e853d11dc4a772f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6231040,
+      "scope": {
+        "ACT": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_017.mp3": {
+      "checksum": {
+        "md5": "8b0f9c8265a9105588394a5ad2460013"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6492928,
+      "scope": {
+        "ACT": [
+          "17"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_018.mp3": {
+      "checksum": {
+        "md5": "d740f31d274a7433a384e64074dd45b4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5138560,
+      "scope": {
+        "ACT": [
+          "18"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_019.mp3": {
+      "checksum": {
+        "md5": "134125071f05c83b1b08cd29cdb9bbf4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6919168,
+      "scope": {
+        "ACT": [
+          "19"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_020.mp3": {
+      "checksum": {
+        "md5": "f3a0109de2f4382dc39b0244f02f406e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6143488,
+      "scope": {
+        "ACT": [
+          "20"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_021.mp3": {
+      "checksum": {
+        "md5": "e8bdd758ac8114fc97769f15481278b7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7224832,
+      "scope": {
+        "ACT": [
+          "21"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_022.mp3": {
+      "checksum": {
+        "md5": "a8d5571cf53e70ffdcf8fd9678460f8f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4985728,
+      "scope": {
+        "ACT": [
+          "22"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_023.mp3": {
+      "checksum": {
+        "md5": "a2c9c0cddfd2708d3a41c2c169b9cd5b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6307456,
+      "scope": {
+        "ACT": [
+          "23"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_024.mp3": {
+      "checksum": {
+        "md5": "cd98c1cfc577863b82e64a04f92a5389"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4898560,
+      "scope": {
+        "ACT": [
+          "24"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_025.mp3": {
+      "checksum": {
+        "md5": "5fb453b558c2711d20498571ad6e0469"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5160448,
+      "scope": {
+        "ACT": [
+          "25"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_026.mp3": {
+      "checksum": {
+        "md5": "f1054004fadf75427109cd3471cd1444"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5521024,
+      "scope": {
+        "ACT": [
+          "26"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_027.mp3": {
+      "checksum": {
+        "md5": "50997e6bc663d02218feec0820d5d4b0"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7072000,
+      "scope": {
+        "ACT": [
+          "27"
+        ]
+      }
+    },
+    "release/audio/ACT/ACT_028.mp3": {
+      "checksum": {
+        "md5": "6bc99b6b195f577f4dbf3dc4726d95ee"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5313280,
+      "scope": {
+        "ACT": [
+          "28"
+        ]
+      }
+    },
+    "release/audio/COL/COL_001.mp3": {
+      "checksum": {
+        "md5": "3edd2acbd148ecba59089e8f8954272a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4865536,
+      "scope": {
+        "COL": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/COL/COL_002.mp3": {
+      "checksum": {
+        "md5": "3c401e85a842ad760000d208c2679ac8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3773440,
+      "scope": {
+        "COL": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/COL/COL_003.mp3": {
+      "checksum": {
+        "md5": "1d791bebc9ae9426aa27bf561fb5edf3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3522304,
+      "scope": {
+        "COL": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/COL/COL_004.mp3": {
+      "checksum": {
+        "md5": "e973d4e57329db3809464a8bc60ea81d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2790400,
+      "scope": {
+        "COL": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_001.mp3": {
+      "checksum": {
+        "md5": "d35a614472fa403251d5692cd3c4e715"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3761920,
+      "scope": {
+        "EPH": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_002.mp3": {
+      "checksum": {
+        "md5": "3eb55b328c9475445bf4244e693e083c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3536128,
+      "scope": {
+        "EPH": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_003.mp3": {
+      "checksum": {
+        "md5": "e2115a80ca545123fcdbc0b3a5abd4bd"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3143680,
+      "scope": {
+        "EPH": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_004.mp3": {
+      "checksum": {
+        "md5": "466e6f310a1a392e88b816045b8a3d7b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4807936,
+      "scope": {
+        "EPH": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_005.mp3": {
+      "checksum": {
+        "md5": "79f5b925ee61394f02d639fa11eccc7c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4320640,
+      "scope": {
+        "EPH": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/EPH/EPH_006.mp3": {
+      "checksum": {
+        "md5": "347810bb307ad0f8a0c89ef3a792c996"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3417088,
+      "scope": {
+        "EPH": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_001.mp3": {
+      "checksum": {
+        "md5": "dcacf94a97ba876e7d2a6f37a2b5317a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3456640,
+      "scope": {
+        "GAL": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_002.mp3": {
+      "checksum": {
+        "md5": "4814c810dbc943354298e8d32343da3f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4188544,
+      "scope": {
+        "GAL": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_003.mp3": {
+      "checksum": {
+        "md5": "135133c30cc7f4e3caaf81a7af209eb5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4843648,
+      "scope": {
+        "GAL": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_004.mp3": {
+      "checksum": {
+        "md5": "5b7b38e146e554eaf1c5b58ad85598c6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4483456,
+      "scope": {
+        "GAL": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_005.mp3": {
+      "checksum": {
+        "md5": "a2cf0cd168b66becbb18eab4eb0ae519"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3478528,
+      "scope": {
+        "GAL": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/GAL/GAL_006.mp3": {
+      "checksum": {
+        "md5": "b626be827a92d55312e32a702405e11a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2648320,
+      "scope": {
+        "GAL": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_001.mp3": {
+      "checksum": {
+        "md5": "a3c7056b79e46c68b4cf970beb131769"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2331520,
+      "scope": {
+        "HEB": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_002.mp3": {
+      "checksum": {
+        "md5": "e122c2d9f6b8c5f034b17473e0698d61"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3347200,
+      "scope": {
+        "HEB": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_003.mp3": {
+      "checksum": {
+        "md5": "fea1da2a4d9aaf5d4d4b04e7a912ae1e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2801152,
+      "scope": {
+        "HEB": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_004.mp3": {
+      "checksum": {
+        "md5": "2ce7325ca78ac14f27189f961ef6d642"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2943232,
+      "scope": {
+        "HEB": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_005.mp3": {
+      "checksum": {
+        "md5": "39b8aa58ba98047276f68f0e6cc4e27d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2222464,
+      "scope": {
+        "HEB": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_006.mp3": {
+      "checksum": {
+        "md5": "aafbbcad386e19d7aef7a41e46c91e90"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3216256,
+      "scope": {
+        "HEB": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_007.mp3": {
+      "checksum": {
+        "md5": "a780f8b86de49219ac2403585f593f03"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4723456,
+      "scope": {
+        "HEB": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_008.mp3": {
+      "checksum": {
+        "md5": "d72fbaa458b62b11b29519a39e398f4c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2560768,
+      "scope": {
+        "HEB": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_009.mp3": {
+      "checksum": {
+        "md5": "3379b11d047224b12cbb3c19f1e4ccdc"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5226112,
+      "scope": {
+        "HEB": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_010.mp3": {
+      "checksum": {
+        "md5": "ed7d28a082ec8b58ab0f8df1d11a6f8c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5903104,
+      "scope": {
+        "HEB": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_011.mp3": {
+      "checksum": {
+        "md5": "7dc381c2a75e85cb5b2523bc9d618efa"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7028224,
+      "scope": {
+        "HEB": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_012.mp3": {
+      "checksum": {
+        "md5": "011580fc0e5edd0a6638e12b318740da"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4800256,
+      "scope": {
+        "HEB": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/HEB/HEB_013.mp3": {
+      "checksum": {
+        "md5": "7bbcb016a55bd07ec89215e31ca04f4a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3860608,
+      "scope": {
+        "HEB": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/JAS/JAS_001.mp3": {
+      "checksum": {
+        "md5": "b645e0816a1a342571e830f19ae74c33"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4013824,
+      "scope": {
+        "JAS": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/JAS/JAS_002.mp3": {
+      "checksum": {
+        "md5": "14883767aace26eb75bc94a51088ad1b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3751552,
+      "scope": {
+        "JAS": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/JAS/JAS_003.mp3": {
+      "checksum": {
+        "md5": "2b316daec19cd41a0236ac780b9f3155"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2877568,
+      "scope": {
+        "JAS": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/JAS/JAS_004.mp3": {
+      "checksum": {
+        "md5": "398f8f6500688a4a221dfdff5c83de0a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2692096,
+      "scope": {
+        "JAS": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/JAS/JAS_005.mp3": {
+      "checksum": {
+        "md5": "2da10f4e0d0ef059071e81cb2578750b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3227392,
+      "scope": {
+        "JAS": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_001.mp3": {
+      "checksum": {
+        "md5": "b32047a23ffd0ea76f236546e9f38a4a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7104640,
+      "scope": {
+        "JHN": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_002.mp3": {
+      "checksum": {
+        "md5": "41a450b6396b0709c92e023f00ecc6f7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3445504,
+      "scope": {
+        "JHN": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_003.mp3": {
+      "checksum": {
+        "md5": "ee2882cdd854c41cea9f31c4085b979a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5651968,
+      "scope": {
+        "JHN": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_004.mp3": {
+      "checksum": {
+        "md5": "4062df881a5d03bd3d80ac90c6a731b7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7596160,
+      "scope": {
+        "JHN": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_005.mp3": {
+      "checksum": {
+        "md5": "bfbf1ca9bb33bff1673be0bac22dfe62"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7192192,
+      "scope": {
+        "JHN": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_006.mp3": {
+      "checksum": {
+        "md5": "e263a678126088a24bf6407582ed816b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 9289216,
+      "scope": {
+        "JHN": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_007.mp3": {
+      "checksum": {
+        "md5": "f6bf2ab266da4a76c71c465834290fe7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6820864,
+      "scope": {
+        "JHN": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_008.mp3": {
+      "checksum": {
+        "md5": "49a4011c8711f045156f51e7f3765f45"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8655616,
+      "scope": {
+        "JHN": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_009.mp3": {
+      "checksum": {
+        "md5": "5cf17a64149080001570a337f7d5c736"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5509888,
+      "scope": {
+        "JHN": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_010.mp3": {
+      "checksum": {
+        "md5": "5cb4b7e322f8841f1bc1e1edd994b017"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5411584,
+      "scope": {
+        "JHN": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_011.mp3": {
+      "checksum": {
+        "md5": "2eda68401bab45e83e7c18fe839c3e27"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7356160,
+      "scope": {
+        "JHN": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_012.mp3": {
+      "checksum": {
+        "md5": "fb46861f7f4f01f9c6fff4c81c771c1e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6941056,
+      "scope": {
+        "JHN": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_013.mp3": {
+      "checksum": {
+        "md5": "583a234adc7c7e142895a7a81466c2a8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5477248,
+      "scope": {
+        "JHN": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_014.mp3": {
+      "checksum": {
+        "md5": "98d14fefa9136d260b034d510d37839e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4472320,
+      "scope": {
+        "JHN": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_015.mp3": {
+      "checksum": {
+        "md5": "808b2de22d9f0d26a72eba0cd721b1c1"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3926272,
+      "scope": {
+        "JHN": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_016.mp3": {
+      "checksum": {
+        "md5": "6066571d3d9302d1dff49f20bf50a171"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4778368,
+      "scope": {
+        "JHN": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_017.mp3": {
+      "checksum": {
+        "md5": "64353ea4859d32c6e15747472c0dd114"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4363264,
+      "scope": {
+        "JHN": [
+          "17"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_018.mp3": {
+      "checksum": {
+        "md5": "5de0d7e45cb67b8f836f88d3c17a454b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6121600,
+      "scope": {
+        "JHN": [
+          "18"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_019.mp3": {
+      "checksum": {
+        "md5": "679c03f6812adf8fc82c7bc54e4b824c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6951808,
+      "scope": {
+        "JHN": [
+          "19"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_020.mp3": {
+      "checksum": {
+        "md5": "1d1ff201d5592f155b0a40a11483e54b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4887424,
+      "scope": {
+        "JHN": [
+          "20"
+        ]
+      }
+    },
+    "release/audio/JHN/JHN_021.mp3": {
+      "checksum": {
+        "md5": "d82a2bfa4cc91a5f4aec4ecd59ed3fce"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4909312,
+      "scope": {
+        "JHN": [
+          "21"
+        ]
+      }
+    },
+    "release/audio/JUD/JUD_001.mp3": {
+      "checksum": {
+        "md5": "9e7781e8111e1fa9f3281e73c45cf7ed"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5040256,
+      "scope": {
+        "JUD": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_001.mp3": {
+      "checksum": {
+        "md5": "181f61c937d12b8499c27ac299a34370"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 9136384,
+      "scope": {
+        "LUK": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_002.mp3": {
+      "checksum": {
+        "md5": "3d70d06d1ff1694baad9d2a0f87c845c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6165376,
+      "scope": {
+        "LUK": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_003.mp3": {
+      "checksum": {
+        "md5": "7928c4462f0e2f5a29f2d24c208c6412"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5149696,
+      "scope": {
+        "LUK": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_004.mp3": {
+      "checksum": {
+        "md5": "c6872bc266f5d8e08e38061359ef3ad5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5761408,
+      "scope": {
+        "LUK": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_005.mp3": {
+      "checksum": {
+        "md5": "f045fcdbb2c22dcf3f2a890bd8ce4fe5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5564800,
+      "scope": {
+        "LUK": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_006.mp3": {
+      "checksum": {
+        "md5": "be1fc5319b2654272341cba209017aed"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6897280,
+      "scope": {
+        "LUK": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_007.mp3": {
+      "checksum": {
+        "md5": "3d1b585424e44ca72c49ad07c8776ffd"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7257856,
+      "scope": {
+        "LUK": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_008.mp3": {
+      "checksum": {
+        "md5": "a0b7237079c3bb999dda018396f9e1a2"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8033152,
+      "scope": {
+        "LUK": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_009.mp3": {
+      "checksum": {
+        "md5": "ef514d5f8016ce6bc8c18777743654a4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8480896,
+      "scope": {
+        "LUK": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_010.mp3": {
+      "checksum": {
+        "md5": "6adc4f173d624f06fae30c596434fbef"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5706496,
+      "scope": {
+        "LUK": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_011.mp3": {
+      "checksum": {
+        "md5": "2e75c3b868c73051c2ce399a4b6f2af9"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7749376,
+      "scope": {
+        "LUK": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_012.mp3": {
+      "checksum": {
+        "md5": "aef6bddd123ae62a2fdba9066d3f1e7a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8000512,
+      "scope": {
+        "LUK": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_013.mp3": {
+      "checksum": {
+        "md5": "4873b29733ddf74993ce1df95b2bc603"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5258752,
+      "scope": {
+        "LUK": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_014.mp3": {
+      "checksum": {
+        "md5": "e906254e7a23353d190d2cf3338a5457"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4800256,
+      "scope": {
+        "LUK": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_015.mp3": {
+      "checksum": {
+        "md5": "2bf919ebcee30967e35ce34f063610c5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4603648,
+      "scope": {
+        "LUK": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_016.mp3": {
+      "checksum": {
+        "md5": "be47e0217faa1053b9d45e74ae021cb3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5171584,
+      "scope": {
+        "LUK": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_017.mp3": {
+      "checksum": {
+        "md5": "1961ef14bc0c0d71988f05483e175aac"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4821760,
+      "scope": {
+        "LUK": [
+          "17"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_018.mp3": {
+      "checksum": {
+        "md5": "75a2da1febbb05be424e7dbec5034738"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5586688,
+      "scope": {
+        "LUK": [
+          "18"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_019.mp3": {
+      "checksum": {
+        "md5": "cacdf47a69599207c3a1a8d65bfa2927"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6318208,
+      "scope": {
+        "LUK": [
+          "19"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_020.mp3": {
+      "checksum": {
+        "md5": "20738ee043464a5e9bb52550c784f67a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6088960,
+      "scope": {
+        "LUK": [
+          "20"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_021.mp3": {
+      "checksum": {
+        "md5": "0f4105f24627901b949b1ae83d111d62"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4581760,
+      "scope": {
+        "LUK": [
+          "21"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_022.mp3": {
+      "checksum": {
+        "md5": "b3ce31f98714ae2690c8e4335e3eb7b7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8349952,
+      "scope": {
+        "LUK": [
+          "22"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_023.mp3": {
+      "checksum": {
+        "md5": "5b07160e14f7936c22ae25939a28bad6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6864640,
+      "scope": {
+        "LUK": [
+          "23"
+        ]
+      }
+    },
+    "release/audio/LUK/LUK_024.mp3": {
+      "checksum": {
+        "md5": "b5869cdb8694ce95855bdf57cfed1456"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6547840,
+      "scope": {
+        "LUK": [
+          "24"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_001.mp3": {
+      "checksum": {
+        "md5": "9859c03a214c0f9f943d6aa200c091b6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3817216,
+      "scope": {
+        "MAT": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_002.mp3": {
+      "checksum": {
+        "md5": "5e617361b62345acec1a1c7fbe9ed1c8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3958912,
+      "scope": {
+        "MAT": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_003.mp3": {
+      "checksum": {
+        "md5": "1cb0c31e6d414b69c4628a8e07d37d98"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2953984,
+      "scope": {
+        "MAT": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_004.mp3": {
+      "checksum": {
+        "md5": "76e75062cc1d1db52939863f815b9335"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3554944,
+      "scope": {
+        "MAT": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_005.mp3": {
+      "checksum": {
+        "md5": "d0db3165b1380fb610287111ea360766"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7082752,
+      "scope": {
+        "MAT": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_006.mp3": {
+      "checksum": {
+        "md5": "994b3780537b9996f316bbfa56a75cc4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5630080,
+      "scope": {
+        "MAT": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_007.mp3": {
+      "checksum": {
+        "md5": "636a3262c78f824f6a7dc01c01ddcbb6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4100992,
+      "scope": {
+        "MAT": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_008.mp3": {
+      "checksum": {
+        "md5": "de1fdbccae1d3b8bfc7096d182c5ecbc"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4832896,
+      "scope": {
+        "MAT": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_009.mp3": {
+      "checksum": {
+        "md5": "20c4b8dd4e1ee9aac7717fdcef761109"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5586688,
+      "scope": {
+        "MAT": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_010.mp3": {
+      "checksum": {
+        "md5": "0851b79a728c69a7e57cc5d9ea3aaea6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6045184,
+      "scope": {
+        "MAT": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_011.mp3": {
+      "checksum": {
+        "md5": "7dbb12d4c1b93c25deb93f4b9147bfbe"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4537984,
+      "scope": {
+        "MAT": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_012.mp3": {
+      "checksum": {
+        "md5": "961315b1dbc18aa67b6fed5d15090f83"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7563520,
+      "scope": {
+        "MAT": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_013.mp3": {
+      "checksum": {
+        "md5": "04b6baa38ea3ed9b9a31e479bc3516c6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8680192,
+      "scope": {
+        "MAT": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_014.mp3": {
+      "checksum": {
+        "md5": "1fe66a245a9ec6307d4d1e1238064523"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4505344,
+      "scope": {
+        "MAT": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_015.mp3": {
+      "checksum": {
+        "md5": "54baa4eca128a6d260d62e22d61e09af"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4985728,
+      "scope": {
+        "MAT": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_016.mp3": {
+      "checksum": {
+        "md5": "75abb1c3b9d64e1748961485435aa5eb"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4352128,
+      "scope": {
+        "MAT": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_017.mp3": {
+      "checksum": {
+        "md5": "d110d42d031fd521c518a0079a629146"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4264960,
+      "scope": {
+        "MAT": [
+          "17"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_018.mp3": {
+      "checksum": {
+        "md5": "770883404198cfb5e849d27a6d2d531b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5608192,
+      "scope": {
+        "MAT": [
+          "18"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_019.mp3": {
+      "checksum": {
+        "md5": "b40a619337100526ff8fcbd344d410b1"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4483456,
+      "scope": {
+        "MAT": [
+          "19"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_020.mp3": {
+      "checksum": {
+        "md5": "7de2ce1a8cb1c5187d6631d006eeed7e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4537984,
+      "scope": {
+        "MAT": [
+          "20"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_021.mp3": {
+      "checksum": {
+        "md5": "1a63db25986740e2e0001c456ce40d8f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7050112,
+      "scope": {
+        "MAT": [
+          "21"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_022.mp3": {
+      "checksum": {
+        "md5": "8a2aff7d91f6549e3e36204766d55f98"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5477248,
+      "scope": {
+        "MAT": [
+          "22"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_023.mp3": {
+      "checksum": {
+        "md5": "9735f7dc28828b31ff33dd5108fb3ee3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5924992,
+      "scope": {
+        "MAT": [
+          "23"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_024.mp3": {
+      "checksum": {
+        "md5": "0b7e9d87a319dd7d48eb2712b1d81ee8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6482176,
+      "scope": {
+        "MAT": [
+          "24"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_025.mp3": {
+      "checksum": {
+        "md5": "59ce80fa0938dc2e6ad687ebe2ef061e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6853504,
+      "scope": {
+        "MAT": [
+          "25"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_026.mp3": {
+      "checksum": {
+        "md5": "0ab8e74676b894c5873caf95bb0b19f9"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 10173952,
+      "scope": {
+        "MAT": [
+          "26"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_027.mp3": {
+      "checksum": {
+        "md5": "2aabecd420fac5224504beae3272ead5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 8819584,
+      "scope": {
+        "MAT": [
+          "27"
+        ]
+      }
+    },
+    "release/audio/MAT/MAT_028.mp3": {
+      "checksum": {
+        "md5": "81bab0c799f873f24b7aa4fc05891b1e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2735872,
+      "scope": {
+        "MAT": [
+          "28"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_001.mp3": {
+      "checksum": {
+        "md5": "c0524dd7c163e49ec1cff1634f063616"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6176512,
+      "scope": {
+        "MRK": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_002.mp3": {
+      "checksum": {
+        "md5": "8868809bf6299d101063ea8bd2856561"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4494208,
+      "scope": {
+        "MRK": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_003.mp3": {
+      "checksum": {
+        "md5": "40981535e7fe537b330ee9bea64631f4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4308736,
+      "scope": {
+        "MRK": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_004.mp3": {
+      "checksum": {
+        "md5": "9157cb5f99169b2a13feebeb7ba521cf"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5531776,
+      "scope": {
+        "MRK": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_005.mp3": {
+      "checksum": {
+        "md5": "54e70ac505c528346bcdb0cc149222b3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5651968,
+      "scope": {
+        "MRK": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_006.mp3": {
+      "checksum": {
+        "md5": "826c72df25a09d23b8967cd8197b6869"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7934848,
+      "scope": {
+        "MRK": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_007.mp3": {
+      "checksum": {
+        "md5": "18fbf1057532ff27906bd95ba025def6"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5051392,
+      "scope": {
+        "MRK": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_008.mp3": {
+      "checksum": {
+        "md5": "6b2b9aea4ec4cf7203e8d3efd2c8b04c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5214976,
+      "scope": {
+        "MRK": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_009.mp3": {
+      "checksum": {
+        "md5": "b3d0861c1bddf31aae1c2a574765cba1"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7552768,
+      "scope": {
+        "MRK": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_010.mp3": {
+      "checksum": {
+        "md5": "e2eb7c894108f7bec5e0768ea1526946"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 7727488,
+      "scope": {
+        "MRK": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_011.mp3": {
+      "checksum": {
+        "md5": "d6e0d2021c5eb97bd253661fbd4a434a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4941952,
+      "scope": {
+        "MRK": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_012.mp3": {
+      "checksum": {
+        "md5": "2097e7fcee067b9b22a7c13f94c61013"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6755200,
+      "scope": {
+        "MRK": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_013.mp3": {
+      "checksum": {
+        "md5": "5096ff847d628440aea516a67a7a5c57"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5149696,
+      "scope": {
+        "MRK": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_014.mp3": {
+      "checksum": {
+        "md5": "e43c478255879fb5bc18d6cbd2010ebb"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 9769984,
+      "scope": {
+        "MRK": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_015.mp3": {
+      "checksum": {
+        "md5": "427638f0da3b945bfcc2b123f2098b2d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6231040,
+      "scope": {
+        "MRK": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/MRK/MRK_016.mp3": {
+      "checksum": {
+        "md5": "e4da1181c352be98be3c6573d256bcf2"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3052288,
+      "scope": {
+        "MRK": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/PHM/PHM_001.mp3": {
+      "checksum": {
+        "md5": "01b5240c8b689622b138384f0f267f42"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3238144,
+      "scope": {
+        "PHM": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/PHP/PHP_001.mp3": {
+      "checksum": {
+        "md5": "0c5c6377cf8d450ae399715180835ce4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4668928,
+      "scope": {
+        "PHP": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/PHP/PHP_002.mp3": {
+      "checksum": {
+        "md5": "a10d31810f2022eeb7b8dd1096d4573d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4330240,
+      "scope": {
+        "PHP": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/PHP/PHP_003.mp3": {
+      "checksum": {
+        "md5": "9f750f8780157e209c526bd36b3543af"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3631360,
+      "scope": {
+        "PHP": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/PHP/PHP_004.mp3": {
+      "checksum": {
+        "md5": "6e12047975649f6aff4e7cb3cb046e93"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3642112,
+      "scope": {
+        "PHP": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/REV/REV_001.mp3": {
+      "checksum": {
+        "md5": "fd3c6286a69aa6e58de67183ade75259"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4264960,
+      "scope": {
+        "REV": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/REV/REV_002.mp3": {
+      "checksum": {
+        "md5": "c3d559d9eda5e2dbd350b7f4f1417ca3"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5968768,
+      "scope": {
+        "REV": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/REV/REV_003.mp3": {
+      "checksum": {
+        "md5": "5364211771449a1bf7bf6d1cb024c31a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4745344,
+      "scope": {
+        "REV": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/REV/REV_004.mp3": {
+      "checksum": {
+        "md5": "856ed9c1e86b6eaecfc198e0d26ebbe7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2713984,
+      "scope": {
+        "REV": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/REV/REV_005.mp3": {
+      "checksum": {
+        "md5": "54cc9800b629bea2c0fee0036cfcfdbb"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2866816,
+      "scope": {
+        "REV": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/REV/REV_006.mp3": {
+      "checksum": {
+        "md5": "026a3b2732f1dc47621d78d6d52063ea"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3292672,
+      "scope": {
+        "REV": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/REV/REV_007.mp3": {
+      "checksum": {
+        "md5": "4ccf63c1315fb3fca23b7beb202f882f"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3347200,
+      "scope": {
+        "REV": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/REV/REV_008.mp3": {
+      "checksum": {
+        "md5": "e0263fad9258e5e13548d5c524928018"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2593792,
+      "scope": {
+        "REV": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/REV/REV_009.mp3": {
+      "checksum": {
+        "md5": "b7a5465236464398ff125618806bbb29"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3904384,
+      "scope": {
+        "REV": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/REV/REV_010.mp3": {
+      "checksum": {
+        "md5": "809e485c042c0d7893bc53f4cd2e8845"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2419072,
+      "scope": {
+        "REV": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/REV/REV_011.mp3": {
+      "checksum": {
+        "md5": "56c3eea7e1cfb8cc550edc67a7797275"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3970048,
+      "scope": {
+        "REV": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/REV/REV_012.mp3": {
+      "checksum": {
+        "md5": "6e685bb612b2108a4aa08f556fffeb9e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3598720,
+      "scope": {
+        "REV": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/REV/REV_013.mp3": {
+      "checksum": {
+        "md5": "6883ab2aa5ea24e53ede09b1ad06f9e5"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3554944,
+      "scope": {
+        "REV": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/REV/REV_014.mp3": {
+      "checksum": {
+        "md5": "d5ed2d4440cd4da8794b71c6462485af"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4625152,
+      "scope": {
+        "REV": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/REV/REV_015.mp3": {
+      "checksum": {
+        "md5": "f34def7c637d26b29a77111b7d2f3dec"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 1916416,
+      "scope": {
+        "REV": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/REV/REV_016.mp3": {
+      "checksum": {
+        "md5": "0a98043f5c38de173e16fd9f70c09605"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3795328,
+      "scope": {
+        "REV": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/REV/REV_017.mp3": {
+      "checksum": {
+        "md5": "f9544138b8f266209509e440c9708943"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3751552,
+      "scope": {
+        "REV": [
+          "17"
+        ]
+      }
+    },
+    "release/audio/REV/REV_018.mp3": {
+      "checksum": {
+        "md5": "1ca05299d0348326c6cca1cb1f6f1fc4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5138560,
+      "scope": {
+        "REV": [
+          "18"
+        ]
+      }
+    },
+    "release/audio/REV/REV_019.mp3": {
+      "checksum": {
+        "md5": "b84a7557d531a9cfc2deace3d02f013a"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4231936,
+      "scope": {
+        "REV": [
+          "19"
+        ]
+      }
+    },
+    "release/audio/REV/REV_020.mp3": {
+      "checksum": {
+        "md5": "97370dc0c644533b8ab7a4f2e4903d24"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3227392,
+      "scope": {
+        "REV": [
+          "20"
+        ]
+      }
+    },
+    "release/audio/REV/REV_021.mp3": {
+      "checksum": {
+        "md5": "b0850a65e4c235caeb6d14a48333b717"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4996864,
+      "scope": {
+        "REV": [
+          "21"
+        ]
+      }
+    },
+    "release/audio/REV/REV_022.mp3": {
+      "checksum": {
+        "md5": "09aa5f23fb76799ac44f7ceb5b2eb39e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3827968,
+      "scope": {
+        "REV": [
+          "22"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_001.mp3": {
+      "checksum": {
+        "md5": "71dc4096d5f69b31bd0ebfb12da343e2"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5695744,
+      "scope": {
+        "ROM": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_002.mp3": {
+      "checksum": {
+        "md5": "36565e11753c09ab93d6ef66d36bc6e4"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4712704,
+      "scope": {
+        "ROM": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_003.mp3": {
+      "checksum": {
+        "md5": "ab8a56cc129cbdf2896f49f856abc5f8"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4264960,
+      "scope": {
+        "ROM": [
+          "3"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_004.mp3": {
+      "checksum": {
+        "md5": "71aed21a9c60b27c3cd5f7dce1cd641c"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4013824,
+      "scope": {
+        "ROM": [
+          "4"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_005.mp3": {
+      "checksum": {
+        "md5": "ad760344204856340e7803e27c780dd2"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3893632,
+      "scope": {
+        "ROM": [
+          "5"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_006.mp3": {
+      "checksum": {
+        "md5": "ca7faa1bc7c6f0df423086ec0eb7399b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3620608,
+      "scope": {
+        "ROM": [
+          "6"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_007.mp3": {
+      "checksum": {
+        "md5": "f0c8e1a1b7aeefbbfe6e8ad11c8fbc65"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4210432,
+      "scope": {
+        "ROM": [
+          "7"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_008.mp3": {
+      "checksum": {
+        "md5": "47769aa2e3982d37acecfa51fb631ecf"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 6198016,
+      "scope": {
+        "ROM": [
+          "8"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_009.mp3": {
+      "checksum": {
+        "md5": "849c63fe8ce0ab6671181c39ffeac912"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4767232,
+      "scope": {
+        "ROM": [
+          "9"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_010.mp3": {
+      "checksum": {
+        "md5": "068042d945a2b62fc52a87a97d96074d"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3107200,
+      "scope": {
+        "ROM": [
+          "10"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_011.mp3": {
+      "checksum": {
+        "md5": "b70a6e7d8921744bc040855d10cac2c9"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5411584,
+      "scope": {
+        "ROM": [
+          "11"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_012.mp3": {
+      "checksum": {
+        "md5": "458007a04f3cc49f1db2336405cd6e62"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3150592,
+      "scope": {
+        "ROM": [
+          "12"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_013.mp3": {
+      "checksum": {
+        "md5": "fd5cac8637045fca488fdb52719a4ff7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2746624,
+      "scope": {
+        "ROM": [
+          "13"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_014.mp3": {
+      "checksum": {
+        "md5": "6498aeb3dedfe593d9e07c8019d90583"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 3740416,
+      "scope": {
+        "ROM": [
+          "14"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_015.mp3": {
+      "checksum": {
+        "md5": "2f525ae1f7be7c3da9cf1d68779f8454"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 5346304,
+      "scope": {
+        "ROM": [
+          "15"
+        ]
+      }
+    },
+    "release/audio/ROM/ROM_016.mp3": {
+      "checksum": {
+        "md5": "a8b39f63d59f806191a5cb67cbf5142b"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 4253824,
+      "scope": {
+        "ROM": [
+          "16"
+        ]
+      }
+    },
+    "release/audio/TIT/TIT_001.mp3": {
+      "checksum": {
+        "md5": "e72cc943a44c77904a14614774611f84"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2965504,
+      "scope": {
+        "TIT": [
+          "1"
+        ]
+      }
+    },
+    "release/audio/TIT/TIT_002.mp3": {
+      "checksum": {
+        "md5": "e4d6a3aed2561929844e6b6de2acb31e"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2386432,
+      "scope": {
+        "TIT": [
+          "2"
+        ]
+      }
+    },
+    "release/audio/TIT/TIT_003.mp3": {
+      "checksum": {
+        "md5": "48a9df059b1c0b8630d232f8dfa520d7"
+      },
+      "mimeType": "audio/mpeg",
+      "size": 2659456,
+      "scope": {
+        "TIT": [
+          "3"
+        ]
+      }
+    }
+  },
+  "copyright": {
+    "fullStatementRich": {
+      "hin": "<p>© 2019 Bridge Connectivity Solutions. Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>"
+    }
+  }
+}
