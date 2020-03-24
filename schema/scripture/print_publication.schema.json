@@ -7,7 +7,7 @@
     "definitions": {
         "measurementString": {
             "type": "string",
-            "pattern": "^[1-9][0-9]{1,4}mm$"
+            "pattern": "^[1-9][0-9]{0,4}mm$"
         },
         "percentageString": {
             "type": "string",
@@ -15,26 +15,59 @@
         },
         "orientation": {
             "type": "string",
-            "allowedValues": ["portrait", "landscape"]
+            "enum": ["portrait", "landscape"]
         },
         "colorSpace": {
             "type": "string",
-            "allowedValues": ["cmyk", "rgb"]
+            "enum": ["cmyk", "rgb"]
         },
         "fontType": {
             "type": "string",
-            "allowedValues": ["openType", "bitmap", "trueType", "type1"]
+            "enum": ["openType", "bitmap", "trueType", "type1"]
         }
     },
     "properties": {
         "name": {
             "type": "string",
-            "const": "printPublication"
+            "const": "typesetScripture"
         },
         "contentType": {
             "type": "string",
-            "enum": ["pdf", "inDesignTaggedText"]
+            "const": "pdf"
         },
+      "pod": {"type": "boolean"},
+      "pageCount": {"type": "integer", "minimum": 0},
+      "width": {"$ref": "#/definitions/measurementString"},
+      "height": {"$ref": "#/definitions/measurementString"},
+      "scale": {"$ref": "#/definitions/percentageString"},
+      "orientation": {"$ref": "#/definitions/orientation"},
+      "colorSpace": {"$ref": "#/definitions/colorSpace"},
+      "edgeSpace": {
+        "type": "object",
+        "properties": {
+          "top": {"$ref": "#/definitions/measurementString"},
+          "bottom": {"$ref": "#/definitions/measurementString"},
+          "inside": {"$ref": "#/definitions/measurementString"},
+          "outside": {"$ref": "#/definitions/measurementString"}
+        },
+        "additionalProperties": false
+      },
+      "fonts": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/fontType"
+            }
+          ],
+          "additionalItems": false
+        },
+        "additionalItems": false
+      },
         "conventions": {
             "type": "object",
             "additionalProperties": {
@@ -51,26 +84,15 @@
             }
         }
     },
-    "oneOf": [
-        {
-            "properties": {
-                "contentType": {"const": "pdf"},
-                "pod": {"type": "boolean"},
-                "pageCount": {"type": "integer", "minimum": 0},
-                "width": {"$ref": "#/definitions/measurementString"},
-                "height": {"$ref": "#/definitions/measurementString"},
-                "scale": {"$ref": "#/definitions/percentageString"},
-                "orientation": {"$ref": "#/definitions/orientation"}
-            }
-        },
-        {
-            "properties": {
-                "contentType": {"const": "inDesignTaggedText"},
-                "pod": {"const": false}
-            }
-        }
-    ],
-    "$comment": "TODO: unfinished",
-    "required": ["name", "contentType"],
+  "required": [
+    "name",
+    "contentType",
+    "pod",
+    "pageCount",
+    "height",
+    "width",
+    "scale",
+    "colorSpace"
+  ],
     "additionalProperties": false
 }

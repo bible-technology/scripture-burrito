@@ -4,24 +4,29 @@
     "title": "Scripture Burrito Recipe Specs",
     "type": "array",
     "description": "Scripture Burrito recipe specs.",
-    "items": {
-        "type": "object",
-        "properties": {
-            "path": {
-                "$ref": "common.schema.json#/definitions/path"
-            },
-            "name": {
-                "$ref": "common.schema.json#/definitions/localizedText"
-            },
-            "description": {
-                "$ref": "common.schema.json#/definitions/localizedText"
-            },
-            "metadata": {
-                "type": "object"
-            }
-        },
-        "required": [
-            "path"
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/definitions/trimmedText"
+      },
+      "href": {
+        "oneOf": [
+          {
+            "$ref": "common.schema.json#/definitions/path"
+          },
+          {
+            "$ref": "common.schema.json#/definitions/url"
+          }
         ]
-    }
+      },
+      "metadata": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  }
 }

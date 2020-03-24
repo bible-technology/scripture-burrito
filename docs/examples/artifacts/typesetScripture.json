@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "version": "0.2.0",
+    "variant": "source",
+    "generator": {
+      "softwareName": "DBLImport",
+      "softwareVersion": "0.0.0",
+      "userName": "Bev Cope"
+    },
+    "defaultLanguage": "en",
+    "dateCreated": "2018-12-08T12:36:12.329486+00:00",
+    "comments": [
+      "Looking for FrontCover.JPG"
+    ]
+  },
+  "idServers": {
+    "dbl": {
+      "id": "https://thedigitalbiblelibrary.org",
+      "name": {
+        "en": "The Digital Bible Library"
+      }
+    }
+  },
+  "identification": {
+    "systemId": {
+      "dbl": {
+        "id": "7f3540fe4b0576d7",
+        "revision": "1"
+      }
+    },
+    "idServer": "dbl",
+    "name": {
+      "en": "DBL Test Version with DC Local"
+    },
+    "description": {
+      "en": "English: DBL Test Version with DC Local New Testament"
+    },
+    "abbreviation": {
+      "en": "DBLTD"
+    }
+  },
+  "languages": [
+    {
+      "tag": "en",
+      "name": {
+        "en": "English"
+      }
+    }
+  ],
+  "type": {
+    "flavorType": {
+      "name": "scripture",
+      "flavor": {
+        "name": "typesetScripture",
+        "contentType": "pdf",
+        "pod": true,
+        "pageCount": 193,
+        "height": "210mm",
+        "width": "140mm",
+        "scale": "100%",
+        "colorSpace": "cmyk",
+        "edgeSpace": {
+          "top": "5mm",
+          "bottom": "9mm",
+          "inside": "13mm",
+          "outside": "9mm"
+        },
+        "fonts": [
+          [
+            "Times New Roman Regular",
+            "openType"
+          ],
+          [
+            "Times New Roman BoldBold",
+            "openType"
+          ],
+          [
+            "Times New Roman ItalicItalic",
+            "openType"
+          ],
+          [
+            "Segoe UI Symbol Regular",
+            "openType"
+          ]
+        ]
+      },
+      "canonType": [
+        "ot",
+        "nt"
+      ],
+      "canonSpec": {
+        "ot": {
+          "name": "western"
+        },
+        "nt": {
+          "name": "western"
+        }
+      },
+      "currentScope": {}
+    }
+  },
+  "confidentiality": {
+    "metadata": "unrestricted",
+    "source": "private",
+    "publications": "restricted"
+  },
+  "agencies": [
+    {
+      "id": "dbl::54650cfa5117ad690fb05fb6",
+      "roles": [
+        "rightsHolder"
+      ],
+      "url": "http://thedigitalbiblelibrary.org",
+      "name": {
+        "en": "DBL Testing"
+      },
+      "abbr": {
+        "en": "TEST"
+      }
+    },
+    {
+      "id": "dbl::545d2cb0c1fbcec540df3e8d",
+      "roles": [
+        "rightsHolder"
+      ],
+      "url": "http://www.dblipc.org",
+      "name": {
+        "en": "Example Intellectual Property Contributor"
+      },
+      "abbr": {
+        "en": "EIPC"
+      }
+    },
+    {
+      "id": "dbl::54650cd05117ad67b3826e99",
+      "roles": [
+        "content",
+        "publication",
+        "management",
+        "qa"
+      ],
+      "name": {
+        "en": "American Bible Society"
+      }
+    }
+  ],
+  "targetAreas": [
+    {
+      "code": "US",
+      "name": {
+        "en": "United States"
+      }
+    }
+  ],
+  "ingredients": {
+    "release/Inside.pdf": {
+      "checksum": {
+        "md5": "ea6cf3aaab5e87d4844a839f55712a2b"
+      },
+      "mimeType": "application/pdf",
+      "size": 21742731
+    },
+    "release/Cover.pdf": {
+      "checksum": {
+        "md5": "4f885b5395c57b623982fe1db37efbb1"
+      },
+      "mimeType": "application/pdf",
+      "size": 69141
+    },
+    "release/FrontCover.jpg": {
+      "checksum": {
+        "md5": "92b271f5d83ad1cc574276dd1d898854"
+      },
+      "mimeType": "text/plain",
+      "size": 15323
+    },
+    "source/zzzPADBL_2018POD_Source.zip": {
+      "checksum": {
+        "md5": "c7b53b012f49a06dc9c32a17cb5b77be"
+      },
+      "mimeType": "application/zip",
+      "size": 46147024
+    }
+  },
+  "recipeSpecs": [
+    {
+      "id": "p0",
+      "metadata": {
+        "recipe": {
+          "content": [
+            {
+              "type": "element",
+              "ingredient": "release/Inside.pdf"
+            },
+            {
+              "type": "element",
+              "ingredient": "release/Cover.pdf"
+            }
+          ]
+        },
+        "identification": {
+          "name": {
+            "en": "Print bundle"
+          }
+        }
+      }
+    }
+  ],
+  "copyright": {
+    "fullStatementRich": {
+      "en": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>"
+    }
+  }
+}
