@@ -1,15 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/metadata.schema.json",
-    "title": "Scripture Burrito Metadata",
-    "type": "object",
-    "description": "Scripture Burrito root metadata object.",
-    "oneOf": [
-        {
-            "$ref": "source_metadata.schema.json"
-        },
-        {
-            "$ref": "derived_metadata.schema.json"
-        }
-    ]
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/metadata.schema.json",
+  "title": "Scripture Burrito Metadata",
+  "type": "object",
+  "description": "Scripture Burrito root metadata object.",
+  "oneOf": [
+    {
+      "$ref": "source_metadata.schema.json"
+    },
+    {
+      "$ref": "derived_metadata.schema.json"
+    }
+  ]
 }

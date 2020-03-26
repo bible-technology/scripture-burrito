@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/meta_default_language.schema.json",
-    "title": "Scripture Burrito Meta Default Language",
-    "$ref": "common.schema.json#/definitions/languageTag",
-    "description": "The BCP47 code of the language that should be displayed, if a default is required, and for which localization is required in all name fields specified for 'catalog' validation."
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/meta_default_language.schema.json",
+  "title": "Scripture Burrito Meta Default Language",
+  "$ref": "common.schema.json#/definitions/languageTag",
+  "description": "The BCP47 code of the language that should be displayed, if a default is required, and for which localization is required in all name fields specified for 'catalog' validation."
 }

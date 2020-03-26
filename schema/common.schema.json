@@ -1,240 +1,238 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/common.schema.json",
-    "$$target": [
-        "common.schema.json#/definitions/languageTag",
-        "common.schema.json#/definitions/localizedText",
-        "common.schema.json#/definitions/rodCode"
-    ],
-    "title": "Scripture Burrito Common Definitions",
-    "description": "Common definitions for use by other parts of the schema.",
-    "definitions": {
-        "timestamp": {
-            "type": "string",
-            "pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/common.schema.json",
+  "$$target": [
+    "common.schema.json#/definitions/languageTag",
+    "common.schema.json#/definitions/localizedText",
+    "common.schema.json#/definitions/rodCode"
+  ],
+  "title": "Scripture Burrito Common Definitions",
+  "description": "Common definitions for use by other parts of the schema.",
+  "definitions": {
+    "timestamp": {
+      "type": "string",
+      "pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^((http(s)?|ftp)://)[^\\s$]+$",
+      "minLength": 1,
+      "description": "A valid **Uniform Resource Locator**.",
+      "examples": ["https://example.com"]
+    },
+    "xToken": {
+      "type": "string",
+      "pattern": "^x-[a-z][A-za-z0-9]*$",
+      "description": "User-defined token, prefixed with x-"
+    },
+    "idServerLabel": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9\\-]*[a-z0-9]$",
+      "description": "A Label for an ID server (internal to the document)"
+    },
+    "bareId": {
+      "type": "string",
+      "pattern": "^\\S+$",
+      "description": "Opaque system-specific identifier, without prefix."
+    },
+    "prefixedId": {
+      "type": "string",
+      "pattern": "^[0-9a-zA-Z][0-9a-zA-Z\\-]{1,31}::\\S+$",
+      "description": "Opaque system-specific identifier, prefixed with the name of the system as declared in idServers."
+    },
+    "revisionString": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z]([0-9A-Za-z_.:\\-]{0,62}[0-9A-Za-z])?$",
+      "description": "Opaque system-specific revision identifier."
+    },
+    "languageTag": {
+      "type": "string",
+      "pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))$",
+      "minLength": 2,
+      "description": "A valid IETF language tag as specified by BCP 47."
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z]$",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "The upper-case ISO 3166-2 code for the country."
+    },
+    "rodCode": {
+      "type": "string",
+      "pattern": "^[0-9]{5}$",
+      "minLength": 5,
+      "maxLength": 5,
+      "description": "A five-digit code from the Registry of Dialects."
+    },
+    "trimmedText": {
+      "type": "string",
+      "pattern": "^\\S(.*\\S)?$",
+      "description": "A string without surrounding whitespace characters."
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/trimmedText"
+      },
+      "propertyNames": {
+        "$ref": "#/definitions/languageTag"
+      },
+      "minProperties": 1,
+      "description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
+    },
+    "simplifiedXHTML": {
+      "type": "string",
+      "contentMediaType": "text/xml",
+      "minLength": 4,
+      "allOf": [
+        {
+          "$comment": "Check top-level block elements. This is imperfect and is liable to skip over tags if a <li> or nested <blockquote> is present, but fully validating XML using RegEx is impossible, and this suffices for the common case of simple formatted text.",
+          "pattern": "^((<(p|h1|h2|h3)\\s*/>|<p\\s*>([^<]|<[^p])*</p\\s*>|<h1\\s*>([^<]|<[^h])*</h1\\s*>|<h2\\s*>([^<]|<[^h])*</h2\\s*>|<h3\\s*>([^<]|<[^h])*</h3\\s*>|<ol\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ol\\s*>|<ul\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ul\\s*>|<blockquote\\s*>(<(p|h1|h2|h3)\\s*/>|<(p|h[123])\\s*>([^<]|<[^ph])*</(p|h[123])\\s*>|<ol\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ol\\s*>|<ul\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ul\\s*>|<blockquote\\s*>.+</blockquote\\s*>)+</blockquote\\s*>)\\s*)+$"
         },
-        "url": {
-          "type": "string",
-            "pattern": "^((http(s)?|ftp)://)[^\\s$]+$",
-            "minLength": 1,
-            "description": "A valid **Uniform Resource Locator**.",
-            "examples": [
-                "https://example.com"
-            ]
-        },
-        "xToken": {
-            "type": "string",
-            "pattern": "^x-[a-z][A-za-z0-9]*$",
-            "description": "User-defined token, prefixed with x-"
-        },
-        "idServerLabel": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9\\-]*[a-z0-9]$",
-            "description": "A Label for an ID server (internal to the document)"
-        },
-        "bareId": {
-            "type": "string",
-            "pattern": "^\\S+$",
-            "description": "Opaque system-specific identifier, without prefix."
-        },
-        "prefixedId": {
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z][0-9a-zA-Z\\-]{1,31}::\\S+$",
-            "description": "Opaque system-specific identifier, prefixed with the name of the system as declared in idServers."
-        },
-        "revisionString": {
-            "type": "string",
-            "pattern": "^[0-9A-Za-z]([0-9A-Za-z_.:\\-]{0,62}[0-9A-Za-z])?$",
-            "description": "Opaque system-specific revision identifier."
-        },
-        "languageTag": {
-            "type": "string",
-            "pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))$",
-            "minLength": 2,
-            "description": "A valid IETF language tag as specified by BCP 47."
-        },
-        "countryCode": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z]$",
-            "minLength": 2,
-            "maxLength": 2,
-            "description": "The upper-case ISO 3166-2 code for the country."
-        },
-        "rodCode": {
-            "type": "string",
-            "pattern": "^[0-9]{5}$",
-            "minLength": 5,
-            "maxLength": 5,
-            "description": "A five-digit code from the Registry of Dialects."
-        },
-        "trimmedText": {
-            "type": "string",
-            "pattern": "^\\S(.*\\S)?$",
-            "description": "A string without surrounding whitespace characters."
-        },
-        "localizedText": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "#/definitions/trimmedText"
-            },
-            "propertyNames": {
-                "$ref": "#/definitions/languageTag"
-            },
-            "minProperties": 1,
-            "description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
-        },
-        "simplifiedXHTML": {
-            "type": "string",
-            "contentMediaType": "text/xml",
-            "minLength": 4,
-            "allOf": [
-                {
-                    "$comment": "Check top-level block elements. This is imperfect and is liable to skip over tags if a <li> or nested <blockquote> is present, but fully validating XML using RegEx is impossible, and this suffices for the common case of simple formatted text.",
-                    "pattern": "^((<(p|h1|h2|h3)\\s*/>|<p\\s*>([^<]|<[^p])*</p\\s*>|<h1\\s*>([^<]|<[^h])*</h1\\s*>|<h2\\s*>([^<]|<[^h])*</h2\\s*>|<h3\\s*>([^<]|<[^h])*</h3\\s*>|<ol\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ol\\s*>|<ul\\s*>\\s*((<li\\s*/>|<li\\s*>.*</li\\s*>)\\s*)+</ul\\s*>|<blockquote\\s*>(<(p|h1|h2|h3)\\s*/>|<(p|h[123])\\s*>([^<]|<[^ph])*</(p|h[123])\\s*>|<ol\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ol\\s*>|<ul\\s*>(<li\\s*/>|<li\\s*>.*</li\\s*>)+</ul\\s*>|<blockquote\\s*>.+</blockquote\\s*>)+</blockquote\\s*>)\\s*)+$"
-                },
-                {
-                    "$comment": "Ensure that no invalid tags are present, check inline markup in <p> and <h#> (noting that <li> may contain pretty much anything), and prevent improper nesting of <li> tags.",
-                    "pattern": "^([^<]|<(p|h[123]|a|br|strong|b|em|i)\\s*/>|</?(a|br|strong|b|em|i|blockquote)\\s*>|<(p|h[123])\\s*>([^<]|<img(\\s+(alt|src)=(\"[^<\"]*\"|'[^<']*'))+\\s*(/>|>\\s*</img\\s*>)|<a\\s+href=(\"[^<\"]+\"|'[^<']+')\\s*/?>|</?(a|br|strong|b|em|i)\\s*/?>)*</(p|h[123])\\s*>|<[ou]l\\s*>(\\s|<li\\s*/>)*<li\\s*/?>|</li\\s*>(\\s|<li\\s*/>)*(<li\\s*>|</[ou]l\\s*>))+$"
-                }
-            ],
-            "description": "A rich text string specified in a limited subset of XHTML."
-        },
-        "localizedRichText": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "#/definitions/simplifiedXHTML"
-            },
-            "propertyNames": {
-                "$ref": "#/definitions/languageTag"
-            },
-            "minProperties": 1,
-            "description": "A simplified XHTML string specified in one or multiple languages, indexed by IETF language tag."
-        },
-        "bookId": {
-            "type": "string",
-            "pattern": "^[A-Z0-9]{3}$",
-            "minLength": 3,
-            "maxLength": 3,
-            "enum": [
-                "GEN",
-                "EXO",
-                "LEV",
-                "NUM",
-                "DEU",
-                "JOS",
-                "JDG",
-                "RUT",
-                "1SA",
-                "2SA",
-                "1KI",
-                "2KI",
-                "1CH",
-                "2CH",
-                "EZR",
-                "NEH",
-                "EST",
-                "JOB",
-                "PSA",
-                "PRO",
-                "ECC",
-                "SNG",
-                "ISA",
-                "JER",
-                "LAM",
-                "EZK",
-                "DAN",
-                "HOS",
-                "JOL",
-                "AMO",
-                "OBA",
-                "JON",
-                "MIC",
-                "NAM",
-                "HAB",
-                "ZEP",
-                "HAG",
-                "ZEC",
-                "MAL",
-                "MAT",
-                "MRK",
-                "LUK",
-                "JHN",
-                "ACT",
-                "ROM",
-                "1CO",
-                "2CO",
-                "GAL",
-                "EPH",
-                "PHP",
-                "COL",
-                "1TH",
-                "2TH",
-                "1TI",
-                "2TI",
-                "TIT",
-                "PHM",
-                "HEB",
-                "JAS",
-                "1PE",
-                "2PE",
-                "1JN",
-                "2JN",
-                "3JN",
-                "JUD",
-                "REV",
-                "TOB",
-                "JDT",
-                "ESG",
-                "WIS",
-                "SIR",
-                "BAR",
-                "LJE",
-                "S3Y",
-                "SUS",
-                "BEL",
-                "1MA",
-                "2MA",
-                "3MA",
-                "4MA",
-                "1ES",
-                "2ES",
-                "MAN",
-                "PS2",
-                "ODA",
-                "PSS",
-                "JSA",
-                "JDB",
-                "TBS",
-                "SST",
-                "DNT",
-                "BLT",
-                "EZA",
-                "5EZ",
-                "6EZ",
-                "DAG",
-                "PS3",
-                "2BA",
-                "LBA",
-                "JUB",
-                "ENO",
-                "1MQ",
-                "2MQ",
-                "3MQ",
-                "REP",
-                "4BA",
-                "LAO"
-            ],
-            "description": "A standard book code consisting of three uppercase alphanumerics."
-        },
-        "path": {
-            "type": "string",
-            "pattern": "^[^\\/:?*\"><|]+(/[^\\/:?*\"><|]+)*$",
-            "description": "A file path, delimited by forward slashes."
-        },
-        "mimeType": {
-            "type": "string",
-            "pattern": "^[\\-a-z0-9]+/[\\-a-z0-9+]+$",
-            "description": "An IANA media type (also known as MIME type)"
+        {
+          "$comment": "Ensure that no invalid tags are present, check inline markup in <p> and <h#> (noting that <li> may contain pretty much anything), and prevent improper nesting of <li> tags.",
+          "pattern": "^([^<]|<(p|h[123]|a|br|strong|b|em|i)\\s*/>|</?(a|br|strong|b|em|i|blockquote)\\s*>|<(p|h[123])\\s*>([^<]|<img(\\s+(alt|src)=(\"[^<\"]*\"|'[^<']*'))+\\s*(/>|>\\s*</img\\s*>)|<a\\s+href=(\"[^<\"]+\"|'[^<']+')\\s*/?>|</?(a|br|strong|b|em|i)\\s*/?>)*</(p|h[123])\\s*>|<[ou]l\\s*>(\\s|<li\\s*/>)*<li\\s*/?>|</li\\s*>(\\s|<li\\s*/>)*(<li\\s*>|</[ou]l\\s*>))+$"
         }
+      ],
+      "description": "A rich text string specified in a limited subset of XHTML."
+    },
+    "localizedRichText": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/simplifiedXHTML"
+      },
+      "propertyNames": {
+        "$ref": "#/definitions/languageTag"
+      },
+      "minProperties": 1,
+      "description": "A simplified XHTML string specified in one or multiple languages, indexed by IETF language tag."
+    },
+    "bookId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{3}$",
+      "minLength": 3,
+      "maxLength": 3,
+      "enum": [
+        "GEN",
+        "EXO",
+        "LEV",
+        "NUM",
+        "DEU",
+        "JOS",
+        "JDG",
+        "RUT",
+        "1SA",
+        "2SA",
+        "1KI",
+        "2KI",
+        "1CH",
+        "2CH",
+        "EZR",
+        "NEH",
+        "EST",
+        "JOB",
+        "PSA",
+        "PRO",
+        "ECC",
+        "SNG",
+        "ISA",
+        "JER",
+        "LAM",
+        "EZK",
+        "DAN",
+        "HOS",
+        "JOL",
+        "AMO",
+        "OBA",
+        "JON",
+        "MIC",
+        "NAM",
+        "HAB",
+        "ZEP",
+        "HAG",
+        "ZEC",
+        "MAL",
+        "MAT",
+        "MRK",
+        "LUK",
+        "JHN",
+        "ACT",
+        "ROM",
+        "1CO",
+        "2CO",
+        "GAL",
+        "EPH",
+        "PHP",
+        "COL",
+        "1TH",
+        "2TH",
+        "1TI",
+        "2TI",
+        "TIT",
+        "PHM",
+        "HEB",
+        "JAS",
+        "1PE",
+        "2PE",
+        "1JN",
+        "2JN",
+        "3JN",
+        "JUD",
+        "REV",
+        "TOB",
+        "JDT",
+        "ESG",
+        "WIS",
+        "SIR",
+        "BAR",
+        "LJE",
+        "S3Y",
+        "SUS",
+        "BEL",
+        "1MA",
+        "2MA",
+        "3MA",
+        "4MA",
+        "1ES",
+        "2ES",
+        "MAN",
+        "PS2",
+        "ODA",
+        "PSS",
+        "JSA",
+        "JDB",
+        "TBS",
+        "SST",
+        "DNT",
+        "BLT",
+        "EZA",
+        "5EZ",
+        "6EZ",
+        "DAG",
+        "PS3",
+        "2BA",
+        "LBA",
+        "JUB",
+        "ENO",
+        "1MQ",
+        "2MQ",
+        "3MQ",
+        "REP",
+        "4BA",
+        "LAO"
+      ],
+      "description": "A standard book code consisting of three uppercase alphanumerics."
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^[^\\/:?*\"><|]+(/[^\\/:?*\"><|]+)*$",
+      "description": "A file path, delimited by forward slashes."
+    },
+    "mimeType": {
+      "type": "string",
+      "pattern": "^[\\-a-z0-9]+/[\\-a-z0-9+]+$",
+      "description": "An IANA media type (also known as MIME type)"
     }
+  }
 }

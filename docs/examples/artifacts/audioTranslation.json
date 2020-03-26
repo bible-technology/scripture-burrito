@@ -53,16 +53,15 @@
       "flavor": {
         "name": "audioTranslation",
         "dramatization": "singleVoice",
-        "formats": [
-          {
-            "id": "mp3",
+        "formats": {
+          "format1": {
             "compression": "mp3",
             "trackConfiguration": "2/0 (Stereo)",
             "bitRate": 128000,
             "bitDepth": 16,
             "samplingRate": 44100
           }
-        ]
+        }
       },
       "canonType": [
         "ot",

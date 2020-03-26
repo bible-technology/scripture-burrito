@@ -1,9 +1,9 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/recipe_specs.schema.json",
-    "title": "Scripture Burrito Recipe Specs",
-    "type": "array",
-    "description": "Scripture Burrito recipe specs.",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/recipe_specs.schema.json",
+  "title": "Scripture Burrito Recipe Specs",
+  "type": "array",
+  "description": "Scripture Burrito recipe specs.",
   "items": {
     "type": "object",
     "properties": {
@@ -24,9 +24,7 @@
         "type": "object"
       }
     },
-    "required": [
-      "id"
-    ],
+    "required": ["id"],
     "additionalProperties": false
   }
 }
