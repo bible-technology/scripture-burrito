@@ -1,52 +1,47 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/canon_type.schema.json",
-    "title": "Scripture Burrito Canon Type",
-    "type": "array",
-    "items": {
-        "type": "string",
-        "enum": [
-            "ot",
-            "otdc",
-            "dc",
-            "nt"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/canon_type.schema.json",
+  "title": "Scripture Burrito Canon Type",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": ["ot", "otdc", "dc", "nt"]
+  },
+  "allOf": [
+    {
+      "not": {
+        "allOf": [
+          {
+            "contains": {
+              "const": "ot"
+            }
+          },
+          {
+            "contains": {
+              "const": "otdc"
+            }
+          }
         ]
+      }
     },
-    "allOf": [
-        {
-            "not": {
-                "allOf": [
-                    {
-                        "contains": {
-                            "const": "ot"
-                        }
-                    },
-                    {
-                        "contains": {
-                            "const": "otdc"
-                        }
-                    }
-                ]
+    {
+      "not": {
+        "allOf": [
+          {
+            "contains": {
+              "const": "dc"
             }
-        },
-        {
-            "not": {
-                "allOf": [
-                    {
-                        "contains": {
-                            "const": "dc"
-                        }
-                    },
-                    {
-                        "contains": {
-                            "const": "otdc"
-                        }
-                    }
-                ]
+          },
+          {
+            "contains": {
+              "const": "otdc"
             }
-        }
-    ],
-    "minItems": 1,
-    "maxItems": 3,
-    "uniqueItems": true
+          }
+        ]
+      }
+    }
+  ],
+  "minItems": 1,
+  "maxItems": 3,
+  "uniqueItems": true
 }

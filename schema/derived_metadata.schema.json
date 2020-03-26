@@ -1,81 +1,67 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/derived_metadata.schema.json",
-    "title": "Scripture Burrito Metadata (Derived)",
-    "type": "object",
-    "description": "Scripture Burrito derived variant root.",
-    "properties": {
-        "meta": {
-            "$ref": "derived_meta.schema.json"
-        },
-        "idServers": {
-            "$ref": "id_servers.schema.json"
-        },
-        "identification": {
-            "$ref": "identification.schema.json"
-        },
-        "confidentiality": {
-            "$ref": "confidentiality.schema.json"
-        },
-        "type": {
-            "$ref": "type.schema.json"
-        },
-        "relationships": {
-            "$ref": "relationships.schema.json"
-        },
-        "languages": {
-            "$ref": "languages.schema.json"
-        },
-        "targetAreas": {
-            "$ref": "target_areas.schema.json"
-        },
-        "agencies": {
-            "$ref": "agencies.schema.json"
-        },
-        "copyright": {
-            "$ref": "copyright.schema.json"
-        },
-        "promotion": {
-            "$ref": "promotion.schema.json"
-        },
-        "ingredients": {
-            "$ref": "ingredients.schema.json"
-        },
-        "names": {
-            "$ref": "names.schema.json"
-        },
-        "recipe": {
-            "$ref": "recipe.schema.json"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/derived_metadata.schema.json",
+  "title": "Scripture Burrito Metadata (Derived)",
+  "type": "object",
+  "description": "Scripture Burrito derived variant root.",
+  "properties": {
+    "meta": {
+      "$ref": "derived_meta.schema.json"
     },
-    "required": [
-        "meta",
-        "idServers",
-        "identification",
-        "confidentiality",
-        "copyright",
-        "type",
-        "recipe"
-    ],
-    "additionalProperties": false,
-    "if": {
-        "properties": {
-            "type": {
-                "properties": {
-                    "flavorType": {
-                        "enum": [
-                            "scripture",
-                            "gloss"
-                        ]
-                    }
-                }
-            }
-        }
+    "idServers": {
+      "$ref": "id_servers.schema.json"
     },
-    "then": {
-        "required": [
-            "languages",
-            "names"
-        ]
+    "identification": {
+      "$ref": "identification.schema.json"
+    },
+    "confidentiality": {
+      "$ref": "confidentiality.schema.json"
+    },
+    "type": {
+      "$ref": "type.schema.json"
+    },
+    "relationships": {
+      "$ref": "relationships.schema.json"
+    },
+    "languages": {
+      "$ref": "languages.schema.json"
+    },
+    "targetAreas": {
+      "$ref": "target_areas.schema.json"
+    },
+    "agencies": {
+      "$ref": "agencies.schema.json"
+    },
+    "copyright": {
+      "$ref": "copyright.schema.json"
+    },
+    "promotion": {
+      "$ref": "promotion.schema.json"
+    },
+    "ingredients": {
+      "$ref": "ingredients.schema.json"
+    },
+    "names": {
+      "$ref": "names.schema.json"
+    },
+    "recipe": {
+      "$ref": "recipe.schema.json"
     }
+  },
+  "required": ["meta", "idServers", "identification", "confidentiality", "copyright", "type", "recipe"],
+  "additionalProperties": false,
+  "if": {
+    "properties": {
+      "type": {
+        "properties": {
+          "flavorType": {
+            "enum": ["scripture", "gloss"]
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "required": ["languages", "names"]
+  }
 }
