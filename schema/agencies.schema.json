@@ -1,11 +1,11 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/agencies.schema.json",
-    "title": "Scripture Burrito Agencies",
-    "type": "array",
-    "items": {
-        "$ref": "agency.schema.json"
-    },
-    "minItems": 1,
-    "description": "A list of agencies involved with the contents of the burrito or the work it is derived from."
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/agencies.schema.json",
+  "title": "Scripture Burrito Agencies",
+  "type": "array",
+  "items": {
+    "$ref": "agency.schema.json"
+  },
+  "minItems": 1,
+  "description": "A list of agencies involved with the contents of the burrito or the work it is derived from."
 }

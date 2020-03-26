@@ -1,11 +1,11 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/relationships.schema.json",
-    "title": "Scripture Burrito Relationships",
-    "type": "array",
-    "items": {
-        "$ref": "relationship.schema.json"
-    },
-    "minItems": 1,
-    "description": "Describes a relationship to another burrito that may be obtained from an indicated server."
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/relationships.schema.json",
+  "title": "Scripture Burrito Relationships",
+  "type": "array",
+  "items": {
+    "$ref": "relationship.schema.json"
+  },
+  "minItems": 1,
+  "description": "Describes a relationship to another burrito that may be obtained from an indicated server."
 }

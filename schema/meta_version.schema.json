@@ -1,8 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/meta_version.schema.json",
-    "title": "Scripture Burrito Meta Version",
-    "type": "string",
-    "pattern": "^[0-9]+(\\.[0-9]+)*$",
-    "description": "Version of the Scripture Burrito specification this file follows."
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://burrito.bible/schema/meta_version.schema.json",
+  "title": "Scripture Burrito Meta Version",
+  "type": "string",
+  "pattern": "^[0-9]+(\\.[0-9]+)*$",
+  "description": "Version of the Scripture Burrito specification this file follows."
 }
