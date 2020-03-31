@@ -9,5 +9,5 @@
             "const": "versification"
         }
     },
-    "additionalProperties": true
+    "additionalProperties": false
 }

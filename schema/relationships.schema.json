@@ -7,5 +7,6 @@
         "$ref": "relationship.schema.json"
     },
     "minItems": 1,
+    "additionalItems": false,
     "description": "Describes a relationship to another burrito that may be obtained from an indicated server."
 }
