@@ -1,192 +1,192 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/canon_constraints.schema.json",
-  "$$target": "canon_constraints.schema.json",
-  "title": "Canon Constraints",
-  "type": "object",
-  "definitions": {
-    "OTConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "contains": {
-              "const": "OT"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/canon_constraints.schema.json",
+    "$$target": "canon_constraints.schema.json",
+    "title": "Canon Constraints",
+    "type": "object",
+    "definitions": {
+        "OTConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "contains": {
+                            "const": "OT"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "canonSpec": {
+                        "required": ["OT"]
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "canonSpec": {
+                        "not": {
+                            "required": ["OT"]
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "canonSpec": {
-            "required": ["OT"]
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "canonSpec": {
-            "not": {
-              "required": ["OT"]
+        },
+        "OTPlusConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "contains": {
+                            "const": "OT+"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "canonSpec": {
+                        "required": ["OT+"]
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "canonSpec": {
+                        "not": {
+                            "required": ["OT+"]
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    },
-    "OTPlusConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "contains": {
-              "const": "OT+"
+        },
+        "DCConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "contains": {
+                            "const": "DC"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "canonSpec": {
+                        "required": ["DC"]
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "canonSpec": {
+                        "not": {
+                            "required": ["DC"]
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "canonSpec": {
-            "required": ["OT+"]
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "canonSpec": {
-            "not": {
-              "required": ["OT+"]
+        },
+        "NTConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "contains": {
+                            "const": "NT"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "canonSpec": {
+                        "required": ["NT"]
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "canonSpec": {
+                        "not": {
+                            "required": ["NT"]
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    },
-    "DCConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "contains": {
-              "const": "DC"
+        },
+        "OTContraint2": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "const": ["OT"]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "bookScope": {
+                        "propertyNames": {
+                            "$ref": "canon_spec.schema.json#/definitions/bookOT"
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "canonSpec": {
-            "required": ["DC"]
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "canonSpec": {
-            "not": {
-              "required": ["DC"]
+        },
+        "OTDCConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "enum": [["OT+"], ["OT", "DC"], ["DC", "OT"]]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "bookScope": {
+                        "propertyNames": {
+                            "$ref": "canon_spec.schema.json#/definitions/bookOTDC"
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    },
-    "NTConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "contains": {
-              "const": "NT"
+        },
+        "NTConstraint2": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "const": ["NT"]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "bookScope": {
+                        "propertyNames": {
+                            "$ref": "canon_spec.schema.json#/definitions/bookNT"
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "canonSpec": {
-            "required": ["NT"]
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "canonSpec": {
-            "not": {
-              "required": ["NT"]
+        },
+        "OTNTConstraint": {
+            "if": {
+                "properties": {
+                    "canonType": {
+                        "enum": [
+                            ["OT", "NT"],
+                            ["NT", "OT"]
+                        ]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "bookScope": {
+                        "propertyNames": {
+                            "$ref": "canon_spec.schema.json#/definitions/bookOTNT"
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    },
-    "OTContraint2": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "const": ["OT"]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "bookScope": {
-            "propertyNames": {
-              "$ref": "canon_spec.schema.json#/definitions/bookOT"
-            }
-          }
-        }
-      }
-    },
-    "OTDCConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "enum": [["OT+"], ["OT", "DC"], ["DC", "OT"]]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "bookScope": {
-            "propertyNames": {
-              "$ref": "canon_spec.schema.json#/definitions/bookOTDC"
-            }
-          }
-        }
-      }
-    },
-    "NTConstraint2": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "const": ["NT"]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "bookScope": {
-            "propertyNames": {
-              "$ref": "canon_spec.schema.json#/definitions/bookNT"
-            }
-          }
-        }
-      }
-    },
-    "OTNTConstraint": {
-      "if": {
-        "properties": {
-          "canonType": {
-            "enum": [
-              ["OT", "NT"],
-              ["NT", "OT"]
-            ]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "bookScope": {
-            "propertyNames": {
-              "$ref": "canon_spec.schema.json#/definitions/bookOTNT"
-            }
-          }
-        }
-      }
     }
-  }
 }

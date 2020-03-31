@@ -1,100 +1,100 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/ingredient.schema.json",
-  "title": "Scripture Burrito Ingredient",
-  "type": "object",
-  "description": "Describes an individual ingredient, which is a file contained within the burrito.",
-  "properties": {
-    "size": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "The number of bytes that this ingredient takes up on disk."
-    },
-    "mimeType": {
-      "$ref": "common.schema.json#/definitions/mimeType"
-    },
-    "checksum": {
-      "type": "object",
-      "properties": {
-        "md5": {
-          "type": "string",
-          "pattern": "^[a-f0-9]{32}$"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredient.schema.json",
+    "title": "Scripture Burrito Ingredient",
+    "type": "object",
+    "description": "Describes an individual ingredient, which is a file contained within the burrito.",
+    "properties": {
+        "size": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "The number of bytes that this ingredient takes up on disk."
         },
-        "sha3-256": {
-          "type": "string",
-          "pattern": "^[a-f0-9]{64}$"
+        "mimeType": {
+            "$ref": "common.schema.json#/definitions/mimeType"
         },
-        "sha3-512": {
-          "type": "string",
-          "pattern": "^[a-f0-9]{128}$"
+        "checksum": {
+            "type": "object",
+            "properties": {
+                "md5": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{32}$"
+                },
+                "sha3-256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "sha3-512": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{128}$"
+                }
+            },
+            "required": ["md5"],
+            "maxProperties": 2,
+            "additionalProperties": false
+        },
+        "scope": {
+            "$ref": "scope.schema.json"
+        },
+        "role": {
+            "type": "string",
+            "anyOf": [
+                {
+                    "description": "A peripheral name, derived from the USFM 3 specification, eg \"maps\"",
+                    "enum": [
+                        "abbreviations",
+                        "alphacontents",
+                        "chron",
+                        "cnc",
+                        "contents",
+                        "cover",
+                        "foreword",
+                        "glo",
+                        "halftitle",
+                        "imprimatur",
+                        "lxxquotes",
+                        "maps",
+                        "measures",
+                        "ndx",
+                        "preface",
+                        "promo",
+                        "pubdata",
+                        "spine",
+                        "tdx",
+                        "title"
+                    ]
+                },
+                {
+                    "pattern": "^int(bible|dc|epistles|gospels|hist|nt|ot|pent|poetry|prophecy)$"
+                },
+                {
+                    "description": "int<bookCode>, eg \"intMAT\", to denote the introduction to a book.",
+                    "pattern": "^int(GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)$"
+                },
+                {
+                    "enum": ["printBody", "printCover", "printThumbnail", "printFlowable"]
+                },
+                {
+                    "enum": ["timing", "credits"]
+                },
+                {
+                    "pattern": "^(name|sign|concept|place)(\\s.*\\S)?$"
+                }
+            ]
         }
-      },
-      "required": ["md5"],
-      "maxProperties": 2,
-      "additionalProperties": false
     },
-    "scope": {
-      "$ref": "scope.schema.json"
-    },
-    "role": {
-      "type": "string",
-      "anyOf": [
+    "required": ["size", "mimeType"],
+    "additionalProperties": false,
+    "allOf": [
         {
-          "description": "A peripheral name, derived from the USFM 3 specification, eg \"maps\"",
-          "enum": [
-            "abbreviations",
-            "alphacontents",
-            "chron",
-            "cnc",
-            "contents",
-            "cover",
-            "foreword",
-            "glo",
-            "halftitle",
-            "imprimatur",
-            "lxxquotes",
-            "maps",
-            "measures",
-            "ndx",
-            "preface",
-            "promo",
-            "pubdata",
-            "spine",
-            "tdx",
-            "title"
-          ]
-        },
-        {
-          "pattern": "^int(bible|dc|epistles|gospels|hist|nt|ot|pent|poetry|prophecy)$"
-        },
-        {
-          "description": "int<bookCode>, eg \"intMAT\", to denote the introduction to a book.",
-          "pattern": "^int(GEN|EXO|LEV|NUM|DEU|JOS|JDG|RUT|1SA|2SA|1KI|2KI|1CH|2CH|EZR|NEH|EST|JOB|PSA|PRO|ECC|SNG|ISA|JER|LAM|EZK|DAN|HOS|JOL|AMO|OBA|JON|MIC|NAM|HAB|ZEP|HAG|ZEC|MAL|MAT|MRK|LUK|JHN|ACT|ROM|1CO|2CO|GAL|EPH|PHP|COL|1TH|2TH|1TI|2TI|TIT|PHM|HEB|JAS|1PE|2PE|1JN|2JN|3JN|JUD|REV|TOB|JDT|ESG|WIS|SIR|BAR|LJE|S3Y|SUS|BEL|1MA|2MA|3MA|4MA|1ES|2ES|MAN|PS2|ODA|PSS|JSA|JDB|TBS|SST|DNT|BLT|EZA|5EZ|6EZ|DAG|PS3|2BA|LBA|JUB|ENO|1MQ|2MQ|3MQ|REP|4BA|LAO)$"
-        },
-        {
-          "enum": ["printBody", "printCover", "printThumbnail", "printFlowable"]
-        },
-        {
-          "enum": ["timing", "credits"]
-        },
-        {
-          "pattern": "^(name|sign|concept|place)(\\s.*\\S)?$"
+            "if": {
+                "required": ["scope"]
+            },
+            "then": {
+                "not": {
+                    "required": ["role"]
+                }
+            }
         }
-      ]
-    }
-  },
-  "required": ["size", "mimeType"],
-  "additionalProperties": false,
-  "allOf": [
-    {
-      "if": {
-        "required": ["scope"]
-      },
-      "then": {
-        "not": {
-          "required": ["role"]
-        }
-      }
-    }
-  ]
+    ]
 }

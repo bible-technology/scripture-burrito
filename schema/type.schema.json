@@ -1,188 +1,188 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/type.schema.json",
-  "$$target": "type.schema.json",
-  "title": "Type",
-  "type": "object",
-  "description": "Contains properties describing the burrito flavor type.",
-  "oneOf": [
-    {
-      "properties": {
-        "flavorType": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "const": "scripture"
-            },
-            "flavor": {
-              "type": "object",
-              "oneOf": [
-                {
-                  "$ref": "scripture/text_translation.schema.json"
-                },
-                {
-                  "$ref": "scripture/audio_translation.schema.json"
-                },
-                {
-                  "$ref": "scripture/print_publication.schema.json"
-                },
-                {
-                  "$ref": "scripture/braille_scripture_publication.schema.json"
-                },
-                {
-                  "$ref": "scripture/sign_language_video_translation.schema.json"
-                },
-                {
-                  "$ref": "x_flavor.schema.json"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/type.schema.json",
+    "$$target": "type.schema.json",
+    "title": "Type",
+    "type": "object",
+    "description": "Contains properties describing the burrito flavor type.",
+    "oneOf": [
+        {
+            "properties": {
+                "flavorType": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "const": "scripture"
+                        },
+                        "flavor": {
+                            "type": "object",
+                            "oneOf": [
+                                {
+                                    "$ref": "scripture/text_translation.schema.json"
+                                },
+                                {
+                                    "$ref": "scripture/audio_translation.schema.json"
+                                },
+                                {
+                                    "$ref": "scripture/print_publication.schema.json"
+                                },
+                                {
+                                    "$ref": "scripture/braille_scripture_publication.schema.json"
+                                },
+                                {
+                                    "$ref": "scripture/sign_language_video_translation.schema.json"
+                                },
+                                {
+                                    "$ref": "x_flavor.schema.json"
+                                }
+                            ]
+                        },
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
+                        },
+                        "canonType": {
+                            "$ref": "canon_type.schema.json"
+                        },
+                        "canonSpec": {
+                            "$ref": "canon_spec.schema.json"
+                        }
+                    },
+                    "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
+                    "additionalProperties": false
                 }
-              ]
-            },
-            "currentScope": {
-              "$ref": "scope.schema.json"
-            },
-            "canonType": {
-              "$ref": "canon_type.schema.json"
-            },
-            "canonSpec": {
-              "$ref": "canon_spec.schema.json"
             }
-          },
-          "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
-          "additionalProperties": false
-        }
-      }
-    },
-    {
-      "properties": {
-        "flavorType": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "const": "gloss"
-            },
-            "flavor": {
-              "type": "object",
-              "oneOf": [
-                {
-                  "$ref": "gloss/text_stories.schema.json"
-                },
-                {
-                  "$ref": "x_flavor.schema.json"
+        },
+        {
+            "properties": {
+                "flavorType": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "const": "gloss"
+                        },
+                        "flavor": {
+                            "type": "object",
+                            "oneOf": [
+                                {
+                                    "$ref": "gloss/text_stories.schema.json"
+                                },
+                                {
+                                    "$ref": "x_flavor.schema.json"
+                                }
+                            ]
+                        },
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
+                        },
+                        "canonType": {
+                            "$ref": "canon_type.schema.json"
+                        },
+                        "canonSpec": {
+                            "$ref": "canon_spec.schema.json"
+                        }
+                    },
+                    "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
+                    "additionalProperties": false
                 }
-              ]
-            },
-            "currentScope": {
-              "$ref": "scope.schema.json"
-            },
-            "canonType": {
-              "$ref": "canon_type.schema.json"
-            },
-            "canonSpec": {
-              "$ref": "canon_spec.schema.json"
             }
-          },
-          "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
-          "additionalProperties": false
-        }
-      }
-    },
-    {
-      "properties": {
-        "flavorType": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "const": "parascriptural"
-            },
-            "flavor": {
-              "type": "object",
-              "oneOf": [
-                {
-                  "$ref": "parascriptural/word_alignment.schema.json"
-                },
-                {
-                  "$ref": "x_flavor.schema.json"
+        },
+        {
+            "properties": {
+                "flavorType": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "const": "parascriptural"
+                        },
+                        "flavor": {
+                            "type": "object",
+                            "oneOf": [
+                                {
+                                    "$ref": "parascriptural/word_alignment.schema.json"
+                                },
+                                {
+                                    "$ref": "x_flavor.schema.json"
+                                }
+                            ]
+                        },
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
+                        },
+                        "canonType": {
+                            "$ref": "canon_type.schema.json"
+                        },
+                        "canonSpec": {
+                            "$ref": "canon_spec.schema.json"
+                        }
+                    },
+                    "required": ["name", "flavor"],
+                    "additionalProperties": false
                 }
-              ]
-            },
-            "currentScope": {
-              "$ref": "scope.schema.json"
-            },
-            "canonType": {
-              "$ref": "canon_type.schema.json"
-            },
-            "canonSpec": {
-              "$ref": "canon_spec.schema.json"
             }
-          },
-          "required": ["name", "flavor"],
-          "additionalProperties": false
-        }
-      }
-    },
-    {
-      "properties": {
-        "flavorType": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "const": "peripheral"
-            },
-            "flavor": {
-              "type": "object",
-              "oneOf": [
-                {
-                  "$ref": "peripheral/versification.schema.json"
-                },
-                {
-                  "$ref": "x_flavor.schema.json"
+        },
+        {
+            "properties": {
+                "flavorType": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "const": "peripheral"
+                        },
+                        "flavor": {
+                            "type": "object",
+                            "oneOf": [
+                                {
+                                    "$ref": "peripheral/versification.schema.json"
+                                },
+                                {
+                                    "$ref": "x_flavor.schema.json"
+                                }
+                            ]
+                        },
+                        "currentScope": {
+                            "$ref": "scope.schema.json"
+                        },
+                        "canonType": {
+                            "$ref": "canon_type.schema.json"
+                        },
+                        "canonSpec": {
+                            "$ref": "canon_spec.schema.json"
+                        }
+                    },
+                    "required": ["name", "flavor"],
+                    "additionalProperties": false
                 }
-              ]
-            },
-            "currentScope": {
-              "$ref": "scope.schema.json"
-            },
-            "canonType": {
-              "$ref": "canon_type.schema.json"
-            },
-            "canonSpec": {
-              "$ref": "canon_spec.schema.json"
             }
-          },
-          "required": ["name", "flavor"],
-          "additionalProperties": false
         }
-      }
-    }
-  ],
-  "allOf": [
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/OTPlusConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/DCConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/NTConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/OTDCConstraint"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/NTConstraint2"
-    },
-    {
-      "$ref": "canon_constraints.schema.json#/definitions/OTNTConstraint"
-    }
-  ]
+    ],
+    "allOf": [
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/OTPlusConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/DCConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/OTDCConstraint"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint2"
+        },
+        {
+            "$ref": "canon_constraints.schema.json#/definitions/OTNTConstraint"
+        }
+    ]
 }

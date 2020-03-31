@@ -1,22 +1,22 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/id_servers.schema.json",
-  "title": "Scripture Burrito idServers",
-  "type": "object",
-  "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
-  "additionalProperties": {
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/id_servers.schema.json",
+    "title": "Scripture Burrito idServers",
     "type": "object",
-    "properties": {
-      "id": {
-        "$ref": "common.schema.json#/definitions/url"
-      },
-      "name": {
-        "$ref": "common.schema.json#/definitions/localizedText"
-      }
-    },
-    "propertyNames": {
-      "$ref": "common.schema.json#/definitions/idServerLabel"
-    },
-    "minItems": 1
-  }
+    "description": "Declares one or more identity servers which may later be referred to using identifier prefixes.",
+    "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "$ref": "common.schema.json#/definitions/url"
+            },
+            "name": {
+                "$ref": "common.schema.json#/definitions/localizedText"
+            }
+        },
+        "propertyNames": {
+            "$ref": "common.schema.json#/definitions/idServerLabel"
+        },
+        "minItems": 1
+    }
 }

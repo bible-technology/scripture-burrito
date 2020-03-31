@@ -5,9 +5,9 @@
     "type": "object",
     "description": "Schema of flavor field for versification flavor",
     "properties": {
-	"name": {
-	    "const": "versification"
-	}
+        "name": {
+            "const": "versification"
+        }
     },
     "additionalProperties": true
 }

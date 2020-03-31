@@ -5,9 +5,9 @@
     "type": "object",
     "description": "Schema of flavor field for word alignment flavor",
     "properties": {
-	"name": {
-	    "const": "word_alignment"
-	}
+        "name": {
+            "const": "word_alignment"
+        }
     },
     "additionalProperties": true
 }

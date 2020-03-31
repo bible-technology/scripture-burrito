@@ -1,14 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/ingredients.schema.json",
-  "title": "Scripture Burrito Ingredients",
-  "type": "object",
-  "additionalProperties": {
-    "$ref": "ingredient.schema.json"
-  },
-  "propertyNames": {
-    "$ref": "common.schema.json#/definitions/path"
-  },
-  "minProperties": 1,
-  "description": "Describes the various files contained by the burrito, keyed by the canonical forward-slashed pathname of the file."
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/ingredients.schema.json",
+    "title": "Scripture Burrito Ingredients",
+    "type": "object",
+    "additionalProperties": {
+        "$ref": "ingredient.schema.json"
+    },
+    "propertyNames": {
+        "$ref": "common.schema.json#/definitions/path"
+    },
+    "minProperties": 1,
+    "description": "Describes the various files contained by the burrito, keyed by the canonical forward-slashed pathname of the file."
 }
