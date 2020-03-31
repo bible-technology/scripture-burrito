@@ -5,9 +5,9 @@
     "type": "object",
     "description": "Schema of flavor field for text_stories flavor",
     "properties": {
-	"name": {
-	    "const": "textStories"
-	}
+        "name": {
+            "const": "textStories"
+        }
     },
     "additionalProperties": true
 }

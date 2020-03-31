@@ -1,10 +1,10 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/names.schema.json",
-  "title": "Scripture Burrito Names",
-  "type": "object",
-  "additionalProperties": {
-    "$ref": "name.schema.json"
-  },
-  "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/names.schema.json",
+    "title": "Scripture Burrito Names",
+    "type": "object",
+    "additionalProperties": {
+        "$ref": "name.schema.json"
+    },
+    "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
 }

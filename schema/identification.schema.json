@@ -1,64 +1,64 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/identification.schema.json",
-  "$$target": "identification.schema.json",
-  "title": "Identification",
-  "type": "object",
-  "description": "Identification section.",
-  "definitions": {
-    "trimmedText": {
-      "type": "string",
-      "pattern": "^\\S(.+\\S)?$"
-    },
-    "abbreviationString": {
-      "type": "string",
-      "pattern": "^\\w+$"
-    },
-    "looseDate": {
-      "type": "string",
-      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-    },
-    "idString": {
-      "type": "string",
-      "pattern": "^[0-9a-zA-Z][0-9a-zA-Z\\-]{1,31}::\\S+$",
-      "minLength": 1
-    },
-    "revisionString": {
-      "type": "string",
-      "pattern": "^[0-9A-Za-z]([0-9A-Za-z_.:\\-]{0,62}[0-9A-Za-z])?$"
-    }
-  },
-  "properties": {
-    "name": {
-      "$ref": "common.schema.json#/definitions/localizedText"
-    },
-    "description": {
-      "$ref": "common.schema.json#/definitions/localizedText"
-    },
-    "abbreviation": {
-      "$ref": "common.schema.json#/definitions/localizedText"
-    },
-    "systemId": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "common.schema.json#/definitions/bareId"
-          },
-          "revision": {
-            "$ref": "common.schema.json#/definitions/revisionString"
-          }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/identification.schema.json",
+    "$$target": "identification.schema.json",
+    "title": "Identification",
+    "type": "object",
+    "description": "Identification section.",
+    "definitions": {
+        "trimmedText": {
+            "type": "string",
+            "pattern": "^\\S(.+\\S)?$"
         },
-        "required": ["id"]
-      },
-      "minItems": 1,
-      "description": "Contains identifiers in each system declared by the top-level idServers element."
+        "abbreviationString": {
+            "type": "string",
+            "pattern": "^\\w+$"
+        },
+        "looseDate": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "idString": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z][0-9a-zA-Z\\-]{1,31}::\\S+$",
+            "minLength": 1
+        },
+        "revisionString": {
+            "type": "string",
+            "pattern": "^[0-9A-Za-z]([0-9A-Za-z_.:\\-]{0,62}[0-9A-Za-z])?$"
+        }
     },
-    "idServer": {
-      "$ref": "common.schema.json#/definitions/idServerLabel"
-    }
-  },
-  "required": ["name", "systemId", "idServer"],
-  "additionalProperties": false
+    "properties": {
+        "name": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "description": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "abbreviation": {
+            "$ref": "common.schema.json#/definitions/localizedText"
+        },
+        "systemId": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "common.schema.json#/definitions/bareId"
+                    },
+                    "revision": {
+                        "$ref": "common.schema.json#/definitions/revisionString"
+                    }
+                },
+                "required": ["id"]
+            },
+            "minItems": 1,
+            "description": "Contains identifiers in each system declared by the top-level idServers element."
+        },
+        "idServer": {
+            "$ref": "common.schema.json#/definitions/idServerLabel"
+        }
+    },
+    "required": ["name", "systemId", "idServer"],
+    "additionalProperties": false
 }

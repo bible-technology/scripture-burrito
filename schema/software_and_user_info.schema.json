@@ -1,26 +1,26 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/software_and_user_info.schema.json",
-  "title": "Scripture Burrito Software and User Info",
-  "type": "object",
-  "properties": {
-    "softwareName": {
-      "type": "string",
-      "description": "The name of the program used."
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/software_and_user_info.schema.json",
+    "title": "Scripture Burrito Software and User Info",
+    "type": "object",
+    "properties": {
+        "softwareName": {
+            "type": "string",
+            "description": "The name of the program used."
+        },
+        "softwareVersion": {
+            "type": "string",
+            "description": "The version of the program used."
+        },
+        "userId": {
+            "$ref": "common.schema.json#/definitions/prefixedId",
+            "description": "A system-specific user identifier."
+        },
+        "userName": {
+            "type": "string",
+            "description": "The user's full name, if known."
+        }
     },
-    "softwareVersion": {
-      "type": "string",
-      "description": "The version of the program used."
-    },
-    "userId": {
-      "$ref": "common.schema.json#/definitions/prefixedId",
-      "description": "A system-specific user identifier."
-    },
-    "userName": {
-      "type": "string",
-      "description": "The user's full name, if known."
-    }
-  },
-  "required": ["softwareName", "softwareVersion"],
-  "additionalProperties": false
+    "required": ["softwareName", "softwareVersion"],
+    "additionalProperties": false
 }

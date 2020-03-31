@@ -1,86 +1,89 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/scripture/print_publication.schema.json",
-  "title": "Flavor Details: Scripture: Print Publication",
-  "type": "object",
-  "description": "Schema of flavor field for scripture/printPublication flavor",
-  "definitions": {
-    "measurementString": {
-      "type": "string",
-      "pattern": "^[1-9][0-9]{0,4}mm$"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/print_publication.schema.json",
+    "title": "Flavor Details: Scripture: Print Publication",
+    "type": "object",
+    "description": "Schema of flavor field for scripture/printPublication flavor",
+    "definitions": {
+        "measurementString": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,4}mm$"
+        },
+        "percentageString": {
+            "type": "string",
+            "pattern": "[1-9][0-9]{1,3}%"
+        },
+        "orientation": {
+            "type": "string",
+            "enum": ["portrait", "landscape"]
+        },
+        "colorSpace": {
+            "type": "string",
+            "enum": ["cmyk", "rgb"]
+        },
+        "fontType": {
+            "type": "string",
+            "enum": ["openType", "bitmap", "trueType", "type1"]
+        }
     },
-    "percentageString": {
-      "type": "string",
-      "pattern": "[1-9][0-9]{1,3}%"
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "typesetScripture"
+        },
+        "contentType": {
+            "type": "string",
+            "const": "pdf"
+        },
+        "pod": { "type": "boolean" },
+        "pageCount": { "type": "integer", "minimum": 0 },
+        "width": { "$ref": "#/definitions/measurementString" },
+        "height": { "$ref": "#/definitions/measurementString" },
+        "scale": { "$ref": "#/definitions/percentageString" },
+        "orientation": { "$ref": "#/definitions/orientation" },
+        "colorSpace": { "$ref": "#/definitions/colorSpace" },
+        "edgeSpace": {
+            "type": "object",
+            "properties": {
+                "top": { "$ref": "#/definitions/measurementString" },
+                "bottom": { "$ref": "#/definitions/measurementString" },
+                "inside": { "$ref": "#/definitions/measurementString" },
+                "outside": { "$ref": "#/definitions/measurementString" }
+            },
+            "additionalProperties": false
+        },
+        "fonts": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/definitions/fontType"
+                    }
+                ],
+                "additionalItems": false
+            },
+            "additionalItems": false
+        },
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    { "$ref": "../common.schema.json#/definitions/xToken" },
+                    { "enum": ["contentResourcesByChapter"] }
+                ]
+            }
+        }
     },
-    "orientation": {
-      "type": "string",
-      "enum": ["portrait", "landscape"]
-    },
-    "colorSpace": {
-      "type": "string",
-      "enum": ["cmyk", "rgb"]
-    },
-    "fontType": {
-      "type": "string",
-      "enum": ["openType", "bitmap", "trueType", "type1"]
-    }
-  },
-  "properties": {
-    "name": {
-      "type": "string",
-      "const": "typesetScripture"
-    },
-    "contentType": {
-      "type": "string",
-      "const": "pdf"
-    },
-    "pod": { "type": "boolean" },
-    "pageCount": { "type": "integer", "minimum": 0 },
-    "width": { "$ref": "#/definitions/measurementString" },
-    "height": { "$ref": "#/definitions/measurementString" },
-    "scale": { "$ref": "#/definitions/percentageString" },
-    "orientation": { "$ref": "#/definitions/orientation" },
-    "colorSpace": { "$ref": "#/definitions/colorSpace" },
-    "edgeSpace": {
-      "type": "object",
-      "properties": {
-        "top": { "$ref": "#/definitions/measurementString" },
-        "bottom": { "$ref": "#/definitions/measurementString" },
-        "inside": { "$ref": "#/definitions/measurementString" },
-        "outside": { "$ref": "#/definitions/measurementString" }
-      },
-      "additionalProperties": false
-    },
-    "fonts": {
-      "type": "array",
-      "items": {
-        "type": "array",
-        "items": [
-          {
-            "type": "string"
-          },
-          {
-            "$ref": "#/definitions/fontType"
-          }
-        ],
-        "additionalItems": false
-      },
-      "additionalItems": false
-    },
-    "conventions": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string",
-        "pattern": "^\\d+[.]\\d+([.].+)?$"
-      },
-      "propertyNames": {
-        "type": "string",
-        "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
-        "oneOf": [{ "$ref": "../common.schema.json#/definitions/xToken" }, { "enum": ["contentResourcesByChapter"] }]
-      }
-    }
-  },
-  "required": ["name", "contentType", "pod", "pageCount", "height", "width", "scale", "colorSpace"],
-  "additionalProperties": false
+    "required": ["name", "contentType", "pod", "pageCount", "height", "width", "scale", "colorSpace"],
+    "additionalProperties": false
 }

@@ -11,11 +11,11 @@
         "description": {
             "$ref": "../common.schema.json#/definitions/localizedText"
         },
-	"metadata": {
-	    "type": "object"
-	},
-	"transforms": {
-	    "type": "object"
-	}
+        "metadata": {
+            "type": "object"
+        },
+        "transforms": {
+            "type": "object"
+        }
     }
 }

@@ -1,11 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/languages.schema.json",
-  "title": "Scripture Burrito Languages",
-  "type": "array",
-  "items": {
-    "$ref": "language.schema.json"
-  },
-  "minItems": 1,
-  "description": "A list of all the languages of the contents of this burrito."
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/languages.schema.json",
+    "title": "Scripture Burrito Languages",
+    "type": "array",
+    "items": {
+        "$ref": "language.schema.json"
+    },
+    "minItems": 1,
+    "description": "A list of all the languages of the contents of this burrito."
 }

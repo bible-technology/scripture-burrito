@@ -1,354 +1,362 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/canon_spec.schema.json",
-  "title": "Scripture Burrito Canon Spec",
-  "type": "object",
-  "definitions": {
-    "canonComponentOT": {
-      "$$target": ["type.schema.json#/definitions/canonComponentOT", "#/definitions/canonComponentOT"],
-      "title": "Old Testament Canon Component",
-      "properties": {
-        "name": {
-          "type": "string",
-          "enum": ["ethiopianProtestant", "syriac", "tanakh", "western"]
-        }
-      },
-      "not": {
-        "required": ["books"]
-      }
-    },
-    "canonComponentOTDC": {
-      "$$target": ["type.schema.json#/definitions/canonComponentOTDC", "#/definitions/canonComponentOTDC"],
-      "title": "Old Testament+ Canon Component",
-      "properties": {
-        "name": {
-          "type": "string",
-          "enum": [
-            "armenianApostolic",
-            "armenianApostolic2",
-            "armenianClassical",
-            "catholicLxx",
-            "catholicVulgate",
-            "ethiopianOrthodox",
-            "georgianOrthodox",
-            "georgianOrthodox2",
-            "greekOrthodox",
-            "romanianOrthodox",
-            "russianOrthodox",
-            "russianProtestant"
-          ]
-        }
-      },
-      "not": {
-        "required": ["books"]
-      },
-      "$comment": "OTDC is OT with interleaved DC"
-    },
-    "canonComponentDC": {
-      "$$target": ["type.schema.json#/definitions/canonComponentDC", "#/definitions/canonComponentDC"],
-      "title": "Deuterocanon Component",
-      "properties": {
-        "name": {
-          "type": "string",
-          "enum": [
-            "armenianApostolic",
-            "catholicAndAnglican",
-            "catholicLxx",
-            "catholicLxxSeparated",
-            "catholicPlusLutheran",
-            "catholicVulgate",
-            "catholicVulgateSeparated",
-            "czechKralicka",
-            "danishLutheran",
-            "ethiopianOrthodox",
-            "georgianOrthodox",
-            "georgianSynodal",
-            "germanLutheran",
-            "greekOrthodox",
-            "kjv",
-            "kjvNon",
-            "paratext",
-            "romanianOrthodox",
-            "russianOrthodox",
-            "russianSynodal",
-            "turkishInterconfessional",
-            "westernInterconfessional",
-            "westernInterconfessional2"
-          ]
-        }
-      },
-      "not": {
-        "required": ["books"]
-      }
-    },
-    "canonComponentNT": {
-      "$$target": ["type.schema.json#/definitions/canonComponentNT", "#/definitions/canonComponentNT"],
-      "title": "New Testament Canon Component",
-      "properties": {
-        "name": {
-          "type": "string",
-          "enum": ["armenian", "ethiopianOrthodox", "ethiopianProtestant", "lutheran", "russian", "syriac", "western"]
-        }
-      },
-      "not": {
-        "required": ["books"]
-      }
-    },
-    "canonComponentCustom": {
-      "$$target": ["type.schema.json#/definitions/canonComponentCustom", "#/definitions/canonComponentCustom"],
-      "title": "Custom Canon Component",
-      "properties": {
-        "name": {
-          "$ref": "common.schema.json#/definitions/xToken"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/canon_spec.schema.json",
+    "title": "Scripture Burrito Canon Spec",
+    "type": "object",
+    "definitions": {
+        "canonComponentOT": {
+            "$$target": ["type.schema.json#/definitions/canonComponentOT", "#/definitions/canonComponentOT"],
+            "title": "Old Testament Canon Component",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": ["ethiopianProtestant", "syriac", "tanakh", "western"]
+                }
+            },
+            "not": {
+                "required": ["books"]
+            }
         },
-        "books": {
-          "type": "array",
-          "items": {
-            "$ref": "common.schema.json#/definitions/bookId"
-          },
-          "uniqueItems": true,
-          "minItems": 1
+        "canonComponentOTDC": {
+            "$$target": ["type.schema.json#/definitions/canonComponentOTDC", "#/definitions/canonComponentOTDC"],
+            "title": "Old Testament+ Canon Component",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "armenianApostolic",
+                        "armenianApostolic2",
+                        "armenianClassical",
+                        "catholicLxx",
+                        "catholicVulgate",
+                        "ethiopianOrthodox",
+                        "georgianOrthodox",
+                        "georgianOrthodox2",
+                        "greekOrthodox",
+                        "romanianOrthodox",
+                        "russianOrthodox",
+                        "russianProtestant"
+                    ]
+                }
+            },
+            "not": {
+                "required": ["books"]
+            },
+            "$comment": "OTDC is OT with interleaved DC"
+        },
+        "canonComponentDC": {
+            "$$target": ["type.schema.json#/definitions/canonComponentDC", "#/definitions/canonComponentDC"],
+            "title": "Deuterocanon Component",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "armenianApostolic",
+                        "catholicAndAnglican",
+                        "catholicLxx",
+                        "catholicLxxSeparated",
+                        "catholicPlusLutheran",
+                        "catholicVulgate",
+                        "catholicVulgateSeparated",
+                        "czechKralicka",
+                        "danishLutheran",
+                        "ethiopianOrthodox",
+                        "georgianOrthodox",
+                        "georgianSynodal",
+                        "germanLutheran",
+                        "greekOrthodox",
+                        "kjv",
+                        "kjvNon",
+                        "paratext",
+                        "romanianOrthodox",
+                        "russianOrthodox",
+                        "russianSynodal",
+                        "turkishInterconfessional",
+                        "westernInterconfessional",
+                        "westernInterconfessional2"
+                    ]
+                }
+            },
+            "not": {
+                "required": ["books"]
+            }
+        },
+        "canonComponentNT": {
+            "$$target": ["type.schema.json#/definitions/canonComponentNT", "#/definitions/canonComponentNT"],
+            "title": "New Testament Canon Component",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "armenian",
+                        "ethiopianOrthodox",
+                        "ethiopianProtestant",
+                        "lutheran",
+                        "russian",
+                        "syriac",
+                        "western"
+                    ]
+                }
+            },
+            "not": {
+                "required": ["books"]
+            }
+        },
+        "canonComponentCustom": {
+            "$$target": ["type.schema.json#/definitions/canonComponentCustom", "#/definitions/canonComponentCustom"],
+            "title": "Custom Canon Component",
+            "properties": {
+                "name": {
+                    "$ref": "common.schema.json#/definitions/xToken"
+                },
+                "books": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "common.schema.json#/definitions/bookId"
+                    },
+                    "uniqueItems": true,
+                    "minItems": 1
+                }
+            },
+            "required": ["name", "books"]
+        },
+        "bookOT": {
+            "$$target": ["type.schema.json#/definitions/bookOT", "#/definitions/bookOT"],
+            "title": "Old Testament Books",
+            "enum": [
+                "GEN",
+                "EXO",
+                "LEV",
+                "NUM",
+                "DEU",
+                "JOS",
+                "JDG",
+                "RUT",
+                "1SA",
+                "2SA",
+                "1KI",
+                "2KI",
+                "1CH",
+                "2CH",
+                "EZR",
+                "NEH",
+                "EST",
+                "JOB",
+                "PSA",
+                "PRO",
+                "ECC",
+                "SNG",
+                "ISA",
+                "JER",
+                "LAM",
+                "EZK",
+                "DAN",
+                "HOS",
+                "JOL",
+                "AMO",
+                "OBA",
+                "JON",
+                "MIC",
+                "NAM",
+                "HAB",
+                "ZEP",
+                "HAG",
+                "ZEC",
+                "MAL"
+            ]
+        },
+        "bookDC": {
+            "$$target": ["type.schema.json#/definitions/bookDC", "#/definitions/bookDC"],
+            "title": "Deutercanonical Books",
+            "enum": [
+                "TOB",
+                "JDT",
+                "ESG",
+                "WIS",
+                "SIR",
+                "BAR",
+                "LJE",
+                "S3Y",
+                "SUS",
+                "BEL",
+                "1MA",
+                "2MA",
+                "3MA",
+                "4MA",
+                "1ES",
+                "2ES",
+                "MAN",
+                "PS2",
+                "ODA",
+                "PSS",
+                "JSA",
+                "JDB",
+                "TBS",
+                "SST",
+                "DNT",
+                "BLT",
+                "EZA",
+                "5EZ",
+                "6EZ",
+                "DAG",
+                "PS3",
+                "2BA",
+                "LBA",
+                "JUB",
+                "ENO",
+                "1MQ",
+                "2MQ",
+                "3MQ",
+                "REP",
+                "4BA",
+                "LAO"
+            ]
+        },
+        "bookNT": {
+            "$$target": ["type.schema.json#/definitions/bookNT", "#/definitions/bookNT"],
+            "title": "New Testament Books",
+            "enum": [
+                "MAT",
+                "MRK",
+                "LUK",
+                "JHN",
+                "ACT",
+                "ROM",
+                "1CO",
+                "2CO",
+                "GAL",
+                "EPH",
+                "PHP",
+                "COL",
+                "1TH",
+                "2TH",
+                "1TI",
+                "2TI",
+                "TIT",
+                "PHM",
+                "HEB",
+                "JAS",
+                "1PE",
+                "2PE",
+                "1JN",
+                "2JN",
+                "3JN",
+                "JUD",
+                "REV"
+            ]
+        },
+        "bookOTDC": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/bookOT"
+                },
+                {
+                    "$ref": "#/definitions/bookDC"
+                }
+            ]
+        },
+        "bookOTNT": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/bookOT"
+                },
+                {
+                    "$ref": "#/definitions/bookNT"
+                }
+            ]
         }
-      },
-      "required": ["name", "books"]
     },
-    "bookOT": {
-      "$$target": ["type.schema.json#/definitions/bookOT", "#/definitions/bookOT"],
-      "title": "Old Testament Books",
-      "enum": [
-        "GEN",
-        "EXO",
-        "LEV",
-        "NUM",
-        "DEU",
-        "JOS",
-        "JDG",
-        "RUT",
-        "1SA",
-        "2SA",
-        "1KI",
-        "2KI",
-        "1CH",
-        "2CH",
-        "EZR",
-        "NEH",
-        "EST",
-        "JOB",
-        "PSA",
-        "PRO",
-        "ECC",
-        "SNG",
-        "ISA",
-        "JER",
-        "LAM",
-        "EZK",
-        "DAN",
-        "HOS",
-        "JOL",
-        "AMO",
-        "OBA",
-        "JON",
-        "MIC",
-        "NAM",
-        "HAB",
-        "ZEP",
-        "HAG",
-        "ZEC",
-        "MAL"
-      ]
+    "properties": {
+        "ot": {
+            "type": "object",
+            "properties": {
+                "books": {
+                    "items": {
+                        "$ref": "#/definitions/bookOT"
+                    }
+                }
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/canonComponentOT"
+                },
+                {
+                    "$ref": "#/definitions/canonComponentCustom"
+                }
+            ],
+            "required": ["name"]
+        },
+        "otdc": {
+            "type": "object",
+            "properties": {
+                "books": {
+                    "items": {
+                        "$ref": "#/definitions/bookOTDC"
+                    }
+                }
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/canonComponentOTDC"
+                },
+                {
+                    "$ref": "#/definitions/canonComponentCustom"
+                }
+            ],
+            "required": ["name"]
+        },
+        "dc": {
+            "type": "object",
+            "properties": {
+                "books": {
+                    "items": {
+                        "$ref": "#/definitions/bookDC"
+                    }
+                }
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/canonComponentDC"
+                },
+                {
+                    "$ref": "#/definitions/canonComponentCustom"
+                }
+            ],
+            "required": ["name"]
+        },
+        "nt": {
+            "type": "object",
+            "properties": {
+                "books": {
+                    "items": {
+                        "$ref": "#/definitions/bookNT"
+                    }
+                }
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/canonComponentNT"
+                },
+                {
+                    "$ref": "#/definitions/canonComponentCustom"
+                }
+            ],
+            "required": ["name"]
+        }
     },
-    "bookDC": {
-      "$$target": ["type.schema.json#/definitions/bookDC", "#/definitions/bookDC"],
-      "title": "Deutercanonical Books",
-      "enum": [
-        "TOB",
-        "JDT",
-        "ESG",
-        "WIS",
-        "SIR",
-        "BAR",
-        "LJE",
-        "S3Y",
-        "SUS",
-        "BEL",
-        "1MA",
-        "2MA",
-        "3MA",
-        "4MA",
-        "1ES",
-        "2ES",
-        "MAN",
-        "PS2",
-        "ODA",
-        "PSS",
-        "JSA",
-        "JDB",
-        "TBS",
-        "SST",
-        "DNT",
-        "BLT",
-        "EZA",
-        "5EZ",
-        "6EZ",
-        "DAG",
-        "PS3",
-        "2BA",
-        "LBA",
-        "JUB",
-        "ENO",
-        "1MQ",
-        "2MQ",
-        "3MQ",
-        "REP",
-        "4BA",
-        "LAO"
-      ]
-    },
-    "bookNT": {
-      "$$target": ["type.schema.json#/definitions/bookNT", "#/definitions/bookNT"],
-      "title": "New Testament Books",
-      "enum": [
-        "MAT",
-        "MRK",
-        "LUK",
-        "JHN",
-        "ACT",
-        "ROM",
-        "1CO",
-        "2CO",
-        "GAL",
-        "EPH",
-        "PHP",
-        "COL",
-        "1TH",
-        "2TH",
-        "1TI",
-        "2TI",
-        "TIT",
-        "PHM",
-        "HEB",
-        "JAS",
-        "1PE",
-        "2PE",
-        "1JN",
-        "2JN",
-        "3JN",
-        "JUD",
-        "REV"
-      ]
-    },
-    "bookOTDC": {
-      "oneOf": [
+    "additionalProperties": false,
+    "minProperties": 1,
+    "allOf": [
         {
-          "$ref": "#/definitions/bookOT"
+            "not": {
+                "required": ["ot", "otdc"]
+            }
         },
         {
-          "$ref": "#/definitions/bookDC"
+            "not": {
+                "required": ["dc", "otdc"]
+            }
         }
-      ]
-    },
-    "bookOTNT": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/bookOT"
-        },
-        {
-          "$ref": "#/definitions/bookNT"
-        }
-      ]
-    }
-  },
-  "properties": {
-    "ot": {
-      "type": "object",
-      "properties": {
-        "books": {
-          "items": {
-            "$ref": "#/definitions/bookOT"
-          }
-        }
-      },
-      "oneOf": [
-        {
-          "$ref": "#/definitions/canonComponentOT"
-        },
-        {
-          "$ref": "#/definitions/canonComponentCustom"
-        }
-      ],
-      "required": ["name"]
-    },
-    "otdc": {
-      "type": "object",
-      "properties": {
-        "books": {
-          "items": {
-            "$ref": "#/definitions/bookOTDC"
-          }
-        }
-      },
-      "oneOf": [
-        {
-          "$ref": "#/definitions/canonComponentOTDC"
-        },
-        {
-          "$ref": "#/definitions/canonComponentCustom"
-        }
-      ],
-      "required": ["name"]
-    },
-    "dc": {
-      "type": "object",
-      "properties": {
-        "books": {
-          "items": {
-            "$ref": "#/definitions/bookDC"
-          }
-        }
-      },
-      "oneOf": [
-        {
-          "$ref": "#/definitions/canonComponentDC"
-        },
-        {
-          "$ref": "#/definitions/canonComponentCustom"
-        }
-      ],
-      "required": ["name"]
-    },
-    "nt": {
-      "type": "object",
-      "properties": {
-        "books": {
-          "items": {
-            "$ref": "#/definitions/bookNT"
-          }
-        }
-      },
-      "oneOf": [
-        {
-          "$ref": "#/definitions/canonComponentNT"
-        },
-        {
-          "$ref": "#/definitions/canonComponentCustom"
-        }
-      ],
-      "required": ["name"]
-    }
-  },
-  "additionalProperties": false,
-  "minProperties": 1,
-  "allOf": [
-    {
-      "not": {
-        "required": ["ot", "otdc"]
-      }
-    },
-    {
-      "not": {
-        "required": ["dc", "otdc"]
-      }
-    }
-  ],
-  "$comment": "ot or dc may not be specified if otdc is present."
+    ],
+    "$comment": "ot or dc may not be specified if otdc is present."
 }

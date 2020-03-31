@@ -1,61 +1,61 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://burrito.bible/schema/scripture/audio_translation.schema.json",
-  "title": "Flavor Details: Audio Translation",
-  "type": "object",
-  "description": "Schema of flavor field of scripture/audioTranslation flavor",
-  "definitions": {
-    "format": {
-      "type": "object",
-      "properties": {
-        "compression": {
-          "type": "string",
-          "enum": ["mp3", "wav"]
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/audio_translation.schema.json",
+    "title": "Flavor Details: Audio Translation",
+    "type": "object",
+    "description": "Schema of flavor field of scripture/audioTranslation flavor",
+    "definitions": {
+        "format": {
+            "type": "object",
+            "properties": {
+                "compression": {
+                    "type": "string",
+                    "enum": ["mp3", "wav"]
+                },
+                "trackConfiguration": {
+                    "type": "string",
+                    "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
+                },
+                "bitRate": { "type": "integer" },
+                "bitDepth": { "type": "integer" },
+                "samplingRate": { "type": "integer" },
+                "timingDir": { "$ref": "../common.schema.json#/definitions/path" }
+            },
+            "required": ["compression"],
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "name": {
+            "const": "audioTranslation"
         },
-        "trackConfiguration": {
-          "type": "string",
-          "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
+        "dramatization": {
+            "type": "string",
+            "enum": ["dramatized", "nonDramatized", "singleVoice"]
         },
-        "bitRate": { "type": "integer" },
-        "bitDepth": { "type": "integer" },
-        "samplingRate": { "type": "integer" },
-        "timingDir": { "$ref": "../common.schema.json#/definitions/path" }
-      },
-      "required": ["compression"],
-      "additionalProperties": false
-    }
-  },
-  "properties": {
-    "name": {
-      "const": "audioTranslation"
+        "formats": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/format"
+            },
+            "propertyNames": { "type": "string" }
+        },
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [
+                    { "$ref": "../common.schema.json#/definitions/xToken" },
+                    { "enum": ["contentResourcesByChapter", "bookDirs"] }
+                ]
+            }
+        }
     },
-    "dramatization": {
-      "type": "string",
-      "enum": ["dramatized", "nonDramatized", "singleVoice"]
-    },
-    "formats": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/format"
-      },
-      "propertyNames": { "type": "string" }
-    },
-    "conventions": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string",
-        "pattern": "^\\d+[.]\\d+([.].+)?$"
-      },
-      "propertyNames": {
-        "type": "string",
-        "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
-        "oneOf": [
-          { "$ref": "../common.schema.json#/definitions/xToken" },
-          { "enum": ["contentResourcesByChapter", "bookDirs"] }
-        ]
-      }
-    }
-  },
-  "required": ["dramatization", "formats"],
-  "additionalProperties": false
+    "required": ["dramatization", "formats"],
+    "additionalProperties": false
 }
