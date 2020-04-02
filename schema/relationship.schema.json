@@ -15,11 +15,11 @@
             "oneOf": [
                 {
                     "enum": [
-                        "scriptureText",
-                        "scriptureAudio",
-                        "scripturePrint",
-                        "scriptureSignLanguageVideo",
-                        "scriptureBraille",
+                        "textTranslation",
+                        "audioTranslation",
+                        "typesetScripture",
+                        "signLanguageVideoTranslation",
+                        "embossedBrailleScripture",
                         "glossedTextStory",
                         "parascripturalWordAlignment"
                     ]
@@ -36,7 +36,7 @@
         "revision": {
             "$ref": "common.schema.json#/definitions/revisionString"
         },
-        "publicationId": {
+        "variant": {
             "type": "string",
             "pattern": "^[A-Za-z][A-Za-z0-9_\\-]{0,31}$"
         }
@@ -58,7 +58,7 @@
                     "const": "source"
                 },
                 "flavor": {
-                    "enum": ["scriptureText", "scriptureAudio"]
+                    "enum": ["textTranslation", "audioTranslation"]
                 }
             }
         },

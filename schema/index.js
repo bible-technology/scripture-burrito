@@ -1,7 +1,7 @@
 module.exports = {
     schemaIds: {
         metadata: "https://burrito.bible/schema/metadata.schema.json",
-        recipeSpec: "https://burrito.bible/schema/ingredients/recipe_spec.schema.json",
+        recipeSpec: "https://burrito.bible/schema/ingredients/recipe_spec.schema.json"
     },
     schemas: [
         require("./agencies.schema.json"),
@@ -41,10 +41,10 @@ module.exports = {
         require("./relationships.schema.json"),
         require("./relationship.schema.json"),
         require("./scripture/audio_translation.schema.json"),
-        require("./scripture/braille_scripture_publication.schema.json"),
-        require("./scripture/print_publication.schema.json"),
+        require("./scripture/embossed_braille_scripture.schema.json"),
         require("./scripture/sign_language_video_translation.schema.json"),
         require("./scripture/text_translation.schema.json"),
+        require("./scripture/typeset_scripture.schema.json"),
         require("./scope.schema.json"),
         require("./software_and_user_info.schema.json"),
         require("./source_meta.schema.json"),
@@ -53,6 +53,6 @@ module.exports = {
         require("./target_area.schema.json"),
         require("./type.schema.json"),
         require("./unm49.schema.json"),
-        require("./x_flavor.schema.json"),
-    ],
+        require("./x_flavor.schema.json")
+    ]
 };

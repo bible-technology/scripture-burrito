@@ -3,11 +3,11 @@
     "$id": "https://burrito.bible/schema/gloss/text_stories.schema.json",
     "title": "Flavor Details: Glossed Text Stories",
     "type": "object",
-    "description": "Schema of flavor field for text_stories flavor",
+    "description": "Schema of flavor field for textStories flavor",
     "properties": {
         "name": {
             "const": "textStories"
         }
     },
-    "additionalProperties": true
+    "additionalProperties": false
 }

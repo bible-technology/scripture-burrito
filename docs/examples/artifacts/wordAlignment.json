@@ -1,0 +1,310 @@
+{
+    "meta": {
+        "variant": "source",
+        "version": "0.2.0",
+        "dateCreated": "2020-03-31T09:04:10.3+02:00",
+        "generator": {
+            "softwareName": "Autographa-Aligner 0.1.0",
+            "softwareVersion": "0.0.0"
+        },
+        "comments": [
+            "Add alignments of all NT books."
+        ],
+        "defaultLanguage": "en"
+    },
+    "idServers": {
+        "idServerKey": {
+            "id": "http://registry.bridgeconn.com"
+        }
+    },
+    "identification": {
+        "idServer": "bcs",
+        "name": {
+            "en": "Hindi IRV - UGNT Interlinear"
+        },
+        "description": {
+            "en": "Word level alignment of Hindi IRV v.4 with UGNT Text"
+        },
+        "systemId": {
+            "bcs": {
+                "id": "bcs::hin.irv-ugnt",
+                "revision": "1"
+            }
+        }
+    },
+    "confidentiality": {
+        "metadata": "unrestricted",
+        "source": "private",
+        "publications": "unrestricted"
+    },
+    "type": {
+        "flavorType": {
+            "name": "parascriptural",
+            "flavor": {
+                "name": "wordAlignment",
+                "autoAlignerVersion": "0.8",
+                "stopWords": true,
+                "stemmer": {
+                    "name": "bcs-hindi",
+                    "version": "1.2",
+                    "affixes": true
+                },
+                "manualAlignment": {
+                    "user": "anil.john",
+                    "references": [
+                        {
+                            "start": 25535,
+                            "end": 26415
+                        },
+                        {
+                            "start": 29321
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "relationships": [
+        {
+            "id": "dbl::987654321fedcba",
+            "flavor": "textTranslation",
+            "relationType": "source",
+            "revision": "12",
+            "variant": "Hindi-IRV-v4"
+        },
+        {
+            "id": "dbl::0123456789abcdef",
+            "flavor": "textTranslation",
+            "relationType": "target",
+            "revision": "23"
+        }
+    ],
+    "languages": [
+        {
+            "tag": "en",
+            "name": {
+                "en": "English",
+                "hi": "अंग्रेज़ी"
+            }
+        }
+    ],
+    "targetAreas": [
+        {
+            "name": {
+                "en": "India",
+                "hi": "भारत"
+            },
+            "code": "IN"
+        }
+    ],
+    "agencies": [
+        {
+            "id": "bcs::7874",
+            "url": "https://bridgeconn.com",
+            "name": {
+                "en": "Bridge Connectivity Solutions"
+            },
+            "roles": [
+                "rightsHolder",
+                "content",
+                "publication",
+                "management",
+                "qa"
+            ],
+            "abbr": {
+                "en": "BCS"
+            }
+        }
+    ],
+    "ingredients": {
+        "hin-4_1CO.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 563
+        },
+        "hin-4_1JN.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 132
+        },
+        "hin-4_1PE.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 123
+        },
+        "hin-4_1TH.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 234
+        },
+        "hin-4_1TI.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 113
+        },
+        "hin-4_2CO.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 538
+        },
+        "hin-4_2JN.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 233
+        },
+        "hin-4_2PE.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 143
+        },
+        "hin-4_2TH.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 377
+        },
+        "hin-4_2TI.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 839
+        },
+        "hin-4_3JN.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 243
+        },
+        "hin-4_ACT.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 957
+        },
+        "hin-4_COL.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 343
+        },
+        "hin-4_EPH.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 453
+        },
+        "hin-4_GAL.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 347
+        },
+        "hin-4_HEB.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 787
+        },
+        "hin-4_JAS.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 778
+        },
+        "hin-4_JHN.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 548
+        },
+        "hin-4_JUD.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 433
+        },
+        "hin-4_LUK.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 987
+        },
+        "hin-4_MAT.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 1039
+        },
+        "hin-4_MRK.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 487
+        },
+        "hin-4_PHM.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 234
+        },
+        "hin-4_PHP.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 354
+        },
+        "hin-4_REV.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 544
+        },
+        "hin-4_ROM.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 543
+        },
+        "hin-4_TIT.json": {
+            "mimeType": "application/json",
+            "checksum": {
+                "md5": "0123456789abcdef0123456789abcdef"
+            },
+            "size": 127
+        }
+    }
+}
