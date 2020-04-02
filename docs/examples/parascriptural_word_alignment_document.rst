@@ -2,5 +2,5 @@
 Word Alignment Parascriptural Document Expressed
 ################################################
 
-.. literalinclude:: artifacts/parascriptural_word_alignment.json
+.. literalinclude:: artifacts/wordAlignment.json
     :language: json
