@@ -23,5 +23,6 @@
     },
     "propertyNames": {
         "$ref": "common.schema.json#/definitions/bookId"
-    }
+    },
+    "minProperties": 1
 }

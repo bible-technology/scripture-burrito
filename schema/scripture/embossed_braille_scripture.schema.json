@@ -1,0 +1,186 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/scripture/embossed_braille_scripture.schema.json",
+    "title": "Flavor Details: Scripture: Braille Publication",
+    "type": "object",
+    "description": "Schema of flavor field for scripture/brailleScripturePublication flavor",
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "embossedBrailleScripture"
+        },
+        "isContracted": { "type": "boolean" },
+        "processor": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "const": "libLouis"
+                },
+                "version": { "type": "string" },
+                "table": {
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string"
+                        },
+                        "name": { "type": "string" }
+                    },
+                    "additionalProperties": false,
+                    "required": ["src", "name"]
+                }
+            },
+            "required": ["name", "version", "table"],
+            "additionalProperties": false
+        },
+        "hyphenationDictionary": {
+            "type": "object",
+            "properties": {
+                "src": {
+                    "type": "string"
+                },
+                "name": { "type": "string" }
+            },
+            "additionalProperties": false,
+            "required": ["src", "name"]
+        },
+        "numberSign": {
+            "type": "object",
+            "properties": {
+                "character": {
+                    "type": "string",
+                    "pattern": "([⠀-⣿])*"
+                },
+                "useInMargin": { "type": "boolean" }
+            },
+            "required": ["character", "useInMargin"],
+            "additionalProperties": false
+        },
+        "continuousPoetry": {
+            "type": "object",
+            "properties": {
+                "lineIndicatorSpaced": {
+                    "type": "string",
+                    "enum": ["never", "always", "sometimes"]
+                },
+                "startIndicator": {
+                    "type": "string",
+                    "pattern": "([⠀-⣿])*"
+                },
+                "lineIndicator": {
+                    "type": "string",
+                    "pattern": "([⠀-⣿])*"
+                },
+                "endIndicator": {
+                    "type": "string",
+                    "pattern": "([⠀-⣿])*"
+                }
+            },
+            "additionalProperties": false,
+            "required": ["lineIndicatorSpaced"]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "chapterNumberStyle": {
+                    "type": "string",
+                    "enum": ["upper", "lower"]
+                },
+                "chapterHeadingsNumberFirst": { "type": "boolean" },
+                "versedParagraphs": { "type": "boolean" },
+                "verseSeparator": {
+                    "type": "string",
+                    "pattern": "([⠀-⣿])*"
+                },
+                "includeIntros": { "type": "boolean" },
+                "footnotes": {
+                    "properties": {
+                        "callerSymbol": {
+                            "type": "string",
+                            "pattern": "([⠀-⣿])*"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["callerSymbol"]
+                },
+                "characterStyles": {
+                    "properties": {
+                        "callerSymbol": {
+                            "type": "string",
+                            "pattern": "([⠀-⣿])*"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["callerSymbol"]
+                },
+                "crossReferences": {
+                    "properties": {
+                        "emphasizedWord": {
+                            "type": "string",
+                            "pattern": "([⠀-⣿])*"
+                        },
+                        "emphasizedPassageStart": {
+                            "type": "string",
+                            "pattern": "([⠀-⣿])*"
+                        },
+                        "emphasizedPassageEnd": {
+                            "type": "string",
+                            "pattern": "([⠀-⣿])*"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "minProperties": 1
+                }
+            },
+            "required": [
+                "chapterNumberStyle",
+                "chapterHeadingsNumberFirst",
+                "versedParagraphs",
+                "verseSeparator",
+                "includeIntros"
+            ],
+            "additionalProperties": false
+        },
+        "page": {
+            "type": "object",
+            "properties": {
+                "charsPerLine": {
+                    "type": "number",
+                    "multipleOf": 1.0,
+                    "min": 1
+                },
+                "linesPerPage": {
+                    "type": "number",
+                    "multipleOf": 1.0,
+                    "min": 1
+                },
+                "defaultMarginWidth": {
+                    "type": "number",
+                    "multipleOf": 1.0,
+                    "min": 1
+                },
+                "versoLastLineBlank": { "type": "boolean" },
+                "carryLines": {
+                    "type": "number",
+                    "multipleOf": 1.0,
+                    "min": 1
+                }
+            },
+            "required": ["charsPerLine", "linesPerPage", "defaultMarginWidth", "versoLastLineBlank", "carryLines"],
+            "additionalProperties": false
+        },
+        "conventions": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string",
+                "pattern": "^\\d+[.]\\d+([.].+)?$"
+            },
+            "propertyNames": {
+                "type": "string",
+                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "oneOf": [{ "$ref": "../common.schema.json#/definitions/xToken" }]
+            }
+        }
+    },
+    "required": ["isContracted", "processor", "numberSign", "content", "page"],
+    "additionalProperties": false
+}
