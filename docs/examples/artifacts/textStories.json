@@ -37,8 +37,7 @@
     },
     "confidentiality": {
         "metadata": "unrestricted",
-        "source": "private",
-        "publications": "restricted"
+        "ingredients": "restricted"
     },
     "type": {
         "flavorType": {
