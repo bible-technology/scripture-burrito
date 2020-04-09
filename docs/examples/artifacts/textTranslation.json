@@ -9,9 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-02-15T22:33:50.875547+00:00",
-    "comments": [
-      "Testing dblChanges.txt"
-    ]
+    "comments": ["Testing dblChanges.txt"]
   },
   "idServers": {
     "dbl": {
@@ -57,10 +55,7 @@
         "audience": "common",
         "projectType": "standard"
       },
-      "canonType": [
-        "ot",
-        "nt"
-      ],
+      "canonType": ["ot", "nt"],
       "canonSpec": {
         "ot": {
           "name": "western"
@@ -161,9 +156,7 @@
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://thedigitalbiblelibrary.org",
       "name": {
         "en": "DBL Testing"
@@ -174,9 +167,7 @@
     },
     {
       "id": "dbl::545d2cb0c1fbcec540df3e8d",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://www.dblipc.org",
       "name": {
         "en": "Example Intellectual Property Contributor"
@@ -187,13 +178,7 @@
     },
     {
       "id": "dbl::54650cd05117ad67b3826e99",
-      "roles": [
-        "content",
-        "publication",
-        "management",
-        "finance",
-        "qa"
-      ],
+      "roles": ["content", "publication", "management", "finance", "qa"],
       "name": {
         "en": "American Bible Society"
       }

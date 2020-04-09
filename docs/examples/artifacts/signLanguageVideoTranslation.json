@@ -9,9 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2019-12-10T15:44:10.641544+00:00",
-    "comments": [
-      "First submit updated metadata and mpg files"
-    ]
+    "comments": ["First submit updated metadata and mpg files"]
   },
   "idServers": {
     "dbl": {
@@ -64,10 +62,7 @@
           }
         }
       },
-      "canonType": [
-        "ot",
-        "nt"
-      ],
+      "canonType": ["ot", "nt"],
       "canonSpec": {
         "ot": {
           "name": "western"
@@ -88,14 +83,7 @@
   "agencies": [
     {
       "id": "dbl::54650cdf5117ad687c9b5189",
-      "roles": [
-        "rightsHolder",
-        "content",
-        "publication",
-        "management",
-        "finance",
-        "qa"
-      ],
+      "roles": ["rightsHolder", "content", "publication", "management", "finance", "qa"],
       "url": "http://www.alliancebiblique.fr",
       "name": {
         "en": "French Bible Society"
@@ -589,9 +577,7 @@
       "mimeType": "video/mpeg",
       "size": 767246336,
       "scope": {
-        "LUK": [
-          "1"
-        ]
+        "LUK": ["1"]
       }
     },
     "LUK/LUK_10.mpg": {
@@ -601,9 +587,7 @@
       "mimeType": "video/mpeg",
       "size": 677756928,
       "scope": {
-        "LUK": [
-          "10"
-        ]
+        "LUK": ["10"]
       }
     },
     "LUK/LUK_11.mpg": {
@@ -613,9 +597,7 @@
       "mimeType": "video/mpeg",
       "size": 691744768,
       "scope": {
-        "LUK": [
-          "11"
-        ]
+        "LUK": ["11"]
       }
     },
     "LUK/LUK_12.mpg": {
@@ -625,9 +607,7 @@
       "mimeType": "video/mpeg",
       "size": 845115392,
       "scope": {
-        "LUK": [
-          "12"
-        ]
+        "LUK": ["12"]
       }
     },
     "LUK/LUK_13.mpg": {
@@ -637,9 +617,7 @@
       "mimeType": "video/mpeg",
       "size": 452595712,
       "scope": {
-        "LUK": [
-          "13"
-        ]
+        "LUK": ["13"]
       }
     },
     "LUK/LUK_14.mpg": {
@@ -649,9 +627,7 @@
       "mimeType": "video/mpeg",
       "size": 382185472,
       "scope": {
-        "LUK": [
-          "14"
-        ]
+        "LUK": ["14"]
       }
     },
     "LUK/LUK_15.mpg": {
@@ -661,9 +637,7 @@
       "mimeType": "video/mpeg",
       "size": 361775104,
       "scope": {
-        "LUK": [
-          "15"
-        ]
+        "LUK": ["15"]
       }
     },
     "LUK/LUK_16.mpg": {
@@ -673,9 +647,7 @@
       "mimeType": "video/mpeg",
       "size": 346812416,
       "scope": {
-        "LUK": [
-          "16"
-        ]
+        "LUK": ["16"]
       }
     },
     "LUK/LUK_17.mpg": {
@@ -685,9 +657,7 @@
       "mimeType": "video/mpeg",
       "size": 235720704,
       "scope": {
-        "LUK": [
-          "17"
-        ]
+        "LUK": ["17"]
       }
     },
     "LUK/LUK_18.mpg": {
@@ -697,9 +667,7 @@
       "mimeType": "video/mpeg",
       "size": 294641664,
       "scope": {
-        "LUK": [
-          "18"
-        ]
+        "LUK": ["18"]
       }
     },
     "LUK/LUK_19.mpg": {
@@ -709,9 +677,7 @@
       "mimeType": "video/mpeg",
       "size": 533256192,
       "scope": {
-        "LUK": [
-          "19"
-        ]
+        "LUK": ["19"]
       }
     },
     "LUK/LUK_2.mpg": {
@@ -721,9 +687,7 @@
       "mimeType": "video/mpeg",
       "size": 405985280,
       "scope": {
-        "LUK": [
-          "2"
-        ]
+        "LUK": ["2"]
       }
     },
     "LUK/LUK_20.mpg": {
@@ -733,9 +697,7 @@
       "mimeType": "video/mpeg",
       "size": 670695424,
       "scope": {
-        "LUK": [
-          "20"
-        ]
+        "LUK": ["20"]
       }
     },
     "LUK/LUK_21.mpg": {
@@ -745,9 +707,7 @@
       "mimeType": "video/mpeg",
       "size": 428699648,
       "scope": {
-        "LUK": [
-          "21"
-        ]
+        "LUK": ["21"]
       }
     },
     "LUK/LUK_22.mpg": {
@@ -757,9 +717,7 @@
       "mimeType": "video/mpeg",
       "size": 766781440,
       "scope": {
-        "LUK": [
-          "22"
-        ]
+        "LUK": ["22"]
       }
     },
     "LUK/LUK_23.mpg": {
@@ -769,9 +727,7 @@
       "mimeType": "video/mpeg",
       "size": 450291712,
       "scope": {
-        "LUK": [
-          "23"
-        ]
+        "LUK": ["23"]
       }
     },
     "LUK/LUK_24.mpg": {
@@ -781,9 +737,7 @@
       "mimeType": "video/mpeg",
       "size": 374806528,
       "scope": {
-        "LUK": [
-          "24"
-        ]
+        "LUK": ["24"]
       }
     },
     "LUK/LUK_3.mpg": {
@@ -793,9 +747,7 @@
       "mimeType": "video/mpeg",
       "size": 328286208,
       "scope": {
-        "LUK": [
-          "3"
-        ]
+        "LUK": ["3"]
       }
     },
     "LUK/LUK_4.mpg": {
@@ -805,9 +757,7 @@
       "mimeType": "video/mpeg",
       "size": 420724736,
       "scope": {
-        "LUK": [
-          "4"
-        ]
+        "LUK": ["4"]
       }
     },
     "LUK/LUK_5.mpg": {
@@ -817,9 +767,7 @@
       "mimeType": "video/mpeg",
       "size": 425531392,
       "scope": {
-        "LUK": [
-          "5"
-        ]
+        "LUK": ["5"]
       }
     },
     "LUK/LUK_6.mpg": {
@@ -829,9 +777,7 @@
       "mimeType": "video/mpeg",
       "size": 621789184,
       "scope": {
-        "LUK": [
-          "6"
-        ]
+        "LUK": ["6"]
       }
     },
     "LUK/LUK_7.mpg": {
@@ -841,9 +787,7 @@
       "mimeType": "video/mpeg",
       "size": 454045696,
       "scope": {
-        "LUK": [
-          "7"
-        ]
+        "LUK": ["7"]
       }
     },
     "LUK/LUK_8.mpg": {
@@ -853,9 +797,7 @@
       "mimeType": "video/mpeg",
       "size": 483084288,
       "scope": {
-        "LUK": [
-          "8"
-        ]
+        "LUK": ["8"]
       }
     },
     "LUK/LUK_9.mpg": {
@@ -865,9 +807,7 @@
       "mimeType": "video/mpeg",
       "size": 797745152,
       "scope": {
-        "LUK": [
-          "9"
-        ]
+        "LUK": ["9"]
       }
     },
     "peripherals/name_abraham.mpg": {
