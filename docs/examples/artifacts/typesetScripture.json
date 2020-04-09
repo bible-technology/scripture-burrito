@@ -185,26 +185,11 @@
   },
   "recipeSpecs": [
     {
-      "id": "p0",
-      "metadata": {
-        "recipe": {
-          "content": [
-            {
-              "type": "element",
-              "ingredient": "release/Inside.pdf"
-            },
-            {
-              "type": "element",
-              "ingredient": "release/Cover.pdf"
-            }
-          ]
-        },
-        "identification": {
-          "name": {
-            "en": "Print bundle"
-          }
-        }
-      }
+      "variantId": "p0",
+      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
+      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
+      "algorithm": "https://thedigitalbiblelibrary.org/recipes/typeset_scripture.dblscript.json",
+      "data": "recipes/data/p0.json"
     }
   ],
   "copyright": {
