@@ -9,9 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-12-08T12:36:12.329486+00:00",
-    "comments": [
-      "Looking for FrontCover.JPG"
-    ]
+    "comments": ["Looking for FrontCover.JPG"]
   },
   "idServers": {
     "dbl": {
@@ -66,28 +64,13 @@
           "outside": "9mm"
         },
         "fonts": [
-          [
-            "Times New Roman Regular",
-            "openType"
-          ],
-          [
-            "Times New Roman BoldBold",
-            "openType"
-          ],
-          [
-            "Times New Roman ItalicItalic",
-            "openType"
-          ],
-          [
-            "Segoe UI Symbol Regular",
-            "openType"
-          ]
+          ["Times New Roman Regular", "openType"],
+          ["Times New Roman BoldBold", "openType"],
+          ["Times New Roman ItalicItalic", "openType"],
+          ["Segoe UI Symbol Regular", "openType"]
         ]
       },
-      "canonType": [
-        "ot",
-        "nt"
-      ],
+      "canonType": ["ot", "nt"],
       "canonSpec": {
         "ot": {
           "name": "western"
@@ -108,9 +91,7 @@
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://thedigitalbiblelibrary.org",
       "name": {
         "en": "DBL Testing"
@@ -121,9 +102,7 @@
     },
     {
       "id": "dbl::545d2cb0c1fbcec540df3e8d",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://www.dblipc.org",
       "name": {
         "en": "Example Intellectual Property Contributor"
@@ -134,12 +113,7 @@
     },
     {
       "id": "dbl::54650cd05117ad67b3826e99",
-      "roles": [
-        "content",
-        "publication",
-        "management",
-        "qa"
-      ],
+      "roles": ["content", "publication", "management", "qa"],
       "name": {
         "en": "American Bible Society"
       }
