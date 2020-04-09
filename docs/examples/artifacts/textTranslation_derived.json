@@ -65,8 +65,7 @@
     },
     "confidentiality": {
         "metadata": "unrestricted",
-        "source": "private",
-        "publications": "restricted"
+        "ingredients": "restricted"
     },
     "type": {
         "flavorType": {
@@ -116,7 +115,7 @@
     "relationships": [
         {
             "relationType": "expression",
-            "flavor": "scripturePrint",
+            "flavor": "textTranslation",
             "id": "dbl::fedcba9876543210:2"
         },
         {
