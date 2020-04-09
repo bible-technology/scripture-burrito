@@ -235,49 +235,11 @@
   },
   "recipeSpecs": [
     {
-      "id": "p1",
-      "metadata": {
-        "recipe": {
-          "content": [
-            {
-              "type": "section",
-              "nameId": "book-gen",
-              "content": [
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_001.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_002.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_003.mp3"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "nameId": "book-mat",
-              "content": [
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_001.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_002.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_003.mp3"
-                }
-              ]
-            }
-          ]
-        }
-      }
+      "variantId": "p1",
+      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
+      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
+      "algorithm": "https://thedigitalbiblelibrary.org/recipes/audio_translation_mp3_by_book.dblscript.json",
+      "data": "recipes/data/p1.json"
     }
   ],
   "copyright": {
