@@ -45,6 +45,7 @@ module.exports = {
         require("./scripture/sign_language_video_translation.schema.json"),
         require("./scripture/text_translation.schema.json"),
         require("./scripture/typeset_scripture.schema.json"),
+        require("./role.schema.json"),
         require("./scope.schema.json"),
         require("./software_and_user_info.schema.json"),
         require("./source_meta.schema.json"),
