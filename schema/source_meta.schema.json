@@ -7,7 +7,7 @@
     "properties": {
         "variant": {
             "type": "string",
-            "const": "source",
+            "pattern": "^source(_[A-Za-z][A-Za-z0-9]*)?$",
             "description": "The type of variant represented in the burrito (which must be source which we pretend is not a variant even though it kinda is really)."
         },
         "dateCreated": {
@@ -26,6 +26,9 @@
         },
         "defaultLanguage": {
             "$ref": "meta_default_language.schema.json"
+        },
+        "normalization": {
+            "$ref": "normalization.schema.json"
         },
         "comments": {
             "$ref": "meta_comments.schema.json"
