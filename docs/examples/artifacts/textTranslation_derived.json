@@ -167,8 +167,13 @@
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-      "mimeType": "text/x-usx+xml",
-      "role": "intot",
+        "mimeType": "text/x-usx+xml",
+        "scope": {
+            "GEN": [],
+            "EXO": [],
+            "LEV": []
+        },  
+      "role": "introduction",
       "size": 1234
     },
     "release/text/USX_1/GEN.usx": {
@@ -205,16 +210,22 @@
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-      "mimeType": "text/x-usx+xml",
-      "role": "intnt",
+        "mimeType": "text/x-usx+xml",
+        "scope": {
+            "MAT": []
+        },
+      "role": "introduction",
       "size": 1234
     },
     "release/text/USX_1/INTMAT.usx": {
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-      "mimeType": "text/x-usx+xml",
-      "role": "intMAT",
+        "mimeType": "text/x-usx+xml",
+        "scope": {
+            "MAT": ["1"]
+        },
+      "role": "introduction",
       "size": 1234
     },
     "release/text/USX_1/MAT.usx": {
