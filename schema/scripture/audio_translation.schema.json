@@ -50,6 +50,11 @@
                                 "const": "multipleVoice"
                             }
                         }
+                    },
+                    "else": {
+                        "contains": {
+                            "const": "multipleVoice"
+                        }
                     }
                 },
                 {
@@ -63,6 +68,11 @@
                             "contains": {
                                 "const": "drama"
                             }
+                        }
+                    },
+                    "else": {
+                        "contains": {
+                            "const": "drama"
                         }
                     }
                 }

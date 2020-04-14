@@ -50,7 +50,7 @@
       "name": "scripture",
       "flavor": {
         "name": "audioTranslation",
-        "performance": ["multipleVoice", "drama", "withMusic"],
+          "performance": ["multipleVoice", "drama", "withMusic"],
         "formats": {
           "format1": {
             "compression": "mp3",
