@@ -29,9 +29,44 @@
         "name": {
             "const": "audioTranslation"
         },
-        "dramatization": {
-            "type": "string",
-            "enum": ["dramatized", "nonDramatized", "singleVoice"]
+        "performance": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["singleVoice", "multipleVoice", "reading", "drama", "withMusic", "withEffects", "withHeadings"]
+            },
+            "uniqueItems": true,
+            "additionalItems": false,
+            "allOf": [
+                {
+                    "if": {
+                        "contains": {
+                            "const": "singleVoice"
+                        }
+                    },
+                    "then": {
+                        "not": {
+                            "contains": {
+                                "const": "multipleVoice"
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "contains": {
+                            "const": "reading"
+                        }
+                    },
+                    "then": {
+                        "not": {
+                            "contains": {
+                                "const": "drama"
+                            }
+                        }
+                    }
+                }
+            ]
         },
         "formats": {
             "type": "object",
@@ -56,6 +91,6 @@
             }
         }
     },
-    "required": ["dramatization", "formats"],
+    "required": ["performance", "formats"],
     "additionalProperties": false
 }
