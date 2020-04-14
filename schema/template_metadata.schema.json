@@ -35,9 +35,6 @@
         "copyright": {
             "noRef": "copyright.schema.json"
         },
-        "promotion": {
-            "noRef": "promotion.schema.json"
-        },
         "ingredients": {
             "noRef": "ingredients.schema.json"
         },
