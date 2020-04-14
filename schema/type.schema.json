@@ -5,55 +5,94 @@
     "title": "Type",
     "type": "object",
     "description": "Contains properties describing the burrito flavor type.",
-    "oneOf": [
-        {
+    "properties": {
+        "flavorType": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "scripture",
+                        "gloss",
+                        "parascriptural",
+                        "peripheral"
+                    ]
+                }
+            }
+        }
+    },
+    "if" : {
+        "properties": {
+            "flavorType": {
+                "properties": {
+                    "name": {
+                        "const": "scripture"
+                    }
+                }
+            }
+        }
+    },
+    "then":
+    {
+        "properties": {
+            "flavorType": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "const": "scripture"
+                    },
+                    "flavor": {
+                        "type": "object",
+                        "oneOf": [
+                            {
+                                "$ref": "scripture/text_translation.schema.json"
+                            },
+                            {
+                                "$ref": "scripture/audio_translation.schema.json"
+                            },
+                            {
+                                "$ref": "scripture/typeset_scripture.schema.json"
+                            },
+                            {
+                                "$ref": "scripture/embossed_braille_scripture.schema.json"
+                            },
+                            {
+                                "$ref": "scripture/sign_language_video_translation.schema.json"
+                            },
+                            {
+                                "$ref": "x_flavor.schema.json"
+                            }
+                        ]
+                    },
+                    "currentScope": {
+                        "$ref": "scope.schema.json"
+                    },
+                    "canonType": {
+                        "$ref": "canon_type.schema.json"
+                    },
+                    "canonSpec": {
+                        "$ref": "canon_spec.schema.json"
+                    }
+                },
+                "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
+                "additionalProperties": false
+            }
+        }
+    },
+    "else": {
+        "if" : {
             "properties": {
                 "flavorType": {
-                    "type": "object",
                     "properties": {
                         "name": {
-                            "type": "string",
-                            "const": "scripture"
-                        },
-                        "flavor": {
-                            "type": "object",
-                            "oneOf": [
-                                {
-                                    "$ref": "scripture/text_translation.schema.json"
-                                },
-                                {
-                                    "$ref": "scripture/audio_translation.schema.json"
-                                },
-                                {
-                                    "$ref": "scripture/typeset_scripture.schema.json"
-                                },
-                                {
-                                    "$ref": "scripture/embossed_braille_scripture.schema.json"
-                                },
-                                {
-                                    "$ref": "scripture/sign_language_video_translation.schema.json"
-                                },
-                                {
-                                    "$ref": "x_flavor.schema.json"
-                                }
-                            ]
-                        },
-                        "currentScope": {
-                            "$ref": "scope.schema.json"
-                        },
-                        "canonType": {
-                            "$ref": "canon_type.schema.json"
-                        },
-                        "canonSpec": {
-                            "$ref": "canon_spec.schema.json"
+                            "const": "gloss"
                         }
-                    },
-                    "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
-                    "additionalProperties": false
+                    }
                 }
             }
         },
-        {
+        "then": {
             "properties": {
                 "flavorType": {
                     "type": "object",
@@ -88,77 +127,90 @@
                 }
             }
         },
-        {
-            "properties": {
-                "flavorType": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "const": "parascriptural"
-                        },
-                        "flavor": {
-                            "type": "object",
-                            "oneOf": [
-                                {
-                                    "$ref": "parascriptural/word_alignment.schema.json"
-                                },
-                                {
-                                    "$ref": "x_flavor.schema.json"
-                                }
-                            ]
-                        },
-                        "currentScope": {
-                            "$ref": "scope.schema.json"
-                        },
-                        "canonType": {
-                            "$ref": "canon_type.schema.json"
-                        },
-                        "canonSpec": {
-                            "$ref": "canon_spec.schema.json"
+        "else": {
+            "if" : {
+                "properties": {
+                    "flavorType": {
+                        "properties": {
+                            "name": {
+                                "const": "parascriptural"
+                            }
                         }
-                    },
-                    "required": ["name", "flavor"],
-                    "additionalProperties": false
+                    }
                 }
-            }
-        },
-        {
-            "properties": {
-                "flavorType": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "const": "peripheral"
+            },
+            "then": {
+                "properties": {
+                    "flavorType": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "const": "parascriptural"
+                            },
+                            "flavor": {
+                                "type": "object",
+                                "oneOf": [
+                                    {
+                                        "$ref": "parascriptural/word_alignment.schema.json"
+                                    },
+                                    {
+                                        "$ref": "x_flavor.schema.json"
+                                    }
+                                ]
+                            },
+                            "currentScope": {
+                                "$ref": "scope.schema.json"
+                            },
+                            "canonType": {
+                                "$ref": "canon_type.schema.json"
+                            },
+                            "canonSpec": {
+                                "$ref": "canon_spec.schema.json"
+                            }
                         },
-                        "flavor": {
-                            "type": "object",
-                            "oneOf": [
-                                {
-                                    "$ref": "peripheral/versification.schema.json"
-                                },
-                                {
-                                    "$ref": "x_flavor.schema.json"
-                                }
-                            ]
+                        "required": ["name", "flavor"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "flavorType": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "const": "peripheral"
+                            },
+                            "flavor": {
+                                "type": "object",
+                                "oneOf": [
+                                    {
+                                        "$ref": "peripheral/versification.schema.json"
+                                    },
+                                    {
+                                        "$ref": "x_flavor.schema.json"
+                                    }
+                                ]
+                            },
+                            "currentScope": {
+                                "$ref": "scope.schema.json"
+                            },
+                            "canonType": {
+                                "$ref": "canon_type.schema.json"
+                            },
+                            "canonSpec": {
+                                "$ref": "canon_spec.schema.json"
+                            }
                         },
-                        "currentScope": {
-                            "$ref": "scope.schema.json"
-                        },
-                        "canonType": {
-                            "$ref": "canon_type.schema.json"
-                        },
-                        "canonSpec": {
-                            "$ref": "canon_spec.schema.json"
-                        }
-                    },
-                    "required": ["name", "flavor"],
-                    "additionalProperties": false
+                        "required": ["name", "flavor"],
+                        "additionalProperties": false
+                    }
                 }
             }
         }
-    ],
+    },
     "allOf": [
         {
             "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
