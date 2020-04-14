@@ -53,6 +53,8 @@ module.exports = {
         require("./source_metadata.schema.json"),
         require("./target_areas.schema.json"),
         require("./target_area.schema.json"),
+        require("./template_meta.schema.json"),
+        require("./template_metadata.schema.json"),
         require("./type.schema.json"),
         require("./unm49.schema.json"),
         require("./x_flavor.schema.json")
