@@ -46,16 +46,16 @@
             ]
         },
         {
+            "description": "A role for PoD-type content, eg \"printCover\"",
+            "enum": ["body", "thumbnail"]
+        },
+        {
             "description": "A label for story-type units",
             "pattern": "^unit\\s.*\\S$"
         },
         {
             "description": "A label for dictionary-type resources",
             "pattern": "^(name|sign|word|concept|place)(\\s.*\\S)?$"
-        },
-        {
-            "description": "A role for PoD-type content, eg \"printCover\"",
-            "enum": ["body", "thumbnail"]
         },
         {
             "description": "An x-role",
