@@ -10,7 +10,7 @@
             "properties": {
                 "variant": {
                     "type": "string",
-                    "pattern": "^(source|derived)(_[A-Za-z][A-Za-z0-9]*)?$"
+                    "pattern": "^(source|derived|template)"
                 }
             }
         }
@@ -18,10 +18,8 @@
     "if": {
         "properties": {
             "meta": {
-                "type": "object",
                 "properties": {
                     "variant": {
-                        "type": "string",
                         "pattern": "^source"
                     }
                 }
@@ -32,6 +30,22 @@
         "$ref": "source_metadata.schema.json"
     },
     "else": {
-        "$ref": "derived_metadata.schema.json"
+        "if": {
+            "properties": {
+                "meta": {
+                    "properties": {
+                        "variant": {
+                            "pattern": "^derived"
+                        }
+                    }
+                }
+            }
+        },
+        "then": {
+            "$ref": "derived_metadata.schema.json"
+        },
+        "else": {
+            "$ref": "template_metadata.schema.json"
+        }
     }
 }
