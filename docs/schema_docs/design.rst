@@ -99,3 +99,11 @@ The identification section contains many Dublin Core-inspired fields that relate
 optionally, within each publication. The fields in the identification section are assumed to apply to the publication unless alternative values
 are specifically specified within the publication. Duplicate values between the identification and publication sections are legal but discouraged,
 as human editing tends to result in unintended skew between the previously-identical values.
+
+Versioning
+==========
+
+The Scripture Burrito specification follows `semantic versioning <http://semver.org>`_. The following clarify how we implement that in the specification:
+
+* SB schema 1.0.x will be able to validate 1.0.y for any value of x >= y.
+* SB schema 1.1.x is a whole new schema and will not validate 1.0.x.
