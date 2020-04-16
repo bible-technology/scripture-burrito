@@ -27,6 +27,9 @@
         "defaultLanguage": {
             "$ref": "meta_default_language.schema.json"
         },
+        "normalization": {
+            "$ref": "normalization.schema.json"
+        },
         "comments": {
             "$ref": "meta_comments.schema.json"
         }

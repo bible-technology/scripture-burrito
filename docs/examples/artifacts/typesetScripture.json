@@ -133,21 +133,24 @@
         "md5": "ea6cf3aaab5e87d4844a839f55712a2b"
       },
       "mimeType": "application/pdf",
-      "size": 21742731
+        "size": 21742731,
+        "role": "body"
     },
     "release/Cover.pdf": {
       "checksum": {
         "md5": "4f885b5395c57b623982fe1db37efbb1"
       },
       "mimeType": "application/pdf",
-      "size": 69141
+        "size": 69141,
+        "role": "cover"
     },
     "release/FrontCover.jpg": {
       "checksum": {
         "md5": "92b271f5d83ad1cc574276dd1d898854"
       },
-      "mimeType": "text/plain",
-      "size": 15323
+      "mimeType": "image/jpeg",
+        "size": 15323,
+        "role": "cover"
     },
     "source/zzzPADBL_2018POD_Source.zip": {
       "checksum": {

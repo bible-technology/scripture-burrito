@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/role.schema.json",
+    "title": "Scripture Burrito Role",
+    "type": "string",
+    "description": "Roles which may be optionally attached to an ingredient.",
+    "oneOf": [
+        {
+            "description": "A USX peripheral label,eg \"maps\"",
+            "enum": [
+                "abbreviations",
+                "alphacontents",
+                "chron",
+                "cnc",
+                "contents",
+                "cover",
+                "foreword",
+                "glo",
+                "halftitle",
+                "imprimatur",
+                "lxxquotes",
+                "maps",
+                "measures",
+                "ndx",
+                "preface",
+                "promo",
+                "pubdata",
+                "spine",
+                "tdx",
+                "title"
+            ]
+        },
+        {
+            "description": "A role for story-based or video works, eg \"teaching\"",
+            "enum": [
+                "background",
+                "bridge",
+                "credits",
+                "diagram",
+                "gloss",
+                "illustration",
+                "introduction",
+                "scripture",
+                "teaching",
+                "timing"
+            ]
+        },
+        {
+            "description": "A role for PoD-type content, eg \"printCover\"",
+            "enum": ["body", "thumbnail"]
+        },
+        {
+            "description": "A label for story-type units",
+            "pattern": "^unit\\s.*\\S$"
+        },
+        {
+            "description": "A label for dictionary-type resources",
+            "pattern": "^(name|sign|word|concept|place)(\\s.*\\S)?$"
+        },
+        {
+            "description": "An x-role",
+            "pattern": "^x-\\S.*\\S$"
+        }
+    ]
+}

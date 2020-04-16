@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/template_metadata.schema.json",
+    "title": "Scripture Burrito Metadata (Template)",
+    "type": "object",
+    "description": "Scripture Burrito Template root.",
+    "properties": {
+        "meta": {
+            "$ref": "template_meta.schema.json"
+        },
+        "idServers": {
+            "noRef": "id_servers.schema.json"
+        },
+        "identification": {
+            "noRef": "identification.schema.json"
+        },
+        "confidentiality": {
+            "noRef": "confidentiality.schema.json"
+        },
+        "type": {
+            "noRef": "type.schema.json"
+        },
+        "relationships": {
+            "noRef": "relationships.schema.json"
+        },
+        "languages": {
+            "noRef": "languages.schema.json"
+        },
+        "targetAreas": {
+            "noRef": "target_areas.schema.json"
+        },
+        "agencies": {
+            "noRef": "agencies.schema.json"
+        },
+        "copyright": {
+            "noRef": "copyright.schema.json"
+        },
+        "ingredients": {
+            "noRef": "ingredients.schema.json"
+        },
+        "names": {
+            "noRef": "names.schema.json"
+        },
+        "recipeSpecs": {
+            "noRef": "recipe.schema.json"
+        }
+    },
+    "required": ["meta"],
+    "additionalProperties": false
+}
