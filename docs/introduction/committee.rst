@@ -31,7 +31,7 @@ The committee meets regularly and is now comprised of the following individuals:
 
 * Dan De Blois
 * Jesse Griffin
-* Mark Howe
+* Sean Morrison
 * Joel Mathew
 * Jonathan Robie
 * Tim Steenwyk
