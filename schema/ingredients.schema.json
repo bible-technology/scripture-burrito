@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/ingredients.schema.json",
-    "title": "Scripture Burrito Ingredients",
+    "$$target": "ingredients.schema.json",
+    "title": "Ingredients",
     "type": "object",
     "additionalProperties": {
         "$ref": "ingredient.schema.json"

@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/names.schema.json",
-    "title": "Scripture Burrito Names",
+    "$$target": "names.schema.json",
+    "title": "Names",
     "type": "object",
     "additionalProperties": {
         "$ref": "name.schema.json"

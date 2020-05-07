@@ -6,5 +6,5 @@ Glossed Bible Story Document
 
 The following is an example of a :ref:`scriptural_text_stories_flavor` metadata document.
 
-.. literalinclude:: artifacts/glossed_text_story.json
+.. literalinclude:: artifacts/textStories.json
     :language: json

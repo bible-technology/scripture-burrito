@@ -2,5 +2,5 @@
 X-Extended Scripture Document Expressed
 #######################################
 
-.. literalinclude:: artifacts/scripture_x.json
+.. literalinclude:: artifacts/xScripture.json
     :language: json

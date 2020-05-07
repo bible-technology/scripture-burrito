@@ -2,5 +2,5 @@
 Peripheral Versification Document Expressed
 ###########################################
 
-.. literalinclude:: artifacts/peripheral_versification.json
+.. literalinclude:: artifacts/versification.json
     :language: json
