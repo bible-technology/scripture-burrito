@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/recipe_element.schema.json",
     "$$target": "recipe_element.schema.json",
-    "title": "Scripture Burrito Recipe Element",
+    "title": "Recipe Element",
     "type": "object",
     "description": "Scripture Burrito recipe element.",
     "properties": {

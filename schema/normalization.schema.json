@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/normalization.schema.json",
     "$$target": "normalization.schema.json",
-    "title": "Scripture Burrito Normalization",
+    "title": "Normalization",
     "type": "string",
     "description": "Unicode Normalization Options.",
     "enum": [

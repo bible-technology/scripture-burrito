@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/canon_type.schema.json",
     "$$target": "canon_type.schema.json",
-    "title": "Scripture Burrito Canon Type",
+    "title": "Canon Type",
     "type": "array",
     "items": {
         "type": "string",

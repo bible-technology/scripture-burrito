@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/source_metadata.schema.json",
     "$$target": "source_metadata.schema.json",
-    "title": "Scripture Burrito Metadata (Default)",
+    "title": "Metadata (Default)",
     "type": "object",
     "description": "Scripture Burrito source kinda-variant root.",
     "properties": {

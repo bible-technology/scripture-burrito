@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/derived_meta.schema.json",
     "$$target": "derived_meta.schema.json",
-    "title": "Scripture Burrito Meta (Derived)",
+    "title": "Meta (Derived)",
     "type": "object",
     "description": "Information about the Scripture Burrito metadata file.",
     "properties": {
