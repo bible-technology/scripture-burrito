@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/agencies.schema.json",
-    "title": "Scripture Burrito Agencies",
+    "$$target": "agencies.schema.json",
+    "title": "Agencies",
     "type": "array",
     "items": {
         "$ref": "agency.schema.json"

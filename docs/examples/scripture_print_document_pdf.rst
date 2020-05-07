@@ -2,5 +2,5 @@
 Scripture Print Document (PDF) Expressed
 ########################################
 
-.. literalinclude:: artifacts/scripture_print_pdf.json
+.. literalinclude:: artifacts/typesetScripture.json
     :language: json

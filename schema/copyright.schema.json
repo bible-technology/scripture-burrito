@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/copyright.schema.json",
+    "$$target": "copyright.schema.json",
     "title": "Copyright and License Information",
     "type": "object",
     "description": "Describes the copyright holders and license terms of the burrito.",

@@ -6,7 +6,7 @@
         "common.schema.json#/definitions/localizedText",
         "common.schema.json#/definitions/rodCode"
     ],
-    "title": "Scripture Burrito Common Definitions",
+    "title": "Common Definitions",
     "description": "Common definitions for use by other parts of the schema.",
     "definitions": {
         "timestamp": {

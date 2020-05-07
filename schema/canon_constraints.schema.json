@@ -6,6 +6,8 @@
     "type": "object",
     "definitions": {
         "OTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTConstraint", "#/definitions/OTConstraint"],
+            "title": "Old Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -33,6 +35,8 @@
             }
         },
         "OTPlusConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTPlusConstraint", "#/definitions/OTPlusConstraint"],
+            "title": "Old Testament Plus Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -60,6 +64,8 @@
             }
         },
         "DCConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/DCConstraint", "#/definitions/DCConstraint"],
+            "title": "Deutero Canon Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -87,6 +93,8 @@
             }
         },
         "NTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/NTConstraint", "#/definitions/NTConstraint"],
+            "title": "New Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -113,7 +121,9 @@
                 }
             }
         },
-        "OTContraint2": {
+        "OTConstraint2": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTConstraint2", "#/definitions/OTConstraint2"],
+            "title": "Old Testament Constraint 2",
             "if": {
                 "properties": {
                     "canonType": {
@@ -132,6 +142,8 @@
             }
         },
         "OTDCConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTDCConstraint", "#/definitions/OTDCConstraint"],
+            "title": "Old Testament Deutero Canon Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -150,6 +162,8 @@
             }
         },
         "NTConstraint2": {
+            "$$target": ["canon_constraints.schema.json#/definitions/NTConstraint2", "#/definitions/NTConstraint2"],
+            "title": "New Testament Constraint 2",
             "if": {
                 "properties": {
                     "canonType": {
@@ -168,6 +182,8 @@
             }
         },
         "OTNTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTNTConstraint", "#/definitions/OTNTConstraint"],
+            "title": "Old and NT Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
