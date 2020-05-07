@@ -8,9 +8,6 @@ Schema Documentation
    design
    agencies
    agency
-   canon_constraints
-   canon_spec
-   canon_type
    common
    confidentiality
    copyright

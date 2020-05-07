@@ -1,3 +1,4 @@
 .. _schema_docs-type:
 
-.. jsonschema:: ../../schema/type.schema.json
+.. literalinclude:: ../../schema/type.schema.json
+    :language: json
