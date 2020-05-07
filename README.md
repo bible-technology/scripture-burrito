@@ -35,8 +35,13 @@ One special note, any section that needs to be linked to from another section sh
 
 Also, note that there is a script which automatically takes the schema and creates the `.rst` files for Sphinx to process. This should be done anytime changes are made to the schema (and should probably be part of the sphinx builder).
 
-    cd docs/docs/schema_docs
+    cd docs/schema_docs
     ./gen_schema_docs.sh
+
+A similar script is used for the examples.
+
+    cd docs/examples
+    ./gen_example_docs.sh
 
 ## Validation
 
