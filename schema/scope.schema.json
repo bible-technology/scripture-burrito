@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/scope.schema.json",
+    "$$target": "scope.schema.json",
     "title": "Scripture Burrito Scope",
     "type": "object",
     "description": "Scope specification, used for the whole burrito and for specific ingredients. In both cases it describes the actual content, not future translation goals.",

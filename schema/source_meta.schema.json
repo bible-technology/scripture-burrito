@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/source_meta.schema.json",
+    "$$target": "source_meta.schema.json",
     "title": "Scripture Burrito Meta (Default)",
     "type": "object",
     "description": "Information about the Scripture Burrito metadata file (default variant).",

@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/meta_comments.schema.json",
+    "$$target": "meta_comments.schema.json",
     "title": "Scripture Burrito Meta Comments",
     "type": "array",
     "items": {

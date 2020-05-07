@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/derived_metadata.schema.json",
+    "$$target": "derived_metadata.schema.json",
     "title": "Scripture Burrito Metadata (Derived)",
     "type": "object",
     "description": "Scripture Burrito derived variant root.",
