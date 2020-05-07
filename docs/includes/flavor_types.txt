@@ -1,1 +1,6 @@
-Flavors are grouped into four **flavor types**, depending (loosely) on how scripture-like they are. This mechanism enables functionality to be defined for groups of flavors. For example, any flavor within the scripture flavorType will contain similar catalog information.
+Scripture Burritos are grouped into four **flavor types**, depending on its relationship to Scripture:
+
+1. Scripture
+2. Gloss - includes narratives, stories, etc.
+3. Parascriptural - includes anything indexed by book, chapter, verse that is not Scripture, e.g. commentaries or syntactic notes.
+4. Peripheral - any other resource related to Scripture
