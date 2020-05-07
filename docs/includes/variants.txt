@@ -1,0 +1,2 @@
+A Scripture Burrito is a source variant by default. Other variants are programmatically derived from source variants.
+A variant is a programmatically derived burrito.  The intent of a variant is to identify the upstream source.
