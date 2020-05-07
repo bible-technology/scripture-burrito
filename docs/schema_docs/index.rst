@@ -8,6 +8,7 @@ Schema Documentation
    design
    agencies
    agency
+   canon_type
    common
    confidentiality
    copyright
@@ -28,6 +29,7 @@ Schema Documentation
    metadata
    name
    names
+   normalization
    numbering_system
    parascriptural-word_alignment
    peripheral-versification
@@ -39,6 +41,7 @@ Schema Documentation
    recipe_specs
    relationship
    relationships
+   role
    scope
    scripture-audio_translation
    scripture-embossed_braille_scripture
@@ -51,6 +54,8 @@ Schema Documentation
    source_metadata
    target_area
    target_areas
+   template_meta
+   template_metadata
    type
    unm49
    x_flavor
