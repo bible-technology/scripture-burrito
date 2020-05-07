@@ -4,7 +4,7 @@
     "$$target": "normalization.schema.json",
     "title": "Normalization",
     "type": "string",
-    "description": "Unicode Normalization Options.",
+    "description": "Unicode normalization options. This applies to both ingredients and metadata.",
     "enum": [
         "NFC",
         "NFD",
