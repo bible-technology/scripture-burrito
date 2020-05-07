@@ -12,9 +12,16 @@ Schema Documentation
    common
    confidentiality
    copyright
-   derived_meta
-   derived_metadata
    gloss-text_stories
+   parascriptural-word_alignment
+   peripheral-versification
+   scripture_flavor_type
+   scripture-audio_translation
+   scripture-embossed_braille_scripture
+   scripture-sign_language_video_translation
+   scripture-text_translation
+   scripture-typeset_scripture
+   x_flavor
    id_servers
    identification
    ingredient
@@ -31,8 +38,6 @@ Schema Documentation
    names
    normalization
    numbering_system
-   parascriptural-word_alignment
-   peripheral-versification
    progress
    promotion
    recipe
@@ -43,19 +48,14 @@ Schema Documentation
    relationships
    role
    scope
-   scripture-audio_translation
-   scripture-embossed_braille_scripture
-   scripture-sign_language_video_translation
-   scripture-text_translation
-   scripture-typeset_scripture
-   scripture_flavor_type
    software_and_user_info
    source_meta
    source_metadata
-   target_area
-   target_areas
+   derived_meta
+   derived_metadata
    template_meta
    template_metadata
+   target_area
+   target_areas
    type
    unm49
-   x_flavor
