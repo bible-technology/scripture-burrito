@@ -1,1 +1,3 @@
-A **burrito** is a collection of content plus metadata. That collection may be made available in various formats, such as a zip file, an Amazon S3 bucket or a series of API calls. The term “burrito” describes the content, not the distribution mechanism.
+A **burrito** is a wrapper that contains content and metadata. That wrapper may be made available in various digital formats, such as a zip file, an Amazon S3 bucket or a series of API calls. The term “burrito” describes the wrapper, not the distribution mechanism.
+
+The metadata describes the contents of the burrito, including directory structure and ingredients.
