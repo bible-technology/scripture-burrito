@@ -9,9 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-03-15T19:38:40.762935+00:00",
-    "comments": [
-      "Updated with working audio files for GEN 1-3 and MAT 1-3, test browser open on success"
-    ]
+    "comments": ["Updated with working audio files for GEN 1-3 and MAT 1-3, test browser open on success"]
   },
   "idServers": {
     "dbl": {
@@ -52,7 +50,7 @@
       "name": "scripture",
       "flavor": {
         "name": "audioTranslation",
-        "dramatization": "singleVoice",
+          "performance": ["multipleVoice", "drama", "withMusic"],
         "formats": {
           "format1": {
             "compression": "mp3",
@@ -63,10 +61,7 @@
           }
         }
       },
-      "canonType": [
-        "ot",
-        "nt"
-      ],
+      "canonType": ["ot", "nt"],
       "canonSpec": {
         "ot": {
           "name": "western"
@@ -83,15 +78,12 @@
   },
   "confidentiality": {
     "metadata": "unrestricted",
-    "source": "private",
-    "publications": "restricted"
+    "ingredients": "restricted"
   },
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://thedigitalbiblelibrary.org",
       "name": {
         "en": "Organization for DBL Testing"
@@ -102,26 +94,14 @@
     },
     {
       "id": "dbl::54650ce75117ad68c4c49e91",
-      "roles": [
-        "content",
-        "publication",
-        "management",
-        "finance",
-        "qa"
-      ],
+      "roles": ["content", "publication", "management", "finance", "qa"],
       "name": {
         "en": "Test Creator"
       }
     },
     {
       "id": "dbl::54650ce85117ad68c4c49e99",
-      "roles": [
-        "content",
-        "publication",
-        "management",
-        "finance",
-        "qa"
-      ],
+      "roles": ["content", "publication", "management", "finance", "qa"],
       "name": {
         "en": "Test Publisher"
       }
@@ -167,9 +147,7 @@
       "mimeType": "audio/mpeg",
       "size": 10168353,
       "scope": {
-        "GEN": [
-          "1"
-        ]
+        "GEN": ["1"]
       }
     },
     "release/audio/GEN/GEN_002.mp3": {
@@ -179,9 +157,7 @@
       "mimeType": "audio/mpeg",
       "size": 7977633,
       "scope": {
-        "GEN": [
-          "2"
-        ]
+        "GEN": ["2"]
       }
     },
     "release/audio/GEN/GEN_003.mp3": {
@@ -191,9 +167,7 @@
       "mimeType": "audio/mpeg",
       "size": 9992673,
       "scope": {
-        "GEN": [
-          "3"
-        ]
+        "GEN": ["3"]
       }
     },
     "release/audio/MAT/MAT_001.mp3": {
@@ -203,9 +177,7 @@
       "mimeType": "audio/mpeg",
       "size": 8399073,
       "scope": {
-        "MAT": [
-          "1"
-        ]
+        "MAT": ["1"]
       }
     },
     "release/audio/MAT/MAT_002.mp3": {
@@ -215,9 +187,7 @@
       "mimeType": "audio/mpeg",
       "size": 10095393,
       "scope": {
-        "MAT": [
-          "2"
-        ]
+        "MAT": ["2"]
       }
     },
     "release/audio/MAT/MAT_003.mp3": {
@@ -227,57 +197,17 @@
       "mimeType": "audio/mpeg",
       "size": 6794913,
       "scope": {
-        "MAT": [
-          "3"
-        ]
+        "MAT": ["3"]
       }
     }
   },
   "recipeSpecs": [
     {
-      "id": "p1",
-      "metadata": {
-        "recipe": {
-          "content": [
-            {
-              "type": "section",
-              "nameId": "book-gen",
-              "content": [
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_001.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_002.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/GEN/GEN_003.mp3"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "nameId": "book-mat",
-              "content": [
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_001.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_002.mp3"
-                },
-                {
-                  "type": "element",
-                  "ingredient": "release/audio/MAT/MAT_003.mp3"
-                }
-              ]
-            }
-          ]
-        }
-      }
+      "variantId": "p1",
+      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
+      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
+      "algorithm": "https://thedigitalbiblelibrary.org/recipes/audio_translation_mp3_by_book.dblscript.json",
+      "data": "recipes/data/p1.json"
     }
   ],
   "copyright": {

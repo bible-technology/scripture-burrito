@@ -8,10 +8,16 @@
     "items": {
         "type": "object",
         "properties": {
-            "id": {
+            "variantId": {
                 "$ref": "common.schema.json#/definitions/trimmedText"
             },
-            "href": {
+            "processor": {
+                "$ref": "common.schema.json#/definitions/url"
+            },
+            "algorithmFormat": {
+                "$ref": "common.schema.json#/definitions/url"
+            },
+            "algorithm": {
                 "oneOf": [
                     {
                         "$ref": "common.schema.json#/definitions/path"
@@ -21,11 +27,11 @@
                     }
                 ]
             },
-            "metadata": {
-                "type": "object"
+            "data": {
+                "$ref": "common.schema.json#/definitions/path"
             }
         },
-        "required": ["id"],
+        "required": ["variantId", "processor"],
         "additionalProperties": false
     }
 }

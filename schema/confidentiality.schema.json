@@ -15,10 +15,7 @@
         "metadata": {
             "$ref": "#/definitions/confidentialityEnum"
         },
-        "source": {
-            "$ref": "#/definitions/confidentialityEnum"
-        },
-        "publications": {
+        "ingredients": {
             "$ref": "#/definitions/confidentialityEnum"
         }
     },

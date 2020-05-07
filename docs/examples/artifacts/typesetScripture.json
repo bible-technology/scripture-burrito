@@ -9,9 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-12-08T12:36:12.329486+00:00",
-    "comments": [
-      "Looking for FrontCover.JPG"
-    ]
+    "comments": ["Looking for FrontCover.JPG"]
   },
   "idServers": {
     "dbl": {
@@ -66,28 +64,13 @@
           "outside": "9mm"
         },
         "fonts": [
-          [
-            "Times New Roman Regular",
-            "openType"
-          ],
-          [
-            "Times New Roman BoldBold",
-            "openType"
-          ],
-          [
-            "Times New Roman ItalicItalic",
-            "openType"
-          ],
-          [
-            "Segoe UI Symbol Regular",
-            "openType"
-          ]
+          ["Times New Roman Regular", "openType"],
+          ["Times New Roman BoldBold", "openType"],
+          ["Times New Roman ItalicItalic", "openType"],
+          ["Segoe UI Symbol Regular", "openType"]
         ]
       },
-      "canonType": [
-        "ot",
-        "nt"
-      ],
+      "canonType": ["ot", "nt"],
       "canonSpec": {
         "ot": {
           "name": "western"
@@ -96,20 +79,19 @@
           "name": "western"
         }
       },
-      "currentScope": {}
+      "currentScope": {
+        "JHN": []
+      }
     }
   },
   "confidentiality": {
     "metadata": "unrestricted",
-    "source": "private",
-    "publications": "restricted"
+    "ingredients": "restricted"
   },
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://thedigitalbiblelibrary.org",
       "name": {
         "en": "DBL Testing"
@@ -120,9 +102,7 @@
     },
     {
       "id": "dbl::545d2cb0c1fbcec540df3e8d",
-      "roles": [
-        "rightsHolder"
-      ],
+      "roles": ["rightsHolder"],
       "url": "http://www.dblipc.org",
       "name": {
         "en": "Example Intellectual Property Contributor"
@@ -133,12 +113,7 @@
     },
     {
       "id": "dbl::54650cd05117ad67b3826e99",
-      "roles": [
-        "content",
-        "publication",
-        "management",
-        "qa"
-      ],
+      "roles": ["content", "publication", "management", "qa"],
       "name": {
         "en": "American Bible Society"
       }
@@ -158,21 +133,24 @@
         "md5": "ea6cf3aaab5e87d4844a839f55712a2b"
       },
       "mimeType": "application/pdf",
-      "size": 21742731
+        "size": 21742731,
+        "role": "body"
     },
     "release/Cover.pdf": {
       "checksum": {
         "md5": "4f885b5395c57b623982fe1db37efbb1"
       },
       "mimeType": "application/pdf",
-      "size": 69141
+        "size": 69141,
+        "role": "cover"
     },
     "release/FrontCover.jpg": {
       "checksum": {
         "md5": "92b271f5d83ad1cc574276dd1d898854"
       },
-      "mimeType": "text/plain",
-      "size": 15323
+      "mimeType": "image/jpeg",
+        "size": 15323,
+        "role": "cover"
     },
     "source/zzzPADBL_2018POD_Source.zip": {
       "checksum": {
@@ -184,26 +162,11 @@
   },
   "recipeSpecs": [
     {
-      "id": "p0",
-      "metadata": {
-        "recipe": {
-          "content": [
-            {
-              "type": "element",
-              "ingredient": "release/Inside.pdf"
-            },
-            {
-              "type": "element",
-              "ingredient": "release/Cover.pdf"
-            }
-          ]
-        },
-        "identification": {
-          "name": {
-            "en": "Print bundle"
-          }
-        }
-      }
+      "variantId": "p0",
+      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
+      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
+      "algorithm": "https://thedigitalbiblelibrary.org/recipes/typeset_scripture.dblscript.json",
+      "data": "recipes/data/p0.json"
     }
   ],
   "copyright": {

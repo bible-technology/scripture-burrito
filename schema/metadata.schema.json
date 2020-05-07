@@ -5,12 +5,48 @@
     "title": "Scripture Burrito Metadata",
     "type": "object",
     "description": "Scripture Burrito root metadata object.",
-    "oneOf": [
-        {
-            "$ref": "source_metadata.schema.json"
-        },
-        {
-            "$ref": "derived_metadata.schema.json"
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "variant": {
+                    "type": "string",
+                    "pattern": "^(source|derived|template)"
+                }
+            }
         }
-    ]
+    },
+    "if": {
+        "properties": {
+            "meta": {
+                "properties": {
+                    "variant": {
+                        "pattern": "^source"
+                    }
+                }
+            }
+        }
+    },
+    "then": {
+        "$ref": "source_metadata.schema.json"
+    },
+    "else": {
+        "if": {
+            "properties": {
+                "meta": {
+                    "properties": {
+                        "variant": {
+                            "pattern": "^derived"
+                        }
+                    }
+                }
+            }
+        },
+        "then": {
+            "$ref": "derived_metadata.schema.json"
+        },
+        "else": {
+            "$ref": "template_metadata.schema.json"
+        }
+    }
 }
