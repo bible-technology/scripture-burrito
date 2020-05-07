@@ -58,3 +58,4 @@ Content
    schema_docs/index
    flavors/index
    examples/index
+   glossary
