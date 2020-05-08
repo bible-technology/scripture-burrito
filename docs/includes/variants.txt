@@ -1,2 +1,1 @@
-A Scripture Burrito is a source variant by default. Other variants are programmatically derived from source variants.
-A variant is a programmatically derived burrito.  The intent of a variant is to identify the upstream source.
+Variants provide a mechanism for distinguishing source burritos from derived burritos. A source variant is a user modifiable burrito. A derived variant is programmatically derived from a source variant.
