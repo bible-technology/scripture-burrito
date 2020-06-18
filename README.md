@@ -1,8 +1,8 @@
 master:[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
-![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=master)
+[![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=master)](https://github.com/bible-technology/scripture-burrito/actions?query=branch%3Amaster)
 
 develop:[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=develop)](https://docs.burrito.bible/en/latest/?badge=develop)
-![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=develop)
+[![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=develop)](https://github.com/bible-technology/scripture-burrito/actions?query=branch%3Adevelop)
 
 # Scripture Burrito Documentation
 
