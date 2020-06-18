@@ -1,31 +1,29 @@
 {
-  "name": "scripture-burrito",
-  "version": "0.2.0",
-  "description": "Schema support for Scripture Burrito",
-  "main": "schema/index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bible-technology/scripture-burrito.git"
-  },
-  "keywords": [
-    "\"Scripture",
-    "Burrito\"",
-    "\"Burrito\"",
-    "\"SB\""
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bible-technology/scripture-burrito/issues"
-  },
-  "homepage": "https://github.com/bible-technology/scripture-burrito#readme",
-  "dependencies": {
-    "prettier": "^2.0.5"
-  }
+    "name": "scripture-burrito",
+    "version": "0.2.0",
+    "description": "Schema support for Scripture Burrito",
+    "main": "schema/index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bible-technology/scripture-burrito.git"
+    },
+    "keywords": [
+        "\"Scripture",
+        "Burrito\"",
+        "\"Burrito\"",
+        "\"SB\""
+    ],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bible-technology/scripture-burrito/issues"
+    },
+    "homepage": "https://github.com/bible-technology/scripture-burrito#readme",
+    "dependencies": {}
 }
