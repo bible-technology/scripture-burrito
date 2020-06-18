@@ -1,0 +1,26 @@
+name: CI
+on: [ push ]
+
+jobs:
+  ajv-test:
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Installs node
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install ajv
+      - run: node code/validate.js metadata docs/examples/artifacts/*.json
+      - run: node code/validate.js recipeSpec docs/examples/artifacts/ingredients/bits_of_burrito.recipe_spec.json
+  python-test:
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip3 install jsonschema
+      - run: python3 code/validate.py docs/examples/artifacts/*.json

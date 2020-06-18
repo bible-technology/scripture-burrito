@@ -1,5 +1,9 @@
-[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
-[![Build Status](https://travis-ci.org/bible-technology/scripture-burrito.svg?branch=master)](https://travis-ci.org/bible-technology/scripture-burrito)
+master:[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=latest)](https://docs.burrito.bible/en/latest/?badge=latest)
+![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=master)
+
+develop:[![Documentation Status](https://readthedocs.org/projects/scripture-burrito/badge/?version=develop)](https://docs.burrito.bible/en/latest/?badge=develop)
+![CI](https://github.com/bible-technology/scripture-burrito/workflows/CI/badge.svg?branch=develop)
+
 # Scripture Burrito Documentation
 
 A data interchange format for Bible-centric content.
@@ -47,11 +51,16 @@ A similar script is used for the examples.
 
 ### Scripted
 
-There is both a Python and JavaScript utility included in `code/` that validate JSON documents against the schema.
+An [automated Github Action](https://github.com/bible-technology/scripture-burrito/blob/jag3773-patch-1/.github/workflows/main.yml) runs on each push that validates the metadata samples. This uses both a Python and JavaScript utility included in `code/` to validate JSON documents against the schema. You can run these locally as well.
 
 The Python script requires `jsonschema` (run `pip install jsonschema`)  and may be run as follows:
 
     python code/validate.py docs/examples/artifacts/*.json
+
+The JavaScript scriptt requires `node` and `ajv` to run.
+
+    npm install ajv
+    node code/validate.js metadata docs/examples/artifacts/*.json
 
 ### For Real Time Editing
 
