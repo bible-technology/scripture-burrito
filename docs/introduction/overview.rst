@@ -6,6 +6,8 @@ Overview
 
 Scripture Burrito is a data interchange format for Bible-centric content. Our goal is lossless portability of Scripture-related metadata and data between translation and publication users, applications and ecosystems.
 
+Scripture Burrito is designed to be useful as an archival format.  All metadata is human-readable in JSON, which is a widespread format easily consumed by software.  Packaging conventions are simple and straightforward. (Our working group does not define the file formats contained in a Burrito. Some file formats used in a Burrito, such as audio files, may rely on standards that will go out of date.  We encourage those who use Scripture Burrito as an archival format to consider the formats they are using.)
+
 Scope
 =====
 
@@ -46,8 +48,8 @@ Concepts
 .. include:: /includes/variants.txt
 
 
-Use Cases
-=========
+Goals
+=====
 
 #. Scripture Burrito is designed first and foremost for **data interchange** between ecosystems, although creators and consumers may also choose to use some or all of the format internally.
 

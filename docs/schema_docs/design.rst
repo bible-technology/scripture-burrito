@@ -111,7 +111,20 @@ as human editing tends to result in unintended skew between the previously-ident
 Versioning
 ==========
 
+Scheme
+------
+
 The Scripture Burrito specification follows `semantic versioning <http://semver.org>`_. The following clarify how we implement that in the specification:
 
 * SB schema 1.0.x will be able to validate 1.0.y for any value of x >= y.
 * SB schema 1.1.x is a whole new schema and will not validate 1.0.x.
+
+Development
+-----------
+
+The follow phases are defined for our schema development process:
+
+* The ``develop`` branch represents the first public working draft
+* A Beta release (``-beta``) represents a working draft
+* A Release Candidate (``rc``) represents a candidate recommendation
+* A release represents a recommendation to implement
