@@ -4,6 +4,6 @@
     "$$target": "meta_version.schema.json",
     "title": "Meta Version",
     "type": "string",
-    "pattern": "^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$",
+    "enum": ["0.2.0-beta"],
     "description": "Version of the Scripture Burrito specification this file follows."
 }
