@@ -22,4 +22,4 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: pip install jsonschema
-      - run: python code/validate.py docs/examples/artifacts/*.json
+      - run: python3 code/validate.py docs/examples/artifacts/*.json
