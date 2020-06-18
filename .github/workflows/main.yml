@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: '12'
       - run: npm install ajv
-      - run: nodejs code/validate.js metadata docs/examples/artifacts/*.json
-      - run: nodejs code/validate.js recipeSpec docs/examples/artifacts/ingredients/bits_of_burrito.recipe_spec.json
+      - run: node code/validate.js metadata docs/examples/artifacts/*.json
+      - run: node code/validate.js recipeSpec docs/examples/artifacts/ingredients/bits_of_burrito.recipe_spec.json
   python-test:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
