@@ -14,10 +14,10 @@
         "url": "git+https://github.com/bible-technology/scripture-burrito.git"
     },
     "keywords": [
-        "\"Scripture",
-        "Burrito\"",
-        "\"Burrito\"",
-        "\"SB\""
+        "Scripture",
+        "Burrito",
+        "Scripture-Burrito",
+        "SB"
     ],
     "author": "",
     "license": "MIT",
