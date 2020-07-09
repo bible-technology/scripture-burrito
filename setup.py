@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(
     name="scripture-burrito",
-    packages=["scripture-burrito"],
-    package_dir={"scripture-burrito": "code"},
+    packages=["scripture_burrito"],
+    package_dir={"scripture_burrito": "code"},
     package_data={"schema": ["schema/*"]},
     version="0.2.0b2",
     license="MIT",
