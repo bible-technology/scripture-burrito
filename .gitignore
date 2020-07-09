@@ -8,7 +8,7 @@ proto_doc/dbl_2_3/briefing_papers/SB01RFC.log
 # IDE artifacts
 .vscode
 sample.xpr
-
+.python-version 
 # XML validate artifacts
 docs/schema/metadata.rng
 
