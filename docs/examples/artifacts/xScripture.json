@@ -38,8 +38,8 @@
     "flavorType": {
       "name": "scripture",
       "flavor": {
-          "name": "x-scriptureFingerPainting",
-          "foo": "baa"
+        "name": "x-scriptureFingerPainting",
+        "foo": "baa"
       },
       "canonType": ["ot", "nt"],
       "canonSpec": {

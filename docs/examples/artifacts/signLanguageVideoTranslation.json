@@ -83,7 +83,14 @@
   "agencies": [
     {
       "id": "dbl::54650cdf5117ad687c9b5189",
-      "roles": ["rightsHolder", "content", "publication", "management", "finance", "qa"],
+      "roles": [
+        "rightsHolder",
+        "content",
+        "publication",
+        "management",
+        "finance",
+        "qa"
+      ],
       "url": "http://www.alliancebiblique.fr",
       "name": {
         "en": "French Bible Society"

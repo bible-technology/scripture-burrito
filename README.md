@@ -7,7 +7,7 @@ develop:[![Documentation Status](https://readthedocs.org/projects/scripture-burr
 # Scripture Burrito Documentation
 
 A data interchange format for Bible-centric content.
-  
+
 See https://docs.burrito.bible/ (or https://scripture-burrito.readthedocs.io/) for the documentation, this repo is the source files.
 
 If you want to suggest a change, please fork this repo and create a PR, or create an Issue.
@@ -53,11 +53,11 @@ A similar script is used for the examples.
 
 An [automated Github Action](https://github.com/bible-technology/scripture-burrito/blob/jag3773-patch-1/.github/workflows/main.yml) runs on each push that validates the metadata samples. This uses both a Python and JavaScript utility included in `code/` to validate JSON documents against the schema. You can run these locally as well.
 
-The Python script requires `jsonschema` (run `pip install jsonschema`)  and may be run as follows:
+The Python script requires `jsonschema` (run `pip install jsonschema`) and may be run as follows:
 
     python code/validate.py docs/examples/artifacts/*.json
 
-The JavaScript scriptt requires `node` and `ajv` to run.
+The JavaScript script requires `node` and `ajv` to run.
 
     npm install ajv
     node code/validate.js metadata docs/examples/artifacts/*.json
@@ -81,7 +81,7 @@ In short, create a `.vscode/settings.json` file in your `scripture-burrito` work
 }
 ```
 
-Of course, use the actual local path on *your system* for `metadata.schema.json`.
+Of course, use the actual local path on _your system_ for `metadata.schema.json`.
 
 To test, open up `schema/scriptureText.json` and make something invalid, and see the result, like this:
 ![image](https://user-images.githubusercontent.com/194842/71215968-6ced3300-22b9-11ea-95a7-ca84de8287da.png)

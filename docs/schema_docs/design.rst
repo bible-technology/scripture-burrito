@@ -111,9 +111,6 @@ as human editing tends to result in unintended skew between the previously-ident
 Versioning
 ==========
 
-Scheme
-------
-
 The Scripture Burrito specification follows `semantic versioning <http://semver.org>`_. The following clarify how we implement that in the specification:
 
 * SB schema 1.0.x will be able to validate 1.0.y for any value of x >= y.
