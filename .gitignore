@@ -9,6 +9,9 @@ proto_doc/dbl_2_3/briefing_papers/SB01RFC.log
 .vscode
 sample.xpr
 .python-version 
+dist/**
+MANIFEST
+
 # XML validate artifacts
 docs/schema/metadata.rng
 
