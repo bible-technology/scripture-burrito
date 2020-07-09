@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.2.0",
+    "version": "0.2.0-beta.2",
     "variant": "derived_foo",
     "dateCreated": "2019-02-19T01:02:03+01:00",
     "generator": {
@@ -141,7 +141,15 @@
         "en": "BRU"
       },
       "url": "https://burritos-r-us.org",
-      "roles": ["rightsHolder", "rightsAdmin", "content", "finance", "management", "publication", "qa"]
+      "roles": [
+        "rightsHolder",
+        "rightsAdmin",
+        "content",
+        "finance",
+        "management",
+        "publication",
+        "qa"
+      ]
     },
     {
       "id": "dbl::29",
@@ -167,12 +175,12 @@
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-        "mimeType": "text/x-usx+xml",
-        "scope": {
-            "GEN": [],
-            "EXO": [],
-            "LEV": []
-        },  
+      "mimeType": "text/x-usx+xml",
+      "scope": {
+        "GEN": [],
+        "EXO": [],
+        "LEV": []
+      },
       "role": "introduction",
       "size": 1234
     },
@@ -210,10 +218,10 @@
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-        "mimeType": "text/x-usx+xml",
-        "scope": {
-            "MAT": []
-        },
+      "mimeType": "text/x-usx+xml",
+      "scope": {
+        "MAT": []
+      },
       "role": "introduction",
       "size": 1234
     },
@@ -221,10 +229,10 @@
       "checksum": {
         "md5": "0123456789abcdef0123456789abcdef"
       },
-        "mimeType": "text/x-usx+xml",
-        "scope": {
-            "MAT": ["1"]
-        },
+      "mimeType": "text/x-usx+xml",
+      "scope": {
+        "MAT": ["1"]
+      },
       "role": "introduction",
       "size": 1234
     },
