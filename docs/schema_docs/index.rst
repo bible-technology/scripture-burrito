@@ -43,7 +43,6 @@ Schema Documentation
    recipe
    recipe_element
    recipe_section
-   recipe_specs
    relationship
    relationships
    role

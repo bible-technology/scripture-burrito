@@ -203,15 +203,6 @@
       }
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "p1",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "https://thedigitalbiblelibrary.org/recipes/audio_translation_mp3_by_book.dblscript.json",
-      "data": "recipes/data/p1.json"
-    }
-  ],
   "copyright": {
     "fullStatementRich": {
       "en": "<p>Test Copyright. All rights reserved.</p>"
