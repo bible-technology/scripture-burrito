@@ -42,9 +42,6 @@
         "names": {
             "$ref": "names.schema.json"
         },
-        "recipeSpecs": {
-            "$ref": "recipe_specs.schema.json"
-        },
         "progress": {
             "$ref": "progress.schema.json"
         }

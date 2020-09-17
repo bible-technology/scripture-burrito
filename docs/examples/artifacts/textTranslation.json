@@ -9,7 +9,7 @@
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-02-15T22:33:50.875547+00:00",
-    "normalization": "NFC",  
+    "normalization": "NFC",
     "comments": ["Testing dblChanges.txt"]
   },
   "idServers": {
@@ -2856,33 +2856,6 @@
       "size": 13845
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "p1",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "https://thedigitalbiblelibrary.org/recipes/text_translation_booklists.dblscript.json",
-      "data": "recipes/data/p1.json"
-    },
-    {
-      "variantId": "p2",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "recipes/scripts/something_generic.dblscript.json",
-      "data": "recipes/data/p2.json"
-    },
-    {
-      "variantId": "p3",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "recipes/scripts/something_specific.dblscript.json",
-      "data": "recipes/data/p3.json"
-    },
-    {
-      "variantId": "somethingExotic",
-      "processor": "https://opaque-url.org/dev/null"
-    }
-  ],
   "copyright": {
     "fullStatementRich": {
       "en": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>"

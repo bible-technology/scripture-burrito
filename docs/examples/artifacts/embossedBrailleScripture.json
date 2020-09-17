@@ -1121,12 +1121,6 @@
       }
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "bp1",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1"
-    }
-  ],
   "copyright": {
     "fullStatementRich": {
       "en": "<p><strong>PUBLIC DOMAIN</strong>. \"World English Bible\" is  trademark of <a href=\"https://eBible.org\">eBible.org</a>.</p>"

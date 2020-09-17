@@ -1522,12 +1522,6 @@
       "role": "name judas iscariot"
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "pt",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1"
-    }
-  ],
   "copyright": {
     "fullStatementPlain": {
       "lsf": "© 2019, L'Alliance biblique française"
