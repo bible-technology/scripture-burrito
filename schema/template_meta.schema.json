@@ -24,10 +24,6 @@
             "$ref": "software_and_user_info.schema.json",
             "description": "Information about the program and user who generated this burrito."
         },
-        "uploader": {
-            "$ref": "software_and_user_info.schema.json",
-            "description": "Information about the program and user who uploaded this burrito."
-        },
         "defaultLanguage": {
             "$ref": "meta_default_language.schema.json"
         },
