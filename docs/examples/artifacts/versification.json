@@ -16,7 +16,7 @@
     }
   },
   "identification": {
-    "idServer": "foo",
+    "idAuthority": "foo",
     "name": {
       "eng": "\"Original\" Versification"
     },

@@ -16,7 +16,7 @@
     }
   },
   "identification": {
-    "idServer": "paint-store",
+    "idAuthority": "paint-store",
     "name": {
       "en": "My First Fingerpainted Bible"
     },

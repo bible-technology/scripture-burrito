@@ -16,7 +16,7 @@
     }
   },
   "identification": {
-    "idServer": "bcs",
+    "idAuthority": "bcs",
     "name": {
       "en": "Hindi IRV - UGNT Interlinear"
     },
