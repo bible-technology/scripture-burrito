@@ -25,10 +25,10 @@
             "pattern": "^x-[a-z][A-za-z0-9]*$",
             "description": "User-defined token, prefixed with x-"
         },
-        "idServerLabel": {
+        "idAuthorityLabel": {
             "type": "string",
             "pattern": "^[a-z][a-z0-9\\-]*[a-z0-9]$",
-            "description": "A Label for an ID server (internal to the document)"
+            "description": "A Label for an ID authority (internal to the document)"
         },
         "bareId": {
             "type": "string",

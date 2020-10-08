@@ -16,7 +16,7 @@
             }
         },
         "propertyNames": {
-            "$ref": "common.schema.json#/definitions/idServerLabel"
+            "$ref": "common.schema.json#/definitions/idAuthorityLabel"
         },
         "minItems": 1
     }
