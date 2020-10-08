@@ -8,12 +8,6 @@
       "softwareVersion": "0.1",
       "userName": "Jane Doe"
     },
-    "uploader": {
-      "softwareName": "Burrito Truck",
-      "softwareVersion": "0.1",
-      "userId": "dbl::5678",
-      "userName": "Josh Buck"
-    },
     "defaultLanguage": "en",
     "comments": ["Experimenting with i18n", "Fixed canon before upload. ~Josh"]
   },
