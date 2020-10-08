@@ -16,7 +16,7 @@ module.exports = {
         require("./derived_metadata.schema.json"),
         require("./gloss/text_stories.schema.json"),
         require("./identification.schema.json"),
-        require("./id_servers.schema.json"),
+        require("./id_authorities.schema.json"),
         require("./ingredient.schema.json"),
         require("./ingredients/recipe_spec.schema.json"),
         require("./ingredients.schema.json"),

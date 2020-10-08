@@ -11,7 +11,7 @@
     "dateCreated": "2019-12-10T15:44:10.641544+00:00",
     "comments": ["First submit updated metadata and mpg files"]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {

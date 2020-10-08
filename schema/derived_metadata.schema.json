@@ -9,8 +9,8 @@
         "meta": {
             "$ref": "derived_meta.schema.json"
         },
-        "idServers": {
-            "$ref": "id_servers.schema.json"
+        "idAuthorities": {
+            "$ref": "id_authorities.schema.json"
         },
         "identification": {
             "$ref": "identification.schema.json"
@@ -49,7 +49,7 @@
             "$ref": "recipe.schema.json"
         }
     },
-    "required": ["meta", "idServers", "identification", "confidentiality", "copyright", "type", "recipe"],
+    "required": ["meta", "idAuthorities", "identification", "confidentiality", "copyright", "type", "recipe"],
     "additionalProperties": false,
     "if": {
         "properties": {

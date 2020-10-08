@@ -10,7 +10,7 @@
     "comments": ["Version 4"],
     "defaultLanguage": "en"
   },
-  "idServers": {
+  "idAuthorities": {
     "idServerKey": {
       "id": "https://git.door43.org"
     }

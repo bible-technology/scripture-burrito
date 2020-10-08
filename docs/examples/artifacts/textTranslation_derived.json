@@ -11,7 +11,7 @@
     "defaultLanguage": "en",
     "comments": ["Experimenting with i18n", "Fixed canon before upload. ~Josh"]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {

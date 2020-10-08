@@ -13,7 +13,7 @@
       "Updated with working audio files for GEN 1-3 and MAT 1-3, test browser open on success"
     ]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {

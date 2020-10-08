@@ -1,3 +1,3 @@
-.. _schema_docs-id_servers:
+.. _schema_docs-id_authorities:
 
-.. jsonschema:: ../../schema/id_servers.schema.json
+.. jsonschema:: ../../schema/id_authorities.schema.json

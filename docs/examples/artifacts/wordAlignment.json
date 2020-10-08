@@ -10,7 +10,7 @@
     "comments": ["Add alignments of all NT books."],
     "defaultLanguage": "en"
   },
-  "idServers": {
+  "idAuthorities": {
     "idServerKey": {
       "id": "http://registry.bridgeconn.com"
     }

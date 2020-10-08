@@ -10,7 +10,7 @@
     "comments": ["This is fuuuuuuuun!"],
     "defaultLanguage": "en"
   },
-  "idServers": {
+  "idAuthorities": {
     "idServerKey": {
       "id": "http://localhost:8080"
     }

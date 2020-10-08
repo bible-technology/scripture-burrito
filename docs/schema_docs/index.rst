@@ -22,7 +22,7 @@ Schema Documentation
    scripture-text_translation
    scripture-typeset_scripture
    x_flavor
-   id_servers
+   id_authorities
    identification
    ingredient
    ingredients
