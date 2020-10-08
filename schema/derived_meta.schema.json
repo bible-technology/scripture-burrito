@@ -7,7 +7,7 @@
     "description": "Information about the Scripture Burrito metadata file.",
     "properties": {
         "category": {
-            "const": "derived",
+            "const": "derived"
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"
