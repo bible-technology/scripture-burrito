@@ -7,9 +7,7 @@
     "description": "Information about the Scripture Burrito metadata file.",
     "properties": {
         "category": {
-            "type": "string",
-            "pattern": "^derived_[A-Za-z][A-Za-z0-9]*$",
-            "description": "The type of derived variant represented in the burrito"
+            "const": "derived",
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"
