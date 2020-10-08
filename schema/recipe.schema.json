@@ -20,7 +20,7 @@
                     "type": "object",
                     "properties": {
                         "idServer": {
-                            "$ref": "common.schema.json#/definitions/idServerLabel"
+                            "$ref": "common.schema.json#/definitions/idAuthorityLabel"
                         },
                         "id": {
                             "$ref": "common.schema.json#/definitions/bareId"
@@ -29,7 +29,7 @@
                             "$ref": "common.schema.json#/definitions/revisionString"
                         }
                     },
-                    "required": ["idServer", "id", "revision"]
+                    "required": ["idAuthority", "id", "revision"]
                 }
             ]
         },
