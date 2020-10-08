@@ -2,14 +2,12 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/source_meta.schema.json",
     "$$target": "source_meta.schema.json",
-    "title": "Meta (Default)",
+    "title": "Meta (Source)",
     "type": "object",
-    "description": "Information about the Scripture Burrito metadata file (default variant).",
+    "description": "Information about the Scripture Burrito metadata file (source).",
     "properties": {
-        "variant": {
-            "type": "string",
-            "pattern": "^source(_[A-Za-z][A-Za-z0-9]*)?$",
-            "description": "The type of variant represented in the burrito (which must be source which we pretend is not a variant even though it kinda is really)."
+        "category": {
+            "const": "source"
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"
@@ -31,6 +29,6 @@
             "$ref": "meta_comments.schema.json"
         }
     },
-    "required": ["version", "variant", "dateCreated", "defaultLanguage"],
+    "required": ["version", "category", "dateCreated", "defaultLanguage"],
     "additionalProperties": false
 }

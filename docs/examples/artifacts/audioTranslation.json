@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "0.2.0-beta.2",
-    "variant": "source",
+    "category": "source",
     "generator": {
       "softwareName": "DBLImport",
       "softwareVersion": "0.0.0",
