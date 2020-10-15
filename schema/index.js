@@ -17,7 +17,6 @@ module.exports = {
         require("./identification.schema.json"),
         require("./id_authorities.schema.json"),
         require("./ingredient.schema.json"),
-        require("./ingredients/recipe_spec.schema.json"),
         require("./ingredients.schema.json"),
         require("./language.schema.json"),
         require("./languages.schema.json"),
