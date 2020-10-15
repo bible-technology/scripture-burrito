@@ -313,58 +313,13 @@
       }
     }
   },
-  "recipe": {
-    "spec": {
-      "path": "recipe_specs/bitsOfBurrito.recipe_spec.json"
-    },
-    "content": [
-      {
-        "type": "section",
-        "nameId": "ot",
-        "content": [
-          {
-            "type": "element",
-            "nameId": "intot",
-            "ingredient": "release/text/USX_1/OTINT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-gen",
-            "ingredient": "release/text/USX_1/GEN.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-exo",
-            "ingredient": "release/text/USX_1/EXO.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-lev",
-            "ingredient": "release/text/USX_1/LEV.usx"
-          }
-        ]
-      },
-      {
-        "type": "section",
-        "nameId": "nt",
-        "content": [
-          {
-            "type": "element",
-            "nameId": "intnt",
-            "ingredient": "release/text/USX_1/NTINT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "intmat",
-            "ingredient": "release/text/USX_1/INTMAT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-mat",
-            "ingredient": "release/text/USX_1/MAT.usx"
-          }
-        ]
+  "recipe": [
+    {
+      "idAuthority": "dbl",
+      "operation": "apply_license_agreement",
+      "data":  {
+        "license_agreement": "https://thedigitalbiblelibrary.org/license_agreement/nnnn"
       }
-    ]
-  }
+    }
+  ]
 }
