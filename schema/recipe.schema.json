@@ -19,7 +19,7 @@
                 {
                     "type": "object",
                     "properties": {
-                        "idServer": {
+                        "idAuthority": {
                             "$ref": "common.schema.json#/definitions/idAuthorityLabel"
                         },
                         "id": {

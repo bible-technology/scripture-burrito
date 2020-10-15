@@ -11,7 +11,7 @@
     "defaultLanguage": "en"
   },
   "idAuthorities": {
-    "idServerKey": {
+    "dcs": {
       "id": "https://git.door43.org"
     }
   },

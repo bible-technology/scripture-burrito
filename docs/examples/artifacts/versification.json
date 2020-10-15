@@ -11,7 +11,7 @@
     "defaultLanguage": "en"
   },
   "idAuthorities": {
-    "idServerKey": {
+    "foo": {
       "id": "http://foo.baa"
     }
   },

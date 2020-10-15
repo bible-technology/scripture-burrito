@@ -11,7 +11,7 @@
     "defaultLanguage": "en"
   },
   "idAuthorities": {
-    "idServerKey": {
+    "paint-store": {
       "id": "http://localhost:8080"
     }
   },
