@@ -9,9 +9,8 @@
         "meta": {
             "type": "object",
             "properties": {
-                "variant": {
-                    "type": "string",
-                    "pattern": "^(source|derived|template)"
+                "category": {
+                    "enum": ["source", "derived", "template"]
                 }
             }
         }
@@ -20,8 +19,8 @@
         "properties": {
             "meta": {
                 "properties": {
-                    "variant": {
-                        "pattern": "^source"
+                    "category": {
+                        "const": "source"
                     }
                 }
             }
@@ -35,8 +34,8 @@
             "properties": {
                 "meta": {
                     "properties": {
-                        "variant": {
-                            "pattern": "^derived"
+                        "category": {
+                            "const": "derived"
                         }
                     }
                 }

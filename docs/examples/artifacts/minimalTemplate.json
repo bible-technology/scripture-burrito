@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "0.2.0-beta.2",
-    "variant": "template",
+    "version": "0.3.0-alpha",
+    "category": "template",
     "templateName": {
       "en": "A Minimal and Frankly Pointless Template"
     },
