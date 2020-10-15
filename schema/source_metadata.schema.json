@@ -9,8 +9,8 @@
         "meta": {
             "$ref": "source_meta.schema.json"
         },
-        "idServers": {
-            "$ref": "id_servers.schema.json"
+        "idAuthorities": {
+            "$ref": "id_authorities.schema.json"
         },
         "identification": {
             "$ref": "identification.schema.json"
@@ -49,7 +49,7 @@
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idServers", "identification", "confidentiality", "type"],
+    "required": ["meta", "idAuthorities", "identification", "confidentiality", "type"],
     "additionalProperties": false,
     "if": {
         "properties": {

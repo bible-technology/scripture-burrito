@@ -10,13 +10,13 @@
     "comments": ["This is fuuuuuuuun!"],
     "defaultLanguage": "en"
   },
-  "idServers": {
-    "idServerKey": {
+  "idAuthorities": {
+    "paint-store": {
       "id": "http://localhost:8080"
     }
   },
   "identification": {
-    "idServer": "paint-store",
+    "idAuthority": "paint-store",
     "name": {
       "en": "My First Fingerpainted Bible"
     },

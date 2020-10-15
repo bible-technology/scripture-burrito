@@ -11,7 +11,7 @@
     "dateCreated": "2019-07-17T08:00:56.467963+00:00",
     "comments": ["Braille test"]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {
@@ -26,7 +26,7 @@
         "revision": "3"
       }
     },
-    "idServer": "dbl",
+    "idAuthority": "dbl",
     "name": {
       "en": "WEBBE Braille"
     },

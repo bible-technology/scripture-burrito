@@ -10,13 +10,13 @@
     "comments": ["Version 4"],
     "defaultLanguage": "en"
   },
-  "idServers": {
-    "idServerKey": {
+  "idAuthorities": {
+    "dcs": {
       "id": "https://git.door43.org"
     }
   },
   "identification": {
-    "idServer": "dcs",
+    "idAuthority": "dcs",
     "name": {
       "en": "unfoldingWord® Open Bible Stories"
     },

@@ -10,13 +10,13 @@
     "comments": ["Add alignments of all NT books."],
     "defaultLanguage": "en"
   },
-  "idServers": {
-    "idServerKey": {
+  "idAuthorities": {
+    "bcs": {
       "id": "http://registry.bridgeconn.com"
     }
   },
   "identification": {
-    "idServer": "bcs",
+    "idAuthority": "bcs",
     "name": {
       "en": "Hindi IRV - UGNT Interlinear"
     },

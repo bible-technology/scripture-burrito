@@ -11,7 +11,7 @@
     "defaultLanguage": "en",
     "comments": ["Experimenting with i18n", "Fixed canon before upload. ~Josh"]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {
@@ -41,7 +41,7 @@
         "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
       }
     },
-    "idServer": "dbl",
+    "idAuthority": "dbl",
     "name": {
       "en": "Excerpts from a Scripture Burrito Demo Text Bible",
       "fr": "Des morceaux d'une Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"

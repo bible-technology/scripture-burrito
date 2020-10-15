@@ -56,7 +56,7 @@
     <xsl:template match = "/DBLMetadata">
         <xsl:element name="burritoMetadata">
             <xsl:attribute name="schemaVersion"><xsl:text>0.1</xsl:text></xsl:attribute>
-            <xsl:element name="idServer">
+            <xsl:element name="idAuthority">
                 <xsl:attribute name="prefix"><xsl:text>dbl</xsl:text></xsl:attribute>
                 <xsl:text>http://thedigitalbiblelibrary.org</xsl:text>
             </xsl:element>
