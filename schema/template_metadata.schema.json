@@ -41,9 +41,6 @@
         },
         "names": {
             "noRef": "names.schema.json"
-        },
-        "recipeSpecs": {
-            "noRef": "recipe.schema.json"
         }
     },
     "required": ["meta"],

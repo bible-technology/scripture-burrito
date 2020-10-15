@@ -160,15 +160,6 @@
       "size": 46147024
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "p0",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "https://thedigitalbiblelibrary.org/recipes/typeset_scripture.dblscript.json",
-      "data": "recipes/data/p0.json"
-    }
-  ],
   "copyright": {
     "fullStatementRich": {
       "en": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>"

@@ -3,49 +3,22 @@
     "$id": "https://burrito.bible/schema/recipe.schema.json",
     "$$target": "recipe.schema.json",
     "title": "Recipes",
-    "type": "object",
+    "type": "array",
     "description": "Scripture Burrito recipes.",
-    "properties": {
-        "spec": {
-            "oneOf": [
-                {
-                    "type": "object",
-                    "properties": {
-                        "path": {
-                            "$ref": "common.schema.json#/definitions/path"
-                        }
-                    }
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "idAuthority": {
-                            "$ref": "common.schema.json#/definitions/idAuthorityLabel"
-                        },
-                        "id": {
-                            "$ref": "common.schema.json#/definitions/bareId"
-                        },
-                        "revision": {
-                            "$ref": "common.schema.json#/definitions/revisionString"
-                        }
-                    },
-                    "required": ["idAuthority", "id", "revision"]
-                }
-            ]
-        },
-        "content": {
-            "type": "array",
-            "items": {
-                "oneOf": [
-                    {
-                        "$ref": "recipe_section.schema.json"
-                    },
-                    {
-                        "$ref": "recipe_element.schema.json"
-                    }
-                ]
+    "items": {
+        "type": "object",
+        "properties": {
+            "idAuthority": {
+                "type": "string"
+            },
+            "operation": {
+                "type": "string"
+            },
+            "data": {
+                "type": "object"
             }
-        }
-    },
-    "required": ["content"]
+        },
+        "required": ["idAuthority", "operation", "data"],
+        "additionalProperties": false
+    }
 }
