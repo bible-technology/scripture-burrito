@@ -64,10 +64,10 @@
           "outside": "9mm"
         },
         "fonts": [
-          ["Times New Roman Regular", "openType"],
-          ["Times New Roman BoldBold", "openType"],
-          ["Times New Roman ItalicItalic", "openType"],
-          ["Segoe UI Symbol Regular", "openType"]
+          "Times New Roman Regular",
+          "Times New Roman BoldBold",
+          "Times New Roman ItalicItalic",
+          "Segoe UI Symbol Regular"
         ]
       },
       "canonType": ["ot", "nt"],
