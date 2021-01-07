@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "0.2.0-beta.2",
-    "variant": "source",
+    "version": "0.3.0-alpha",
+    "category": "source",
     "generator": {
       "softwareName": "DBLImport",
       "softwareVersion": "0.0.0",
@@ -13,7 +13,7 @@
       "Updated with working audio files for GEN 1-3 and MAT 1-3, test browser open on success"
     ]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {
@@ -28,7 +28,7 @@
         "revision": "9"
       }
     },
-    "idServer": "dbl",
+    "idAuthority": "dbl",
     "name": {
       "en": "TEST Audio Bible - Local"
     },
@@ -203,15 +203,6 @@
       }
     }
   },
-  "recipeSpecs": [
-    {
-      "variantId": "p1",
-      "processor": "https://thedigitalbiblelibrary.org/barjo/0.1",
-      "algorithmFormat": "https://thedigitalbiblelibrary.org/dblscript/0.1/dblscript.schema.json",
-      "algorithm": "https://thedigitalbiblelibrary.org/recipes/audio_translation_mp3_by_book.dblscript.json",
-      "data": "recipes/data/p1.json"
-    }
-  ],
   "copyright": {
     "fullStatementRich": {
       "en": "<p>Test Copyright. All rights reserved.</p>"

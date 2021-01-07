@@ -1,23 +1,17 @@
 {
   "meta": {
-    "version": "0.2.0-beta.2",
-    "variant": "derived_foo",
+    "version": "0.3.0-alpha",
+    "category": "derived",
     "dateCreated": "2019-02-19T01:02:03+01:00",
     "generator": {
       "softwareName": "Burrito Factory",
       "softwareVersion": "0.1",
       "userName": "Jane Doe"
     },
-    "uploader": {
-      "softwareName": "Burrito Truck",
-      "softwareVersion": "0.1",
-      "userId": "dbl::5678",
-      "userName": "Josh Buck"
-    },
     "defaultLanguage": "en",
     "comments": ["Experimenting with i18n", "Fixed canon before upload. ~Josh"]
   },
-  "idServers": {
+  "idAuthorities": {
     "dbl": {
       "id": "https://thedigitalbiblelibrary.org",
       "name": {
@@ -47,7 +41,7 @@
         "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
       }
     },
-    "idServer": "dbl",
+    "idAuthority": "dbl",
     "name": {
       "en": "Excerpts from a Scripture Burrito Demo Text Bible",
       "fr": "Des morceaux d'une Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"
@@ -313,58 +307,13 @@
       }
     }
   },
-  "recipe": {
-    "spec": {
-      "path": "recipe_specs/bitsOfBurrito.recipe_spec.json"
-    },
-    "content": [
-      {
-        "type": "section",
-        "nameId": "ot",
-        "content": [
-          {
-            "type": "element",
-            "nameId": "intot",
-            "ingredient": "release/text/USX_1/OTINT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-gen",
-            "ingredient": "release/text/USX_1/GEN.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-exo",
-            "ingredient": "release/text/USX_1/EXO.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-lev",
-            "ingredient": "release/text/USX_1/LEV.usx"
-          }
-        ]
-      },
-      {
-        "type": "section",
-        "nameId": "nt",
-        "content": [
-          {
-            "type": "element",
-            "nameId": "intnt",
-            "ingredient": "release/text/USX_1/NTINT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "intmat",
-            "ingredient": "release/text/USX_1/INTMAT.usx"
-          },
-          {
-            "type": "element",
-            "nameId": "book-mat",
-            "ingredient": "release/text/USX_1/MAT.usx"
-          }
-        ]
+  "recipe": [
+    {
+      "idAuthority": "dbl",
+      "operation": "apply_license_agreement",
+      "data":  {
+        "license_agreement": "https://thedigitalbiblelibrary.org/license_agreement/nnnn"
       }
-    ]
-  }
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "variant": "source",
-    "version": "0.2.0-beta.2",
+    "category": "source",
+    "version": "0.3.0-alpha",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
@@ -10,13 +10,13 @@
     "comments": ["Version 4"],
     "defaultLanguage": "en"
   },
-  "idServers": {
-    "idServerKey": {
+  "idAuthorities": {
+    "dcs": {
       "id": "https://git.door43.org"
     }
   },
   "identification": {
-    "idServer": "dcs",
+    "idAuthority": "dcs",
     "name": {
       "en": "unfoldingWord® Open Bible Stories"
     },

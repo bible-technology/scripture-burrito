@@ -53,12 +53,12 @@
                 "required": ["id"]
             },
             "minItems": 1,
-            "description": "Contains identifiers in each system declared by the top-level idServers element."
+            "description": "Contains identifiers in each system declared by the top-level idAuthorities element."
         },
-        "idServer": {
-            "$ref": "common.schema.json#/definitions/idServerLabel"
+        "idAuthority": {
+            "$ref": "common.schema.json#/definitions/idAuthorityLabel"
         }
     },
-    "required": ["name", "systemId", "idServer"],
+    "required": ["name", "systemId", "idAuthority"],
     "additionalProperties": false
 }

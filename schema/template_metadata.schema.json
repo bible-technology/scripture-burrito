@@ -9,8 +9,8 @@
         "meta": {
             "$ref": "template_meta.schema.json"
         },
-        "idServers": {
-            "noRef": "id_servers.schema.json"
+        "idAuthorities": {
+            "noRef": "id_authorities.schema.json"
         },
         "identification": {
             "noRef": "identification.schema.json"
@@ -41,9 +41,6 @@
         },
         "names": {
             "noRef": "names.schema.json"
-        },
-        "recipeSpecs": {
-            "noRef": "recipe.schema.json"
         }
     },
     "required": ["meta"],
