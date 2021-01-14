@@ -15,6 +15,5 @@ The following links provide examples of each of the defined :ref:`flavors-index`
    textTranslation
    textTranslation_derived
    typesetScripture
-   versification
    wordAlignment
    xScripture

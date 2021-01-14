@@ -33,7 +33,6 @@ Schema Documentation
    normalization
    numbering_system
    parascriptural-word_alignment
-   peripheral-versification
    progress
    promotion
    recipe

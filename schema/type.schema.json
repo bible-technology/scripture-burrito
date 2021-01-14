@@ -92,7 +92,7 @@
                 }
             }
         },
-        "then": 
+        "then":
         {
             "properties": {
                 "flavorType" : {
@@ -334,9 +334,6 @@
                             "flavor": {
                                 "type": "object",
                                 "oneOf": [
-                                    {
-                                        "$ref": "peripheral/versification.schema.json"
-                                    },
                                     {
                                         "$ref": "x_flavor.schema.json"
                                     }
