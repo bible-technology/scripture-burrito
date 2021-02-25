@@ -1,18 +1,16 @@
-const schemaIndex = require('../schema');
-const fs = require('fs');
-const Ajv = require('ajv');
+const schemaIndex = require("../schema");
+const fs = require("fs");
+const Ajv = require("ajv");
 
-
-const ajv = new Ajv({schemas: schemaIndex.schemas});
-
+const ajv = new Ajv({ schemas: schemaIndex.schemas });
 
 function validate(schemaName, fn, data) {
     const validator = ajv.getSchema(schemaIndex.schemaIds[schemaName]);
     if (validator(JSON.parse(data))) {
-        console.log(fn + ': No errors.');
+        console.log(fn + ": No errors.");
         return true;
     } else {
-        console.log(fn + ':', validator.errors);
+        console.log(fn + ":", validator.errors);
         return false;
     }
 }

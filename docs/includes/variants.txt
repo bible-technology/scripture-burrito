@@ -1,0 +1,1 @@
+Variants provide a mechanism for distinguishing source burritos from derived burritos. A source variant is a user modifiable burrito. A derived variant is programmatically derived from a source variant.

@@ -1,7 +1,7 @@
 module.exports = {
     schemaIds: {
-	"metadata": "https://burrito.bible/schema/metadata.schema.json",
-	"referenceFormat": "https://burrito.bible/schema/reference_format.schema.json"
+        "metadata": "https://burrito.bible/schema/metadata.schema.json",
+        "referenceFormat": "https://burrito.bible/schema/reference_format.schema.json"
     },
     schemas: [
         require("./agencies.schema.json"),
@@ -33,16 +33,16 @@ module.exports = {
         require("./parascriptural/word_alignment.schema.json"),
         require("./progress.schema.json"),
         require("./promotion.schema.json"),
-	require("./recipe.schema.json"),
+        require("./recipe.schema.json"),
         require("./recipe_section.schema.json"),
         require("./recipe_element.schema.json"),
-	require("./reference_format.schema.json"),
+        require("./reference_format.schema.json"),
         require("./relationships.schema.json"),
         require("./relationship.schema.json"),
-	require("./scripture/audio_translation.schema.json"),
+        require("./scripture/audio_translation.schema.json"),
         require("./scripture/embossed_braille_scripture.schema.json"),
-	require("./scripture/sign_language_video_translation.schema.json"),
-	require("./scripture/text_translation.schema.json"),
+        require("./scripture/sign_language_video_translation.schema.json"),
+        require("./scripture/text_translation.schema.json"),
         require("./scripture/typeset_scripture.schema.json"),
         require("./role.schema.json"),
         require("./scope.schema.json"),
@@ -54,7 +54,7 @@ module.exports = {
         require("./template_meta.schema.json"),
         require("./template_metadata.schema.json"),
         require("./type.schema.json"),
-	require("./unm49.schema.json"),
-	require("./x_flavor.schema.json")
+        require("./unm49.schema.json"),
+        require("./x_flavor.schema.json")
     ]
 };

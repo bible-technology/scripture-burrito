@@ -6,6 +6,8 @@
     "type": "object",
     "definitions": {
         "OTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTConstraint", "#/definitions/OTConstraint"],
+            "title": "Old Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -18,9 +20,7 @@
             "then": {
                 "properties": {
                     "canonSpec": {
-                        "required": [
-                            "OT"
-                        ]
+                        "required": ["OT"]
                     }
                 }
             },
@@ -28,15 +28,15 @@
                 "properties": {
                     "canonSpec": {
                         "not": {
-                            "required": [
-                                "OT"
-                            ]
+                            "required": ["OT"]
                         }
                     }
                 }
             }
         },
         "OTPlusConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTPlusConstraint", "#/definitions/OTPlusConstraint"],
+            "title": "Old Testament Plus Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -49,9 +49,7 @@
             "then": {
                 "properties": {
                     "canonSpec": {
-                        "required": [
-                            "OT+"
-                        ]
+                        "required": ["OT+"]
                     }
                 }
             },
@@ -59,15 +57,15 @@
                 "properties": {
                     "canonSpec": {
                         "not": {
-                            "required": [
-                                "OT+"
-                            ]
+                            "required": ["OT+"]
                         }
                     }
                 }
             }
         },
         "DCConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/DCConstraint", "#/definitions/DCConstraint"],
+            "title": "Deutero Canon Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -80,9 +78,7 @@
             "then": {
                 "properties": {
                     "canonSpec": {
-                        "required": [
-                            "DC"
-                        ]
+                        "required": ["DC"]
                     }
                 }
             },
@@ -90,15 +86,15 @@
                 "properties": {
                     "canonSpec": {
                         "not": {
-                            "required": [
-                                "DC"
-                            ]
+                            "required": ["DC"]
                         }
                     }
                 }
             }
         },
         "NTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/NTConstraint", "#/definitions/NTConstraint"],
+            "title": "New Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
@@ -111,9 +107,7 @@
             "then": {
                 "properties": {
                     "canonSpec": {
-                        "required": [
-                            "NT"
-                        ]
+                        "required": ["NT"]
                     }
                 }
             },
@@ -121,21 +115,19 @@
                 "properties": {
                     "canonSpec": {
                         "not": {
-                            "required": [
-                                "NT"
-                            ]
+                            "required": ["NT"]
                         }
                     }
                 }
             }
         },
-        "OTContraint2": {
+        "OTConstraint2": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTConstraint2", "#/definitions/OTConstraint2"],
+            "title": "Old Testament Constraint 2",
             "if": {
                 "properties": {
                     "canonType": {
-                        "const": [
-                            "OT"
-                        ]
+                        "const": ["OT"]
                     }
                 }
             },
@@ -150,22 +142,12 @@
             }
         },
         "OTDCConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTDCConstraint", "#/definitions/OTDCConstraint"],
+            "title": "Old Testament Deutero Canon Constraint",
             "if": {
                 "properties": {
                     "canonType": {
-                        "enum": [
-                            [
-                                "OT+"
-                            ],
-                            [
-                                "OT",
-                                "DC"
-                            ],
-                            [
-                                "DC",
-                                "OT"
-                            ]
-                        ]
+                        "enum": [["OT+"], ["OT", "DC"], ["DC", "OT"]]
                     }
                 }
             },
@@ -180,12 +162,12 @@
             }
         },
         "NTConstraint2": {
+            "$$target": ["canon_constraints.schema.json#/definitions/NTConstraint2", "#/definitions/NTConstraint2"],
+            "title": "New Testament Constraint 2",
             "if": {
                 "properties": {
                     "canonType": {
-                        "const": [
-                            "NT"
-                        ]
+                        "const": ["NT"]
                     }
                 }
             },
@@ -200,18 +182,14 @@
             }
         },
         "OTNTConstraint": {
+            "$$target": ["canon_constraints.schema.json#/definitions/OTNTConstraint", "#/definitions/OTNTConstraint"],
+            "title": "Old and NT Testament Constraint",
             "if": {
                 "properties": {
                     "canonType": {
                         "enum": [
-                            [
-                                "OT",
-                                "NT"
-                            ],
-                            [
-                                "NT",
-                                "OT"
-                            ]
+                            ["OT", "NT"],
+                            ["NT", "OT"]
                         ]
                     }
                 }

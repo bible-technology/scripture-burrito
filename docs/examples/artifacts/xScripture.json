@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "category": "source",
+    "version": "0.3.0-alpha",
+    "dateCreated": "2020-03-31T09:04:10.3+02:00",
+    "generator": {
+      "softwareName": "SB01Import",
+      "softwareVersion": "0.0.0"
+    },
+    "comments": ["This is fuuuuuuuun!"],
+    "defaultLanguage": "en"
+  },
+  "idAuthorities": {
+    "paint-store": {
+      "id": "http://localhost:8080"
+    }
+  },
+  "identification": {
+    "idAuthority": "paint-store",
+    "name": {
+      "en": "My First Fingerpainted Bible"
+    },
+    "description": {
+      "en": "Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind"
+    },
+    "systemId": {
+      "paint-store": {
+        "id": "paint-store::0123456789abcdef",
+        "revision": "1"
+      }
+    }
+  },
+  "confidentiality": {
+    "metadata": "unrestricted",
+    "ingredients": "restricted"
+  },
+  "type": {
+    "flavorType": {
+      "name": "scripture",
+      "flavor": {
+        "name": "x-scriptureFingerPainting",
+        "foo": "baa"
+      },
+      "canonType": ["ot", "nt"],
+      "canonSpec": {
+        "ot": {
+          "name": "western"
+        },
+        "nt": {
+          "name": "western"
+        }
+      },
+      "currentScope": {
+        "JHN": ["3:16"]
+      }
+    }
+  },
+  "relationships": [
+    {
+      "id": "paint-store::color_my_bible_beautiful",
+      "flavor": "x-colorByNumbers",
+      "relationType": "peripheral",
+      "revision": "first_draft"
+    }
+  ],
+  "languages": [
+    {
+      "tag": "en",
+      "name": {
+        "en": "English"
+      }
+    }
+  ],
+  "targetAreas": [
+    {
+      "name": {
+        "en": "United States of America"
+      },
+      "code": "US"
+    }
+  ],
+  "ingredients": {
+    "myPainting.png": {
+      "mimeType": "image/png",
+      "checksum": {
+        "md5": "01234567012345670123456701234567"
+      },
+      "size": 1234,
+      "scope": {
+        "JHN": ["3:16"]
+      }
+    }
+  }
+}

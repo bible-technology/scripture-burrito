@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/recipe_element.schema.json",
+    "$$target": "recipe_element.schema.json",
+    "title": "Recipe Element",
+    "type": "object",
+    "description": "Scripture Burrito recipe element.",
+    "properties": {
+        "type": {
+            "const": "element"
+        },
+        "nameId": {
+            "$ref": "common.schema.json#/definitions/bareId"
+        },
+        "ingredient": {
+            "$ref": "common.schema.json#/definitions/path"
+        }
+    },
+    "required": ["type", "ingredient"],
+    "additionalProperties": false
+}

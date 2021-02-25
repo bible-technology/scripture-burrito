@@ -11,7 +11,16 @@
         },
         "projectType": {
             "type": "string",
-            "enum": ["standard", "daughter", "studyBible", "studyBibleAdditions", "backTranslation", "auxiliary", "transliterationManual", "transliterationWithEncoder"]
+            "enum": [
+                "standard",
+                "daughter",
+                "studyBible",
+                "studyBibleAdditions",
+                "backTranslation",
+                "auxiliary",
+                "transliterationManual",
+                "transliterationWithEncoder"
+            ]
         },
         "translationType": {
             "type": "string",
@@ -35,8 +44,8 @@
                 "type": "string",
                 "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
                 "oneOf": [
-                    {"$ref": "../common.schema.json#/definitions/xToken"},
-                    {"enum": ["usxRefs", "usxDirs", "typesetAsVersedParagraphs"]}
+                    { "$ref": "../common.schema.json#/definitions/xToken" },
+                    { "enum": ["usxRefs", "usxDirs", "typesetAsVersedParagraphs"] }
                 ]
             }
         }

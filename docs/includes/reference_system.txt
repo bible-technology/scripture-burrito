@@ -1,0 +1,1 @@
+A reference system identifies the way that a resource is referenced and navigated. For instance, a resource may use BCV (book, chapter, verse).

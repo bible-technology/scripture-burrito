@@ -16,21 +16,75 @@
                     "type": "string",
                     "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
                 },
-                "bitRate": {"type": "integer"},
-                "bitDepth": {"type": "integer"},
-                "samplingRate": {"type": "integer"},
-                "timingDir": {"$ref": "../common.schema.json#/definitions/path"}
+                "bitRate": { "type": "integer" },
+                "bitDepth": { "type": "integer" },
+                "samplingRate": { "type": "integer" },
+                "timingDir": { "$ref": "../common.schema.json#/definitions/path" }
             },
-            "required": ["compression", "trackConfiguration"]
+            "required": ["compression"],
+            "additionalProperties": false
         }
     },
     "properties": {
-        "dramatization": {
-            "type": "string",
-            "enum": ["dramatized", "nonDramatized", "singleVoice"]
+        "name": {
+            "const": "audioTranslation"
         },
-        "source": {"$ref": "#/definitions/format"},
-        "production": {"$ref": "#/definitions/format"},
+        "performance": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["singleVoice", "multipleVoice", "reading", "drama", "withMusic", "withEffects", "withHeadings"]
+            },
+            "uniqueItems": true,
+            "additionalItems": false,
+            "allOf": [
+                {
+                    "if": {
+                        "contains": {
+                            "const": "singleVoice"
+                        }
+                    },
+                    "then": {
+                        "not": {
+                            "contains": {
+                                "const": "multipleVoice"
+                            }
+                        }
+                    },
+                    "else": {
+                        "contains": {
+                            "const": "multipleVoice"
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "contains": {
+                            "const": "reading"
+                        }
+                    },
+                    "then": {
+                        "not": {
+                            "contains": {
+                                "const": "drama"
+                            }
+                        }
+                    },
+                    "else": {
+                        "contains": {
+                            "const": "drama"
+                        }
+                    }
+                }
+            ]
+        },
+        "formats": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/format"
+            },
+            "propertyNames": { "type": "string" }
+        },
         "conventions": {
             "type": "object",
             "additionalProperties": {
@@ -41,12 +95,12 @@
                 "type": "string",
                 "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
                 "oneOf": [
-                    {"$ref": "../common.schema.json#/definitions/xToken"},
-                    {"enum": ["contentResourcesByChapter", "bookDirs"]}
+                    { "$ref": "../common.schema.json#/definitions/xToken" },
+                    { "enum": ["contentResourcesByChapter", "bookDirs"] }
                 ]
             }
         }
     },
-    "required": ["dramatization"],
+    "required": ["performance", "formats"],
     "additionalProperties": false
 }

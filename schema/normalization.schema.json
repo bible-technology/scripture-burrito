@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/normalization.schema.json",
+    "$$target": "normalization.schema.json",
+    "title": "Normalization",
+    "type": "string",
+    "description": "Unicode normalization options. This applies to both ingredients and metadata.",
+    "enum": [
+        "NFC",
+        "NFD",
+        "NFKC",
+        "NFKD"
+    ]
+}

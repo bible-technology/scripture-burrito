@@ -1,15 +1,16 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/derived_metadata.schema.json",
-    "title": "Scripture Burrito Metadata (Derived)",
+    "$$target": "derived_metadata.schema.json",
+    "title": "Metadata (Derived)",
     "type": "object",
     "description": "Scripture Burrito derived variant root.",
     "properties": {
         "meta": {
             "$ref": "derived_meta.schema.json"
         },
-        "idServers": {
-            "$ref": "id_servers.schema.json"
+        "idAuthorities": {
+            "$ref": "id_authorities.schema.json"
         },
         "identification": {
             "$ref": "identification.schema.json"
@@ -48,33 +49,20 @@
             "$ref": "recipe.schema.json"
         }
     },
-    "required": [
-        "meta",
-        "idServers",
-        "identification",
-        "confidentiality",
-        "copyright",
-        "type"
-    ],
+    "required": ["meta", "idAuthorities", "identification", "confidentiality", "copyright", "type", "recipe"],
     "additionalProperties": false,
     "if": {
         "properties": {
             "type": {
                 "properties": {
                     "flavorType": {
-                        "enum": [
-                            "scripture",
-                            "gloss"
-                        ]
+                        "enum": ["scripture", "gloss"]
                     }
                 }
             }
         }
     },
     "then": {
-        "required": [
-            "languages",
-            "names"
-        ]
+        "required": ["languages", "names"]
     }
 }

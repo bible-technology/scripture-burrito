@@ -1,8 +1,12 @@
+node_modules
 proto_doc/dbl_2_3/briefing_papers/DBLMetadata23.log
 proto_doc/dbl_2_3/briefing_papers/SB01RFC.log
+
+# build artifacts and language support
+node_modules
 **/_build
 **/build
-.DS_Store
+.python-version
 
 # IDE artifacts
 .vscode
@@ -15,3 +19,6 @@ docs/schema/metadata.rng
 *~
 \#*\#
 .\#*
+
+# Mac OSX artifacts
+.DS_Store

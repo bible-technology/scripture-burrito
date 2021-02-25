@@ -5,9 +5,43 @@
     "type": "object",
     "description": "Schema of flavor field for word alignment flavor",
     "properties": {
-	"name": {
-	    "const": "word_alignment"
-	}
+        "name": {
+            "const": "wordAlignment"
+        },
+        "autoAlignerVersion": { "type": "string" },
+        "stopWords": { "type": "boolean" },
+        "stemmer": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "version": { "type": "string" },
+                "affixes": { "type": "boolean" }
+            },
+            "additionalProperties": false
+        },
+        "manualAlignment": {
+            "type": "object",
+            "properties": {
+                "user": { "type": "string" },
+                "references": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "start": { "type": "number", "min": 0, "multipleOf": 1.0 },
+                            "end": { "type": "number", "min": 0, "multipleOf": 1.0 }
+                        },
+                        "required": ["start"],
+                        "additionalProperties": false
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                }
+            },
+            "required": ["user", "references"],
+            "additionalProperties": false
+        }
     },
-    "additionalProperties": true
+    "required": ["name", "autoAlignerVersion", "stopWords", "stemmer", "manualAlignment"],
+    "additionalProperties": false
 }

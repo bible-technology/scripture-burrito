@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/languages.schema.json",
-    "title": "Scripture Burrito Languages",
+    "$$target": "languages.schema.json",
+    "title": "Languages",
     "type": "array",
     "items": {
         "$ref": "language.schema.json"

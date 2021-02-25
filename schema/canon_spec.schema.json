@@ -1,37 +1,25 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/canon_spec.schema.json",
-    "title": "Scripture Burrito Canon Spec",
+    "$$target": "canon_spec.schema.json",
+    "title": "Canon Spec",
     "type": "object",
     "definitions": {
         "canonComponentOT": {
-            "$$target": [
-                "type.schema.json#/definitions/canonComponentOT",
-                "#/definitions/canonComponentOT"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/canonComponentOT", "#/definitions/canonComponentOT"],
             "title": "Old Testament Canon Component",
             "properties": {
                 "name": {
                     "type": "string",
-                    "enum": [
-                        "ethiopianProtestant",
-                        "syriac",
-                        "tanakh",
-                        "western"
-                    ]
+                    "enum": ["ethiopianProtestant", "syriac", "tanakh", "western"]
                 }
             },
             "not": {
-                "required": [
-                    "books"
-                ]
+                "required": ["books"]
             }
         },
         "canonComponentOTDC": {
-            "$$target": [
-                "type.schema.json#/definitions/canonComponentOTDC",
-                "#/definitions/canonComponentOTDC"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/canonComponentOTDC", "#/definitions/canonComponentOTDC"],
             "title": "Old Testament+ Canon Component",
             "properties": {
                 "name": {
@@ -53,17 +41,12 @@
                 }
             },
             "not": {
-                "required": [
-                    "books"
-                ]
+                "required": ["books"]
             },
             "$comment": "OTDC is OT with interleaved DC"
         },
         "canonComponentDC": {
-            "$$target": [
-                "type.schema.json#/definitions/canonComponentDC",
-                "#/definitions/canonComponentDC"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/canonComponentDC", "#/definitions/canonComponentDC"],
             "title": "Deuterocanon Component",
             "properties": {
                 "name": {
@@ -96,16 +79,11 @@
                 }
             },
             "not": {
-                "required": [
-                    "books"
-                ]
+                "required": ["books"]
             }
         },
         "canonComponentNT": {
-            "$$target": [
-                "type.schema.json#/definitions/canonComponentNT",
-                "#/definitions/canonComponentNT"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/canonComponentNT", "#/definitions/canonComponentNT"],
             "title": "New Testament Canon Component",
             "properties": {
                 "name": {
@@ -122,16 +100,11 @@
                 }
             },
             "not": {
-                "required": [
-                    "books"
-                ]
+                "required": ["books"]
             }
         },
         "canonComponentCustom": {
-            "$$target": [
-                "type.schema.json#/definitions/canonComponentCustom",
-                "#/definitions/canonComponentCustom"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/canonComponentCustom", "#/definitions/canonComponentCustom"],
             "title": "Custom Canon Component",
             "properties": {
                 "name": {
@@ -146,16 +119,10 @@
                     "minItems": 1
                 }
             },
-            "required": [
-                "name",
-                "books"
-            ]
+            "required": ["name", "books"]
         },
         "bookOT": {
-            "$$target": [
-                "type.schema.json#/definitions/bookOT",
-                "#/definitions/bookOT"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/bookOT", "#/definitions/bookOT"],
             "title": "Old Testament Books",
             "enum": [
                 "GEN",
@@ -200,10 +167,7 @@
             ]
         },
         "bookDC": {
-            "$$target": [
-                "type.schema.json#/definitions/bookDC",
-                "#/definitions/bookDC"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/bookDC", "#/definitions/bookDC"],
             "title": "Deutercanonical Books",
             "enum": [
                 "TOB",
@@ -250,10 +214,7 @@
             ]
         },
         "bookNT": {
-            "$$target": [
-                "type.schema.json#/definitions/bookNT",
-                "#/definitions/bookNT"
-            ],
+            "$$target": ["canon_spec.schema.json#/definitions/bookNT", "#/definitions/bookNT"],
             "title": "New Testament Books",
             "enum": [
                 "MAT",
@@ -286,6 +247,8 @@
             ]
         },
         "bookOTDC": {
+            "$$target": ["canon_spec.schema.json#/definitions/bookOTDC", "#/definitions/bookOTDC"],
+            "title": "Book OT DC",
             "oneOf": [
                 {
                     "$ref": "#/definitions/bookOT"
@@ -296,6 +259,8 @@
             ]
         },
         "bookOTNT": {
+            "$$target": ["canon_spec.schema.json#/definitions/bookOTNT", "#/definitions/bookOTNT"],
+            "title": "Book OT NT",
             "oneOf": [
                 {
                     "$ref": "#/definitions/bookOT"
@@ -308,6 +273,8 @@
     },
     "properties": {
         "ot": {
+            "$$target": ["canon_spec.schema.json#/definitions/ot", "#/definitions/ot"],
+            "title": "OT",
             "type": "object",
             "properties": {
                 "books": {
@@ -324,11 +291,11 @@
                     "$ref": "#/definitions/canonComponentCustom"
                 }
             ],
-            "required": [
-                "name"
-            ]
+            "required": ["name"]
         },
         "otdc": {
+            "$$target": ["canon_spec.schema.json#/definitions/otdc", "#/definitions/otdc"],
+            "title": "OT DC",
             "type": "object",
             "properties": {
                 "books": {
@@ -345,11 +312,11 @@
                     "$ref": "#/definitions/canonComponentCustom"
                 }
             ],
-            "required": [
-                "name"
-            ]
+            "required": ["name"]
         },
         "dc": {
+            "$$target": ["canon_spec.schema.json#/definitions/dc", "#/definitions/dc"],
+            "title": "DC",
             "type": "object",
             "properties": {
                 "books": {
@@ -366,11 +333,11 @@
                     "$ref": "#/definitions/canonComponentCustom"
                 }
             ],
-            "required": [
-                "name"
-            ]
+            "required": ["name"]
         },
         "nt": {
+            "$$target": ["canon_spec.schema.json#/definitions/nt", "#/definitions/nt"],
+            "title": "NT",
             "type": "object",
             "properties": {
                 "books": {
@@ -387,9 +354,7 @@
                     "$ref": "#/definitions/canonComponentCustom"
                 }
             ],
-            "required": [
-                "name"
-            ]
+            "required": ["name"]
         }
     },
     "additionalProperties": false,
@@ -397,18 +362,12 @@
     "allOf": [
         {
             "not": {
-                "required": [
-                    "ot",
-                    "otdc"
-                ]
+                "required": ["ot", "otdc"]
             }
         },
         {
             "not": {
-                "required": [
-                    "dc",
-                    "otdc"
-                ]
+                "required": ["dc", "otdc"]
             }
         }
     ],

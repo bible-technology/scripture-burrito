@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/scripture_flavor_type.schema.json",
-    "title": "Scripture Burrito Scripture Flavor Type",
+    "$$target": "scripture_flavor_type.schema.json",
+    "title": "Scripture Flavor Type",
     "type": "object",
     "properties": {
         "flavorType": {
@@ -44,13 +45,7 @@
                     "$ref": "canon_spec.schema.json"
                 }
             },
-            "required": [
-                "name",
-                "bookScope",
-                "canonType",
-                "canonSpec",
-                "flavor"
-            ],
+            "required": ["name", "bookScope", "canonType", "canonSpec", "flavor"],
             "additionalProperties": false
         }
     },

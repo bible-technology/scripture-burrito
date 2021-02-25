@@ -1,19 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/relationship.schema.json",
+    "$$target": "relationship.schema.json",
     "title": "Relationship",
     "type": "object",
     "description": "Describes a relationship to a different burrito that can be obtained from an indicated server.",
     "properties": {
         "relationType": {
             "type": "string",
-            "enum": [
-                "source",
-                "target",
-                "expression",
-                "parascriptural",
-                "peripheral"
-            ],
+            "enum": ["source", "target", "expression", "parascriptural", "peripheral"],
             "minLength": 1
         },
         "flavor": {
@@ -21,11 +16,11 @@
             "oneOf": [
                 {
                     "enum": [
-                        "scriptureText",
-                        "scriptureAudio",
-                        "scripturePrint",
-                        "scriptureSignLanguageVideo",
-                        "scriptureBraille",
+                        "textTranslation",
+                        "audioTranslation",
+                        "typesetScripture",
+                        "signLanguageVideoTranslation",
+                        "embossedBrailleScripture",
                         "glossedTextStory",
                         "parascripturalWordAlignment"
                     ]
@@ -42,16 +37,12 @@
         "revision": {
             "$ref": "common.schema.json#/definitions/revisionString"
         },
-        "publicationId": {
+        "variant": {
             "type": "string",
             "pattern": "^[A-Za-z][A-Za-z0-9_\\-]{0,31}$"
         }
     },
-    "required": [
-        "relationType",
-        "flavor",
-        "id"
-    ],
+    "required": ["relationType", "flavor", "id"],
     "additionalProperties": false,
     "oneOf": [
         {
@@ -68,10 +59,7 @@
                     "const": "source"
                 },
                 "flavor": {
-                    "enum": [
-                        "scriptureText",
-                        "scriptureAudio"
-                    ]
+                    "enum": ["textTranslation", "audioTranslation"]
                 }
             }
         },
@@ -101,9 +89,7 @@
                     "const": "parascriptural"
                 },
                 "flavor": {
-                    "enum": [
-                        "parascripturalWordAlignment"
-                    ]
+                    "enum": ["parascripturalWordAlignment"]
                 }
             }
         }

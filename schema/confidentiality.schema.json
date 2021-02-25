@@ -1,32 +1,24 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/confidentiality.schema.json",
+    "$$target": "confidentiality.schema.json",
     "title": "Confidentiality",
     "type": "object",
     "description": "Describes the sensitivity of the information in various aspects of the burrito, indicating how it may or may not be shared.",
     "definitions": {
         "confidentialityEnum": {
             "type": "string",
-            "enum": [
-                "unrestricted",
-                "restricted",
-                "private"
-            ]
+            "enum": ["unrestricted", "restricted", "private"]
         }
     },
     "properties": {
         "metadata": {
             "$ref": "#/definitions/confidentialityEnum"
         },
-        "source": {
-            "$ref": "#/definitions/confidentialityEnum"
-        },
-        "publications": {
+        "ingredients": {
             "$ref": "#/definitions/confidentialityEnum"
         }
     },
-    "required": [
-        "metadata"
-    ],
+    "required": ["metadata"],
     "additionalProperties": false
 }

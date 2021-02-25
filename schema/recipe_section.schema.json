@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/recipe_section.schema.json",
+    "$$target": "recipe_section.schema.json",
+    "title": "Recipe Section",
+    "type": "object",
+    "description": "Scripture Burrito recipe section.",
+    "properties": {
+        "type": {
+            "const": "section"
+        },
+        "nameId": {
+            "$ref": "common.schema.json#/definitions/bareId"
+        },
+        "content": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "recipe_section.schema.json"
+                    },
+                    {
+                        "$ref": "recipe_element.schema.json"
+                    }
+                ]
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": ["type", "nameId", "content"],
+    "additionalProperties": false
+}

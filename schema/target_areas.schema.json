@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/target_areas.schema.json",
-    "title": "Scripture Burrito Target Areas",
+    "$$target": "target_areas.schema.json",
+    "title": "Target Areas",
     "type": "array",
     "items": {
         "$ref": "target_area.schema.json"

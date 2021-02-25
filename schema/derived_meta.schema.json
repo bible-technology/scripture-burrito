@@ -1,14 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/derived_meta.schema.json",
-    "title": "Scripture Burrito Meta (Derived)",
+    "$$target": "derived_meta.schema.json",
+    "title": "Meta (Derived)",
     "type": "object",
     "description": "Information about the Scripture Burrito metadata file.",
     "properties": {
-        "variant": {
-            "type": "string",
-            "pattern": "^derived_[A-Za-z][A-Za-z0-9]*$",
-            "description": "The type of derived variant represented in the burrito"
+        "category": {
+            "const": "derived"
         },
         "dateCreated": {
             "$ref": "meta_date_created.schema.json"
@@ -20,22 +19,16 @@
             "$ref": "software_and_user_info.schema.json",
             "description": "Information about the program and user who generated this burrito."
         },
-        "uploader": {
-            "$ref": "software_and_user_info.schema.json",
-            "description": "Information about the program and user who uploaded this burrito."
-        },
         "defaultLanguage": {
             "$ref": "meta_default_language.schema.json"
+        },
+        "normalization": {
+            "$ref": "normalization.schema.json"
         },
         "comments": {
             "$ref": "meta_comments.schema.json"
         }
     },
-    "required": [
-        "version",
-        "variant",
-        "dateCreated",
-        "defaultLanguage"
-    ],
+    "required": ["version", "category", "dateCreated", "defaultLanguage"],
     "additionalProperties": false
 }

@@ -6,9 +6,9 @@ Scripture Burrito Documentation
 
 .. image:: ../logo/burrito_logo.png
 
-This is the official documentation for the evolving Scripture Burrito standard. We are building toward **0.2.0**, see the `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
+This is the official documentation for the evolving Scripture Burrito standard. See the development `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
 
-**Warning: the 0.1.0 schema was XML based, however, we are pivoting to** `JSON Schema <https://json-schema.org/>`_ **as the only representation of the metadata in 0.2.0.**
+**This is 0.3.0-alpha** based on `JSON Schema <https://json-schema.org/>`_.
 
 Feedback
 --------
@@ -20,8 +20,17 @@ The :ref:`committee` invites comments on all aspects of this documentation, but 
 JSON only for metadata
 ......................
 
-The 0.1.0 specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0** is to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. You may discuss this on the `Technology.Bible forum <https://technology.bible/c/sb>`_ or on `Issue #70 <https://github.com/bible-technology/scripture-burrito/issues/70>`_.
+The 0.1.0 specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0** was to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. This transition is now completed and 0.2.0-beta.2 represents this change.
 
+Confidentiality Options
+.......................
+
+The :ref:`schema_docs-confidentiality` section includes three options, 1. unrestricted, 2. restricted, 3. private. Please comment on `issue #90 <https://github.com/bible-technology/scripture-burrito/issues/90>`_ if you have a use case which is not covered by this enum.
+
+MD5 Checksums
+.............
+
+For ingredient (file) checksums we are using the dated MD5 hashing algorithm. See `our discussion <https://github.com/bible-technology/scripture-burrito/issues/115>`_ about this issue. Please open an issue to let us know if this will be problematic for your use case.
 
 USFM and USX for Scripture Text
 ...............................
@@ -54,3 +63,4 @@ Content
    schema_docs/index
    flavors/index
    examples/index
+   glossary
