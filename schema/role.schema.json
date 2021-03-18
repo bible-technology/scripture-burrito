@@ -51,6 +51,10 @@
             "enum": ["body", "thumbnail"]
         },
         {
+            "description": "A role for textTranslation flavored burritos",
+            "enum": ["localedata"]
+        },
+        {
             "description": "A label for story-type units",
             "pattern": "^unit\\s.*\\S$"
         },
