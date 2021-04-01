@@ -20,13 +20,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "865ab834004f4186",
-        "revision": "3"
+        "865ab834004f4186": {
+          "revision": "3",
+          "timestamp": "2019-07-17T08:00:56.467963+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "WEBBE Braille"
     },

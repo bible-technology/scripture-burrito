@@ -16,17 +16,18 @@
     }
   },
   "identification": {
-    "idAuthority": "paint-store",
     "name": {
       "en": "My First Fingerpainted Bible"
     },
     "description": {
       "en": "Someone said we needed digital Bibles and I thought I could use my digits to... oh, never mind"
     },
-    "systemId": {
+    "primary": {
       "paint-store": {
-        "id": "paint-store::0123456789abcdef",
-        "revision": "1"
+        "0123456789abcdef": {
+          "revision": "1",
+          "timestamp": "2020-03-31T09:04:10.3+02:00"
+        }
       }
     }
   },

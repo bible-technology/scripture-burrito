@@ -22,13 +22,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "6e0d81a24efbb679",
-        "revision": "9"
+        "6e0d81a24efbb679": {
+          "revision": "9",
+          "timestamp": "2018-03-15T19:38:40.762935+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "TEST Audio Bible - Local"
     },
