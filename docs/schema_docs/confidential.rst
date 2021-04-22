@@ -1,3 +1,3 @@
-.. _schema_docs-confidentiality:
+.. _schema_docs-confidential:
 
-.. jsonschema:: ../../schema/confidentiality.schema.json
+.. jsonschema:: ../../schema/confidential.schema.json

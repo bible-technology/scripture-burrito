@@ -16,7 +16,7 @@
             "$ref": "identification.schema.json"
         },
         "confidential": {
-            "$ref": "confidentiality.schema.json"
+            "$ref": "confidential.schema.json"
         },
         "type": {
             "$ref": "type.schema.json"
