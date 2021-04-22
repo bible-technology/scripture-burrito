@@ -29,19 +29,32 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "0123456789abcdef",
-        "revision": "23"
-      },
-      "gbc": {
-        "id": "55df02965117ad3f2201309b"
-      },
-      "paratext": {
-        "id": "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd"
+        "0123456789abcdef": {
+          "revision": "23",
+          "timestamp": "2019-02-18T01:02:03+01:00"
+        }
       }
     },
-    "idAuthority": "dbl",
+    "upstream": {
+      "gbc": [
+        {
+          "55df02965117ad3f2201309b": {
+            "revision": "2",
+            "timestamp": "2019-02-17T01:02:03+01:00"
+            }
+        }
+      ],
+      "paratext": [
+        {
+          "2d5220a02a7aaac6bcc2831ae262e9aaca5e1abd": {
+            "revision": "5",
+            "timestamp": "2019-02-16T01:02:03+01:00"
+          }
+        }
+      ]
+    },
     "name": {
       "en": "Excerpts from a Scripture Burrito Demo Text Bible",
       "fr": "Des morceaux d'une Cr\u00eape mexicaine biblique surdimensionn\u00e9e (d\u00e9monstration)"
