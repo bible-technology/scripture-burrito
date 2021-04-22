@@ -102,10 +102,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::b78a0b882a8a372c837d68b7",

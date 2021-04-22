@@ -151,10 +151,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",

@@ -31,10 +31,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "type": {
     "flavorType": {
       "name": "scripture",

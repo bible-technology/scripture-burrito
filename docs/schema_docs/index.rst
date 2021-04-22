@@ -12,7 +12,7 @@ Schema Documentation
    canon_spec
    canon_type
    common
-   confidentiality
+   confidential
    copyright
    derived_meta
    derived_metadata

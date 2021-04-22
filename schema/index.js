@@ -10,7 +10,7 @@ module.exports = {
         require("./canon_spec.schema.json"),
         require("./canon_type.schema.json"),
         require("./common.schema.json"),
-        require("./confidentiality.schema.json"),
+        require("./confidential.schema.json"),
         require("./copyright.schema.json"),
         require("./derived_meta.schema.json"),
         require("./derived_metadata.schema.json"),
