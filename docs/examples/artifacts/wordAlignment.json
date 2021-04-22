@@ -31,10 +31,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "unrestricted"
-  },
+  "confidential": false,
   "type": {
     "flavorType": {
       "name": "parascriptural",
