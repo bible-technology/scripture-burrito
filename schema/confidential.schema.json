@@ -4,5 +4,5 @@
     "$$target": "confidential.schema.json",
     "title": "Confidential",
     "type": "boolean",
-    "description": "Indicates whether the project is confidential or not."
+    "description": "a true value indicates that the project should not be publicly known and that the identity of project members needs to be kept confidential."
 }
