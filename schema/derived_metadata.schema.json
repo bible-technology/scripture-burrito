@@ -15,7 +15,7 @@
         "identification": {
             "$ref": "identification.schema.json"
         },
-        "confidentiality": {
+        "confidential": {
             "$ref": "confidentiality.schema.json"
         },
         "type": {
@@ -49,7 +49,7 @@
             "$ref": "recipe.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidentiality", "copyright", "type", "recipe"],
+    "required": ["meta", "idAuthorities", "identification", "confidential", "copyright", "type", "recipe"],
     "additionalProperties": false,
     "if": {
         "properties": {

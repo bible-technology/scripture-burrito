@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/confidentiality.schema.json",
     "$$target": "confidentiality.schema.json",
-    "title": "Confidentiality",
+    "title": "Confidential",
     "type": "boolean",
-    "description": "Describes the sensitivity of the information in various aspects of the burrito."
+    "description": "Indicates whether the project is confidential or not."
 }

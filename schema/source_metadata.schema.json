@@ -15,7 +15,7 @@
         "identification": {
             "$ref": "identification.schema.json"
         },
-        "confidentiality": {
+        "confidential": {
             "$ref": "confidentiality.schema.json"
         },
         "type": {
@@ -46,7 +46,7 @@
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidentiality", "type"],
+    "required": ["meta", "idAuthorities", "identification", "confidential", "type"],
     "additionalProperties": false,
     "if": {
         "properties": {
