@@ -1,7 +1,7 @@
 {
   "meta": {
     "category": "source",
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
