@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/reference_format.schema.json",
+    "title": "Scripture Burrito Reference Format Ingredient",
+    "type": "object",
+    "description": "Scripture Burrito Reference Format Ingredient",
+    "properties": {
+        "noSpaceBetweenBookAndChapter": {
+            "type": "boolean"
+        },
+        "chapterVerseSeparator": {
+            "type": "string"
+        },
+        "rangeIndicator": {
+            "type": "string"
+        },
+        "sequenceIndicator": {
+            "type": "string"
+        },
+        "chapterRangeSeparator": {
+            "type": "string"
+        },
+        "chapterNumberSeparator": {
+            "type": "string"
+        },
+        "bookSequenceSeparator": {
+            "type": "string"
+        },
+        "referenceExtraMaterial": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
+        },
+        "referenceFinalPunctuation": {
+            "type": "string"
+        },
+        "bookSourceForMarkerXt": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "bookSourceForMarkerR": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": []
+}

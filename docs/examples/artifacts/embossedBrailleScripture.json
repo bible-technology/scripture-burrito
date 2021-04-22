@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -20,13 +20,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "865ab834004f4186",
-        "revision": "3"
+        "865ab834004f4186": {
+          "revision": "3",
+          "timestamp": "2019-07-17T08:00:56.467963+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "WEBBE Braille"
     },
@@ -101,10 +102,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::b78a0b882a8a372c837d68b7",

@@ -15,8 +15,8 @@
         "identification": {
             "noRef": "identification.schema.json"
         },
-        "confidentiality": {
-            "noRef": "confidentiality.schema.json"
+        "confidential": {
+            "noRef": "confidential.schema.json"
         },
         "type": {
             "noRef": "type.schema.json"

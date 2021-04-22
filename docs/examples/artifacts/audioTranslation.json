@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -22,13 +22,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "6e0d81a24efbb679",
-        "revision": "9"
+        "6e0d81a24efbb679": {
+          "revision": "9",
+          "timestamp": "2018-03-15T19:38:40.762935+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "TEST Audio Bible - Local"
     },
@@ -78,10 +79,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",

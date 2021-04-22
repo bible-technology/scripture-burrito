@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -21,13 +21,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "2880c78491b2f8ce",
-        "revision": "91"
+        "2880c78491b2f8ce": {
+          "revision": "91",
+          "timestamp": "2018-02-15T22:33:50.875547+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "DBL Test Version with DC Local"
     },
@@ -150,10 +151,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::54650cfa5117ad690fb05fb6",

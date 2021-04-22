@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/confidential.schema.json",
+    "$$target": "confidential.schema.json",
+    "title": "Confidential",
+    "type": "boolean",
+    "description": "a true value indicates that the project should not be publicly known and that the identity of project members needs to be kept confidential."
+}

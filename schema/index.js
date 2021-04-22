@@ -1,6 +1,7 @@
 module.exports = {
     schemaIds: {
-        metadata: "https://burrito.bible/schema/metadata.schema.json"
+        "metadata": "https://burrito.bible/schema/metadata.schema.json",
+        "referenceFormat": "https://burrito.bible/schema/reference_format.schema.json"
     },
     schemas: [
         require("./agencies.schema.json"),
@@ -9,7 +10,7 @@ module.exports = {
         require("./canon_spec.schema.json"),
         require("./canon_type.schema.json"),
         require("./common.schema.json"),
-        require("./confidentiality.schema.json"),
+        require("./confidential.schema.json"),
         require("./copyright.schema.json"),
         require("./derived_meta.schema.json"),
         require("./derived_metadata.schema.json"),
@@ -30,12 +31,12 @@ module.exports = {
         require("./normalization.schema.json"),
         require("./numbering_system.schema.json"),
         require("./parascriptural/word_alignment.schema.json"),
-        require("./peripheral/versification.schema.json"),
         require("./progress.schema.json"),
         require("./promotion.schema.json"),
         require("./recipe.schema.json"),
         require("./recipe_section.schema.json"),
         require("./recipe_element.schema.json"),
+        require("./reference_format.schema.json"),
         require("./relationships.schema.json"),
         require("./relationship.schema.json"),
         require("./scripture/audio_translation.schema.json"),

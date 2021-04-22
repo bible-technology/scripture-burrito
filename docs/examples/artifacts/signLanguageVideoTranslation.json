@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -20,13 +20,14 @@
     }
   },
   "identification": {
-    "systemId": {
+    "primary": {
       "dbl": {
-        "id": "acce3721073e44da",
-        "revision": "2"
+        "acce3721073e44da": {
+          "revision": "2",
+          "timestamp": "2019-12-10T15:44:10.641544+00:00"
+        }
       }
     },
-    "idAuthority": "dbl",
     "name": {
       "en": "The Gospel of Luke in French Sign Language",
       "lsf": "L'Evangile de Luc en langue des signes française"
@@ -76,10 +77,7 @@
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "agencies": [
     {
       "id": "dbl::54650cdf5117ad687c9b5189",

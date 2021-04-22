@@ -8,7 +8,7 @@ Scripture Burrito Documentation
 
 This is the official documentation for the evolving Scripture Burrito standard. See the development `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
 
-**This is 0.3.0-alpha** based on `JSON Schema <https://json-schema.org/>`_.
+**This is 0.3.0** based on `JSON Schema <https://json-schema.org/>`_.
 
 Feedback
 --------
@@ -21,11 +21,6 @@ JSON only for metadata
 ......................
 
 The 0.1.0 specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0** was to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. This transition is now completed and 0.2.0-beta.2 represents this change.
-
-Confidentiality Options
-.......................
-
-The :ref:`schema_docs-confidentiality` section includes three options, 1. unrestricted, 2. restricted, 3. private. Please comment on `issue #90 <https://github.com/bible-technology/scripture-burrito/issues/90>`_ if you have a use case which is not covered by this enum.
 
 MD5 Checksums
 .............

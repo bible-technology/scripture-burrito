@@ -12,7 +12,7 @@ Schema Documentation
    canon_spec
    canon_type
    common
-   confidentiality
+   confidential
    copyright
    derived_meta
    derived_metadata
@@ -33,7 +33,6 @@ Schema Documentation
    normalization
    numbering_system
    parascriptural-word_alignment
-   peripheral-versification
    progress
    promotion
    recipe

@@ -1,7 +1,7 @@
 {
   "meta": {
     "category": "source",
-    "version": "0.3.0-alpha",
+    "version": "0.3.0",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
@@ -16,7 +16,6 @@
     }
   },
   "identification": {
-    "idAuthority": "dcs",
     "name": {
       "en": "unfoldingWord® Open Bible Stories"
     },
@@ -26,17 +25,16 @@
     "description": {
       "en": "unrestricted visual Bible stories"
     },
-    "systemId": {
+    "primary": {
       "dcs": {
-        "id": "dcs::unfoldingword:en_obs",
-        "revision": "94263a75308f91567c3c77ba862d53cbf6c80378"
+        "unfoldingword:en_obs": {
+          "revision": "94263a75308f91567c3c77ba862d53cbf6c80378",
+          "timestamp": "2020-03-31T09:04:10.3+02:00"
+        }
       }
     }
   },
-  "confidentiality": {
-    "metadata": "unrestricted",
-    "ingredients": "restricted"
-  },
+  "confidential": true,
   "type": {
     "flavorType": {
       "name": "gloss",
