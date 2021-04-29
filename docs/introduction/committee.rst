@@ -4,6 +4,20 @@
 Committee
 #########
 
+There is a cross organizational working group that defines the direction of the Scripture Burrito specification. See the `Github Contributors page <https://github.com/bible-technology/scripture-burrito/graphs/contributors>`_ for a list of everyone that has contributed code or documentation.
+
+==================
+Current Membership
+==================
+
+The working group meets regularly and is now comprised of the following individuals:
+
+* Jesse Griffin
+* Joel Mathew
+* Jonathan Robie
+* Tim Steenwyk
+* James Tauber (implementing developer)
+
 =======
 Origins
 =======
@@ -22,20 +36,6 @@ meeting was attended by
 * Andi Wu
 
 At the above meeting the Scripture Burrito name was adopted.
-
-==================
-Current Membership
-==================
-
-The committee meets regularly and is now comprised of the following individuals:
-
-* Dan De Blois
-* Jesse Griffin
-* Sean Morrison
-* Joel Mathew
-* Jonathan Robie
-* Tim Steenwyk
-* Michael Brinker
 
 =======================================
 Relationship to the Copenhagen Alliance
