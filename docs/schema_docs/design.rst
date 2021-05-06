@@ -51,54 +51,6 @@ Flavor-specific content is located in
 
 * metadata/type/flavorDetails
 
-No Namespaces
-=============
-
-All Scripture Burrito metadata is in the null namespace, to simplify the processing model (given that not every Burrito user will be an XML power user.)
-
-camelCase
-=========
-
-So not hyphenated-names or underscored_names.
-
-Most Content in Text, not Attributes
-====================================
-
-This is partly a stylistic choice, but it also reflects the need to handle a wide range of UTF-8 characters in many fields. (It is considered bad practice
-to put localized strings into attributes.) Attributes are mainly used as qualifiers for the "main" content.
-
-Few Empty Elements, Many Optional Elements
-==========================================
-
-The children of most root elements (identification, format, etc) are required. Many elements below that level are optional but, if they are present, they must
-contain content. This is to avoid confusion between a value that is unspecified and a value that is specified as an empty string. So
-
-.. code-block:: xml
-
-   <name lang="eng">The Holy Bible</name>
-   <name lang="fra">La Sainte Bible</name>
-
-is permitted, as is
-
-.. code-block:: xml
-
-   <name lang="eng">The Holy Bible</name>
-   <!-- No localized name -->
-
-but
-
-.. code-block:: xml
-
-   <name lang="eng">The Holy Bible</name>
-   <name lang="fra"/>
-
-is not permitted.
-
-Order is Generally Unimportant
-==============================
-
-Most elements at all levels can appear in any order (or *interleaved*, in the terms of XML schema). Exceptions include a few elements that must appear
-as the first children of the root element and publication structures which communicate a specific content order.
 
 Publications Inherit Burrito Properties
 =======================================
