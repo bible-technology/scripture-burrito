@@ -63,17 +63,51 @@ as human editing tends to result in unintended skew between the previously-ident
 Versioning
 ==========
 
-The Scripture Burrito specification follows `semantic versioning <http://semver.org>`_. The following clarify how we implement that in the specification:
+The Scripture Burrito specification follows `semantic versioning <http://semver.org>`_ in general. More specifically:
 
-* SB schema 1.0.x will be able to validate 1.0.y for any value of x >= y.
-* SB schema 1.1.x is a whole new schema and will not validate 1.0.x.
+* in 0.X, we do not make an alpha / beta / release-candidate distinction
+* effectively, all 0.X releases are alpha or beta
+* planned releases are given a 0.X.0 version
+* hot-fix releases to a 0.X (while we're working towards a different planned release) are given a version 0.X.Y (Y > 0)
+* we will do alpha / beta / release candidates for 1.0 and beyond
 
-Development
------------
+So, for example:
 
-The follow phases are defined for our schema development process:
+We have released 0.3.0 and are currently working on 0.4.0. If we notice a mistake in 0.3.0 that is holding up implementation testing and we don't want to wait for 0.4.0 to fix it, we can release 0.3.1 with just the fix added to 0.3.0.
 
-* The ``develop`` branch represents the first public working draft
-* A Beta release (``-beta``) represents a working draft
-* A Release Candidate (``rc``) represents a candidate recommendation
-* A release represents a recommendation to implement
+If there is more work to do after 0.4.0 prior to declaring 1.0.0, we will work on a 0.5.0. When our 0.X.Y release is a candidate for 1.0.0 (by consensus of the working committee), we will release it as 1.0.0-rc1.
+
+Release Process
+---------------
+
+Prior to 1.0.0-rc1, there is no formal review process before release. All post-1.0 releases that aren't alpha or beta will go through a release candidate, however.
+
+Post 1.0:
+
+* alphas and betas can be done unilaterally by the release manager
+* all release candidates for hot-fixes can be done unilaterally by the release manager but the actual release requires a review period and WG consensus
+* all release candidates for normal (.0 / non-hotfix) releases require WG consensus
+
+So for example, the release manager could unilaterally release:
+
+* 0.4.0
+* 0.4.1
+* 1.0.1-rc1
+* 1.1.0-alpha1
+* 1.1.0-beta1
+
+But working committee consensus is required for:
+
+* 1.0.0-rc1
+* 1.0.0
+* 1.0.1
+* 1.1.0-rc1
+* 1.1.0
+
+
+Branches
+--------
+
+Prior to 1.0, ``master`` contains the latest release (of any kind) and ``develop`` (into which feature branches are merged) contains the work towards the next release.
+
+From 1.0 onwards, ``master`` will contain final releases (i.e. not alpha, beta, or rc).
