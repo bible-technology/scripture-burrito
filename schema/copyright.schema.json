@@ -32,7 +32,7 @@
         },
         "publicDomain": {
             "type": "boolean",
-            "description": "If set to true, the contents of this burrito are dedicated to the public domain."
+            "description": "If set to true, the contents of this burrito are in the public domain."
         },
         "shortStatementPlain": {
             "$ref": "common.schema.json#/definitions/localizedText"
