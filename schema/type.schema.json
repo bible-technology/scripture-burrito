@@ -3,8 +3,8 @@
     "$id": "https://burrito.bible/schema/type.schema.json",
     "$$target": "type.schema.json",
     "title": "Type",
-    "type": "object",
     "description": "Contains properties describing the burrito flavor type.",
+    "type": "object",
     "properties": {
         "flavorType": {
             "type": "object",
@@ -23,6 +23,7 @@
     "if" : {
         "properties": {
             "flavorType": {
+                "type": "object",
                 "properties": {
                     "name": {
                         "const": "scripture"
@@ -80,8 +81,10 @@
         "if": {
             "properties": {
                 "flavorType" : {
+                    "type": "object",
                     "properties": {
                         "flavor": {
+                            "type": "object",
                             "properties": {
                                 "name": {
                                     "const": "textTranslation"
@@ -96,6 +99,7 @@
         {
             "properties": {
                 "flavorType" : {
+                    "type": "object",
                     "properties": {
                         "flavor" : {
                             "$ref": "scripture/text_translation.schema.json"
@@ -108,8 +112,10 @@
             "if": {
                 "properties": {
                     "flavorType" : {
+                        "type": "object",
                         "properties": {
                             "flavor": {
+                                "type": "object",
                                 "properties": {
                                     "name": {
                                         "const": "audioTranslation"
@@ -123,6 +129,7 @@
             "then": {
                 "properties": {
                     "flavorType" : {
+                        "type": "object",
                         "properties": {
                             "flavor" : {
                                 "$ref": "scripture/audio_translation.schema.json"
@@ -135,8 +142,10 @@
                 "if": {
                     "properties": {
                         "flavorType" : {
+                            "type": "object",
                             "properties": {
                                 "flavor": {
+                                    "type": "object",
                                     "properties": {
                                         "name": {
                                             "const": "typesetScripture"
@@ -150,6 +159,7 @@
                 "then": {
                     "properties": {
                         "flavorType" : {
+                            "type": "object",
                             "properties": {
                                 "flavor" : {
                                     "$ref": "scripture/typeset_scripture.schema.json"
@@ -162,8 +172,10 @@
                     "if": {
                         "properties": {
                             "flavorType" : {
+                                "type": "object",
                                 "properties": {
                                     "flavor": {
+                                        "type": "object",
                                         "properties": {
                                             "name": {
                                                 "const": "embossedBrailleScripture"
@@ -177,6 +189,7 @@
                     "then": {
                         "properties": {
                             "flavorType" : {
+                                "type": "object",
                                 "properties": {
                                     "flavor" : {
                                         "$ref": "scripture/embossed_braille_scripture.schema.json"
@@ -189,8 +202,10 @@
                         "if": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor": {
+                                            "type": "object",
                                             "properties": {
                                                 "name": {
                                                     "const": "signLanguageVideoTranslation"
@@ -204,6 +219,7 @@
                         "then": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor" : {
                                             "$ref": "scripture/sign_language_video_translation.schema.json"
@@ -215,6 +231,7 @@
                         "else": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor" : {
                                             "$ref": "x_flavor.schema.json"
@@ -232,6 +249,7 @@
         "if" : {
             "properties": {
                 "flavorType": {
+                    "type": "object",
                     "properties": {
                         "name": {
                             "const": "gloss"
@@ -279,6 +297,7 @@
             "if" : {
                 "properties": {
                     "flavorType": {
+                        "type": "object",
                         "properties": {
                             "name": {
                                 "const": "parascriptural"

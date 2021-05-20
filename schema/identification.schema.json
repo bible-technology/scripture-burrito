@@ -26,6 +26,7 @@
             "additionalProperties": {
                 "type": "object",
                 "additionalProperties": {
+                    "type": "object",
                     "revision": {
                         "$ref": "common.schema.json#/definitions/revisionString"
                     },
@@ -44,7 +45,9 @@
             "additionalProperties": {
                 "type": "array",
                 "items": {
+                    "type": "object",
                     "additionalProperties": {
+                        "type": "object",
                         "revision": {
                             "$ref": "common.schema.json#/definitions/revisionString"
                         },

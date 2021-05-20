@@ -8,6 +8,7 @@
         "canonComponentOT": {
             "$$target": ["canon_spec.schema.json#/definitions/canonComponentOT", "#/definitions/canonComponentOT"],
             "title": "Old Testament Canon Component",
+            "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
@@ -21,6 +22,7 @@
         "canonComponentOTDC": {
             "$$target": ["canon_spec.schema.json#/definitions/canonComponentOTDC", "#/definitions/canonComponentOTDC"],
             "title": "Old Testament+ Canon Component",
+            "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
@@ -48,6 +50,7 @@
         "canonComponentDC": {
             "$$target": ["canon_spec.schema.json#/definitions/canonComponentDC", "#/definitions/canonComponentDC"],
             "title": "Deuterocanon Component",
+            "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
@@ -85,6 +88,7 @@
         "canonComponentNT": {
             "$$target": ["canon_spec.schema.json#/definitions/canonComponentNT", "#/definitions/canonComponentNT"],
             "title": "New Testament Canon Component",
+            "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
@@ -106,6 +110,7 @@
         "canonComponentCustom": {
             "$$target": ["canon_spec.schema.json#/definitions/canonComponentCustom", "#/definitions/canonComponentCustom"],
             "title": "Custom Canon Component",
+            "type": "object",
             "properties": {
                 "name": {
                     "$ref": "common.schema.json#/definitions/xToken"
@@ -278,6 +283,7 @@
             "type": "object",
             "properties": {
                 "books": {
+                    "type": "array",
                     "items": {
                         "$ref": "#/definitions/bookOT"
                     }
@@ -299,6 +305,7 @@
             "type": "object",
             "properties": {
                 "books": {
+                    "type": "array",
                     "items": {
                         "$ref": "#/definitions/bookOTDC"
                     }
@@ -320,6 +327,7 @@
             "type": "object",
             "properties": {
                 "books": {
+                    "type": "array",
                     "items": {
                         "$ref": "#/definitions/bookDC"
                     }
@@ -341,6 +349,7 @@
             "type": "object",
             "properties": {
                 "books": {
+                    "type": "array",
                     "items": {
                         "$ref": "#/definitions/bookNT"
                     }

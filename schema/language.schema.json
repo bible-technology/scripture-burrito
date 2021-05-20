@@ -21,7 +21,7 @@
         },
         "scriptDirection": {
             "type": "string",
-            "allowedValues": ["ltr", "rtl"]
+            "enum": ["ltr", "rtl"]
         }
     },
     "required": ["tag", "name"],

@@ -36,7 +36,6 @@
                 "enum": ["singleVoice", "multipleVoice", "reading", "drama", "withMusic", "withEffects", "withHeadings"]
             },
             "uniqueItems": true,
-            "additionalItems": false,
             "allOf": [
                 {
                     "if": {

@@ -48,6 +48,7 @@
         {
             "properties": {
                 "flavor": {
+                    "type": "string",
                     "pattern": "^x-[a-z][A-za-z0-9]*$"
                 }
             },
