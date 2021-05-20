@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/copyright_constraints.schema.json",
+    "$$target": "copyright_constraints.schema.json",
+    "title": "Copyright Constraints",
+    "description": "Constraints on properties relating to copyright.",
+    "if": {
+        "type": "object",
+        "properties": {
+            "copyright": {
+                "type": "object",
+                "properties": {
+                    "publicDomain": false
+                }
+            }
+        }
+    },
+    "then": {
+        "type": "object",
+        "properties": {
+            "agencies": {
+                "type": "array",
+                "contains": {
+                    "type": "object",
+                    "properties": {
+                        "roles": {
+                            "type": "array",
+                            "contains": {
+                                "type": "string",
+                                "pattern": "rightsHolder"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

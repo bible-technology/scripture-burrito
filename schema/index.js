@@ -12,6 +12,7 @@ module.exports = {
         require("./common.schema.json"),
         require("./confidential.schema.json"),
         require("./copyright.schema.json"),
+        require("./copyright_constraints.schema.json"),
         require("./derived_meta.schema.json"),
         require("./derived_metadata.schema.json"),
         require("./gloss/text_stories.schema.json"),

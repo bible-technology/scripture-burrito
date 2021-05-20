@@ -44,5 +44,10 @@
         }
     },
     "required": ["meta", "copyright"],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "allOf": [
+        {
+            "$ref": "copyright_constraints.schema.json"
+        }
+    ]
 }

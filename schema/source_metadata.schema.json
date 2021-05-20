@@ -48,19 +48,26 @@
     },
     "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright"],
     "additionalProperties": false,
-    "if": {
-        "properties": {
-            "type": {
-                "type": "object",
+    "allOf": [
+        {
+            "if": {
                 "properties": {
-                    "flavorType": {
-                        "enum": ["scripture", "gloss"]
+                    "type": {
+                        "type": "object",
+                        "properties": {
+                            "flavorType": {
+                                "enum": ["scripture", "gloss"]
+                            }
+                        }
                     }
                 }
+            },
+            "then": {
+                "required": ["languages", "names"]
             }
+        },
+        {
+            "$ref": "copyright_constraints.schema.json"
         }
-    },
-    "then": {
-        "required": ["languages", "names"]
-    }
+    ]
 }
