@@ -295,5 +295,10 @@
       },
       "size": 127
     }
+  },
+  "copyright": {
+    "fullStatementRich": {
+      "en": "<p>Test Copyright. All rights reserved.</p>"
+    }
   }
 }

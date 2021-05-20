@@ -88,5 +88,10 @@
         "JHN": ["3:16"]
       }
     }
+  },
+  "copyright": {
+    "fullStatementRich": {
+      "en": "<p>Test Copyright. All rights reserved.</p>"
+    }
   }
 }

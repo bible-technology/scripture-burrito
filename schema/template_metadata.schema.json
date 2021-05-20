@@ -43,6 +43,6 @@
             "$ref": "names.schema.json"
         }
     },
-    "required": ["meta"],
+    "required": ["meta", "copyright"],
     "additionalProperties": false
 }

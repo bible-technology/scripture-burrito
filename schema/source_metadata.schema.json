@@ -46,7 +46,7 @@
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidential", "type"],
+    "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright"],
     "additionalProperties": false,
     "if": {
         "properties": {
