@@ -38,7 +38,7 @@ A Scripture Burrito can exist in multiple data formats. By convention, when the 
 File Encoding
 =============
 
-Files contained in a burrito should be enocded as UTF-8. Note that the `Unicode standard version 5 <http://www.unicode.org/versions/Unicode5.0.0/bookmarks.html>`_ notes the following about using the Byte order mark (BOM):
+Files contained in a burrito should be encoded as UTF-8. Note that the `Unicode standard version 5 <http://www.unicode.org/versions/Unicode5.0.0/bookmarks.html>`_ notes the following about using the Byte order mark (BOM):
 
     Use of a BOM is neither required nor recommended for UTF-8, but may be encountered in contexts where UTF-8 data is converted from other encoding forms that use a BOM or where the BOM is used as a UTF-8 signature.
 
