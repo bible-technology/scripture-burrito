@@ -77,16 +77,6 @@
         "LEV": ["2-3"],
         "MAT": ["1", "5", "7-11"]
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "x-matthewOnlyMillenialists",
-          "books": ["MAT"]
-        }
-      },
       "flavor": {
         "name": "textTranslation",
         "projectType": "standard",
