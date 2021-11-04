@@ -65,7 +65,7 @@
                     },
                     "currentScope": {
                         "$ref": "scope.schema.json"
-                    },
+                    }
                 },
                 "required": ["flavor", "currentScope"],
                 "additionalProperties": false
@@ -274,7 +274,7 @@
                         },
                         "currentScope": {
                             "$ref": "scope.schema.json"
-                        },
+                        }
                     },
                     "required": ["name", "flavor", "currentScope"],
                     "additionalProperties": false
@@ -316,7 +316,7 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
+                            }
                         },
                         "required": ["name", "flavor"],
                         "additionalProperties": false
@@ -342,7 +342,7 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
+                            }
                         },
                         "required": ["name", "flavor"],
                         "additionalProperties": false
