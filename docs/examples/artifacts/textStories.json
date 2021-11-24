@@ -232,9 +232,9 @@
     }
   ],
   "copyright": {
-    "fullStatementPlain": {
-      "en": "Copyright © 2019 by unfoldingWord"
-    }
+    "shortStatements": [{
+      "statement": "Copyright © 2019 by unfoldingWord"
+    }]
   },
   "ingredients": {
     "LICENSE.md": {

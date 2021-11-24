@@ -2846,8 +2846,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>"
-    }
+    "shortStatements": [{
+      "statement": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>",
+      "mimetype": "text/html",
+      "lang": "en"
+    }]
   }
 }

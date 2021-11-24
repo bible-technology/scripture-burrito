@@ -34,17 +34,26 @@
             "type": "boolean",
             "description": "If set to true, the contents of this burrito are in the public domain."
         },
-        "shortStatementPlain": {
-            "$ref": "common.schema.json#/definitions/localizedText"
-        },
-        "shortStatementRich": {
-            "$ref": "common.schema.json#/definitions/localizedRichText"
-        },
-        "fullStatementPlain": {
-            "$ref": "common.schema.json#/definitions/localizedText"
-        },
-        "fullStatementRich": {
-            "$ref": "common.schema.json#/definitions/localizedRichText"
+        "shortStatements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "statement": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "lang": {
+                        "$ref": "common.schema.json#/definitions/languageTag"
+                    },
+                    "mimetype": {
+                        "$ref": "common.schema.json#/definitions/mimeType"
+                    }
+                },
+                "required": ["statement"],
+                "additionalProperties": false
+            },
+            "description": "A short statement to explain the copyright / license information to readers"
         }
     },
     "additionalProperties": false
