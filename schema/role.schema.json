@@ -67,6 +67,10 @@
             "pattern": "^(name|sign|word|concept|place)(\\s.*\\S)?$"
         },
         {
+            "description": "A role for a full copyright statement",
+            "enum": ["copyrightStatement"]
+        },
+        {
             "description": "An x-role",
             "pattern": "^x-\\S.*\\S$"
         }
