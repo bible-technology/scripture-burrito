@@ -6,9 +6,6 @@ module.exports = {
     schemas: [
         require("./agencies.schema.json"),
         require("./agency.schema.json"),
-        require("./canon_constraints.schema.json"),
-        require("./canon_spec.schema.json"),
-        require("./canon_type.schema.json"),
         require("./common.schema.json"),
         require("./confidential.schema.json"),
         require("./copyright.schema.json"),

@@ -41,15 +41,6 @@
       "flavor": {
         "name": "textStories"
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
-      },
       "currentScope": {
         "GEN": [
           "1-2",

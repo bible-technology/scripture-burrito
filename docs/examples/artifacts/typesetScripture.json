@@ -71,15 +71,6 @@
           "Segoe UI Symbol Regular"
         ]
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
-      },
       "currentScope": {
         "JHN": []
       }
