@@ -39,15 +39,6 @@
         "name": "x-scriptureFingerPainting",
         "foo": "baa"
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
-      },
       "currentScope": {
         "JHN": ["3:16"]
       }

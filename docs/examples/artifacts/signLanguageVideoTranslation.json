@@ -63,15 +63,6 @@
           }
         }
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
-      },
       "currentScope": {
         "LUK": []
       }

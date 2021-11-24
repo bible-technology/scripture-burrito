@@ -65,15 +65,9 @@
                     },
                     "currentScope": {
                         "$ref": "scope.schema.json"
-                    },
-                    "canonType": {
-                        "$ref": "canon_type.schema.json"
-                    },
-                    "canonSpec": {
-                        "$ref": "canon_spec.schema.json"
                     }
                 },
-                "required": ["flavor", "currentScope", "canonType", "canonSpec"],
+                "required": ["flavor", "currentScope"],
                 "additionalProperties": false
             }
         },
@@ -280,15 +274,9 @@
                         },
                         "currentScope": {
                             "$ref": "scope.schema.json"
-                        },
-                        "canonType": {
-                            "$ref": "canon_type.schema.json"
-                        },
-                        "canonSpec": {
-                            "$ref": "canon_spec.schema.json"
                         }
                     },
-                    "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
+                    "required": ["name", "flavor", "currentScope"],
                     "additionalProperties": false
                 }
             }
@@ -328,12 +316,6 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
-                            "canonType": {
-                                "$ref": "canon_type.schema.json"
-                            },
-                            "canonSpec": {
-                                "$ref": "canon_spec.schema.json"
                             }
                         },
                         "required": ["name", "flavor"],
@@ -360,12 +342,6 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
-                            "canonType": {
-                                "$ref": "canon_type.schema.json"
-                            },
-                            "canonSpec": {
-                                "$ref": "canon_spec.schema.json"
                             }
                         },
                         "required": ["name", "flavor"],
@@ -374,31 +350,5 @@
                 }
             }
         }
-    },
-    "allOf": [
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTPlusConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/DCConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTDCConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint2"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTNTConstraint"
-        }
-    ]
+    }
 }
