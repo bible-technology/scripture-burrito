@@ -1512,8 +1512,9 @@
     }
   },
   "copyright": {
-    "fullStatementPlain": {
-      "lsf": "© 2019, L'Alliance biblique française"
-    }
+    "shortStatements": [{
+      "statement": "© 2019, L'Alliance biblique française",
+      "lang": "lsf"
+    }]
   }
 }

@@ -193,8 +193,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p>Test Copyright. All rights reserved.</p>"
-    }
+    "shortStatements": [{
+        "statement": "<p>Test Copyright. All rights reserved.</p>",
+        "mimetype": "text/html",
+        "lang": "en"
+    }]
   }
 }

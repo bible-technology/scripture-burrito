@@ -1111,8 +1111,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p><strong>PUBLIC DOMAIN</strong>. \"World English Bible\" is  trademark of <a href=\"https://eBible.org\">eBible.org</a>.</p>"
-    }
+    "shortStatements": [{
+      "statement": "<p><strong>PUBLIC DOMAIN</strong>. \"World English Bible\" is  trademark of <a href=\"https://eBible.org\">eBible.org</a>.</p>",
+      "mimetype": "text/html",
+      "lang": "en"
+    }]
   }
 }

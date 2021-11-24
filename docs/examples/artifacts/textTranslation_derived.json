@@ -154,15 +154,20 @@
     }
   ],
   "copyright": {
-    "shortStatementPlain": {
-      "fr": "\u00a9 Burritos R Us 2019."
+    "shortStatements": [{
+      "statement": "\u00a9 Burritos R Us 2019.",
+      "mimetype": "text/plain"
     },
-    "fullStatementPlain": {
-      "fr": "\u00a9 Burritos R Us 2019. Tous droits r\u00e9serv\u00e9s."
+    {
+      "statement": "\u00a9 Burritos R Us 2019. Tous droits r\u00e9serv\u00e9s.",
+      "mimetype": "text/plain",
+      "lang": "fr"
     },
-    "fullStatementRich": {
-      "fr": "<p><b>\u00a9 Burritos R Us 2019.</b></p><p><i>Tous droits r\u00e9serv\u00e9s.</i></p>"
-    }
+    {
+      "statement": "<p><b>\u00a9 Burritos R Us 2019.</b></p><p><i>Tous droits r\u00e9serv\u00e9s.</i></p>",
+      "mimetype": "text/html",
+      "lang": "fr"
+    }]
   },
   "ingredients": {
     "release/text/USX_1/OTINT.usx": {
