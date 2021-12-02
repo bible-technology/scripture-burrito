@@ -71,12 +71,6 @@ The Scripture Burrito specification follows `semantic versioning <http://semver.
 * hot-fix releases to a 0.X (while we're working towards a different planned release) are given a version 0.X.Y (Y > 0)
 * we will do alpha / beta / release candidates for 1.0 and beyond
 
-So, for example:
-
-We have released 0.3.0 and are currently working on 0.4.0. If we notice a mistake in 0.3.0 that is holding up implementation testing and we don't want to wait for 0.4.0 to fix it, we can release 0.3.1 with just the fix added to 0.3.0.
-
-If there is more work to do after 0.4.0 prior to declaring 1.0.0, we will work on a 0.5.0. When our 0.X.Y release is a candidate for 1.0.0 (by consensus of the working committee), we will release it as 1.0.0-rc1.
-
 Release Process
 ---------------
 
