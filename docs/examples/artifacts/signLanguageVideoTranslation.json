@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -61,15 +61,6 @@
               "screenResolution": "720x576"
             }
           }
-        }
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
         }
       },
       "currentScope": {
@@ -1521,8 +1512,9 @@
     }
   },
   "copyright": {
-    "fullStatementPlain": {
-      "lsf": "© 2019, L'Alliance biblique française"
-    }
+    "shortStatements": [{
+      "statement": "© 2019, L'Alliance biblique française",
+      "lang": "lsf"
+    }]
   }
 }

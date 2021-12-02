@@ -3,8 +3,8 @@
     "$id": "https://burrito.bible/schema/type.schema.json",
     "$$target": "type.schema.json",
     "title": "Type",
-    "type": "object",
     "description": "Contains properties describing the burrito flavor type.",
+    "type": "object",
     "properties": {
         "flavorType": {
             "type": "object",
@@ -23,6 +23,7 @@
     "if" : {
         "properties": {
             "flavorType": {
+                "type": "object",
                 "properties": {
                     "name": {
                         "const": "scripture"
@@ -64,15 +65,9 @@
                     },
                     "currentScope": {
                         "$ref": "scope.schema.json"
-                    },
-                    "canonType": {
-                        "$ref": "canon_type.schema.json"
-                    },
-                    "canonSpec": {
-                        "$ref": "canon_spec.schema.json"
                     }
                 },
-                "required": ["flavor", "currentScope", "canonType", "canonSpec"],
+                "required": ["flavor", "currentScope"],
                 "additionalProperties": false
             }
         },
@@ -80,8 +75,10 @@
         "if": {
             "properties": {
                 "flavorType" : {
+                    "type": "object",
                     "properties": {
                         "flavor": {
+                            "type": "object",
                             "properties": {
                                 "name": {
                                     "const": "textTranslation"
@@ -96,6 +93,7 @@
         {
             "properties": {
                 "flavorType" : {
+                    "type": "object",
                     "properties": {
                         "flavor" : {
                             "$ref": "scripture/text_translation.schema.json"
@@ -108,8 +106,10 @@
             "if": {
                 "properties": {
                     "flavorType" : {
+                        "type": "object",
                         "properties": {
                             "flavor": {
+                                "type": "object",
                                 "properties": {
                                     "name": {
                                         "const": "audioTranslation"
@@ -123,6 +123,7 @@
             "then": {
                 "properties": {
                     "flavorType" : {
+                        "type": "object",
                         "properties": {
                             "flavor" : {
                                 "$ref": "scripture/audio_translation.schema.json"
@@ -135,8 +136,10 @@
                 "if": {
                     "properties": {
                         "flavorType" : {
+                            "type": "object",
                             "properties": {
                                 "flavor": {
+                                    "type": "object",
                                     "properties": {
                                         "name": {
                                             "const": "typesetScripture"
@@ -150,6 +153,7 @@
                 "then": {
                     "properties": {
                         "flavorType" : {
+                            "type": "object",
                             "properties": {
                                 "flavor" : {
                                     "$ref": "scripture/typeset_scripture.schema.json"
@@ -162,8 +166,10 @@
                     "if": {
                         "properties": {
                             "flavorType" : {
+                                "type": "object",
                                 "properties": {
                                     "flavor": {
+                                        "type": "object",
                                         "properties": {
                                             "name": {
                                                 "const": "embossedBrailleScripture"
@@ -177,6 +183,7 @@
                     "then": {
                         "properties": {
                             "flavorType" : {
+                                "type": "object",
                                 "properties": {
                                     "flavor" : {
                                         "$ref": "scripture/embossed_braille_scripture.schema.json"
@@ -189,8 +196,10 @@
                         "if": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor": {
+                                            "type": "object",
                                             "properties": {
                                                 "name": {
                                                     "const": "signLanguageVideoTranslation"
@@ -204,6 +213,7 @@
                         "then": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor" : {
                                             "$ref": "scripture/sign_language_video_translation.schema.json"
@@ -215,6 +225,7 @@
                         "else": {
                             "properties": {
                                 "flavorType" : {
+                                    "type": "object",
                                     "properties": {
                                         "flavor" : {
                                             "$ref": "x_flavor.schema.json"
@@ -232,6 +243,7 @@
         "if" : {
             "properties": {
                 "flavorType": {
+                    "type": "object",
                     "properties": {
                         "name": {
                             "const": "gloss"
@@ -262,15 +274,9 @@
                         },
                         "currentScope": {
                             "$ref": "scope.schema.json"
-                        },
-                        "canonType": {
-                            "$ref": "canon_type.schema.json"
-                        },
-                        "canonSpec": {
-                            "$ref": "canon_spec.schema.json"
                         }
                     },
-                    "required": ["name", "flavor", "currentScope", "canonType", "canonSpec"],
+                    "required": ["name", "flavor", "currentScope"],
                     "additionalProperties": false
                 }
             }
@@ -279,6 +285,7 @@
             "if" : {
                 "properties": {
                     "flavorType": {
+                        "type": "object",
                         "properties": {
                             "name": {
                                 "const": "parascriptural"
@@ -309,12 +316,6 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
-                            "canonType": {
-                                "$ref": "canon_type.schema.json"
-                            },
-                            "canonSpec": {
-                                "$ref": "canon_spec.schema.json"
                             }
                         },
                         "required": ["name", "flavor"],
@@ -341,12 +342,6 @@
                             },
                             "currentScope": {
                                 "$ref": "scope.schema.json"
-                            },
-                            "canonType": {
-                                "$ref": "canon_type.schema.json"
-                            },
-                            "canonSpec": {
-                                "$ref": "canon_spec.schema.json"
                             }
                         },
                         "required": ["name", "flavor"],
@@ -355,31 +350,5 @@
                 }
             }
         }
-    },
-    "allOf": [
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTPlusConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/DCConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTDCConstraint"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/NTConstraint2"
-        },
-        {
-            "$ref": "canon_constraints.schema.json#/definitions/OTNTConstraint"
-        }
-    ]
+    }
 }

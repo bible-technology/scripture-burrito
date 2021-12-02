@@ -11,6 +11,9 @@
             "minimum": 0,
             "description": "The number of bytes that this ingredient takes up on disk."
         },
+        "lang": {
+            "$ref": "common.schema.json#/definitions/languageTag"
+        },
         "mimeType": {
             "$ref": "common.schema.json#/definitions/mimeType"
         },

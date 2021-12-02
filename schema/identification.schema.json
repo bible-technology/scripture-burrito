@@ -26,6 +26,7 @@
             "additionalProperties": {
                 "type": "object",
                 "additionalProperties": {
+                    "type": "object",
                     "revision": {
                         "$ref": "common.schema.json#/definitions/revisionString"
                     },
@@ -37,14 +38,16 @@
             },
             "minProperties": 1,
             "maxProperties": 1,
-            "description": "Contains the primary authority and identication information."
+            "description": "Contains the primary authority and identification information."
         },
         "upstream": {
             "type": "object",
             "additionalProperties": {
                 "type": "array",
                 "items": {
+                    "type": "object",
                     "additionalProperties": {
+                        "type": "object",
                         "revision": {
                             "$ref": "common.schema.json#/definitions/revisionString"
                         },
@@ -55,7 +58,7 @@
                     }
                 }
             },
-            "description": "Contains the upstream authority and identication information."
+            "description": "Contains the upstream authority and identification information."
         }
     },
     "required": ["name", "primary"],

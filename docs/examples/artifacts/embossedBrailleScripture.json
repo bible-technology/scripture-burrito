@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -86,15 +86,6 @@
           "defaultMarginWidth": 3,
           "versoLastLineBlank": false,
           "carryLines": 2
-        }
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
         }
       },
       "currentScope": {
@@ -1120,8 +1111,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p><strong>PUBLIC DOMAIN</strong>. \"World English Bible\" is  trademark of <a href=\"https://eBible.org\">eBible.org</a>.</p>"
-    }
+    "shortStatements": [{
+      "statement": "<p><strong>PUBLIC DOMAIN</strong>. \"World English Bible\" is  trademark of <a href=\"https://eBible.org\">eBible.org</a>.</p>",
+      "mimetype": "text/html",
+      "lang": "en"
+    }]
   }
 }

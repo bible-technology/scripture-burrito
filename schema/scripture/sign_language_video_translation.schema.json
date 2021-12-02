@@ -13,6 +13,7 @@
                     "enum": ["mp4", "mpg"]
                 },
                 "videoStream": {
+                    "type": "object",
                     "properties": {
                         "bitRate": { "type": "integer" },
                         "frameRate": { "type": "integer" },
@@ -22,6 +23,7 @@
                     "additionalProperties": false
                 },
                 "audioStream": {
+                    "type": "object",
                     "properties": {
                         "compression": {
                             "type": "string",

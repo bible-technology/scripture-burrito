@@ -8,7 +8,7 @@ Scripture Burrito Documentation
 
 This is the official documentation for the evolving Scripture Burrito standard. See the development `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
 
-**This is 0.3.0** based on `JSON Schema <https://json-schema.org/>`_.
+**This is 0.3.1** based on `JSON Schema <https://json-schema.org/>`_.
 
 Feedback
 --------

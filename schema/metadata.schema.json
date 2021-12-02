@@ -18,6 +18,7 @@
     "if": {
         "properties": {
             "meta": {
+                "type": "object",
                 "properties": {
                     "category": {
                         "const": "source"
@@ -33,6 +34,7 @@
         "if": {
             "properties": {
                 "meta": {
+                    "type": "object",
                     "properties": {
                         "category": {
                             "const": "derived"

@@ -54,6 +54,7 @@
     "if": {
         "properties": {
             "type": {
+                "type": "object",
                 "properties": {
                     "flavorType": {
                         "enum": ["scripture", "gloss"]

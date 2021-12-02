@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -62,15 +62,6 @@
             "bitDepth": 16,
             "samplingRate": 44100
           }
-        }
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
         }
       },
       "currentScope": {
@@ -202,8 +193,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p>Test Copyright. All rights reserved.</p>"
-    }
+    "shortStatements": [{
+        "statement": "<p>Test Copyright. All rights reserved.</p>",
+        "mimetype": "text/html",
+        "lang": "en"
+    }]
   }
 }

@@ -1,11 +1,18 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "template",
     "templateName": {
       "en": "A Minimal and Frankly Pointless Template"
     },
     "defaultLanguage": "en",
     "dateCreated": "2018-02-15T22:33:50.875547+00:00"
+  },
+  "copyright": {
+    "shortStatements": [{
+        "statement": "<p>Test Copyright. All rights reserved.</p>",
+        "mimetype": "text/html",
+        "lang": "en"
+    }]
   }
 }

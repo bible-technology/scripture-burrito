@@ -52,8 +52,7 @@
             "type": "array",
             "items": {
                 "type": "string"
-            },
-            "additionalItems": false
+            }
         },
         "conventions": {
             "type": "object",

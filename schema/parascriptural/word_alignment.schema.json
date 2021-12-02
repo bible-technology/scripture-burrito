@@ -28,14 +28,21 @@
                     "items": {
                         "type": "object",
                         "properties": {
-                            "start": { "type": "number", "min": 0, "multipleOf": 1.0 },
-                            "end": { "type": "number", "min": 0, "multipleOf": 1.0 }
+                            "start": {
+                                "type": "number",
+                                "minimum": 0,
+                                "multipleOf": 1.0
+                            },
+                            "end": {
+                                "type": "number",
+                                "minimum": 0,
+                                "multipleOf": 1.0
+                            }
                         },
                         "required": ["start"],
                         "additionalProperties": false
                     },
-                    "minItems": 1,
-                    "additionalItems": false
+                    "minItems": 1
                 }
             },
             "required": ["user", "references"],

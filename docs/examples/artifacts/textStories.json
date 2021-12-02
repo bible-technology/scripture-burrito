@@ -1,7 +1,7 @@
 {
   "meta": {
     "category": "source",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
@@ -41,15 +41,6 @@
       "flavor": {
         "name": "textStories"
       },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
-      },
       "currentScope": {
         "GEN": [
           "1-2",
@@ -82,7 +73,7 @@
         "JOS": ["1-24"],
         "JDG": ["1-3", "6-8"],
         "1SA": ["1-10", "10", "15-19", "24", "31"],
-        "2SA": ["5", "7", "11-12", "7", "7"],
+        "2SA": ["5", "7", "11-12"],
         "1KI": ["1-6", "11-12", "16-18"],
         "2KI": ["5", "17", "24-25"],
         "JER": ["38", "31"],
@@ -241,9 +232,9 @@
     }
   ],
   "copyright": {
-    "fullStatementPlain": {
-      "en": "Copyright © 2019 by unfoldingWord"
-    }
+    "shortStatements": [{
+      "statement": "Copyright © 2019 by unfoldingWord"
+    }]
   },
   "ingredients": {
     "LICENSE.md": {

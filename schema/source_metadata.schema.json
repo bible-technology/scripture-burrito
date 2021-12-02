@@ -46,20 +46,28 @@
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidential", "type"],
+    "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright"],
     "additionalProperties": false,
-    "if": {
-        "properties": {
-            "type": {
+    "allOf": [
+        {
+            "if": {
                 "properties": {
-                    "flavorType": {
-                        "enum": ["scripture", "gloss"]
+                    "type": {
+                        "type": "object",
+                        "properties": {
+                            "flavorType": {
+                                "enum": ["scripture", "gloss"]
+                            }
+                        }
                     }
                 }
+            },
+            "then": {
+                "required": ["languages", "names"]
             }
+        },
+        {
+            "$ref": "copyright_constraints.schema.json"
         }
-    },
-    "then": {
-        "required": ["languages", "names"]
-    }
+    ]
 }

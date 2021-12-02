@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "derived",
     "dateCreated": "2019-02-19T01:02:03+01:00",
     "generator": {
@@ -76,16 +76,6 @@
         "EXO": ["1", "3-12", "13:4", "14:3-8", "15:8-16:2"],
         "LEV": ["2-3"],
         "MAT": ["1", "5", "7-11"]
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "x-matthewOnlyMillenialists",
-          "books": ["MAT"]
-        }
       },
       "flavor": {
         "name": "textTranslation",
@@ -164,15 +154,20 @@
     }
   ],
   "copyright": {
-    "shortStatementPlain": {
-      "fr": "\u00a9 Burritos R Us 2019."
+    "shortStatements": [{
+      "statement": "\u00a9 Burritos R Us 2019.",
+      "mimetype": "text/plain"
     },
-    "fullStatementPlain": {
-      "fr": "\u00a9 Burritos R Us 2019. Tous droits r\u00e9serv\u00e9s."
+    {
+      "statement": "\u00a9 Burritos R Us 2019. Tous droits r\u00e9serv\u00e9s.",
+      "mimetype": "text/plain",
+      "lang": "fr"
     },
-    "fullStatementRich": {
-      "fr": "<p><b>\u00a9 Burritos R Us 2019.</b></p><p><i>Tous droits r\u00e9serv\u00e9s.</i></p>"
-    }
+    {
+      "statement": "<p><b>\u00a9 Burritos R Us 2019.</b></p><p><i>Tous droits r\u00e9serv\u00e9s.</i></p>",
+      "mimetype": "text/html",
+      "lang": "fr"
+    }]
   },
   "ingredients": {
     "release/text/USX_1/OTINT.usx": {

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
@@ -70,15 +70,6 @@
           "Times New Roman ItalicItalic",
           "Segoe UI Symbol Regular"
         ]
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
       },
       "currentScope": {
         "JHN": []
@@ -159,8 +150,10 @@
     }
   },
   "copyright": {
-    "fullStatementRich": {
-      "en": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>"
-    }
+    "shortStatements": [{
+      "statement": "<p>Good News Translation (Today’s English Version, Second Edition) © 1992 American Bible Society. All rights reserved.</p>",
+      "mimetype": "text/html",
+      "lang": "en"
+    }]
   }
 }

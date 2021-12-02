@@ -1,7 +1,7 @@
 {
   "meta": {
     "category": "source",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
@@ -38,15 +38,6 @@
       "flavor": {
         "name": "x-scriptureFingerPainting",
         "foo": "baa"
-      },
-      "canonType": ["ot", "nt"],
-      "canonSpec": {
-        "ot": {
-          "name": "western"
-        },
-        "nt": {
-          "name": "western"
-        }
       },
       "currentScope": {
         "JHN": ["3:16"]
@@ -88,5 +79,12 @@
         "JHN": ["3:16"]
       }
     }
+  },
+  "copyright": {
+    "shortStatements": [{
+        "statement": "<p>Test Copyright. All rights reserved.</p>",
+        "mimetype": "text/html",
+        "lang": "en"
+    }]
   }
 }

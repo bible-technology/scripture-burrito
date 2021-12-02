@@ -22,8 +22,7 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "enum": ["rightsAdmin", "rightsHolder", "content", "publication", "management", "finance", "qa"],
-                "uniqueItems": true
+                "enum": ["rightsAdmin", "rightsHolder", "content", "publication", "management", "finance", "qa"]
             },
             "description": "A list of roles indicating in which respects this agency was involved with the production of this burrito.",
             "minItems": 1

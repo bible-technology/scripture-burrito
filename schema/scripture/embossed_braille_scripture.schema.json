@@ -11,6 +11,7 @@
         },
         "isContracted": { "type": "boolean" },
         "processor": {
+            "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
@@ -93,6 +94,7 @@
                 },
                 "includeIntros": { "type": "boolean" },
                 "footnotes": {
+                    "type": "object",
                     "properties": {
                         "callerSymbol": {
                             "type": "string",
@@ -103,6 +105,7 @@
                     "required": ["callerSymbol"]
                 },
                 "characterStyles": {
+                    "type": "object",
                     "properties": {
                         "callerSymbol": {
                             "type": "string",
@@ -113,6 +116,7 @@
                     "required": ["callerSymbol"]
                 },
                 "crossReferences": {
+                    "type": "object",
                     "properties": {
                         "emphasizedWord": {
                             "type": "string",
@@ -146,23 +150,23 @@
                 "charsPerLine": {
                     "type": "number",
                     "multipleOf": 1.0,
-                    "min": 1
+                    "minimum": 1
                 },
                 "linesPerPage": {
                     "type": "number",
                     "multipleOf": 1.0,
-                    "min": 1
+                    "minimum": 1
                 },
                 "defaultMarginWidth": {
                     "type": "number",
                     "multipleOf": 1.0,
-                    "min": 1
+                    "minimum": 1
                 },
                 "versoLastLineBlank": { "type": "boolean" },
                 "carryLines": {
                     "type": "number",
                     "multipleOf": 1.0,
-                    "min": 1
+                    "minimum": 1
                 }
             },
             "required": ["charsPerLine", "linesPerPage", "defaultMarginWidth", "versoLastLineBlank", "carryLines"],
