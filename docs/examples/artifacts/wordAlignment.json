@@ -36,7 +36,7 @@
     "flavorType": {
       "name": "parascriptural",
       "flavor": {
-        "name": "wordAlignment",
+        "name": "x-wordAlignment",
         "autoAlignerVersion": "0.8",
         "stopWords": true,
         "stemmer": {
