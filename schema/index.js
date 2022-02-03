@@ -28,7 +28,6 @@ module.exports = {
         require("./names.schema.json"),
         require("./normalization.schema.json"),
         require("./numbering_system.schema.json"),
-        require("./parascriptural/word_alignment.schema.json"),
         require("./progress.schema.json"),
         require("./promotion.schema.json"),
         require("./recipe.schema.json"),
