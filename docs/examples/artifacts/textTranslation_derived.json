@@ -99,7 +99,7 @@
     },
     {
       "relationType": "parascriptural",
-      "flavor": "parascripturalWordAlignment",
+      "flavor": "x-wordAlignment",
       "id": "agmt::irvmal-4-wh"
     }
   ],

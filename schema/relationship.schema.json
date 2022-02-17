@@ -21,8 +21,7 @@
                         "typesetScripture",
                         "signLanguageVideoTranslation",
                         "embossedBrailleScripture",
-                        "glossedTextStory",
-                        "parascripturalWordAlignment"
+                        "glossedTextStory"
                     ]
                 },
                 {
@@ -81,16 +80,6 @@
                     "not": {
                         "const": "scriptureText"
                     }
-                }
-            }
-        },
-        {
-            "properties": {
-                "relationType": {
-                    "const": "parascriptural"
-                },
-                "flavor": {
-                    "enum": ["parascripturalWordAlignment"]
                 }
             }
         }

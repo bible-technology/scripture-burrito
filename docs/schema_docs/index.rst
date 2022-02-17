@@ -29,7 +29,6 @@ Schema Documentation
    names
    normalization
    numbering_system
-   parascriptural-word_alignment
    progress
    promotion
    recipe
