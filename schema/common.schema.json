@@ -222,7 +222,7 @@
                 "4BA",
                 "LAO"
             ],
-            "description": "A standard book code consisting of three uppercase alphanumerics."
+            "description": "A USFM book code consisting of three uppercase alphanumerics."
         },
         "path": {
             "type": "string",

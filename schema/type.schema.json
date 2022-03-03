@@ -307,9 +307,6 @@
                                 "type": "object",
                                 "oneOf": [
                                     {
-                                        "$ref": "parascriptural/word_alignment.schema.json"
-                                    },
-                                    {
                                         "$ref": "x_flavor.schema.json"
                                     }
                                 ]
