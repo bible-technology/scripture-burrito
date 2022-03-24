@@ -1,3 +1,4 @@
-.. _schema_docs-names:
+.. _schema_docs-localized_names:
 
-.. jsonschema:: ../../schema/names.schema.json
+.. jsonschema:: ../../schema/localized_names.schema.json
+

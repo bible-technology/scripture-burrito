@@ -39,8 +39,8 @@
         "ingredients": {
             "$ref": "ingredients.schema.json"
         },
-        "names": {
-            "$ref": "names.schema.json"
+        "localizedNames": {
+            "$ref": "localized_names.schema.json"
         },
         "progress": {
             "$ref": "progress.schema.json"

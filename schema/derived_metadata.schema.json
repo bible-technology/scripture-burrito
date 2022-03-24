@@ -42,8 +42,8 @@
         "ingredients": {
             "$ref": "ingredients.schema.json"
         },
-        "names": {
-            "$ref": "names.schema.json"
+        "localizednNmes": {
+            "$ref": "localized_names.schema.json"
         },
         "recipe": {
             "$ref": "recipe.schema.json"
