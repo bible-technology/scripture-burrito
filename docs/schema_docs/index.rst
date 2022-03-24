@@ -20,13 +20,13 @@ Schema Documentation
    ingredients
    language
    languages
+   localized_name
+   localized_names
    meta_comments
    meta_date_created
    meta_default_language
    meta_version
    metadata
-   name
-   names
    normalization
    numbering_system
    progress
