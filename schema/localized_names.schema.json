@@ -7,5 +7,5 @@
     "additionalProperties": {
         "$ref": "localized_name.schema.json"
     },
-    "description": "The names property is required for scripture and gloss flavorTypes and optional for other flavorTypes."
+    "description": "Contains localized names for books, etc."
 }

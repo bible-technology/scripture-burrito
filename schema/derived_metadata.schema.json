@@ -64,6 +64,6 @@
         }
     },
     "then": {
-        "required": ["languages", "names"]
+        "required": ["languages"]
     }
 }
