@@ -1,3 +1,5 @@
+.. _scriptural_print_flavor:
+
 ###############
 Scripture Print
 ###############
