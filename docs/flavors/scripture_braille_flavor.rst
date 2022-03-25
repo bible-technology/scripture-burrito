@@ -1,3 +1,5 @@
+.. _scriptural_braille_flavor:
+
 #################
 Scripture Braille
 #################
