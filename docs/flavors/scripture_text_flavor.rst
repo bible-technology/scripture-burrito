@@ -1,3 +1,5 @@
+.. _scripture_text:
+
 ##############
 Scripture Text
 ##############
