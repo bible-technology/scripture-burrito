@@ -1,4 +1,4 @@
-.. _scripture_text:
+.. _scripture_text_flavor:
 
 ##############
 Scripture Text
