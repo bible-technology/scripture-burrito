@@ -7,7 +7,7 @@
       "softwareVersion": "0.0.0",
       "userName": "Eric Pyle"
     },
-    "defaultLanguage": "en",
+    "defaultLocale": "en",
     "dateCreated": "2018-03-15T19:38:40.762935+00:00",
     "comments": [
       "Updated with working audio files for GEN 1-3 and MAT 1-3, test browser open on success"

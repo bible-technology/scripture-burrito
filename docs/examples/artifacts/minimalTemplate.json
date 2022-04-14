@@ -5,7 +5,7 @@
     "templateName": {
       "en": "A Minimal and Frankly Pointless Template"
     },
-    "defaultLanguage": "en",
+    "defaultLocale": "en",
     "dateCreated": "2018-02-15T22:33:50.875547+00:00"
   },
   "copyright": {

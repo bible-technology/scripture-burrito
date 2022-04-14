@@ -8,7 +8,7 @@
       "softwareVersion": "0.1",
       "userName": "Jane Doe"
     },
-    "defaultLanguage": "en",
+    "defaultLocale": "en",
     "comments": ["Experimenting with i18n", "Fixed canon before upload. ~Josh"]
   },
   "idAuthorities": {

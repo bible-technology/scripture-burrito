@@ -8,7 +8,7 @@
       "softwareVersion": "0.0.0"
     },
     "comments": ["This is fuuuuuuuun!"],
-    "defaultLanguage": "en"
+    "defaultLocale": "en"
   },
   "idAuthorities": {
     "paint-store": {
