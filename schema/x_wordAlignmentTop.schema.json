@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/x_wordAlignmentTop.schema.json",
+    "$$target": "x_wordAlignmentTop.schema.json",
+    "title": "x-wordAlignment Metadata",
+    "type": "object",
+    "description": "x-wordAlignment Scripture Burrito root metadata object.",
+    "if": {
+        "properties": {
+            "type": {
+                "type": "object",
+                "properties": {
+                    "flavorType": {
+                        "type": "object",
+                        "properties": {
+                            "flavor": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "const": "x-wordAlignment"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "type": {
+                "type": "object",
+                "properties": {
+                    "flavorType": {
+                        "type": "object",
+                        "properties": {
+                            "flavor": {
+                                "type": "object",
+                                "$ref": "parascriptural/word_alignment.schema.json"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
