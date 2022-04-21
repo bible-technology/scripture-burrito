@@ -1,3 +1,5 @@
+.. _extending_scripture_burrito:
+
 ###########################
 Extending Scripture Burrito
 ###########################
