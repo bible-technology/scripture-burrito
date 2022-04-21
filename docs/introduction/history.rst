@@ -48,3 +48,18 @@ Building on DBL Metadata
 The ETEN Bible Tools Portability Subcommittee looked at various options and decided to base its work on the "DBL Bundle", which consists of DBL metadata
 XML plus resources such as USX or MP3 files. This format has already been shown to work for thousands of entries. The subcommittee also identified areas
 which required significant work. The DBL origins of the first Scripture Burrito specification are therefore clear, but there are multiple breaking changes.
+
+USFM and USX for Scripture Text
+===============================
+
+Much of the Bible translation world uses USFM, which is familiar to Bible translators, but which requires bespoke parsing tools, and which can be ambiguous in some circumstances. Also, USX contains machine-readable reference information that cannot be represented in USFM at this time. Valid USFM can be round-tripped to USX. USX cannot be round-tripped to USFM without losing the machine-readable references. Invalid USFM may not have an equivalent representation in USX. Paratext currently uses both USFM and USX internally at various points.
+
+For these reasons and more, the current specification supports both USFM and USX. The suggestion is that 
+
+- USFM be used for translations in progress, and
+- USX be used for valid content, orientated towards publication (incremental or otherwise).
+
+Early Work
+==========
+
+The 0.1.0 specification was based on an XML schema for metadata with a JSON representation. However, the goal for 0.2.0 was to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. This transition was completed with the 0.2.0-beta.2 release.
