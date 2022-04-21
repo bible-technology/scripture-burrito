@@ -1,3 +1,5 @@
+.. _scriptural_audio_flavor:
+
 ###############
 Scripture Audio
 ###############

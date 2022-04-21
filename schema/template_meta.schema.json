@@ -22,7 +22,7 @@
             "$ref": "software_and_user_info.schema.json",
             "description": "Information about the program and user who generated this burrito."
         },
-        "defaultLanguage": {
+        "defaultLocale": {
             "$ref": "meta_default_language.schema.json"
         },
         "normalization": {
@@ -32,6 +32,6 @@
             "$ref": "meta_comments.schema.json"
         }
     },
-    "required": ["version", "category", "defaultLanguage", "dateCreated", "templateName"],
+    "required": ["version", "category", "defaultLocale", "dateCreated", "templateName"],
     "additionalProperties": false
 }

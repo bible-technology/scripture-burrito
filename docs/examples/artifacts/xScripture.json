@@ -1,14 +1,14 @@
 {
   "meta": {
     "category": "source",
-    "version": "1.0.0-beta1",
+    "version": "1.0.0-rc1",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "SB01Import",
       "softwareVersion": "0.0.0"
     },
     "comments": ["This is fuuuuuuuun!"],
-    "defaultLanguage": "en"
+    "defaultLocale": "en"
   },
   "idAuthorities": {
     "paint-store": {
