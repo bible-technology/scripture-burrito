@@ -15,7 +15,9 @@ After several years of development and testing, we are pleased to announce the a
 - :ref:`scripture_braille_flavor`
 - :ref:`scriptural_text_stories_flavor`
 
-As interoperability is our primary goal, we are happy to accept proposals for new flavors based on common interchange scenarios. We have provided instructions and examples for Extending Scripture Burrito by testing and implementing new flavors (using ``x-`` flavors). When multiple implementations can be demonstrated, we will consider adding them as official flavors in new schema releases.
+As interoperability is our primary goal, we are happy to accept proposals for new flavors based on common interchange scenarios. We have provided instructions and examples for :ref:`extending_scripture_burrito` by testing and implementing new flavors (using ``x-`` flavors). When multiple implementations can be demonstrated, we will consider adding them as official flavors in new schema releases.
+
+If you learn best by example, see the `minimal flavor examples <https://github.com/bible-technology/sb_minimalFlavorExamples>`_.
 
 This work has been a multi-year collaboration between several organizations, including `American Bible Society <https://americanbible.org/>`_, `Clear.Bible <https://www.clear.bible/>`_, `Eldarion <https://eldarion.com/>`_, `Bridge Connectivity Solutions <https://bridgeconn.com/>`_, `SIL <https://www.sil.org/>`_, `unfoldingWord <https://www.unfoldingword.org/>`_, `United Bible Societies <https://unitedbiblesocieties.org/>`_, and the work has been sponsored by `illumiNations <https://illuminations.bible/>`_.
 
