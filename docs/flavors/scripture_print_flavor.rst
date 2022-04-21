@@ -1,4 +1,4 @@
-.. _scriptural_print_flavor:
+.. _scripture_print_flavor:
 
 ###############
 Scripture Print
