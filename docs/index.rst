@@ -17,7 +17,7 @@ After several years of development and testing, we are pleased to announce the a
 
 As interoperability is our primary goal, we are happy to accept proposals for new flavors based on common interchange scenarios. We have provided instructions and examples for Extending Scripture Burrito by testing and implementing new flavors (using ``x-`` flavors). When multiple implementations can be demonstrated, we will consider adding them as official flavors in new schema releases.
 
-This work has been a multi-year collaboration between several organizations, including American Bible Society, Clear.Bible, Eldarion, Bridge Connectivity Solutions, SIL, unfoldingWord, United Bible Societies, and the work has been sponsored by illuminations.
+This work has been a multi-year collaboration between several organizations, including `American Bible Society <https://americanbible.org/>`_, `Clear.Bible <https://www.clear.bible/>`_, `Eldarion <https://eldarion.com/>`_, `Bridge Connectivity Solutions <https://bridgeconn.com/>`_, `SIL <https://www.sil.org/>`_, `unfoldingWord <https://www.unfoldingword.org/>`_, `United Bible Societies <https://unitedbiblesocieties.org/>`_, and the work has been sponsored by `illumiNations <https://illuminations.bible/>`_.
 
 Future Development
 ==================
