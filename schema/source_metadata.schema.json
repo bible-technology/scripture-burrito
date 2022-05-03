@@ -39,14 +39,14 @@
         "ingredients": {
             "$ref": "ingredients.schema.json"
         },
-        "names": {
-            "$ref": "names.schema.json"
+        "localizedNames": {
+            "$ref": "localized_names.schema.json"
         },
         "progress": {
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright"],
+    "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright", "ingredients"],
     "additionalProperties": false,
     "allOf": [
         {
@@ -63,7 +63,7 @@
                 }
             },
             "then": {
-                "required": ["languages", "names"]
+                "required": ["languages"]
             }
         },
         {

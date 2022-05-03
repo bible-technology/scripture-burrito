@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/name.schema.json",
-    "$$target": "name.schema.json",
-    "title": "Name",
+    "$id": "https://burrito.bible/schema/localized_name.schema.json",
+    "$$target": "localized_name.schema.json",
+    "title": "Localized Name",
     "type": "object",
     "description": "Contains localized names for books, etc.",
     "properties": {

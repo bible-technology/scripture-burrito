@@ -19,5 +19,6 @@
             "$ref": "common.schema.json#/definitions/idAuthorityLabel"
         },
         "minProperties": 1
-    }
+    },
+    "minProperties": 1
 }

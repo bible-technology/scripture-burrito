@@ -6,50 +6,29 @@ Scripture Burrito Documentation
 
 .. image:: ../logo/burrito_logo.png
 
-This is the official documentation for the evolving Scripture Burrito standard. See the development `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_).
+After several years of development and testing, we are pleased to announce the availability of **Scripture Burrito 1.0-rc1** specification! We recommend that developers of Scripture and Scripture-related applications test and adopt this specification for interchanging data with other systems. Out of the box Scripture Burrito is designed to support the following types of data:
 
-**This is 1.0.0-beta1** based on `JSON Schema <https://json-schema.org/>`_.
+- :ref:`scripture_text_flavor`
+- :ref:`scripture_print_flavor`
+- :ref:`scripture_audio_flavor`
+- :ref:`scripture_sign_language_flavor`
+- :ref:`scripture_braille_flavor`
+- :ref:`scriptural_text_stories_flavor`
 
-Feedback
---------
+As interoperability is our primary goal, we are happy to accept proposals for new flavors based on common interchange scenarios. We have provided instructions and examples for :ref:`extending_scripture_burrito` by testing and implementing new flavors (using ``x-`` flavors). When multiple implementations can be demonstrated, we will consider adding them as official flavors in new schema releases.
 
-Feedback may be provided via the `Technology.Bible forum <https://technology.bible/c/sb>`_ or via the `Scripture Burrito Github issues <https://github.com/bible-technology/scripture-burrito/issues>`_.
+If you learn best by example, see the `minimal flavor examples <https://github.com/bible-technology/sb_minimalFlavorExamples>`_.
 
-The :ref:`committee` invites comments on all aspects of this documentation, but has identified some specific issues about which decisions need to be taken:
+This work has been a multi-year collaboration between several organizations, including `American Bible Society <https://americanbible.org/>`_, `Clear.Bible <https://www.clear.bible/>`_, `Eldarion <https://eldarion.com/>`_, `Bridge Connectivity Solutions <https://bridgeconn.com/>`_, `SIL <https://www.sil.org/>`_, `unfoldingWord <https://www.unfoldingword.org/>`_, `United Bible Societies <https://unitedbiblesocieties.org/>`_, and the work has been sponsored by `illumiNations <https://illuminations.bible/>`_.
 
-JSON only for metadata
-......................
+Future Development
+==================
 
-The 0.1.0 specification was based on an XML schema for metadata with a JSON representation. However, the goal for **0.2.0** was to switch to `JSON Schema <https://json-schema.org/>`_ as the only representation of the metadata. This transition is now completed and 0.2.0-beta.2 represents this change.
+See future development `milestones here <https://github.com/bible-technology/scripture-burrito/milestones>`_. The Scripture Burrito :ref:`committee` invites comments on all aspects of the schema and documentation. Please use `Github Issues <https://github.com/bible-technology/scripture-burrito/issues>`_ or `Github Discussions <https://github.com/bible-technology/scripture-burrito/discussions>`_ to provide feedback.
 
-MD5 Checksums
-.............
 
-For ingredient (file) checksums we are using the dated MD5 hashing algorithm. See `our discussion <https://github.com/bible-technology/scripture-burrito/issues/115>`_ about this issue. Please open an issue to let us know if this will be problematic for your use case.
-
-USFM and USX for Scripture Text
-...............................
-
-The current proposal is based on the Digital Bible Library, which chose USX because it can be validated rigorously. As a result of this choice, several large publishing workflows including
-YouVersion and API.Bible use USX.
-
-Much of the Bible translation world uses USFM, which is familiar to
-Bible translators, but which requires bespoke parsing tools, and which can be ambiguous in some circumstances. Also, USX contains machine-readable reference information that cannot be represented
-in USFM at this time. Valid USFM can be round-tripped to USX. USX cannot be round-tripped to USFM without losing the machine-readable references. Invalid USFM may not have an equivalent
-representation in USX.
-
-Paratext currently uses both USFM and USX internally at various points.
-
-The committee's current proposal is
-
-* USFM for translations in progress
-
-* USX for valid content, orientated towards publication (incremental or otherwise)
-
-The committee would appreciate proposals for constructive and technically feasible alternatives.
-
-Content
-=======
+Documentation
+=============
 
 .. toctree::
    :maxdepth: 4

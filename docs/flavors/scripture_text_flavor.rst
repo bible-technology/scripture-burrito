@@ -1,3 +1,5 @@
+.. _scripture_text_flavor:
+
 ##############
 Scripture Text
 ##############

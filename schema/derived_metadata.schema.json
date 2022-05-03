@@ -42,8 +42,8 @@
         "ingredients": {
             "$ref": "ingredients.schema.json"
         },
-        "names": {
-            "$ref": "names.schema.json"
+        "localizedNames": {
+            "$ref": "localized_names.schema.json"
         },
         "recipe": {
             "$ref": "recipe.schema.json"
@@ -64,6 +64,6 @@
         }
     },
     "then": {
-        "required": ["languages", "names"]
+        "required": ["languages"]
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "scripture-burrito",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-rc1",
   "description": "Schema support for Scripture Burrito",
   "main": "schema/index.js",
   "directories": {

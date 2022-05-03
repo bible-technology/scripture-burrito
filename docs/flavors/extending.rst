@@ -1,3 +1,5 @@
+.. _extending_scripture_burrito:
+
 ###########################
 Extending Scripture Burrito
 ###########################
@@ -86,9 +88,9 @@ The easiest way to assemble valid Scripture Burrito is to start with the example
 
    /burritoMetadata/type/flavorDetails
 
-which is where flavor-specific information is stored. For experimenting with this part of the XML while keeping everything else valid, set the flavor to something beginning with "x-". The schema will then allow most well-formed XML within flavorDetails.
+which is where flavor-specific information is stored. For experimenting with this part of the specification while keeping everything else valid, set the flavor to something beginning with "x-". The schema will then allow most well-formed JSON within flavorDetails.
 
-(This task will be much less painful with a schema-aware XML editor that validates XML after each keystroke. https://www.oxygenxml.com/ provide excellent, commercial editors. Open source options include Emacs and command-line validators such as xmllint.)
+(This task will be much less painful with a schema-aware editor that validates after each keystroke. See the `Real Time Editing <https://github.com/bible-technology/scripture-burrito#for-real-time-editing>`_ section of the README for help on this.)
 
 ===============================
 Circulate it, Use it, Refine it

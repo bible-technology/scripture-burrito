@@ -1,13 +1,13 @@
 {
   "meta": {
-    "version": "1.0.0-beta1",
+    "version": "1.0.0-rc1",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
       "softwareVersion": "0.0.0",
       "userName": "Jeff Klassen"
     },
-    "defaultLanguage": "en",
+    "defaultLocale": "en",
     "dateCreated": "2018-02-15T22:33:50.875547+00:00",
     "normalization": "NFC",
     "comments": ["Testing dblChanges.txt"]
@@ -182,7 +182,7 @@
       }
     }
   ],
-  "names": {
+  "localizedNames": {
     "book-gen": {
       "abbr": {
         "en": "Gn"

@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/localized_names.schema.json",
+    "$$target": "localized_names.schema.json",
+    "title": "Localized Names",
+    "type": "object",
+    "additionalProperties": {
+        "$ref": "localized_name.schema.json"
+    },
+    "description": "Contains localized names for books, etc."
+}

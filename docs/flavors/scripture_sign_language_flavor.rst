@@ -1,3 +1,5 @@
+.. _scripture_sign_language_flavor:
+
 #######################
 Scripture Sign Language
 #######################

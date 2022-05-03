@@ -12,11 +12,13 @@ Current Membership
 
 The working group meets regularly and is now comprised of the following individuals:
 
+* Chuck Barker
+* Eric Pyle
+* James Tauber (implementing developer)
 * Jesse Griffin
 * Joel Mathew
 * Jonathan Robie
 * Tim Steenwyk
-* James Tauber (implementing developer)
 
 =======
 Origins
@@ -25,7 +27,7 @@ Origins
 The Scripture Burrito specification was started by the ETEN Project Portability Working Group which was
 formed after meetings in Philadelphia in July 2018 at American Bible Society. The group met several times
 virtually, culminating in two days of face meetings in Orlando on January 17-18, 2019. That
-meeting was attended by
+meeting was attended by:
 
 * Han Chung
 * Jesse Griffin
