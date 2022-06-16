@@ -43,7 +43,7 @@
             "$ref": "localized_names.schema.json"
         }
     },
-    "required": ["meta", "copyright"],
+    "required": ["format", "meta", "copyright"],
     "additionalProperties": false,
     "allOf": [
         {
