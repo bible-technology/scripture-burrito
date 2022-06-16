@@ -6,6 +6,10 @@
     "type": "object",
     "description": "Scripture Burrito derived variant root.",
     "properties": {
+        "format": {
+            "type": "string",
+            "enum": ["scripture burrito"]
+        },
         "meta": {
             "$ref": "derived_meta.schema.json"
         },
@@ -49,7 +53,7 @@
             "$ref": "recipe.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidential", "copyright", "type", "recipe"],
+    "required": ["format", "meta", "idAuthorities", "identification", "confidential", "copyright", "type", "recipe"],
     "additionalProperties": false,
     "if": {
         "properties": {

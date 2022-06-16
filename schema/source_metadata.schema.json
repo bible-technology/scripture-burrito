@@ -6,6 +6,10 @@
     "type": "object",
     "description": "Scripture Burrito source kinda-variant root.",
     "properties": {
+        "format": {
+            "type": "string",
+            "enum": ["scripture burrito"]
+        },
         "meta": {
             "$ref": "source_meta.schema.json"
         },
@@ -46,7 +50,7 @@
             "$ref": "progress.schema.json"
         }
     },
-    "required": ["meta", "idAuthorities", "identification", "confidential", "type", "copyright", "ingredients"],
+    "required": ["format", "meta", "idAuthorities", "identification", "confidential", "type", "copyright", "ingredients"],
     "additionalProperties": false,
     "allOf": [
         {

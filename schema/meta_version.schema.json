@@ -4,6 +4,6 @@
     "$$target": "meta_version.schema.json",
     "title": "Meta Version",
     "type": "string",
-    "enum": ["1.0.0-rc1"],
+    "enum": ["1.0.0-rc2"],
     "description": "Version of the Scripture Burrito specification this file follows."
 }

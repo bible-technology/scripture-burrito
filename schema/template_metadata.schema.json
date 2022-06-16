@@ -6,6 +6,10 @@
     "type": "object",
     "description": "Scripture Burrito Template root.",
     "properties": {
+        "format": {
+            "type": "string",
+            "enum": ["scripture burrito"]
+        },
         "meta": {
             "$ref": "template_meta.schema.json"
         },
@@ -43,7 +47,7 @@
             "$ref": "localized_names.schema.json"
         }
     },
-    "required": ["meta", "copyright"],
+    "required": ["format", "meta", "copyright"],
     "additionalProperties": false,
     "allOf": [
         {
