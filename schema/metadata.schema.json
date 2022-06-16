@@ -6,10 +6,6 @@
     "type": "object",
     "description": "Scripture Burrito root metadata object.",
     "properties": {
-        "format": {
-            "type": "string",
-            "enum": ["scripture burrito"]
-        },
         "meta": {
             "type": "object",
             "properties": {
