@@ -33,7 +33,7 @@ These flavorTypes are then subclassed into various flavors, as illustrated:
 Metadata Filename
 =================
 
-A Scripture Burrito can exist in multiple data formats. By convention, when the metdata is written to disk it should be in a file with the name of ``metadata.json`` at the **root** level of the Burrito.
+A Scripture Burrito can exist in multiple data formats. By convention, when the metadata is written to disk it should be in a file with the name of ``metadata.json`` at the **root** level of the Burrito.
 
 File Encoding
 =============
