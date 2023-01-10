@@ -33,7 +33,12 @@ These flavorTypes are then subclassed into various flavors, as illustrated:
 Metadata Filename
 =================
 
-A Scripture Burrito can exist in multiple data formats. By convention, when the metadata is written to disk it should be in a file with the name of ``metadata.json`` at the **root** level of the Burrito.
+A Scripture Burrito can exist in multiple data formats. When the metadata is written to disk it must be in a file with the name of ``metadata.json`` at the **root** level of the Burrito.
+
+Other Burrito Files
+===================
+
+By convention, all files should be in the same directory as `metadata.json` or sub directories thereof. An acceptable exception is large media files that you may not want to distribute with the burrito itself, in which case a URL is acceptable. A burrito is intended to be a snapshot so maintaining external resources is beyond the scope of this specification. If files are references via URL, a client's expectation would be to get the same data each time it hits the provided URL.
 
 File Encoding
 =============
