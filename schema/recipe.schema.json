@@ -20,5 +20,6 @@
         },
         "required": ["idAuthority", "operation", "data"],
         "additionalProperties": false
-    }
+    },
+    "minItems": 1
 }
