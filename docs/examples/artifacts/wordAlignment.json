@@ -2,7 +2,7 @@
   "format": "scripture burrito",
   "meta": {
     "category": "source",
-    "version": "1.0.0-rc2",
+    "version": "1.0.0-rc3",
     "dateCreated": "2020-03-31T09:04:10.3+02:00",
     "generator": {
       "softwareName": "Autographa-Aligner 0.1.0",
