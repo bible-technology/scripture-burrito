@@ -6,7 +6,7 @@ Scripture Burrito Documentation
 
 .. image:: ../logo/burrito_logo.png
 
-After several years of development and testing, we are pleased to announce the availability of **Scripture Burrito 1.0-rc3** specification! We recommend that developers of Scripture and Scripture-related applications test and adopt this specification for interchanging data with other systems. Out of the box Scripture Burrito is designed to support the following types of data:
+After several years of development and testing, we are pleased to announce the availability of **Scripture Burrito 1.0.0** specification! We recommend that developers of Scripture and Scripture-related applications test and adopt this specification for interchanging data with other systems. Out of the box Scripture Burrito is designed to support the following types of data:
 
 - :ref:`scripture_text_flavor`
 - :ref:`scripture_print_flavor`

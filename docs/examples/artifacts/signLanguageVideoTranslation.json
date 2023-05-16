@@ -1,7 +1,7 @@
 {
   "format": "scripture burrito",
   "meta": {
-    "version": "1.0.0-rc3",
+    "version": "1.0.0",
     "category": "source",
     "generator": {
       "softwareName": "DBLImport",
