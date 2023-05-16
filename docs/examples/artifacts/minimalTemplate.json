@@ -1,7 +1,7 @@
 {
   "format": "scripture burrito",
   "meta": {
-    "version": "1.0.0-rc3",
+    "version": "1.0.0",
     "category": "template",
     "templateName": {
       "en": "A Minimal and Frankly Pointless Template"
