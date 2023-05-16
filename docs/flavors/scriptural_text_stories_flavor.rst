@@ -4,9 +4,16 @@
 Scriptural Text Stories
 #######################
 
+
 ======
 Status
 ======
+
+This flavor is in **beta** and we are actively seeking feedback.
+
+=======
+History
+=======
 
 The Scriptural Text Stories flavor is based on the `Resource Container Book <https://resource-container.readthedocs.io/en/latest/container_types.html#book-book>`_ format. This specificiation was developed in 2016 from a need to represent unfoldingWord® Open Bible Stories in multiple languages. However, it was designed to be flexible enough to represent just about any chapter based resource. The Resource Container format is in use by nearly a dozen software tools developed by unfoldingWord, Bridge Connectivity Services, Wycliffe Associates, and others. As of September 2019, more than 500 Open Bible Stories projects are currently using this format as seen on the `Door43 Content Service <https://git.door43.org/>`_.
 

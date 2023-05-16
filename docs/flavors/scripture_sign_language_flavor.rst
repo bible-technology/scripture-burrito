@@ -8,6 +8,12 @@ Scripture Sign Language
 Status
 ======
 
+This flavor is in **beta** and we are actively seeking feedback.
+
+=======
+History
+=======
+
 The Scripture Sign Language flavor is based on the Digital Bible Library's video entry type. This DBL type was initially imagined as a catch-all solution for Scripture-related video. In practice, all video in DBL to date has been for sign language projects. Scripture Burrito treats sign language projects as a first-class flavor, in order to address issues specific to sign language.
 
 For publication of these entries - as for other entry types - it is crucial to have metadata that enables website or app creators to assemble the components in a meaningful way without understanding the sign language itself. As a first attempt to support this, Scripture Burrito supports sign language-specific roles for signs, concepts and places, which are illustrated in the example document.
