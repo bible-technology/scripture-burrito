@@ -10,7 +10,7 @@ After several years of development and testing, we are pleased to announce the a
 
 - :ref:`scripture_text_flavor`
 - :ref:`scripture_print_flavor`
-- :ref:`scripture_audio_flavor`
+- :ref:`scripture_audio_flavor` (beta)
 - :ref:`scripture_sign_language_flavor`
 - :ref:`scripture_braille_flavor`
 - :ref:`scriptural_text_stories_flavor`
