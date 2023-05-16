@@ -9,11 +9,11 @@ Scripture Burrito Documentation
 After several years of development and testing, we are pleased to announce the availability of **Scripture Burrito 1.0.0** specification! We recommend that developers of Scripture and Scripture-related applications test and adopt this specification for interchanging data with other systems. Out of the box Scripture Burrito is designed to support the following types of data:
 
 - :ref:`scripture_text_flavor`
-- :ref:`scripture_print_flavor`
+- :ref:`scripture_print_flavor` (beta)
 - :ref:`scripture_audio_flavor` (beta)
-- :ref:`scripture_sign_language_flavor`
-- :ref:`scripture_braille_flavor`
-- :ref:`scriptural_text_stories_flavor`
+- :ref:`scripture_sign_language_flavor` (beta)
+- :ref:`scripture_braille_flavor` (beta)
+- :ref:`scriptural_text_stories_flavor` (beta)
 
 As interoperability is our primary goal, we are happy to accept proposals for new flavors based on common interchange scenarios. We have provided instructions and examples for :ref:`extending_scripture_burrito` by testing and implementing new flavors (using ``x-`` flavors). When multiple implementations can be demonstrated, we will consider adding them as official flavors in new schema releases.
 

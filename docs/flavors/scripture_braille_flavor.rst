@@ -4,9 +4,16 @@
 Scripture Braille
 #################
 
+
 ======
 Status
 ======
+
+This flavor is in **beta** and we are actively seeking feedback.
+
+=======
+History
+=======
 
 The Scripture Text flavor is based on the Digital Bible Library's text entry type. DBL developed the metadata and content formats in close collaboration with Compass Braille (https://www.compassbraille.org/), a British registered charity that has produced most of the braille editions of United Bible Societies texts.
 
