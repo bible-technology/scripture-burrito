@@ -37,7 +37,7 @@
                 },
                 "bookScope": {
                     "$ref": "book_scope.schema.json"
-                },
+                }
             },
             "required": ["name", "bookScope", "flavor"],
             "additionalProperties": false
