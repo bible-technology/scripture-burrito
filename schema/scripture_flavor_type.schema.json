@@ -22,10 +22,7 @@
                             "$ref": "scripture/audio_translation.schema.json"
                         },
                         {
-                            "$ref": "scripture/print_publication.schema.json"
-                        },
-                        {
-                            "$ref": "scripture/braille_scripture_publication.schema.json"
+                            "$ref": "scripture/typeset_scripture.schema.json"
                         },
                         {
                             "$ref": "scripture/sign_language_video_translation.schema.json"
@@ -36,8 +33,8 @@
                     ]
                 },
                 "bookScope": {
-                    "$ref": "book_scope.schema.json"
-                },
+                    "$ref": "scope.schema.json"
+                }
             },
             "required": ["name", "bookScope", "flavor"],
             "additionalProperties": false
