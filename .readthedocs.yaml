@@ -16,10 +16,7 @@ formats:
   - htmlzip
   - pdf
 
-# # Optionally set the version of Python and requirements required to build your docs
-# python:
-#   install:
-#   - requirements: docs/requirements.txt
-
-# submodules:
-#   include: all
+# Optionally set the version of Python and requirements required to build your docs
+python:
+  install:
+  - requirements: requirements.txt
