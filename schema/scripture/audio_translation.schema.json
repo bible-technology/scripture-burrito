@@ -10,7 +10,7 @@
             "properties": {
                 "compression": {
                     "type": "string",
-                    "enum": ["mp3", "wav"]
+                    "enum": ["mp3", "wav", "ogg"]
                 },
                 "trackConfiguration": {
                     "type": "string",
