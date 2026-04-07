@@ -11,19 +11,16 @@ Status
 This flavor is in **beta** and we are actively seeking feedback.
 
 =======
-History
+Introduction
 =======
 
-The Scripture Audio flavor is based on the Digital Bible Library's audio entry type. As of August 2019, DBL "audio bundles" have been used to represent over 1100 audio projects in over 750 languages. These bundles are consumed by many publisher-facing tool chains, including YouVersion and Megavoice.
+The Scripture Audio flavor provides XYZ. 
 
-Initially, audio was uploaded to DBL via Paratext. Recently, this feature has been removed from Paratext in favour of Nathanael, a desktop application maintained by DBL which facilites non-text uploads and downloads. A significant number of DBL audio entries were created via a batch import from Faith Comes By Hearing's Digital Bible Platform.
+
 
 =======
-Content
+
 =======
-
-DBL stores one mp3 file per chapter. An option to store "source" wav files has recently been added.
-
 =======================
 Metadata Flavor Details
 =======================
