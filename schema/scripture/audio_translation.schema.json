@@ -1,105 +1,239 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://burrito.bible/schema/scripture/audio_translation.schema.json",
-    "title": "Flavor Details: Audio Translation",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/schemas/audio-metadata.schema.json",
+    "title": "Audio Translation Metadata",
     "type": "object",
-    "description": "Schema of flavor field of scripture/audioTranslation flavor",
-    "definitions": {
-        "format": {
-            "type": "object",
-            "properties": {
-                "compression": {
-                    "type": "string",
-                    "enum": ["mp3", "wav", "ogg"]
-                },
-                "trackConfiguration": {
-                    "type": "string",
-                    "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
-                },
-                "bitRate": { "type": "integer" },
-                "bitDepth": { "type": "integer" },
-                "samplingRate": { "type": "integer" },
-                "timingDir": { "$ref": "../common.schema.json#/definitions/path" }
-            },
-            "required": ["compression"],
-            "additionalProperties": false
-        }
-    },
+    "required": [
+        "format",
+        "meta",
+        "identification",
+        "languages",
+        "type",
+        "ingredients"
+    ],
     "properties": {
-        "name": {
-            "const": "audioTranslation"
+        "format": {
+            "type": "string",
+            "const": "scripture burrito"
         },
-        "performance": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": ["singleVoice", "multipleVoice", "reading", "drama", "withMusic", "withEffects", "withHeadings"]
+        "meta": {
+            "type": "object",
+            "required": [
+                "category",
+                "version",
+                "dateCreated"
+            ],
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "enum": [
+                        "source",
+                        "derived"
+                    ]
+                },
+                "version": {"type": "string"},
+                "dateCreated": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generator": {
+                    "type": "object",
+                    "properties": {
+                        "softwareName": {"type": "string"},
+                        "softwareVersion": {"type": "string"}
+                    },
+                    "required": ["softwareName"]
+                },
+                "defaultLocale": {"type": "string"},
+                "comments": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                }
             },
-            "uniqueItems": true,
-            "allOf": [
-                {
-                    "if": {
-                        "contains": {
-                            "const": "singleVoice"
-                        }
+            "additionalProperties": true
+        },
+        "identification": {
+            "type": "object",
+            "required": [
+                "name",
+                "primary"
+            ],
+            "properties": {
+                "name": {
+                    "type": "object",
+                    "additionalProperties": {"type": "string"}
+                },
+                "abbreviation": {"type": "string"},
+                "primary": {
+                    "type": "object",
+                    "required": ["bibleId"],
+                    "properties": {
+                        "bibleId": {"type": "string"},
+                        "revision": {"type": "string"}
+                    }
+                }
+            },
+            "additionalProperties": true
+        },
+        "languages": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["tag"],
+                "properties": {
+                    "tag": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z0-9]+)*$"
                     },
-                    "then": {
-                        "not": {
-                            "contains": {
-                                "const": "multipleVoice"
-                            }
-                        }
-                    },
-                    "else": {
-                        "contains": {
-                            "const": "multipleVoice"
-                        }
+                    "name": {"type": "string"},
+                    "scriptDirection": {
+                        "type": "string",
+                        "enum": [
+                            "ltr",
+                            "rtl"
+                        ]
                     }
                 },
-                {
-                    "if": {
-                        "contains": {
-                            "const": "reading"
-                        }
-                    },
-                    "then": {
-                        "not": {
-                            "contains": {
-                                "const": "drama"
-                            }
-                        }
-                    },
-                    "else": {
-                        "contains": {
-                            "const": "drama"
+                "additionalProperties": true
+            }
+        },
+        "type": {
+            "type": "object",
+            "required": ["flavorType"],
+            "properties": {
+                "flavorType": {
+                    "type": "object",
+                    "required": [
+                        "name",
+                        "flavor"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "const": "scripture"
+                        },
+                        "flavor": {
+                            "type": "object",
+                            "required": ["name"],
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "const": "audioTranslation"
+                                },
+                                "performance": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "singleVoice",
+                                            "multipleVoice",
+                                            "reading",
+                                            "drama",
+                                            "withMusic",
+                                            "withEffects",
+                                            "withHeadings"
+                                        ]
+                                    },
+                                    "uniqueItems": true
+                                }
+                            },
+                            "additionalProperties": true
                         }
                     }
                 }
-            ]
-        },
-        "formats": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "#/definitions/format"
             },
-            "propertyNames": { "type": "string" }
+            "additionalProperties": true
         },
-        "conventions": {
+        "ingredients": {
             "type": "object",
+            "minProperties": 1,
             "additionalProperties": {
-                "type": "string",
-                "pattern": "^\\d+[.]\\d+([.].+)?$"
-            },
-            "propertyNames": {
-                "type": "string",
-                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
-                "oneOf": [
-                    { "$ref": "../common.schema.json#/definitions/xToken" },
-                    { "enum": ["contentResourcesByChapter", "bookDirs"] }
-                ]
+                "type": "object",
+                "required": [
+                    "mimeType",
+                    "scope"
+                ],
+                "properties": {
+                    "mimeType": {
+                        "type": "string",
+                        "pattern": "^audio\\/"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "checksum": {
+                        "type": "object",
+                        "properties": {
+                            "md5": {
+                                "type": "string",
+                                "pattern": "^[a-fA-F0-9]{32}$"
+                            },
+                            "sha256": {
+                                "type": "string",
+                                "pattern": "^[a-fA-F0-9]{64}$"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "scope": {
+                        "type": "object",
+                        "minProperties": 1,
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                        }
+                    }
+                },
+                "additionalProperties": true
             }
+        },
+        "relationships": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["relationType"],
+                "properties": {
+                    "relationType": {"type": "string"},
+                    "flavor": {"type": "string"},
+                    "id": {"type": "string"},
+                    "revision": {"type": "string"}
+                },
+                "additionalProperties": true
+            }
+        },
+        "agencies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "role",
+                    "name"
+                ],
+                "properties": {
+                    "role": {"type": "string"},
+                    "name": {"type": "string"}
+                },
+                "additionalProperties": true
+            }
+        },
+        "copyright": {
+            "type": "object",
+            "properties": {
+                "shortStatements": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": ["statement"],
+                        "properties": {
+                            "statement": {"type": "string"}
+                        }
+                    }
+                }
+            },
+            "additionalProperties": true
         }
     },
-    "required": ["performance", "formats"],
-    "additionalProperties": false
+    "additionalProperties": true
 }
