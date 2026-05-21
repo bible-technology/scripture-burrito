@@ -28,78 +28,8 @@
     "properties": {
         "name": {
             "const": "audioTranslation"
-        },
-        "performance": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": ["singleVoice", "multipleVoice", "reading", "drama", "withMusic", "withEffects", "withHeadings"]
-            },
-            "uniqueItems": true,
-            "allOf": [
-                {
-                    "if": {
-                        "contains": {
-                            "const": "singleVoice"
-                        }
-                    },
-                    "then": {
-                        "not": {
-                            "contains": {
-                                "const": "multipleVoice"
-                            }
-                        }
-                    },
-                    "else": {
-                        "contains": {
-                            "const": "multipleVoice"
-                        }
-                    }
-                },
-                {
-                    "if": {
-                        "contains": {
-                            "const": "reading"
-                        }
-                    },
-                    "then": {
-                        "not": {
-                            "contains": {
-                                "const": "drama"
-                            }
-                        }
-                    },
-                    "else": {
-                        "contains": {
-                            "const": "drama"
-                        }
-                    }
-                }
-            ]
-        },
-        "formats": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "#/definitions/format"
-            },
-            "propertyNames": { "type": "string" }
-        },
-        "conventions": {
-            "type": "object",
-            "additionalProperties": {
-                "type": "string",
-                "pattern": "^\\d+[.]\\d+([.].+)?$"
-            },
-            "propertyNames": {
-                "type": "string",
-                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
-                "oneOf": [
-                    { "$ref": "../common.schema.json#/definitions/xToken" },
-                    { "enum": ["contentResourcesByChapter", "bookDirs"] }
-                ]
-            }
         }
-    },
-    "required": ["performance", "formats"],
+     },
+    "required": [],
     "additionalProperties": false
 }
