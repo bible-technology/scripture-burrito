@@ -3,7 +3,7 @@ const fs = require("fs");
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats")
 
-const ajv = new Ajv({ schemas: schemaIndex.schemas });
+const ajv = new Ajv({ schemas: schemaIndex.schemas, allErrors: true  });
 
 ajv.addKeyword("$$target")
 ajv.addKeyword("revision")

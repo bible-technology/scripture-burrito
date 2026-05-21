@@ -11,12 +11,8 @@
             "minimum": 0,
             "description": "The number of bytes that this ingredient takes up on disk."
         },
-        "lang": {
-            "$ref": "common.schema.json#/definitions/languageTag"
-        },
-        "mimeType": {
-            "$ref": "common.schema.json#/definitions/mimeType"
-        },
+        "lang": {"$ref": "common.schema.json#/definitions/languageTag"},
+        "mimeType": {"$ref": "common.schema.json#/definitions/mimeType"},
         "checksum": {
             "type": "object",
             "properties": {
@@ -37,13 +33,65 @@
             "maxProperties": 2,
             "additionalProperties": false
         },
-        "scope": {
-            "$ref": "scope.schema.json"
-        },
-        "role": {
-            "$ref": "role.schema.json"
+        "scope": {"$ref": "scope.schema.json"},
+        "role": {"$ref": "role.schema.json"},
+        "properties": {
+            "type": "object",
+            "properties": {
+                "performance": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "singleVoice",
+                            "multipleVoice",
+                            "nonDrama",
+                            "drama",
+                            "withMusic",
+                            "withEffects",
+                            "withHeadings"
+                        ]
+                    },
+                    "uniqueItems": true,
+                    "allOf": [
+                        {
+                            "if": {
+                                "contains": {"const": "singleVoice"}
+                            },
+                            "then": {
+                                "not": {
+                                    "contains": {"const": "multipleVoice"}
+                                }
+                            },
+                            "else": {
+                                "contains": {"const": "multipleVoice"}
+                            }
+                        },
+                        {
+                            "if": {
+                                "contains": {"const": "nonDrama"}
+                            },
+                            "then": {
+                                "not": {
+                                    "contains": {"const": "drama"}
+                                }
+                            },
+                            "else": {
+                                "contains": {"const": "drama"}
+                            }
+                        }
+                    ]
+                }
+            }, 
+            "patternProperties": {
+                "^x-[a-z][a-zA-Z0-9]*$": {"type": "string"}
+            },
+            "additionalProperties": false
         }
-    },
-    "required": ["size", "mimeType"],
+    },  
+    "required": [
+        "size",
+        "mimeType"
+    ],
     "additionalProperties": false
 }
