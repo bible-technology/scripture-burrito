@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Alignment Specification &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Wrapper Specification" href="wrapper_flavor.html" />
+    <link rel="prev" title="Scripture Audio Specification" href="scripture_audio_flavor.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="alignment-specification">
+<span id="alignment-flavor"></span><h1>Alignment Specification<a class="headerlink" href="#alignment-specification" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../tutorials/alignment.html#tutorial-alignment"><span class="std std-ref">Tutorial: Word Alignment</span></a>]  [<a class="reference internal" href="../tutorials/audioAlignment.html#tutorial-audioalignment"><span class="std std-ref">Tutorial: Audio–Text Alignment</span></a>]  [<a class="reference internal" href="../examples/wordAlignment.html#examples-alignment"><span class="std std-ref">Example: Word Alignment</span></a>]  [<a class="reference internal" href="../examples/audioAlignment.html#examples-audioalignment"><span class="std std-ref">Example: Audio–Text Alignment</span></a>]</p>
+<p>This page covers fields specific to the Alignment flavor. For fields common to all burritos see <a class="reference internal" href="../introduction/structure.html#burrito-structure"><span class="std std-ref">Scripture Burrito Structure</span></a>.</p>
+<p>An alignment burrito contains word-level or timecode-level alignment data
+between two texts or between audio and text. Content files follow the
+<a class="reference external" href="https://github.com/bible-technology/alignment-spec">Scripture Burrito Alignment Format</a>.</p>
+<section id="type-fields">
+<h2>Type Fields<a class="headerlink" href="#type-fields" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;alignment&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;alignment&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.currentScope</span></code></dt><dd><p>OPTIONAL. If present, keys MUST be valid USFM book codes and values
+MUST be arrays of chapter strings or an empty array meaning the whole
+book.</p>
+</dd>
+</dl>
+</section>
+<section id="ingredients">
+<h2>Ingredients<a class="headerlink" href="#ingredients" title="Link to this heading">¶</a></h2>
+<p>At least one alignment ingredient MUST be present. Alignment ingredients
+MUST use <code class="docutils literal notranslate"><span class="pre">&quot;mimeType&quot;:</span> <span class="pre">&quot;application/json&quot;</span></code>.</p>
+<p>Alignment ingredients SHOULD include a <code class="docutils literal notranslate"><span class="pre">scope</span></code> indicating which Scripture
+content they cover.</p>
+<p>Each alignment ingredient MUST be a valid alignment format file. A valid
+alignment format file:</p>
+<ul class="simple">
+<li><p>MUST have <code class="docutils literal notranslate"><span class="pre">&quot;format&quot;:</span> <span class="pre">&quot;alignment&quot;</span></code></p></li>
+<li><p>MUST have <code class="docutils literal notranslate"><span class="pre">&quot;version&quot;:</span> <span class="pre">&quot;0.4&quot;</span></code></p></li>
+<li><p>MUST have a <code class="docutils literal notranslate"><span class="pre">&quot;groups&quot;</span></code> array</p></li>
+<li><p>Within each group, every record MUST have either a <code class="docutils literal notranslate"><span class="pre">&quot;references&quot;</span></code> array
+or named role keys (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;target&quot;</span></code>)</p></li>
+<li><p>Reference units MUST be lists of string selectors when <code class="docutils literal notranslate"><span class="pre">scheme</span></code> is
+hoisted to the group’s <code class="docutils literal notranslate"><span class="pre">documents</span></code> array; otherwise they MUST be objects
+with <code class="docutils literal notranslate"><span class="pre">scheme</span></code>, <code class="docutils literal notranslate"><span class="pre">docid</span></code>, and <code class="docutils literal notranslate"><span class="pre">selectors</span></code></p></li>
+</ul>
+</section>
+<section id="alignment-types">
+<h2>Alignment Types<a class="headerlink" href="#alignment-types" title="Link to this heading">¶</a></h2>
+<p>The alignment format is extensible. The following alignment types are defined
+in the specification and MAY be used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;translation&quot;</span></code> — target is a translation of source;
+roles: <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;target&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;audio-reference&quot;</span></code> — maps audio timecodes to text references;
+roles: <code class="docutils literal notranslate"><span class="pre">&quot;timecode&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;text-reference&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;related&quot;</span></code> — generic undirected relationship; no roles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;directed&quot;</span></code> — generic directed relationship; roles: <code class="docutils literal notranslate"><span class="pre">&quot;from&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;to&quot;</span></code></p></li>
+</ul>
+<p>Custom alignment types MAY be used; they SHOULD be prefixed with <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>.</p>
+</section>
+<section id="reference-schemes">
+<h2>Reference Schemes<a class="headerlink" href="#reference-schemes" title="Link to this heading">¶</a></h2>
+<p>The alignment format is extensible. The following reference schemes MAY be
+used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;BCVWP&quot;</span></code> — word-level biblical reference using a 12-character
+<code class="docutils literal notranslate"><span class="pre">BBCCCVVVWWWP</span></code> string (book, chapter, verse, word, part)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;vtt-timecode&quot;</span></code> — WebVTT timecode range <code class="docutils literal notranslate"><span class="pre">&quot;MM:SS.mmm</span> <span class="pre">--&gt;</span> <span class="pre">MM:SS.mmm&quot;</span></code>;
+<code class="docutils literal notranslate"><span class="pre">docid</span></code> is the audio filename</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;u23003&quot;</span></code> — scripture reference with sub-verse granularity; <code class="docutils literal notranslate"><span class="pre">docid</span></code>
+is embedded in the selector (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;en+ulb.EPH</span> <span class="pre">1:1&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ws-token&quot;</span></code> — whitespace-tokenised offset; <code class="docutils literal notranslate"><span class="pre">docid</span></code> is the filename</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;nfc-char&quot;</span></code> — Unicode NFC character offset range; <code class="docutils literal notranslate"><span class="pre">docid</span></code> is the
+filename</p></li>
+</ul>
+<p>Custom reference schemes MAY be used.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Flavors</a><ul>
+      <li>Previous: <a href="scripture_audio_flavor.html" title="previous chapter">Scripture Audio Specification</a></li>
+      <li>Next: <a href="wrapper_flavor.html" title="next chapter">Wrapper Specification</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/flavors/alignment_flavor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

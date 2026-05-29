@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scripture Text Specification &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scripture Audio Specification" href="scripture_audio_flavor.html" />
+    <link rel="prev" title="Flavors" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="scripture-text-specification">
+<span id="scripture-text-flavor"></span><h1>Scripture Text Specification<a class="headerlink" href="#scripture-text-specification" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../tutorials/textTranslation.html#tutorial-texttranslation"><span class="std std-ref">Tutorial</span></a>]  [<a class="reference internal" href="../examples/textTranslation.html#examples-texttranslation"><span class="std std-ref">Example</span></a>]</p>
+<p>This page covers fields specific to the Scripture Text flavor. For fields common to all burritos see <a class="reference internal" href="../introduction/structure.html#burrito-structure"><span class="std std-ref">Scripture Burrito Structure</span></a>.</p>
+<p>A Scripture Text burrito contains a Scripture translation or original-language
+edition in <strong>USFM</strong>, <strong>USX</strong>, or <strong>USJ</strong> format.</p>
+<section id="type-fields">
+<h2>Type Fields<a class="headerlink" href="#type-fields" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;scripture&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;textTranslation&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.projectType</span></code></dt><dd><p>MUST be present. MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> — a normal translation or edition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;daughter&quot;</span></code> — derived from a parent translation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;studyBible&quot;</span></code> — a full study Bible</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;studyBibleAdditions&quot;</span></code> — commentary or helps supplementing a study Bible</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;backTranslation&quot;</span></code> — a reverse translation for checking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;auxiliary&quot;</span></code> — supplemental or experimental</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;transliterationManual&quot;</span></code> — manual transliteration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;transliterationWithEncoder&quot;</span></code> — automatically generated transliteration</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.translationType</span></code></dt><dd><p>MUST be present. MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;firstTranslation&quot;</span></code> — first translation into this language</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;newTranslation&quot;</span></code> — a new translation independent of existing versions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;revision&quot;</span></code> — a revision of a prior translation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;studyOrHelpMaterial&quot;</span></code> — study notes or supplementary helps</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.audience</span></code></dt><dd><p>MUST be present. MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;basic&quot;</span></code> — simplified or learner audience</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;common&quot;</span></code> — general readership</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;common-literary&quot;</span></code> — general readership with elevated literary style</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;literary&quot;</span></code> — formal or literary audience</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;liturgical&quot;</span></code> — designed for public worship</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;children&quot;</span></code> — adapted for young readers</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.usfmVersion</span></code></dt><dd><p>MUST be present. MUST match the pattern <code class="docutils literal notranslate"><span class="pre">\d+\.\d+(\..+)?</span></code>
+(e.g. <code class="docutils literal notranslate"><span class="pre">&quot;3.1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;3.1.0&quot;</span></code>). Applies to all three serializations
+(USFM, USX, USJ).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.currentScope</span></code></dt><dd><p>MUST be present. Keys MUST be valid three-letter USFM book codes. Each
+value is a list of included chapters (integers or <code class="docutils literal notranslate"><span class="pre">&quot;ch:v–ch:v&quot;</span></code> ranges);
+an empty list means all chapters of that book are included.</p>
+</dd>
+</dl>
+</section>
+<section id="ingredients">
+<h2>Ingredients<a class="headerlink" href="#ingredients" title="Link to this heading">¶</a></h2>
+<p><strong>Text files</strong></p>
+<p>At least one text ingredient MUST be present. Text ingredients MUST use one of
+the following MIME types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;text/x-usfm&quot;</span></code> for USFM (<code class="docutils literal notranslate"><span class="pre">.SFM</span></code>, <code class="docutils literal notranslate"><span class="pre">.USFM</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;application/xml&quot;</span></code> for USX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;application/json&quot;</span></code> for USJ (with <code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;text&quot;</span></code>)</p></li>
+</ul>
+<p>Text ingredients MUST include a <code class="docutils literal notranslate"><span class="pre">scope</span></code> mapping each ingredient to the book
+or books it contains. Every book declared in <code class="docutils literal notranslate"><span class="pre">currentScope</span></code> MUST be covered
+by at least one text ingredient.</p>
+<p><strong>Versification file</strong></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">versification.json</span></code> ingredient SHOULD be present. It MUST carry
+<code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;versification&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;mimeType&quot;:</span> <span class="pre">&quot;application/json&quot;</span></code>. It MUST
+conform to the Copenhagen Alliance Versification format.</p>
+<p><strong>Locale data</strong></p>
+<p>At least one <code class="docutils literal notranslate"><span class="pre">.ldml</span></code> locale file SHOULD be present. It MUST carry
+<code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;localedata&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;mimeType&quot;:</span> <span class="pre">&quot;application/xml&quot;</span></code>.</p>
+<p><strong>Optional ingredients</strong></p>
+<p>The following ingredient roles MAY be present:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;styleSheet&quot;</span></code> — Paratext custom style sheet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;font&quot;</span></code> — font files for rendering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;license&quot;</span></code> — license or permissions statement</p></li>
+</ul>
+</section>
+<section id="conventions">
+<h2>Conventions<a class="headerlink" href="#conventions" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">usxRefs</span></code></dt><dd><p>If present, signals that USX ingredients include machine-readable
+cross-reference markup.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">usxDirs</span></code></dt><dd><p>If present, signals that USX ingredients include direction markup.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">typesetAsVersedParagraphs</span></code></dt><dd><p>If present, consumers SHOULD render each verse or verse range as a
+separate paragraph, ignoring paragraph markers in the source file.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Flavors</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Flavors</a></li>
+      <li>Next: <a href="scripture_audio_flavor.html" title="next chapter">Scripture Audio Specification</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/flavors/scripture_text_flavor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

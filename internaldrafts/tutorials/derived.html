@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Derived Burrito Tutorial &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Schema Documentation" href="../schema_docs/index.html" />
+    <link rel="prev" title="Wrapper Tutorial" href="wrapper.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="derived-burrito-tutorial">
+<span id="tutorial-derived"></span><h1>Derived Burrito Tutorial<a class="headerlink" href="#derived-burrito-tutorial" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../flavors/derived_flavor.html#derived-flavor"><span class="std std-ref">Specification</span></a>]  [<a class="reference internal" href="../examples/textTranslation_derived.html#examples-texttranslation-derived"><span class="std std-ref">Example</span></a>]</p>
+<p>This tutorial walks through creating a derived burrito — a burrito produced
+from an existing burrito rather than created directly. The example is an
+English back-translation of Matthew produced from the Zarma New Testament.</p>
+<p><strong>Scenario:</strong> A translation consultant needs an English back-translation of
+Matthew to check the Zarma text. The Zarma NT is already registered in the
+Digital Bible Library as <code class="docutils literal notranslate"><span class="pre">a3f9c12e887b4d01</span></code>. The back-translation lives in
+a directory called <code class="docutils literal notranslate"><span class="pre">zarma-nt-bt/</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zarma</span><span class="o">-</span><span class="n">nt</span><span class="o">-</span><span class="n">bt</span><span class="o">/</span>
+    <span class="n">ingredients</span><span class="o">/</span>
+        <span class="mi">40</span><span class="n">MATBACKTR</span><span class="o">.</span><span class="n">SFM</span>
+    <span class="n">metadata</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<section id="format">
+<h2>1. Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">format</span></code> field is the same for all burritos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</section>
+<section id="meta-category">
+<h2>2. Meta: category<a class="headerlink" href="#meta-category" title="Link to this heading">¶</a></h2>
+<p>The key difference from a source burrito is <code class="docutils literal notranslate"><span class="pre">meta.category</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;derived&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTranslationTool&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;David Okonkwo&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-20T14:00:00+01:00&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;normalization&quot;</span><span class="p">:</span> <span class="s2">&quot;NFC&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">category</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code> tells consuming tools that this burrito
+was produced from another. A tool that receives an update to the source Zarma
+NT can flag that this back-translation may need to be regenerated.</p>
+</section>
+<section id="identification-and-upstream">
+<h2>3. Identification and upstream<a class="headerlink" href="#identification-and-upstream" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">identification.upstream</span></code> field records which external burrito this was
+derived from. Its structure mirrors <code class="docutils literal notranslate"><span class="pre">identification.primary</span></code>: keys are
+authority names from <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>, values are arrays of source identifiers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idAuthorities&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://thedigitalbiblelibrary.org&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;The Digital Bible Library&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+<span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Back-Translation of the Zarma New Testament (Matthew)&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;English back-translation of Zarma Matthew for consultant checking&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT-BT&quot;</span><span class="p">},</span>
+  <span class="s2">&quot;upstream&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;a3f9c12e887b4d01&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">upstream</span></code> is optional if the source is not registered in an external
+authority. In that case use <code class="docutils literal notranslate"><span class="pre">relationships</span></code> (see step 7).</p></li>
+</ul>
+</section>
+<section id="languages">
+<h2>4. Languages<a class="headerlink" href="#languages" title="Link to this heading">¶</a></h2>
+<p>A back-translation is typically in the consultant’s language:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;English&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</section>
+<section id="type">
+<h2>5. Type<a class="headerlink" href="#type" title="Link to this heading">¶</a></h2>
+<p>The type section uses the same flavor as the source but sets <code class="docutils literal notranslate"><span class="pre">projectType</span></code>
+to <code class="docutils literal notranslate"><span class="pre">&quot;backTranslation&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usfmVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;translationType&quot;</span><span class="p">:</span> <span class="s2">&quot;newTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;audience&quot;</span><span class="p">:</span> <span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;backTranslation&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">projectType:</span> <span class="pre">&quot;backTranslation&quot;</span></code> — signals that this is a back-translation
+for checking, not an independent translation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audience:</span> <span class="pre">&quot;basic&quot;</span></code> — back-translations are typically simplified prose.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">translationType:</span> <span class="pre">&quot;newTranslation&quot;</span></code> — it is a fresh rendering, not a
+revision of an existing English text.</p></li>
+</ul>
+</section>
+<section id="agencies">
+<h2>6. Agencies<a class="headerlink" href="#agencies" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</section>
+<section id="ingredients">
+<h2>7. Ingredients<a class="headerlink" href="#ingredients" title="Link to this heading">¶</a></h2>
+<p>The back-translation file is listed the same way as any other text
+ingredient:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;ingredients/40MATBACKTR.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">98000</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</section>
+<section id="relationships">
+<h2>8. Relationships<a class="headerlink" href="#relationships" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">relationships</span></code> array formally declares the link to the source burrito.
+This complements <code class="docutils literal notranslate"><span class="pre">identification.upstream</span></code> and is useful even when the source
+is not registered externally, because it lets any tool follow the provenance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;relationType&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;dbl::a3f9c12e887b4d01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">relationType:</span> <span class="pre">&quot;source&quot;</span></code> — the related burrito is the original from which
+this back-translation was produced.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flavor</span></code> — the flavor of the source burrito.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> — prefixed with the <code class="docutils literal notranslate"><span class="pre">dbl</span></code> authority declared in <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>.</p></li>
+</ul>
+</section>
+<section id="the-complete-file">
+<h2>9. The complete file<a class="headerlink" href="#the-complete-file" title="Link to this heading">¶</a></h2>
+<p>Putting it all together:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;derived&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTranslationTool&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;David Okonkwo&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-20T14:00:00+01:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;normalization&quot;</span><span class="p">:</span> <span class="s2">&quot;NFC&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;idAuthorities&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://thedigitalbiblelibrary.org&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;The Digital Bible Library&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Back-Translation of the Zarma New Testament (Matthew)&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;English back-translation of Zarma Matthew for consultant checking&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT-BT&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;upstream&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;a3f9c12e887b4d01&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;English&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usfmVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;translationType&quot;</span><span class="p">:</span> <span class="s2">&quot;newTranslation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;audience&quot;</span><span class="p">:</span> <span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;backTranslation&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ingredients/40MATBACKTR.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">98000</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;relationType&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;dbl::a3f9c12e887b4d01&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Add more books to <code class="docutils literal notranslate"><span class="pre">currentScope</span></code> and <code class="docutils literal notranslate"><span class="pre">ingredients</span></code> as the back-translation
+grows.</p></li>
+<li><p>If the source Zarma NT is updated, bump the <code class="docutils literal notranslate"><span class="pre">revision</span></code> in both
+<code class="docutils literal notranslate"><span class="pre">upstream</span></code> and <code class="docutils literal notranslate"><span class="pre">relationships</span></code> to track which version you are working from.</p></li>
+<li><p>For the complete field reference see <a class="reference internal" href="../flavors/derived_flavor.html#derived-flavor"><span class="std std-ref">Derived Burritos Specification</span></a>.</p></li>
+<li><p>For creating a custom flavor (e.g. sign-language video) see <a class="reference internal" href="../flavors/custom_flavors.html#custom-flavors"><span class="std std-ref">Custom Flavors Specification</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Tutorials</a><ul>
+      <li>Previous: <a href="wrapper.html" title="previous chapter">Wrapper Tutorial</a></li>
+      <li>Next: <a href="../schema_docs/index.html" title="next chapter">Schema Documentation</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/tutorials/derived.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

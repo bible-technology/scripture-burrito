@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Wrapper Specification &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Derived Burritos Specification" href="derived_flavor.html" />
+    <link rel="prev" title="Alignment Specification" href="alignment_flavor.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="wrapper-specification">
+<span id="wrapper-flavor"></span><h1>Wrapper Specification<a class="headerlink" href="#wrapper-specification" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../tutorials/wrapper.html#tutorial-wrapper"><span class="std std-ref">Tutorial</span></a>]  [<a class="reference internal" href="../examples/wrapper.html#examples-wrapper"><span class="std std-ref">Example</span></a>]</p>
+<p>This page covers the Wrapper format. For the base burrito structure see <a class="reference internal" href="../introduction/structure.html#burrito-structure"><span class="std std-ref">Scripture Burrito Structure</span></a>.</p>
+<p>A wrapper groups two or more related burritos so that tools can discover and
+process them as a set. Common uses include bundling a text translation with its
+audio recording, or bundling a source burrito with derived and supplemental
+content.</p>
+<p>A wrapper is stored as a <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code> file. It is distinct from a regular
+burrito: the <code class="docutils literal notranslate"><span class="pre">format</span></code> field is <code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito</span> <span class="pre">wrapper&quot;</span></code>, not
+<code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito&quot;</span></code>.</p>
+<section id="top-level-fields">
+<h2>Top-Level Fields<a class="headerlink" href="#top-level-fields" title="Link to this heading">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">format</span></code></dt><dd><p>MUST be the string <code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito</span> <span class="pre">wrapper&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta</span></code></dt><dd><p>MUST be present. MUST be an object containing:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (REQUIRED): a locale-map object giving a human-readable name
+for the project (e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;en&quot;:</span> <span class="pre">&quot;My</span> <span class="pre">Project&quot;}</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> (REQUIRED): a semantic version string for this wrapper
+file (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;0.0.1&quot;</span></code>). This is the version of the wrapper data,
+not the Scripture Burrito spec version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generator</span></code> (REQUIRED): an object with:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (REQUIRED): name of the software that created this file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> (REQUIRED): version of that software</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateCreated</span></code> (REQUIRED): ISO 8601 date or datetime string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> (OPTIONAL): a locale-map object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abbreviation</span></code> (OPTIONAL): a locale-map object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaultLocale</span></code> (OPTIONAL): BCP-47 tag for the default locale of
+the localized fields above.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">contents</span></code></dt><dd><p>MUST be present. MUST be an object with a <code class="docutils literal notranslate"><span class="pre">&quot;burritos&quot;</span></code> key whose
+value is a non-empty array. Each element MUST be an object with:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (REQUIRED): a string that uniquely identifies this burrito
+within the wrapper. MUST be stable across revisions of the wrapper.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> (REQUIRED): path to the burrito directory, relative to the
+directory containing <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code>. The referenced directory MUST
+contain a <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code> (REQUIRED): the relationship of this burrito to the others.
+MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> — primary, editable content</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code> — content produced from a source burrito</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;supplemental&quot;</span></code> — supporting material not itself a Scripture
+deliverable</p></li>
+</ul>
+<p>Custom roles MAY be used and MUST be prefixed with <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">contents.burritos</span></code> array MUST contain at least one entry.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> values MUST be unique within a single wrapper.</p></li>
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">path</span></code> MUST resolve to a directory containing a valid
+<code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> or <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code> (nested wrappers are allowed).</p></li>
+<li><p>Circular references through nested wrappers are NOT permitted.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Flavors</a><ul>
+      <li>Previous: <a href="alignment_flavor.html" title="previous chapter">Alignment Specification</a></li>
+      <li>Next: <a href="derived_flavor.html" title="next chapter">Derived Burritos Specification</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/flavors/wrapper_flavor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

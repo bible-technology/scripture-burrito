@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Schema Documentation &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overall Design" href="design.html" />
+    <link rel="prev" title="Derived Burrito Tutorial" href="../tutorials/derived.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="schema-documentation">
+<span id="schema-docs-index"></span><h1>Schema Documentation<a class="headerlink" href="#schema-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Overall Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="design.html#top-level-structure">Top-Level Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#categories">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#the-type-section">The Type Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#ingredients">Ingredients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#schema-docs-design-identification">Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agencies.html">Agencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agency.html">Agency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alignment.html">Flavor Details: alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="confidential.html">Confidential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copyright.html">Copyright and License Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copyright_constraints.html">Copyright Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derived_meta.html">Meta (Derived)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derived_metadata.html">Metadata (Derived)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="id_authorities.html">idAuthorities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identification.html">Identification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ingredient.html">Ingredient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ingredients.html">Ingredients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language.html">Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="languages.html">Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localized_name.html">Localized Name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localized_names.html">Localized Names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta_comments.html">Meta Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta_date_created.html">Meta Date created</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta_default_language.html">Meta Default Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta_version.html">Meta Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="normalization.html">Normalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbering_system.html">Numbering System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="promotion.html">Promotional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipe.html">Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipe_element.html">Recipe Element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipe_section.html">Recipe Section</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationship.html">Relationship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role.html">Role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope.html">Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripture-audio_translation.html">Flavor Details: Audio Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripture-text_translation.html">Flavor Details: scripture/textTranslation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripture_flavor_type.html">Scripture Flavor Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_and_user_info.html">Software and User Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_meta.html">Meta (Source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_metadata.html">Metadata (Default)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="target_area.html">Target Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="target_areas.html">Target Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template_meta.html">Meta (Template)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template_metadata.html">Metadata (Template)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unm49.html">UNM49 enum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-metadata.html">Wrapper Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-meta.html">Wrapper Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-contents.html">Wrapper Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-burrito.html">Wrapper Burrito Entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-generator.html">Wrapper Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-meta_version.html">Wrapper Meta Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper-meta_date_created.html">Wrapper Meta Date Created</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x_flavor.html">Flavor Details: X-Flavor</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../tutorials/derived.html" title="previous chapter">Derived Burrito Tutorial</a></li>
+      <li>Next: <a href="design.html" title="next chapter">Overall Design</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/schema_docs/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

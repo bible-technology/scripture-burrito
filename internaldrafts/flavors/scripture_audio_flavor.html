@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scripture Audio Specification &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alignment Specification" href="alignment_flavor.html" />
+    <link rel="prev" title="Scripture Text Specification" href="scripture_text_flavor.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="scripture-audio-specification">
+<span id="scripture-audio-flavor"></span><h1>Scripture Audio Specification<a class="headerlink" href="#scripture-audio-specification" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../tutorials/audioTranslation.html#tutorial-audiotranslation"><span class="std std-ref">Tutorial</span></a>]  [<a class="reference internal" href="../examples/audioTranslation.html#examples-audiotranslation"><span class="std std-ref">Example</span></a>]</p>
+<p>This page covers fields specific to the Scripture Audio flavor. For fields common to all burritos see <a class="reference internal" href="../introduction/structure.html#burrito-structure"><span class="std std-ref">Scripture Burrito Structure</span></a>.</p>
+<p>A Scripture Audio burrito contains a recorded audio translation of Scripture.
+Audio files may be organised per-chapter or per-verse-range and MAY be
+accompanied by timing files that align timecodes to scripture references.</p>
+<section id="type-fields">
+<h2>Type Fields<a class="headerlink" href="#type-fields" title="Link to this heading">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;scripture&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.name</span></code></dt><dd><p>MUST be <code class="docutils literal notranslate"><span class="pre">&quot;audioTranslation&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.performance</span></code></dt><dd><p>MUST be present. MUST be a non-empty array. The array MUST contain
+exactly one voice-type value and exactly one delivery-style value:</p>
+<ul class="simple">
+<li><p>Voice type (exactly one MUST be present):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;singleVoice&quot;</span></code> — one reader throughout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;multipleVoice&quot;</span></code> — multiple readers</p></li>
+</ul>
+</li>
+<li><p>Delivery style (exactly one MUST be present):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;reading&quot;</span></code> — straight reading</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;drama&quot;</span></code> — dramatized production</p></li>
+</ul>
+</li>
+</ul>
+<p>The following values MAY also be included:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;withMusic&quot;</span></code> — background or incidental music is present</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;withEffects&quot;</span></code> — sound effects are present</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;withHeadings&quot;</span></code> — section headings are read aloud</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.flavor.formats</span></code></dt><dd><p>MUST be present. MUST be a non-empty object. Each key is an arbitrary
+label; each value MUST be a format descriptor with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compression</span></code> (REQUIRED): MUST be <code class="docutils literal notranslate"><span class="pre">&quot;mp3&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;wav&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trackConfiguration</span></code> (OPTIONAL): one of <code class="docutils literal notranslate"><span class="pre">&quot;1/0</span> <span class="pre">(Mono)&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;Dual</span> <span class="pre">mono&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2/0</span> <span class="pre">(Stereo)&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;5.1</span> <span class="pre">Surround&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitRate</span></code> (OPTIONAL): integer, bits per second</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitDepth</span></code> (OPTIONAL): integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">samplingRate</span></code> (OPTIONAL): integer, Hz</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type.flavorType.currentScope</span></code></dt><dd><p>MUST be present. Keys MUST be valid USFM book codes. Values are arrays
+of chapter numbers as strings (e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;1&quot;,</span> <span class="pre">&quot;2&quot;,</span> <span class="pre">&quot;3&quot;]</span></code>); an empty
+array means all chapters are present.</p>
+</dd>
+</dl>
+</section>
+<section id="ingredients">
+<h2>Ingredients<a class="headerlink" href="#ingredients" title="Link to this heading">¶</a></h2>
+<p><strong>Audio files</strong></p>
+<p>At least one audio ingredient MUST be present. Audio ingredients MUST use one
+of the following MIME types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;audio/mpeg&quot;</span></code> — MP3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;audio/ogg;codecs=opus&quot;</span></code> — OGG Opus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;audio/wav&quot;</span></code> — WAV</p></li>
+</ul>
+<p>Audio ingredients MUST include a <code class="docutils literal notranslate"><span class="pre">scope</span></code>. Scope values are chapter strings
+(e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;1&quot;]</span></code>) for chapter-level recordings, or verse-range strings
+(e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;1:1-21&quot;]</span></code>) for finer-grained recordings.</p>
+<p>Every book and chapter declared in <code class="docutils literal notranslate"><span class="pre">currentScope</span></code> MUST be covered by at
+least one audio ingredient.</p>
+<p><strong>Timing files</strong></p>
+<p>Timing files are OPTIONAL but RECOMMENDED when verse-level navigation is
+needed. A timing file MUST carry <code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;timing&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&quot;mimeType&quot;:</span> <span class="pre">&quot;application/json&quot;</span></code>. It MUST carry a <code class="docutils literal notranslate"><span class="pre">scope</span></code> matching the
+audio file it annotates.</p>
+<p>Timing files MUST conform to the
+<a class="reference external" href="https://github.com/bible-technology/alignment-spec">Scripture Burrito Alignment Format</a>,
+using the <code class="docutils literal notranslate"><span class="pre">audio-reference</span></code> alignment type with <code class="docutils literal notranslate"><span class="pre">vtt-timecode</span></code> and
+<code class="docutils literal notranslate"><span class="pre">u23003</span></code> reference schemes.</p>
+</section>
+<section id="conventions">
+<h2>Conventions<a class="headerlink" href="#conventions" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">contentResourcesByChapter</span></code></dt><dd><p>If present, confirms that every audio ingredient covers exactly one
+chapter. If absent, audio files MAY cover verse ranges, sections, or
+non-contiguous selections.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">bookDirs</span></code></dt><dd><p>If present, confirms that audio files follow the historical DBL directory
+layout: one directory per book, one file per chapter. This layout is not
+required — ingredient paths in <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> are authoritative.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Flavors</a><ul>
+      <li>Previous: <a href="scripture_text_flavor.html" title="previous chapter">Scripture Text Specification</a></li>
+      <li>Next: <a href="alignment_flavor.html" title="next chapter">Alignment Specification</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/flavors/scripture_audio_flavor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

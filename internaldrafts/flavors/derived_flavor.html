@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Derived Burritos Specification &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom Flavors Specification" href="custom_flavors.html" />
+    <link rel="prev" title="Wrapper Specification" href="wrapper_flavor.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="derived-burritos-specification">
+<span id="derived-flavor"></span><h1>Derived Burritos Specification<a class="headerlink" href="#derived-burritos-specification" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../tutorials/derived.html#tutorial-derived"><span class="std std-ref">Tutorial</span></a>]  [<a class="reference internal" href="../examples/textTranslation_derived.html#examples-texttranslation-derived"><span class="std std-ref">Example</span></a>]</p>
+<p>A derived burrito is produced from one or more existing burritos rather than
+created independently. Examples include back-translations produced from a source
+translation, print-publication artifacts generated from an editing project, or
+audio recordings aligned to a text translation.</p>
+<section id="burrito-category">
+<h2>Burrito Category<a class="headerlink" href="#burrito-category" title="Link to this heading">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.category</span></code></dt><dd><p>MUST be present. MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> — content created directly, intended to be edited</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code> — content produced from one or more existing burritos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;template&quot;</span></code> — a reusable pattern for creating new burritos; MUST also
+include <code class="docutils literal notranslate"><span class="pre">meta.templateName</span></code> (a locale-map giving the template’s name)</p></li>
+</ul>
+<p>A derived burrito MUST set <code class="docutils literal notranslate"><span class="pre">meta.category</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code>. Consuming
+tools MAY use this field to decide whether to offer editing, to flag
+staleness when a source is updated, or to suppress the burrito from
+primary browsing views.</p>
+</dd>
+</dl>
+</section>
+<section id="upstream-identifiers">
+<h2>Upstream Identifiers<a class="headerlink" href="#upstream-identifiers" title="Link to this heading">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">identification.upstream</span></code></dt><dd><p>OPTIONAL. Records the external identifiers of burritos this burrito was
+derived from. Structure mirrors <code class="docutils literal notranslate"><span class="pre">identification.primary</span></code>: keys are
+authority names declared in <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>; values are arrays of
+objects each containing a single entry mapping an id string to an object
+with <code class="docutils literal notranslate"><span class="pre">revision</span></code> and <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">upstream</span></code> when the source burritos are registered in an external
+authority such as the Digital Bible Library. If the source burritos are
+local and unregistered, use <code class="docutils literal notranslate"><span class="pre">relationships</span></code> instead.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idAuthorities&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://thedigitalbiblelibrary.org&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;The Digital Bible Library&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+<span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma NT Back-Translation&quot;</span><span class="p">},</span>
+  <span class="s2">&quot;upstream&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;a3f9c12e887b4d01&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</section>
+<section id="relationships">
+<h2>Relationships<a class="headerlink" href="#relationships" title="Link to this heading">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">relationships</span></code></dt><dd><p>OPTIONAL array. Each entry MUST include:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">relationType</span></code> (REQUIRED)</dt><dd><p>MUST be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> — the related burrito is a source from which this one
+was derived</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;target&quot;</span></code> — the related burrito is a target of this burrito</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;expression&quot;</span></code> — the related burrito is another expression of the
+same content (e.g. the same translation in a different serialisation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;parascriptural&quot;</span></code> — the related burrito annotates or supplements
+the same Scripture passage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;peripheral&quot;</span></code> — the related burrito is a peripheral resource
+associated with this one</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">flavor</span></code> (REQUIRED)</dt><dd><p>The flavor name of the related burrito. MUST be a standard flavor name
+(<code class="docutils literal notranslate"><span class="pre">&quot;textTranslation&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;audioTranslation&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;alignment&quot;</span></code>) or an
+<code class="docutils literal notranslate"><span class="pre">x-</span></code> prefixed custom flavor name.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">id</span></code> (REQUIRED)</dt><dd><p>A prefixed identifier string in the form <code class="docutils literal notranslate"><span class="pre">authority::id</span></code> (e.g.
+<code class="docutils literal notranslate"><span class="pre">&quot;dbl::a3f9c12e887b4d01&quot;</span></code>). The authority MUST be declared in
+<code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">revision</span></code> (OPTIONAL)</dt><dd><p>A revision string identifying which version of the related burrito.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">variant</span></code> (OPTIONAL)</dt><dd><p>A named variant within the related burrito.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;relationType&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;dbl::a3f9c12e887b4d01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Flavors</a><ul>
+      <li>Previous: <a href="wrapper_flavor.html" title="previous chapter">Wrapper Specification</a></li>
+      <li>Next: <a href="custom_flavors.html" title="next chapter">Custom Flavors Specification</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/flavors/derived_flavor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

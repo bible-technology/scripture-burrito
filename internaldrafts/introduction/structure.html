@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scripture Burrito Structure &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Overview" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="scripture-burrito-structure">
+<span id="burrito-structure"></span><h1>Scripture Burrito Structure<a class="headerlink" href="#scripture-burrito-structure" title="Link to this heading">¶</a></h1>
+<p>Every Scripture Burrito consists of a <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> file and a set of
+ingredient files. This page specifies the fields of <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> that are
+common to all burritos regardless of flavor. Flavor-specific fields are covered
+in the individual <a class="reference internal" href="../flavors/index.html#flavors-index"><span class="std std-ref">flavor specifications</span></a>.</p>
+<section id="top-level-fields">
+<h2>Top-Level Fields<a class="headerlink" href="#top-level-fields" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">format</span></code></dt><dd><p>MUST be the string <code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito&quot;</span></code>. Every conforming tool checks
+this field first.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta</span></code></dt><dd><p>REQUIRED. See <a class="reference internal" href="#meta">Meta</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code></dt><dd><p>REQUIRED. See <a class="reference internal" href="#id-authorities">ID Authorities</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">identification</span></code></dt><dd><p>REQUIRED. See <a class="reference internal" href="#identification">Identification</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">confidential</span></code></dt><dd><p>REQUIRED. Boolean. Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if the project must not be publicly
+disclosed and the identities of project members must be kept confidential.
+Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code></dt><dd><p>REQUIRED. Declares the flavor. See the <a class="reference internal" href="../flavors/index.html#flavors-index"><span class="std std-ref">flavor specifications</span></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">copyright</span></code></dt><dd><p>REQUIRED. See <a class="reference internal" href="#copyright">Copyright</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ingredients</span></code></dt><dd><p>REQUIRED. See <a class="reference internal" href="#ingredients">Ingredients</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">languages</span></code></dt><dd><p>REQUIRED for <code class="docutils literal notranslate"><span class="pre">scripture</span></code> and <code class="docutils literal notranslate"><span class="pre">gloss</span></code> flavor types. See <a class="reference internal" href="#languages">Languages</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">agencies</span></code></dt><dd><p>OPTIONAL. See <a class="reference internal" href="#agencies">Agencies</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">relationships</span></code></dt><dd><p>OPTIONAL. See <a class="reference internal" href="../flavors/derived_flavor.html#derived-flavor"><span class="std std-ref">Derived Burritos Specification</span></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">targetAreas</span></code></dt><dd><p>OPTIONAL. See <a class="reference internal" href="#target-areas">Target Areas</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">localizedNames</span></code></dt><dd><p>OPTIONAL. See <a class="reference internal" href="#localized-names">Localized Names</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">progress</span></code></dt><dd><p>OPTIONAL. See <a class="reference internal" href="#progress">Progress</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="meta">
+<h2>Meta<a class="headerlink" href="#meta" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">meta.version</span></code></dt><dd><p>REQUIRED. The Scripture Burrito schema version this file conforms to
+(currently <code class="docutils literal notranslate"><span class="pre">&quot;1.0.0&quot;</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.category</span></code></dt><dd><p>REQUIRED. MUST be <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;template&quot;</span></code>. See
+<a class="reference internal" href="../flavors/derived_flavor.html#derived-flavor"><span class="std std-ref">Derived Burritos Specification</span></a> for the distinction.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.generator</span></code></dt><dd><p>OPTIONAL. Object describing the software and user that created this file:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">softwareName</span></code> (REQUIRED): name of the generating software</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">softwareVersion</span></code> (REQUIRED): version of the generating software</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">userName</span></code> (OPTIONAL): name of the user who triggered the generation</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.defaultLocale</span></code></dt><dd><p>REQUIRED. BCP-47 language tag for the default locale of all localized
+string fields in the burrito (e.g. <code class="docutils literal notranslate"><span class="pre">identification.name</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.dateCreated</span></code></dt><dd><p>REQUIRED. ISO 8601 date or datetime string
+(e.g. <code class="docutils literal notranslate"><span class="pre">&quot;2025-11-04T09:00:00+01:00&quot;</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.normalization</span></code></dt><dd><p>OPTIONAL. Unicode normalization form of the text ingredients. MUST be
+<code class="docutils literal notranslate"><span class="pre">&quot;NFC&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;NFD&quot;</span></code> if present.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">meta.comments</span></code></dt><dd><p>OPTIONAL. Array of free-text strings for human notes about this burrito.</p>
+</dd>
+</dl>
+</section>
+<section id="id-authorities">
+<h2>ID Authorities<a class="headerlink" href="#id-authorities" title="Link to this heading">¶</a></h2>
+<p>Declares one or more external identifier authorities so that
+<code class="docutils literal notranslate"><span class="pre">identification.primary</span></code>, <code class="docutils literal notranslate"><span class="pre">identification.upstream</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">agencies[*].id</span></code> can reference them by short label.</p>
+<p>Each key is a short label for the authority (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;dbl&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;paratext&quot;</span></code>). Each value MUST be an object with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (REQUIRED): a URL that uniquely identifies the authority</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (OPTIONAL): a locale-map giving a human-readable name</p></li>
+</ul>
+<p>Custom authority labels MUST be prefixed with <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>
+(e.g. <code class="docutils literal notranslate"><span class="pre">&quot;x-atl&quot;</span></code>).</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idAuthorities&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://thedigitalbiblelibrary.org&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;The Digital Bible Library&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="identification">
+<h2>Identification<a class="headerlink" href="#identification" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">identification.name</span></code></dt><dd><p>REQUIRED. A locale-map giving a human-readable name for the project
+(e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;en&quot;:</span> <span class="pre">&quot;Zarma</span> <span class="pre">New</span> <span class="pre">Testament&quot;,</span> <span class="pre">&quot;dje&quot;:</span> <span class="pre">&quot;Zarma</span> <span class="pre">Neeriya</span> <span class="pre">Koyra&quot;}</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">identification.description</span></code></dt><dd><p>OPTIONAL. A locale-map giving a longer description.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">identification.abbreviation</span></code></dt><dd><p>OPTIONAL. A locale-map giving a short abbreviation
+(e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;en&quot;:</span> <span class="pre">&quot;ZJNT&quot;}</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">identification.primary</span></code></dt><dd><p>REQUIRED. The registration of this burrito in one external authority.
+MUST contain exactly one key matching a label in <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>. The
+value maps an id string to an object with <code class="docutils literal notranslate"><span class="pre">revision</span></code> and <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">identification.upstream</span></code></dt><dd><p>OPTIONAL. Identifiers of source burritos this was derived from. See
+<a class="reference internal" href="../flavors/derived_flavor.html#derived-flavor"><span class="std std-ref">Derived Burritos Specification</span></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="copyright">
+<h2>Copyright<a class="headerlink" href="#copyright" title="Link to this heading">¶</a></h2>
+<p>REQUIRED. At least one of <code class="docutils literal notranslate"><span class="pre">publicDomain</span></code>, <code class="docutils literal notranslate"><span class="pre">shortStatements</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">licenses</span></code> MUST be present.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">copyright.publicDomain</span></code></dt><dd><p>Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if the contents are in the public domain.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">copyright.shortStatements</span></code></dt><dd><p>An array of short copyright notices. Each entry MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">statement</span></code> (REQUIRED): text of up to 500 characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mimetype</span></code> (OPTIONAL): <code class="docutils literal notranslate"><span class="pre">&quot;text/plain&quot;</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">&quot;text/html&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lang</span></code> (OPTIONAL): BCP-47 tag if this statement is language-specific</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">copyright.licenses</span></code></dt><dd><p>An array of license references. Each entry MUST have exactly one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: a URL pointing to the license text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ingredient</span></code>: a path to a license ingredient file within the burrito</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="languages">
+<h2>Languages<a class="headerlink" href="#languages" title="Link to this heading">¶</a></h2>
+<p>REQUIRED for <code class="docutils literal notranslate"><span class="pre">scripture</span></code> and <code class="docutils literal notranslate"><span class="pre">gloss</span></code> flavor types. An array with one
+entry per language present in the translation. Each entry MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tag</span></code> (REQUIRED): a BCP-47 language tag (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;dje&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;en&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;es-419&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (REQUIRED): a locale-map giving a human-readable name</p></li>
+</ul>
+<p>Optional fields per entry:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scriptDirection</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;ltr&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;rtl&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rod</span></code>: Rosetta Online Database code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numberingSystem</span></code>: the numbering system used in the text</p></li>
+</ul>
+</section>
+<section id="agencies">
+<h2>Agencies<a class="headerlink" href="#agencies" title="Link to this heading">¶</a></h2>
+<p>OPTIONAL. An array of organizations involved in producing or managing this
+burrito. Each entry MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (REQUIRED): a prefixed identifier (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;dbl::54650cfa&quot;</span></code>), or a
+stable URL for organizations not registered in a declared authority</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (REQUIRED): a locale-map giving the organization’s name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roles</span></code> (REQUIRED): a non-empty array containing one or more of:
+<code class="docutils literal notranslate"><span class="pre">&quot;rightsHolder&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;rightsAdmin&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;content&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;publication&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;management&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;finance&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;qa&quot;</span></code></p></li>
+</ul>
+<p>Optional fields per entry:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abbr</span></code>: a locale-map giving a short abbreviation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: the organization’s website</p></li>
+</ul>
+</section>
+<section id="ingredients">
+<h2>Ingredients<a class="headerlink" href="#ingredients" title="Link to this heading">¶</a></h2>
+<p>REQUIRED. A JSON object mapping file paths to ingredient descriptors. Paths
+are relative to the burrito root and MUST use forward slashes.</p>
+<p>Each ingredient descriptor MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mimeType</span></code> (REQUIRED): the MIME type of the file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code> (REQUIRED): file size in bytes</p></li>
+</ul>
+<p>Each ingredient descriptor SHOULD have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">checksum</span></code>: an object with an <code class="docutils literal notranslate"><span class="pre">&quot;md5&quot;</span></code> key and a 32-character lowercase
+hex digest. Consuming tools use this to verify file integrity.</p></li>
+</ul>
+<p>Optional fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scope</span></code>: maps USFM book codes to arrays of chapter or chapter:verse
+selectors. An empty array means all chapters of that book.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code>: a semantic role for this file. Standard roles include
+<code class="docutils literal notranslate"><span class="pre">&quot;versification&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;localedata&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;timing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;introduction&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;copyrightStatement&quot;</span></code>. Custom roles MUST be prefixed with <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>.
+See <a class="reference internal" href="../flavors/custom_flavors.html#custom-flavors"><span class="std std-ref">Custom Flavors Specification</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lang</span></code>: BCP-47 tag if this ingredient is language-specific.</p></li>
+</ul>
+</section>
+<section id="target-areas">
+<h2>Target Areas<a class="headerlink" href="#target-areas" title="Link to this heading">¶</a></h2>
+<p>OPTIONAL. An array of geographic areas representing the primary target
+audience. Each entry MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> (REQUIRED): an ISO 3166-1 alpha-2 country code or UN M.49
+numeric region code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (REQUIRED): a locale-map giving a human-readable name</p></li>
+</ul>
+</section>
+<section id="localized-names">
+<h2>Localized Names<a class="headerlink" href="#localized-names" title="Link to this heading">¶</a></h2>
+<p>OPTIONAL. A map of keys to localized name objects, used to provide
+translated names for books, introductions, and other named units. Each
+value MUST have:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">short</span></code> (REQUIRED): a locale-map for the short display name</p></li>
+</ul>
+<p>Optional per entry:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">long</span></code>: a locale-map for the full name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abbr</span></code>: a locale-map for an abbreviated form</p></li>
+</ul>
+<p>Conventional keys: <code class="docutils literal notranslate"><span class="pre">&quot;book-gen&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;book-mat&quot;</span></code>, etc. for biblical books;
+<code class="docutils literal notranslate"><span class="pre">&quot;intot&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;intnt&quot;</span></code> for testament introductions.</p>
+</section>
+<section id="progress">
+<h2>Progress<a class="headerlink" href="#progress" title="Link to this heading">¶</a></h2>
+<p>OPTIONAL. Records when work on this burrito was started or completed. At
+least one field MUST be present:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dateStarted</span></code> (OPTIONAL): ISO 8601 timestamp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateCompleted</span></code> (OPTIONAL): ISO 8601 timestamp</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scripture Burrito Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Overview</a></li>
+      <li>Next: <a href="../tutorials/index.html" title="next chapter">Tutorials</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/introduction/structure.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

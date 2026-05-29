@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Wrapper Tutorial &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Derived Burrito Tutorial" href="derived.html" />
+    <link rel="prev" title="Audio–Text Alignment Tutorial" href="audioAlignment.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="wrapper-tutorial">
+<span id="tutorial-wrapper"></span><h1>Wrapper Tutorial<a class="headerlink" href="#wrapper-tutorial" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../flavors/wrapper_flavor.html#wrapper-flavor"><span class="std std-ref">Specification</span></a>]  [<a class="reference internal" href="../examples/wrapper.html#examples-wrapper"><span class="std std-ref">Example</span></a>]</p>
+<p>A <em>wrapper</em> groups two or more related burritos together so that tools can
+discover and process them as a set. A common case is a project that has both
+an audio recording and a text transcription of the same Scripture: the two
+burritos are separate projects with separate metadata files, but a wrapper
+lets any tool know they belong together.</p>
+<p>This tutorial walks through creating a <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code> file from scratch. By
+the end you will have a valid wrapper that can be read by any conforming tool.</p>
+<p><strong>Scenario:</strong> The Spoken English Bible team has recorded a New Testament and
+produced a text transcription from that recording. They have already packaged
+each deliverable as its own burrito:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">audio/</span></code> — the audio recording (source burrito, flavor <code class="docutils literal notranslate"><span class="pre">audioTranslation</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text/</span></code> — the text transcription derived from the audio (derived burrito,
+flavor <code class="docutils literal notranslate"><span class="pre">textTranslation</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intellectualproperty/</span></code> — legal and rights documentation (supplemental burrito)</p></li>
+</ul>
+<p>Their project root currently looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spoken-english-bible/
+    audio/
+        metadata.json
+        ingredients/
+            ...
+    text/
+        metadata.json
+        ingredients/
+            ...
+    intellectualproperty/
+        metadata.json
+        ingredients/
+            ...
+    wrapper.json           ← we are building this
+</pre></div>
+</div>
+<p>Each burrito is a self-contained Scripture Burrito package in its own
+subdirectory. The <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code> file lives at the project root and records
+which burritos belong to this project.</p>
+<section id="format">
+<h2>1. Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>Every wrapper file begins with the <code class="docutils literal notranslate"><span class="pre">format</span></code> field. This is the discriminator
+that tells tools they are reading a wrapper rather than a regular burrito:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito wrapper&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Any conforming tool checks this field first to identify the file type.</p>
+</section>
+<section id="meta-section">
+<h2>2. Meta section<a class="headerlink" href="#meta-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">meta</span></code> section records administrative information about the wrapper
+itself — not about the individual burritos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Spoken English Bible Burrito Wrapper&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Audio Project Manager&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;4.5.0&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-21&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;A new burrito wrapper for Spoken English Bible Team&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>Key fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> — a localized human-readable name for the wrapper project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> — the semantic version of this wrapper file (not the burrito spec
+version). Start with <code class="docutils literal notranslate"><span class="pre">&quot;0.0.1&quot;</span></code> for a new project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generator.name</span></code> — the software that created this file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generator.version</span></code> — the version of that software.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateCreated</span></code> — the ISO 8601 date this wrapper was first created
+(<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> — a localized short description of the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abbreviation</span></code> — a localized short code for the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaultLocale</span></code> — the BCP-47 language tag for the default locale of the
+localized text fields above.</p></li>
+</ul>
+</section>
+<section id="contents-section">
+<h2>3. Contents section<a class="headerlink" href="#contents-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">contents</span></code> section is the heart of the wrapper. It lists every burrito
+that belongs to this project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;contents&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;burritos&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-audio&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-text&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;derived&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-intellectualProperty&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;intellectualproperty&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;supplemental&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each entry in the <code class="docutils literal notranslate"><span class="pre">burritos</span></code> array has three required fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> — a string that uniquely identifies this burrito within the wrapper.
+Choose something stable and descriptive; it does not need to match any field
+inside the burrito’s own <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> — the path to the burrito directory, relative to the wrapper root.
+This must be the directory that contains the burrito’s <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code> — the relationship this burrito has to the others. Three standard
+values are defined:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> — the primary, editable content (e.g. the recorded audio).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code> — content produced from the source (e.g. the text
+transcription generated from the audio).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;supplemental&quot;</span></code> — supporting material that is not itself a Scripture
+deliverable (e.g. intellectual property documents, fonts, images).</p></li>
+</ul>
+<p>You may also use <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>-prefixed values for custom roles specific to your
+workflow (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;x-mixdown&quot;</span></code>).</p>
+</li>
+</ul>
+<p>The array must contain at least one entry.</p>
+</section>
+<section id="the-complete-file">
+<h2>4. The complete file<a class="headerlink" href="#the-complete-file" title="Link to this heading">¶</a></h2>
+<p>Putting it all together:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito wrapper&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Spoken English Bible Burrito Wrapper&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Audio Project Manager&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;4.5.0&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-21&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;A new burrito wrapper for Spoken English Bible Team&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;contents&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;burritos&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-audio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-text&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;derived&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ENGSEB2-intellectualProperty&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;intellectualproperty&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;supplemental&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Save this file as <code class="docutils literal notranslate"><span class="pre">wrapper.json</span></code> in the project root (the directory that
+contains the burrito subdirectories).</p>
+</section>
+<section id="validating-the-wrapper">
+<h2>5. Validating the wrapper<a class="headerlink" href="#validating-the-wrapper" title="Link to this heading">¶</a></h2>
+<p>The Scripture Burrito toolkit includes a validator for wrapper files. From the
+repository root:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">code</span><span class="o">/</span><span class="n">validate_wrapper</span><span class="o">.</span><span class="n">py</span> <span class="n">docs</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">artifacts</span><span class="o">/</span><span class="n">wrapper</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>A valid file prints <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">errors.</span></code> If you see validation errors, check:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">format</span></code> is exactly <code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito</span> <span class="pre">wrapper&quot;</span></code> (not <code class="docutils literal notranslate"><span class="pre">&quot;scripture</span> <span class="pre">burrito&quot;</span></code>).</p></li>
+<li><p>All <code class="docutils literal notranslate"><span class="pre">meta</span></code> fields listed as required are present.</p></li>
+<li><p>Every <code class="docutils literal notranslate"><span class="pre">burritos</span></code> entry has <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">path</span></code>, and <code class="docutils literal notranslate"><span class="pre">role</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code> is one of <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;derived&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;supplemental&quot;</span></code>, or a
+value beginning with <code class="docutils literal notranslate"><span class="pre">&quot;x-&quot;</span></code>.</p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="../examples/wrapper.html#examples-wrapper"><span class="std std-ref">Wrapper Example</span></a> for the full example file used in this tutorial.</p></li>
+<li><p>For the complete field reference see <a class="reference internal" href="../schema_docs/wrapper-metadata.html#schema-docs-wrapper-metadata"><span class="std std-ref">Wrapper Metadata</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Tutorials</a><ul>
+      <li>Previous: <a href="audioAlignment.html" title="previous chapter">Audio–Text Alignment Tutorial</a></li>
+      <li>Next: <a href="derived.html" title="next chapter">Derived Burrito Tutorial</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/tutorials/wrapper.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

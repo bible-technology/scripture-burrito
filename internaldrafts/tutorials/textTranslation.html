@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scripture Text Tutorial &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scripture Audio Tutorial" href="audioTranslation.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="scripture-text-tutorial">
+<span id="tutorial-texttranslation"></span><h1>Scripture Text Tutorial<a class="headerlink" href="#scripture-text-tutorial" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../flavors/scripture_text_flavor.html#scripture-text-flavor"><span class="std std-ref">Specification</span></a>]  [<a class="reference internal" href="../examples/textTranslation.html#examples-texttranslation"><span class="std std-ref">Example</span></a>]</p>
+<p>This tutorial walks through creating a Scripture Burrito metadata file for a
+Scripture text translation. By the end you will have a valid <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code>
+that can be read by any conforming tool.</p>
+<p><strong>Scenario:</strong> A translation team has finished a New Testament in Zarma (a
+language of the Sahel region). The files live in a directory called
+<code class="docutils literal notranslate"><span class="pre">zarma-nt/</span></code>. We want to package them as a Scripture Burrito so they can be
+exchanged with other tools.</p>
+<p>The directory currently looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zarma</span><span class="o">-</span><span class="n">nt</span><span class="o">/</span>
+    <span class="n">ingredients</span><span class="o">/</span>
+        <span class="mi">40</span><span class="n">MATZARMA</span><span class="o">.</span><span class="n">SFM</span>
+        <span class="mi">41</span><span class="n">MRKZARMA</span><span class="o">.</span><span class="n">SFM</span>
+        <span class="mi">43</span><span class="n">JHNZARMA</span><span class="o">.</span><span class="n">SFM</span>
+        <span class="mi">44</span><span class="n">ACTZARMA</span><span class="o">.</span><span class="n">SFM</span>
+        <span class="n">dje</span><span class="o">.</span><span class="n">ldml</span>
+        <span class="n">versification</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>We will build the <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> file section by section.</p>
+<section id="format">
+<h2>1. Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>Every burrito begins with the <code class="docutils literal notranslate"><span class="pre">format</span></code> field. This identifies the file as a
+Scripture Burrito rather than anything else:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>That single field is what every conforming tool checks first.</p>
+</section>
+<section id="meta-section">
+<h2>2. Meta section<a class="headerlink" href="#meta-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">meta</span></code> section records who generated this file and when:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTranslationTool&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;Fatima Maïga&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;normalization&quot;</span><span class="p">:</span> <span class="s2">&quot;NFC&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> — the Scripture Burrito schema version this file conforms to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">category</span></code> — <code class="docutils literal notranslate"><span class="pre">&quot;source&quot;</span></code> means this is an editable project, not a
+publication artifact. Use <code class="docutils literal notranslate"><span class="pre">&quot;distribution&quot;</span></code> for read-only releases.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaultLocale</span></code> — the BCP-47 tag for the primary language of the project.
+Values in <code class="docutils literal notranslate"><span class="pre">localizedNames</span></code> and <code class="docutils literal notranslate"><span class="pre">identification.name</span></code> will use this locale
+unless another is specified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalization</span></code> — the Unicode normalization form of the text files.</p></li>
+</ul>
+</section>
+<section id="identification-section">
+<h2>3. Identification section<a class="headerlink" href="#identification-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">identification</span></code> section names the project in a human-readable way, and
+optionally links it to identifiers in external systems:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma New Testament&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma Neeriya Koyra&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;New Testament translation into Zarma (Songhay family)&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT&quot;</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, and <code class="docutils literal notranslate"><span class="pre">abbreviation</span></code> are all
+language-tag-to-string maps so the project can be named in multiple languages.</p></li>
+</ul>
+<p>If your project is registered in an external system (such as the Digital Bible
+Library), add an <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code> section and reference it from
+<code class="docutils literal notranslate"><span class="pre">identification.primary</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;idAuthorities&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://thedigitalbiblelibrary.org&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;The Digital Bible Library&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+<span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;primary&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbl&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;a3f9c12e887b4d01&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;revision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma New Testament&quot;</span> <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>For a new project with no external registry entry, you can omit
+<code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code> and <code class="docutils literal notranslate"><span class="pre">identification.primary</span></code> entirely.</p>
+</section>
+<section id="languages-section">
+<h2>4. Languages section<a class="headerlink" href="#languages-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">languages</span></code> array lists every language present in the translation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarmaciine&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tag</span></code> must be a valid BCP-47 language tag. For minority languages, check
+<a class="reference external" href="https://iso639-3.sil.org/">ISO 639-3</a> for the three-letter code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> follows the same locale-map pattern as <code class="docutils literal notranslate"><span class="pre">identification.name</span></code>.</p></li>
+</ul>
+</section>
+<section id="type-section">
+<h2>5. Type section<a class="headerlink" href="#type-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> section declares the flavor — the kind of content this burrito
+contains. For a text translation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usfmVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;translationType&quot;</span><span class="p">:</span> <span class="s2">&quot;firstTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;audience&quot;</span><span class="p">:</span> <span class="s2">&quot;common&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;MRK&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;JHN&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;ACT&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">flavorType.name</span></code> is always <code class="docutils literal notranslate"><span class="pre">&quot;scripture&quot;</span></code> for biblical text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flavor.name</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;textTranslation&quot;</span></code> for USFM/USX/USJ text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">currentScope</span></code> lists every book present, using three-letter USFM book codes.
+An empty array (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) means all chapters of that book are included; you can
+restrict to specific chapters with a list of integers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">translationType</span></code> — use <code class="docutils literal notranslate"><span class="pre">&quot;firstTranslation&quot;</span></code> for a language that has
+never had this testament before, or <code class="docutils literal notranslate"><span class="pre">&quot;revision&quot;</span></code> if this updates an
+existing translation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audience</span></code> — <code class="docutils literal notranslate"><span class="pre">&quot;common&quot;</span></code> covers general readership. See
+<a class="reference internal" href="../flavors/scripture_text_flavor.html#scripture-text-flavor"><span class="std std-ref">Scripture Text Specification</span></a> for the full set of values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">projectType</span></code> — <code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> for a normal translation.</p></li>
+</ul>
+</section>
+<section id="agencies-section">
+<h2>6. Agencies section<a class="headerlink" href="#agencies-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">agencies</span></code> array records which organisations are responsible for this
+content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;rightsHolder&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">roles</span></code> is a list drawn from: <code class="docutils literal notranslate"><span class="pre">&quot;rightsHolder&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;content&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;publication&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;management&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;finance&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;qa&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> is a URI that uniquely identifies the agency. If the agency is
+registered in an authority referenced in <code class="docutils literal notranslate"><span class="pre">idAuthorities</span></code>, use that
+authority’s scoped format (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;dbl::54650cfa5117ad690fb05fb6&quot;</span></code>);
+otherwise a stable URL for the organisation is fine.</p></li>
+</ul>
+</section>
+<section id="ingredients-section">
+<h2>7. Ingredients section<a class="headerlink" href="#ingredients-section" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ingredients</span></code> object is the heart of the burrito. It maps every file path
+(relative to the burrito root) to a descriptor that tells consuming tools what
+the file is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;ingredients/40MATZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;a1b2c3d4e5f6...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">154322</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;ingredients/41MRKZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;f6e5d4c3b2a1...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">98500</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MRK&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;ingredients/43JHNZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;1a2b3c4d5e6f...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">141200</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;JHN&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;ingredients/44ACTZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;6f5e4d3c2b1a...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">210450</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ACT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;ingredients/dje.ldml&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;deadbeef1234...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2840</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;localedata&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;ingredients/versification.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;feedcafe5678...&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">4300</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;versification&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Key points:</p>
+<ul class="simple">
+<li><p><strong>File paths</strong> are relative to the burrito root, using forward slashes. They
+must match the actual layout exactly.</p></li>
+<li><p><strong>checksum</strong> is used by receiving tools to verify file integrity. MD5 is
+currently the standard algorithm.</p></li>
+<li><p><strong>mimeType</strong> identifies the file format. Use <code class="docutils literal notranslate"><span class="pre">text/x-usfm</span></code> for USFM,
+<code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for USX, <code class="docutils literal notranslate"><span class="pre">application/json</span></code> for USJ.</p></li>
+<li><p><strong>scope</strong> lists the books a text file contains. Each book code maps to either
+an empty array (whole book) or a list of chapter numbers.</p></li>
+<li><p><strong>role</strong> is used for non-text support files. Required values: <code class="docutils literal notranslate"><span class="pre">localedata</span></code>
+for <code class="docutils literal notranslate"><span class="pre">.ldml</span></code> files, <code class="docutils literal notranslate"><span class="pre">versification</span></code> for versification definitions.</p></li>
+<li><p>Every book listed in <code class="docutils literal notranslate"><span class="pre">type.flavorType.currentScope</span></code> must have at least one
+ingredient with a matching scope entry.</p></li>
+</ul>
+</section>
+<section id="the-complete-file">
+<h2>8. The complete file<a class="headerlink" href="#the-complete-file" title="Link to this heading">¶</a></h2>
+<p>Putting it all together:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTranslationTool&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;Fatima Maïga&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-04T09:00:00+01:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;normalization&quot;</span><span class="p">:</span> <span class="s2">&quot;NFC&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma New Testament&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma Neeriya Koyra&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;New Testament translation into Zarma (Songhay family)&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarmaciine&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;textTranslation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usfmVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;translationType&quot;</span><span class="p">:</span> <span class="s2">&quot;firstTranslation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;audience&quot;</span><span class="p">:</span> <span class="s2">&quot;common&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;MRK&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;JHN&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;ACT&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;rightsHolder&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ingredients/40MATZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;a1b2c3d4e5f6...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">154322</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MAT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ingredients/41MRKZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;f6e5d4c3b2a1...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">98500</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;MRK&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ingredients/43JHNZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;1a2b3c4d5e6f...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">141200</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;JHN&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ingredients/44ACTZARMA.SFM&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;6f5e4d3c2b1a...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/x-usfm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">210450</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ACT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ingredients/dje.ldml&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;deadbeef1234...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/xml&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2840</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;localedata&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ingredients/versification.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;feedcafe5678...&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">4300</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;versification&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">localizedNames</span></code> to provide translated book names for display in tools
+— see the full <a class="reference internal" href="../examples/textTranslation.html#examples-texttranslation"><span class="std std-ref">Scripture Text Example</span></a> for the pattern.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">copyright</span></code> section if this project will be shared publicly.</p></li>
+<li><p>If you are deriving a daughter project from this translation (e.g. a
+back-translation or a study Bible), see <a class="reference internal" href="../examples/textTranslation_derived.html#examples-texttranslation-derived"><span class="std std-ref">Derived Translation Example</span></a>.</p></li>
+<li><p>For the complete field reference see <a class="reference internal" href="../flavors/scripture_text_flavor.html#scripture-text-flavor"><span class="std std-ref">Scripture Text Specification</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Tutorials</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Tutorials</a></li>
+      <li>Next: <a href="audioTranslation.html" title="next chapter">Scripture Audio Tutorial</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/tutorials/textTranslation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

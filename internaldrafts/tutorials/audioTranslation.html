@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scripture Audio Tutorial &#8212; Scripture Burrito 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=42f3965f" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alignment Tutorial" href="alignment.html" />
+    <link rel="prev" title="Scripture Text Tutorial" href="textTranslation.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="scripture-audio-tutorial">
+<span id="tutorial-audiotranslation"></span><h1>Scripture Audio Tutorial<a class="headerlink" href="#scripture-audio-tutorial" title="Link to this heading">¶</a></h1>
+<p>[<a class="reference internal" href="../flavors/scripture_audio_flavor.html#scripture-audio-flavor"><span class="std std-ref">Specification</span></a>]  [<a class="reference internal" href="../examples/audioTranslation.html#examples-audiotranslation"><span class="std std-ref">Example</span></a>]</p>
+<p>This tutorial walks through creating a Scripture Burrito metadata file for an
+audio translation project. By the end you will have a valid <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code>
+that can be read by any conforming tool.</p>
+<p><strong>Scenario:</strong> The Zarma translation team (from <a class="reference internal" href="textTranslation.html#tutorial-texttranslation"><span class="std std-ref">Scripture Text Tutorial</span></a>)
+has recorded an audio reading of Titus in Zarma — one MP3 file per chapter.
+Each recording also has a timing file that maps verse timecodes, enabling
+audio players to jump to a specific verse. We want to package these three
+chapters as an audio translation burrito.</p>
+<p>The directory looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zarma</span><span class="o">-</span><span class="n">audio</span><span class="o">/</span>
+    <span class="n">media</span><span class="o">/</span>
+        <span class="n">dje_tit_c01</span><span class="o">.</span><span class="n">mp3</span>
+        <span class="n">dje_tit_c01</span><span class="o">.</span><span class="n">json</span>
+        <span class="n">dje_tit_c02</span><span class="o">.</span><span class="n">mp3</span>
+        <span class="n">dje_tit_c02</span><span class="o">.</span><span class="n">json</span>
+        <span class="n">dje_tit_c03</span><span class="o">.</span><span class="n">mp3</span>
+        <span class="n">dje_tit_c03</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>We will build the <code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> file section by section.</p>
+<section id="format-and-meta">
+<h2>1. Format and meta<a class="headerlink" href="#format-and-meta" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orature&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;Fatima Maïga&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-10T14:00:00+01:00&quot;</span>
+  <span class="p">},</span>
+</pre></div>
+</div>
+</section>
+<section id="identification-section">
+<h2>2. Identification section<a class="headerlink" href="#identification-section" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma NT Audio — Titus&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma Neeriya Koyra — Tit&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT-audio&quot;</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</section>
+<section id="languages-section">
+<h2>3. Languages section<a class="headerlink" href="#languages-section" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarmaciine&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</section>
+<section id="type-section">
+<h2>4. Type section<a class="headerlink" href="#type-section" title="Link to this heading">¶</a></h2>
+<p>For an audio translation the <code class="docutils literal notranslate"><span class="pre">flavorType.name</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;scripture&quot;</span></code> and the
+<code class="docutils literal notranslate"><span class="pre">flavor.name</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;audioTranslation&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;audioTranslation&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;performance&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;singleVoice&quot;</span><span class="p">,</span> <span class="s2">&quot;reading&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;format-mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;compression&quot;</span><span class="p">:</span> <span class="s2">&quot;mp3&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;trackConfiguration&quot;</span><span class="p">:</span> <span class="s2">&quot;1/0 (Mono)&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;bitRate&quot;</span><span class="p">:</span> <span class="mi">128000</span><span class="p">,</span>
+          <span class="s2">&quot;samplingRate&quot;</span><span class="p">:</span> <span class="mi">44100</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">performance</span></code> must include one voice type (<code class="docutils literal notranslate"><span class="pre">&quot;singleVoice&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;multipleVoice&quot;</span></code>) and one delivery style (<code class="docutils literal notranslate"><span class="pre">&quot;reading&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;drama&quot;</span></code>).
+Optional values include <code class="docutils literal notranslate"><span class="pre">&quot;withMusic&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;withEffects&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;withHeadings&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formats</span></code> describes the technical properties of the audio files. The key
+(<code class="docutils literal notranslate"><span class="pre">&quot;format-mp3&quot;</span></code>) is an arbitrary label; the value records the compression,
+track configuration, and encoding parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">currentScope</span></code> lists the chapters present. Chapter numbers are strings.
+An empty array (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) means all chapters of the book are included.</p></li>
+</ul>
+</section>
+<section id="agencies-section">
+<h2>5. Agencies section<a class="headerlink" href="#agencies-section" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;rightsHolder&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</section>
+<section id="ingredients-section">
+<h2>6. Ingredients section<a class="headerlink" href="#ingredients-section" title="Link to this heading">¶</a></h2>
+<p>Each audio file and its corresponding timing file are listed as ingredients.
+Audio files have a chapter scope; timing files carry the same scope and
+<code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;timing&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;media/dje_tit_c01.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;f9bcf3872446a7d50e66c24d5692f7c7&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1165070</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;media/dje_tit_c01.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;bc6e1fa1109126fb6b14e4f41bbde378&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1596</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;media/dje_tit_c02.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;9ee007594822f19e8e1ce6ab5d788004&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">933938</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;media/dje_tit_c02.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;eb5f27a17956220b848d19f0b9b6720b&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1445</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;media/dje_tit_c03.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;a7a8ce6c238dc260c349e12d89efbdaf&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1038010</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">]}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;media/dje_tit_c03.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;3450197390f0351547be11047ba68b5e&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1445</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Key points:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scope</span></code> for audio files uses chapter strings matching <code class="docutils literal notranslate"><span class="pre">currentScope</span></code>.
+For verse-range recordings use strings like <code class="docutils literal notranslate"><span class="pre">&quot;1:1-21&quot;</span></code> instead.</p></li>
+<li><p>Timing files use <code class="docutils literal notranslate"><span class="pre">&quot;role&quot;:</span> <span class="pre">&quot;timing&quot;</span></code> and carry the same scope as their
+paired audio file.</p></li>
+<li><p>Supported MIME types: <code class="docutils literal notranslate"><span class="pre">&quot;audio/mpeg&quot;</span></code> (MP3), <code class="docutils literal notranslate"><span class="pre">&quot;audio/ogg;codecs=opus&quot;</span></code>
+(OGG Opus), <code class="docutils literal notranslate"><span class="pre">&quot;audio/wav&quot;</span></code> (WAV).</p></li>
+</ul>
+</section>
+<section id="the-complete-file">
+<h2>7. The complete file<a class="headerlink" href="#the-complete-file" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture burrito&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;generator&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;softwareName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orature&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;softwareVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;Fatima Maïga&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;defaultLocale&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-11-10T14:00:00+01:00&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;identification&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma NT Audio — Titus&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma Neeriya Koyra — Tit&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;ZJNT-audio&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;dje&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarma&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dje&quot;</span><span class="p">:</span> <span class="s2">&quot;Zarmaciine&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;flavorType&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripture&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;flavor&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;audioTranslation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;performance&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;singleVoice&quot;</span><span class="p">,</span> <span class="s2">&quot;reading&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;formats&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;format-mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;compression&quot;</span><span class="p">:</span> <span class="s2">&quot;mp3&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackConfiguration&quot;</span><span class="p">:</span> <span class="s2">&quot;1/0 (Mono)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bitRate&quot;</span><span class="p">:</span> <span class="mi">128000</span><span class="p">,</span>
+            <span class="s2">&quot;samplingRate&quot;</span><span class="p">:</span> <span class="mi">44100</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;currentScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;agencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;rightsHolder&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://seedcompany.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;Seed Company&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;abbr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;SC&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;ingredients&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;media/dje_tit_c01.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;f9bcf3872446a7d50e66c24d5692f7c7&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1165070</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;media/dje_tit_c01.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;bc6e1fa1109126fb6b14e4f41bbde378&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1596</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]},</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;media/dje_tit_c02.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;9ee007594822f19e8e1ce6ab5d788004&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">933938</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;media/dje_tit_c02.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;eb5f27a17956220b848d19f0b9b6720b&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1445</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">]},</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;media/dje_tit_c03.mp3&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;a7a8ce6c238dc260c349e12d89efbdaf&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;audio/mpeg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1038010</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">]}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;media/dje_tit_c03.json&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;checksum&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;3450197390f0351547be11047ba68b5e&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;mimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1445</span><span class="p">,</span>
+      <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;TIT&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">]},</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;timing&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;copyright&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;shortStatements&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;statement&quot;</span><span class="p">:</span> <span class="s2">&quot;CC BY-SA 4.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mimetype&quot;</span><span class="p">:</span> <span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lang&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>To cover verse ranges instead of whole chapters, use scope strings like
+<code class="docutils literal notranslate"><span class="pre">&quot;1:1-21&quot;</span></code> and update <code class="docutils literal notranslate"><span class="pre">currentScope</span></code> accordingly.</p></li>
+<li><p>To package audio in multiple formats (MP3 and WAV), add entries in both
+<code class="docutils literal notranslate"><span class="pre">formats</span></code> and <code class="docutils literal notranslate"><span class="pre">ingredients</span></code> — both files can share the same scope.</p></li>
+<li><p>For the timing file format, see <a class="reference internal" href="audioAlignment.html#tutorial-audioalignment"><span class="std std-ref">Audio–Text Alignment Tutorial</span></a>.</p></li>
+<li><p>For the complete field reference see <a class="reference internal" href="../flavors/scripture_audio_flavor.html#scripture-audio-flavor"><span class="std std-ref">Scripture Audio Specification</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Scripture Burrito</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/structure.html">Scripture Burrito Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schema_docs/index.html">Schema Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flavors/index.html">Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Tutorials</a><ul>
+      <li>Previous: <a href="textTranslation.html" title="previous chapter">Scripture Text Tutorial</a></li>
+      <li>Next: <a href="alignment.html" title="next chapter">Alignment Tutorial</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2020-2026 Contributors, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/tutorials/audioTranslation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
