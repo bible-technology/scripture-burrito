@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": {
+      "en": "Spoken English Bible  Burrito Wrapper"
+    },
+    "version": "0.0.1",
+    "generator": {
+      "name": "Audio Project Manager",
+      "version": "4.5.0"
+    },
+    "dateCreated": "2026-05-21",
+    "description": {
+      "en": "A new burrito wrapper for -Spoken English Bible Team"
+    },
+    "abbreviation": {
+      "en": "ENGSEB2"
+    },
+    "defaultLocale": "en"
+  },
+  "format": "scripture burrito wrapper",
+  "contents": {
+    "burritos": [
+      {
+        "id": "ENGSEB2-audio",
+        "path": "audio",
+        "role": "source"
+      },
+      {
+        "id": "ENGSEB2-text",
+        "path": "text",
+        "role": "derived"
+      },
+      {
+        "id": "ENGSEB2-intellectualProperty",
+        "path": "intellectualproperty",
+        "role": "supplemental"
+      }
+    ]
+  }
+}

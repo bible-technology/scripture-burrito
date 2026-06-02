@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/wrapper/wrapper_meta_version.schema.json",
+    "$$target": "wrapper_meta_version.schema.json",
+    "title": "Wrapper Meta Version",
+    "type": "string",
+    "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$",
+    "description": "Semantic version of the Scripture Burrito wrapper specification this file follows.",
+    "examples": ["0.0.1", "1.0.0"]
+}

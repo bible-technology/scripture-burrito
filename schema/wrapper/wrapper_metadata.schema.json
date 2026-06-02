@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/wrapper/wrapper_metadata.schema.json",
+    "$$target": "wrapper_metadata.schema.json",
+    "title": "Wrapper Metadata",
+    "type": "object",
+    "description": "Scripture Burrito wrapper root metadata object.",
+    "properties": {
+        "format": {
+            "type": "string",
+            "const": "scripture burrito wrapper",
+            "description": "Format discriminator for wrapper metadata files."
+        },
+        "meta": {
+            "$ref": "wrapper_meta.schema.json"
+        },
+        "contents": {
+            "$ref": "wrapper_contents.schema.json"
+        }
+    },
+    "required": ["format", "meta", "contents"],
+    "additionalProperties": false
+}

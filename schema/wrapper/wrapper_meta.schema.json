@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/wrapper/wrapper_meta.schema.json",
+    "$$target": "wrapper_meta.schema.json",
+    "title": "Wrapper Meta",
+    "type": "object",
+    "description": "Information about the Scripture Burrito wrapper metadata file.",
+    "properties": {
+        "name": {
+            "$ref": "../common.schema.json#/definitions/localizedText",
+            "description": "Localized name of this wrapper."
+        },
+        "version": {
+            "$ref": "wrapper_meta_version.schema.json"
+        },
+        "generator": {
+            "$ref": "wrapper_generator.schema.json"
+        },
+        "dateCreated": {
+            "$ref": "wrapper_meta_date_created.schema.json"
+        },
+        "description": {
+            "$ref": "../common.schema.json#/definitions/localizedText",
+            "description": "Localized description of this wrapper."
+        },
+        "abbreviation": {
+            "$ref": "../common.schema.json#/definitions/localizedText",
+            "description": "Localized abbreviation for this wrapper."
+        },
+        "defaultLocale": {
+            "$ref": "../meta_default_language.schema.json"
+        }
+    },
+    "required": ["name", "version", "generator", "dateCreated", "description", "abbreviation", "defaultLocale"],
+    "additionalProperties": false
+}

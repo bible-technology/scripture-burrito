@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/wrapper/wrapper_meta_date_created.schema.json",
+    "$$target": "wrapper_meta_date_created.schema.json",
+    "title": "Wrapper Meta Date Created",
+    "type": "string",
+    "format": "date",
+    "description": "Calendar date on which this wrapper metadata file was created (ISO 8601 date).",
+    "examples": ["2026-05-21"]
+}

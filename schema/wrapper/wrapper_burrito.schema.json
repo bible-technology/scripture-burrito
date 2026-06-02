@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://burrito.bible/schema/wrapper/wrapper_burrito.schema.json",
+    "$$target": "wrapper_burrito.schema.json",
+    "title": "Wrapper Burrito Entry",
+    "type": "object",
+    "description": "Describes a contained burrito referenced from the wrapper.",
+    "properties": {
+        "id": {
+            "$ref": "../common.schema.json#/definitions/trimmedText",
+            "description": "Unique identifier for this burrito within the wrapper."
+        },
+        "path": {
+            "$ref": "../common.schema.json#/definitions/path",
+            "description": "Relative path from the wrapper root to this burrito directory."
+        },
+        "role": {
+            "type": "string",
+            "oneOf": [
+                {
+                    "enum": ["source", "derived", "supplemental"]
+                },
+                {
+                    "pattern": "^x-[a-z][A-za-z0-9]*$"
+                }
+            ],
+            "description": "The role this burrito plays within the wrapper."
+        }
+    },
+    "required": ["id", "path", "role"],
+    "additionalProperties": false
+}
