@@ -28,6 +28,7 @@
   "homepage": "https://github.com/bible-technology/scripture-burrito#readme",
   "dependencies": {
     "ajv": "^8.4.0",
-    "ajv-formats": "^2.1.0"
+    "ajv-formats": "^2.1.0",
+    "glob": "^10.4.1"
   }
 }
