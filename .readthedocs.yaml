@@ -1,0 +1,16 @@
+version: 2
+
+# Build settings
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.12"
+
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+
+# Pinned build dependencies (see requirements.txt)
+python:
+  install:
+    - requirements: requirements.txt
