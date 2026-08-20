@@ -22,7 +22,7 @@
                     ]
                 },
                 {
-                    "pattern": "^x-[a-z][A-za-z0-9]*$"
+                    "pattern": "^x-[a-z][A-Za-z0-9]*$"
                 }
             ],
             "minLength": 1
@@ -40,45 +40,5 @@
     },
     "required": ["relationType", "flavor", "id"],
     "additionalProperties": false,
-    "oneOf": [
-        {
-            "properties": {
-                "flavor": {
-                    "type": "string",
-                    "pattern": "^x-[a-z][A-za-z0-9]*$"
-                }
-            },
-            "$comment": "Custom flavors can be used with any relationType."
-        },
-        {
-            "properties": {
-                "relationType": {
-                    "const": "source"
-                },
-                "flavor": {
-                    "enum": ["textTranslation", "audioTranslation", "alignment"]
-                }
-            }
-        },
-        {
-            "properties": {
-                "relationType": {
-                    "const": "target"
-                },
-                "flavor": {}
-            }
-        },
-        {
-            "properties": {
-                "relationType": {
-                    "const": "expression"
-                },
-                "flavor": {
-                    "not": {
-                        "const": "scriptureText"
-                    }
-                }
-            }
-        }
-    ]
+    "$comment": "Any relationType may be combined with any standard or custom flavor, so the relationType and flavor enums above are the only constraints."
 }
