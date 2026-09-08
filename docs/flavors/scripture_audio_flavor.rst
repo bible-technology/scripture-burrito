@@ -607,8 +607,8 @@ SB-ALIGN: *Scripture Burrito Alignment Specification*. Available at:
 
 *USFM Referencing Specification*.
 
-`https://github.com/usfm-bible/tcdocs/blob/5bd73b86030f256268e6043fca84bfdbb54c0087/proposals/2023/u23003_biblical_references.md
-<https://github.com/usfm-bible/tcdocs/blob/5bd73b86030f256268e6043fca84bfdbb54c0087/proposals/2023/u23003_biblical_references.md>`__
+`https://github.com/usfm-bible/tcdocs/blob/main/docs/Scripture%20Referencing%20Standard.md
+<https://github.com/usfm-bible/tcdocs/blob/main/docs/Scripture%20Referencing%20Standard.md>`__
 
 Changes Log
 ===========
