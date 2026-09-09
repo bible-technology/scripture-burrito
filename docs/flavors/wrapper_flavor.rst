@@ -1,73 +1,278 @@
-.. _wrapper_flavor:
+Scripture Burrito Wrapper Specification
+=====================================
 
-#######################
-Wrapper Specification
-#######################
+1. Introduction
+----------------
 
-[:ref:`Tutorial <tutorial-wrapper>`]  [:ref:`Example <examples-wrapper>`]
+A Scripture Burrito Wrapper provides a way to group multiple related
+Scripture Burritos into a single project or distribution. Each contained
+burrito remains an independent, self-contained Scripture Burrito with its
+own metadata and flavour.
 
-This page covers the Wrapper format. For the base burrito structure see :ref:`burrito-structure`.
+A wrapper does not define or alter the flavour of the contained burritos.
+Instead, it identifies the burritos that belong together and describes
+their relationship to the overall project.
 
-A wrapper groups two or more related burritos so that tools can discover and
-process them as a set. Common uses include bundling a text translation with its
-audio recording, or bundling a source burrito with derived and supplemental
-content.
+A wrapper can contain different Scripture Burrito flavours, allowing
+related resources such as audio translations, text translations, project
+management data, intellectual property information, and other supported
+flavours to be distributed together.
 
-A wrapper is stored as a ``wrapper.json`` file. It is distinct from a regular
-burrito: the ``format`` field is ``"scripture burrito wrapper"``, not
-``"scripture burrito"``.
+The wrapper is represented by a ``wrapper.json`` file located at the root
+of the wrapper package.
 
-================
-Top-Level Fields
-================
 
-``format``
-    MUST be the string ``"scripture burrito wrapper"``.
+2. Wrapper Structure
+--------------------
 
-``meta``
-    MUST be present. MUST be an object containing:
+A wrapper MUST contain the following top-level properties:
 
-    * ``name`` (REQUIRED): a locale-map object giving a human-readable name
-      for the project (e.g. ``{"en": "My Project"}``).
-    * ``version`` (REQUIRED): a semantic version string for this wrapper
-      file (e.g. ``"0.0.1"``). This is the version of the wrapper data,
-      not the Scripture Burrito spec version.
-    * ``generator`` (REQUIRED): an object with:
+* ``format``
+* ``meta``
+* ``contents``
 
-      * ``name`` (REQUIRED): name of the software that created this file
-      * ``version`` (REQUIRED): version of that software
+The ``format`` property MUST have the value::
 
-    * ``dateCreated`` (REQUIRED): ISO 8601 date or datetime string.
-    * ``description`` (OPTIONAL): a locale-map object.
-    * ``abbreviation`` (OPTIONAL): a locale-map object.
-    * ``defaultLocale`` (OPTIONAL): BCP-47 tag for the default locale of
-      the localized fields above.
+    "format": "scripture burrito wrapper"
 
-``contents``
-    MUST be present. MUST be an object with a ``"burritos"`` key whose
-    value is a non-empty array. Each element MUST be an object with:
+The ``meta`` property contains metadata describing the wrapper itself.
 
-    * ``id`` (REQUIRED): a string that uniquely identifies this burrito
-      within the wrapper. MUST be stable across revisions of the wrapper.
-    * ``path`` (REQUIRED): path to the burrito directory, relative to the
-      directory containing ``wrapper.json``. The referenced directory MUST
-      contain a ``metadata.json`` file.
-    * ``role`` (REQUIRED): the relationship of this burrito to the others.
-      MUST be one of:
+The ``contents`` property identifies the Scripture Burritos contained
+within the wrapper.
 
-      * ``"source"`` — primary, editable content
-      * ``"derived"`` — content produced from a source burrito
-      * ``"supplemental"`` — supporting material not itself a Scripture
-        deliverable
 
-      Custom roles MAY be used and MUST be prefixed with ``"x-"``.
+2.1 Meta
+~~~~~~~~
 
-===========
-Constraints
-===========
+The ``meta`` object describes the wrapper and MUST contain:
 
-* The ``contents.burritos`` array MUST contain at least one entry.
-* ``id`` values MUST be unique within a single wrapper.
-* Each ``path`` MUST resolve to a directory containing a valid
-  ``metadata.json`` or ``wrapper.json`` (nested wrappers are allowed).
-* Circular references through nested wrappers are NOT permitted.
+* ``name``
+* ``version``
+* ``generator``
+* ``dateCreated``
+
+It MAY also contain:
+
+* ``description``
+* ``abbreviation``
+* ``defaultLocale``
+
+The metadata applies to the *wrapper*, rather than to the individual
+burritos contained within it. Each contained burrito MUST provide its own
+``metadata.json``.
+
+
+2.2 Contents
+~~~~~~~~~~~~
+
+The ``contents`` object MUST contain a ``burritos`` array.
+
+Each entry identifies one Scripture Burrito contained within the wrapper.
+
+For example::
+
+    "contents": {
+      "burritos": [
+        {
+          "id": "ENGSEB2-audio",
+          "path": "audio",
+          "role": "source"
+        },
+        {
+          "id": "ENGSEB2-text",
+          "path": "text",
+          "role": "derived"
+        }
+      ]
+    }
+
+The ``burritos`` array MUST contain at least one entry. Each entry MUST
+contain:
+
+* ``id``
+* ``path``
+* ``role``
+
+The ``path`` is relative to the directory containing ``wrapper.json``.
+
+
+2.3 Contained Burritos
+~~~~~~~~~~~~~~~~~~~~~~
+
+Each entry in ``contents.burritos`` MUST identify a valid Scripture
+Burrito or another valid Scripture Burrito Wrapper.
+
+The ``path`` is relative to the directory containing ``wrapper.json`` and
+MUST identify the directory containing the burrito's ``metadata.json`` or,
+in the case of a nested wrapper, its ``wrapper.json``.
+
+Nested wrappers are permitted, but circular references MUST NOT occur.
+
+The flavour of a contained burrito is determined by its own
+``metadata.json``. The wrapper MUST NOT duplicate or override the flavour
+information.
+
+This allows a wrapper to contain burritos of different flavours.
+
+For example::
+
+    project/
+    ├── wrapper.json
+    ├── audio/
+    │   └── metadata.json
+    ├── text/
+    │   └── metadata.json
+    ├── apmdata/
+    │   └── metadata.json
+    └── intellectualproperty/
+        └── metadata.json
+
+
+2.4 Burrito Roles
+~~~~~~~~~~~~~~~~~
+
+The ``role`` property describes the relationship of a contained burrito
+to the other burritos in the wrapper.
+
+The standard roles are:
+
++----------------+--------------------------------------------------------------+
+| Role           | Description                                                  |
++================+==============================================================+
+| ``source``     | Primary, editable content                                    |
++----------------+--------------------------------------------------------------+
+| ``derived``    | Content produced from another burrito                         |
++----------------+--------------------------------------------------------------+
+| ``supplemental`` | Supporting material that is not itself the primary         |
+|                | Scripture deliverable                                         |
++----------------+--------------------------------------------------------------+
+
+Custom roles MAY be used where supported by the Scripture Burrito
+specification. Custom roles SHOULD begin with ``x-``.
+
+The role is a property of the relationship within the wrapper and does
+not determine the flavour of the contained burrito.
+
+
+2.5 Supporting Multiple Flavours
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A wrapper MAY contain any combination of supported Scripture Burrito
+flavours.
+
+For example, an audio Scripture project could contain:
+
+* ``audioTranslation``
+* ``textTranslation``
+* ``intellectualProperty``
+* ``apmData``
+
+The wrapper therefore provides a mechanism for grouping related Scripture
+Burritos without requiring the individual flavours to be merged into a
+single burrito.
+
+The flavour of each contained burrito is determined by its own
+``metadata.json``.
+
+For example::
+
+    {
+      "id": "SEHSAM-audio",
+      "path": "audio",
+      "role": "source"
+    }
+
+The flavour of this burrito is determined by::
+
+    audio/metadata.json
+
+Similarly::
+
+    {
+      "id": "SEHSAM-text",
+      "path": "text",
+      "role": "derived"
+    }
+
+gets its flavour from::
+
+    text/metadata.json
+
+This separation allows each flavour to evolve independently while still
+allowing related resources to be distributed together.
+
+
+2.6 Example
+~~~~~~~~~~~
+
+The following example demonstrates a wrapper containing audio, text,
+APM data, and intellectual property burritos::
+
+    {
+      "meta": {
+        "name": {
+          "en": "Sample Burrito Burrito Wrapper"
+        },
+        "version": "0.0.1",
+        "generator": {
+          "name": "Audio Project Manager Train",
+          "version": "4.6.0.alpha.0"
+        },
+        "dateCreated": "2026-08-13",
+        "description": {
+          "en": "A new burrito wrapper for Sample Burrito"
+        },
+        "abbreviation": {
+          "en": "SEHSAM"
+        },
+        "defaultLocale": "en"
+      },
+      "format": "scripture burrito wrapper",
+      "contents": {
+        "burritos": [
+          {
+            "id": "SEHSAM-aPMData",
+            "path": "apmdata",
+            "role": "supplemental"
+          },
+          {
+            "id": "SEHSAM-text",
+            "path": "text",
+            "role": "derived"
+          },
+          {
+            "id": "SEHSAM-audio",
+            "path": "audio",
+            "role": "source"
+          },
+          {
+            "id": "SEHSAM-intellectualProperty",
+            "path": "intellectualproperty",
+            "role": "supplemental"
+          }
+        ]
+      }
+    }
+
+
+2.7 Wrapper Flavour Independence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A wrapper MUST NOT make assumptions about the flavour of a contained
+burrito. The flavour MUST be determined from the metadata of the
+contained burrito.
+
+A wrapper MAY contain multiple burritos of the same flavour or burritos
+of different flavours.
+
+This allows the wrapper to group related resources while keeping each
+Scripture Burrito flavour independently defined and validated.
+
+
+2.8 Additional Examples
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Additional examples and sample Scripture Burrito audio translation
+packages can be found in the ``sb_audioTranslation`` GitHub repository::
+
+    https://github.com/bible-technology/sb_audioTranslation
