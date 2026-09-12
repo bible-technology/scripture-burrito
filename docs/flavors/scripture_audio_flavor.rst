@@ -38,7 +38,8 @@ project. Wrappers are described in the :ref:`Wrapper Specification <wrapper_flav
 The following example shows a complete Scripture Burrito for the 
 Audio Translation flavor and is used to illustrate the various parts of this specification.
 
-.. example:: Full Audio Translation flavor
+.. admonition:: Full Audio Translation flavor
+   :class: example
 
    .. code-block:: json
 
@@ -185,7 +186,8 @@ See: `meta object
 An example of the ``meta`` object for an Audio Translation flavor is
 shown below:
 
-.. example:: Meta
+.. admonition:: Meta
+   :class: example
 
    .. code-block:: json
 
@@ -209,7 +211,8 @@ shown below:
 A second, simpler example is shown below. In this example, the optional
 ``userName`` and ``comments`` properties are omitted.
 
-.. example:: Meta without optional properties
+.. admonition:: Meta without optional properties
+   :class: example
 
    .. code-block:: json
 
@@ -235,7 +238,8 @@ object identifies the authorities responsible for assigning identifiers
 used within the Audio Translation flavor. The ``idAuthorities`` object
 is common to all flavors of Scripture Burrito.
 
-.. example:: Authorities
+.. admonition:: Authorities
+   :class: example
 
    .. code-block:: json
 
@@ -259,7 +263,8 @@ object is also common to all flavors of a Scripture Burrito and is
 therefore required for an Audio Translation flavor. This object provides
 identification information for the project.
 
-.. example:: Identification
+.. admonition:: Identification
+   :class: example
 
    .. code-block:: json
 
@@ -284,7 +289,8 @@ The ``confidential`` property MUST be set to ``true`` if the project
 must not be publicly disclosed and the identities of project members
 must be kept confidential. It MUST be set to ``false`` otherwise.
 
-.. example:: Confidential
+.. admonition:: Confidential
+   :class: example
 
    .. code-block:: json
 
@@ -300,7 +306,8 @@ describing its flavor. Although the ``type`` object is common to all
 Scripture Burrito flavors, it is worth describing the properties
 specific to the Audio Translation flavor here.
 
-.. example:: Type
+.. admonition:: Type
+   :class: example
 
    .. code-block:: json
 
@@ -344,7 +351,8 @@ property MUST conform to the language object defined in the Scripture
 Burrito specification. It identifies each language represented in the
 Audio Translation Scripture Burrito.
 
-.. example:: Languages
+.. admonition:: Languages
+   :class: example
 
    .. code-block:: json
 
@@ -380,7 +388,8 @@ MUST be present.
 The following example shows copyright information for an Audio
 Translation distributed under a Creative Commons license:
 
-.. example:: Copyright
+.. admonition:: Copyright
+   :class: example
 
    .. code-block:: json
 
@@ -410,7 +419,8 @@ Audio Translation Scripture Burrito, with each ingredient representing a
 single file and its associated metadata, such as its location, MIME type,
 checksum, size, and Scripture scope.
 
-.. example:: Ingredients
+.. admonition:: Ingredients
+   :class: example
 
    .. code-block:: json
 
@@ -536,7 +546,8 @@ books, chapters, verses, and verse ranges.
 
 For example:
 
-.. example:: Scripture marker
+.. admonition:: Scripture marker
+   :class: example
 
    .. code-block:: text
 
