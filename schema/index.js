@@ -6,6 +6,7 @@ module.exports = {
     schemas: [
         require("./agencies.schema.json"),
         require("./agency.schema.json"),
+        require("./alignment/alignment.schema.json"),
         require("./common.schema.json"),
         require("./confidential.schema.json"),
         require("./copyright.schema.json"),

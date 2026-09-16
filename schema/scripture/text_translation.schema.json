@@ -43,7 +43,7 @@
             },
             "propertyNames": {
                 "type": "string",
-                "pattern": "^(x-)?[a-z][A-za-z0-9]*$",
+                "pattern": "^(x-)?[a-z][A-Za-z0-9]*$",
                 "oneOf": [
                     { "$ref": "../common.schema.json#/definitions/xToken" },
                     { "enum": ["usxRefs", "usxDirs", "typesetAsVersedParagraphs"] }

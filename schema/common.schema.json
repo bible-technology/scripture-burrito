@@ -42,7 +42,7 @@
         },
         "xToken": {
             "type": "string",
-            "pattern": "^x-[a-z][A-za-z0-9]*$",
+            "pattern": "^x-[a-z][A-Za-z0-9]*$",
             "description": "User-defined token, prefixed with x-"
         },
         "idAuthorityLabel": {
