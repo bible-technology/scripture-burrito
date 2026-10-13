@@ -21,7 +21,7 @@
                     "enum": ["source", "derived", "supplemental"]
                 },
                 {
-                    "pattern": "^x-[a-z][A-za-z0-9]*$"
+                    "pattern": "^x-[a-z][A-Za-z0-9]*$"
                 }
             ],
             "description": "The role this burrito plays within the wrapper."

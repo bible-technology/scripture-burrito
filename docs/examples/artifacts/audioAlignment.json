@@ -10,6 +10,14 @@
     "defaultLocale": "en",
     "dateCreated": "2025-11-10T08:00:00Z"
   },
+  "idAuthorities": {
+    "uw": {
+      "id": "https://www.unfoldingword.org",
+      "name": {
+        "en": "unfoldingWord"
+      }
+    }
+  },
   "identification": {
     "name": {
       "en": "Ephesians Audio–Text Alignment"
