@@ -46,7 +46,7 @@ supporting rights and licensing information:
           "name": {
             "en": "Sample Burrito Burrito Wrapper"
           },
-          "version": "0.0.1",
+          "version": "2.0.0",
           "generator": {
             "name": "Audio Project Manager Train",
             "version": "4.6.0.alpha.0"
@@ -172,7 +172,7 @@ does not determine the version of any contained Scripture Burritos.
 
 For example::
 
-    "version": "0.0.1"
+    "version": "2.0.0"
 
 Generator
 ~~~~~~~~~~~~~
