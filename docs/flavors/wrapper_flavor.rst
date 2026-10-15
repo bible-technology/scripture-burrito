@@ -301,11 +301,19 @@ Each entry identifies one Scripture Burrito contained within the wrapper.
 The ``burritos`` array MUST contain at least one entry. Each entry MUST
 contain:
 
-* ``id``
-* ``path``
-* ``role``
+The description MAY be provided in multiple languages or locales.
 
-The ``path`` is relative to the directory containing ``wrapper.json``.
+For example::
+
+    "description": {
+      "en": "A new burrito wrapper for Sample Burrito"
+    }
+
+2.1.6 Abbreviation
+-------------------
+
+The optional ``abbreviation`` property provides a short name or
+abbreviation for the wrapper.
 
 Contained Burritos
 -----------------------
@@ -361,10 +369,10 @@ flavors.
 
 For example, an audio Scripture project could contain:
 
-* ``audioTranslation``
-* ``textTranslation``
-* ``intellectualProperty``
-* ``apmData``
+* `audioTranslation`
+* `textTranslation`
+* `intellectualProperty`
+* `apmData`
 
 The wrapper therefore provides a mechanism for grouping related
 Scripture Burritos without requiring the individual flavors to be
