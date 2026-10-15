@@ -204,8 +204,7 @@ Date Created
 The ``dateCreated`` property identifies the date on which the wrapper
 was created.
 
-The value MUST be represented as a date in the ``YYYY-MM-DD`` format,
-which conforms to the ISO 8601 calendar date format.
+The value MUST be represented as a ISO 8601 date or datetime string (e.g. "2025-11-04T09:00:00+01:00").
 
 Where:
 
