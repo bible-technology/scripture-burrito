@@ -1,13 +1,13 @@
 Burritos currently come in four **flavors**:
 
 * **Text Translation** — a Scripture text in USFM, USX, or USJ format
-  [:ref:`Specification <scripture_text_flavor>` | :ref:`Tutorial <tutorial-textTranslation>` | :ref:`Example <examples-textTranslation>`]
+  [:ref:`Specification <scripture_text_flavor>` | :ref:`Example <examples-textTranslation>`]
 * **Audio Translation** — a recorded audio translation
-  [:ref:`Specification <scripture_audio_flavor>` | :ref:`Tutorial <tutorial-audioTranslation>` | :ref:`Example <examples-audioTranslation>`]
+  [:ref:`Specification <scripture_audio_flavor>` | :ref:`Example <examples-audioTranslation>`]
 * **Alignment** — word-level alignment between two texts, such as a translation and a source language
-  [:ref:`Specification <alignment_flavor>` | :ref:`Tutorial <tutorial-alignment>` | :ref:`Example <examples-alignment>`]
+  [:ref:`Specification <alignment_flavor>` | :ref:`Example <examples-alignment>`]
 * **Wrapper** — groups related burritos together, such as a text and audio burrito for the same translation
-  [:ref:`Specification <wrapper_flavor>` | :ref:`Tutorial <tutorial-wrapper>` | :ref:`Example <examples-wrapper>`]
+  [:ref:`Specification <wrapper_flavor>` | :ref:`Example <examples-wrapper>`]
 
 Any flavor can also be *derived* from another burrito — for example, a back-translation derived from a source text translation. See :ref:`derived_flavor`.
 

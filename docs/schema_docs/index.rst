@@ -32,9 +32,6 @@ Schema Documentation
    numbering_system
    progress
    promotion
-   recipe
-   recipe_element
-   recipe_section
    relationship
    relationships
    role

@@ -10,6 +10,6 @@ Scripture Burrito defines four standard flavors (Scripture Text, Scripture Audio
    scripture_text_flavor
    scripture_audio_flavor
    alignment_flavor
-   wrapper_flavor
+   wrapper
    derived_flavor
    custom_flavors

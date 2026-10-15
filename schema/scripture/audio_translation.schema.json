@@ -2,38 +2,19 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://burrito.bible/schema/scripture/audio_translation.schema.json",
     "$$target": [
-        "scripture/audio_translation.schema.json",
-        "#/definitions/format"
+        "scripture/audio_translation.schema.json"
     ],
     "title": "Flavor Details: Audio Translation",
     "type": "object",
-    "description": "Schema of flavor field of scripture/audioTranslation flavor",
-    "definitions": {
-        "format": {
-            "type": "object",
-            "properties": {
-                "compression": {
-                    "type": "string",
-                    "enum": ["mp3", "wav"]
-                },
-                "trackConfiguration": {
-                    "type": "string",
-                    "enum": ["1/0 (Mono)", "Dual mono", "2/0 (Stereo)", "5.1 Surround"]
-                },
-                "bitRate": { "type": "integer" },
-                "bitDepth": { "type": "integer" },
-                "samplingRate": { "type": "integer" },
-                "timingDir": { "$ref": "../common.schema.json#/definitions/path" }
-            },
-            "required": ["compression"],
-            "additionalProperties": false
-        }
-    },
+    "description": "Describes the flavor details of an audio translation.",
     "properties": {
         "name": {
+            "type": "string",
             "const": "audioTranslation"
         }
-     },
-    "required": [],
+    },
+    "required": [
+        "name"
+    ],
     "additionalProperties": false
 }

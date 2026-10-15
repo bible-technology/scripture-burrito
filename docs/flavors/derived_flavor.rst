@@ -4,7 +4,7 @@
 Derived Burritos Specification
 ##############################
 
-[:ref:`Tutorial <tutorial-derived>`]  [:ref:`Example <examples-textTranslation_derived>`]
+[:ref:`Example <examples-textTranslation_derived>`]
 
 A derived burrito is produced from one or more existing burritos rather than
 created independently. Examples include back-translations produced from a source

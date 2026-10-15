@@ -3,7 +3,7 @@
 Audio–Text Alignment Example
 ============================
 
-[:ref:`Specification <alignment_flavor>`]  [:ref:`Tutorial <tutorial-audioAlignment>`]
+[:ref:`Specification <alignment_flavor>`]
 
 .. literalinclude:: artifacts/audioAlignment.json
     :language: json

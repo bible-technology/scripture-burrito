@@ -3,7 +3,7 @@
 Derived Translation Example
 ============================
 
-[:ref:`Specification <derived_flavor>`]  [:ref:`Tutorial <tutorial-derived>`]
+[:ref:`Specification <derived_flavor>`]
 
 .. literalinclude:: artifacts/textTranslation_derived.json
     :language: json

@@ -3,7 +3,7 @@
 Wrapper Example
 ===============
 
-[:ref:`Specification <wrapper_flavor>`]  [:ref:`Tutorial <tutorial-wrapper>`]
+[:ref:`Specification <wrapper_flavor>`]
 
 .. literalinclude:: artifacts/wrapper.json
     :language: json

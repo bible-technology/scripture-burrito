@@ -4,7 +4,7 @@
 Alignment Specification
 #########################
 
-[:ref:`Tutorial: Word Alignment <tutorial-alignment>`]  [:ref:`Tutorial: Audio–Text Alignment <tutorial-audioAlignment>`]  [:ref:`Example: Word Alignment <examples-alignment>`]  [:ref:`Example: Audio–Text Alignment <examples-audioAlignment>`]
+[:ref:`Example: Word Alignment <examples-alignment>`]  [:ref:`Example: Audio–Text Alignment <examples-audioAlignment>`]
 
 This page covers fields specific to the Alignment flavor. For fields common to all burritos see :ref:`burrito-structure`.
 

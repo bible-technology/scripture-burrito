@@ -3,7 +3,7 @@
 Scripture Text Example
 ======================
 
-[:ref:`Specification <scripture_text_flavor>`]  [:ref:`Tutorial <tutorial-textTranslation>`]
+[:ref:`Specification <scripture_text_flavor>`]
 
 .. literalinclude:: artifacts/textTranslation.json
     :language: json

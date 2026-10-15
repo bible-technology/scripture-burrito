@@ -68,7 +68,7 @@ The category drives which fields are required. A ``template`` can be minimal:
    {
      "format": "scripture burrito",
      "meta": {
-       "version": "1.0.0",
+       "version": "2.0.0",
        "category": "template",
        "templateName": {"en": "New Testament Template"},
        "defaultLocale": "en",

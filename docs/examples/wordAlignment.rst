@@ -3,7 +3,7 @@
 Word Alignment Example
 ======================
 
-[:ref:`Specification <alignment_flavor>`]  [:ref:`Tutorial <tutorial-alignment>`]
+[:ref:`Specification <alignment_flavor>`]
 
 .. literalinclude:: artifacts/wordAlignment.json
     :language: json

@@ -4,7 +4,7 @@
 Scripture Text Specification
 ##############################
 
-[:ref:`Tutorial <tutorial-textTranslation>`]  [:ref:`Example <examples-textTranslation>`]
+[:ref:`Example <examples-textTranslation>`]
 
 This page covers fields specific to the Scripture Text flavor. For fields common to all burritos see :ref:`burrito-structure`.
 
