@@ -1,4 +1,4 @@
-.. _wrapper:
+.. _wrapper_flavor:
 
 ########################################
 Scripture Burrito Wrapper Specification
