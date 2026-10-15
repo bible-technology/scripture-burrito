@@ -1,11 +1,11 @@
-.. _wrapper_flavor:
+.. _wrapper:
 
 ########################################
 Scripture Burrito Wrapper Specification
 ########################################
 
 
-Wrapper Flavor
+Wrapper
 ==========================
 
 Overview
@@ -431,7 +431,7 @@ collection as a whole or describes the relationship between the
 contained resources.
 
 
-Wrapper Flavor
+Wrapper
 --------------
 
 A wrapper MUST NOT define or override the flavor of a contained
