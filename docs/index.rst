@@ -5,6 +5,7 @@ Scripture Burrito Specification
 ================================
 
 :Status: Working Draft
+:Version: 2.0.0
 :Date: |today|
 
 .. image:: ../logo/burrito_logo.png
@@ -36,7 +37,7 @@ Any flavor can also be extended:
 - Custom — defining your own nonstandard flavor using the ``x-`` prefix
   [:ref:`Specification <custom_flavors>`]
 
-The following beta flavors are defined in Scripture Burrito v1.0.0.  When a beta flavor reaches release status, it will be added to this specification.
+The following beta flavors are defined in Scripture Burrito v2.0.0.  When a beta flavor reaches release status, it will be added to this specification.
 
 - `Scripture Print (beta) <https://docs.burrito.bible/en/v1.0.0/flavors/scripture_print_flavor.html>`_
 - `Scripture Sign Language (beta) <https://docs.burrito.bible/en/v1.0.0/flavors/scripture_sign_language_flavor.html>`_

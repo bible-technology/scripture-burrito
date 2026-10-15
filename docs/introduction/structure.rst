@@ -65,7 +65,7 @@ Meta
 
 ``meta.version``
     REQUIRED. The Scripture Burrito schema version this file conforms to
-    (currently ``"1.0.0"``).
+    (currently ``"2.0.0"``).
 
 ``meta.category``
     REQUIRED. MUST be ``"source"``, ``"derived"``, or ``"template"``. See

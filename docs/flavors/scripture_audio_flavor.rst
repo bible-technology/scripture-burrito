@@ -45,7 +45,7 @@ Audio Translation flavor and is used to illustrate the various parts of this spe
       {
         "format": "scripture burrito",
         "meta": {
-          "version": "1.0.0",
+          "version": "2.0.0",
           "category": "source",
           "generator": {
             "softwareName": "Audio Project Manager",
@@ -192,7 +192,7 @@ shown below:
 
       {
         "meta": {
-          "version": "1.0.0",
+          "version": "2.0.0",
           "category": "source",
           "generator": {
             "softwareName": "Audio Project Manager",
@@ -219,7 +219,7 @@ A second, simpler example is shown below. In this example, the optional
         "meta": {
           "category": "source",
           "dateCreated": "2026-02-24",
-          "version": "1.0.0",
+          "version": "2.0.0",
           "generator": {
             "softwareName": "Orature",
             "softwareVersion": ""
@@ -511,8 +511,8 @@ its MIME type.
 One reserved role is ``timing``, which identifies an ingredient
 containing timing information for one or more audio files. An ingredient
 with the ``timing`` role MUST use the Scripture Alignment timing format
-together with the ``vtt-timecode`` extension, as described in
-:ref:`Timing Files <timing-files>`.
+together with the ``vtt-timecode`` extension, as described in the
+``Timing Files`` section below.
 
 Timing Files
 ~~~~~~~~~~~~~~~~~~
