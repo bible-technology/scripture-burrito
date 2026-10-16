@@ -28,7 +28,7 @@ This Scripture Burrito specification defines these flavors:
 - Alignment — word-level or timecode alignment between two texts
   [:ref:`Specification <alignment_flavor>` | :ref:`Example <examples-alignment>`]
 - Wrapper — groups related burritos together, such as a text and audio burrito for the same translation
-  [:ref:`Specification <wrapper_flavor>` | :ref:`Example <examples-wrapper>`]
+  [:ref:`Specification <wrapper>` | :ref:`Example <examples-wrapper>`]
 
 Any flavor can also be extended:
 
