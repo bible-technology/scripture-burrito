@@ -7,7 +7,7 @@ Burritos currently come in four **flavors**:
 * **Alignment** — word-level alignment between two texts, such as a translation and a source language
   [:ref:`Specification <alignment_flavor>` | :ref:`Example <examples-alignment>`]
 * **Wrapper** — groups related burritos together, such as a text and audio burrito for the same translation
-  [:ref:`Specification <wrapper_flavor>` | :ref:`Example <examples-wrapper>`]
+  [:ref:`Specification <wrapper>` | :ref:`Example <examples-wrapper>`]
 
 Any flavor can also be *derived* from another burrito — for example, a back-translation derived from a source text translation. See :ref:`derived_flavor`.
 

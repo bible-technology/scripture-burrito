@@ -32,7 +32,7 @@ Scripture Burritos along with other Scripture Burrito flavors as a group
 using a Scripture Burrito Wrapper. For example, a wrapper may combine a
 Text Translation Scripture Burrito, an Audio Translation Scripture
 Burrito, and one or more Alignment Scripture Burritos into a single
-project. Wrappers are described in the :ref:`Wrapper Specification <wrapper_flavor>`.
+project. Wrappers are described in the :ref:`Wrapper Specification <wrapper>`.
 
 The following example shows a complete Scripture Burrito for the 
 Audio Translation flavor and is used to illustrate the various parts of this specification.
