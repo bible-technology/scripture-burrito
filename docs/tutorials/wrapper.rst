@@ -4,7 +4,7 @@
 Wrapper Tutorial
 ################
 
-[:ref:`Specification <wrapper_flavor>`]  [:ref:`Example <examples-wrapper>`]
+[:ref:`Specification <wrapper>`]  [:ref:`Example <examples-wrapper>`]
 
 A *wrapper* groups two or more related burritos together so that tools can
 discover and process them as a set. A common case is a project that has both
