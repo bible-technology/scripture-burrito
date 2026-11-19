@@ -169,6 +169,29 @@ Audio Translation flavor and is used to illustrate the various parts of this spe
         ]
       }
 
+----
+
+Contributors
+------------
+
+The Scripture Audio Specification was developed through a collaborative process involving
+contributors from several organizations.
+
+- Joe Sarabia, Wycliffe Associates
+- Joel Mathew, ETEN Innovation Lab
+- Maggie Campo, Seed Company
+- Greg Trihus, SIL Global
+- Jonathan Robie, Biblica / The Nida Institute
+- James Tauber
+- O’Neil Delpratt, ETEN Innovation Lab partner / EAGA Gospel Choir
+
+Interoperability demonstrated between:
+- Orature - Joe Sarabia, Wycliffe Associates
+- APM - Greg Trihus, SIL Global
+
+
+----
+
 Meta
 --------
 

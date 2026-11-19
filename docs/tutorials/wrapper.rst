@@ -4,7 +4,7 @@
 Wrapper Tutorial
 ################
 
-[:ref:`Specification <wrapper_flavor>`]  [:ref:`Example <examples-wrapper>`]
+[:ref:`Specification <wrapper>`]  [:ref:`Example <examples-wrapper>`]
 
 A *wrapper* groups two or more related burritos together so that tools can
 discover and process them as a set. A common case is a project that has both
@@ -49,7 +49,7 @@ which burritos belong to this project.
 Wrapper Fields
 ==============
 
-*All fields below are specific to the wrapper format — see* :ref:`wrapper_flavor`
+*All fields below are specific to the wrapper format — see* :ref:`wrapper`
 *for the full specification.*
 
 ---------
@@ -224,4 +224,4 @@ Next steps
 ==========
 
 * See :ref:`examples-wrapper` for the full example file used in this tutorial.
-* For the complete field reference see :ref:`wrapper_flavor`.
+* For the complete field reference see :ref:`wrapper`.
