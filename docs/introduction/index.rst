@@ -45,6 +45,22 @@ When the need for a new flavor standard is clear, the working group brings toget
 Acknowledgements
 ================
 
-Scripture Burrito was developed through a multi-year collaboration between `American Bible Society <https://americanbible.org/>`_, `Biblica <https://www.biblica.com/>`_, `Bridge Connectivity Solutions <https://bridgeconn.com/>`_, `Clear.Bible <https://www.clear.bible/>`_, `Eldarion <https://eldarion.com/>`_, `SIL <https://www.sil.org/>`_, `Seed Company <https://seedcompany.com/>`_, `unfoldingWord <https://www.unfoldingword.org/>`_, and `United Bible Societies <https://unitedbiblesocieties.org/>`_, with sponsorship from `illumiNations <https://illuminations.bible/>`_.
+Scripture Burrito was developed through a multi-year collaboration between `American Bible Society <https://americanbible.org/>`_, `Biblica <https://www.biblica.com/>`_, `Bridge Connectivity Solutions <https://bridgeconn.com/>`_, `Clear.Bible <https://www.clear.bible/>`_, `Eldarion <https://eldarion.com/>`_, `SIL <https://www.sil.org/>`_, `Seed Company <https://seedcompany.com/>`_, `unfoldingWord <https://www.unfoldingword.org/>`_, and `United Bible Societies <https://unitedbiblesocieties.org/>`_, with sponsorship from `illumiNations 
+<https://illuminations.bible/>`_.
+
+---
+
+Contributors
+================
+
+Current members of the Scripture Burrito committee are:
+
+- Joe Sarabia, Wycliffe Associates
+- Joel Mathew, ETEN Innovation Lab
+- Birch Champeon, Unfolding Word
+- Greg Trihus, SIL Global
+- O’Neil Delpratt, ETEN Innovation Lab partner / EAGA Gospel Choir
+
+---
 
 Copyright (c) 2020-2026 Contributors. The documentation is licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_; the schema and code are licensed under the `MIT License <https://github.com/bible-technology/scripture-burrito/blob/master/LICENSE>`_.
