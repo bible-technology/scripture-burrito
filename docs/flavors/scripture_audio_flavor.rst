@@ -13,7 +13,7 @@ Audio Translation Flavor
 Contributors
 ------------
 
-The Scripture Audio Specification were developed through a collaborative process involving
+The Scripture Audio Specification was developed through a collaborative process involving
 contributors from several organizations.
 
 - Joe Sarabia, Wycliffe Associates
