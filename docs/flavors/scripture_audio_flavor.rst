@@ -185,6 +185,11 @@ contributors from several organizations.
 - James Tauber
 - O’Neil Delpratt, ETEN Innovation Lab partner / EAGA Gospel Choir
 
+Interoperability demonstrated between:
+- Orature - Joe Sarabia, Wycliffe Associates
+- APM - Greg Trihus, SIL Global
+
+
 ----
 
 Meta
