@@ -5,8 +5,21 @@ Scripture Burrito Wrapper Specification
 ########################################
 
 
-Wrapper
-==========================
+Contributors
+------------
+
+The Scripture Wrapper Specification was developed through a collaborative process involving
+contributors from several organizations.
+
+- Joe Sarabia, Wycliffe Associates
+- Joel Mathew, ETEN Innovation Lab
+- Maggie Campo, Seed Company
+- Greg Trihus, SIL Global
+- Jonathan Robie, Biblica / The Nida Institute
+- James Tauber
+- O’Neil Delpratt, ETEN Innovation Lab partner / EAGA Gospel Choir
+
+----
 
 Overview
 ------------
