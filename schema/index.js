@@ -1,7 +1,8 @@
 module.exports = {
     schemaIds: {
         "metadata": "https://burrito.bible/schema/metadata.schema.json",
-        "referenceFormat": "https://burrito.bible/schema/reference_format.schema.json"
+        "referenceFormat": "https://burrito.bible/schema/reference_format.schema.json",
+        "wrapper": "https://burrito.bible/schema/wrapper/wrapper_metadata.schema.json"
     },
     schemas: [
         require("./agencies.schema.json"),
@@ -48,6 +49,13 @@ module.exports = {
         require("./template_metadata.schema.json"),
         require("./type.validation.schema.json"),
         require("./unm49.schema.json"),
-        require("./x_flavor.schema.json")
+        require("./x_flavor.schema.json"),
+        require("./wrapper/wrapper_metadata.schema.json"),
+        require("./wrapper/wrapper_meta.schema.json"),
+        require("./wrapper/wrapper_meta_version.schema.json"),
+        require("./wrapper/wrapper_meta_date_created.schema.json"),
+        require("./wrapper/wrapper_generator.schema.json"),
+        require("./wrapper/wrapper_contents.schema.json"),
+        require("./wrapper/wrapper_burrito.schema.json")
     ]
 };
